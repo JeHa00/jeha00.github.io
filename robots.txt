@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://jeha00.github.io/sitemap.xml
