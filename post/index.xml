@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 16 Feb 2022 13:18:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Feb 2022 16:23:31 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test6</title>
+      <link>http://jeha00.github.io/post/test6/</link>
+      <pubDate>Wed, 16 Feb 2022 16:23:31 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/test6/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Test5</title>
       <link>http://jeha00.github.io/post/test5/</link>
