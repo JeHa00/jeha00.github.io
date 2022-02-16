@@ -2,29 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://jeha00.github.io/categories/</loc>
+    <lastmod>2022-02-16T03:25:25+09:00</lastmod>
+  </url><url>
     <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-02-16T16:23:31+09:00</lastmod>
+    <lastmod>2022-02-16T03:25:25+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-02-16T16:23:31+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/test6/</loc>
-    <lastmod>2022-02-16T16:23:31+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/test5/</loc>
-    <lastmod>2022-02-16T13:18:04+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/test4/</loc>
-    <lastmod>2022-02-16T03:25:33+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-02-16T03:25:30+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/test3/</loc>
-    <lastmod>2022-02-16T03:25:30+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev/</loc>
-    <lastmod>2022-02-16T03:25:30+09:00</lastmod>
+    <lastmod>2022-02-16T03:25:25+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/test2/</loc>
     <lastmod>2022-02-16T03:25:25+09:00</lastmod>
