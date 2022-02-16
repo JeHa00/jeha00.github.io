@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 16 Feb 2022 03:25:33 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Feb 2022 13:18:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test5</title>
+      <link>http://jeha00.github.io/post/test5/</link>
+      <pubDate>Wed, 16 Feb 2022 13:18:04 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/test5/</guid>
+      <description>this is prototype</description>
+    </item>
+    
     <item>
       <title>Test4</title>
       <link>http://jeha00.github.io/post/test4/</link>
