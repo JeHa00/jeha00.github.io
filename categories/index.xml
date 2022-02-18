@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 17 Feb 2022 21:49:13 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 02:26:36 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>회고-memoirs</title>
+      <link>http://jeha00.github.io/categories/%ED%9A%8C%EA%B3%A0-memoirs/</link>
+      <pubDate>Sat, 19 Feb 2022 02:26:36 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/categories/%ED%9A%8C%EA%B3%A0-memoirs/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>개발-dev</title>
       <link>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev/</link>
