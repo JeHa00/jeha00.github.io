@@ -7,8 +7,11 @@ window 10 환경에서 Hugo 라는 SSG의 한 종류를 사용해서 `<user-id>.
 > 3. [새로운 2개 github repo 와 local 연결하기](https://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/#3-%EC%83%88%EB%A1%9C%EC%9A%B4-2%EA%B0%9C-github-repo-%EC%99%80-local-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0)
 > 4. [Github page에 theme 적용](https://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/#4-github-page%EC%97%90-theme-%EC%A0%81%EC%9A%A9)
 > 5. [Contents 생성과 업로드, utterances로 댓글 기능 추가, deploy.sh로 자동화](https://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/#5-contents-%EC%83%9D%EC%84%B1%EA%B3%BC-%EC%97%85%EB%A1%9C%EB%93%9C-utterances%EB%A1%9C-%EB%8C%93%EA%B8%80-%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80-deploysh%EB%A1%9C-%EC%9E%90%EB%8F%99%ED%99%94)
-> 6. [To customize blog theme](https://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/#to-customize-blog-theme)
-> 7. [후기](https://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/#%ED%9B%84%EA%B8%B0)
+
+그리고, customizing 하는 나의 방법과 후기를 남겼다.
+
+> - 6. [To customize blog theme](https://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/#to-customize-blog-theme)
+> - 7. [후기](https://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/#%ED%9B%84%EA%B8%B0)
 
 위 과정들에서 필요한 개념들, 부딪혔던 error 및 해결책도 각 단계 마지막 부분에 작성했다.
 
