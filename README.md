@@ -1,14 +1,3 @@
----
-title: "Window에서 Hugo로 Github page 만들고 배포하기"
-date: 2022-02-17T21:49:13+09:00
-draft: false
-summary: SSG의 한 종류 'Hugo'와 'git remote, git submodule'로 Github page를 만든다. 그 후, 컨텐츠 생성과 업로드를 한다. 마지막으로 utterances로 댓글 기능 추가, deploy.sh를 사용하여 업로드하는 방법을 다룬다.
-tags: ["hugo", "github", "blog", "submodule"]
-categories: ["개발-dev"]
----
-
-<br>
-
 # Intro
 
 window 10 환경에서 Hugo 라는 SSG의 한 종류를 사용해서 `<user-id>.github.io` 주소의 github page를 만들고 배포한 후, contents를 업로드하는 것까지 내용을 다룬다. 이를 위해 총 5단계를 거쳐서 진행한다.
