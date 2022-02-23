@@ -30,7 +30,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/"><meta property="og:image" content="http://jeha00.github.io/47"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2022-02-17T21:49:13+09:00">
-<meta property="article:modified_time" content="2022-02-17T21:49:13+09:00"><meta property="og:site_name" content="JeHa00">
+<meta property="article:modified_time" content="2022-02-17T21:49:13+09:00"><meta property="og:site_name" content="JeHa00 DevLog">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://jeha00.github.io/47">
 <meta name=twitter:title content="Window에서 Hugo로 Github page 만들고 배포하기">
@@ -82,55 +82,7 @@ Window에서 Hugo로 Github page 만들고 배포하기
 </h1>
 <div class=post-meta><span title="2022-02-17 21:49:13 +0900 KST">February 17, 2022</span>&nbsp;·&nbsp;11 min&nbsp;·&nbsp;Jeha00&nbsp;|&nbsp;<a href=https://github.com/JeHa00/blog/content/post/Hugo%eb%a1%9c%20github%20page%20%eb%a7%8c%eb%93%a4%ea%b3%a0%20%eb%b0%b0%ed%8f%ac%ed%95%98%ea%b8%b0.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
 </div>
-</header> <div class=toc>
-<details open>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#intro aria-label=Intro>Intro</a><ul>
-<li>
-<a href=#1-static-site-generator-%eb%a1%9c-hugo%eb%a5%bc-%ec%84%a0%ed%83%9d%ed%95%9c-%ec%9d%b4%ec%9c%a0 aria-label="1. Static Site Generator 로 Hugo를 선택한 이유">1. Static Site Generator 로 Hugo를 선택한 이유</a></li>
-<li>
-<a href=#2-github-page-%eb%a7%8c%eb%93%a4%ea%b8%b0-%ec%9c%84%ed%95%9c-local-%ed%99%98%ea%b2%bd-%ec%a1%b0%ec%84%b1 aria-label="2. Github page 만들기 위한 local 환경 조성">2. Github page 만들기 위한 local 환경 조성</a></li>
-<li>
-<a href=#3-%ec%83%88%eb%a1%9c%ec%9a%b4-2%ea%b0%9c-github-repo-%ec%99%80-local-%ec%97%b0%ea%b2%b0%ed%95%98%ea%b8%b0 aria-label="3. 새로운 2개 github repo 와 local 연결하기">3. 새로운 2개 github repo 와 local 연결하기</a><ul>
-<li>
-<a href=#31-submodule-%ea%b0%9c%eb%85%90-%ec%9d%b4%ed%95%b4%ed%95%98%ea%b8%b0 aria-label="3.1 Submodule 개념 이해하기">3.1 Submodule 개념 이해하기</a></li>
-<li>
-<a href=#32-new-repository-2%ea%b0%9c-%eb%a7%8c%eb%93%a4%ea%b8%b0 aria-label="3.2 New repository 2개 만들기">3.2 New repository 2개 만들기</a></li>
-<li>
-<a href=#33-hugo-new-site-%ec%83%9d%ec%84%b1%eb%b0%8f-remote-add-origin-a-repo-%ec%8b%a4%ed%96%89 aria-label="3.3 Hugo new site 생성및 remote add origin A repo 실행">3.3 Hugo new site 생성및 remote add origin A repo 실행</a></li>
-<li>
-<a href=#34-b-repo%eb%a5%bc-public-%ed%8f%b4%eb%8d%94%ec%97%90-submodule%eb%a1%9c-%ec%97%b0%ea%b2%b0%ed%95%98%ea%b8%b0 aria-label="3.4 B repo를 public 폴더에 submodule로 연결하기">3.4 B repo를 public 폴더에 submodule로 연결하기</a></li>
-<li>
-<a href=#35-public-directory%ec%99%80-project-root-directoy-git-push-%eb%8b%a8%ea%b3%84 aria-label="3.5 public directory와 project root directoy git push 단계">3.5 public directory와 project root directoy git push 단계</a></li></ul>
-</li>
-<li>
-<a href=#4-github-page%ec%97%90-theme-%ec%a0%81%ec%9a%a9 aria-label="4. Github page에 theme 적용">4. Github page에 theme 적용</a></li>
-<li>
-<a href=#5-contents-%ec%83%9d%ec%84%b1%ea%b3%bc-%ec%97%85%eb%a1%9c%eb%93%9c-utterances%eb%a1%9c-%eb%8c%93%ea%b8%80-%ea%b8%b0%eb%8a%a5-%ec%b6%94%ea%b0%80-deploysh%eb%a1%9c-%ec%9e%90%eb%8f%99%ed%99%94 aria-label="5. Contents 생성과 업로드, utterances로 댓글 기능 추가, deploy.sh로 자동화">5. Contents 생성과 업로드, utterances로 댓글 기능 추가, deploy.sh로 자동화</a><ul>
-<li>
-<a href=#51-contents-%ec%83%9d%ec%84%b1%ea%b3%bc-%ec%97%85%eb%a1%9c%eb%93%9c aria-label="5.1 Contents 생성과 업로드">5.1 Contents 생성과 업로드</a></li>
-<li>
-<a href=#52-utterances%eb%a1%9c-%eb%8c%93%ea%b8%80-%ea%b8%b0%eb%8a%a5-%ec%b6%94%ea%b0%80 aria-label="5.2 Utterances로 댓글 기능 추가">5.2 Utterances로 댓글 기능 추가</a></li>
-<li>
-<a href=#53-deploysh%eb%a1%9c-%ec%9e%90%eb%8f%99%ed%99%94 aria-label="5.3 deploy.sh로 자동화">5.3 deploy.sh로 자동화</a></li></ul>
-</li>
-<li>
-<a href=#6-to-customize-blog-theme aria-label="6. To customize blog theme">6. To customize blog theme</a></li>
-<li>
-<a href=#7-%ed%9b%84%ea%b8%b0 aria-label="7. 후기">7. 후기</a></li>
-<li>
-<a href=#reference aria-label=Reference>Reference</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</details>
-</div>
+</header>
 <div class=post-content>
 <h1 id=intro>Intro<a hidden class=anchor aria-hidden=true href=#intro>#</a></h1>
 <p>window 10 환경에서 Hugo 라는 SSG의 한 종류를 사용해서 <code>&lt;user-id>.github.io</code> 주소의 github page를 만들고 배포한 후, contents를 업로드하는 것까지 내용을 다룬다. 이를 위해 총 5단계를 거쳐서 진행한다.</p>
