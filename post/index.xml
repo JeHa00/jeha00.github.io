@@ -9,7 +9,35 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Feb 2022 02:26:36 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 18:51:39 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 3: 숫자형 데이터</title>
+      <link>http://jeha00.github.io/post/python_basic_3/</link>
+      <pubDate>Mon, 28 Feb 2022 18:51:39 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_3/</guid>
+      <description>python의 자료형 종류에는 무엇이 있는지 알아보고, 숫자형 데이터 타입의 선언, 연산, 그리고 형 변환에 대해 중점적으로 알아보겠다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 2: print 사용법</title>
+      <link>http://jeha00.github.io/post/python_basic_2/</link>
+      <pubDate>Mon, 28 Feb 2022 18:50:13 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_2/</guid>
+      <description>Intro   기본 출력 String 문자열 출력 Integer 정수형 출력 Float 실수형 출력   formatting을 하면 특정 케이스에 원하는 형식대로 출력할 수 있고, 가독성이 높아진다.
+1. 기본 출력 1.1 Escape 코드 \n: 개행 \t: 탭 \\: 문자 \&amp;#39;: 문자 \&amp;#34;: 문자 \000: 널 문자 1.2 기본 출력  &#39;&#39; 또는 &amp;quot;&amp;quot; 를 자주 사용한다.  &amp;gt; print(&amp;#39;JeHa start!&amp;#39;) &amp;gt; print(&amp;#34;JeHa start!&amp;#34;) &amp;gt; print() &amp;gt; print(&amp;#39;&amp;#39;&amp;#39;JeHa start!&amp;#39;&amp;#39;&amp;#39;) &amp;gt; print(&amp;#39;&amp;#39;) &amp;gt; print(&amp;#34;&amp;#34;&amp;#34;JeHa start!</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 1 변수 선언</title>
+      <link>http://jeha00.github.io/post/python_basic_1/</link>
+      <pubDate>Mon, 28 Feb 2022 18:47:51 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_1/</guid>
+      <description>Intro   변수 할당 설명 Object Identity 변수 네이밍 선언방법과 예약어    1. 변수 할당 설명 1.1 기본 선언  다른 프로그래밍 언어는 변수 타입을 정하고 나서 값을 할당한다. 반면에, Python은 값을 정하고 나서 변수 타입을 알아서 할당해준다. 이 변수를 할당한다는 건 물리적으로 즉, 컴퓨터 내부적으로 컴퓨터 메모리의 일부를 할당하는 의미로, &amp;lsquo;고유 주소&amp;rsquo;가 지정된다는 걸 의미한다. 이 &amp;lsquo;고유 주소&amp;rsquo;는 id 라는 명령어로 확인할 수 있다. 함수 id: 객체(object)의 고유값 id(identity) 을 확인  # 700이라는 int type의 data를 n에 할당한다.</description>
+    </item>
+    
     <item>
       <title>Monthly Memoirs 작성 이유와 규칙</title>
       <link>http://jeha00.github.io/post/monthly-memoirs/</link>
