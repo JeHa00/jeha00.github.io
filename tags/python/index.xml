@@ -25,7 +25,7 @@
       <pubDate>Mon, 28 Feb 2022 18:50:13 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/python_basic_2/</guid>
-      <description>1. 기본 출력 1.1 Escape 코드 \n: 개행 \t: 탭 \\: 문자 \&amp;#39;: 문자 \&amp;#34;: 문자 \000: 널 문자 1.2 기본 출력  &#39;&#39; 또는 &amp;quot;&amp;quot; 를 자주 사용한다.  &amp;gt; print(&amp;#39;JeHa start!&amp;#39;) &amp;gt; print(&amp;#34;JeHa start!&amp;#34;) &amp;gt; print() &amp;gt; print(&amp;#39;&amp;#39;&amp;#39;JeHa start!&amp;#39;&amp;#39;&amp;#39;) &amp;gt; print(&amp;#39;&amp;#39;) &amp;gt; print(&amp;#34;&amp;#34;&amp;#34;JeHa start!&amp;#34;&amp;#34;&amp;#34;) # 아무것도 출력되지 않는다. &amp;gt; print(&amp;#39;&amp;#39;) &amp;gt; print()  결과는 다음과 같다.  JeHa start! JeHa start! JeHa start! JeHa start! 1.3 Separator 옵션  여러 data를 열거하여 출력할 때, 각 data 사이 사이를 분리할 string을 입력할 수 있다.</description>
+      <description>stirng type, numeric type을 print를 사용한 출력 방식을 알아보겠다.</description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@
       <pubDate>Mon, 28 Feb 2022 18:47:51 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/python_basic_1/</guid>
-      <description>1. 변수 할당 설명 1.1 기본 선언  다른 프로그래밍 언어는 변수 타입을 정하고 나서 값을 할당한다. 반면에, Python은 값을 정하고 나서 변수 타입을 알아서 할당해준다. 이 변수를 할당한다는 건 물리적으로 즉, 컴퓨터 내부적으로 컴퓨터 메모리의 일부를 할당하는 의미로, &amp;lsquo;고유 주소&amp;rsquo;가 지정된다는 걸 의미한다. 이 &amp;lsquo;고유 주소&amp;rsquo;는 id 라는 명령어로 확인할 수 있다. 함수 id: 객체(object)의 고유값 id(identity) 을 확인  # 700이라는 int type의 data를 n에 할당한다. &amp;gt; n = 700 # &amp;#39;n&amp;#39;이라는 변수의 data type을 확인해보자.</description>
+      <description>기본적인 선언 방법과 동시 선언, 재선언을 알아본다. 그리고 각 선언에 따른 id 값을 확인하여 파이썬 내부 원리를 이해한다.</description>
     </item>
     
   </channel>
