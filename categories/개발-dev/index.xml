@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 28 Feb 2022 19:45:30 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Feb 2022 19:49:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 5: list</title>
+      <link>http://jeha00.github.io/post/python_basic_5/</link>
+      <pubDate>Mon, 28 Feb 2022 19:49:04 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_5/</guid>
+      <description>list의 생성, indexing, slicing, 연산, list에 쓰이는 함수 그리고, list를 수정하고 삭제하는 방법에 대해 알아보겠다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 4: string data type</title>
       <link>http://jeha00.github.io/post/python_basic_4/</link>
