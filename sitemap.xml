@@ -2,28 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/post/python_basic_10/</loc>
-    <lastmod>2022-03-01T11:53:00+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/python_basic_15/</loc>
+    <lastmod>2022-03-02T00:51:30+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-03-01T11:53:00+09:00</lastmod>
+    <lastmod>2022-03-02T00:51:30+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-03-01T11:53:00+09:00</lastmod>
+    <lastmod>2022-03-02T00:51:30+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-03-01T11:53:00+09:00</lastmod>
+    <lastmod>2022-03-02T00:51:30+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/python/</loc>
-    <lastmod>2022-03-01T11:53:00+09:00</lastmod>
+    <lastmod>2022-03-02T00:51:30+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-03-01T11:53:00+09:00</lastmod>
+    <lastmod>2022-03-02T00:51:30+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
-    <lastmod>2022-03-01T11:53:00+09:00</lastmod>
+    <lastmod>2022-03-02T00:51:30+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev/</loc>
+    <lastmod>2022-03-02T00:51:30+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/python_basic_14/</loc>
+    <lastmod>2022-03-02T00:51:20+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/python_basic_13/</loc>
+    <lastmod>2022-03-02T00:51:00+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/python_basic_12/</loc>
+    <lastmod>2022-03-02T00:50:00+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/python_basic_11/</loc>
+    <lastmod>2022-03-02T00:49:59+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/python_basic_10/</loc>
     <lastmod>2022-03-01T11:53:00+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/python_basic_9/</loc>

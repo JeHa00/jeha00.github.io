@@ -9,7 +9,52 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 01 Mar 2022 11:53:00 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Mar 2022 00:51:30 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 15: module</title>
+      <link>http://jeha00.github.io/post/python_basic_15/</link>
+      <pubDate>Wed, 02 Mar 2022 00:51:30 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_15/</guid>
+      <description>Module이란 무엇인지, Module을 어떻게 사용하는지, Module 관련 함수에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 14: python class</title>
+      <link>http://jeha00.github.io/post/python_basic_14/</link>
+      <pubDate>Wed, 02 Mar 2022 00:51:20 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_14/</guid>
+      <description>OOP의 의미가 무엇인지, Class와 Instance의 차이, self가 무엇을 의미하는지, class variable과 instance variable에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 13: input</title>
+      <link>http://jeha00.github.io/post/python_basic_13/</link>
+      <pubDate>Wed, 02 Mar 2022 00:51:00 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_13/</guid>
+      <description>input을 통한 사용자 입력과 형 변환(type conversion) 입력을 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 12: Method</title>
+      <link>http://jeha00.github.io/post/python_basic_12/</link>
+      <pubDate>Wed, 02 Mar 2022 00:50:00 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_12/</guid>
+      <description>함수의 중요성 및 선언, Packing &amp;amp; Unpacking, 중첩 함수(Nested function), 람바 함사(익명 함수), 함수 Type hint 에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 11: 흐름 제어문 (while 반복문)</title>
+      <link>http://jeha00.github.io/post/python_basic_11/</link>
+      <pubDate>Wed, 02 Mar 2022 00:49:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_11/</guid>
+      <description>While 반복문의 기본 사용, break &amp;amp; continue 문, While ~ else 구문, 무한 반복 구문에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 10: 흐름 제어문 (for 반복문)</title>
       <link>http://jeha00.github.io/post/python_basic_10/</link>
