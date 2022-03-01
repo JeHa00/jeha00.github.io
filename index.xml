@@ -118,6 +118,15 @@
       <description>SSG의 한 종류 &amp;lsquo;Hugo&amp;rsquo;와 &amp;lsquo;git remote, git submodule&amp;rsquo;로 Github page를 만든다. 그 후, 컨텐츠 생성과 업로드를 한다. 마지막으로 utterances로 댓글 기능 추가, deploy.sh를 사용하여 업로드하는 방법을 다룬다.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://jeha00.github.io/post/tilpython_basic_11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://jeha00.github.io/post/tilpython_basic_11/</guid>
+      <description></description>
+    </item>
+    
     
     
   </channel>
