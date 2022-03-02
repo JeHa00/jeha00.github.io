@@ -9,7 +9,43 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 02 Mar 2022 00:51:30 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Mar 2022 01:34:00 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 17: external functions</title>
+      <link>http://jeha00.github.io/post/python_basic_19_external_functions/</link>
+      <pubDate>Thu, 03 Mar 2022 01:34:00 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_19_external_functions/</guid>
+      <description>외장 함수를 실행하는 방법과 외장 함수의 여러 종류들을 알아보겠다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 17: built-in functions</title>
+      <link>http://jeha00.github.io/post/python_basic_18_built_in_fuctions/</link>
+      <pubDate>Thu, 03 Mar 2022 01:33:46 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_18_built_in_fuctions/</guid>
+      <description>내장 함수란 프로그래밍 언어의 라이브러리에(파이썬의 인터프리터에) 이미 등록되어 있는 함수를 말한다. 그래서 별도의 정의나 설치가 필요없다. 외장 내장 구분하는 건 중요하지 않고, 필요한 곳에 이미 파이썬에 내장된 함수를 찾아서 프로그램을 개발할 때, 적합한 어떤 위치에서 사용하는 게 중요하다. 예시를 사용하여 내장함수에 대해 알아보겠다. 아래에 예시로 사용하는 내장함수는 반드시 알고 있자.   abs(): 입력된 숫자형 데이터를 절대값으로 반환해주는 함수  &amp;gt; print(abs(-3)) 3  all() , any: interable 요소를 검사하여 성분이 참인지 거짓인지 검사하는 함수 (True or False) all() 은 안에 있는 요소가 논리 연산자 and처럼 다 True여야 True를 반환한다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 17: try ~ exception</title>
+      <link>http://jeha00.github.io/post/python_basic_17_try_exception/</link>
+      <pubDate>Thu, 03 Mar 2022 01:33:28 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_17_try_exception/</guid>
+      <description>Error의 종류와 예외 처리문에 대해 알아보고, 일부러 에러를 일으키는 이유와 방법에 대해 알아보겠다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 16: package</title>
+      <link>http://jeha00.github.io/post/python_basic_16/</link>
+      <pubDate>Thu, 03 Mar 2022 01:32:28 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_16/</guid>
+      <description>package란 무엇인지, package의 경로와 함수를 어떻게 실행하는지, &lt;strong&gt;init&lt;/strong&gt;.py가 존재하는 이유에 대해 알아보겠다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 15: module</title>
       <link>http://jeha00.github.io/post/python_basic_15/</link>

@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Posts | Jeha00 DevLog</title>
-<meta name=keywords content>
-<meta name=description content="Posts - Jeha00 DevLog">
+<title>Jeha00 DevLog</title>
+<meta name=keywords content="Blog,Portfolio,PaperMod">
+<meta name=description content="선한 마음과 꾸준함이 비범함을 만든다">
 <meta name=author content="Jeha00">
-<link rel=canonical href=http://jeha00.github.io/post/>
+<link rel=canonical href=http://jeha00.github.io/>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
@@ -20,20 +20,21 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.92.1">
-<link rel=alternate type=application/rss+xml href=http://jeha00.github.io/post/index.xml>
+<link rel=alternate type=application/rss+xml href=http://jeha00.github.io/index.xml>
+<link rel=alternate type=application/json href=http://jeha00.github.io/index.json>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="Posts">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="Jeha00 DevLog">
 <meta property="og:description" content="선한 마음과 꾸준함이 비범함을 만든다">
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://jeha00.github.io/post/"><meta property="og:image" content="http://jeha00.github.io/47"><meta property="og:site_name" content="JeHa00 DevLog">
+<meta property="og:url" content="http://jeha00.github.io/"><meta property="og:image" content="http://jeha00.github.io/47"><meta property="og:site_name" content="JeHa00 DevLog">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="http://jeha00.github.io/47">
-<meta name=twitter:title content="Posts">
+<meta name=twitter:title content="Jeha00 DevLog">
 <meta name=twitter:description content="선한 마음과 꾸준함이 비범함을 만든다">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"Jeha00 DevLog","url":"http://jeha00.github.io/","description":"선한 마음과 꾸준함이 비범함을 만든다","thumbnailUrl":"http://jeha00.github.io/favicon.ico","sameAs":["https://github.com/jeha00","https://stackoverflow.com"]}</script>
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -71,68 +72,20 @@
 </nav>
 </header>
 <main class=main>
-<header class=page-header><div class=breadcrumbs><a href=http://jeha00.github.io/>Home</a></div>
-<h1>Posts</h1>
-</header>
 <article class=post-entry>
 <header class=entry-header>
-<h2>[TIL] Python basic 14: class
+<h2>Window에서 Hugo로 Github page 만들고 배포하기
 </h2>
 </header>
 <section class=entry-content>
-<p>OOP의 의미가 무엇인지, Class와 Instance의 차이가 무엇인지, self가 무엇을 의미하는지, class variable과 instance variable에 대해 알아본다.</p>
+<p>SSG의 한 종류 ‘Hugo’와 ‘git remote, git submodule’로 Github page를 만든다. 그 후, 컨텐츠 생성과 업로드를 한다. 마지막으로 utterances로 댓글 기능 추가, deploy.sh를 사용하여 업로드하는 방법을 다룬다.</p>
 </section>
-<footer class=entry-footer><span title="2022-03-02 00:51:20 +0900 KST">March 2, 2022</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Jeha00</footer>
-<a class=entry-link aria-label="post link to [TIL] Python basic 14: class" href=http://jeha00.github.io/post/python_basic_14/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>[TIL] Python basic 13: input
-</h2>
-</header>
-<section class=entry-content>
-<p>input을 통한 사용자 입력과 형 변환(type conversion) 입력을 알아본다.</p>
-</section>
-<footer class=entry-footer><span title="2022-03-02 00:51:00 +0900 KST">March 2, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jeha00</footer>
-<a class=entry-link aria-label="post link to [TIL] Python basic 13: input" href=http://jeha00.github.io/post/python_basic_13/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>[TIL] Python basic 12: Method
-</h2>
-</header>
-<section class=entry-content>
-<p>함수의 중요성 및 선언, Packing & Unpacking, 중첩 함수(Nested function), 람바 함사(익명 함수), 함수 Type hint 에 대해 알아본다.</p>
-</section>
-<footer class=entry-footer><span title="2022-03-02 00:50:00 +0900 KST">March 2, 2022</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;Jeha00</footer>
-<a class=entry-link aria-label="post link to [TIL] Python basic 12: Method" href=http://jeha00.github.io/post/python_basic_12/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>[TIL] Python basic 11: 흐름 제어문 (while 반복문)
-</h2>
-</header>
-<section class=entry-content>
-<p>While 반복문의 기본 사용법, break & continue 문, While ~ else 구문, 무한 반복 구문에 대해 알아본다.</p>
-</section>
-<footer class=entry-footer><span title="2022-03-02 00:49:59 +0900 KST">March 2, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jeha00</footer>
-<a class=entry-link aria-label="post link to [TIL] Python basic 11: 흐름 제어문 (while 반복문)" href=http://jeha00.github.io/post/python_basic_11/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>[TIL] Python basic 10: 흐름 제어문 (for 반복문)
-</h2>
-</header>
-<section class=entry-content>
-<p>for ~ range의 3가지 pattern, for문에 interable 자료형 활용하기, break 문과 continue 문 사용하기, for ~ else 구문에 대해 알아본다.</p>
-</section>
-<footer class=entry-footer><span title="2022-03-01 11:53:00 +0900 KST">March 1, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Jeha00</footer>
-<a class=entry-link aria-label="post link to [TIL] Python basic 10: 흐름 제어문 (for 반복문)" href=http://jeha00.github.io/post/python_basic_10/></a>
+<footer class=entry-footer><span title="2022-02-17 21:49:13 +0900 KST">February 17, 2022</span>&nbsp;·&nbsp;11 min&nbsp;·&nbsp;Jeha00</footer>
+<a class=entry-link aria-label="post link to Window에서 Hugo로 Github page 만들고 배포하기" href=http://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
-<a class=prev href=http://jeha00.github.io/post/>« Prev Page</a>
-<a class=next href=http://jeha00.github.io/post/page/3/>Next Page »</a>
+<a class=prev href=http://jeha00.github.io/page/4/>« Prev Page</a>
 </nav>
 </footer>
 </main>
