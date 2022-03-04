@@ -16,7 +16,7 @@
       <pubDate>Fri, 04 Mar 2022 14:31:38 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/python_basic_21_filereadwrite_2/</guid>
-      <description>with open as 를 사용하여 외부 csv 파일을 읽고, 쓰는 방법을 알아보자.</description>
+      <description>with open() as 를 사용하여 외부 csv 파일을 읽고, 쓰는 방법을 알아보자.</description>
     </item>
     
     <item>
