@@ -9,16 +9,7 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 04 Mar 2022 14:32:38 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[TIL] Python basic 20: with open as</title>
-      <link>http://jeha00.github.io/post/python_basic_20_filewriteread_1/</link>
-      <pubDate>Fri, 04 Mar 2022 14:32:38 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/python_basic_20_filewriteread_1/</guid>
-      <description>with open() as 함수를 사용해서 외부 파일을 읽고, 작성하는 방법을 알아보겠다.</description>
-    </item>
-    
+    <lastBuildDate>Fri, 04 Mar 2022 14:31:38 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TIL] Python basic 21: csv.read, write</title>
       <link>http://jeha00.github.io/post/python_basic_21_filereadwrite_2/</link>
@@ -26,6 +17,15 @@
       
       <guid>http://jeha00.github.io/post/python_basic_21_filereadwrite_2/</guid>
       <description>with open as 를 사용하여 외부 csv 파일을 읽고, 쓰는 방법을 알아보자.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 20: with open as</title>
+      <link>http://jeha00.github.io/post/python_basic_20_filewriteread_1/</link>
+      <pubDate>Fri, 04 Mar 2022 14:30:38 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic_20_filewriteread_1/</guid>
+      <description>with open() as 함수를 사용해서 외부 파일을 읽고, 작성하는 방법을 알아보겠다.</description>
     </item>
     
     <item>
