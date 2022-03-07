@@ -12,208 +12,208 @@
     <lastBuildDate>Mon, 07 Mar 2022 21:16:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TIL] Network HTTP introduction 1</title>
-      <link>http://jeha00.github.io/post/network_http_1/</link>
+      <link>http://jeha00.github.io/post/network/network_http_1/</link>
       <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network_http_1/</guid>
+      <guid>http://jeha00.github.io/post/network/network_http_1/</guid>
       <description>HTTP가 무엇인지 설명하기 위해 IP,TCP/UDP, PORT, DNS를 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 22: NoneTypeError</title>
-      <link>http://jeha00.github.io/post/python_basic_22_nonetypeerror/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_22_nonetypeerror/</link>
       <pubDate>Sat, 05 Mar 2022 23:47:54 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_22_nonetypeerror/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_22_nonetypeerror/</guid>
       <description>Python basic 과정을 마치고, 간단한 프로젝트로 Hangman game을 만들었다. 그 과정에서 NoneTypeError가 발생했다. &amp;lsquo;TypeError:&amp;lsquo;NoneType&amp;rsquo; object is not subscriptable&amp;rsquo; 에 대해 알아보자.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 21: csv.read, write</title>
-      <link>http://jeha00.github.io/post/python_basic_21_filereadwrite_2/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_21_filereadwrite_2/</link>
       <pubDate>Fri, 04 Mar 2022 14:31:38 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_21_filereadwrite_2/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_21_filereadwrite_2/</guid>
       <description>with open() as 를 사용하여 외부 csv 파일을 읽고, 쓰는 방법을 알아보자.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 20: with open as</title>
-      <link>http://jeha00.github.io/post/python_basic_20_filewriteread_1/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_20_filewriteread_1/</link>
       <pubDate>Fri, 04 Mar 2022 14:30:38 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_20_filewriteread_1/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_20_filewriteread_1/</guid>
       <description>with open() as 함수를 사용해서 외부 파일을 읽고, 작성하는 방법을 알아보겠다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 19: external functions</title>
-      <link>http://jeha00.github.io/post/python_basic_19_external_functions/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_19_external_functions/</link>
       <pubDate>Thu, 03 Mar 2022 01:34:00 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_19_external_functions/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_19_external_functions/</guid>
       <description>외장 함수를 실행하는 방법과 외장 함수의 여러 종류들을 알아보겠다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 18: built-in functions</title>
-      <link>http://jeha00.github.io/post/python_basic_18_built_in_fuctions/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_18_built_in_fuctions/</link>
       <pubDate>Thu, 03 Mar 2022 01:33:46 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_18_built_in_fuctions/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_18_built_in_fuctions/</guid>
       <description>내장 함수란 무엇이고, 내장 함수에서 자주 사용된 것들로 실습을 해보겠다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 17: try ~ exception</title>
-      <link>http://jeha00.github.io/post/python_basic_17_try_exception/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_17_try_exception/</link>
       <pubDate>Thu, 03 Mar 2022 01:33:28 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_17_try_exception/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_17_try_exception/</guid>
       <description>Error의 종류와 예외 처리문에 대해 알아보고, 일부러 에러를 일으키는 이유와 방법에 대해 알아보겠다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 16: package</title>
-      <link>http://jeha00.github.io/post/python_basic_16/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_16/</link>
       <pubDate>Thu, 03 Mar 2022 01:32:28 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_16/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_16/</guid>
       <description>package란 무엇인지, package의 경로와 함수를 어떻게 실행하는지, &lt;strong&gt;init&lt;/strong&gt;.py가 존재하는 이유에 대해 알아보겠다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 15: module</title>
-      <link>http://jeha00.github.io/post/python_basic_15/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_15/</link>
       <pubDate>Wed, 02 Mar 2022 00:51:30 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_15/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_15/</guid>
       <description>Module이란 무엇인지, Module을 어떻게 사용하는지, Module 관련 함수에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 14: class</title>
-      <link>http://jeha00.github.io/post/python_basic_14/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_14/</link>
       <pubDate>Wed, 02 Mar 2022 00:51:20 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_14/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_14/</guid>
       <description>OOP의 의미가 무엇인지, Class와 Instance의 차이가 무엇인지, self가 무엇을 의미하는지, class variable과 instance variable에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 13: input</title>
-      <link>http://jeha00.github.io/post/python_basic_13/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_13/</link>
       <pubDate>Wed, 02 Mar 2022 00:51:00 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_13/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_13/</guid>
       <description>input을 통한 사용자 입력과 형 변환(type conversion) 입력을 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 12: Method</title>
-      <link>http://jeha00.github.io/post/python_basic_12/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_12/</link>
       <pubDate>Wed, 02 Mar 2022 00:50:00 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_12/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_12/</guid>
       <description>함수의 중요성 및 선언, Packing &amp;amp; Unpacking, 중첩 함수(Nested function), 람바 함사(익명 함수), 함수 Type hint 에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 11: 흐름 제어문 (while 반복문)</title>
-      <link>http://jeha00.github.io/post/python_basic_11/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_11/</link>
       <pubDate>Wed, 02 Mar 2022 00:49:59 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_11/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_11/</guid>
       <description>While 반복문의 기본 사용법, break &amp;amp; continue 문, While ~ else 구문, 무한 반복 구문에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 10: 흐름 제어문 (for 반복문)</title>
-      <link>http://jeha00.github.io/post/python_basic_10/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_10/</link>
       <pubDate>Tue, 01 Mar 2022 11:53:00 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_10/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_10/</guid>
       <description>for ~ range의 3가지 pattern, for문에 interable 자료형 활용하기, break 문과 continue 문 사용하기, for ~ else 구문에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 9: 흐름 제어문 (if 조건문)</title>
-      <link>http://jeha00.github.io/post/python_basic_9/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_9/</link>
       <pubDate>Tue, 01 Mar 2022 11:52:55 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_9/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_9/</guid>
       <description>조건문의 기본 형식, 연산자를 통해서 제어하는 방법, 참거짓을 의미하는 값들, 다중 및 중첩 조건문, in &amp;amp; not in 으로 제어하는 방법을 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 8: set</title>
-      <link>http://jeha00.github.io/post/python_basic_8/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_8/</link>
       <pubDate>Tue, 01 Mar 2022 11:52:52 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_8/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_8/</guid>
       <description>set 선언법, set type conversion, 집합 자료형 활용을 위한 함수, set type의 수정하기를 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 7: dictionary </title>
-      <link>http://jeha00.github.io/post/python_basic_7/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_7/</link>
       <pubDate>Tue, 01 Mar 2022 11:52:48 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_7/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_7/</guid>
       <description>dictionary type의 선언, 출력과 수정 그리고, dictionary에 사용되는 함수에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 6: tuple</title>
-      <link>http://jeha00.github.io/post/python_basic_6/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_6/</link>
       <pubDate>Tue, 01 Mar 2022 11:52:41 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_6/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_6/</guid>
       <description>list와 tuple의 차이. tuple의 indexing, slicing, 연산. 그리고, tuple의 중요한 특징 중 하나인 packing &amp;amp; unpacking에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 5: list</title>
-      <link>http://jeha00.github.io/post/python_basic_5/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_5/</link>
       <pubDate>Mon, 28 Feb 2022 19:49:04 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_5/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_5/</guid>
       <description>list의 생성, indexing, slicing, 연산, list에 쓰이는 함수 그리고, list를 수정하고 삭제하는 방법에 대해 알아보겠다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 4: string</title>
-      <link>http://jeha00.github.io/post/python_basic_4/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_4/</link>
       <pubDate>Mon, 28 Feb 2022 19:45:30 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_4/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_4/</guid>
       <description>string type의 생성부터 연산, len 함수 사용, type conversion, 문자형 함수 그리고 slicing을 알아보겠다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 3: numeric data</title>
-      <link>http://jeha00.github.io/post/python_basic_3/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_3/</link>
       <pubDate>Mon, 28 Feb 2022 18:51:39 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_3/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_3/</guid>
       <description>첫 번째, python의 자료형 종류에는 무엇이 있는지 알아본다. 두 번째, 숫자형 데이터 타입의 선언, 연산, 그리고 형 변환에 대해 중점적으로 알아보겠다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 2: print 사용법</title>
-      <link>http://jeha00.github.io/post/python_basic_2/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_2/</link>
       <pubDate>Mon, 28 Feb 2022 18:50:13 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_2/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_2/</guid>
       <description>첫 번째 print 함수를 사용할 때, separator와 end를 사용하여 다양하게 사용하는 것과 두 번째, stirng type, numeric type을 다양하게 출력을 해봄으로서 print 함수에 대해 이해해보겠다.</description>
     </item>
     
     <item>
       <title>[TIL] Python basic 1: 변수 선언</title>
-      <link>http://jeha00.github.io/post/python_basic_1/</link>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_1/</link>
       <pubDate>Mon, 28 Feb 2022 18:47:51 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic_1/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_1/</guid>
       <description>첫 번째, 기본적인 선언 방법과 동시 선언, 재선언을 알아본다. 두 번째, 각 선언에 따른 id 값을 확인하여 파이썬 내부 원리를 이해한다. 세 번째, 선언 방법의 종류인 Camel case, Pascal case, Snake case가 무엇인지 알아본다.</description>
     </item>
     
