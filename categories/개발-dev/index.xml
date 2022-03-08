@@ -9,14 +9,23 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 07 Mar 2022 21:16:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Mar 2022 11:50:46 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[TIL] Network HTTP introduction 1</title>
+      <title>[TIL] Network HTTP introduction 2: URI 와 웹 브라우저 요청 흐름</title>
+      <link>http://jeha00.github.io/post/network/network_http_2/</link>
+      <pubDate>Tue, 08 Mar 2022 11:50:46 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/network_http_2/</guid>
+      <description>URI, URL, URN 에 대해 알아보고, 웹 브라우저의 요청 흐름에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Network HTTP introduction 1: Internet network</title>
       <link>http://jeha00.github.io/post/network/network_http_1/</link>
       <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/network/network_http_1/</guid>
-      <description>HTTP가 무엇인지 설명하기 위해 IP,TCP/UDP, PORT, DNS를 알아본다.</description>
+      <description>HTTP를 학습하기 위해 사전지식으로 IP,TCP/UDP, PORT, DNS를 알아본다.</description>
     </item>
     
     <item>
