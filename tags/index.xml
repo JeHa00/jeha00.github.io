@@ -11,11 +11,47 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 07 Mar 2022 21:16:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>python</title>
-      <link>http://jeha00.github.io/tags/python/</link>
+      <title>DNS</title>
+      <link>http://jeha00.github.io/tags/dns/</link>
       <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/tags/python/</guid>
+      <guid>http://jeha00.github.io/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IP</title>
+      <link>http://jeha00.github.io/tags/ip/</link>
+      <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/ip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>http://jeha00.github.io/tags/network/</link>
+      <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PORT</title>
+      <link>http://jeha00.github.io/tags/port/</link>
+      <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/port/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCP</title>
+      <link>http://jeha00.github.io/tags/tcp/</link>
+      <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/tcp/</guid>
       <description></description>
     </item>
     
@@ -25,6 +61,15 @@
       <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
       
       <guid>http://jeha00.github.io/tags/til/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://jeha00.github.io/tags/python/</link>
+      <pubDate>Sat, 05 Mar 2022 23:47:54 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/python/</guid>
       <description></description>
     </item>
     
