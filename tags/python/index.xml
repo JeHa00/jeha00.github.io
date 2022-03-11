@@ -9,7 +9,40 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 05 Mar 2022 23:47:54 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Mar 2022 20:33:01 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 23:  if 
+_
+_name
+_
+_ == &#39;
+_
+_main
+_
+_&#39;</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_23_ifnamemain/</link>
+      <pubDate>Fri, 11 Mar 2022 20:33:01 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_23_ifnamemain/</guid>
+      <description>&#39;
+_
+_name
+_
+_&#39; 과 &#39;
+_
+_main
+_
+_&#39; 를 이해한 걸 바탕으로, if
+_
+_name
+_
+_ == &#39;
+_
+_main
+_
+_&#39; 에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 22: NoneTypeError</title>
       <link>http://jeha00.github.io/post/python_basic/python_basic_22_nonetypeerror/</link>

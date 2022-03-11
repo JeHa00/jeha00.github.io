@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>__name__ on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/tags/__name__/</link>
+    <description>Recent content in __name__ on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 11 Mar 2022 20:33:01 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/__name__/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 23:  if 
+_
+_name
+_
+_ == &#39;
+_
+_main
+_
+_&#39;</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_23_ifnamemain/</link>
+      <pubDate>Fri, 11 Mar 2022 20:33:01 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_23_ifnamemain/</guid>
+      <description>&#39;
+_
+_name
+_
+_&#39; 과 &#39;
+_
+_main
+_
+_&#39; 를 이해한 걸 바탕으로, if
+_
+_name
+_
+_ == &#39;
+_
+_main
+_
+_&#39; 에 대해 알아본다.</description>
+    </item>
+    
+  </channel>
+</rss>
