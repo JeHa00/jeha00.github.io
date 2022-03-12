@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 11 Mar 2022 20:33:01 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 23:16:27 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 24: Procedural Programming vs OOP</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_24_oop/</link>
+      <pubDate>Sat, 12 Mar 2022 23:16:27 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_24_oop/</guid>
+      <description>절차형 프로그래밍과 객체지향 프로그래밍 각 방식으로 작성하여 직접 차이를 느껴본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 23:  if 
 _
