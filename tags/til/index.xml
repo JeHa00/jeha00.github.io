@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 14 Mar 2022 21:41:29 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 10:14:50 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Network HTTP status</title>
+      <link>http://jeha00.github.io/post/network/network_http_6/</link>
+      <pubDate>Tue, 15 Mar 2022 10:14:50 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/network_http_6/</guid>
+      <description>HTTP status 2xx, 3xx, 4xx, 5xx에 대해 각각 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Network HTTP method use</title>
       <link>http://jeha00.github.io/post/network/network_http_5/</link>
