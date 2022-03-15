@@ -11,11 +11,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 14 Mar 2022 21:41:29 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>HTTP method</title>
-      <link>http://jeha00.github.io/tags/http-method/</link>
+      <title>HTTP</title>
+      <link>http://jeha00.github.io/tags/http/</link>
       <pubDate>Mon, 14 Mar 2022 21:41:29 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/tags/http-method/</guid>
+      <guid>http://jeha00.github.io/tags/http/</guid>
       <description></description>
     </item>
     
@@ -52,15 +52,6 @@
       <pubDate>Fri, 11 Mar 2022 20:33:01 +0900</pubDate>
       
       <guid>http://jeha00.github.io/tags/__name__/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTTP</title>
-      <link>http://jeha00.github.io/tags/http/</link>
-      <pubDate>Wed, 09 Mar 2022 17:56:30 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/tags/http/</guid>
       <description></description>
     </item>
     

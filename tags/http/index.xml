@@ -9,7 +9,25 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 09 Mar 2022 17:56:30 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Mar 2022 21:41:29 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Network HTTP method use</title>
+      <link>http://jeha00.github.io/post/network/network_http_5/</link>
+      <pubDate>Mon, 14 Mar 2022 21:41:29 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/network_http_5/</guid>
+      <description>HTTP method를 가지고 클라이언트가 서버에 어떻게 데이터를 전송하는지, 그리고 API 설계에는 무슨 종류가 있는지 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Network HTTP method</title>
+      <link>http://jeha00.github.io/post/network/network_http_4/</link>
+      <pubDate>Thu, 10 Mar 2022 20:32:24 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/network_http_4/</guid>
+      <description>HTTP method인 GET, POST, PUT, PATCH, DELETE 그리고 속성에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Network HTTP basic</title>
       <link>http://jeha00.github.io/post/network/network_http_3/</link>
