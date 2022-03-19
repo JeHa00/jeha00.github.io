@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 15 Mar 2022 10:14:50 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 21:51:01 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Network HTTP Header 2</title>
+      <link>http://jeha00.github.io/post/network/network_http_8/</link>
+      <pubDate>Fri, 18 Mar 2022 21:51:01 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/network_http_8/</guid>
+      <description>검증 헤더와 조건부 요청 헤더의 종류, 그중 캐시 관련 헤더에 대해서 알아본다. 그리고, 프록시 서버와 원(Origin) 서버의 차이와 캐시를 어떻게 무효화하는지 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Network HTTP status</title>
       <link>http://jeha00.github.io/post/network/network_http_6/</link>
