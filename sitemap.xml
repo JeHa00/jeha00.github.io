@@ -2,40 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/post/network/network_http_8/</loc>
-    <lastmod>2022-03-18T21:51:01+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_27_specialmethod/</loc>
+    <lastmod>2022-03-21T17:14:36+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
+    <lastmod>2022-03-21T17:14:36+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/</loc>
+    <lastmod>2022-03-21T17:14:36+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/</loc>
+    <lastmod>2022-03-21T17:14:36+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/python/</loc>
+    <lastmod>2022-03-21T17:14:36+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/</loc>
+    <lastmod>2022-03-21T17:14:36+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/til/</loc>
+    <lastmod>2022-03-21T17:14:36+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev/</loc>
+    <lastmod>2022-03-21T17:14:36+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/network/network_http_8/</loc>
     <lastmod>2022-03-18T21:51:01+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/http/</loc>
     <lastmod>2022-03-18T21:51:01+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-03-18T21:51:01+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/tags/network/</loc>
-    <lastmod>2022-03-18T21:51:01+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-03-18T21:51:01+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-03-18T21:51:01+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/til/</loc>
-    <lastmod>2022-03-18T21:51:01+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev/</loc>
     <lastmod>2022-03-18T21:51:01+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/network/network_http_7/</loc>
     <lastmod>2022-03-17T20:17:50+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/python_basic/python_basic_26_class2/</loc>
-    <lastmod>2022-03-16T14:28:39+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/python/</loc>
     <lastmod>2022-03-16T14:28:39+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/network/network_http_6/</loc>

@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 18 Mar 2022 21:51:01 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Mar 2022 17:14:36 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 27: Special Method</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_27_specialmethod/</link>
+      <pubDate>Mon, 21 Mar 2022 17:14:36 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_27_specialmethod/</guid>
+      <description>지난 번 Python basic 26 Class advanced에 이어서 class 안에 정의되는 built-in method인 special method에 대해 알아보자.</description>
+    </item>
+    
     <item>
       <title>[TIL] Network HTTP Header 2</title>
       <link>http://jeha00.github.io/post/network/network_http_8/</link>
