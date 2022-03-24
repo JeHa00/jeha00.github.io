@@ -16,7 +16,7 @@
       <pubDate>Wed, 23 Mar 2022 23:24:24 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/python_basic/python_basic_29_datamodel/</guid>
-      <description>Python data model을 상세히 분류하여 list, tuple, dictionary, set에 대해 각각 조금 더 깊이 알아보자.</description>
+      <description>Python data model을 상세히 분류하여 mutable과 immutable의 차이가 무엇인지,  list comprehension이 무엇인지, unpacking을 tuple에 어떻게 구현하는지, immutable dictionary와 set에 대해 조금 더 깊이 알아보자.</description>
     </item>
     
     <item>
