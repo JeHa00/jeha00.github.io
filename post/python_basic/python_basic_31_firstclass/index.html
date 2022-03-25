@@ -1,0 +1,512 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>[TIL] Python basic 31: First-class | Jeha00 DevLog</title>
+<meta name=keywords content="TIL,python">
+<meta name=description content="일급 함수(일급 객체, first-class)란 무엇인지 알고, 일급 함수의 예인 lambda function, Callable, Partial에 대해 알아본다.  그리고 추가적으로 Signature에 대해 간단히 알아본다.">
+<meta name=author content="Jeha00">
+<link rel=canonical href=http://jeha00.github.io/post/python_basic/python_basic_31_firstclass/>
+<meta name=google-site-verification content="XYZabc">
+<meta name=yandex-verification content="XYZabc">
+<meta name=msvalidate.01 content="XYZabc">
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=http://jeha00.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=http://jeha00.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=http://jeha00.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.92.1">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="[TIL] Python basic 31: First-class">
+<meta property="og:description" content="일급 함수(일급 객체, first-class)란 무엇인지 알고, 일급 함수의 예인 lambda function, Callable, Partial에 대해 알아본다.  그리고 추가적으로 Signature에 대해 간단히 알아본다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://jeha00.github.io/post/python_basic/python_basic_31_firstclass/"><meta property="og:image" content="http://jeha00.github.io/47"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2022-03-25T20:42:59+09:00">
+<meta property="article:modified_time" content="2022-03-25T20:42:59+09:00"><meta property="og:site_name" content="JeHa00 DevLog">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="http://jeha00.github.io/47">
+<meta name=twitter:title content="[TIL] Python basic 31: First-class">
+<meta name=twitter:description content="일급 함수(일급 객체, first-class)란 무엇인지 알고, 일급 함수의 예인 lambda function, Callable, Partial에 대해 알아본다.  그리고 추가적으로 Signature에 대해 간단히 알아본다.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 31: First-class","item":"http://jeha00.github.io/post/python_basic/python_basic_31_firstclass/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 31: First-class","name":"[TIL] Python basic 31: First-class","description":"일급 함수(일급 객체, first-class)란 무엇인지 알고, 일급 함수의 예인 lambda function, Callable, Partial에 대해 알아본다.  그리고 추가적으로 Signature에 대해 간단히 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  이번 시간에 배울 내용은 특히 더 중요하다. 이번 시간에는 일급 객체라고도 불리는 일급 함수에 대해 알아보겠다. 그 후, 일급 함수의 예인 lambda, callable, partial에 대해 알아본다.   1. 일급 함수(first-class)란??   일급 함수(일급 객체, first-clss)란??  객체 취급되는 함수   다음 4가지 특징을 가지는 함수를 말한다.    런타임 초기화: 실행 시점에서 초기화한다.    함수를 변수에 할당 가능하다.    함수를 인수로 전달 가능하다. (Higher - order function의 첫 번째 특징)    함수를 결과값으로서 반환 가능하다. (Higher - order function의 첫 번째 특징)         위 일급 함수의 특징들은 파이썬 함수의 특징이라고 할 수 있다.\n  그러면 first-class는 왜 중요한가??\n 일급함수를 알아야 함수형 프로그래밍 을 할 수 있기 때문이다. 함수형 프로그래밍이란?? side effect를 허용하지 않는 순수 함수(pure function)을 지향하여 동시에 여러 thread에서 문제 없이 동작하는 프로그램을 쉽게 작성할 수 있다.    이러한 이유로 일급 함수에 대해 알아보자.\n  일급 함수가 가지는 특징을 모두 예제로 구현해볼 것이다.\n  1.1 객체 취급되는 함수   객체란 무엇인가???\n [TIL] Python basic 14: class에 따르면 소프트웨어로 구현할 대상이라 했다.    하지만 파이썬 내부에서의 객체의 정의와 특징은 무엇일까???\n  파이썬이 data를 추상화(abstraction)한 것을 말하며,\n  id(identity), type(형) 그리고, value(값)을 가지는 걸 말 한다.\n  파이썬의 모든 데이터는 객체나 객체 간의 관계로 표현된다.\n  객체의 id는 메모리 상에서 객체의 주소를 말한다.\n  또한, id는 한 번 만들어진 후에는 변경되지 않는다.\n from 데이터 모델: 객체    attribute란 객체와 결합한 값(value)를 말한다.\n 용어집 - python 3.10.4      함수 객체 : 함수처럼 행동하는 객체\n from 함수 객체의 장점    그럼 코드 상에서 확인해보자.\n   def factorial(n):  ```Factorial Function - n : int ```  if n == 1:  return 1   # 이렇게 함수 내에서 함수를 호출하는 걸 재귀함수라 한다.  return n * factorial(n-1)  class A:  pass  print(factorial(6)) 720 # 함수 comment 출력  print(factorial.__doc__) Factorial Function - n : int  print(type(factorial), type(A)) ,   print(id(factorial)) id - 2416266045904 # dir은 객체가 가지고 있는 속성(attribute)를 출력하는 함수다.  print(dir(factorial)) ['__annotations__', '__call__', '__class__', '__closure__', '__code__', '__defaults__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__get__', '__getattribute__', '__globals__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__kwdefaults__', '__le__', '__lt__', '__module__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__'] # class와 동일하게 가지는 속성들을 빼서 함수만 가진 속성들을 확인할 수도 있다.  print(set(sorted(dir(factorial))) - set(sorted(dir(A))) {'__call__', '__defaults__', '__closure__', '__kwdefaults__', '__code__', '__globals__', '__name__', '__get__', '__annotations__', '__qualname__'} # 함수의 이름을 알려준다.  print(factorial.__name__) factorial # type과 위치, 코드의 몇 번째 줄인지를 알려준다.  print(factorial.__code__)  1.2 변수로 할당되는 함수  함수 또한 객체로 취급되는 걸 확인했다. 다음으로 이 함수가 변수에 할당되는지 확인해보자.  # 1.1 코드와 이어진다. # 변수에 할당  var_func = factorial  print(var_func)   print(var_func(10)) 3628800  변수에 할당되어 여러 함수에 사용될 수 있다는 걸 확인했다.  1.3 고위 함수의 두 가지 특징   Higher - order function (고위함수)의 특징    함수를 인수로 전달 가능하다.    함수를 결과값으로서 반환 가능하다.         고위 함수의 대표적인 예로는 map, filter, reduce, lambda 등이 있다.\n  그러면 코드로 확인해보자.\n  ## range 함수로 iterator를 만들고, iteraotr의 각 성분들이 vap_func의 인자로 넘어간다. # 다음처럼 object로 출력된다면 type conversion을 해야 한다. # map 함수의 인자로 전달 가능하다.  print(map(vap_func, range(1,6)))   print(list(map(vap_func, range(1,6)))) [1, 2, 6, 24, 120] # var_func 을 결과값으로 반환 가능하다.  print(list(map(var_func, filter(lambda x: x % 2, range(1,6))))) [1, 6, 120] # 위와 동일한 출력값을 갖는다. 하지만, 가독성이 더 좋다.  print([var_func(i) for i in range(1, 6) if i % 2]) [1, 6, 120]  reduce : 여러 원소를 하나의 원소로 줄이기 위해, 왼쪽에서부터 오른쪽 방향으로 축적하며 함수를 적용해간다.  ## reduce  from functools import reduce  from operator import add  print(list(range(1,11))) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] # 인수 하나 하나를 줄여나가면서 더해가는 함수  print(reduce(add, range(1, 11))) # 하지만 reduce는 잘 사용하지 않고, sum을 사용한다.  print(sum(range(1, 11)))  2. 익명 함수(lambda)  이름 없는 함수로, 익명 함수다. 그래서 익명 함수가 복잡할 때, 주석을 사용해야 한다. 하지만, 되도록 함수를 만들어서 사용하자. 일반 함수 형태로 refactoring을 권장한다.\n  print(reduce(lambda x, t : x + t, range(1,11))) 55  3. Callable 설명   callable이란?? 호출 연산자로, 인자가 호출 가능한지 확인하는 함수    호출한다는 건 무슨 의미일까???  # 아래 예시처럼 함수를 불러와서 사용할 수 있는 걸 의미한다.  str(3)  var_func(5) # 하지만 다음 같은 경우는 호출할 수 없는 함수다.  3.14(334)  이를 callable로 확인해보자.   print(callable(str), callable(list), callable(var_func), callable(3.14)) True True True False  3.14는 호출할 수 없다는 걸 callable을 통해 간단히 확인했다.   4. Partial 사용법   인수를 고정할 때 사용하는 함수로, 콜백 함수에 사용한다. 매우 중요하다.    코드로 알아보자.   from operator import mul  from functools import partial # mul은 multiply의 약어다.  print(mul(10, 10)) 100 # 그러면 인수 하나를 고정하여, 함수를 변수에 할당하자.  five = partial(mul, 5)  print(five(10)) 50 # 한 번도 고정한다면??  six = partial(five, 6)  print(six()) 60  5. Signature   signature(callable, *, follow_wrapped=True)  인자로 callable을 취하고, annotation을 반환한다.      signature 함수는 inspect module에서 import한다. inspect module은  모듈은 모듈, 클래스, 메서드, 함수, 트레이스백, 프레임 객체 및 코드 객체와 같은\n라이브 객체에 대한 정보를 얻는 데 도움이 되는 몇 가지 유용한 함수를 제공한다.   예를 들어  클래스의 내용을 검사하거나, 메서드의 소스 코드를 꺼내오거나, 함수의 인자 리스트를 추출하고 포맷하거나, 자세한 트레이스백을 표시하는 데 필요한 모든 정보를 얻는 데 도움이 될 수 있다. from Inspect: 라이브 객체 검사     from inspect import signature  sg = signature(var_func)  print(sg) (n)  print(sg.parameters) OrderedDict([('n', )])  def foo(a, *, b:int, **kwargs):  pass  sig = signature(foo)  print(str(sig)) (a, *, b:int, **kwargs)  print(str(sig.parameters['b'])) 'b:int'  print(sig.parameters['b'].annotation)   Reference  인프런 파이썬 중급 데이터 모델: 객체 Inspect: 라이브 객체 검사 용어집 - python 3.10.4  ","wordCount":"888","inLanguage":"en","datePublished":"2022-03-25T20:42:59+09:00","dateModified":"2022-03-25T20:42:59+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_31_firstclass/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=http://jeha00.github.io/ accesskey=h title="Jeha00 (Alt + H)">Jeha00</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=http://jeha00.github.io/archives/ title=Archive>
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href=http://jeha00.github.io/categories/ title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=http://jeha00.github.io/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=http://jeha00.github.io/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=http://jeha00.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://jeha00.github.io/post/>Posts</a></div>
+<h1 class=post-title>
+[TIL] Python basic 31: First-class
+</h1>
+<div class=post-meta><span title="2022-03-25 20:42:59 +0900 KST">March 25, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Jeha00&nbsp;|&nbsp;<a href=https://github.com/JeHa00/blog/content/post/Python_basic/Python_basic_31_FirstClass.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#intro aria-label=Intro>Intro</a></li>
+<li>
+<a href=#1-%ec%9d%bc%ea%b8%89-%ed%95%a8%ec%88%98first-class%eb%9e%80 aria-label="1. 일급 함수(first-class)란??">1. 일급 함수(first-class)란??</a></li>
+<li>
+<a href=#11-%ea%b0%9d%ec%b2%b4-%ec%b7%a8%ea%b8%89%eb%90%98%eb%8a%94-%ed%95%a8%ec%88%98 aria-label="1.1 객체 취급되는 함수">1.1 객체 취급되는 함수</a></li>
+<li>
+<a href=#12-%eb%b3%80%ec%88%98%eb%a1%9c-%ed%95%a0%eb%8b%b9%eb%90%98%eb%8a%94-%ed%95%a8%ec%88%98 aria-label="1.2 변수로 할당되는 함수">1.2 변수로 할당되는 함수</a></li>
+<li>
+<a href=#13-%ea%b3%a0%ec%9c%84-%ed%95%a8%ec%88%98%ec%9d%98-%eb%91%90-%ea%b0%80%ec%a7%80-%ed%8a%b9%ec%a7%95 aria-label="1.3 고위 함수의 두 가지 특징">1.3 고위 함수의 두 가지 특징</a></li>
+<li>
+<a href=#2-%ec%9d%b5%eb%aa%85-%ed%95%a8%ec%88%98lambda aria-label="2. 익명 함수(lambda)">2. 익명 함수(lambda)</a></li>
+<li>
+<a href=#3-callable-%ec%84%a4%eb%aa%85 aria-label="3. Callable 설명">3. Callable 설명</a></li>
+<li>
+<a href=#4-partial-%ec%82%ac%ec%9a%a9%eb%b2%95 aria-label="4. Partial 사용법">4. Partial 사용법</a></li>
+<li>
+<a href=#5-signature aria-label="5. Signature">5. Signature</a></li>
+<li>
+<a href=#reference aria-label=Reference>Reference</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h1 id=intro>Intro<a hidden class=anchor aria-hidden=true href=#intro>#</a></h1>
+<ul>
+<li>이번 시간에 배울 내용은 특히 더 중요하다.</li>
+<li>이번 시간에는 일급 객체라고도 불리는 <code>일급 함수</code>에 대해 알아보겠다.</li>
+<li>그 후, <code>일급 함수</code>의 예인 lambda, callable, partial에 대해 알아본다.</li>
+</ul>
+<hr>
+<h1 id=1-일급-함수first-class란>1. 일급 함수(first-class)란??<a hidden class=anchor aria-hidden=true href=#1-일급-함수first-class란>#</a></h1>
+<blockquote>
+<ul>
+<li>일급 함수(일급 객체, first-clss)란??
+<ul>
+<li>객체 취급되는 함수</li>
+</ul>
+</li>
+<li>다음 4가지 특징을 가지는 함수를 말한다.
+<ul>
+<li>
+<ol>
+<li>런타임 초기화: 실행 시점에서 초기화한다.</li>
+</ol>
+</li>
+<li>
+<ol start=2>
+<li>함수를 변수에 할당 가능하다.</li>
+</ol>
+</li>
+<li>
+<ol start=3>
+<li>함수를 인수로 전달 가능하다. (Higher - order function의 첫 번째 특징)</li>
+</ol>
+</li>
+<li>
+<ol start=4>
+<li>함수를 결과값으로서 반환 가능하다. (Higher - order function의 첫 번째 특징)</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>위 일급 함수의 특징들은 <code>파이썬 함수의 특징</code>이라고 할 수 있다.</p>
+</li>
+<li>
+<p>그러면 first-class는 왜 중요한가??</p>
+<ul>
+<li>일급함수를 알아야 <strong><em><code>함수형 프로그래밍</code></em></strong> 을 할 수 있기 때문이다.</li>
+<li><code>함수형 프로그래밍</code>이란?? side effect를 허용하지 않는 순수 함수(pure function)을 지향하여 동시에 여러 thread에서 문제 없이 동작하는 프로그램을 쉽게 작성할 수 있다.</li>
+</ul>
+</li>
+<li>
+<p>이러한 이유로 <code>일급 함수</code>에 대해 알아보자.</p>
+</li>
+<li>
+<p>일급 함수가 가지는 특징을 모두 예제로 구현해볼 것이다.</p>
+</li>
+</ul>
+<h1 id=11-객체-취급되는-함수>1.1 객체 취급되는 함수<a hidden class=anchor aria-hidden=true href=#11-객체-취급되는-함수>#</a></h1>
+<ul>
+<li>
+<p><strong>객체</strong>란 무엇인가???</p>
+<ul>
+<li><a href=https://jeha00.github.io/post/python_basic/python_basic_14/>[TIL] Python basic 14: class</a>에 따르면 소프트웨어로 구현할 대상이라 했다.</li>
+</ul>
+</li>
+<li>
+<p>하지만 파이썬 내부에서의 객체의 정의와 특징은 무엇일까???</p>
+<ul>
+<li>
+<p>파이썬이 data를 추상화(abstraction)한 것을 말하며,</p>
+</li>
+<li>
+<p>id(identity), type(형) 그리고, value(값)을 가지는 걸 말 한다.</p>
+</li>
+<li>
+<p>파이썬의 모든 데이터는 객체나 객체 간의 관계로 표현된다.</p>
+</li>
+<li>
+<p>객체의 id는 메모리 상에서 객체의 주소를 말한다.</p>
+</li>
+<li>
+<p>또한, id는 한 번 만들어진 후에는 변경되지 않는다.</p>
+<ul>
+<li>from <a href=https://docs.python.org/ko/3/reference/datamodel.html#objects-values-and-types>데이터 모델: 객체</a></li>
+</ul>
+</li>
+<li>
+<p>attribute란 객체와 결합한 값(value)를 말한다.</p>
+<ul>
+<li><a href="https://docs.python.org/ko/3/glossary.html?highlight=%EC%86%8D%EC%84%B1">용어집 - python 3.10.4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>함수 객체</strong> : 함수처럼 행동하는 객체</p>
+<ul>
+<li>from <a href=https://namoeye.tistory.com/entry/%ED%95%A8%EC%88%98%EA%B0%9D%EC%B2%B4%EB%9E%80>함수 객체의 장점</a></li>
+</ul>
+</li>
+<li>
+<p>그럼 코드 상에서 확인해보자.</p>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def factorial(n)</span>:
+<span style=color:#f92672>&gt;     ```Factorial Function -&gt; n </span>: <span style=color:#ae81ff>int ```</span>
+<span style=color:#f92672>&gt;     if n == 1</span>:
+<span style=color:#ae81ff>&gt;         return 1</span>
+<span style=color:#ae81ff>&gt;    </span> <span style=color:#75715e># 이렇게 함수 내에서 함수를 호출하는 걸 재귀함수라 한다.</span>
+<span style=color:#ae81ff>&gt;     return n * factorial(n-1)</span>
+
+<span style=color:#f92672>&gt; class A</span>:
+<span style=color:#ae81ff>&gt;     pass</span>
+
+<span style=color:#ae81ff>&gt; print(factorial(6))</span>
+<span style=color:#ae81ff>720</span>
+
+<span style=color:#75715e># 함수 comment 출력</span>
+<span style=color:#ae81ff>&gt; print(factorial.__doc__)</span>
+<span style=color:#f92672>Factorial Function -&gt; n </span>: <span style=color:#ae81ff>int</span>
+
+<span style=color:#ae81ff>&gt; print(type(factorial), type(A))</span>
+<span style=color:#ae81ff>&lt;class &#39;fuction&#39;&gt;, &lt;class &#39;type&#39;&gt;</span>
+
+<span style=color:#ae81ff>&gt; print(id(factorial))</span>
+<span style=color:#ae81ff>id -  2416266045904</span>
+
+<span style=color:#75715e># dir은 객체가 가지고 있는 속성(attribute)를 출력하는 함수다.</span>
+<span style=color:#ae81ff>&gt; print(dir(factorial))</span>
+[<span style=color:#e6db74>&#39;__annotations__&#39;</span>, <span style=color:#e6db74>&#39;__call__&#39;</span>, <span style=color:#e6db74>&#39;__class__&#39;</span>, <span style=color:#e6db74>&#39;__closure__&#39;</span>, <span style=color:#e6db74>&#39;__code__&#39;</span>, <span style=color:#e6db74>&#39;__defaults__&#39;</span>, <span style=color:#e6db74>&#39;__delattr__&#39;</span>, <span style=color:#e6db74>&#39;__dict__&#39;</span>, <span style=color:#e6db74>&#39;__dir__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>, <span style=color:#e6db74>&#39;__eq__&#39;</span>, <span style=color:#e6db74>&#39;__format__&#39;</span>, <span style=color:#e6db74>&#39;__ge__&#39;</span>, <span style=color:#e6db74>&#39;__get__&#39;</span>, <span style=color:#e6db74>&#39;__getattribute__&#39;</span>, <span style=color:#e6db74>&#39;__globals__&#39;</span>, <span style=color:#e6db74>&#39;__gt__&#39;</span>, <span style=color:#e6db74>&#39;__hash__&#39;</span>, <span style=color:#e6db74>&#39;__init__&#39;</span>, <span style=color:#e6db74>&#39;__init_subclass__&#39;</span>, <span style=color:#e6db74>&#39;__kwdefaults__&#39;</span>, <span style=color:#e6db74>&#39;__le__&#39;</span>, <span style=color:#e6db74>&#39;__lt__&#39;</span>, <span style=color:#e6db74>&#39;__module__&#39;</span>, <span style=color:#e6db74>&#39;__name__&#39;</span>, <span style=color:#e6db74>&#39;__ne__&#39;</span>, <span style=color:#e6db74>&#39;__new__&#39;</span>, <span style=color:#e6db74>&#39;__qualname__&#39;</span>, <span style=color:#e6db74>&#39;__reduce__&#39;</span>, <span style=color:#e6db74>&#39;__reduce_ex__&#39;</span>, <span style=color:#e6db74>&#39;__repr__&#39;</span>, <span style=color:#e6db74>&#39;__setattr__&#39;</span>, <span style=color:#e6db74>&#39;__sizeof__&#39;</span>, <span style=color:#e6db74>&#39;__str__&#39;</span>, <span style=color:#e6db74>&#39;__subclasshook__&#39;</span>]
+
+
+<span style=color:#75715e># class와 동일하게 가지는 속성들을 빼서 함수만 가진 속성들을 확인할 수도 있다.</span>
+<span style=color:#ae81ff>&gt; print(set(sorted(dir(factorial))) - set(sorted(dir(A)))</span>
+{<span style=color:#e6db74>&#39;__call__&#39;</span>, <span style=color:#e6db74>&#39;__defaults__&#39;</span>, <span style=color:#e6db74>&#39;__closure__&#39;</span>, <span style=color:#e6db74>&#39;__kwdefaults__&#39;</span>, <span style=color:#e6db74>&#39;__code__&#39;</span>, <span style=color:#e6db74>&#39;__globals__&#39;</span>, <span style=color:#e6db74>&#39;__name__&#39;</span>, <span style=color:#e6db74>&#39;__get__&#39;</span>, <span style=color:#e6db74>&#39;__annotations__&#39;</span>, <span style=color:#e6db74>&#39;__qualname__&#39;</span>}
+
+<span style=color:#75715e># 함수의 이름을 알려준다.</span>
+<span style=color:#ae81ff>&gt; print(factorial.__name__)</span>
+<span style=color:#ae81ff>factorial</span>
+
+<span style=color:#75715e># type과 위치, 코드의 몇 번째 줄인지를 알려준다.</span>
+<span style=color:#ae81ff>&gt; print(factorial.__code__)</span>
+<span style=color:#ae81ff>&lt;code object factorial at 0x00000201685D8D40, file &#34;c:\Users\rudtl\Desktop\Dev\Python_lecture\InflearnOriginal\Level_2_중급\p_chapter05_01.py&#34;, line 35&gt;</span>
+
+</code></pre></div>
+<h1 id=12-변수로-할당되는-함수>1.2 변수로 할당되는 함수<a hidden class=anchor aria-hidden=true href=#12-변수로-할당되는-함수>#</a></h1>
+<ul>
+<li>함수 또한 객체로 취급되는 걸 확인했다.</li>
+<li>다음으로 이 함수가 변수에 할당되는지 확인해보자.</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 1.1 코드와 이어진다.</span>
+
+<span style=color:#75715e># 변수에 할당</span>
+<span style=color:#ae81ff>&gt; var_func = factorial</span>
+
+<span style=color:#ae81ff>&gt; print(var_func)</span>
+<span style=color:#ae81ff>&lt;function factorial at 0x0000023294ADE9D0&gt;</span>
+
+<span style=color:#ae81ff>&gt; print(var_func(10))</span>
+<span style=color:#ae81ff>3628800</span>
+</code></pre></div><ul>
+<li>변수에 할당되어 여러 함수에 사용될 수 있다는 걸 확인했다.</li>
+</ul>
+<h1 id=13-고위-함수의-두-가지-특징>1.3 고위 함수의 두 가지 특징<a hidden class=anchor aria-hidden=true href=#13-고위-함수의-두-가지-특징>#</a></h1>
+<blockquote>
+<ul>
+<li>Higher - order function (고위함수)의 특징
+<ul>
+<li>
+<ol>
+<li>함수를 인수로 전달 가능하다.</li>
+</ol>
+</li>
+<li>
+<ol start=2>
+<li>함수를 결과값으로서 반환 가능하다.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>고위 함수의 대표적인 예로는 <code>map</code>, <code>filter</code>, <code>reduce</code>, <code>lambda</code> 등이 있다.</p>
+</li>
+<li>
+<p>그러면 코드로 확인해보자.</p>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## range 함수로 iterator를 만들고, iteraotr의 각 성분들이 vap_func의 인자로 넘어간다.</span>
+<span style=color:#75715e># 다음처럼 object로 출력된다면 type conversion을 해야 한다.</span>
+
+<span style=color:#75715e># map 함수의 인자로 전달 가능하다.</span>
+<span style=color:#ae81ff>&gt; print(map(vap_func, range(1,6)))</span>
+<span style=color:#ae81ff>&lt;map object at 0x000001C1FC0A0DF0&gt;</span>
+
+<span style=color:#ae81ff>&gt; print(list(map(vap_func, range(1,6))))</span>
+[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>24</span>, <span style=color:#ae81ff>120</span>]
+
+<span style=color:#75715e># var_func 을 결과값으로 반환 가능하다.</span>
+<span style=color:#f92672>&gt; print(list(map(var_func, filter(lambda x</span>: <span style=color:#ae81ff>x % 2, range(1,6)))))</span>
+[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>120</span>]
+
+<span style=color:#75715e># 위와 동일한 출력값을 갖는다. 하지만, 가독성이 더 좋다.</span>
+<span style=color:#ae81ff>&gt; print([var_func(i) for i in range(1, 6) if i % 2])</span>
+[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>120</span>]
+</code></pre></div><ul>
+<li><code>reduce</code> : 여러 원소를 하나의 원소로 줄이기 위해, 왼쪽에서부터 오른쪽 방향으로 축적하며 함수를 적용해간다.</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## reduce</span>
+
+<span style=color:#ae81ff>&gt; from functools import reduce</span>
+<span style=color:#ae81ff>&gt; from operator import add</span>
+
+<span style=color:#ae81ff>&gt; print(list(range(1,11)))</span>
+[<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>, <span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>10</span>]
+
+<span style=color:#75715e># 인수 하나 하나를 줄여나가면서 더해가는 함수</span>
+<span style=color:#ae81ff>&gt; print(reduce(add, range(1, 11)))</span>
+
+<span style=color:#75715e># 하지만 reduce는 잘 사용하지 않고, sum을 사용한다.</span>
+<span style=color:#ae81ff>&gt; print(sum(range(1, 11)))</span>
+</code></pre></div>
+<hr>
+<h1 id=2-익명-함수lambda>2. 익명 함수(lambda)<a hidden class=anchor aria-hidden=true href=#2-익명-함수lambda>#</a></h1>
+<blockquote>
+<p>이름 없는 함수로, 익명 함수다.
+그래서 익명 함수가 복잡할 때, 주석을 사용해야 한다.
+하지만, 되도록 함수를 만들어서 사용하자.
+일반 함수 형태로 <code>refactoring</code>을 권장한다.</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; print(reduce(lambda x, t </span>: <span style=color:#ae81ff>x + t, range(1,11)))</span>
+<span style=color:#ae81ff>55</span>
+</code></pre></div>
+<hr>
+<h1 id=3-callable-설명>3. Callable 설명<a hidden class=anchor aria-hidden=true href=#3-callable-설명>#</a></h1>
+<blockquote>
+<ul>
+<li>callable이란??</li>
+<li>호출 연산자로, 인자가 호출 가능한지 확인하는 함수</li>
+</ul>
+</blockquote>
+<ul>
+<li>호출한다는 건 무슨 의미일까???</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 아래 예시처럼 함수를 불러와서 사용할 수 있는 걸 의미한다.</span>
+<span style=color:#ae81ff>&gt; str(3)</span>
+
+<span style=color:#ae81ff>&gt; var_func(5)</span>
+
+<span style=color:#75715e># 하지만 다음 같은 경우는 호출할 수 없는 함수다.</span>
+<span style=color:#ae81ff>&gt; 3.14(334)</span>
+</code></pre></div><ul>
+<li>이를 <code>callable</code>로 확인해보자.</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(callable(str), callable(list), callable(var_func), callable(3.14))</span>
+<span style=color:#66d9ef>True</span> <span style=color:#66d9ef>True</span> <span style=color:#66d9ef>True</span> <span style=color:#66d9ef>False</span>
+</code></pre></div><ul>
+<li><code>3.14</code>는 호출할 수 없다는 걸 <code>callable</code>을 통해 간단히 확인했다.</li>
+</ul>
+<hr>
+<h1 id=4-partial-사용법>4. Partial 사용법<a hidden class=anchor aria-hidden=true href=#4-partial-사용법>#</a></h1>
+<blockquote>
+<ul>
+<li>인수를 고정할 때 사용하는 함수로, 콜백 함수에 사용한다.</li>
+<li>매우 중요하다.</li>
+</ul>
+</blockquote>
+<ul>
+<li>코드로 알아보자.</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; from operator import mul</span>
+<span style=color:#ae81ff>&gt; from functools import partial</span>
+
+<span style=color:#75715e># mul은 multiply의 약어다.</span>
+<span style=color:#ae81ff>&gt; print(mul(10, 10))</span>
+<span style=color:#ae81ff>100</span>
+
+<span style=color:#75715e># 그러면 인수 하나를 고정하여, 함수를 변수에 할당하자.</span>
+<span style=color:#ae81ff>&gt; five = partial(mul, 5)</span>
+
+<span style=color:#ae81ff>&gt; print(five(10))</span>
+<span style=color:#ae81ff>50</span>
+
+<span style=color:#75715e># 한 번도 고정한다면??</span>
+<span style=color:#ae81ff>&gt; six = partial(five, 6)</span>
+<span style=color:#ae81ff>&gt; print(six())</span>
+<span style=color:#ae81ff>60</span>
+</code></pre></div>
+<hr>
+<h1 id=5-signature>5. Signature<a hidden class=anchor aria-hidden=true href=#5-signature>#</a></h1>
+<blockquote>
+<ul>
+<li>signature(callable, *, follow_wrapped=True)
+<ul>
+<li>인자로 callable을 취하고, annotation을 반환한다.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>signature</code> 함수는 <code>inspect</code> module에서 import한다.</li>
+<li><code>inspect</code> module은
+<ul>
+<li>모듈은 모듈, 클래스, 메서드, 함수, 트레이스백, 프레임 객체 및 코드 객체와 같은<br>
+라이브 객체에 대한 정보를 얻는 데 도움이 되는 몇 가지 유용한 함수를 제공한다.</li>
+</ul>
+</li>
+<li>예를 들어
+<ul>
+<li>클래스의 내용을 검사하거나,</li>
+<li>메서드의 소스 코드를 꺼내오거나,</li>
+<li>함수의 인자 리스트를 추출하고 포맷하거나,</li>
+<li>자세한 트레이스백을 표시하는 데 필요한 모든 정보를 얻는 데 도움이 될 수 있다.</li>
+<li>from <a href=https://docs.python.org/ko/3/library/inspect.html>Inspect: 라이브 객체 검사</a></li>
+</ul>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; from inspect import signature</span>
+
+<span style=color:#ae81ff>&gt; sg = signature(var_func)</span>
+
+<span style=color:#ae81ff>&gt; print(sg)</span>
+<span style=color:#ae81ff>(n)</span>
+
+<span style=color:#ae81ff>&gt; print(sg.parameters)</span>
+<span style=color:#ae81ff>OrderedDict([(&#39;n&#39;, &lt;Parameter &#34;n&#34;&gt;)])</span>
+
+<span style=color:#f92672>&gt; def foo(a, *, b:int, **kwargs)</span>:
+<span style=color:#ae81ff>&gt;    pass</span>
+
+<span style=color:#ae81ff>&gt; sig = signature(foo)</span>
+
+<span style=color:#ae81ff>&gt; print(str(sig))</span>
+<span style=color:#ae81ff>(a, *, b:int, **kwargs)</span>
+
+<span style=color:#ae81ff>&gt; print(str(sig.parameters[&#39;b&#39;]))</span>
+<span style=color:#e6db74>&#39;b:int&#39;</span>
+
+<span style=color:#ae81ff>&gt; print(sig.parameters[&#39;b&#39;].annotation)</span>
+<span style=color:#ae81ff>&lt;class &#39;int&#39;&gt;</span>
+</code></pre></div><hr>
+<h1 id=reference>Reference<a hidden class=anchor aria-hidden=true href=#reference>#</a></h1>
+<ul>
+<li><a href=https://www.inflearn.com/course/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A4%91%EA%B8%89-%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%98%A4%EB%A6%AC%EC%A7%80%EB%84%90>인프런 파이썬 중급</a></li>
+<li><a href=https://docs.python.org/ko/3/reference/datamodel.html#objects-values-and-types>데이터 모델: 객체</a></li>
+<li><a href=https://docs.python.org/ko/3/library/inspect.html>Inspect: 라이브 객체 검사</a></li>
+<li><a href="https://docs.python.org/ko/3/glossary.html?highlight=%EC%86%8D%EC%84%B1">용어집 - python 3.10.4</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=http://jeha00.github.io/tags/til/>TIL</a></li>
+<li><a href=http://jeha00.github.io/tags/python/>python</a></li>
+</ul>
+<nav class=paginav>
+<a class=next href=http://jeha00.github.io/post/python_basic/python_basic_30_sortvssorted_array/>
+<span class=title>Next Page »</span>
+<br>
+<span>[TIL] Python basic 30: Sort VS Sorted</span>
+</a>
+</nav>
+<div class=share-buttons>
+<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 31: First-class on twitter" href="https://twitter.com/intent/tweet/?text=%5bTIL%5d%20Python%20basic%2031%3a%20First-class&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_31_firstclass%2f&hashtags=TIL%2cpython"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 31: First-class on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_31_firstclass%2f&title=%5bTIL%5d%20Python%20basic%2031%3a%20First-class&summary=%5bTIL%5d%20Python%20basic%2031%3a%20First-class&source=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_31_firstclass%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 31: First-class on reddit" href="https://reddit.com/submit?url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_31_firstclass%2f&title=%5bTIL%5d%20Python%20basic%2031%3a%20First-class"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 31: First-class on facebook" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_31_firstclass%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 31: First-class on whatsapp" href="https://api.whatsapp.com/send?text=%5bTIL%5d%20Python%20basic%2031%3a%20First-class%20-%20http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_31_firstclass%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg>
+</a>
+<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 31: First-class on telegram" href="https://telegram.me/share/url?text=%5bTIL%5d%20Python%20basic%2031%3a%20First-class&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_31_firstclass%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
+</a>
+</div>
+</footer><script src=https://utteranc.es/client.js repo=JeHa00/blog-comments issue-term=pathname theme=github-dark crossorigin=anonymous async></script>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=http://jeha00.github.io/>Jeha00 DevLog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
