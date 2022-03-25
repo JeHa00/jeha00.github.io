@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 23 Mar 2022 23:24:24 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Mar 2022 23:01:10 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 30: Sort VS Sorted</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_30_sortvssorted_array/</link>
+      <pubDate>Thu, 24 Mar 2022 23:01:10 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_30_sortvssorted_array/</guid>
+      <description>sort와 sorted의 차이를 알아보고, Array data type 에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 29: Data Model</title>
       <link>http://jeha00.github.io/post/python_basic/python_basic_29_datamodel/</link>
