@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>개발-dev OS on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-os/</link>
+    <description>Recent content in 개발-dev OS on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 05 Apr 2022 17:43:59 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-os/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Operating System Chapter 02: 운영체제 개요</title>
+      <link>http://jeha00.github.io/post/os/os_chapter_02_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94/</link>
+      <pubDate>Tue, 05 Apr 2022 17:43:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/os/os_chapter_02_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94/</guid>
+      <description>운영체제란 무엇이고, 무슨 역할을 하는지, 어떻게 분류되는지, 그리고 CPU, 메모리, 입출력 장치의 대략적인 관리 mechanism에 대해 알아본다.</description>
+    </item>
+    
+  </channel>
+</rss>
