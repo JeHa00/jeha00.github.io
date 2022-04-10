@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 06 Apr 2022 21:34:38 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Apr 2022 14:45:39 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 39: Map, Filter, Reduce</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_39_mapfilterreduce/</link>
+      <pubDate>Sat, 09 Apr 2022 14:45:39 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_39_mapfilterreduce/</guid>
+      <description>High-order function의 대표적인 예인 map, filter, reduce에 대해 lambda, def, closure로 구현해본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 38: Futures</title>
       <link>http://jeha00.github.io/post/python_basic/python_basic_38.futures/</link>

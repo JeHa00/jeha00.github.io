@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -122,7 +121,7 @@
 <p><code>sys.argv</code>는 명령행에 인수를 전달하도록 하는 명령어다.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import sys</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import sys</span>
 
 <span style=color:#75715e>## module 파일이 있는 위치들이 출력된다.</span>
 <span style=color:#ae81ff>&gt; print(sys.path)</span>
@@ -139,7 +138,7 @@
 <li>이 test.obj에 <code>pickle.dump()</code> 명령어로 <code>obj</code> 변수 내용을 저장한다.</li>
 <li>그리고 나서, <code>pickle.load()</code> 명령어로 <code>test.obj</code> 파일을 읽는다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import pickle</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import pickle</span>
 
 <span style=color:#75715e># w: write , b: binary, r: read</span>
 <span style=color:#ae81ff>&gt; f = open(&#39;test.obj&#39;, &#39;wb&#39;)</span>
@@ -163,7 +162,7 @@
 <ul>
 <li><code>OS 모듈</code>은 환경 변수나 디렉터리, 파일 등의 OS 자원을 제어할 수 있게 해주는 모듈이다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import os</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import os</span>
 
 <span style=color:#75715e># 사용자의 운영체제 정보를 파이썬에게 넘겨준다.</span>
 <span style=color:#ae81ff>&gt; print(os.environ)</span>
@@ -178,7 +177,7 @@
 <ul>
 <li><code>time 모듈</code>은 시간과 관련된 모듈이다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import time</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import time</span>
 
 <span style=color:#75715e>## 1970년 1월 1일 0시 0분 0초를 기준으로 지난 시간을 초 단위로 반환한다.</span>
 <span style=color:#ae81ff>&gt; print(time.time())</span>
@@ -196,12 +195,12 @@
 <span style=color:#75715e>## 원하는 형식으로 시간을 출력해주는 모듈이다.</span>
 <span style=color:#75715e># Year, Month, Day, hour , Minute, Second</span>
 <span style=color:#ae81ff>&gt; print(time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;, time.localtime(time.time())))</span>
-<span style=color:#e6db74>2022-03-02 20:42:50</span>
+<span style=color:#d88200>2022-03-02 20:42:50</span>
 
 
 <span style=color:#75715e>## 시간 간격 발생</span>
 <span style=color:#75715e># 출력 간 delay를 1초로 한다.</span>
-<span style=color:#f92672>&gt; for i in range(5)</span>:
+<span style=color:#f92672>&gt; for i in range(5)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;   print(i)</span>
 <span style=color:#ae81ff>&gt;   time.sleep(1)</span>
 <span style=color:#ae81ff>0</span>
@@ -214,7 +213,7 @@
 <ul>
 <li><code>random</code>은 난수(규칙이 없는 임의의 수)를 발생시키는 모듈</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import random</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import random</span>
 
 <span style=color:#75715e>## 0에서 1 사이의 아무 난수를 반환한다.</span>
 <span style=color:#ae81ff>&gt; print(random.random())</span>
@@ -231,9 +230,9 @@
 <span style=color:#ae81ff>&gt; d = [1, 2, 3, 4, 5]</span>
 <span style=color:#ae81ff>&gt; random.shuffle(d)</span>
 <span style=color:#ae81ff>&gt; print(d)</span>
-[<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>1</span>]
-[<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>5</span>]
-...
+<span style=color:#111>[</span><span style=color:#ae81ff>2</span><span style=color:#111>,</span> <span style=color:#ae81ff>5</span><span style=color:#111>,</span> <span style=color:#ae81ff>3</span><span style=color:#111>,</span> <span style=color:#ae81ff>4</span><span style=color:#111>,</span> <span style=color:#ae81ff>1</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#ae81ff>2</span><span style=color:#111>,</span> <span style=color:#ae81ff>4</span><span style=color:#111>,</span> <span style=color:#ae81ff>1</span><span style=color:#111>,</span> <span style=color:#ae81ff>3</span><span style=color:#111>,</span> <span style=color:#ae81ff>5</span><span style=color:#111>]</span>
+<span style=color:#111>...</span>
 
 <span style=color:#75715e>## Iterable object의 argument들 중 무작위로 선택하는 함수</span>
 <span style=color:#ae81ff>&gt; d = [1, 2, 3, 4, 5]</span>
@@ -249,7 +248,7 @@
 <ul>
 <li><code>webbrowser</code>는 본인 OS의 web browser를 실행한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import webbrowser</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import webbrowser</span>
 
 <span style=color:#75715e>## 기본 웹 브라우저를 사용하여 아래 url로 자동으로 이동한다. 이미 실행된 상태라면 기존에 있던 tab이 이동된다.</span>
 <span style=color:#ae81ff>&gt; webbrowser.open(&#34;https://google.com&#34;)</span>

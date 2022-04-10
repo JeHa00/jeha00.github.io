@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -312,7 +311,7 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import os</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import os</span>
 <span style=color:#ae81ff>&gt; import time</span>
 
 <span style=color:#75715e># threading, multi-processing이 저수준으로 만들어져 있는 걸 사용한다.</span>
@@ -325,12 +324,12 @@
 <span style=color:#75715e># 인자 n에 위 WORK_LIST의 성분 값들이 하나씩 넘어와서 합이 계산된다.</span>
 <span style=color:#75715e># 그래서 총 동시에 4개가 실행된다.</span>
 <span style=color:#75715e># 누적 합계 함수(generator)</span>
-<span style=color:#f92672>&gt; def sum_generator(n)</span>:
+<span style=color:#f92672>&gt; def sum_generator(n)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     return sum(n for n in range(1, n+1))</span>
 
 <span style=color:#75715e># worker의 수는 두 인수 중 작은 수로 한다.</span>
 <span style=color:#75715e># worker를 몇 개 할지 모르면 운영체제한테 맡긴다.</span>
-<span style=color:#f92672>&gt; def main1()</span>:
+<span style=color:#f92672>&gt; def main1()</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    worker= min(10, len(WORK_LIST))</span>
 
 <span style=color:#75715e>## 시작시간</span>
@@ -340,7 +339,7 @@
 <span style=color:#75715e>## 결과 건수</span>
 <span style=color:#75715e># with문으로 해야 열고 닫는 게 자동적으로 이뤄진다.</span>
 <span style=color:#75715e># def main1 과의 차이점 (ThreadPoolExecutor)</span>
-<span style=color:#f92672>&gt;     with futures.ThreadPoolExecutor() as excutor</span>:
+<span style=color:#f92672>&gt;     with futures.ThreadPoolExecutor() as excutor</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;        result = excutor.map(sum_generator, WORK_LIST)</span>
 
 <span style=color:#75715e>## 종료시간</span>
@@ -354,13 +353,13 @@
 <span style=color:#ae81ff>&gt;    print(msg.format(list(result), end_tm))</span>
 
 
-<span style=color:#f92672>&gt; def main2()</span>:
+<span style=color:#f92672>&gt; def main2()</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     worker= min(10, len(WORK_LIST))</span>
 
 <span style=color:#ae81ff>&gt;     start_tm = time.time()</span>
 
 <span style=color:#75715e># def main2 와의 차이점 (ProcessPoolExcutor)</span>
-<span style=color:#f92672>&gt;     with futures.ProcessPoolExecutor() as excutor</span>:
+<span style=color:#f92672>&gt;     with futures.ProcessPoolExecutor() as excutor</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;        result = excutor.map(sum_generator, WORK_LIST)</span>
 
 <span style=color:#ae81ff>&gt;     end_tm = time.time() - start_tm</span>
@@ -370,24 +369,24 @@
 
 <span style=color:#75715e>## 실행</span>
 <span style=color:#75715e># 진입점을 알려줘야, multi-processing이 실행될 때 작업을 할 수 있다.</span>
-<span style=color:#f92672>&gt; if __name__ == &#39;__main__&#39;</span>:
+<span style=color:#f92672>&gt; if __name__ == &#39;__main__&#39;</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     main1()</span>
 <span style=color:#ae81ff>&gt;     main2()</span>
 
- <span style=color:#f92672>Result -&gt; [5000050000, 500000500000, 50000005000000, 5000000050000000] Time </span>: <span style=color:#ae81ff>7.</span><span style=color:#ae81ff>61s</span>
+ <span style=color:#f92672>Result -&gt; [5000050000, 500000500000, 50000005000000, 5000000050000000] Time </span><span style=color:#111>:</span> <span style=color:#ae81ff>7.</span><span style=color:#ae81ff>61s</span>
 
- <span style=color:#f92672>Result -&gt; [5000050000, 500000500000, 50000005000000, 5000000050000000] Time </span>: <span style=color:#ae81ff>7.</span><span style=color:#ae81ff>14s</span>
+ <span style=color:#f92672>Result -&gt; [5000050000, 500000500000, 50000005000000, 5000000050000000] Time </span><span style=color:#111>:</span> <span style=color:#ae81ff>7.</span><span style=color:#ae81ff>14s</span>
 </code></pre></div><ul>
 <li>ProcessPool로 실행했을 때의 결과가 더 빠르다는 걸 확인했다.</li>
 </ul>
 <ul>
 <li>그러면 동기적으로 진행했을 때의 시간을 측정해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; WORK_LIST = [100000, 1000000, 10000000, 100000000]</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; WORK_LIST = [100000, 1000000, 10000000, 100000000]</span>
 
 <span style=color:#75715e># 시작 시간</span>
 <span style=color:#ae81ff>&gt; stm = time.time()</span>
-<span style=color:#f92672>&gt; for i in WORK_LIST</span>:
+<span style=color:#f92672>&gt; for i in WORK_LIST</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     sum(n for n in range(1, i+1))</span>
 
 <span style=color:#75715e># 종료 시간</span>
@@ -428,7 +427,7 @@
 <ul>
 <li>그러면 예시 코드로 적용해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import os</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import os</span>
 <span style=color:#ae81ff>&gt; import time</span>
 
 <span style=color:#75715e># 이번에는 쓸만큼만 호출한다.</span>
@@ -436,11 +435,11 @@
 
 <span style=color:#ae81ff>&gt; WORK_LIST = [100000, 1000000, 10000000, 100000000]</span>
 
-<span style=color:#f92672>&gt; def sum_generator(n)</span>:
+<span style=color:#f92672>&gt; def sum_generator(n)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     return sum(n for n in range(1, n+1))</span>
 
 
-<span style=color:#f92672>&gt; def main()</span>:
+<span style=color:#f92672>&gt; def main()</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    worker= min(10, len(WORK_LIST))</span>
 
 <span style=color:#75715e>## 시작시간</span>
@@ -450,8 +449,8 @@
 
 <span style=color:#75715e>## 결과 건수</span>
 <span style=color:#75715e># ThreadPoolExecutor로도 해보자.</span>
-<span style=color:#f92672>&gt; with ProcessPoolExecutor() as excutor</span>:
-<span style=color:#f92672>&gt;       for work in WORK_LIST</span>:
+<span style=color:#f92672>&gt; with ProcessPoolExecutor() as excutor</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;       for work in WORK_LIST</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;           furture = excutor.submit(sum_generator, work)</span>
 <span style=color:#ae81ff>&gt;           futures_list.append(future)</span>
 <span style=color:#ae81ff>&gt;           print(&#39;Scheduled for {} : {}&#39;.format(work, future))</span>
@@ -465,61 +464,61 @@
 <span style=color:#ae81ff>&gt;       result = wait(futures_list, timeout = 7)</span>
 
 <span style=color:#75715e>## 성공한 것들</span>
-<span style=color:#f92672>&gt;       print(&#39;Completed Tasks </span>: <span style=color:#e6db74>&#39; + str(result.done))
-</span><span style=color:#e6db74>&gt;       print()
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>## 실패한 것들
-</span><span style=color:#e6db74>&gt;       print(&#39;</span><span style=color:#f92672>Pending ones after waiting for 7seconds </span>: <span style=color:#e6db74>&#39; + str(result.not_done))
-</span><span style=color:#e6db74>&gt;       print()
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>## 결과 값 출력
-</span><span style=color:#e6db74>&gt;       print([future.result() for future in result.done])
-</span><span style=color:#e6db74>&gt;       print()
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>## as_completed 결과 출력
-</span><span style=color:#e6db74>&gt;       for future in as_completed(futures_list):
-</span><span style=color:#e6db74>&gt;           result = future.result()
-</span><span style=color:#e6db74>&gt;           done = future.done()
-</span><span style=color:#e6db74>&gt;           cancelled = future.cancelled
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>## future 결과 확인
-</span><span style=color:#e6db74>&gt;         print(&#39;</span><span style=color:#f92672>Future Result </span>: {<span style=color:#f92672>}, Done</span>: {}<span style=color:#e6db74>&#39;.format(result, done))
-</span><span style=color:#e6db74>&gt;         print(&#39;</span><span style=color:#f92672>Future Cancelled </span>: {}<span style=color:#e6db74>&#39;.format(cancelled))
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>## 종료시간
-</span><span style=color:#e6db74>&gt;    end_tm = time.time() - start_tm
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>## 출력 포맷
-</span><span style=color:#e6db74>&gt;    msg = &#39;</span><span style=color:#f92672>\n Time </span>: {:<span style=color:#ae81ff>.2f}s&#39;</span>
+<span style=color:#f92672>&gt;       print(&#39;Completed Tasks </span><span style=color:#111>:</span> <span style=color:#d88200>&#39; + str(result.done))
+</span><span style=color:#d88200>&gt;       print()
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>## 실패한 것들
+</span><span style=color:#d88200>&gt;       print(&#39;</span><span style=color:#f92672>Pending ones after waiting for 7seconds </span><span style=color:#111>:</span> <span style=color:#d88200>&#39; + str(result.not_done))
+</span><span style=color:#d88200>&gt;       print()
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>## 결과 값 출력
+</span><span style=color:#d88200>&gt;       print([future.result() for future in result.done])
+</span><span style=color:#d88200>&gt;       print()
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>## as_completed 결과 출력
+</span><span style=color:#d88200>&gt;       for future in as_completed(futures_list):
+</span><span style=color:#d88200>&gt;           result = future.result()
+</span><span style=color:#d88200>&gt;           done = future.done()
+</span><span style=color:#d88200>&gt;           cancelled = future.cancelled
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>## future 결과 확인
+</span><span style=color:#d88200>&gt;         print(&#39;</span><span style=color:#f92672>Future Result </span><span style=color:#111>:</span> {<span style=color:#f92672>}, Done</span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(result, done))
+</span><span style=color:#d88200>&gt;         print(&#39;</span><span style=color:#f92672>Future Cancelled </span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(cancelled))
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>## 종료시간
+</span><span style=color:#d88200>&gt;    end_tm = time.time() - start_tm
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>## 출력 포맷
+</span><span style=color:#d88200>&gt;    msg = &#39;</span><span style=color:#f92672>\n Time </span><span style=color:#111>:</span> {<span style=color:#111>:</span><span style=color:#ae81ff>.2f}s&#39;</span>
 
 <span style=color:#ae81ff>&gt;    print(msg.format(end_tm))</span>
 
 
 <span style=color:#75715e>## 실행</span>
-<span style=color:#f92672>&gt; if __name__ == &#39;__main__&#39;</span>:
+<span style=color:#f92672>&gt; if __name__ == &#39;__main__&#39;</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     main()</span>
 
 <span style=color:#75715e>## 결과 건수에서 예약된 작업들</span>
-<span style=color:#f92672>Scheduled for 100000 </span>: <span style=color:#ae81ff>&lt;Future at 0x204190e5490 state=running&gt;</span>
+<span style=color:#f92672>Scheduled for 100000 </span><span style=color:#111>:</span> <span style=color:#ae81ff>&lt;Future at 0x204190e5490 state=running&gt;</span>
 
-<span style=color:#f92672>Scheduled for 1000000 </span>: <span style=color:#ae81ff>&lt;Future at 0x20419161130 state=pending&gt;</span>
+<span style=color:#f92672>Scheduled for 1000000 </span><span style=color:#111>:</span> <span style=color:#ae81ff>&lt;Future at 0x20419161130 state=pending&gt;</span>
 
-<span style=color:#f92672>Scheduled for 10000000 </span>: <span style=color:#ae81ff>&lt;Future at 0x20419161370 state=pending&gt;</span>
+<span style=color:#f92672>Scheduled for 10000000 </span><span style=color:#111>:</span> <span style=color:#ae81ff>&lt;Future at 0x20419161370 state=pending&gt;</span>
 
-<span style=color:#f92672>Scheduled for 100000000 </span>: <span style=color:#ae81ff>&lt;Future at 0x204191610d0 state=pending&gt;</span>
+<span style=color:#f92672>Scheduled for 100000000 </span><span style=color:#111>:</span> <span style=color:#ae81ff>&lt;Future at 0x204191610d0 state=pending&gt;</span>
 
 <span style=color:#75715e>## 성공한 것들</span>
-<span style=color:#f92672>Completed Tasks </span>: {<span style=color:#ae81ff>&lt;Future at 0x204190e5490 state=finished returned int&gt;, &lt;Future at 0x20419161130 state=finished returned int&gt;, &lt;Future at 0x20419161370 state=finished returned int&gt;}</span>
+<span style=color:#f92672>Completed Tasks </span><span style=color:#111>:</span> {<span style=color:#ae81ff>&lt;Future at 0x204190e5490 state=finished returned int&gt;, &lt;Future at 0x20419161130 state=finished returned int&gt;, &lt;Future at 0x20419161370 state=finished returned int&gt;}</span>
 
 <span style=color:#75715e>## 실패한 것들</span>
-<span style=color:#f92672>Pending ones after waiting for 7seconds </span>: {<span style=color:#ae81ff>&lt;Future at 0x204191610d0 state=running&gt;}</span>
+<span style=color:#f92672>Pending ones after waiting for 7seconds </span><span style=color:#111>:</span> {<span style=color:#ae81ff>&lt;Future at 0x204191610d0 state=running&gt;}</span>
 
 <span style=color:#75715e>## 결과값 출력</span>
-[<span style=color:#ae81ff>5000050000</span>, <span style=color:#ae81ff>500000500000</span>, <span style=color:#ae81ff>50000005000000</span>]
+<span style=color:#111>[</span><span style=color:#ae81ff>5000050000</span><span style=color:#111>,</span> <span style=color:#ae81ff>500000500000</span><span style=color:#111>,</span> <span style=color:#ae81ff>50000005000000</span><span style=color:#111>]</span>
 
 <span style=color:#75715e>## 종료시간</span>
- <span style=color:#f92672>Time </span>: <span style=color:#ae81ff>8.</span><span style=color:#ae81ff>47s</span>
+ <span style=color:#f92672>Time </span><span style=color:#111>:</span> <span style=color:#ae81ff>8.</span><span style=color:#ae81ff>47s</span>
 </code></pre></div><ul>
 <li>
 <p><code>submit(func, *args)</code>는 func에 *args 를 넘겨주어 그 결과값을 return하는 함수다.</p>
@@ -545,6 +544,11 @@
 <li><a href=http://jeha00.github.io/tags/python/>python</a></li>
 </ul>
 <nav class=paginav>
+<a class=prev href=http://jeha00.github.io/post/python_basic/python_basic_39_mapfilterreduce/>
+<span class=title>« Prev Page</span>
+<br>
+<span>[TIL] Python basic 39: Map, Filter, Reduce</span>
+</a>
 <a class=next href=http://jeha00.github.io/post/os/os_chapter_02_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94/>
 <span class=title>Next Page »</span>
 <br>

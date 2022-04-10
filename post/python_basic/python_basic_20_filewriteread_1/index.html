@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -150,7 +149,7 @@
 </li>
 <li>먼저 원하는 경로에 파일을 만들어놓은 후, 실습을 진행했다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e>## open(&#39;경로&#39;, &#39;rt&#39; &#39;rb&#39; &#39;w&#39; &#39;a&#39; &#39;a&#39;, A)</span>
 <span style=color:#75715e># 1) 현재 경로를 기준으로 상대 경로로 입력한다.</span>
 <span style=color:#75715e># 2) rt이지만, t는 기본값이므로 r만 입력한다.</span>
@@ -185,7 +184,7 @@
 <li>open하여 사용 후, 반드시 close를 해야한다.</li>
 <li>하지만, <code>with 문</code>을 사용하면 <code>close</code>를 하지 않아도, 저절로 반환하기 때문에 <code>with</code>문을 사용하자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/it_news.txt&#39;, &#39;r&#39;, encoding = &#39;UTF-8&#39;) as f</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/it_news.txt&#39;, &#39;r&#39;, encoding = &#39;UTF-8&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;   c = f.read()</span>
 <span style=color:#ae81ff>&gt;   print(c)</span>
 
@@ -196,7 +195,7 @@
 <li><code>read()</code> 함수에 intger type의 인자를 넣으면, 입력한 값만큼의 Byte를 읽는다. 그리고, 또 실행하면 이어서 읽는다. 왜냐하면 cursor가 움직이기 때문이다.</li>
 <li><code>seek()</code> 함수를 사용하여 이 cursor의 위치를 초기화할 수 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/it_news.txt&#39;, &#39;r&#39;, encoding=&#39;UTF-8&#39;) as f</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/it_news.txt&#39;, &#39;r&#39;, encoding=&#39;UTF-8&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    c = f.read(20)</span>
 <span style=color:#ae81ff>&gt;    print(c)</span>
 <span style=color:#ae81ff>Right now gamers can</span>
@@ -216,7 +215,7 @@
 </code></pre></div><ul>
 <li><strong><code>readline</code> 함수를 사용하여 한 줄 씩 읽기</strong></li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/it_news.txt&#39;, &#39;r&#39;, encoding=&#39;UTF-8&#39;) as f</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/it_news.txt&#39;, &#39;r&#39;, encoding=&#39;UTF-8&#39;) as f</span><span style=color:#111>:</span>
 
 <span style=color:#ae81ff>&gt;    line = f.readline()</span>
 <span style=color:#ae81ff>&gt;    print(line)</span>
@@ -230,9 +229,9 @@
 <li><strong><code>readlines</code> 함수를 사용한다. 전체를 읽은 후, 라인 단위 리스트로 저장한다. 즉, 파일을 list로 만든다.</strong></li>
 <li>list로 만들어 원하는 부분만 가져와 텍스트 처리를 할 수 있기 때문에, 반드시 알고 있어야 하는 함수다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/it_news.txt&#39;, &#39;r&#39;, encoding=&#39;UTF-8&#39;) as f</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/it_news.txt&#39;, &#39;r&#39;, encoding=&#39;UTF-8&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      cts = f.readlines()</span>
-<span style=color:#f92672>&gt;      for c in cts</span>:
+<span style=color:#f92672>&gt;      for c in cts</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;        print(c, end=&#39;&#39;)</span>
 <span style=color:#ae81ff>Right now gamers can pay just $1 for access to hundreds of titles across PC</span>
 <span style=color:#ae81ff>and Xbox via Microsoft Xbox Game Pass Ultimate service?but dont</span>
@@ -247,15 +246,15 @@
 <li>없는 파일을 쓰고자 할 때도 연결하기 위해 <code>open</code>함수를 사용한다.</li>
 <li>write이기 때문에 t 말고 w를 입력한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## contents1.txt 라는 파일 만들기</span>
-<span style=color:#f92672>&gt; with open(&#39;./resources/contents1.txt&#39;, &#39;w&#39;) as f</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## contents1.txt 라는 파일 만들기</span>
+<span style=color:#f92672>&gt; with open(&#39;./resources/contents1.txt&#39;, &#39;w&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    f.write(&#39;I love python/n&#39;)</span>
 
 <span style=color:#75715e>## 위 ./resources 경로로 contents1.txt 파일이 생성된다. 그 파일 안에 내용은 I love python이 있다.</span>
 </code></pre></div><ul>
 <li><code>a(append)</code> 를 사용하여 내용 추가하기</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resources/contents1.txt&#39;, &#39;a&#39;) as f</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resources/contents1.txt&#39;, &#39;a&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    f.write(&#39;I love python2\n&#39;)</span>
 
 <span style=color:#75715e>## contents1.txt 파일 내용을 보면 다음과 같이 되어 있다.</span>
@@ -266,8 +265,8 @@
 <ul>
 <li><code>writelines</code> 함수를 사용하여 line list를 파일에 작성하기</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
-<span style=color:#f92672>&gt; with open(&#39;./resource/content2.txt&#39;, &#39;w&#39;) as f</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<span style=color:#f92672>&gt; with open(&#39;./resource/content2.txt&#39;, &#39;w&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;   list = [&#39;Orange\n&#39;, &#39;Apple\n&#39;, &#39;Banana\n&#39;, &#39;Melon\n&#39;]</span>
 <span style=color:#ae81ff>&gt;   f.writelines(list)</span>
 <span style=color:#ae81ff>Orange</span>
@@ -277,7 +276,7 @@
 </code></pre></div><ul>
 <li>terminal이 아닌 파일로 출력을 해주는 방법</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/contents3.txt&#39;, &#39;w&#39;) as f</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; with open(&#39;./resource/contents3.txt&#39;, &#39;w&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     print(&#39;Test Text Write!&#39;, file=f)</span>
 <span style=color:#ae81ff>&gt;     print(&#39;Test Text Write!&#39;, file=f)</span>
 <span style=color:#ae81ff>&gt;     print(&#39;Test Text Write!&#39;, file=f)</span>

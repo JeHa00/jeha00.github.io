@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -105,7 +104,7 @@
 <li><code>sys.path</code>는 영구적으로 경로를 등록하는 것이 아닌 <code>일시적으로</code> 등록하는 방법이다.</li>
 <li>영구적으로 등록하고 싶으면 <code>환경 변수</code>에 있는 python path에 추가하기</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import math</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import math</span>
 <span style=color:#ae81ff>&gt; print(math.pi)</span>
 <span style=color:#ae81ff>3.1415926535</span>
 
@@ -127,12 +126,12 @@
 <span style=color:#75715e># 파이썬 모듈 파일들의 경로들이다.</span>
 <span style=color:#75715e># 파이썬 내부에 있기 때문에 import로 가져다가 사용할 수 있다.</span>
 <span style=color:#ae81ff>&gt; print(sys.path)</span>
-[<span style=color:#e6db74>&#39;c:\\Users\\rudtl\\Desktop\\Dev\\Python 강의\\Inflearn Original\\Level 1 입문_프로그래밍 시작하기&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\python39.zip&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\DLLs&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;c:\\Users\\rudtl\\Desktop\\Dev\\Python 강의\\Inflearn Original\\Level 1 입문_프로그래밍 시작하기&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\python39.zip&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\DLLs&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages&#39;</span><span style=color:#111>]</span>
 
 
 <span style=color:#75715e>## 모듈 경로 추가하기</span>
@@ -144,32 +143,32 @@
 <span style=color:#75715e># 끝에 경로가 추가된 걸 확인할 수 있다.</span>
 <span style=color:#ae81ff>&gt; sys.path.append(&#39;C:/math&#39;)</span>
 <span style=color:#ae81ff>&gt; print(sys.path)</span>
-[<span style=color:#e6db74>&#39;c:\\Users\\rudtl\\Desktop\\Dev\\Python 강의\\Inflearn Original\\Level 1 입문_프로그래밍 시작하기&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\python39.zip&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\DLLs&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39&#39;</span>,
-<span style=color:#e6db74>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages&#39;</span>,
-<span style=color:#e6db74>&#39;C:/math&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;c:\\Users\\rudtl\\Desktop\\Dev\\Python 강의\\Inflearn Original\\Level 1 입문_프로그래밍 시작하기&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\python39.zip&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\DLLs&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;C:/math&#39;</span><span style=color:#111>]</span>
 
 <span style=color:#75715e># 폴더를 만들었으면 module 파일을 이 폴더에 넣어놔야 한다.</span>
 <span style=color:#75715e># &#39;module_test` 란 이름으로 파이썬 파일을 만든다.</span>
 <span style=color:#75715e># module 파일의 내용은 다음과 같다.</span>
 
 <span style=color:#ae81ff>&gt;&gt;&gt;&gt;&gt;</span>
-<span style=color:#f92672>&gt; def add(x, y)</span>:
+<span style=color:#f92672>&gt; def add(x, y)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    return x + y</span>
 
-<span style=color:#f92672>&gt; def subtract(x, y)</span>:
+<span style=color:#f92672>&gt; def subtract(x, y)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     return x - y</span>
 
-<span style=color:#f92672>&gt; def multiply(x, y)</span>:
+<span style=color:#f92672>&gt; def multiply(x, y)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    return x * y</span>
 
-<span style=color:#f92672>&gt; def divide(x , y)</span>:
+<span style=color:#f92672>&gt; def divide(x , y)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    return x / y</span>
 
-<span style=color:#f92672>&gt; def power(x, y)</span>:
+<span style=color:#f92672>&gt; def power(x, y)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    return x ** y</span>
 
 
@@ -188,26 +187,26 @@
 <span style=color:#ae81ff>&gt; import module_test</span>
 
 <span style=color:#75715e>## import가 되자마다 바로 명령어들이 실행된다.</span>
----------------
+<span style=color:#111>---</span>------------
 <span style=color:#ae81ff>called! inner!</span>
 <span style=color:#ae81ff>10</span>
 <span style=color:#ae81ff>10</span>
 <span style=color:#ae81ff>25</span>
 <span style=color:#ae81ff>5.0</span>
 <span style=color:#ae81ff>125</span>
----------------
+<span style=color:#111>---</span>------------
 
 <span style=color:#75715e>## import된 module 내의 함수를 사용해보기</span>
 <span style=color:#ae81ff>&gt; import module_test</span>
 <span style=color:#ae81ff>&gt; print(test_module.power(10, 3))</span>
----------------
+<span style=color:#111>---</span>------------
 <span style=color:#ae81ff>called! inner!</span>
 <span style=color:#ae81ff>10</span>
 <span style=color:#ae81ff>10</span>
 <span style=color:#ae81ff>25</span>
 <span style=color:#ae81ff>5.0</span>
 <span style=color:#ae81ff>125</span>
----------------
+<span style=color:#111>---</span>------------
 <span style=color:#ae81ff>1000</span>
 </code></pre></div><ul>
 <li>위와 같은 방식은 module을 외부에서 가져오는 사람들에게 편의성이 좋지 않다.</li>
@@ -233,7 +232,7 @@
 <p>module 파일에 아래 코드를 추가한다.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## __name__ 사용</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## __name__ 사용</span>
 <span style=color:#ae81ff>&gt; if __name__ == &#34;__main__&#34;:</span>
 <span style=color:#ae81ff>&gt;     print(&#39;-&#39; * 15)</span>
 <span style=color:#ae81ff>&gt;     print(&#39;called! __main__&#39;)</span>
@@ -249,7 +248,7 @@
 <li>하지만, module 파일에서 인터프리터로 직접 실행하면, 실행대상이기 때문에 출력된다.</li>
 <li>import 한 파일에서는 <code>명령어</code>를 입력하면 실행된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import module_test</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import module_test</span>
 <span style=color:#ae81ff>&gt; print(module_test.power(10,3))</span>
 <span style=color:#ae81ff>1000</span>
 </code></pre></div><ul>

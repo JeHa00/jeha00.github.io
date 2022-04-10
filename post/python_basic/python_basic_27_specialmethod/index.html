@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -110,14 +109,14 @@
 <ul>
 <li>예시코드는 <a href=https://jeha00.github.io/post/python_basic/python_basic_24_oop/>Python basic 24</a>에서 작성한 코드를 이어서 사용한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span><span style=color:#111>:</span>
 
 
 <span style=color:#ae81ff>&gt;     &#34;&#34;&#34;</span>
 <span style=color:#ae81ff>&gt;     Airline class</span>
-<span style=color:#f92672>&gt;     Author</span>: <span style=color:#ae81ff>Kim</span>
-<span style=color:#f92672>&gt;     Data</span>: <span style=color:#ae81ff>2022.03.16</span>
-<span style=color:#f92672>&gt;     Description</span>: <span style=color:#ae81ff>Class, Static, Instance Method</span>
+<span style=color:#f92672>&gt;     Author</span><span style=color:#111>:</span> <span style=color:#ae81ff>Kim</span>
+<span style=color:#f92672>&gt;     Data</span><span style=color:#111>:</span> <span style=color:#ae81ff>2022.03.16</span>
+<span style=color:#f92672>&gt;     Description</span><span style=color:#111>:</span> <span style=color:#ae81ff>Class, Static, Instance Method</span>
 <span style=color:#ae81ff>&gt;     &#34;&#34;&#34;</span>
 
 
@@ -125,39 +124,39 @@
 
 
 
-<span style=color:#f92672>&gt;     def __init__(self, company, details)</span>:
+<span style=color:#f92672>&gt;     def __init__(self, company, details)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self._company = company</span>
 <span style=color:#ae81ff>&gt;         self._details = details</span>
 
-<span style=color:#f92672>&gt;     def __str__(self)</span>:
-<span style=color:#f92672>&gt;       return &#39;str </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt;     def __repr__(self):
-</span><span style=color:#e6db74>&gt;       return &#39;</span><span style=color:#f92672>repr </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>### 코드 추가
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt;     def __add__(self, x):
-</span><span style=color:#e6db74>&gt;        print(&#39;</span><span style=color:#ae81ff>Called &gt;&gt; __add__&#39;)</span>
+<span style=color:#f92672>&gt;     def __str__(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;       return &#39;str </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt;     def __repr__(self):
+</span><span style=color:#d88200>&gt;       return &#39;</span><span style=color:#f92672>repr </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>### 코드 추가
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt;     def __add__(self, x):
+</span><span style=color:#d88200>&gt;        print(&#39;</span><span style=color:#ae81ff>Called &gt;&gt; __add__&#39;)</span>
 <span style=color:#ae81ff>&gt;        return (self._details.get(&#39;price&#39;) + x._details.get(&#39;price&#39;))</span>
 
-<span style=color:#f92672>&gt;     def __sub__(self, x)</span>:
+<span style=color:#f92672>&gt;     def __sub__(self, x)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;        print(&#39;Called &gt;&gt; __sub__&#39;)</span>
 <span style=color:#ae81ff>&gt;        return (self._details.get(&#39;price&#39;) - x._details.get(&#39;price&#39;))</span>
 
-<span style=color:#f92672>&gt;     def __le__(self, x)</span>:
+<span style=color:#f92672>&gt;     def __le__(self, x)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;        print(&#39;Called &gt;&gt; __le__&#39;)</span>
-<span style=color:#f92672>&gt;        if self._details.get(&#39;price&#39;) &lt;= x._details.get(&#39;price&#39;)</span>:
+<span style=color:#f92672>&gt;        if self._details.get(&#39;price&#39;) &lt;= x._details.get(&#39;price&#39;)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;            return True</span>
-<span style=color:#f92672>&gt;        else</span>:
+<span style=color:#f92672>&gt;        else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;            return False</span>
 
-<span style=color:#f92672>&gt;     def __ge__(self, x)</span>:
+<span style=color:#f92672>&gt;     def __ge__(self, x)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;        print(&#39;Called &gt;&gt; __ge__&#39;)</span>
-<span style=color:#f92672>&gt;        if self._details.get(&#39;price&#39;) &gt;= x._details.get(&#39;price&#39;)</span>:
+<span style=color:#f92672>&gt;        if self._details.get(&#39;price&#39;) &gt;= x._details.get(&#39;price&#39;)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;            return True</span>
-<span style=color:#f92672>&gt;        else</span>:
+<span style=color:#f92672>&gt;        else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;            return False</span>
 
 <span style=color:#75715e>### 코드 추가 끝</span>
@@ -236,12 +235,12 @@
 <li>많은 magic method들이 이렇게 클래스 하에 존재한다.</li>
 </ul>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; n = 10</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; n = 10</span>
 <span style=color:#ae81ff>&gt; print(type(n))</span>
 <span style=color:#ae81ff>&lt;class &#39;int&gt;</span>
 
 <span style=color:#ae81ff>&gt; print(dir(n))</span>
-[<span style=color:#e6db74>&#39;__abs__&#39;</span>, <span style=color:#e6db74>&#39;__add__&#39;</span>, <span style=color:#e6db74>&#39;__and__&#39;</span>, <span style=color:#e6db74>&#39;__bool__&#39;</span>, <span style=color:#e6db74>&#39;__ceil__&#39;</span>, <span style=color:#e6db74>&#39;__class__&#39;</span>, <span style=color:#ae81ff>...]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;__abs__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__add__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__and__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__bool__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__ceil__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__class__&#39;</span><span style=color:#111>,</span> <span style=color:#ae81ff>...]</span>
 
 <span style=color:#ae81ff>&gt; print(n + 100)</span>
 <span style=color:#ae81ff>110</span>
@@ -264,8 +263,8 @@
 <p>또 다른 예를 보자.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(n.__bool__(), bool(n))</span>
-<span style=color:#66d9ef>True</span> <span style=color:#66d9ef>True</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(n.__bool__(), bool(n))</span>
+<span style=color:#00a8c8>True</span> <span style=color:#00a8c8>True</span>
 </code></pre></div><ul>
 <li>boolean 함수도 그렇다.</li>
 <li>파이썬에서는 많은 함수가 magic method를 호출하여 사용된다.</li>
@@ -276,16 +275,16 @@
 <ul>
 <li>magic method를 재정의하지 않고, 클래스끼리 덧셈을 해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print( Airline1 + Airline2 )</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print( Airline1 + Airline2 )</span>
 <span style=color:#ae81ff>&gt; print(Airline1.__add__(Airline2))</span>
-<span style=color:#f92672>TypeError: unsupported operand type(s) for +</span>: <span style=color:#e6db74>&#39;Airline&#39;</span> <span style=color:#ae81ff>and &#39;Airline&#39;</span>
+<span style=color:#f92672>TypeError: unsupported operand type(s) for +</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;Airline&#39;</span> <span style=color:#ae81ff>and &#39;Airline&#39;</span>
 </code></pre></div><ul>
 <li>즉, 피연산자의 type이 지원되지 않는 type이라는 의미다.</li>
 <li>이처럼 클래스끼리의 연산은 가능하지 않다.</li>
 <li>그러면 이를 magic method를 customizing하여 사용해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 각 Airline의 `price` key에 대한 value끼리 덧셈 연산하기</span>
-<span style=color:#f92672>&gt;     def __add__(self, x)</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 각 Airline의 `price` key에 대한 value끼리 덧셈 연산하기</span>
+<span style=color:#f92672>&gt;     def __add__(self, x)</span><span style=color:#111>:</span>
         <span style=color:#75715e># 호출되었는지 확인하기</span>
 <span style=color:#ae81ff>&gt;        print(&#39;Called &gt;&gt; __add__&#39;)</span>
 <span style=color:#ae81ff>&gt;        return (self._details.get(&#39;price&#39;) + x._details.get(&#39;price&#39;))</span>
@@ -293,7 +292,7 @@
 <li>instance 끼리 연산을 한다면 instance의 어느 부분들이 더하는 건지 재정의한다.</li>
 <li>그러면 다시 덧셈을 해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print( Airline1 + Airline2 )</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print( Airline1 + Airline2 )</span>
 <span style=color:#ae81ff>&gt; print(Airline1.__add__(Airline2))</span>
 <span style=color:#ae81ff>Called &gt;&gt; __add__</span>
 <span style=color:#ae81ff>14000</span>
@@ -301,7 +300,7 @@
 <li>위 코드를 보고 이런 생각이 들 수도 있다.</li>
 <li>아래와 같이 코드를 짤 수도 있지 않은가??</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(Airline1._details.get(&#39;price&#39;) + Airline2._details.get(&#39;price&#39;))</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(Airline1._details.get(&#39;price&#39;) + Airline2._details.get(&#39;price&#39;))</span>
 <span style=color:#ae81ff>14000</span>
 </code></pre></div><ul>
 <li>
@@ -321,41 +320,41 @@
 <p>다른 magic method도 만들어보자.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e># 각 Airline의 `price` key에 대한 value끼리 뺄셈 연산하기</span>
-<span style=color:#f92672>&gt;     def __sub__(self, x)</span>:
+<span style=color:#f92672>&gt;     def __sub__(self, x)</span><span style=color:#111>:</span>
         <span style=color:#75715e># 호출되었는지 확인하기</span>
 <span style=color:#ae81ff>&gt;        print(&#39;Called &gt;&gt; __sub__&#39;)</span>
 <span style=color:#ae81ff>&gt;        return (self._details.get(&#39;price&#39;) - x._details.get(&#39;price&#39;))</span>
 
 
 <span style=color:#75715e># 각 Airline의 `price` key에 대한 value끼리 비교 연산하기</span>
-<span style=color:#f92672>&gt;     def __le__(self, x)</span>:
+<span style=color:#f92672>&gt;     def __le__(self, x)</span><span style=color:#111>:</span>
         <span style=color:#75715e># 호출되었는지 확인하기</span>
 <span style=color:#ae81ff>&gt;        print(&#39;Called &gt;&gt; __le__&#39;)</span>
-<span style=color:#f92672>&gt;        if self._details.get(&#39;price&#39;) &lt;= x._details.get(&#39;price&#39;)</span>:
+<span style=color:#f92672>&gt;        if self._details.get(&#39;price&#39;) &lt;= x._details.get(&#39;price&#39;)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;            return True</span>
-<span style=color:#f92672>&gt;        else</span>:
+<span style=color:#f92672>&gt;        else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;            return False</span>
 
 
 <span style=color:#75715e># 각 Airline의 `price` key에 대한 value끼리 비교 연산하기</span>
-<span style=color:#f92672>&gt;     def __ge__(self, x)</span>:
+<span style=color:#f92672>&gt;     def __ge__(self, x)</span><span style=color:#111>:</span>
         <span style=color:#75715e># 호출되었는지 확인하기</span>
 <span style=color:#ae81ff>&gt;        print(&#39;Called &gt;&gt; __ge__&#39;)</span>
-<span style=color:#f92672>&gt;        if self._details.get(&#39;price&#39;) &gt;= x._details.get(&#39;price&#39;)</span>:
+<span style=color:#f92672>&gt;        if self._details.get(&#39;price&#39;) &gt;= x._details.get(&#39;price&#39;)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;            return True</span>
-<span style=color:#f92672>&gt;        else</span>:
+<span style=color:#f92672>&gt;        else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;            return False</span>
 
 
 <span style=color:#ae81ff>&gt; print(Airline1 &gt;= Airline2)</span>
 <span style=color:#ae81ff>Called &gt;&gt; __ge__</span>
-<span style=color:#66d9ef>True</span>
+<span style=color:#00a8c8>True</span>
 
 <span style=color:#ae81ff>&gt; print(Airline1 &lt;= Airline2)</span>
 <span style=color:#ae81ff>Called &gt;&gt; __le__</span>
-<span style=color:#66d9ef>False</span>
+<span style=color:#00a8c8>False</span>
 
 <span style=color:#ae81ff>&gt; print(Airline1 - Airline2)</span>
 <span style=color:#ae81ff>Called &gt;&gt; __sub__</span>
@@ -393,30 +392,30 @@ gt: greater</li>
 <p><code>other</code>이란??<br>
 정의한 class로 만든 또 다른 instance</p>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Vector(Object)</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Vector(Object)</span><span style=color:#111>:</span>
 
 <span style=color:#75715e>#   def __init__(self,x,y) 로 써도 되지만, 팩킹을 사용해보자.</span>
 <span style=color:#75715e># 잘 만든 오픈 소스들을 보면 아래처럼 작성된다.</span>
-<span style=color:#f92672>&gt;   def __init__(self, *args)</span>:
-<span style=color:#f92672>&gt;       &#39;&#39;&#39; Create a vector, example</span>: <span style=color:#ae81ff>v = Vector(5, 10) &#39;&#39;&#39;</span>
+<span style=color:#f92672>&gt;   def __init__(self, *args)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;       &#39;&#39;&#39; Create a vector, example</span><span style=color:#111>:</span> <span style=color:#ae81ff>v = Vector(5, 10) &#39;&#39;&#39;</span>
 <span style=color:#75715e>#    실전에서는, 그리고 잘 만든 소스들에는 주석이 잘 달려있다.</span>
 
-<span style=color:#f92672>&gt;    if len(args) == 0</span>:
+<span style=color:#f92672>&gt;    if len(args) == 0</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self._x, self._y = 0, 0</span>
-<span style=color:#f92672>&gt;   else</span>:
+<span style=color:#f92672>&gt;   else</span><span style=color:#111>:</span>
 <span style=color:#75715e>#   unpacking</span>
 <span style=color:#ae81ff>&gt;        self._x, self._y = args</span>
 
-<span style=color:#f92672>&gt;   def __repr__(self)</span>:
+<span style=color:#f92672>&gt;   def __repr__(self)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       &#39;&#39;&#39;Returns the vector method informations&#39;&#39;&#39;</span>
 <span style=color:#75715e>#       raw data로 출력하기</span>
 <span style=color:#ae81ff>&gt;       return &#39;Vector(%r, %r)&#39; % (self._x, self._y)</span>
 
-<span style=color:#f92672>&gt;   def __add__(self, other)</span>:
+<span style=color:#f92672>&gt;   def __add__(self, other)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       &#39;&#39;&#39;Returns the vector addtion of self and other&#39;&#39;&#39;</span>
 <span style=color:#ae81ff>&gt;       return Vector(self._x+ other._x)</span>
 
-<span style=color:#f92672>&gt;   def __mul__(self, y)</span>:
+<span style=color:#f92672>&gt;   def __mul__(self, y)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;   ```Returns the vector addition of self and other```</span>
 <span style=color:#ae81ff>&gt;       return Vector(self._x * y, self._y * y )</span>
 
@@ -443,12 +442,12 @@ gt: greater</li>
 <p>위 코드들로 실습을 해보자.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; v1 = Vector(20, 45)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; v1 = Vector(20, 45)</span>
 <span style=color:#ae81ff>&gt; v2 = Vector(2.5, 5)</span>
 <span style=color:#ae81ff>&gt; v3 = Vector()</span>
 
 <span style=color:#ae81ff>&gt; print(Vector.__init__.__doc__)</span>
-<span style=color:#f92672>Create a vector, example </span>: <span style=color:#ae81ff>v = Vector(5, 10)</span>
+<span style=color:#f92672>Create a vector, example </span><span style=color:#111>:</span> <span style=color:#ae81ff>v = Vector(5, 10)</span>
 
 <span style=color:#ae81ff>&gt; print(Vector.__repr__.__doc__)</span>
 <span style=color:#ae81ff>Returns the vector method infomations</span>

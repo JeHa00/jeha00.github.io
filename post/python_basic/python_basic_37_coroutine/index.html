@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -36,7 +35,7 @@
 <meta name=twitter:title content="[TIL] Python basic 37: Coroutine">
 <meta name=twitter:description content="첫 번째, Thread, Multi-thread 그리고 Coroutine이 무엇인지 알아보면서, coroutine이 왜 중요한지를 이해한다. 두 번째, Coroutine을 구현해보면서 Generator와의 차이를 통해 Coroutine을 이해한다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 37: Coroutine","item":"http://jeha00.github.io/post/python_basic/python_basic_37_coroutine/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 37: Coroutine","name":"[TIL] Python basic 37: Coroutine","description":"첫 번째, Thread, Multi-thread 그리고 Coroutine이 무엇인지 알아보면서, coroutine이 왜 중요한지를 이해한다. 두 번째, Coroutine을 구현해보면서 Generator와의 차이를 통해 Coroutine을 이해한다.","keywords":["TIL","python"],"articleBody":"Intro   Thread, Multi-thread 그리고 Coroutine이 무엇인지를 통해 코루틴의 중요성을 이해한다.\n  Coroutine을 구현해보면서 Generator와의 차이를 통해 Coroutine을 이해한다.\n  코루틴이 왜 필요한지 이해하기 위해서 먼저 Thread, Multi-thread 를 이해해보자.\n  그리고, 이들을 이해하기 위해서는 process가 뭔지 알아야 한다.\n  그러면 이 개념들에 대해 알아보자.    1. Thread, Multi - thread란?? Process 와 Thread란??  process는 코드로 구현된 파일인 program이 실행된 것을 의미한다. Thread(쓰레드)는 ‘한’ process 내에서 나뉘어진 하나 이상의 실행 단위를 말한다.  Single thread(단일 스레드) 와 Multi-thread란??  thread가 프로세스 내에 하나만 존재하면 단일 스레드 상태로 실행 단위는 프로세스 자체가 된다. 하지만, 한 프로세스 내에서 분리하여 여러 thread로 나뉘어 실행 단위가 나눠지고 많아지면 이를 Multi-thread라 한다. 한 process 내부의 각 thread가 한 applicaiton이 여러 가지 일을 처리해야하는 상황에서 각 작업들을 담당하는 거다.  multi-thread 장점  한 process 내에 thread끼리는 긴밀히 연결되어 있다. 한 process 내에 있으므로, 공유된 자원으로 통신 비용을 절감할 수 있다. 공유된 자원으로 메모리가 효율적이다. multi-process보다 Context switching 비용이 적다.  multi-thread 단점   하나의 thread에 문제가 생기면 다른 여러 thread에도 영향을 준다.\n  Single thread(단일 thread)를 하다가 속도를 높이기 위해 multi-thread를 사용하기 시작하면, thread 끼리 공유되는 자원 때문에 교착 상태(Dead Lock)가 발생할 수 있다.\n  single thread에 비해 ‘context switching’ cost가 크다.\n  자원 소비 가능성이 증가한다.\n  이런 이유로 Single thread가 더 빠른 이유가 switching cost 때문이다.\n   2. 코루틴(Coroutine)이란??   Cooperative routine의 약어로, 서로 협력하는 routine을 의미한다. Generator의 특별한 형태로, yield와 send를 통해서 main routine과 sub routine의 데이터 상호 교환 방식     코루틴은 위의 의미를 가지고 있지만, thread의 관점에서 보자면\n single thread환경에서 yieldkeyword를 통해 stack 기반으로 동작하는 비동기 작업    함수에서 single thread에서도 동시성이 가능하도록 언어가 발전하고 있는데,바로 코루틴이 이런 발전의 한 예이다.\n  coroutine은 routine 실행 중지 후, 다시 이어서 실행 가능한 동시성 프로그래밍 방법.\n 그래서 coroutine은 thread에 비해서 overhead가 감소된다.  overhead: 어떤 처리를 하기 위해 들어가는 간접적인 처리 시간 · 메모리      흐름 제어: 메인 루틴에서 서브 루틴을 호출하면 서브루틴에서 수행한다.\n    이어지는 예제들을 통해서 아래 3가지를 유심히 보자.\n Coroutine을 어떻게 제어하는지 상태 저장 양방향 전송     3. 코루틴 기본예제 1: 코루틴 이해하기   앞으로 def를 보면 단지 function이라 생각하지 말자.\n def로 function, generator, coroutine을 구현할 수 있기 때문이다.    for문에서는 예외가 잡히기 때문에, StopIterator가 발생되지 않는다.\n  ## Generator ## sub routine  def corountine1():  print(' coroutine started') # yield는 외부 main routine에서 주는 값을 받아오고, 이 yield가 i로 할당된다.  i = yield  print(' coroutine received: {}'.format(i)) ## main routine: 함수를 호출하기 때문에  cr1 = coroutine1()  print(cr1, type(cr1)) generator'  next(cr1)  coroutine started.  next(cr1)  coroutine received : None StopIteration   위 코드에서는 sub routine이 main routine에 주는 것 밖에 하지 못 했다.\n  그러면 어떻게 main과 sub가 상호작용 할 수 있을까??\n  send를 통해서 main routine과 sub routine이 상호작용할 수 있다.\n  send를 사용해야 yield keyword가 값을 받을 수 있다.\n  이것이 바로 coroutine이다.\n Generator의 특별한 형태로, yield와 send를 통해서 main routine과 sub routine의 데이터를 상호 교환할 수 있다.\n    cr1 = coroutine1() # yield 지점까지 sub routine 실행  next(cr1)  coroutine started. ## 값 전송  cr1.send(100)  coroutine received : 100 StopIteration  send와 next 비교  위 code를 통해서 send도 next 기능이 포함된 걸 알 수 있다. 하지만, next는 값을 sub routine에 보낼 수 없고, send만 보낼 수 있다.   send() 에 100을 입력하니, ‘coroutine received: 100’이 출력되었다. main routine에서 보낸 100이 sub routine인 coroutine1의 yield가 받았고, 이를 i에 할당한 걸 알 수 있다.   그러면 send를 잘못 사용한 경우를 알아보자.   cr1 = coroutine1() # next(cr1)을 생략하고, 바로 send한다. # 시작되지 않고 보내는 상황이다. ## 값 전송  cr1.send(100) TypeError: can't send non-None value to a just-started generator  Error를 통해 알 수 있는 건 sub-routine의 yield 지점에서 context가 멈춰야, send로 보냈을 때 받을 수 있다는 걸 알 수 있다. 즉, next를 먼저 실행하여, coroutine을 실행한 후 yield keyword를 실행해야 한다.   4. 코루틴 기본예제 2: 상태값 확인하기   GEN_CREATED: 처음 대기 상태를 의미 GEN_RUNNING: 실행 상태를 의미 GEN_SUSPENDED: yield 대기 상태를 의미 GEN_CLOSED: 실행 완료 상태를 의미   # 이번에는 매개변수가 존재  def coroutine2(x):  print('coroutine started : {}'.format(x)) ## main과 sub routine의 양방향 통신 - 동시성 개발 # 좌변 = 우변 # 좌변은 main routine에서 sub routine으로 입력을 받는 것 # 우변은 sub routine에서 나한테 준 것  y = yield x  print('coroutine y received : {}'.format(y))  z = yield x + y  print('coroutine z received : {}'.format(z))  cr3 = coroutine2(10)  print(next(cr3)) coroutine started : 10 10  print(cr3.send(100)) coroutine y received : 100 110  print(cr3.send(100)) coroutine z received : 100 Stop Iteration  상태값 확인을 해보겠다. 상태값 확인은 getgeneratestate를 import하는 것부터 시작한다.   from inspect import getgeneratorstate  cr3 = coroutine2(10)  print(getgeneratorstate(cr3)) GEN_CREATED  next(cr3) coroutine started : 10  print(getgeneratorstate(cr3)) GEN_SUSPENDED  cr3.send(100) coroutine y received : 100  print(getgeneratorstate(cr3)) GEN_SUSPENDED  cr3.send(20) coroutine z received : 20 StopIteration  5. 코루틴 기본예제 3: 중첩 코루틴 처리  def generator1():  for x in 'AB':  yield x  for y in range(1,4):  yield y  t1 = generator1()  print(next(t1)) A  print(next(t1)) B # 이어서 출력되는 걸 알 수 있다.  print(next(t1)) 1  print(next(t1)) 2  print(next(t1)) 3  print(next(t1)) StopIteration  t2 = generator1()  print(list(t2)) ['A', 'B', 1, 2, 3]  yield from을 사용해서 위 code를 구현해보자. 그냥 yield보다 더 직관적으로 이해가 가능하다.   def generator2(): # from 뒤에 iterator가 다 소진될 때까지 반환하겠다.  yield from 'AB'  yield from range(1,4)  t3 = generator2()  print(next(t3)) A  print(next(t3)) B  print(next(t3)) 1  print(next(t3)) 2  print(next(t3)) 3  6. Summary   coroutine은 generator에서 시작되며, 동시성이 무엇인지 이해했다.\n  coroutine은 함수가 종료되지 않은 상태에서 main routine의 code를 실행한 뒤, 다시 돌아와서 coroutine의 code를 실행한다.\n  coroutine이 종료되지 않았으므로, coroutine의 내용도 계속 유지된다.\n  즉, 일반함수는 호출하면 코드를 한 번만 실행할 수 있지만, coroutine은 여러 번 실행이 가능하다\n  coroutie이 generator에서 시작되었다면, 둘의 구체적인 차이는 무엇일까???\n generator는 yield로 값을 발생시켰지만, coroutine은 yield로 값을 받아올 수 있다. 호출하는 과점에서 보면 제네레이터는 next 함수(__next__ method)를 반복 호출하여 값을 얻어내는 방식 코루틴은 next 함수(__next__ method)를 한 번만 호출한 뒤, send method를 사용하여 값을 주고, 받는 방식     Reference  인프런 파이썬 중급 코다의 Process vs. Thread 파이썬 강의 UNIT 41.1 코루틴에 값 보내기  ","wordCount":"978","inLanguage":"en","datePublished":"2022-04-02T21:15:33+09:00","dateModified":"2022-04-02T21:15:33+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_37_coroutine/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 37: Coroutine","name":"[TIL] Python basic 37: Coroutine","description":"첫 번째, Thread, Multi-thread 그리고 Coroutine이 무엇인지 알아보면서, coroutine이 왜 중요한지를 이해한다. 두 번째, Coroutine을 구현해보면서 Generator와의 차이를 통해 Coroutine을 이해한다.","keywords":["TIL","python"],"articleBody":"Intro   Thread, Multi-thread 그리고 Coroutine이 무엇인지를 통해 코루틴의 중요성을 이해한다.\n  Coroutine을 구현해보면서 Generator와의 차이를 통해 Coroutine을 이해한다.\n  코루틴이 왜 필요한지 이해하기 위해서 먼저 Thread, Multi-thread 를 이해해보자.\n  그리고, 이들을 이해하기 위해서는 process가 뭔지 알아야 한다.\n  그러면 이 개념들에 대해 알아보자.    1. Thread, Multi - thread란?? Process 와 Thread란??  process는 코드로 구현된 파일인 program이 실행된 것을 의미한다. Thread(쓰레드)는 ‘한’ process 내에서 나뉘어진 하나 이상의 실행 단위를 말한다.  Single thread(단일 스레드) 와 Multi-thread란??  thread가 프로세스 내에 하나만 존재하면 단일 스레드 상태로 실행 단위는 프로세스 자체가 된다. 하지만, 한 프로세스 내에서 분리하여 여러 thread로 나뉘어 실행 단위가 나눠지고 많아지면 이를 Multi-thread라 한다. 한 process 내부의 각 thread가 한 applicaiton이 여러 가지 일을 처리해야하는 상황에서 각 작업들을 담당하는 거다.  multi-thread 장점  한 process 내에 thread끼리는 긴밀히 연결되어 있다. 한 process 내에 있으므로, 공유된 자원으로 통신 비용을 절감할 수 있다. 공유된 자원으로 메모리가 효율적이다. multi-process보다 Context switching 비용이 적다.  multi-thread 단점   하나의 thread에 문제가 생기면 다른 여러 thread에도 영향을 준다.\n  Single thread(단일 thread)를 하다가 속도를 높이기 위해 multi-thread를 사용하기 시작하면, thread 끼리 공유되는 자원 때문에 교착 상태(Dead Lock)가 발생할 수 있다.\n  single thread에 비해 ‘context switching’ cost가 크다.\n  자원 소비 가능성이 증가한다.\n  이런 이유로 Single thread가 더 빠른 이유가 switching cost 때문이다.\n   2. 코루틴(Coroutine)이란??   Cooperative routine의 약어로, 서로 협력하는 routine을 의미한다. Generator의 특별한 형태로, yield와 send를 통해서 main routine과 sub routine의 데이터 상호 교환 방식     코루틴은 위의 의미를 가지고 있지만, thread의 관점에서 보자면\n single thread환경에서 yieldkeyword를 통해 stack 기반으로 동작하는 비동기 작업    함수에서 single thread에서도 동시성이 가능하도록 언어가 발전하고 있는데,바로 코루틴이 이런 발전의 한 예이다.\n  coroutine은 routine 실행 중지 후, 다시 이어서 실행 가능한 동시성 프로그래밍 방법.\n 그래서 coroutine은 thread에 비해서 overhead가 감소된다.  overhead: 어떤 처리를 하기 위해 들어가는 간접적인 처리 시간 · 메모리      흐름 제어: 메인 루틴에서 서브 루틴을 호출하면 서브루틴에서 수행한다.\n    이어지는 예제들을 통해서 아래 3가지를 유심히 보자.\n Coroutine을 어떻게 제어하는지 상태 저장 양방향 전송     3. 코루틴 기본예제 1: 코루틴 이해하기   앞으로 def를 보면 단지 function이라 생각하지 말자.\n def로 function, generator, coroutine을 구현할 수 있기 때문이다.    for문에서는 예외가 잡히기 때문에, StopIterator가 발생되지 않는다.\n  ## Generator ## sub routine  def corountine1():  print(' coroutine started') # yield는 외부 main routine에서 주는 값을 받아오고, 이 yield가 i로 할당된다.  i = yield  print(' coroutine received: {}'.format(i)) ## main routine: 함수를 호출하기 때문에  cr1 = coroutine1()  print(cr1, type(cr1)) generator'  next(cr1)  coroutine started.  next(cr1)  coroutine received : None StopIteration   위 코드에서는 sub routine이 main routine에 주는 것 밖에 하지 못 했다.\n  그러면 어떻게 main과 sub가 상호작용 할 수 있을까??\n  send를 통해서 main routine과 sub routine이 상호작용할 수 있다.\n  send를 사용해야 yield keyword가 값을 받을 수 있다.\n  이것이 바로 coroutine이다.\n Generator의 특별한 형태로, yield와 send를 통해서 main routine과 sub routine의 데이터를 상호 교환할 수 있다.\n    cr1 = coroutine1() # yield 지점까지 sub routine 실행  next(cr1)  coroutine started. ## 값 전송  cr1.send(100)  coroutine received : 100 StopIteration  send와 next 비교  위 code를 통해서 send도 next 기능이 포함된 걸 알 수 있다. 하지만, next는 값을 sub routine에 보낼 수 없고, send만 보낼 수 있다.   send() 에 100을 입력하니, ‘coroutine received: 100’이 출력되었다. main routine에서 보낸 100이 sub routine인 coroutine1의 yield가 받았고, 이를 i에 할당한 걸 알 수 있다.   그러면 send를 잘못 사용한 경우를 알아보자.   cr1 = coroutine1() # next(cr1)을 생략하고, 바로 send한다. # 시작되지 않고 보내는 상황이다. ## 값 전송  cr1.send(100) TypeError: can't send non-None value to a just-started generator  Error를 통해 알 수 있는 건 sub-routine의 yield 지점에서 context가 멈춰야, send로 보냈을 때 받을 수 있다는 걸 알 수 있다. 즉, next를 먼저 실행하여, coroutine을 실행한 후 yield keyword를 실행해야 한다.   4. 코루틴 기본예제 2: 상태값 확인하기   GEN_CREATED: 처음 대기 상태를 의미 GEN_RUNNING: 실행 상태를 의미 GEN_SUSPENDED: yield 대기 상태를 의미 GEN_CLOSED: 실행 완료 상태를 의미   # 이번에는 매개변수가 존재  def coroutine2(x):  print('coroutine started : {}'.format(x)) # main과 sub routine의 양방향 통신 - 동시성 개발 # 좌변 = 우변 # 좌변은 main routine에서 sub routine으로 입력을 받는 것 # 우변은 sub routine에서 나한테 준 것  y = yield x  print('coroutine y received : {}'.format(y))  z = yield x + y  print('coroutine z received : {}'.format(z))  cr3 = coroutine2(10)  print(next(cr3)) coroutine started : 10 10  print(cr3.send(100)) coroutine y received : 100 110  print(cr3.send(100)) coroutine z received : 100 Stop Iteration  상태값 확인을 해보겠다. 상태값 확인은 getgeneratestate를 import하는 것부터 시작한다.   from inspect import getgeneratorstate  cr3 = coroutine2(10)  print(getgeneratorstate(cr3)) GEN_CREATED  next(cr3) coroutine started : 10  print(getgeneratorstate(cr3)) GEN_SUSPENDED  cr3.send(100) coroutine y received : 100  print(getgeneratorstate(cr3)) GEN_SUSPENDED  cr3.send(20) coroutine z received : 20 StopIteration  5. 코루틴 기본예제 3: 중첩 코루틴 처리  def generator1():  for x in 'AB':  yield x  for y in range(1,4):  yield y  t1 = generator1()  print(next(t1)) A  print(next(t1)) B # 이어서 출력되는 걸 알 수 있다.  print(next(t1)) 1  print(next(t1)) 2  print(next(t1)) 3  print(next(t1)) StopIteration  t2 = generator1()  print(list(t2)) ['A', 'B', 1, 2, 3]  yield from을 사용해서 위 code를 구현해보자. 그냥 yield보다 더 직관적으로 이해가 가능하다.   def generator2(): # from 뒤에 iterator가 다 소진될 때까지 반환하겠다.  yield from 'AB'  yield from range(1,4)  t3 = generator2()  print(next(t3)) A  print(next(t3)) B  print(next(t3)) 1  print(next(t3)) 2  print(next(t3)) 3  6. Summary   coroutine은 generator에서 시작되며, 동시성이 무엇인지 이해했다.\n  coroutine은 함수가 종료되지 않은 상태에서 main routine의 code를 실행한 뒤, 다시 돌아와서 coroutine의 code를 실행한다.\n  coroutine이 종료되지 않았으므로, coroutine의 내용도 계속 유지된다.\n  즉, 일반함수는 호출하면 코드를 한 번만 실행할 수 있지만, coroutine은 여러 번 실행이 가능하다\n  coroutie이 generator에서 시작되었다면, 둘의 구체적인 차이는 무엇일까???\n generator는 yield로 값을 발생시켰지만, coroutine은 yield로 값을 받아올 수 있다. 호출하는 과점에서 보면 제네레이터는 next 함수(__next__ method)를 반복 호출하여 값을 얻어내는 방식 코루틴은 next 함수(__next__ method)를 한 번만 호출한 뒤, send method를 사용하여 값을 주고, 받는 방식     Reference  인프런 파이썬 중급 코다의 Process vs. Thread 파이썬 강의 UNIT 41.1 코루틴에 값 보내기  ","wordCount":"978","inLanguage":"en","datePublished":"2022-04-02T21:15:33+09:00","dateModified":"2022-04-02T21:15:33+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_37_coroutine/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -232,28 +231,28 @@
 <p>for문에서는 예외가 잡히기 때문에, <code>StopIterator</code>가 발생되지 않는다.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## Generator</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## Generator</span>
 
 <span style=color:#75715e>## sub routine</span>
-<span style=color:#f92672>&gt; def corountine1()</span>:
+<span style=color:#f92672>&gt; def corountine1()</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;   print(&#39;&gt;&gt;&gt; coroutine started&#39;)</span>
 
 <span style=color:#75715e># yield는 외부 main routine에서 주는 값을 받아오고, 이 yield가 i로 할당된다.</span>
 <span style=color:#ae81ff>&gt;   i = yield</span>
-<span style=color:#f92672>&gt;   print(&#39;&gt;&gt;&gt; coroutine received</span>: {}<span style=color:#e6db74>&#39;.format(i))
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>## main routine: 함수를 호출하기 때문에
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt; cr1 = coroutine1()
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt; print(cr1, type(cr1))
-</span><span style=color:#e6db74>&lt;generator object coroutine1 at 0x00000158B4A1EB30&gt; &lt;class &#39;</span><span style=color:#ae81ff>generator&#39;&gt;</span>
+<span style=color:#f92672>&gt;   print(&#39;&gt;&gt;&gt; coroutine received</span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(i))
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>## main routine: 함수를 호출하기 때문에
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt; cr1 = coroutine1()
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt; print(cr1, type(cr1))
+</span><span style=color:#d88200>&lt;generator object coroutine1 at 0x00000158B4A1EB30&gt; &lt;class &#39;</span><span style=color:#ae81ff>generator&#39;&gt;</span>
 
 <span style=color:#ae81ff>&gt; next(cr1)</span>
  <span style=color:#ae81ff>&gt;&gt;&gt; coroutine started.</span>
 
 <span style=color:#ae81ff>&gt; next(cr1)</span>
- <span style=color:#f92672>&gt;&gt;&gt; coroutine received </span>: <span style=color:#ae81ff>None</span>
+ <span style=color:#f92672>&gt;&gt;&gt; coroutine received </span><span style=color:#111>:</span> <span style=color:#ae81ff>None</span>
  <span style=color:#ae81ff>StopIteration</span>
 </code></pre></div><ul>
 <li>
@@ -275,7 +274,7 @@
 </blockquote>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; cr1 = coroutine1()</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; cr1 = coroutine1()</span>
 
 <span style=color:#75715e># yield 지점까지 sub routine 실행</span>
 <span style=color:#ae81ff>&gt; next(cr1)</span>
@@ -283,7 +282,7 @@
 
 <span style=color:#75715e>## 값 전송</span>
 <span style=color:#ae81ff>&gt; cr1.send(100)</span>
- <span style=color:#f92672>&gt;&gt;&gt; coroutine received </span>: <span style=color:#ae81ff>100</span>
+ <span style=color:#f92672>&gt;&gt;&gt; coroutine received </span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
  <span style=color:#ae81ff>StopIteration</span>
 </code></pre></div>
 <ul>
@@ -299,7 +298,7 @@
 <ul>
 <li>그러면 <code>send</code>를 잘못 사용한 경우를 알아보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; cr1 = coroutine1()</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; cr1 = coroutine1()</span>
 
 <span style=color:#75715e># next(cr1)을 생략하고, 바로 send한다.</span>
 
@@ -307,7 +306,7 @@
 
 <span style=color:#75715e>## 값 전송</span>
 <span style=color:#ae81ff>&gt; cr1.send(100)</span>
-<span style=color:#f92672>TypeError</span>: <span style=color:#ae81ff>can&#39;t send non-None value to a just-started generator</span>
+<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#ae81ff>can&#39;t send non-None value to a just-started generator</span>
 </code></pre></div>
 <ul>
 <li>Error를 통해 알 수 있는 건 sub-routine의 yield 지점에서 context가 멈춰야, send로 보냈을 때 받을 수 있다는 걸 알 수 있다.</li>
@@ -323,38 +322,39 @@
 <li>GEN_CLOSED: 실행 완료 상태를 의미</li>
 </ul>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 이번에는 매개변수가 존재</span>
-<span style=color:#f92672>&gt; def coroutine2(x)</span>:
-<span style=color:#f92672>&gt;   print(&#39;coroutine started </span>: {}<span style=color:#e6db74>&#39;.format(x))
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>## main과 sub routine의 양방향 통신 -&gt; 동시성 개발
-</span><span style=color:#e6db74># 좌변 = 우변
-</span><span style=color:#e6db74># 좌변은 main routine에서 sub routine으로 입력을 받는 것
-</span><span style=color:#e6db74># 우변은 sub routine에서 나한테 준 것
-</span><span style=color:#e6db74>&gt;   y = yield x
-</span><span style=color:#e6db74>&gt;   print(&#39;</span><span style=color:#f92672>coroutine y received </span>: {}<span style=color:#e6db74>&#39;.format(y))
-</span><span style=color:#e6db74>&gt;   z = yield x + y
-</span><span style=color:#e6db74>&gt;   print(&#39;</span><span style=color:#f92672>coroutine z received </span>: {}<span style=color:#ae81ff>&#39;.format(z))</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 이번에는 매개변수가 존재</span>
+<span style=color:#f92672>&gt; def coroutine2(x)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;   print(&#39;coroutine started </span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(x))
+</span><span style=color:#d88200>
+</span><span style=color:#d88200># main과 sub routine의 양방향 통신 -&gt; 동시성 개발
+</span><span style=color:#d88200># 좌변 = 우변
+</span><span style=color:#d88200># 좌변은 main routine에서 sub routine으로 입력을 받는 것
+</span><span style=color:#d88200># 우변은 sub routine에서 나한테 준 것
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt;   y = yield x
+</span><span style=color:#d88200>&gt;   print(&#39;</span><span style=color:#f92672>coroutine y received </span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(y))
+</span><span style=color:#d88200>&gt;   z = yield x + y
+</span><span style=color:#d88200>&gt;   print(&#39;</span><span style=color:#f92672>coroutine z received </span><span style=color:#111>:</span> {}<span style=color:#ae81ff>&#39;.format(z))</span>
 
 <span style=color:#ae81ff>&gt; cr3 = coroutine2(10)</span>
 
 <span style=color:#ae81ff>&gt; print(next(cr3))</span>
-<span style=color:#f92672>coroutine started </span>: <span style=color:#ae81ff>10</span>
+<span style=color:#f92672>coroutine started </span><span style=color:#111>:</span> <span style=color:#ae81ff>10</span>
 <span style=color:#ae81ff>10</span>
 
 <span style=color:#ae81ff>&gt; print(cr3.send(100))</span>
-<span style=color:#f92672>coroutine y received </span>: <span style=color:#ae81ff>100</span>
+<span style=color:#f92672>coroutine y received </span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
 <span style=color:#ae81ff>110</span>
 
 <span style=color:#ae81ff>&gt; print(cr3.send(100))</span>
-<span style=color:#f92672>coroutine z received </span>: <span style=color:#ae81ff>100</span>
+<span style=color:#f92672>coroutine z received </span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
 <span style=color:#ae81ff>Stop Iteration</span>
 </code></pre></div>
 <ul>
 <li>상태값 확인을 해보겠다.</li>
 <li>상태값 확인은 <code>getgeneratestate</code>를 import하는 것부터 시작한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; from inspect import getgeneratorstate</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; from inspect import getgeneratorstate</span>
 
 <span style=color:#ae81ff>&gt; cr3 = coroutine2(10)</span>
 
@@ -362,27 +362,27 @@
 <span style=color:#ae81ff>GEN_CREATED</span>
 
 <span style=color:#ae81ff>&gt; next(cr3)</span>
-<span style=color:#f92672>coroutine started </span>: <span style=color:#ae81ff>10</span>
+<span style=color:#f92672>coroutine started </span><span style=color:#111>:</span> <span style=color:#ae81ff>10</span>
 
 <span style=color:#ae81ff>&gt; print(getgeneratorstate(cr3))</span>
 <span style=color:#ae81ff>GEN_SUSPENDED</span>
 
 <span style=color:#ae81ff>&gt; cr3.send(100)</span>
-<span style=color:#f92672>coroutine y received </span>: <span style=color:#ae81ff>100</span>
+<span style=color:#f92672>coroutine y received </span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
 
 <span style=color:#ae81ff>&gt; print(getgeneratorstate(cr3))</span>
 <span style=color:#ae81ff>GEN_SUSPENDED</span>
 
 <span style=color:#ae81ff>&gt; cr3.send(20)</span>
-<span style=color:#f92672>coroutine z received </span>: <span style=color:#ae81ff>20</span>
+<span style=color:#f92672>coroutine z received </span><span style=color:#111>:</span> <span style=color:#ae81ff>20</span>
 <span style=color:#ae81ff>StopIteration</span>
 </code></pre></div>
 <hr>
 <h1 id=5-코루틴-기본예제-3-중첩-코루틴-처리>5. 코루틴 기본예제 3: 중첩 코루틴 처리<a hidden class=anchor aria-hidden=true href=#5-코루틴-기본예제-3-중첩-코루틴-처리>#</a></h1>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def generator1()</span>:
-<span style=color:#f92672>&gt;   for x in &#39;AB&#39;</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def generator1()</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;   for x in &#39;AB&#39;</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       yield x</span>
-<span style=color:#f92672>&gt;   for y in range(1,4)</span>:
+<span style=color:#f92672>&gt;   for y in range(1,4)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       yield y</span>
 
 <span style=color:#ae81ff>&gt; t1 = generator1()</span>
@@ -409,13 +409,13 @@
 <span style=color:#ae81ff>&gt; t2 = generator1()</span>
 
 <span style=color:#ae81ff>&gt; print(list(t2))</span>
-[<span style=color:#e6db74>&#39;A&#39;</span>, <span style=color:#e6db74>&#39;B&#39;</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;A&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;B&#39;</span><span style=color:#111>,</span> <span style=color:#ae81ff>1</span><span style=color:#111>,</span> <span style=color:#ae81ff>2</span><span style=color:#111>,</span> <span style=color:#ae81ff>3</span><span style=color:#111>]</span>
 </code></pre></div>
 <ul>
 <li><code>yield from</code>을 사용해서 위 code를 구현해보자.</li>
 <li>그냥 <code>yield</code>보다 더 직관적으로 이해가 가능하다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def generator2()</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def generator2()</span><span style=color:#111>:</span>
 
 <span style=color:#75715e># from 뒤에 iterator가 다 소진될 때까지 반환하겠다.</span>
 <span style=color:#ae81ff>&gt;     yield from &#39;AB&#39;</span>

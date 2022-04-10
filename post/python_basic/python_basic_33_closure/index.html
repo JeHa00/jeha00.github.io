@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -119,17 +118,17 @@
 <ul>
 <li>전역 변수와 지역 변수에 대해 간단히 복습해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># global (전역) 변수</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># global (전역) 변수</span>
 <span style=color:#ae81ff>&gt; c = 30</span>
 
-<span style=color:#f92672>&gt; def func_v3(a)</span>:
+<span style=color:#f92672>&gt; def func_v3(a)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    print(a)</span>
 <span style=color:#ae81ff>&gt;   </span> <span style=color:#75715e># local (지역) 변수</span>
 <span style=color:#ae81ff>&gt;    print(c)</span>
 <span style=color:#ae81ff>&gt;    c = 40</span>
 
 <span style=color:#ae81ff>&gt; func_v3(10)</span>
-<span style=color:#f92672>UnboundLocalError</span>: <span style=color:#ae81ff>local variable &#39;c&#39; referenced before assignmnet</span>
+<span style=color:#f92672>UnboundLocalError</span><span style=color:#111>:</span> <span style=color:#ae81ff>local variable &#39;c&#39; referenced before assignmnet</span>
 </code></pre></div><ul>
 <li>
 <p>func_v3를 정의하기 전에 c에 값을 할당했다.</p>
@@ -153,9 +152,9 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; c = 30</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; c = 30</span>
 
-<span style=color:#f92672>&gt; def func_v3(a)</span>:
+<span style=color:#f92672>&gt; def func_v3(a)</span><span style=color:#111>:</span>
 
 <span style=color:#ae81ff>&gt;    global c</span>
 <span style=color:#ae81ff>&gt;    print(a)</span>
@@ -247,14 +246,14 @@
 <p>그러면 class를 사용하여 closure가 무엇인지 구현해보자.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># global scope</span>
-<span style=color:#f92672>&gt; class Avenager()</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># global scope</span>
+<span style=color:#f92672>&gt; class Avenager()</span><span style=color:#111>:</span>
 <span style=color:#75715e># enclosing scope</span>
-<span style=color:#f92672>&gt;   def __init__(self)</span>:
+<span style=color:#f92672>&gt;   def __init__(self)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       self._series = []</span>
 <span style=color:#75715e># local scope</span>
 <span style=color:#75715e># special method __call__은 class를 function처럼 호출해서 사용하도록 한다.</span>
-<span style=color:#f92672>&gt;   def __call__(self, v)</span>:
+<span style=color:#f92672>&gt;   def __call__(self, v)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       self._series.append(v)</span>
 <span style=color:#ae81ff>&gt;       print(&#39;inner &gt;&gt;&gt; {} / {}&#39;.format(self._series, len(self, series)))</span>
 <span style=color:#ae81ff>&gt;       return sum(self._series) / len(self._series)</span>
@@ -287,15 +286,15 @@
 <ul>
 <li>closure는 pattern이 정해져 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># global scope</span>
-<span style=color:#f92672>&gt; def closure_ex1()</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># global scope</span>
+<span style=color:#f92672>&gt; def closure_ex1()</span><span style=color:#111>:</span>
 
 <span style=color:#75715e># closure_ex1의 local scope이면서</span>
 <span style=color:#75715e># averager(v)의 the enclosing scope 또는 자유영역</span>
 <span style=color:#75715e># 이 영역에 정의된 변수: series</span>
 <span style=color:#ae81ff>&gt;   series = []</span>
 
-<span style=color:#f92672>&gt;   def averager(v)</span>:
+<span style=color:#f92672>&gt;   def averager(v)</span><span style=color:#111>:</span>
 <span style=color:#75715e># averager의 local scope</span>
 <span style=color:#ae81ff>&gt;      series.append(v)</span>
 <span style=color:#ae81ff>&gt;      print(&#39;inner &gt;&gt;&gt; {} / {}&#39;.format(series, len(series)))</span>
@@ -330,11 +329,11 @@
 <ul>
 <li>그러면 파이썬에서 이 closure를 어떻게 취급하는지 확인해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># function inspection</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># function inspection</span>
 <span style=color:#75715e># __closure__ 로 취급된다.</span>
 <span style=color:#75715e># __call__이 있으므로, 호출할 수 있다.</span>
 <span style=color:#ae81ff>&gt; print(dir(avg_closure1))</span>
-[<span style=color:#e6db74>&#39;__annotations__&#39;</span>, <span style=color:#e6db74>&#39;__call__&#39;</span>, <span style=color:#e6db74>&#39;__class__&#39;</span>, <span style=color:#e6db74>&#39;__closure__&#39;</span>, <span style=color:#e6db74>&#39;__dict__&#39;</span>, <span style=color:#e6db74>&#39;__dir__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>, <span style=color:#e6db74>&#39;__init__&#39;</span>, <span style=color:#e6db74>&#39;__init_subclass__&#39;</span>, <span style=color:#e6db74>&#39;__kwdefaults__&#39;</span>, <span style=color:#e6db74>&#39;__le__&#39;</span>, <span style=color:#e6db74>&#39;__lt__&#39;</span>, <span style=color:#e6db74>&#39;__module__&#39;</span>, <span style=color:#e6db74>&#39;__name__&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;__annotations__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__call__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__class__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__closure__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dict__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dir__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__doc__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init_subclass__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__kwdefaults__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__le__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__lt__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__module__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__name__&#39;</span><span style=color:#111>]</span>
 
 <span style=color:#75715e># detail한 함수 목록이 나온다.</span>
 <span style=color:#ae81ff>&gt; print(dir(avg_closure1.__code__))</span>
@@ -344,7 +343,7 @@
 
 <span style=color:#75715e># 자유 변수값을 출력할 수 있다.</span>
 <span style=color:#ae81ff>&gt; print(avg_closure1.__closure__[0].cell_contents)</span>
-[<span style=color:#ae81ff>15</span>, <span style=color:#ae81ff>35</span>, <span style=color:#ae81ff>40</span>]
+<span style=color:#111>[</span><span style=color:#ae81ff>15</span><span style=color:#111>,</span> <span style=color:#ae81ff>35</span><span style=color:#111>,</span> <span style=color:#ae81ff>40</span><span style=color:#111>]</span>
 </code></pre></div><ul>
 <li><code>__code__</code>: 함수가 컴파일되서 바이트코드 상태의 정보를 출력해주는 역할</li>
 </ul>
@@ -353,12 +352,12 @@
 <ul>
 <li>closure의 잘못된 사용법을 예제로 알아보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def closure_ex3()</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def closure_ex3()</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    </span> <span style=color:#75715e># Free variable</span>
 <span style=color:#ae81ff>&gt;     cnt = 0</span>
 <span style=color:#ae81ff>&gt;     total = 0</span>
 
-<span style=color:#f92672>&gt;     def averager(v)</span>:
+<span style=color:#f92672>&gt;     def averager(v)</span><span style=color:#111>:</span>
 
 <span style=color:#75715e># cnt와 total을 자유변수로 만든다.</span>
 <span style=color:#ae81ff>&gt;         nonlocal cnt, total</span>

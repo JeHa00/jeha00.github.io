@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -120,7 +119,7 @@
 <ul>
 <li>문자열 생성하기(선언하기) 및 출력하기</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 문자열 생성</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 문자열 생성</span>
 <span style=color:#ae81ff>&gt; str1 = &#34;I am Python&#34;</span>
 <span style=color:#ae81ff>&gt; str2 = &#39;Python&#39;</span>
 
@@ -145,7 +144,7 @@
 </code></pre></div><ul>
 <li>문자열 길이 측정: **len()**을 많이 사용한다. 길이에는 공백을 포함한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(len(str1))</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(len(str1))</span>
 <span style=color:#ae81ff>11</span>
 
 <span style=color:#ae81ff>&gt; print(len(str2))</span>
@@ -159,15 +158,15 @@
 <hr>
 <h2 id=2-escape-raw-string-and-multi-line>2. Escape, raw string and multi line<a hidden class=anchor aria-hidden=true href=#2-escape-raw-string-and-multi-line>#</a></h2>
 <h3 id=21-escape-code>2.1 Escape code<a hidden class=anchor aria-hidden=true href=#21-escape-code>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>\n</span>: <span style=color:#ae81ff>개행(줄바꿈)</span>
-<span style=color:#f92672>\t</span>: <span style=color:#ae81ff>탭키를 누른 만큼 벌어짐</span>
-<span style=color:#f92672>\\</span>: <span style=color:#ae81ff>문자 삽입</span>
-<span style=color:#f92672>\&#39;</span>: <span style=color:#ae81ff>문자 삽입</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>\n</span><span style=color:#111>:</span> <span style=color:#ae81ff>개행(줄바꿈)</span>
+<span style=color:#f92672>\t</span><span style=color:#111>:</span> <span style=color:#ae81ff>탭키를 누른 만큼 벌어짐</span>
+<span style=color:#f92672>\\</span><span style=color:#111>:</span> <span style=color:#ae81ff>문자 삽입</span>
+<span style=color:#f92672>\&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>문자 삽입</span>
 <span style=color:#ae81ff>\&#34;: 문자 삽입</span>
 </code></pre></div><ul>
 <li>위에 escape code 예시를 작성해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 문자 삽입 escape code</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 문자 삽입 escape code</span>
 
 <span style=color:#ae81ff>&gt; escape_str1 = &#34;do you have a \&#34;retro games\&#34;?&#34;</span>
 <span style=color:#ae81ff>&gt; print(escape_str1)</span>
@@ -199,7 +198,7 @@
 <li>Escape 표현을 사용하지 않기 위해 선언!</li>
 <li>이런 게 있다는 정도만 알고 있기</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># raw string 미포함</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># raw string 미포함</span>
 <span style=color:#ae81ff>&gt; raw_s1 = &#34;\\x\y\z\q&#34;</span>
 <span style=color:#ae81ff>&gt; print(raw_s1)</span>
 <span style=color:#ae81ff>\x\y\z\q</span>
@@ -215,15 +214,15 @@
 <li>역슬러쉬를 사용하여 파이썬에게 어떤 변수를 binding 한다는 걸 의미한다. 그래서 다음 줄에 변수를 선언한다는 걸 의미한다.</li>
 <li>콤마는 ```,""" 처럼 3개 이상을 사용한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 
 <span style=color:#ae81ff>&gt;  multi_str1 \</span>
-    <span style=color:#e6db74>&#34;&#34;&#34;
-</span><span style=color:#e6db74>    문자열
-</span><span style=color:#e6db74>    멀티라인 입력
-</span><span style=color:#e6db74>    테스트
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+    <span style=color:#d88200>&#34;&#34;&#34;
+</span><span style=color:#d88200>    문자열
+</span><span style=color:#d88200>    멀티라인 입력
+</span><span style=color:#d88200>    테스트
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>    &#34;&#34;&#34;</span>
 
 <span style=color:#ae81ff>&gt; print(multi_str1)</span>
 <span style=color:#ae81ff>문자열</span>
@@ -240,7 +239,7 @@
 </blockquote>
 <hr>
 <h2 id=3-문자형-연산>3. 문자형 연산<a hidden class=anchor aria-hidden=true href=#3-문자형-연산>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; str_o1 = &#34;python&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; str_o1 = &#34;python&#34;</span>
 <span style=color:#ae81ff>&gt; str_o2 = &#34;Apple&#34;</span>
 <span style=color:#ae81ff>&gt; str_o3 = &#34;How are you doing&#34;</span>
 <span style=color:#ae81ff>&gt; str_o4 = &#34;Korea Japan America&#34;</span>
@@ -252,13 +251,13 @@
 <span style=color:#ae81ff>pythonApple</span>
 
 <span style=color:#ae81ff>&gt; print(&#39;y&#39; in str_o1)</span>
-<span style=color:#66d9ef>True</span>
+<span style=color:#00a8c8>True</span>
 
 <span style=color:#ae81ff>&gt; print(&#39;n&#39; in str_o1)</span>
-<span style=color:#66d9ef>True</span>
+<span style=color:#00a8c8>True</span>
 
 <span style=color:#ae81ff>&gt; print(&#39;P&#39; not in str_o1)</span>
-<span style=color:#66d9ef>False</span>
+<span style=color:#00a8c8>False</span>
 
 
 
@@ -268,7 +267,7 @@
 <ul>
 <li>파이썬에서 type conversion은 자유롭게 가능하다고 생각하자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 정수 -&gt; 문자열</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 정수 -&gt; 문자열</span>
 <span style=color:#ae81ff>&gt; print(str(66))</span>
 
 
@@ -277,7 +276,7 @@
 
 <span style=color:#75715e># boolean  -&gt; string</span>
 <span style=color:#ae81ff>&gt; print(str(True), type(str))</span>
-<span style=color:#66d9ef>True</span> <span style=color:#ae81ff>&lt;class &#39;str&#39;&gt;</span>
+<span style=color:#00a8c8>True</span> <span style=color:#ae81ff>&lt;class &#39;str&#39;&gt;</span>
 
 <span style=color:#75715e># complex -&gt; string</span>
 <span style=color:#ae81ff>&gt; print(str(complex(12)))</span>
@@ -290,57 +289,57 @@
 string type의 data를 넣으면 string이 사용할 수 있는 함수를 보여준다.
 list면 list가 사용할 수 있는 함수를 보여준다.</p>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#ae81ff>&gt; im_str = &#34;Good Boy&#34;</span>
 <span style=color:#ae81ff>&gt; print(dir(im_str))</span>
-[<span style=color:#e6db74>&#39;capitalize&#39;</span>, <span style=color:#e6db74>&#39;encode&#39;</span>, <span style=color:#e6db74>&#39;endswith&#39;</span>, <span style=color:#e6db74>&#39;expandtabs&#39;</span>, <span style=color:#e6db74>&#39;find&#39;</span>, <span style=color:#e6db74>&#39;format&#39;</span>,  <span style=color:#e6db74>&#39;lower&#39;</span>, <span style=color:#e6db74>&#39;lstrip&#39;</span>, <span style=color:#e6db74>&#39;maketrans&#39;</span>, <span style=color:#e6db74>&#39;partition&#39;</span>, <span style=color:#e6db74>&#39;removeprefix&#39;</span>, <span style=color:#e6db74>&#39;removesuffix&#39;</span>, <span style=color:#e6db74>&#39;replace&#39;</span>, <span style=color:#e6db74>&#39;rfind&#39;</span>, <span style=color:#e6db74>&#39;rindex&#39;</span>, <span style=color:#e6db74>&#39;rjust&#39;</span>, <span style=color:#e6db74>&#39;rpartition&#39;</span>, <span style=color:#e6db74>&#39;rsplit&#39;</span>, <span style=color:#e6db74>&#39;rstrip&#39;</span>, <span style=color:#e6db74>&#39;split&#39;</span>, <span style=color:#e6db74>&#39;splitlines&#39;</span>, <span style=color:#e6db74>&#39;startswith&#39;</span>, <span style=color:#e6db74>&#39;strip&#39;</span>, <span style=color:#e6db74>&#39;swapcase&#39;</span>, <span style=color:#e6db74>&#39;title&#39;</span>, <span style=color:#e6db74>&#39;translate&#39;</span>, <span style=color:#e6db74>&#39;upper&#39;</span>, <span style=color:#e6db74>&#39;zfill&#39;</span><span style=color:#ae81ff>.....]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;capitalize&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;encode&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;endswith&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;expandtabs&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;find&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;format&#39;</span><span style=color:#111>,</span>  <span style=color:#d88200>&#39;lower&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;lstrip&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;maketrans&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;partition&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;removeprefix&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;removesuffix&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;replace&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;rfind&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;rindex&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;rjust&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;rpartition&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;rsplit&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;rstrip&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;split&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;splitlines&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;startswith&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;strip&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;swapcase&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;title&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;translate&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;upper&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;zfill&#39;</span><span style=color:#ae81ff>.....]</span>
 
 </code></pre></div><ul>
 <li>위 함수들에서 일부만 출력해보겠다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; str_o1 = &#34;python&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; str_o1 = &#34;python&#34;</span>
 <span style=color:#ae81ff>&gt; str_o2 = &#34;Apple&#34;</span>
 <span style=color:#ae81ff>&gt; str_o3 = &#34;How are you doing&#34;</span>
 <span style=color:#ae81ff>&gt; str_o4 = &#34;Korea Japan America&#34;</span>
 
 <span style=color:#75715e># 첫 글자를 대문자로 바꿔주는 함수</span>
 <span style=color:#ae81ff>&gt; print(&#34;Capitalize : &#34;, str_o1.capitalize())</span>
-<span style=color:#f92672>Capitalize </span>: <span style=color:#ae81ff>Python</span>
+<span style=color:#f92672>Capitalize </span><span style=color:#111>:</span> <span style=color:#ae81ff>Python</span>
 
 <span style=color:#75715e># 모든 문자를 대문자로 바꿔주는 함수</span>
 <span style=color:#ae81ff>&gt; print(&#34;upper : &#34;, str_o1.upper())</span>
-<span style=color:#f92672>upper </span>: <span style=color:#ae81ff>PYTHON</span>
+<span style=color:#f92672>upper </span><span style=color:#111>:</span> <span style=color:#ae81ff>PYTHON</span>
 
 <span style=color:#75715e># 모든 문자를 소문자로 바꿔주는 함수</span>
 <span style=color:#ae81ff>&gt; print(&#34;lower : &#34;, str_o2.lower())</span>
-<span style=color:#f92672>lower </span>: <span style=color:#ae81ff>apple</span>
+<span style=color:#f92672>lower </span><span style=color:#111>:</span> <span style=color:#ae81ff>apple</span>
 
 <span style=color:#75715e># 마지막 글자가 s로 끝나는가?</span>
 <span style=color:#ae81ff>&gt; print(&#34;endswith? : &#34;, str_o1.endswith(&#39;s&#39;))</span>
-<span style=color:#f92672>endswith </span>: <span style=color:#66d9ef>False</span>
+<span style=color:#f92672>endswith </span><span style=color:#111>:</span> <span style=color:#00a8c8>False</span>
 
 <span style=color:#75715e># 해당 문자열 앞 뒤로 join하는 함수</span>
 <span style=color:#ae81ff>&gt; print(&#34;join str : &#34;, str_o1.join([&#34;I&#39;m&#34;, &#34;!&#34;]))</span>
-<span style=color:#f92672>join str </span>: <span style=color:#ae81ff>I&#39;m python!</span>
+<span style=color:#f92672>join str </span><span style=color:#111>:</span> <span style=color:#ae81ff>I&#39;m python!</span>
 
 <span style=color:#75715e># 해당 문자열을 입력한 다른 문자열로 바꿔주는 함수</span>
 <span style=color:#ae81ff>&gt; print(&#34;replace : &#34;, str_o1.replace(&#39;thon&#39;, &#39;Good&#39;))</span>
-<span style=color:#f92672>replace </span>:  <span style=color:#ae81ff>pyGood</span>
+<span style=color:#f92672>replace </span><span style=color:#111>:</span>  <span style=color:#ae81ff>pyGood</span>
 
 <span style=color:#75715e># 해당 문자열을 입력한 문자열을 기준으로 쪼개어 list로 만드는 함수</span>
 <span style=color:#ae81ff>&gt; print(&#34;split : &#34;, str_o4.split(&#39; &#39;))</span>
-<span style=color:#f92672>split </span>: <span style=color:#ae81ff>Korea Japan America</span>
+<span style=color:#f92672>split </span><span style=color:#111>:</span> <span style=color:#ae81ff>Korea Japan America</span>
 
 <span style=color:#75715e># 최소 단위까지 쪼개어 알파벳 순으로 list로 만드는 함수</span>
-<span style=color:#f92672>&gt; print(&#39;sorted </span>: <span style=color:#e6db74>&#39;, sorted(str_o3))
-</span><span style=color:#e6db74>sorted :  [&#39;</span> <span style=color:#e6db74>&#39;, &#39;</span> <span style=color:#e6db74>&#39;, &#39;</span> <span style=color:#e6db74>&#39;, &#39;</span>?<span style=color:#e6db74>&#39;, &#39;</span><span style=color:#ae81ff>H&#39;, &#39;a&#39;, &#39;d&#39;, &#39;e&#39;, &#39;g&#39;, &#39;i&#39;, &#39;n&#39;, &#39;o&#39;, &#39;o&#39;, &#39;o&#39;, &#39;r&#39;, &#39;u&#39;, &#39;w&#39;, &#39;y&#39;]</span>
+<span style=color:#f92672>&gt; print(&#39;sorted </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;, sorted(str_o3))
+</span><span style=color:#d88200>sorted :  [&#39;</span> <span style=color:#d88200>&#39;, &#39;</span> <span style=color:#d88200>&#39;, &#39;</span> <span style=color:#d88200>&#39;, &#39;</span><span style=color:#111>?</span><span style=color:#d88200>&#39;, &#39;</span><span style=color:#ae81ff>H&#39;, &#39;a&#39;, &#39;d&#39;, &#39;e&#39;, &#39;g&#39;, &#39;i&#39;, &#39;n&#39;, &#39;o&#39;, &#39;o&#39;, &#39;o&#39;, &#39;r&#39;, &#39;u&#39;, &#39;w&#39;, &#39;y&#39;]</span>
 
-<span style=color:#f92672>&gt; print(&#39;reversed1</span>: <span style=color:#e6db74>&#39;, reversed(str_o2))
-</span><span style=color:#e6db74>reversed1:  &lt;reversed object at 0x000001ECEA15CFD0&gt;
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74># reversed는 return 값이 존재하기에 list로 출력이 가능하다.
-</span><span style=color:#e6db74>&gt; print(&#39;</span><span style=color:#f92672>reversed2</span>: <span style=color:#e6db74>&#39;, list(reversed(str_o2))
-</span><span style=color:#e6db74>reversed2:  [&#39;</span><span style=color:#ae81ff>e&#39;, &#39;l&#39;, &#39;p&#39;, &#39;p&#39;, &#39;A&#39;]</span>
+<span style=color:#f92672>&gt; print(&#39;reversed1</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;, reversed(str_o2))
+</span><span style=color:#d88200>reversed1:  &lt;reversed object at 0x000001ECEA15CFD0&gt;
+</span><span style=color:#d88200>
+</span><span style=color:#d88200># reversed는 return 값이 존재하기에 list로 출력이 가능하다.
+</span><span style=color:#d88200>&gt; print(&#39;</span><span style=color:#f92672>reversed2</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;, list(reversed(str_o2))
+</span><span style=color:#d88200>reversed2:  [&#39;</span><span style=color:#ae81ff>e&#39;, &#39;l&#39;, &#39;p&#39;, &#39;p&#39;, &#39;A&#39;]</span>
 
 
 </code></pre></div><blockquote>
@@ -355,7 +354,7 @@ list면 list가 사용할 수 있는 함수를 보여준다.</p>
 <blockquote>
 <p>문자열의 일부분을 원하는 대로 잘라오는 것을 말한다.</p>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#ae81ff>&gt; sl = &#39;Nice Python&#39;</span>
 <span style=color:#ae81ff>&gt; print(sl[0:3])</span>
 <span style=color:#ae81ff>Nic</span>

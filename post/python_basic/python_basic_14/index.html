@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -191,12 +190,12 @@
 <li><code>class</code>를 만들어보자.</li>
 <li><code>__init__</code>은 파이썬에서 클래스가 초기화될 때, 반드시 호출되는 함수다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## class 만들기</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## class 만들기</span>
 
 <span style=color:#75715e># class라는 예약어로 class를 만들기 시작한다.</span>
 <span style=color:#75715e># Dog라는 class를 생성한다.</span>
 <span style=color:#75715e># 파이썬의 모든 class는 object를 상속받기 때문에, 선언 방법은 자유롭다.</span>
-<span style=color:#f92672>&gt; class Dog()</span>:  <span style=color:#75715e># class Dog 도 가능하다.</span>
+<span style=color:#f92672>&gt; class Dog()</span><span style=color:#111>:</span>  <span style=color:#75715e># class Dog 도 가능하다.</span>
 
 <span style=color:#ae81ff>&gt;   </span> <span style=color:#75715e>## 클래스 변수 지정</span>
 <span style=color:#ae81ff>&gt;   </span> <span style=color:#75715e># 클래스 변수는 모든 인스턴스에서 동일하다.</span>
@@ -204,7 +203,7 @@
 <span style=color:#ae81ff>&gt;</span>
 <span style=color:#ae81ff>&gt;   </span> <span style=color:#75715e># 모든 class는 초기화 method 및 인스턴스 속성을 가질 수 있다.</span>
 <span style=color:#ae81ff>&gt;   </span> <span style=color:#75715e># self 후에, 인스턴스에 사용할 변수 속성들을 입력한다.</span>
-<span style=color:#f92672>&gt;    def __init__(self, name, age)</span>:
+<span style=color:#f92672>&gt;    def __init__(self, name, age)</span><span style=color:#111>:</span>
 
 <span style=color:#ae81ff>&gt;      </span> <span style=color:#75715e># 초기화 method를 입력하고 나서, 입력한 인스턴스 속성들에 정확히 mapping 한다.</span>
 <span style=color:#ae81ff>&gt;       self.name = name</span>
@@ -214,7 +213,7 @@
 <ul>
 <li><code>class</code> 정보를 호출해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## class 정보 호출하기</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## class 정보 호출하기</span>
 <span style=color:#75715e># 클래스가 코드로 구현된 걸 확인할 수 있다.</span>
 <span style=color:#ae81ff>&gt; print(Dog)</span>
 <span style=color:#ae81ff>&lt;class &#39;__main__.Dog&#39;&gt;</span>
@@ -231,7 +230,7 @@
 <li>변수에 할당했기 때문에, 메모리에 올라가고 <code>id</code>값을 받는다.</li>
 <li>각 instance는 동일한 속성값을 가져도, 파이썬에게는 전혀 다른 객체로 간주된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 인스턴스화</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 인스턴스화</span>
 <span style=color:#75715e># 할당될 변수 = 클래스 이름(instance 속성들)</span>
 <span style=color:#ae81ff>&gt; a = Dog(&#34;mikky&#34;, 2)</span>
 <span style=color:#ae81ff>&gt; b = Dog(&#34;baby&#34;, 3)</span>
@@ -239,7 +238,7 @@
 
 <span style=color:#75715e># 모두 다른 id값을 가진다.</span>
 <span style=color:#ae81ff>&gt; print(a == c, id(a), id(b), id(c))</span>
-<span style=color:#66d9ef>False</span> <span style=color:#ae81ff>2542532857088</span> <span style=color:#ae81ff>2542532856992</span> <span style=color:#ae81ff>2542532856560</span>
+<span style=color:#00a8c8>False</span> <span style=color:#ae81ff>2542532857088</span> <span style=color:#ae81ff>2542532856992</span> <span style=color:#ae81ff>2542532856560</span>
 </code></pre></div>
 <h3 id=24-namespace-확인하기>2.4 namespace 확인하기<a hidden class=anchor aria-hidden=true href=#24-namespace-확인하기>#</a></h3>
 <blockquote>
@@ -251,7 +250,7 @@
 <li><code>instance</code>만의 공간이다.</li>
 <li><code>instance</code>의 <code>namespace</code>를 확인할 때는 <code>__dict__</code> 를 사용한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## namespace 확인하기</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## namespace 확인하기</span>
 <span style=color:#ae81ff>&gt; print(&#39;dog1&#39;, a.__dict__)</span>
 <span style=color:#ae81ff>&gt; print(&#39;dog2&#39;, b.__dict__)</span>
 
@@ -277,7 +276,7 @@
 <ul>
 <li><code>클래스 변수</code>에 접근하기</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 클래스로 직접 접근하기</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 클래스로 직접 접근하기</span>
 <span style=color:#ae81ff>&gt; print(Dog.species)</span>
 <span style=color:#ae81ff>firstdog</span>
 
@@ -291,14 +290,14 @@
 </code></pre></div><ul>
 <li><code>instance 변수</code>에 접근하기</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e>## 인스턴스화된 변수를 통해서 instance 속성에 접근하기</span>
 <span style=color:#75715e># a와 b를 인스턴스화했기 때문에 a와 b로 접근이 가능하다.</span>
 <span style=color:#ae81ff>&gt; print(&#39;{} is {} and {} is {}&#39;.format(a.name, a.age, b.name, b.age))</span>
 <span style=color:#ae81ff>mikky is 2 and baby is 3</span>
 
 
-<span style=color:#f92672>&gt; if a.species == &#39;firstdog&#39;</span>:
+<span style=color:#f92672>&gt; if a.species == &#39;firstdog&#39;</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    print(&#39;{0} is a {1}&#39;.format(a.name, a.species))</span>
 <span style=color:#ae81ff>mikky is a firstdog</span>
 
@@ -347,10 +346,10 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class SelfTest</span>:
-<span style=color:#f92672>&gt;   def func1()</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class SelfTest</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;   def func1()</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       print(&#39;Func1 called&#39;)</span>
-<span style=color:#f92672>&gt;   def func2(self)</span>:
+<span style=color:#f92672>&gt;   def func2(self)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       print(id(self))</span>
 <span style=color:#ae81ff>&gt;       print(&#39;Func2 called&#39;)</span>
 
@@ -359,12 +358,12 @@
 
 <span style=color:#75715e>## dir로 변수 내부를 확인한다.</span>
 <span style=color:#ae81ff>&gt; print(dir(f))</span>
-[<span style=color:#e6db74>&#39;__class__&#39;</span>, <span style=color:#e6db74>&#39;__delattr__&#39;</span>, <span style=color:#e6db74>&#39;__dict__&#39;</span>, <span style=color:#e6db74>&#39;__dir__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>, <span style=color:#e6db74>&#39;__eq__&#39;</span>, <span style=color:#e6db74>&#39;__format__&#39;</span>, <span style=color:#e6db74>&#39;__ge__&#39;</span>, <span style=color:#e6db74>&#39;__getattribute__&#39;</span>, <span style=color:#e6db74>&#39;__gt__&#39;</span>, <span style=color:#e6db74>&#39;__hash__&#39;</span>, <span style=color:#e6db74>&#39;__init__&#39;</span>, <span style=color:#e6db74>&#39;__init_subclass__&#39;</span>, <span style=color:#e6db74>&#39;__le__&#39;</span>, <span style=color:#e6db74>&#39;__lt__&#39;</span>, <span style=color:#e6db74>&#39;__module__&#39;</span>, <span style=color:#e6db74>&#39;__ne__&#39;</span>, <span style=color:#e6db74>&#39;__new__&#39;</span>, <span style=color:#e6db74>&#39;__reduce__&#39;</span>, <span style=color:#e6db74>&#39;__reduce_ex__&#39;</span>, <span style=color:#e6db74>&#39;__repr__&#39;</span>, <span style=color:#e6db74>&#39;__setattr__&#39;</span>, <span style=color:#e6db74>&#39;__sizeof__&#39;</span>, <span style=color:#e6db74>&#39;__str__&#39;</span>, <span style=color:#e6db74>&#39;__subclasshook__&#39;</span>, <span style=color:#e6db74>&#39;__weakref__&#39;</span>, <span style=color:#e6db74>&#39;func1&#39;</span>, <span style=color:#e6db74>&#39;func2&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;__class__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__delattr__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dict__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dir__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__doc__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__eq__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__format__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__ge__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__getattribute__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__gt__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__hash__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init_subclass__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__le__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__lt__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__module__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__ne__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__new__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__reduce__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__reduce_ex__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__repr__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__setattr__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__sizeof__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__str__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__subclasshook__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__weakref__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;func1&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;func2&#39;</span><span style=color:#111>]</span>
 
 <span style=color:#75715e>## 인스턴스화된 f를 통해서 func1을 호출해보자.</span>
 <span style=color:#75715e># func1에는 매개변수가 없는데, 1개가 넘어갔다는 걸 알 수 있다.</span>
 <span style=color:#ae81ff>&gt; f.func1()</span>
-<span style=color:#f92672>TypeError</span>: <span style=color:#ae81ff>func1() takes 0 positional arguments but 1 was given</span>
+<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#ae81ff>func1() takes 0 positional arguments but 1 was given</span>
 
 <span style=color:#75715e>## 그러면 인스턴스화된 f를 통해서 func2를 호출해보자. (2-1 방법)</span>
 <span style=color:#ae81ff>&gt; f.func2()</span>
@@ -387,7 +386,7 @@
 <span style=color:#75715e>## 만약 역으로 클래스로 접근하여 func2를 호출한다면??</span>
 <span style=color:#75715e># func2가 요구하는 매개변수 1개를 놓쳐다는 error를 확인했다.</span>
 <span style=color:#ae81ff>&gt; SelfTest.func2()</span>
-<span style=color:#f92672>Typeerror: func2() missing 1 required positional argument</span>: <span style=color:#e6db74>&#39;self&#39;</span>
+<span style=color:#f92672>Typeerror: func2() missing 1 required positional argument</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;self&#39;</span>
 <span style=color:#75715e># 그러면 매개변수 1개를 입력해보자. (2-2 방법)</span>
 <span style=color:#ae81ff>&gt; SelfTest.func2(f)</span>
 <span style=color:#ae81ff>2332370018256</span>
@@ -402,17 +401,17 @@
 <li>그리고 <code>생성자</code>와는 반대로 <code>소멸자</code>를 사용했다.</li>
 <li><code>소멸자</code>: 객체가 소멸될 때 즉, 메모리에서 지워질 때 자동으로 호출되는 함수</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Warehouse()</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Warehouse()</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;   </span> <span style=color:#75715e># class variable</span>
 <span style=color:#ae81ff>&gt;    stock_num = 0</span>
 <span style=color:#ae81ff>&gt;</span>
-<span style=color:#f92672>&gt;    def __init__(self, name)</span>: <span style=color:#75715e># 생성자</span>
+<span style=color:#f92672>&gt;    def __init__(self, name)</span><span style=color:#111>:</span> <span style=color:#75715e># 생성자</span>
 <span style=color:#ae81ff>&gt;       </span> <span style=color:#75715e># instance variable</span>
 <span style=color:#ae81ff>&gt;       </span> <span style=color:#75715e># mapping</span>
 <span style=color:#ae81ff>&gt;        self.name = name</span>
 <span style=color:#ae81ff>&gt;        Warehouse.stock_num += 1</span>
 <span style=color:#ae81ff>&gt;</span>
-<span style=color:#f92672>&gt;    def __del__(self)</span>: <span style=color:#75715e># 소멸자</span>
+<span style=color:#f92672>&gt;    def __del__(self)</span><span style=color:#111>:</span> <span style=color:#75715e># 소멸자</span>
 <span style=color:#ae81ff>&gt;        Warehouse.stock_num -= 1</span>
 
 <span style=color:#75715e># user1 instance의 name을 Lee로 한다.</span>
@@ -431,14 +430,14 @@
 
 <span style=color:#75715e>## instance의 namespace에서는 공통적으로 가지고 있는 클래스 변수를 찾을 수 없다.</span>
 <span style=color:#ae81ff>&gt; print(user1.__dict__)</span>
-{<span style=color:#f92672>&#39;name&#39;</span>: <span style=color:#e6db74>&#39;Lee&#39;</span>}
+{<span style=color:#f92672>&#39;name&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;Lee&#39;</span>}
 <span style=color:#ae81ff>&gt; print(user2.__dict__)</span>
-{<span style=color:#f92672>&#39;name&#39;</span>: <span style=color:#e6db74>&#39;Cho&#39;</span>}
+{<span style=color:#f92672>&#39;name&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;Cho&#39;</span>}
 
 <span style=color:#75715e>## class의 namespace에서 찾을 수 있다.</span>
 <span style=color:#ae81ff>&gt; print(Warehouse.__dict__)</span>
-{<span style=color:#f92672>&#39;__module__&#39;: &#39;__main__&#39;, &#39;stock_num&#39;: 2, &#39;__init__&#39;: &lt;function Warehouse.__init__ at 0x000002DC6B59F8B0&gt;, &#39;__del__&#39;: &lt;function Warehouse.__del__ at 0x000002DC6B59F940&gt;, &#39;__dict__&#39;</span>: <span style=color:#ae81ff>&lt;attribute &#39;__dict__&#39; of &#39;Warehouse&#39;</span>
-<span style=color:#f92672>objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Warehouse&#39; objects&gt;, &#39;__doc__&#39;</span>: <span style=color:#ae81ff>None}</span>
+{<span style=color:#f92672>&#39;__module__&#39;: &#39;__main__&#39;, &#39;stock_num&#39;: 2, &#39;__init__&#39;: &lt;function Warehouse.__init__ at 0x000002DC6B59F8B0&gt;, &#39;__del__&#39;: &lt;function Warehouse.__del__ at 0x000002DC6B59F940&gt;, &#39;__dict__&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>&lt;attribute &#39;__dict__&#39; of &#39;Warehouse&#39;</span>
+<span style=color:#f92672>objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Warehouse&#39; objects&gt;, &#39;__doc__&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>None}</span>
 
 <span style=color:#75715e>## 그런데 &lt;instance name&gt;.&lt;class variable name&gt; 을 입력하면 `class variable`의 값이 출력된다.</span>
 <span style=color:#75715e>## 이는 class의 namespace에서 python이 찾아서 출력한 것이다.</span>
@@ -448,8 +447,8 @@
 <span style=color:#75715e>## 소멸자를 사용하여 instance를 삭제하면, stock_num이 1로 감소한 걸 확인할 수 있다.</span>
 <span style=color:#ae81ff>&gt; del user1</span>
 <span style=color:#ae81ff>&gt; print(&#39;after&#39;, Warehouse.__dict__)</span>
-{<span style=color:#f92672>&#39;__module__&#39;: &#39;__main__&#39;, &#39;stock_num&#39;: 1, &#39;__init__&#39;: &lt;function Warehouse.__init__ at 0x000002DC6B59F8B0&gt;, &#39;__del__&#39;: &lt;function Warehouse.__del__ at 0x000002DC6B59F940&gt;, &#39;__dict__&#39;</span>: <span style=color:#ae81ff>&lt;attribute &#39;__dict__&#39; of &#39;Warehouse&#39;</span>
-<span style=color:#f92672>objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Warehouse&#39; objects&gt;, &#39;__doc__&#39;</span>: <span style=color:#ae81ff>None}</span>
+{<span style=color:#f92672>&#39;__module__&#39;: &#39;__main__&#39;, &#39;stock_num&#39;: 1, &#39;__init__&#39;: &lt;function Warehouse.__init__ at 0x000002DC6B59F8B0&gt;, &#39;__del__&#39;: &lt;function Warehouse.__del__ at 0x000002DC6B59F940&gt;, &#39;__dict__&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>&lt;attribute &#39;__dict__&#39; of &#39;Warehouse&#39;</span>
+<span style=color:#f92672>objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Warehouse&#39; objects&gt;, &#39;__doc__&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>None}</span>
 
 </code></pre></div><ul>
 <li>파이썬은 object의 이름을 다음 순서로 찾는다.
@@ -462,23 +461,23 @@
 <ul>
 <li>마지막 예제</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## Dog라는 class를 만든다.</span>
-<span style=color:#f92672>&gt; class Dog()</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## Dog라는 class를 만든다.</span>
+<span style=color:#f92672>&gt; class Dog()</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      </span> <span style=color:#75715e># 클래스 변수 선언</span>
 <span style=color:#ae81ff>&gt;     species = &#39;Firstdog&#39;</span>
 
 <span style=color:#ae81ff>&gt;      </span> <span style=color:#75715e># 생성자 및 인스턴스 속성 생성 그리고 mapping</span>
-<span style=color:#f92672>&gt;     def __init__(self, name, age)</span>:
+<span style=color:#f92672>&gt;     def __init__(self, name, age)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self.name = name</span>
 <span style=color:#ae81ff>&gt;         self.age = age</span>
 
 <span style=color:#ae81ff>&gt;      </span> <span style=color:#75715e># 인스턴스 메소드</span>
-<span style=color:#f92672>&gt;     def info(self)</span>:
+<span style=color:#f92672>&gt;     def info(self)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;        return &#39;{} is {} years old&#39;.format(self.name, self.age)</span>
 
 <span style=color:#ae81ff>&gt;      </span> <span style=color:#75715e># 인스턴스 메소드</span>
 <span style=color:#ae81ff>&gt;      </span> <span style=color:#75715e># sound는 호출 시에 입력한다.</span>
-<span style=color:#f92672>&gt;    def speak(self, sound)</span>:
+<span style=color:#f92672>&gt;    def speak(self, sound)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;        return &#39;{} says {}!&#39;.format(self.name, sound)</span>
 
 <span style=color:#75715e>## 인스턴스화 + 인스턴스 속성값 입력</span>

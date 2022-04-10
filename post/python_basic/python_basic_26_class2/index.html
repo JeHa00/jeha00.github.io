@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -112,14 +111,14 @@
 <p>예시코드는 <a href=https://jeha00.github.io/post/python_basic/python_basic_24_oop/>Python basic 24</a>에서 작성한 코드를 이어서 사용한다.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span><span style=color:#111>:</span>
 
 <span style=color:#75715e>### 코드 추가</span>
 <span style=color:#ae81ff>&gt;     &#34;&#34;&#34;</span>
 <span style=color:#ae81ff>&gt;     Airline class</span>
-<span style=color:#f92672>&gt;     Author</span>: <span style=color:#ae81ff>Kim</span>
-<span style=color:#f92672>&gt;     Data</span>: <span style=color:#ae81ff>2022.03.16</span>
-<span style=color:#f92672>&gt;     Description</span>: <span style=color:#ae81ff>Class, Static, Instance Method</span>
+<span style=color:#f92672>&gt;     Author</span><span style=color:#111>:</span> <span style=color:#ae81ff>Kim</span>
+<span style=color:#f92672>&gt;     Data</span><span style=color:#111>:</span> <span style=color:#ae81ff>2022.03.16</span>
+<span style=color:#f92672>&gt;     Description</span><span style=color:#111>:</span> <span style=color:#ae81ff>Class, Static, Instance Method</span>
 <span style=color:#ae81ff>&gt;     &#34;&#34;&#34;</span>
 
 
@@ -127,35 +126,35 @@
 
 <span style=color:#75715e>### 코드 추가 끝</span>
 
-<span style=color:#f92672>&gt;     def __init__(self, company, details)</span>:
+<span style=color:#f92672>&gt;     def __init__(self, company, details)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self._company = company</span>
 <span style=color:#ae81ff>&gt;         self._details = details</span>
 
-<span style=color:#f92672>&gt;     def __str__(self)</span>:
-<span style=color:#f92672>&gt;       return &#39;str </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt;     def __repr__(self):
-</span><span style=color:#e6db74>&gt;       return &#39;</span><span style=color:#f92672>repr </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>### 코드 추가
-</span><span style=color:#e6db74>## Instance Method:
-</span><span style=color:#e6db74># Self로 객체의 고유한 속성 값을 사용
-</span><span style=color:#e6db74>&gt;   def detail_info(self):
-</span><span style=color:#e6db74>&gt;        print(&#39;</span><span style=color:#f92672>Current ID</span>: {}<span style=color:#e6db74>&#39;.format(id(self)))
-</span><span style=color:#e6db74>&gt;        print(&#39;</span><span style=color:#f92672>Airline Detail Info</span>: {} {}<span style=color:#e6db74>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;)))</span>
+<span style=color:#f92672>&gt;     def __str__(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;       return &#39;str </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt;     def __repr__(self):
+</span><span style=color:#d88200>&gt;       return &#39;</span><span style=color:#f92672>repr </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>### 코드 추가
+</span><span style=color:#d88200>## Instance Method:
+</span><span style=color:#d88200># Self로 객체의 고유한 속성 값을 사용
+</span><span style=color:#d88200>&gt;   def detail_info(self):
+</span><span style=color:#d88200>&gt;        print(&#39;</span><span style=color:#f92672>Current ID</span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(id(self)))
+</span><span style=color:#d88200>&gt;        print(&#39;</span><span style=color:#f92672>Airline Detail Info</span><span style=color:#111>:</span> {} {}<span style=color:#d88200>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;)))</span>
 
-<span style=color:#f92672>&gt;   def get_price(self)</span>:
-<span style=color:#f92672>&gt;        return &#39;Before Airline ticket price -&gt; Company</span>: {<span style=color:#f92672>}, price</span>: {}<span style=color:#e6db74>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;))</span>
+<span style=color:#f92672>&gt;   def get_price(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;        return &#39;Before Airline ticket price -&gt; Company</span><span style=color:#111>:</span> {<span style=color:#f92672>}, price</span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;))</span>
 
 
-<span style=color:#f92672>&gt;   def get_price_culc(self)</span>:
-<span style=color:#f92672>&gt;        return &#39;After Airline ticket price -&gt; Company</span>: {<span style=color:#f92672>}, price</span>: {}<span style=color:#e6db74>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;) * Airline.price_per_raise = 1.0)</span>
+<span style=color:#f92672>&gt;   def get_price_culc(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;        return &#39;After Airline ticket price -&gt; Company</span><span style=color:#111>:</span> {<span style=color:#f92672>}, price</span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;) * Airline.price_per_raise = 1.0)</span>
 
 <span style=color:#75715e>## Class Method:</span>
 <span style=color:#75715e># 클래스 변수를 다룰 때는 직접 사용하기보다는 class method로 사용하기.</span>
 <span style=color:#ae81ff>&gt;   @classmethod</span>
 <span style=color:#ae81ff>&gt;    def raise_price(cls,per)</span>
-<span style=color:#f92672>&gt;         if per &lt;= 1</span>:
+<span style=color:#f92672>&gt;         if per &lt;= 1</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;           print(&#39;Please Enter 1 or More&#39;)</span>
 <span style=color:#ae81ff>&gt;           return</span>
 <span style=color:#ae81ff>&gt;         cls.price_per_raise = per</span>
@@ -163,8 +162,8 @@
 
 <span style=color:#75715e>## Static Method</span>
 <span style=color:#ae81ff>&gt;   @staticmethod</span>
-<span style=color:#f92672>&gt;   def is_Koreanair(inst)</span>:
-<span style=color:#f92672>&gt;     if inst._company == &#39;Koreanair&#39;</span>:
+<span style=color:#f92672>&gt;   def is_Koreanair(inst)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;     if inst._company == &#39;Koreanair&#39;</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       return &#39;OK! This car is {}&#39;.format(inst._company)</span>
 <span style=color:#ae81ff>&gt;     return &#39;Sorry! This is not Koreanair&#39;</span>
 
@@ -193,7 +192,7 @@
 개발자들은 instance variable를 만들 때 under bar 를 사용한다.<br>
 PEP에서 권장한다.</p>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## Instance의 ID 확인</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## Instance의 ID 확인</span>
 <span style=color:#ae81ff>&gt; print(id(Airline1))</span>
 <span style=color:#ae81ff>&gt; print(id(Airline2))</span>
 <span style=color:#ae81ff>&gt; print(id(Airline3))</span>
@@ -204,7 +203,7 @@ PEP에서 권장한다.</p>
 <ul>
 <li>Instance를 만들기 위한 Class도 고유 id 값을 가지고 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e>## Instance가 무슨 class로 만들어졌는지 알 수 있다.</span>
 <span style=color:#ae81ff>&gt; print(Airline1.__class__, Airline2.__class__)</span>
 <span style=color:#ae81ff>&lt;class &#39;__main__.Airline&#39;&gt;</span>
@@ -225,18 +224,18 @@ PEP에서 권장한다.</p>
 <li><code>__dict__</code>는 각 instance의 namespace를 보고 싶을 때 사용한다. 즉, 속성과 속성의 value들을 보여준다.</li>
 </ul>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e># `dir`로 나온 속성들에서 뒷 부분을 보면 class Airline에 작성된 속성들과 method들을 확인할 수 있다.</span>
 <span style=color:#ae81ff>&gt; print(dir(Airline1))</span>
 <span style=color:#ae81ff>&gt; print(dir(Airline2))</span>
-[<span style=color:#e6db74>&#39;__class__&#39;</span>, <span style=color:#e6db74>&#39;__dict__&#39;</span>, <span style=color:#e6db74>&#39;__dir__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>, <span style=color:#e6db74>&#39;__init__&#39;</span>, <span style=color:#ae81ff>..... ,&#39;__repr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;,&#39;_company&#39;, &#39;_details&#39;, &#39;detail_info&#39;, &#39;get_price&#39;, &#39;get_price_culc&#39;, &#39;is_bmw&#39;, &#39;price_per_raise&#39;, &#39;raise_price&#39;]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;__class__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dict__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dir__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__doc__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init__&#39;</span><span style=color:#111>,</span> <span style=color:#ae81ff>..... ,&#39;__repr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;,&#39;_company&#39;, &#39;_details&#39;, &#39;detail_info&#39;, &#39;get_price&#39;, &#39;get_price_culc&#39;, &#39;is_bmw&#39;, &#39;price_per_raise&#39;, &#39;raise_price&#39;]</span>
 
 <span style=color:#75715e># __init__ 으로 만들어진 instance variable 의 구체적인 값을 확인할 수 있다.</span>
 <span style=color:#ae81ff>&gt; print(Airline1.__dict__)</span>
-{<span style=color:#f92672>&#39;_company&#39;: &#39;Koreanair&#39;, &#39;_details&#39;</span>: {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#ae81ff>8000</span>}}
+{<span style=color:#f92672>&#39;_company&#39;: &#39;Koreanair&#39;, &#39;_details&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>}}
 
 <span style=color:#ae81ff>&gt; print(Airline2.__dict__)</span>
-{<span style=color:#f92672>&#39;_company&#39;: &#39;Asiana&#39;, &#39;_details&#39;</span>: {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#ae81ff>6000</span>}}
+{<span style=color:#f92672>&#39;_company&#39;: &#39;Asiana&#39;, &#39;_details&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>6000</span>}}
 
 </code></pre></div><ul>
 <li>코멘트를 입력할 때는 # 도 되지만, <code>""" """</code> 을 통해서 multi-line으로 입력할 수 있다.</li>
@@ -245,14 +244,14 @@ PEP에서 권장한다.</p>
 <li>필수적인 건 아니지만, 이러한 원칙을 정해서 개발하는게 실력 향상에 좋다.</li>
 <li>그리고, 이런 게 하나 하나 모여서 실력 있는 개발자가 된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 클래서로 접근한다.</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 클래서로 접근한다.</span>
 <span style=color:#75715e># Intro에 작성한 코드에서 &#34;&#34;&#34;  &#34;&#34;&#34; 사이에 적은 comment가 출력된다.</span>
 <span style=color:#ae81ff>&gt; print(Airline.__doc__)</span>
 
     <span style=color:#ae81ff>Airline class</span>
-    <span style=color:#f92672>Author</span>: <span style=color:#ae81ff>Kim</span>
-    <span style=color:#f92672>Data</span>: <span style=color:#ae81ff>2022.03.16</span>
-    <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>Class, Static, Instance Method</span>
+    <span style=color:#f92672>Author</span><span style=color:#111>:</span> <span style=color:#ae81ff>Kim</span>
+    <span style=color:#f92672>Data</span><span style=color:#111>:</span> <span style=color:#ae81ff>2022.03.16</span>
+    <span style=color:#f92672>Description</span><span style=color:#111>:</span> <span style=color:#ae81ff>Class, Static, Instance Method</span>
 </code></pre></div><hr>
 <h2 id=3-method의-3종류>3. Method의 3종류<a hidden class=anchor aria-hidden=true href=#3-method의-3종류>#</a></h2>
 <blockquote>
@@ -297,28 +296,28 @@ PEP에서 권장한다.</p>
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e>### Intro code에서 각 method는 다음과 같다.</span>
 
 <span style=color:#75715e>## Instance Method(self):</span>
 <span style=color:#75715e># 첫 번째 인자로, self 즉 instance를 받는다는 걸 알 수 있다.</span>
-<span style=color:#f92672>&gt;   def detail_info(self)</span>:
-<span style=color:#f92672>&gt;        print(&#39;Current ID</span>: {}<span style=color:#e6db74>&#39;.format(id(self)))
-</span><span style=color:#e6db74>&gt;        print(&#39;</span><span style=color:#f92672>Airline Detail Info</span>: {} {}<span style=color:#e6db74>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;)))</span>
+<span style=color:#f92672>&gt;   def detail_info(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;        print(&#39;Current ID</span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(id(self)))
+</span><span style=color:#d88200>&gt;        print(&#39;</span><span style=color:#f92672>Airline Detail Info</span><span style=color:#111>:</span> {} {}<span style=color:#d88200>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;)))</span>
 
-<span style=color:#f92672>&gt;   def get_price(self)</span>:
-<span style=color:#f92672>&gt;        return &#39;Before Airline ticket price -&gt; Company</span>: {<span style=color:#f92672>}, price</span>: {}<span style=color:#e6db74>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;))</span>
+<span style=color:#f92672>&gt;   def get_price(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;        return &#39;Before Airline ticket price -&gt; Company</span><span style=color:#111>:</span> {<span style=color:#f92672>}, price</span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;))</span>
 
 
-<span style=color:#f92672>&gt;   def get_price_culc(self)</span>:
-<span style=color:#f92672>&gt;        return &#39;After Airline ticket price -&gt; Company</span>: {<span style=color:#f92672>}, price</span>: {}<span style=color:#e6db74>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;) * Airline.price_per_raise = 1.0)</span>
+<span style=color:#f92672>&gt;   def get_price_culc(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;        return &#39;After Airline ticket price -&gt; Company</span><span style=color:#111>:</span> {<span style=color:#f92672>}, price</span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(self._company, self._details.get(&#39;</span><span style=color:#ae81ff>price&#39;) * Airline.price_per_raise = 1.0)</span>
 
 <span style=color:#75715e>## Class Method(cls):</span>
 <span style=color:#75715e># @classmethod라는 데코레이터를 입력한 것과</span>
 <span style=color:#75715e># 첫 번째 인자로, cls == class 를 받는다는 걸 알 수 있다.</span>
 <span style=color:#ae81ff>&gt;   @classmethod</span>
 <span style=color:#ae81ff>&gt;    def raise_price(cls,per)</span>
-<span style=color:#f92672>&gt;         if per &lt;= 1</span>:
+<span style=color:#f92672>&gt;         if per &lt;= 1</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;           print(&#39;Please Enter 1 or More&#39;)</span>
 <span style=color:#ae81ff>&gt;           return</span>
 <span style=color:#ae81ff>&gt;         cls.price_per_raise = per</span>
@@ -327,15 +326,15 @@ PEP에서 권장한다.</p>
 <span style=color:#75715e>## Static Method</span>
 <span style=color:#75715e># @staticmehod라는 데코레이터를 입력한 걸 알 수 있다.</span>
 <span style=color:#ae81ff>&gt;   @staticmethod</span>
-<span style=color:#f92672>&gt;   def is_Koreaair(inst)</span>:
-<span style=color:#f92672>&gt;     if inst._company == &#39;Koreanair&#39;</span>:
+<span style=color:#f92672>&gt;   def is_Koreaair(inst)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;     if inst._company == &#39;Koreanair&#39;</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       return &#39;OK! This car is {}&#39;.format(inst._company)</span>
 <span style=color:#ae81ff>&gt;     return &#39;Sorry! This is not Koreanair&#39;</span>
 
 </code></pre></div><ul>
 <li>각 method를 사용하여 variable에 접근하자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e>## instance의 _details에 있는 price 정보에 접근하자.</span>
 <span style=color:#75715e># 직접 접근하기</span>
 <span style=color:#ae81ff>&gt; print(Airline1._details.get(&#39;price&#39;))</span>
@@ -343,7 +342,7 @@ PEP에서 권장한다.</p>
 
 <span style=color:#75715e># method를 통해 접근하기</span>
 <span style=color:#ae81ff>&gt; print(Airline1.get_price())</span>
-<span style=color:#f92672>Before Airline ticket price -&gt; Company: Koreanair, price</span>: <span style=color:#ae81ff>8000</span>
+<span style=color:#f92672>Before Airline ticket price -&gt; Company: Koreanair, price</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>
 
 
 <span style=color:#75715e>## class variable인 price_per_raise에 접근하자.</span>
@@ -355,7 +354,7 @@ PEP에서 권장한다.</p>
 <span style=color:#ae81ff>Succeed! price increased</span>
 
 <span style=color:#ae81ff>&gt; print(Airline1.get_price_culc())</span>
-<span style=color:#f92672>After Airline ticket price -&gt; Company: Koreanair, price</span>: <span style=color:#ae81ff>12000.0</span>
+<span style=color:#f92672>After Airline ticket price -&gt; Company: Koreanair, price</span><span style=color:#111>:</span> <span style=color:#ae81ff>12000.0</span>
 
 
 <span style=color:#75715e>## static method</span>

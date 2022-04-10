@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -249,26 +248,26 @@
 <ul>
 <li>서버가 문제 없이 유지되는 경우</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>   <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>이 `노트북` 얼마인가요?</span>
-   <span style=color:#f92672>점원</span>: <span style=color:#ae81ff>100만원 입니다. (노트북 상태 유지)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>   <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>이 `노트북` 얼마인가요?</span>
+   <span style=color:#f92672>점원</span><span style=color:#111>:</span> <span style=color:#ae81ff>100만원 입니다. (노트북 상태 유지)</span>
 
-   <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>`2개` 구매하겠습니다.</span>
-   <span style=color:#f92672>점원</span>: <span style=color:#ae81ff>200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매 하시겠어요?</span>
+   <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>`2개` 구매하겠습니다.</span>
+   <span style=color:#f92672>점원</span><span style=color:#111>:</span> <span style=color:#ae81ff>200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매 하시겠어요?</span>
           <span style=color:#ae81ff>(노트북, 2개 상태 유지)</span>
 
-   <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>`신용카드`로 구매하겠습니다.</span>
-   <span style=color:#f92672>점원</span>: <span style=color:#ae81ff>200만원 결제 완료되었습니다. (노트북, 2개, 신용카드 상태 유지)</span>
+   <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>`신용카드`로 구매하겠습니다.</span>
+   <span style=color:#f92672>점원</span><span style=color:#111>:</span> <span style=color:#ae81ff>200만원 결제 완료되었습니다. (노트북, 2개, 신용카드 상태 유지)</span>
 </code></pre></div><ul>
 <li>서버가 바뀔 경우</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>  <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>이 `노트북` 얼마인가요?</span>
-  <span style=color:#f92672>점원 A</span>: <span style=color:#ae81ff>100만원 입니다.</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>  <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>이 `노트북` 얼마인가요?</span>
+  <span style=color:#f92672>점원 A</span><span style=color:#111>:</span> <span style=color:#ae81ff>100만원 입니다.</span>
 
-  <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>`2개` 구매하겠습니다.</span>
-  <span style=color:#f92672>점원 B</span>: ? <span style=color:#ae81ff>무엇을 2개 구매하시겠어요? (상태유지 X)</span>
+  <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>`2개` 구매하겠습니다.</span>
+  <span style=color:#f92672>점원 B</span><span style=color:#111>:</span> <span style=color:#111>?</span> <span style=color:#ae81ff>무엇을 2개 구매하시겠어요? (상태유지 X)</span>
 
-  <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>`신용카드`로 구매하겠습니다.</span>
-  <span style=color:#f92672>점원C</span>: ? <span style=color:#ae81ff>무슨 제품을 몇 개 신용카드로 구매하시겠어요? (상태 유지 X)</span>
+  <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>`신용카드`로 구매하겠습니다.</span>
+  <span style=color:#f92672>점원C</span><span style=color:#111>:</span> <span style=color:#111>?</span> <span style=color:#ae81ff>무슨 제품을 몇 개 신용카드로 구매하시겠어요? (상태 유지 X)</span>
 
 </code></pre></div></li>
 </ul>
@@ -284,25 +283,25 @@
 <ul>
 <li>서버가 문제 없이 유지되는 경우</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>  <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>이 `노트북` 얼마인가요?</span>
-  <span style=color:#f92672>점원</span>: <span style=color:#ae81ff>100만원 입니다.</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>  <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>이 `노트북` 얼마인가요?</span>
+  <span style=color:#f92672>점원</span><span style=color:#111>:</span> <span style=color:#ae81ff>100만원 입니다.</span>
 
-  <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>`노트북 2개` 구매하겠습니다.</span>
-  <span style=color:#f92672>점원</span>: <span style=color:#ae81ff>노트북 2개는 200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매 하시겠어요?</span>
+  <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>`노트북 2개` 구매하겠습니다.</span>
+  <span style=color:#f92672>점원</span><span style=color:#111>:</span> <span style=color:#ae81ff>노트북 2개는 200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매 하시겠어요?</span>
 
-  <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>`노트북 2개`를 `신용카드`로 구매하겠습니다.</span>
-  <span style=color:#f92672>점원</span>: <span style=color:#ae81ff>200만원 결제 완료되었습니다.</span>
+  <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>`노트북 2개`를 `신용카드`로 구매하겠습니다.</span>
+  <span style=color:#f92672>점원</span><span style=color:#111>:</span> <span style=color:#ae81ff>200만원 결제 완료되었습니다.</span>
 </code></pre></div><ul>
 <li>서버가 바뀔 경우</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>  <span style=color:#f92672>고객</span>: <span style=color:#ae81ff>이 &#39;노트북&#39; 얼마인가요?</span>
-  <span style=color:#f92672>점원A</span>: <span style=color:#ae81ff>100만원 입니다.</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>  <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#ae81ff>이 &#39;노트북&#39; 얼마인가요?</span>
+  <span style=color:#f92672>점원A</span><span style=color:#111>:</span> <span style=color:#ae81ff>100만원 입니다.</span>
 
-  <span style=color:#f92672>고객</span>: <span style=color:#e6db74>&#39;노트북 2개&#39;</span> <span style=color:#ae81ff>구매하겠습니다.</span>
-  <span style=color:#f92672>점원B</span>: <span style=color:#ae81ff>노트북 2개는 200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매 하시겠어요?</span>
+  <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;노트북 2개&#39;</span> <span style=color:#ae81ff>구매하겠습니다.</span>
+  <span style=color:#f92672>점원B</span><span style=color:#111>:</span> <span style=color:#ae81ff>노트북 2개는 200만원 입니다. 신용카드, 현금중에 어떤 걸로 구매 하시겠어요?</span>
 
-  <span style=color:#f92672>고객</span>: <span style=color:#e6db74>&#39;노트북 2개&#39;</span><span style=color:#ae81ff>를 &#39;신용카드&#39;로 구매하겠습니다.</span>
-  <span style=color:#f92672>점원C</span>: <span style=color:#ae81ff>200만원 결제 완료되었습니다.</span>
+  <span style=color:#f92672>고객</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;노트북 2개&#39;</span><span style=color:#ae81ff>를 &#39;신용카드&#39;로 구매하겠습니다.</span>
+  <span style=color:#f92672>점원C</span><span style=color:#111>:</span> <span style=color:#ae81ff>200만원 결제 완료되었습니다.</span>
 </code></pre></div></li>
 </ul>
 <p>클라이언트가 모든 상태 값을 서버에 전달하기 때문에, 서버가 중간에 바뀌어도 문제가 되지 않는다. 항상 같은 서버로 유지될 필요없다. 그래서 <strong>서버 변경이 용이</strong>하기 때문에, <strong><code>Stateless</code></strong> 는 <strong>무한한 서버 증설 가능</strong>하다.</p>

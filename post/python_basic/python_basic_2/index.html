@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -115,18 +114,18 @@
 <div class=post-content>
 <h2 id=1-기본-출력>1. 기본 출력<a hidden class=anchor aria-hidden=true href=#1-기본-출력>#</a></h2>
 <h3 id=11-escape-코드>1.1 Escape 코드<a hidden class=anchor aria-hidden=true href=#11-escape-코드>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>\n</span>: <span style=color:#ae81ff>개행</span>
-<span style=color:#f92672>\t</span>: <span style=color:#ae81ff>탭</span>
-<span style=color:#f92672>\\</span>: <span style=color:#ae81ff>문자</span>
-<span style=color:#f92672>\&#39;</span>: <span style=color:#ae81ff>문자</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>\n</span><span style=color:#111>:</span> <span style=color:#ae81ff>개행</span>
+<span style=color:#f92672>\t</span><span style=color:#111>:</span> <span style=color:#ae81ff>탭</span>
+<span style=color:#f92672>\\</span><span style=color:#111>:</span> <span style=color:#ae81ff>문자</span>
+<span style=color:#f92672>\&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>문자</span>
 <span style=color:#ae81ff>\&#34;: 문자</span>
-<span style=color:#f92672>\000</span>: <span style=color:#ae81ff>널 문자</span>
+<span style=color:#f92672>\000</span><span style=color:#111>:</span> <span style=color:#ae81ff>널 문자</span>
 </code></pre></div>
 <h3 id=12-기본-출력>1.2 기본 출력<a hidden class=anchor aria-hidden=true href=#12-기본-출력>#</a></h3>
 <ul>
 <li>'' 또는 "" 를 자주 사용한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;JeHa start!&#39;)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;JeHa start!&#39;)</span>
 <span style=color:#ae81ff>&gt; print(&#34;JeHa start!&#34;)</span>
 <span style=color:#ae81ff>&gt; print()</span>
 <span style=color:#ae81ff>&gt; print(&#39;&#39;&#39;JeHa start!&#39;&#39;&#39;)</span>
@@ -140,7 +139,7 @@
 </code></pre></div><ul>
 <li>결과는 다음과 같다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>JeHa start!</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>JeHa start!</span>
 <span style=color:#ae81ff>JeHa start!</span>
 
 <span style=color:#ae81ff>JeHa start!</span>
@@ -151,7 +150,7 @@
 <ul>
 <li>여러 data를 열거하여 출력할 때, 각 data 사이 사이를 분리할 string을 입력할 수 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;python&#39;, &#39;start!&#39;, sep=&#39;@&#39;)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;python&#39;, &#39;start!&#39;, sep=&#39;@&#39;)</span>
 <span style=color:#ae81ff>python @ start!</span>
 
 <span style=color:#ae81ff>&gt; print(&#39;p&#39;,&#39;y&#39;,&#39;t&#39;,&#39;h&#39;,&#39;o&#39;,&#39;n&#39;)</span>
@@ -170,7 +169,7 @@
 <ul>
 <li>print에는 자동적으로 행간을 나누는 기능이 있다. 이를 end를 통해서 합칠 수 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;I&#39;)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;I&#39;)</span>
 <span style=color:#ae81ff>&gt; print(&#39;love&#39;)</span>
 <span style=color:#ae81ff>&gt; print(&#39;u&#39;)</span>
 
@@ -191,7 +190,7 @@
 <li>다 익숙해져야 하지만, 후자를 더 빈번히 사용한다.</li>
 <li><strong>formatting을 하면 특정 케이스에 원하는 형식대로 출력할 수 있고, 가독성이 높아진다.</strong></li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 순서에 맞게 자동적으로 mapping 해준다.</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 순서에 맞게 자동적으로 mapping 해준다.</span>
 <span style=color:#ae81ff>&gt; print(&#39;%s %s&#39; % (&#39;one&#39;,&#39;two))</span>
 <span style=color:#ae81ff>&gt; print(&#39;{} {}&#39;.format(&#39;one&#39;,&#39;two&#39;))</span>
 
@@ -205,7 +204,7 @@
 </code></pre></div><ul>
 <li>전체 자릿수를 지정하는 방법과 정렬 방향을 바꾸는 방법을 알아보겠다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 문자열 총 자리 수는 10자리를 의미한다.</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 문자열 총 자리 수는 10자리를 의미한다.</span>
 <span style=color:#75715e># 오른쪽 정렬</span>
 <span style=color:#75715e># 즉, blank 시작은 왼쪽부터다.</span>
 <span style=color:#ae81ff>&gt; print(&#39;%10s&#39; % (likelike))</span>
@@ -219,7 +218,7 @@
 <li>위 내용을 <code>.format</code>으로 표현해보자.</li>
 <li><strong><code>.format</code>은 string을 입력할 때 &rsquo;s&rsquo;를 입력하지 않아도 된다.</strong></li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e># 오른쪽 정렬</span>
 <span style=color:#ae81ff>&gt; print(&#39;{:&gt;10}&#39;.format(&#39;likelike&#39;))</span>
  <span style=color:#ae81ff>likelike</span>
@@ -243,13 +242,13 @@
 </code></pre></div><ul>
 <li>그러면 지정한 자릿수보다 문자열이 더 길다면??</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;%5s&#39; % (&#39;likelike&#39;))</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;%5s&#39; % (&#39;likelike&#39;))</span>
 <span style=color:#ae81ff>likelike</span>
 <span style=color:#75715e># 다 출력된다.</span>
 </code></pre></div><ul>
 <li>지정한 자릿수를 넘는 문자열 부분들을 절삭하고 싶다면??</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># . 점을 아래와 같이 표시한다.</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># . 점을 아래와 같이 표시한다.</span>
 <span style=color:#ae81ff>&gt; print(&#39;%.5s&#39; % &#39;likelike&#39;)</span>
 <span style=color:#ae81ff>likel</span>
 
@@ -293,14 +292,14 @@
 <li><code>.format</code> 은 문자열 <code>s</code>는 입력하지 않는다.</li>
 <li>정수형 <code>d</code> or <code>i</code>, 실수형 <code>f</code> 은 입력한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;%d %d&#39; % (1, 2))</span>
-<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;%d %d&#39; % (1, 2))</span>
+<span style=color:#ae81ff>1</span><span style=color:#111>,</span><span style=color:#ae81ff>2</span>
 
 <span style=color:#ae81ff>&gt; print(&#39;{} {}&#39;.format(1,2))</span>
-<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>
+<span style=color:#ae81ff>1</span><span style=color:#111>,</span><span style=color:#ae81ff>2</span>
 
 <span style=color:#ae81ff>&gt; print(&#39;{1} {0}.format(1,2)&#39;)</span>
-<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>1</span>
+<span style=color:#ae81ff>2</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span>
 
 <span style=color:#ae81ff>&gt; print(&#39;%4d&#39; % (24))</span>
 <span style=color:#ae81ff>&gt; print(&#39;{:&gt;4d}&#39;.format(24))</span>
@@ -346,7 +345,7 @@
 </ul>
 <hr>
 <h2 id=3-float-실수형-출력-f>3. Float 실수형 출력 (f)<a hidden class=anchor aria-hidden=true href=#3-float-실수형-출력-f>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e># 전체 실수자리를 따로 지정하지 않으면 8자리까지 출력된다.</span>
 <span style=color:#ae81ff>&gt; print(&#39;%f&#39; % (3.1415926535))</span>
 <span style=color:#ae81ff>&gt; print(&#39;{:f}&#39;.format(3.1415926535))</span>

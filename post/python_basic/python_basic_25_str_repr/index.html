@@ -19,8 +19,7 @@ _ | Jeha00 DevLog</title>
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -160,8 +159,8 @@ _
 <p>예시코드는 Python basic 24에서 작성한 코드를 이어서 사용한다.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span>:
-<span style=color:#f92672>&gt;     def __init__(self, company, details)</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;     def __init__(self, company, details)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self._company = company</span>
 <span style=color:#ae81ff>&gt;         self._details = details</span>
 <span style=color:#ae81ff>&gt;</span>
@@ -183,66 +182,66 @@ _
 <ul>
 <li>그러면 Airline class 내부에 <code>__str__</code> method를 추가해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span>:
-<span style=color:#f92672>&gt;     def __init__(self, company, details)</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;     def __init__(self, company, details)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self._company = company</span>
 <span style=color:#ae81ff>&gt;         self._details = details</span>
 <span style=color:#ae81ff>&gt;</span>
-<span style=color:#f92672>&gt;     def __str__(self)</span>:
-<span style=color:#f92672>&gt;         return &#39;str </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74># instance 코드 부분은 생략한다.
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt; print(Airline1)
-</span><span style=color:#e6db74>&gt; print(Airline2)
-</span><span style=color:#e6db74>&gt; print(Airline3)
-</span><span style=color:#e6db74>str : Koreanair - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#ae81ff>8000</span>}
-<span style=color:#f92672>str </span>: <span style=color:#ae81ff>Asiana - {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;: 6000}</span>
-<span style=color:#f92672>str </span>: <span style=color:#ae81ff>t-wau - {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}</span>
+<span style=color:#f92672>&gt;     def __str__(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;         return &#39;str </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>
+</span><span style=color:#d88200># instance 코드 부분은 생략한다.
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt; print(Airline1)
+</span><span style=color:#d88200>&gt; print(Airline2)
+</span><span style=color:#d88200>&gt; print(Airline3)
+</span><span style=color:#d88200>str : Koreanair - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>}
+<span style=color:#f92672>str </span><span style=color:#111>:</span> <span style=color:#ae81ff>Asiana - {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;: 6000}</span>
+<span style=color:#f92672>str </span><span style=color:#111>:</span> <span style=color:#ae81ff>t-wau - {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}</span>
 
 </code></pre></div><ul>
 <li><code>__str__</code> method 를 사용하니, memory address를 출력하는 것이 아닌, <code>__str__</code> method에서 return 값을 출력한다.</li>
 <li>다음으로 <code>__repr__</code> method를 사용해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span>:
-<span style=color:#f92672>&gt;     def __init__(self, company, details)</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;     def __init__(self, company, details)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self._company = company</span>
 <span style=color:#ae81ff>&gt;         self._details = details</span>
 <span style=color:#ae81ff>&gt;</span>
-<span style=color:#f92672>&gt;     def __repr__(self)</span>:
-<span style=color:#f92672>&gt;         return &#39;repr </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74># instance 코드 부분은 생략한다.
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt; print(Airline1)
-</span><span style=color:#e6db74>&gt; print(Airline2)
-</span><span style=color:#e6db74>&gt; print(Airline3)
-</span><span style=color:#e6db74>repr : Koreanair - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#ae81ff>8000</span>}
-<span style=color:#f92672>repr </span>: <span style=color:#ae81ff>Asiana - {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;: 6000}</span>
-<span style=color:#f92672>repr </span>: <span style=color:#ae81ff>t-wau - {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}</span>
+<span style=color:#f92672>&gt;     def __repr__(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;         return &#39;repr </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>
+</span><span style=color:#d88200># instance 코드 부분은 생략한다.
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt; print(Airline1)
+</span><span style=color:#d88200>&gt; print(Airline2)
+</span><span style=color:#d88200>&gt; print(Airline3)
+</span><span style=color:#d88200>repr : Koreanair - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>}
+<span style=color:#f92672>repr </span><span style=color:#111>:</span> <span style=color:#ae81ff>Asiana - {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;: 6000}</span>
+<span style=color:#f92672>repr </span><span style=color:#111>:</span> <span style=color:#ae81ff>t-wau - {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}</span>
 </code></pre></div><ul>
 <li><code>__repr__</code> method 를 사용하니, memory address를 출력하는 것이 아닌, <code>__repr__</code> method에서 return 값을 출력한다.</li>
 <li>그러면 <code>__str__</code> 와 <code>__repr__</code> 를 같이 사용해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span>:
-<span style=color:#f92672>&gt;     def __init__(self, company, details)</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;     def __init__(self, company, details)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self._company = company</span>
 <span style=color:#ae81ff>&gt;         self._details = details</span>
 <span style=color:#ae81ff>&gt;</span>
-<span style=color:#f92672>&gt;     def __str__(self)</span>:
-<span style=color:#f92672>&gt;         return &#39;str </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>&gt;
-</span><span style=color:#e6db74>&gt;     def __repr__(self):
-</span><span style=color:#e6db74>&gt;         return &#39;</span><span style=color:#f92672>repr </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74># instance 코드 부분은 생략한다.
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt; print(Airline1)
-</span><span style=color:#e6db74>&gt; print(Airline2)
-</span><span style=color:#e6db74>&gt; print(Airline3)
-</span><span style=color:#e6db74>str : Koreanair - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#ae81ff>8000</span>}
-<span style=color:#f92672>str </span>: <span style=color:#ae81ff>Asiana - {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;: 6000}</span>
-<span style=color:#f92672>str </span>: <span style=color:#ae81ff>t-wau - {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}</span>
+<span style=color:#f92672>&gt;     def __str__(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;         return &#39;str </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>&gt;
+</span><span style=color:#d88200>&gt;     def __repr__(self):
+</span><span style=color:#d88200>&gt;         return &#39;</span><span style=color:#f92672>repr </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>
+</span><span style=color:#d88200># instance 코드 부분은 생략한다.
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt; print(Airline1)
+</span><span style=color:#d88200>&gt; print(Airline2)
+</span><span style=color:#d88200>&gt; print(Airline3)
+</span><span style=color:#d88200>str : Koreanair - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>}
+<span style=color:#f92672>str </span><span style=color:#111>:</span> <span style=color:#ae81ff>Asiana - {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;: 6000}</span>
+<span style=color:#f92672>str </span><span style=color:#111>:</span> <span style=color:#ae81ff>t-wau - {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}</span>
 </code></pre></div><ul>
 <li><code>__str__</code> method의 return 문을 출력했다.</li>
 </ul>
@@ -278,10 +277,10 @@ _
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; a = datetime.datetime(2022,3,13)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; a = datetime.datetime(2022,3,13)</span>
 
 <span style=color:#ae81ff>&gt; print(str(a))</span>
-<span style=color:#e6db74>2022-03-13 00:00:00</span>
+<span style=color:#d88200>2022-03-13 00:00:00</span>
 
 <span style=color:#ae81ff>&gt; print(repr(a))</span>
 <span style=color:#ae81ff>datetime.datetime(2022, 3, 13, 0, 0)</span>
@@ -300,35 +299,35 @@ _
 <p>즉, <code>print()</code> 는 <code>object.__str__</code> 를 통해서 문자열로 반환된 걸 출력하는 것이다.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span>:
-<span style=color:#f92672>&gt;     def __init__(self, company, details)</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;     def __init__(self, company, details)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self._company = company</span>
 <span style=color:#ae81ff>&gt;         self._details = details</span>
 <span style=color:#ae81ff>&gt;</span>
-<span style=color:#f92672>&gt;     def __str__(self)</span>:
-<span style=color:#f92672>&gt;         return &#39;str </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt; print(str(Airline1))
-</span><span style=color:#e6db74>str : Koreanair - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#ae81ff>8000</span>}
+<span style=color:#f92672>&gt;     def __str__(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;         return &#39;str </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt; print(str(Airline1))
+</span><span style=color:#d88200>str : Koreanair - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>}
 </code></pre></div>
 <ul>
 <li><code>repr()</code> 또한 <code>__repr__</code>을 통해서 변환된 것을 반환한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span>:
-<span style=color:#f92672>&gt;     def __init__(self, company, details)</span>:
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;     def __init__(self, company, details)</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         self._company = company</span>
 <span style=color:#ae81ff>&gt;         self._details = details</span>
 <span style=color:#ae81ff>&gt;</span>
-<span style=color:#f92672>&gt;     def __repr__(self)</span>:
-<span style=color:#f92672>&gt;         return &#39;repr </span>: {} - {}<span style=color:#e6db74>&#39;.format(self._company, self._details)
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74># instance 코드 부분은 생략한다.
-</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>&gt; print(repr(Airline1))
-</span><span style=color:#e6db74>repr : t-wau - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span>: <span style=color:#ae81ff>3000</span>}
+<span style=color:#f92672>&gt;     def __repr__(self)</span><span style=color:#111>:</span>
+<span style=color:#f92672>&gt;         return &#39;repr </span><span style=color:#111>:</span> {} - {}<span style=color:#d88200>&#39;.format(self._company, self._details)
+</span><span style=color:#d88200>
+</span><span style=color:#d88200># instance 코드 부분은 생략한다.
+</span><span style=color:#d88200>
+</span><span style=color:#d88200>&gt; print(repr(Airline1))
+</span><span style=color:#d88200>repr : t-wau - {&#39;</span><span style=color:#f92672>uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>3000</span>}
 
 <span style=color:#ae81ff>&gt; print(str(Airline1))</span>
-<span style=color:#f92672>repr </span>: <span style=color:#ae81ff>t-wau - {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}</span>
+<span style=color:#f92672>repr </span><span style=color:#111>:</span> <span style=color:#ae81ff>t-wau - {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}</span>
 </code></pre></div><ul>
 <li>또한, <code>__str__</code>이 별도로 정의되지 않았고, <code>__repr__</code>만 정의된 상황이라면</li>
 <li><code>str()</code>을 실행하면 <code>__repr__</code>가 실행된다.</li>

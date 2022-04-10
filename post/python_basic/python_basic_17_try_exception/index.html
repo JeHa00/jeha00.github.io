@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -137,44 +136,44 @@
 <hr>
 <h2 id=2-error의-종류>2. Error의 종류<a hidden class=anchor aria-hidden=true href=#2-error의-종류>#</a></h2>
 <h3 id=21-syntaxerror-문법-오류>2.1 SyntaxError: 문법 오류<a hidden class=anchor aria-hidden=true href=#21-syntaxerror-문법-오류>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 조건문의 헤더에 콜론(:)을 하지 않아 발생했다.</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 조건문의 헤더에 콜론(:)을 하지 않아 발생했다.</span>
 <span style=color:#ae81ff>&gt; print(&#39;error&#39;)</span>
 <span style=color:#ae81ff>&gt; print(&#39;error&#39;)</span>
 <span style=color:#ae81ff>&gt; if True</span>
 <span style=color:#ae81ff>&gt;     pass</span>
-<span style=color:#f92672>SyntaxError</span>: <span style=color:#ae81ff>invalid syntax</span>
+<span style=color:#f92672>SyntaxError</span><span style=color:#111>:</span> <span style=color:#ae81ff>invalid syntax</span>
 </code></pre></div>
 <h3 id=22-typeerror-자료형에-맞지-않는-연산을-수행하여-발생하는-오류>2.2 TypeError: 자료형에 맞지 않는 연산을 수행하여 발생하는 오류<a hidden class=anchor aria-hidden=true href=#22-typeerror-자료형에-맞지-않는-연산을-수행하여-발생하는-오류>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; x = [1,2]</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; x = [1,2]</span>
 <span style=color:#ae81ff>&gt; y = (1,2)</span>
 <span style=color:#ae81ff>&gt; z = &#39;test&#39;</span>
 
 <span style=color:#75715e># list와 tuple은 합칠 수 없다.</span>
 <span style=color:#ae81ff>&gt; print(x + y)</span>
-<span style=color:#f92672>TypeError</span>: <span style=color:#ae81ff>can only concatenate list (not &#34;tuple&#34;) to list</span>
+<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#ae81ff>can only concatenate list (not &#34;tuple&#34;) to list</span>
 
 <span style=color:#75715e># string과 list는 합칠 수 없다.</span>
 <span style=color:#ae81ff>&gt; print(x + z)</span>
-<span style=color:#f92672>TypeError</span>: <span style=color:#ae81ff>can only concatenate list (not &#34;str&#34;) to list</span>
+<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#ae81ff>can only concatenate list (not &#34;str&#34;) to list</span>
 
 <span style=color:#75715e># tuple과 string은 합칠 수 없다.</span>
 <span style=color:#ae81ff>&gt; print(y + z)</span>
-<span style=color:#f92672>TypeError</span>: <span style=color:#ae81ff>can only concatenate list (not &#34;str&#34;) to list</span>
+<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#ae81ff>can only concatenate list (not &#34;str&#34;) to list</span>
 
 </code></pre></div>
 <h3 id=23-nameerror-참조가-없을-때-발생하는-오류>2.3 NameError: 참조가 없을 때 발생하는 오류<a hidden class=anchor aria-hidden=true href=#23-nameerror-참조가-없을-때-발생하는-오류>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; a = 10</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; a = 10</span>
 <span style=color:#ae81ff>&gt; b = 15</span>
 <span style=color:#ae81ff>&gt; print(c)</span>
-<span style=color:#f92672>NameError</span>: <span style=color:#ae81ff>name &#39;c&#39; is not defined</span>
+<span style=color:#f92672>NameError</span><span style=color:#111>:</span> <span style=color:#ae81ff>name &#39;c&#39; is not defined</span>
 
 </code></pre></div>
 <h3 id=24-indexerror-index가-존재하지-않아-발생하는-오류>2.4 IndexError: index가 존재하지 않아 발생하는 오류<a hidden class=anchor aria-hidden=true href=#24-indexerror-index가-존재하지-않아-발생하는-오류>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; x = [50, 70, 90]</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; x = [50, 70, 90]</span>
 <span style=color:#ae81ff>&gt; print(x[1])</span>
 <span style=color:#ae81ff>70</span>
 <span style=color:#ae81ff>&gt; print(x[4]</span>
-<span style=color:#f92672>IndexError</span>: <span style=color:#ae81ff>list index out of range</span>
+<span style=color:#f92672>IndexError</span><span style=color:#111>:</span> <span style=color:#ae81ff>list index out of range</span>
 
 <span style=color:#75715e># 알고리즘에서 op을 사용할 때 발생할 수 있는 에러</span>
 <span style=color:#ae81ff>&gt; print(x.pop())</span>
@@ -184,38 +183,38 @@
 <span style=color:#ae81ff>&gt; print(x.pop())</span>
 <span style=color:#ae81ff>90</span>
 <span style=color:#ae81ff>&gt; print(x.pop())</span>
-<span style=color:#f92672>IndexError</span>: <span style=color:#ae81ff>pop from empty list</span>
+<span style=color:#f92672>IndexError</span><span style=color:#111>:</span> <span style=color:#ae81ff>pop from empty list</span>
 </code></pre></div>
 <h3 id=25-valueerror-참조값이-없을-때-발생하는-오류>2.5 ValueError: 참조값이 없을 때 발생하는 오류<a hidden class=anchor aria-hidden=true href=#25-valueerror-참조값이-없을-때-발생하는-오류>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; x = [10, 50, 90]</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; x = [10, 50, 90]</span>
 <span style=color:#ae81ff>&gt; x.remove(50)</span>
 <span style=color:#ae81ff>&gt; print(x)</span>
-[<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>90</span>]
+<span style=color:#111>[</span><span style=color:#ae81ff>10</span><span style=color:#111>,</span> <span style=color:#ae81ff>90</span><span style=color:#111>]</span>
 
 <span style=color:#ae81ff>&gt; x.remove(200)</span>
-<span style=color:#f92672>ValueError: list.remove(x)</span>: <span style=color:#ae81ff>x not in list</span>
+<span style=color:#f92672>ValueError: list.remove(x)</span><span style=color:#111>:</span> <span style=color:#ae81ff>x not in list</span>
 </code></pre></div>
 <h3 id=26-keyerror-해당되는-key가-없을-때-발생하는-오류>2.6 KeyError: 해당되는 key가 없을 때 발생하는 오류<a hidden class=anchor aria-hidden=true href=#26-keyerror-해당되는-key가-없을-때-발생하는-오류>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e># `key` 값으로 `value` 값을 출력할 때는 `.get()` 함수를 사용한다.</span>
 <span style=color:#ae81ff>&gt; x = {&#39;A&#39;: &#39;apple&#39;, &#39;B&#39;: &#39;Banana&#39;, &#39;C&#39;: &#39;coffee&#39;}</span>
 <span style=color:#ae81ff>&gt; print(x[&#39;D&#39;])</span>
-<span style=color:#f92672>KeyError</span>: <span style=color:#e6db74>&#39;D&#39;</span>
+<span style=color:#f92672>KeyError</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;D&#39;</span>
 <span style=color:#ae81ff>&gt; print(x.get(&#39;D&#39;))</span>
 <span style=color:#ae81ff>None</span>
 </code></pre></div>
 <h3 id=27-attributeerror-모듈-클래스에-있는-잘못된-속성을-사용하여-발생한-오류>2.7 AttributeError: 모듈, 클래스에 있는 잘못된 속성을 사용하여 발생한 오류<a hidden class=anchor aria-hidden=true href=#27-attributeerror-모듈-클래스에-있는-잘못된-속성을-사용하여-발생한-오류>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import time</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import time</span>
 <span style=color:#ae81ff>&gt;  print(time.time2())</span>
-<span style=color:#f92672>AttributeError</span>: <span style=color:#ae81ff>module &#39;time&#39; has no attribute &#39;time2&#39;</span>
+<span style=color:#f92672>AttributeError</span><span style=color:#111>:</span> <span style=color:#ae81ff>module &#39;time&#39; has no attribute &#39;time2&#39;</span>
 </code></pre></div>
 <h3 id=28-filenotfounderror-파일을-찾을-수-없을-때-발생하는-오류>2.8 FileNotFoundError: 파일을 찾을 수 없을 때 발생하는 오류<a hidden class=anchor aria-hidden=true href=#28-filenotfounderror-파일을-찾을-수-없을-때-발생하는-오류>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; f = open(&#39;test.txt&#39;)</span>
-<span style=color:#f92672>FileNotFoundError: [Errno 2] No such file or directory</span>: <span style=color:#e6db74>&#39;test.txt&#39;</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; f = open(&#39;test.txt&#39;)</span>
+<span style=color:#f92672>FileNotFoundError: [Errno 2] No such file or directory</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;test.txt&#39;</span>
 </code></pre></div>
 <h3 id=29-zerodivisionerror-0으로-나눠서-발생하는-오류>2.9 ZeroDivisionError: 0으로 나눠서 발생하는 오류<a hidden class=anchor aria-hidden=true href=#29-zerodivisionerror-0으로-나눠서-발생하는-오류>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(100 / 0)</span>
-<span style=color:#f92672>ZeroDivisionError</span>: <span style=color:#ae81ff>division by zero</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(100 / 0)</span>
+<span style=color:#f92672>ZeroDivisionError</span><span style=color:#111>:</span> <span style=color:#ae81ff>division by zero</span>
 </code></pre></div><hr>
 <h2 id=3-예외-처리-try--exception>3. 예외 처리 (try ~ exception)<a hidden class=anchor aria-hidden=true href=#3-예외-처리-try--exception>#</a></h2>
 <ul>
@@ -253,22 +252,22 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 예제 1</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 예제 1</span>
 <span style=color:#75715e>## error 발생하지 않는 코드</span>
 <span style=color:#ae81ff>&gt; name = [&#39;Kim&#39;, &#39;Lee&#39;, &#39;Park&#39;]</span>
 <span style=color:#ae81ff>&gt; print(name.index(&#39;Kim&#39;))</span>
-<span style=color:#f92672>&gt; try </span>:
+<span style=color:#f92672>&gt; try </span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      z = &#39;Kim&#39;</span>
 <span style=color:#ae81ff>&gt;      x = name.index(z)</span>
 <span style=color:#ae81ff>&gt;      print(&#39;{} Found it! {} in name&#39;.format(z, x + 1))</span>
 
 <span style=color:#75715e># error 중 ValueError 만 잡는다.</span>
 <span style=color:#75715e># error 처리 시, 이렇게 error의 정확한 유형대로 잡아내느 것이 제일 좋은 case다.</span>
-<span style=color:#f92672>&gt; except ValueError</span>:
+<span style=color:#f92672>&gt; except ValueError</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      print(&#39;Not found it! - Occurred ValueError!&#39;)</span>
 
 <span style=color:#75715e># error가 발생되지 않았으므로 else 구문이 작동된다.</span>
-<span style=color:#f92672>&gt; else</span>:
+<span style=color:#f92672>&gt; else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      print(&#39;Ok! else.&#39;)</span>
 <span style=color:#ae81ff>&gt; print(&#39; &#39; )</span>
 <span style=color:#ae81ff>0</span>
@@ -282,14 +281,14 @@
 <span style=color:#75715e># 또한, 예제 1에서의 ValueError를 지웠기 때문에 모든 Error를 잡아낸다.</span>
 <span style=color:#75715e># 하지만, 그래서 어떤 Error를 잡았는지 정확히 알 수 없다.</span>
 <span style=color:#ae81ff>&gt; name = [&#39;Kim&#39;, &#39;Lee&#39;, &#39;Park&#39;]</span>
-<span style=color:#f92672>&gt; try</span>:
+<span style=color:#f92672>&gt; try</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      z = &#39;Cho&#39;</span>
 <span style=color:#ae81ff>&gt;      x = name.index(z)</span>
 <span style=color:#ae81ff>&gt;      print(&#39;{} Found it! {} in name&#39;.format(z, x + 1))</span>
 <span style=color:#75715e>#  except Exception:</span>
-<span style=color:#f92672>&gt;  except</span>:
+<span style=color:#f92672>&gt;  except</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      print(&#39;Not found it! - Occurred Error!&#39;)</span>
-<span style=color:#f92672>&gt;  else</span>:
+<span style=color:#f92672>&gt;  else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      print(&#39;Ok! else.&#39;)</span>
 <span style=color:#ae81ff>&gt;</span>
 <span style=color:#ae81ff>&gt; print(&#39;pass&#39;)</span>
@@ -300,21 +299,21 @@
 <span style=color:#75715e># 예제 2를 보완한 코드</span>
 
 <span style=color:#ae81ff>&gt; name = [&#39;Kim&#39;, &#39;Lee&#39;, &#39;Park&#39;]</span>
-<span style=color:#f92672>&gt; try</span>:
+<span style=color:#f92672>&gt; try</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     z = &#39;Cho&#39;</span>
 <span style=color:#ae81ff>&gt;     x = name.index(z)</span>
 <span style=color:#ae81ff>&gt;     print(&#39;{} Found it! {} in name&#39;.format(z, x + 1))</span>
 <span style=color:#75715e># 예제 2와 달리 추가된 부분</span>
-<span style=color:#f92672>&gt; except Exception as e</span>:
+<span style=color:#f92672>&gt; except Exception as e</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     print(e)</span>
 <span style=color:#75715e>#</span>
 <span style=color:#ae81ff>&gt;     print(&#39;Not found it! - Occurred Error!&#39;)</span>
-<span style=color:#f92672>&gt; else</span>:
+<span style=color:#f92672>&gt; else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     print(&#39;Ok! else.&#39;)</span>
 <span style=color:#75715e># 예외 유무에 상관없이 finally는 실행된다.</span>
-<span style=color:#f92672>&gt; finally</span>:
+<span style=color:#f92672>&gt; finally</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     print(&#39;Ok! finally&#39;)</span>
-<span style=color:#e6db74>&#39;Cho&#39;</span> <span style=color:#ae81ff>is not in list</span>
+<span style=color:#d88200>&#39;Cho&#39;</span> <span style=color:#ae81ff>is not in list</span>
 <span style=color:#ae81ff>Not found it! - Occurred Error!</span>
 <span style=color:#ae81ff>Ok! finally</span>
 </code></pre></div>
@@ -324,17 +323,17 @@
 <li>여기서 <code>error</code>란 Python에서 발생시킨 게 아니라, 설계자가 회사에서 요구하는 논리상 알기 위해서 <code>일부러</code> 발생시킨 <code>error</code>를 말한다.</li>
 <li>아래 코드로 설명을 하자면 <code>a</code>가 <code>Kim</code>이 아니라면 이는 파이썬 내에 <code>ValueError</code>가 발생된 것이 아니다. 하지만 회사에서 <code>Kim</code>이 아닌 경우에 대해 알기 위해서 error를 발생시켰다. 이를 토대로 언제 <code>Kim</code>이 아닌지 역으로 분석할 수 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## error 발생 X</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## error 발생 X</span>
 <span style=color:#ae81ff>&gt; name = [&#39;Kim&#39;, &#39;Lee&#39;, &#39;Park&#39;]</span>
-<span style=color:#f92672>&gt;  try</span>:
+<span style=color:#f92672>&gt;  try</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      a = &#39;Park&#39;</span>
-<span style=color:#f92672>&gt;      if a == &#39;Park&#39;</span>:
+<span style=color:#f92672>&gt;      if a == &#39;Park&#39;</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;          print(&#39;OK! Pass!&#39;)</span>
-<span style=color:#f92672>&gt;      else</span>:
+<span style=color:#f92672>&gt;      else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;          raise ValueError</span>
-<span style=color:#f92672>&gt;  except ValueError</span>:
+<span style=color:#f92672>&gt;  except ValueError</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      print(&#39;Occurred! Exception!&#39;)</span>
-<span style=color:#f92672>&gt;  else</span>:
+<span style=color:#f92672>&gt;  else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      print(&#39;Ok! else!&#39;)</span>
 <span style=color:#ae81ff>OK! Pass!</span>
 <span style=color:#ae81ff>Ok! else!</span>
@@ -342,15 +341,15 @@
 
 <span style=color:#75715e>## error 발생 O</span>
 <span style=color:#ae81ff>&gt; name = [&#39;Kim&#39;, &#39;Lee&#39;, &#39;Park&#39;]</span>
-<span style=color:#f92672>&gt;  try</span>:
+<span style=color:#f92672>&gt;  try</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      a = &#39;Park&#39;</span>
-<span style=color:#f92672>&gt;      if a == &#39;Kim&#39;</span>:
+<span style=color:#f92672>&gt;      if a == &#39;Kim&#39;</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;          print(&#39;OK! Pass!&#39;)</span>
-<span style=color:#f92672>&gt;      else</span>:
+<span style=color:#f92672>&gt;      else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;          raise ValueError</span>
-<span style=color:#f92672>&gt;  except ValueError</span>:
+<span style=color:#f92672>&gt;  except ValueError</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      print(&#39;Occurred! Exception!&#39;)</span>
-<span style=color:#f92672>&gt;  else</span>:
+<span style=color:#f92672>&gt;  else</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      print(&#39;Ok! else!&#39;)</span>
 <span style=color:#ae81ff>Occurred! Exception!</span>
 </code></pre></div><ul>

@@ -11,8 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
 <link rel=icon href=http://jeha00.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
@@ -132,7 +131,7 @@
 <ul>
 <li>예제 파일 내용은 아래와 같다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## text1.csv</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## text1.csv</span>
 <span style=color:#75715e># 콤마로 구분</span>
 <span style=color:#ae81ff>Name,Code</span>
 <span style=color:#ae81ff>Afghanistan,AF</span>
@@ -163,7 +162,7 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
 <span style=color:#75715e># 외장 함수를 import 한다.</span>
 <span style=color:#ae81ff>&gt; import csv</span>
 
@@ -171,7 +170,7 @@
 <span style=color:#75715e># 별도로 close 하지 않기 위해 with open 함수를 사용한다.</span>
 
 <span style=color:#75715e># 현재 경로에서 resource 폴더에 있는 tes1.csv 파일을 읽고, f에 연결한다.</span>
-<span style=color:#f92672>&gt; with open(&#39;./resource/test1.csv&#39;, &#39;r&#39;) as f</span>:
+<span style=color:#f92672>&gt; with open(&#39;./resource/test1.csv&#39;, &#39;r&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;   reader = csv.reader(f)</span>
 
 <span style=color:#ae81ff>&gt;   print(reader)</span>
@@ -182,27 +181,27 @@
 
 <span style=color:#75715e>## __iter__을 확인한다.</span>
 <span style=color:#ae81ff>&gt;   print(dir(reader))</span>
-[<span style=color:#e6db74>&#39;__class__&#39;</span>, <span style=color:#e6db74>&#39;__delattr__&#39;</span>, <span style=color:#e6db74>&#39;__dir__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>, <span style=color:#e6db74>&#39;__eq__&#39;</span>, <span style=color:#e6db74>&#39;__format__&#39;</span>, <span style=color:#e6db74>&#39;__ge__&#39;</span>, <span style=color:#e6db74>&#39;__getattribute__&#39;</span>, <span style=color:#e6db74>&#39;__gt__&#39;</span>, <span style=color:#e6db74>&#39;__hash__&#39;</span>, <span style=color:#e6db74>&#39;__init__&#39;</span>, <span style=color:#e6db74>&#39;__init_subclass__&#39;</span>, <span style=color:#e6db74>&#39;__iter__&#39;</span>, <span style=color:#e6db74>&#39;__le__&#39;</span>, <span style=color:#e6db74>&#39;__lt__&#39;</span>, <span style=color:#e6db74>&#39;__ne__&#39;</span>, <span style=color:#e6db74>&#39;__new__&#39;</span>, <span style=color:#e6db74>&#39;__next__&#39;</span>, <span style=color:#e6db74>&#39;__reduce__&#39;</span>, <span style=color:#e6db74>&#39;__reduce_ex__&#39;</span>, <span style=color:#e6db74>&#39;__repr__&#39;</span>, <span style=color:#e6db74>&#39;__setattr__&#39;</span>, <span style=color:#e6db74>&#39;__sizeof__&#39;</span>, <span style=color:#e6db74>&#39;__str__&#39;</span>, <span style=color:#e6db74>&#39;__subclasshook__&#39;</span>, <span style=color:#e6db74>&#39;dialect&#39;</span>, <span style=color:#e6db74>&#39;line_num&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;__class__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__delattr__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dir__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__doc__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__eq__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__format__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__ge__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__getattribute__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__gt__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__hash__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init_subclass__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__iter__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__le__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__lt__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__ne__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__new__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__next__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__reduce__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__reduce_ex__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__repr__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__setattr__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__sizeof__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__str__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__subclasshook__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;dialect&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;line_num&#39;</span><span style=color:#111>]</span>
 
 <span style=color:#75715e>## __iter__이면 for문에도 사용할 수 있다.</span>
 <span style=color:#75715e># list 형식으로 가져온다는 걸 확인할 수 있다.</span>
-<span style=color:#f92672>&gt; for c in reader</span>:
+<span style=color:#f92672>&gt; for c in reader</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    print(type(c))</span>
 <span style=color:#ae81ff>&gt;    print(c)</span>
 <span style=color:#ae81ff>&lt;class &#39;list&#39;&gt;</span>
-[<span style=color:#e6db74>&#39;Name&#39;</span>, <span style=color:#e6db74>&#39;Code&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Name&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;Code&#39;</span><span style=color:#111>]</span>
 <span style=color:#ae81ff>&lt;class &#39;list&#39;&gt;</span>
-[<span style=color:#e6db74>&#39;Afghanistan&#39;</span>, <span style=color:#e6db74>&#39;AF&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Afghanistan&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AF&#39;</span><span style=color:#111>]</span>
 <span style=color:#ae81ff>&lt;class &#39;list&#39;&gt;</span>
-[<span style=color:#e6db74>&#39;횇land Islands&#39;</span>, <span style=color:#e6db74>&#39;AX&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;횇land Islands&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AX&#39;</span><span style=color:#111>]</span>
 <span style=color:#ae81ff>&lt;class &#39;list&#39;&gt;</span>
-[<span style=color:#e6db74>&#39;Albania&#39;</span>, <span style=color:#e6db74>&#39;AL&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Albania&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AL&#39;</span><span style=color:#111>]</span>
 <span style=color:#ae81ff>&lt;class &#39;list&#39;&gt;</span>
-[<span style=color:#e6db74>&#39;Algeria&#39;</span>, <span style=color:#e6db74>&#39;DZ&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Algeria&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;DZ&#39;</span><span style=color:#111>]</span>
 <span style=color:#ae81ff>&lt;class &#39;list&#39;&gt;</span>
-[<span style=color:#e6db74>&#39;American Samoa&#39;</span>, <span style=color:#e6db74>&#39;AS&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;American Samoa&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AS&#39;</span><span style=color:#111>]</span>
 <span style=color:#ae81ff>&lt;class &#39;list&#39;&gt;</span>
-[<span style=color:#e6db74>&#39;Andorra&#39;</span>, <span style=color:#e6db74>&#39;AD&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Andorra&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AD&#39;</span><span style=color:#111>]</span>
 
 <span style=color:#75715e>## list를 string 형식으로 바꿔보자.</span>
 <span style=color:#75715e># 첫 번째 Name, Code가 헤더로, 열정보 다.</span>
@@ -216,7 +215,7 @@
 <span style=color:#ae81ff>AndorraAD</span>
 
 <span style=color:#75715e>## 헤더를 출력하고 싶지 않으면??</span>
-<span style=color:#f92672>&gt; with open(&#39;./resource/test1.csv&#39;, &#39;r&#39;) as f</span>:
+<span style=color:#f92672>&gt; with open(&#39;./resource/test1.csv&#39;, &#39;r&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     reader = csv.reader(f)</span>
 <span style=color:#75715e># with open 문 안에 아래 함수를 추가한다.</span>
 <span style=color:#75715e># Header Skip:  csv 파일의 첫 행 부분은 보통 헤더값이라 하며, 생략한다.</span>
@@ -236,55 +235,55 @@
 </code></pre></div><ul>
 <li>두 번째 예제 (test2.csv)</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import csv</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import csv</span>
 
-<span style=color:#f92672>&gt; with open(&#39;./resource/test2.csv&#39;, &#39;r&#39;) as f</span>:
+<span style=color:#f92672>&gt; with open(&#39;./resource/test2.csv&#39;, &#39;r&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;     reader = csv.reader(f, delimiter = &#39;|&#39;)</span>
 <span style=color:#ae81ff>&gt;     next(reader)</span>
-<span style=color:#f92672>&gt;     for c in reader</span>:
+<span style=color:#f92672>&gt;     for c in reader</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;         print(c)</span>
-[<span style=color:#e6db74>&#39;Afghanistan&#39;</span>, <span style=color:#e6db74>&#39;AF&#39;</span>]
-[<span style=color:#e6db74>&#39;횇land Islands&#39;</span>, <span style=color:#e6db74>&#39;AX&#39;</span>]
-[<span style=color:#e6db74>&#39;Albania&#39;</span>, <span style=color:#e6db74>&#39;AL&#39;</span>]
-[<span style=color:#e6db74>&#39;Algeria&#39;</span>, <span style=color:#e6db74>&#39;DZ&#39;</span>]
-[<span style=color:#e6db74>&#39;American Samoa&#39;</span>, <span style=color:#e6db74>&#39;AS&#39;</span>]
-[<span style=color:#e6db74>&#39;Andorra&#39;</span>, <span style=color:#e6db74>&#39;AD&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Afghanistan&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AF&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;횇land Islands&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AX&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Albania&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AL&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Algeria&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;DZ&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;American Samoa&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AS&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Andorra&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AD&#39;</span><span style=color:#111>]</span>
 
 <span style=color:#75715e>## 만약 delimiter = &#39;|&#39; 를 입력하지 않는다면??</span>
 <span style=color:#75715e># name과 code가 하나의 값으로 인식된다.</span>
-[<span style=color:#e6db74>&#39;Afghanistan|AF&#39;</span>]
-[<span style=color:#e6db74>&#39;횇land Islands|AX&#39;</span>]
-[<span style=color:#e6db74>&#39;Albania|AL&#39;</span>]
-[<span style=color:#e6db74>&#39;Algeria|DZ&#39;</span>]
-[<span style=color:#e6db74>&#39;American Samoa|AS&#39;</span>]
-[<span style=color:#e6db74>&#39;Andorra|AD&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Afghanistan|AF&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;횇land Islands|AX&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Albania|AL&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Algeria|DZ&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;American Samoa|AS&#39;</span><span style=color:#111>]</span>
+<span style=color:#111>[</span><span style=color:#d88200>&#39;Andorra|AD&#39;</span><span style=color:#111>]</span>
 </code></pre></div><ul>
 <li><code>DictReader</code> 를 사용하여 test2.csv의 내용을 dictionary 형태로 formatting한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import csv</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import csv</span>
 
-<span style=color:#f92672>&gt; with open(&#39;./resource/test1.csv&#39;, &#39;r&#39;) as f</span>:
+<span style=color:#f92672>&gt; with open(&#39;./resource/test1.csv&#39;, &#39;r&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;    reader = csv.DictReader(f)</span>
 <span style=color:#ae81ff>&gt;    print(reader)</span>
 <span style=color:#ae81ff>&lt;csv.DictReader object at 0x000001DD1A8A2F70&gt;</span>
 <span style=color:#ae81ff>&gt;    print(type(reader))</span>
 <span style=color:#ae81ff>&lt;class &#39;csv.DictReader&#39;&gt;</span>
 <span style=color:#ae81ff>&gt;    print(dir(reader))</span>
-[<span style=color:#e6db74>&#39;__class__&#39;</span>, <span style=color:#e6db74>&#39;__delattr__&#39;</span>, <span style=color:#e6db74>&#39;__dict__&#39;</span>, <span style=color:#e6db74>&#39;__dir__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>, <span style=color:#e6db74>&#39;__eq__&#39;</span>, <span style=color:#e6db74>&#39;__format__&#39;</span>, <span style=color:#e6db74>&#39;__ge__&#39;</span>, <span style=color:#e6db74>&#39;__getattribute__&#39;</span>, <span style=color:#e6db74>&#39;__gt__&#39;</span>, <span style=color:#e6db74>&#39;__hash__&#39;</span>, <span style=color:#e6db74>&#39;__init__&#39;</span>, <span style=color:#e6db74>&#39;__init_subclass__&#39;</span>, <span style=color:#e6db74>&#39;__iter__&#39;</span>, <span style=color:#e6db74>&#39;__le__&#39;</span>, <span style=color:#e6db74>&#39;__lt__&#39;</span>, <span style=color:#e6db74>&#39;__module__&#39;</span>, <span style=color:#e6db74>&#39;__ne__&#39;</span>, <span style=color:#e6db74>&#39;__new__&#39;</span>, <span style=color:#e6db74>&#39;__next__&#39;</span>, <span style=color:#e6db74>&#39;__reduce__&#39;</span>, <span style=color:#e6db74>&#39;__reduce_ex__&#39;</span>, <span style=color:#e6db74>&#39;__repr__&#39;</span>, <span style=color:#e6db74>&#39;__setattr__&#39;</span>, <span style=color:#e6db74>&#39;__sizeof__&#39;</span>, <span style=color:#e6db74>&#39;__str__&#39;</span>, <span style=color:#e6db74>&#39;__subclasshook__&#39;</span>, <span style=color:#e6db74>&#39;__weakref__&#39;</span>, <span style=color:#e6db74>&#39;_fieldnames&#39;</span>, <span style=color:#e6db74>&#39;dialect&#39;</span>, <span style=color:#e6db74>&#39;fieldnames&#39;</span>, <span style=color:#e6db74>&#39;line_num&#39;</span>, <span style=color:#e6db74>&#39;reader&#39;</span>, <span style=color:#e6db74>&#39;restkey&#39;</span>, <span style=color:#e6db74>&#39;restval&#39;</span>]
+<span style=color:#111>[</span><span style=color:#d88200>&#39;__class__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__delattr__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dict__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dir__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__doc__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__eq__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__format__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__ge__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__getattribute__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__gt__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__hash__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init_subclass__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__iter__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__le__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__lt__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__module__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__ne__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__new__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__next__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__reduce__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__reduce_ex__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__repr__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__setattr__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__sizeof__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__str__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__subclasshook__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__weakref__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;_fieldnames&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;dialect&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;fieldnames&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;line_num&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;reader&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;restkey&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;restval&#39;</span><span style=color:#111>]</span>
 
 <span style=color:#75715e>## __iter__ 확인 완료</span>
-<span style=color:#f92672>&gt;   for c in reader</span>:
+<span style=color:#f92672>&gt;   for c in reader</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       print(c)</span>
-{<span style=color:#f92672>&#39;Name&#39;: &#39;Afghanistan&#39;, &#39;Code&#39;</span>: <span style=color:#e6db74>&#39;AF&#39;</span>}
-{<span style=color:#f92672>&#39;Name&#39;: &#39;횇land Islands&#39;, &#39;Code&#39;</span>: <span style=color:#e6db74>&#39;AX&#39;</span>}
-{<span style=color:#f92672>&#39;Name&#39;: &#39;Albania&#39;, &#39;Code&#39;</span>: <span style=color:#e6db74>&#39;AL&#39;</span>}
-{<span style=color:#f92672>&#39;Name&#39;: &#39;Algeria&#39;, &#39;Code&#39;</span>: <span style=color:#e6db74>&#39;DZ&#39;</span>}
-{<span style=color:#f92672>&#39;Name&#39;: &#39;American Samoa&#39;, &#39;Code&#39;</span>: <span style=color:#e6db74>&#39;AS&#39;</span>}
-{<span style=color:#f92672>&#39;Name&#39;: &#39;Andorra&#39;, &#39;Code&#39;</span>: <span style=color:#e6db74>&#39;AD&#39;</span>}
+{<span style=color:#f92672>&#39;Name&#39;: &#39;Afghanistan&#39;, &#39;Code&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;AF&#39;</span>}
+{<span style=color:#f92672>&#39;Name&#39;: &#39;횇land Islands&#39;, &#39;Code&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;AX&#39;</span>}
+{<span style=color:#f92672>&#39;Name&#39;: &#39;Albania&#39;, &#39;Code&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;AL&#39;</span>}
+{<span style=color:#f92672>&#39;Name&#39;: &#39;Algeria&#39;, &#39;Code&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;DZ&#39;</span>}
+{<span style=color:#f92672>&#39;Name&#39;: &#39;American Samoa&#39;, &#39;Code&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;AS&#39;</span>}
+{<span style=color:#f92672>&#39;Name&#39;: &#39;Andorra&#39;, &#39;Code&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;AD&#39;</span>}
 
 
 <span style=color:#75715e>## 위 내용을 Name과 Code로 나누고 싶으면??</span>
-<span style=color:#f92672>&gt;   for c in readers</span>:
+<span style=color:#f92672>&gt;   for c in readers</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;       for k, v in c.items()</span>
 <span style=color:#ae81ff>&gt;           print(k)</span>
 
@@ -331,64 +330,64 @@
 <span style=color:#ae81ff>Code AD</span>
 </code></pre></div><hr>
 <h2 id=2-write-csv-file-csv-파일-쓰기>2. Write csv file (csv 파일 쓰기)<a hidden class=anchor aria-hidden=true href=#2-write-csv-file-csv-파일-쓰기>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import csv</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import csv</span>
 
 
 <span style=color:#ae81ff>&gt; w = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18], [19, 20, 21]]</span>
 
 
-<span style=color:#f92672>&gt; with open(&#39;./resoucre/write1.csv&#39;, &#39;w&#39;, encoding = &#39;utf-8&#39;) as f</span>:
+<span style=color:#f92672>&gt; with open(&#39;./resoucre/write1.csv&#39;, &#39;w&#39;, encoding = &#39;utf-8&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;   wt = csv.writer(f)</span>
 <span style=color:#ae81ff>&lt;class &#39;_csv.writer&#39;&gt;</span>
 <span style=color:#ae81ff>&gt;   for v in w</span>
 <span style=color:#ae81ff>&gt;     </span> <span style=color:#75715e># v를 wt에 작성한다. 하나의 list가 하나의 record가 된다.</span>
 <span style=color:#ae81ff>&gt;      wt.writerow(v)</span>
-<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>3</span>
+<span style=color:#ae81ff>1</span><span style=color:#111>,</span><span style=color:#ae81ff>2</span><span style=color:#111>,</span><span style=color:#ae81ff>3</span>
 
-<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>6</span>
+<span style=color:#ae81ff>4</span><span style=color:#111>,</span><span style=color:#ae81ff>5</span><span style=color:#111>,</span><span style=color:#ae81ff>6</span>
 
-<span style=color:#ae81ff>7</span>,<span style=color:#ae81ff>8</span>,<span style=color:#ae81ff>9</span>
+<span style=color:#ae81ff>7</span><span style=color:#111>,</span><span style=color:#ae81ff>8</span><span style=color:#111>,</span><span style=color:#ae81ff>9</span>
 
-<span style=color:#ae81ff>10</span>,<span style=color:#ae81ff>11</span>,<span style=color:#ae81ff>12</span>
+<span style=color:#ae81ff>10</span><span style=color:#111>,</span><span style=color:#ae81ff>11</span><span style=color:#111>,</span><span style=color:#ae81ff>12</span>
 
-<span style=color:#ae81ff>13</span>,<span style=color:#ae81ff>14</span>,<span style=color:#ae81ff>15</span>
+<span style=color:#ae81ff>13</span><span style=color:#111>,</span><span style=color:#ae81ff>14</span><span style=color:#111>,</span><span style=color:#ae81ff>15</span>
 
-<span style=color:#ae81ff>16</span>,<span style=color:#ae81ff>17</span>,<span style=color:#ae81ff>18</span>
+<span style=color:#ae81ff>16</span><span style=color:#111>,</span><span style=color:#ae81ff>17</span><span style=color:#111>,</span><span style=color:#ae81ff>18</span>
 
-<span style=color:#ae81ff>19</span>,<span style=color:#ae81ff>20</span>,<span style=color:#ae81ff>21</span>
+<span style=color:#ae81ff>19</span><span style=color:#111>,</span><span style=color:#ae81ff>20</span><span style=color:#111>,</span><span style=color:#ae81ff>21</span>
 </code></pre></div><ul>
 <li>dict의 key 값을 field명으로 활용해서 써보기</li>
 <li><code>.writeheader</code>: Write a row with the field names (as specified in the constructor) to the writer’s file object</li>
 <li><code>.writerow</code>: Write the row parameter to the writer’s file object, formatted according to the current Dialect.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import csv</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import csv</span>
 
 <span style=color:#ae81ff>&gt; w = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18], [19, 20, 21]]</span>
 
-<span style=color:#f92672>&gt; with open(&#39;./resource/write2.csv&#39;, &#39;w&#39;, encoding = &#39;utf - 8&#39;) as f</span>:
+<span style=color:#f92672>&gt; with open(&#39;./resource/write2.csv&#39;, &#39;w&#39;, encoding = &#39;utf - 8&#39;) as f</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;      </span> <span style=color:#75715e># w의 list 성분이 3개의 성분을 가지고 있으므로, 3개를 입력</span>
 <span style=color:#ae81ff>&gt;       fields = [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]</span>
 <span style=color:#ae81ff>&gt;       wt = csv.DictWriter(f, fieldnames = fields)</span>
 <span style=color:#ae81ff>&gt;      </span> <span style=color:#75715e># header write</span>
 <span style=color:#ae81ff>&gt;      </span> <span style=color:#75715e># header로 one, two, three가 작성된 상태다.</span>
 <span style=color:#ae81ff>&gt;       wt.writeheader()</span>
-<span style=color:#f92672>&gt;       for v in w</span>:
+<span style=color:#f92672>&gt;       for v in w</span><span style=color:#111>:</span>
 <span style=color:#ae81ff>&gt;           wt.writerow({&#39;one&#39;: v[0], &#39;two&#39;:v[1], &#39;three&#39;:v[2]})</span>
 <span style=color:#ae81ff>one,two,three</span>
 
-<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>3</span>
+<span style=color:#ae81ff>1</span><span style=color:#111>,</span><span style=color:#ae81ff>2</span><span style=color:#111>,</span><span style=color:#ae81ff>3</span>
 
-<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>6</span>
+<span style=color:#ae81ff>4</span><span style=color:#111>,</span><span style=color:#ae81ff>5</span><span style=color:#111>,</span><span style=color:#ae81ff>6</span>
 
-<span style=color:#ae81ff>7</span>,<span style=color:#ae81ff>8</span>,<span style=color:#ae81ff>9</span>
+<span style=color:#ae81ff>7</span><span style=color:#111>,</span><span style=color:#ae81ff>8</span><span style=color:#111>,</span><span style=color:#ae81ff>9</span>
 
-<span style=color:#ae81ff>10</span>,<span style=color:#ae81ff>11</span>,<span style=color:#ae81ff>12</span>
+<span style=color:#ae81ff>10</span><span style=color:#111>,</span><span style=color:#ae81ff>11</span><span style=color:#111>,</span><span style=color:#ae81ff>12</span>
 
-<span style=color:#ae81ff>13</span>,<span style=color:#ae81ff>14</span>,<span style=color:#ae81ff>15</span>
+<span style=color:#ae81ff>13</span><span style=color:#111>,</span><span style=color:#ae81ff>14</span><span style=color:#111>,</span><span style=color:#ae81ff>15</span>
 
-<span style=color:#ae81ff>16</span>,<span style=color:#ae81ff>17</span>,<span style=color:#ae81ff>18</span>
+<span style=color:#ae81ff>16</span><span style=color:#111>,</span><span style=color:#ae81ff>17</span><span style=color:#111>,</span><span style=color:#ae81ff>18</span>
 
-<span style=color:#ae81ff>19</span>,<span style=color:#ae81ff>20</span>,<span style=color:#ae81ff>21</span>
+<span style=color:#ae81ff>19</span><span style=color:#111>,</span><span style=color:#ae81ff>20</span><span style=color:#111>,</span><span style=color:#ae81ff>21</span>
 </code></pre></div><hr>
 <h2 id=reference>Reference<a hidden class=anchor aria-hidden=true href=#reference>#</a></h2>
 <ul>
