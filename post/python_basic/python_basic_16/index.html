@@ -122,16 +122,16 @@
 <li>예제를 설명하기에 앞서 module로 사용할 package인 <code>module1.py</code> 와 <code>module2.py</code>의 위치는 다음과 같다.</li>
 <li><code>__init__.py</code> 파일도 기억해놓자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>sub</span>
-<span style=color:#ae81ff>├─sub1</span>
-<span style=color:#ae81ff>│  │─ module1.py</span>
-<span style=color:#ae81ff>│  │─ __init__.py</span>
-<span style=color:#ae81ff>│  └─ __pycache__</span>
-<span style=color:#ae81ff>├─sub2</span>
-<span style=color:#ae81ff>│  │─ module2.py</span>
-<span style=color:#ae81ff>│  │─ __init__.py</span>
-<span style=color:#ae81ff>│  └─__pycache__</span>
-<span style=color:#ae81ff>└─__pycache__</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>sub
+├─sub1
+│  │─ module1.py
+│  │─ __init__.py
+│  └─ __pycache__
+├─sub2
+│  │─ module2.py
+│  │─ __init__.py
+│  └─__pycache__
+└─__pycache__
 </code></pre></div><ul>
 <li>그리고 <code>module</code> 파일인 <code>module1.py</code>와 <code>module2.py</code>의 내부 코드는 다음과 같다.</li>
 <li><code>inspect</code> 함수는 파이썬의 객체들로부터 유용한 정보를 얻고자 할 때 사용하는 함수다.
@@ -143,44 +143,44 @@
 <li><code>.getfile</code>은 <code>object</code>가 어느 위치에 있는지 알고자 할 때 사용한다.</li>
 <li><code>.currentframe</code> 은 <code>실행 중인 파일의 이름과 경로</code>를 보여준다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## module1.py</span>
-<span style=color:#ae81ff>&gt; import sys</span>
-<span style=color:#ae81ff>&gt; import inspect</span>
-<span style=color:#75715e># from ..sub2 import module2</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4>## module1.py</span>
+&gt; import sys
+&gt; import inspect
+<span style=color:#6272a4># from ..sub2 import module2</span>
 
 
-<span style=color:#f92672>&gt; def mod1_test1()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt; 	print (&#34;Module1 -&gt; Test1&#34;)</span>
-<span style=color:#ae81ff>&gt; 	print(&#34;Path : &#34;, inspect.getfile(inspect.currentframe()))</span>
+<span style=color:#ff79c6>&gt; def mod1_test1()</span>:
+&gt; 	print (&#34;Module1 -&gt; Test1&#34;)
+&gt; 	print(&#34;Path : &#34;, inspect.getfile(inspect.currentframe()))
 
 
-<span style=color:#f92672>&gt; def mod1_test2()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt; 	print (&#34;Module1 -&gt; Test2&#34;)</span>
-<span style=color:#ae81ff>&gt; 	print(&#34;Path : &#34;, inspect.getfile(inspect.currentframe()))</span>
+<span style=color:#ff79c6>&gt; def mod1_test2()</span>:
+&gt; 	print (&#34;Module1 -&gt; Test2&#34;)
+&gt; 	print(&#34;Path : &#34;, inspect.getfile(inspect.currentframe()))
 
-<span style=color:#75715e># 만약 inspect.currentframe()만 입력하면 다음과 같이 뜬다.</span>
-<span style=color:#75715e>#  &lt;frame at 0x00000296CE1BB7C0, file c:\\Users ~~ \module1.py, line 9, code mod1_test1&gt;</span>
-<span style=color:#75715e># 파일 경로와, 파일 내의 몇 번째 줄인지까지 확인할 수 있다.</span>
+<span style=color:#6272a4># 만약 inspect.currentframe()만 입력하면 다음과 같이 뜬다.</span>
+<span style=color:#6272a4>#  &lt;frame at 0x00000296CE1BB7C0, file c:\\Users ~~ \module1.py, line 9, code mod1_test1&gt;</span>
+<span style=color:#6272a4># 파일 경로와, 파일 내의 몇 번째 줄인지까지 확인할 수 있다.</span>
 
-<span style=color:#75715e># 하지만, insepct.getfile(inspect.currentframe())) 을 입력하면 다음과 같이 뜬다.</span>
-<span style=color:#75715e>#  c:\Users\ ~ sub\sub1\module1.py</span>
-<span style=color:#75715e># 경로만 출력된다.</span>
+<span style=color:#6272a4># 하지만, insepct.getfile(inspect.currentframe())) 을 입력하면 다음과 같이 뜬다.</span>
+<span style=color:#6272a4>#  c:\Users\ ~ sub\sub1\module1.py</span>
+<span style=color:#6272a4># 경로만 출력된다.</span>
 
-<span style=color:#75715e># 코드 경로를 넘어서 더 상세한 위치를 알고 싶다면 `inspect.currentframe()`을 사용해야겠다.</span>
-
-
-<span style=color:#75715e>## module2.py</span>
-<span style=color:#ae81ff>&gt; import sys</span>
-<span style=color:#ae81ff>&gt; import inspect</span>
-
-<span style=color:#f92672>&gt; def mod2_test1()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt; 	print (&#34;Module2 -&gt; Test1&#34;)</span>
-<span style=color:#ae81ff>&gt; 	print(&#34;Path : &#34;, inspect.getfile(inspect.currentframe()))</span>
+<span style=color:#6272a4># 코드 경로를 넘어서 더 상세한 위치를 알고 싶다면 `inspect.currentframe()`을 사용해야겠다.</span>
 
 
-<span style=color:#f92672>&gt; def mod2_test2()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt; 	print (&#34;Module2 -&gt; Test2&#34;)</span>
-<span style=color:#ae81ff>&gt; 	print(&#34;Path : &#34;, inspect.getfile(inspect.currentframe()))</span>
+<span style=color:#6272a4>## module2.py</span>
+&gt; import sys
+&gt; import inspect
+
+<span style=color:#ff79c6>&gt; def mod2_test1()</span>:
+&gt; 	print (&#34;Module2 -&gt; Test1&#34;)
+&gt; 	print(&#34;Path : &#34;, inspect.getfile(inspect.currentframe()))
+
+
+<span style=color:#ff79c6>&gt; def mod2_test2()</span>:
+&gt; 	print (&#34;Module2 -&gt; Test2&#34;)
+&gt; 	print(&#34;Path : &#34;, inspect.getfile(inspect.currentframe()))
 
 </code></pre></div>
 <h3 id=22-패키지-함수-실행하기-2가지-방법>2.2 패키지 함수 실행하기: 2가지 방법<a hidden class=anchor aria-hidden=true href=#22-패키지-함수-실행하기-2가지-방법>#</a></h3>
@@ -214,15 +214,15 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 첫 번째 방법</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4>## 첫 번째 방법</span>
 
-<span style=color:#ae81ff>&gt; sub.sub1.module1.mod1_test1()</span>
-<span style=color:#ae81ff>&gt; sub.sub2.module2.mod2_test1()</span>
+&gt; sub.sub1.module1.mod1_test1()
+&gt; sub.sub2.module2.mod2_test1()
 
-<span style=color:#75715e># 또는</span>
+<span style=color:#6272a4># 또는</span>
 
-<span style=color:#ae81ff>&gt; import sub.sub1.module1</span>
-<span style=color:#ae81ff>&gt; import sub.sub2.module2</span>
+&gt; import sub.sub1.module1
+&gt; import sub.sub2.module2
 
 
 </code></pre></div>
@@ -236,23 +236,23 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 두 번째 방법</span>
-<span style=color:#ae81ff>&gt; from sub.sub1 import module1</span>
-<span style=color:#ae81ff>&gt; from sub.sub1 import module2 as m2</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4>## 두 번째 방법</span>
+&gt; from sub.sub1 import module1
+&gt; from sub.sub1 import module2 as m2
 
-<span style=color:#75715e># 호출하기</span>
-<span style=color:#ae81ff>&gt; module1.mod1_test1()</span>
-<span style=color:#ae81ff>Module1 -&gt; Test1</span>
-<span style=color:#f92672>Path </span><span style=color:#111>:</span>  <span style=color:#ae81ff>c:\Users\ ~ \sub\sub1\module1.py</span>
-<span style=color:#ae81ff>&gt; module1.mod1_test2()</span>
-<span style=color:#ae81ff>Module1 -&gt; Test2</span>
-<span style=color:#f92672>Path </span><span style=color:#111>:</span>  <span style=color:#ae81ff>c:\Users\ ~ \sub\sub1\module1.py</span>
+<span style=color:#6272a4># 호출하기</span>
+&gt; module1.mod1_test1()
+Module1 -&gt; Test1
+<span style=color:#ff79c6>Path </span>:  c:\Users\ ~ \sub\sub1\module1.py
+&gt; module1.mod1_test2()
+Module1 -&gt; Test2
+<span style=color:#ff79c6>Path </span>:  c:\Users\ ~ \sub\sub1\module1.py
 
-<span style=color:#75715e># 아래 2가지는 서로 같다.</span>
-<span style=color:#ae81ff>&gt; module2.mod2_test1()</span>
-<span style=color:#ae81ff>&gt; m2.mod2_test1()</span>
-<span style=color:#ae81ff>Module2 -&gt; Test1</span>
-<span style=color:#f92672>Path </span><span style=color:#111>:</span>  <span style=color:#ae81ff>c:\Users\ ~ \sub\sub2\module2.py</span>
+<span style=color:#6272a4># 아래 2가지는 서로 같다.</span>
+&gt; module2.mod2_test1()
+&gt; m2.mod2_test1()
+Module2 -&gt; Test1
+<span style=color:#ff79c6>Path </span>:  c:\Users\ ~ \sub\sub2\module2.py
 </code></pre></div>
 <ul>
 <li><code>from</code> ~ <code>import</code> * 로 모든 module 파일을 가져올 수도 있다.</li>
@@ -261,23 +261,23 @@
 <li>현재 HW의 발달로 눈에 띄는 성능 저하는 드러나지 않지만, 이런 것들이 쌓이면 <code>run time</code>에서 메모리를 잡아먹는다.</li>
 <li>항상 <code>메모리</code>를 신경쓰는 습관을 가지자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; from sub.sub1 import *</span>
-<span style=color:#ae81ff>&gt; from sub.sub2 import *</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; from sub.sub1 import *
+&gt; from sub.sub2 import *
 
-<span style=color:#ae81ff>&gt; module1.mod1_test1()</span>
-<span style=color:#ae81ff>Module1 -&gt; Test1</span>
-<span style=color:#f92672>Path </span><span style=color:#111>:</span>  <span style=color:#ae81ff>c:\Users\ ~ \sub\sub1\module1.py</span>
-<span style=color:#ae81ff>&gt; module1.mod1_test2()</span>
-<span style=color:#ae81ff>Module1 -&gt; Test2</span>
-<span style=color:#f92672>Path </span><span style=color:#111>:</span>  <span style=color:#ae81ff>c:\Users\ ~ \sub\sub1\module1.py</span>
+&gt; module1.mod1_test1()
+Module1 -&gt; Test1
+<span style=color:#ff79c6>Path </span>:  c:\Users\ ~ \sub\sub1\module1.py
+&gt; module1.mod1_test2()
+Module1 -&gt; Test2
+<span style=color:#ff79c6>Path </span>:  c:\Users\ ~ \sub\sub1\module1.py
 
 
-<span style=color:#ae81ff>&gt; module2.mod2_test1()</span>
-<span style=color:#ae81ff>Module2 -&gt; Test1</span>
-<span style=color:#f92672>Path </span><span style=color:#111>:</span>  <span style=color:#ae81ff>c:\Users\ ~ \sub\sub2\module2.py</span>
-<span style=color:#ae81ff>&gt; module2.mod2_test2()</span>
-<span style=color:#ae81ff>Module2 -&gt; Test2</span>
-<span style=color:#f92672>Path </span><span style=color:#111>:</span>  <span style=color:#ae81ff>c:\Users\ ~ \sub\sub2\module2.py</span>
+&gt; module2.mod2_test1()
+Module2 -&gt; Test1
+<span style=color:#ff79c6>Path </span>:  c:\Users\ ~ \sub\sub2\module2.py
+&gt; module2.mod2_test2()
+Module2 -&gt; Test2
+<span style=color:#ff79c6>Path </span>:  c:\Users\ ~ \sub\sub2\module2.py
 
 </code></pre></div><hr>
 <h2 id=3-__init__py-가-존재하는-이유>3. <code>__init__.py</code> 가 존재하는 이유<a hidden class=anchor aria-hidden=true href=#3-__init__py-가-존재하는-이유>#</a></h2>
@@ -296,13 +296,13 @@
 <ul>
 <li>그러면 <code>__init__.py</code> 파일 내부를 살펴보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># sub1 폴더에는 module1.py 이 있다.</span>
-<span style=color:#75715e># sub1 의 __init__.py 작성 명령어는 다음과 같다.</span>
-<span style=color:#ae81ff>&gt; __all__ = [&#39;module1&#39;]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># sub1 폴더에는 module1.py 이 있다.</span>
+<span style=color:#6272a4># sub1 의 __init__.py 작성 명령어는 다음과 같다.</span>
+&gt; __all__ = [&#39;module1&#39;]
 
-<span style=color:#75715e># sub2 폴더에는 module2.py 이 있다.</span>
-<span style=color:#75715e># sub2 의 __init__.py 작성 명령어는 다음과 같다.</span>
-<span style=color:#ae81ff>&gt; __all__ = [&#39;module2&#39;]</span>
+<span style=color:#6272a4># sub2 폴더에는 module2.py 이 있다.</span>
+<span style=color:#6272a4># sub2 의 __init__.py 작성 명령어는 다음과 같다.</span>
+&gt; __all__ = [&#39;module2&#39;]
 </code></pre></div><ul>
 <li>아래 내용은 <code>Python 3.3</code> 이전 버전에 관한 내용이다. 이후부터는 필수가 아니다.</li>
 <li><code>__all__ = [ ]</code> 에서 대괄호에 <code>module 파일명</code>이 적혀 있어야, 외부에서 <code>import</code> 할 때 해당 <code>module</code> 파일을 허가해준다.</li>

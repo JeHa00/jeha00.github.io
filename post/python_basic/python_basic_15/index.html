@@ -35,7 +35,7 @@
 <meta name=twitter:title content="[TIL] Python basic 15: module">
 <meta name=twitter:description content="Module이란 무엇인지, Module을 어떻게 사용하는지, Module 관련 함수에 대해 알아본다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 15: module","item":"http://jeha00.github.io/post/python_basic/python_basic_15/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 15: module","name":"[TIL] Python basic 15: module","description":"Module이란 무엇인지, Module을 어떻게 사용하는지, Module 관련 함수에 대해 알아본다.","keywords":["TIL","python"],"articleBody":"Module이란?? 그리고 Module 관련 함수  Module이란 하나의 파일 안에 함수, 변수, 클래스 등 파이썬 구성 요소 등을 모아놓아 공용적으로 쓸 수 있도록 만든 파일 타인으로부터 웹으로부터 가져다 사용한다. 이 Module 파일이 모여지면 Package가 된다. 외부 module을 사용하기 위해서는 import 를 사용한다. module 을 사용하기 위해서, 사용하기 전에 모듈파일이 있는 경로를 추가해야한다. sys.path는 영구적으로 경로를 등록하는 것이 아닌 일시적으로 등록하는 방법이다. 영구적으로 등록하고 싶으면 환경 변수에 있는 python path에 추가하기   import math  print(math.pi) 3.1415926535 # random은 0부터 1 사이의 난수를 출력한다.  import random  random.random()) 0.71924824 ## import 된 module 파일의 module 타입을 알 수 있다.  import sys  print(sys)  # built-in은 내장 파일을 말한다. # sys는 파이썬의 내장 모듈 파일임을 알 수 있다. ## Python 파일이 설치된 경로들이 출력된다. ## 이 경로들에 있는 파일을 파이썬이 가져다가 사용하는 것이 파이썬의 원리다. # 파이썬 모듈 파일들의 경로들이다. # 파이썬 내부에 있기 때문에 import로 가져다가 사용할 수 있다.  print(sys.path) ['c:\\\\Users\\\\rudtl\\\\Desktop\\\\Dev\\\\Python 강의\\\\Inflearn Original\\\\Level 1 입문_프로그래밍 시작하기', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python39.zip', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\DLLs', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\lib', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\lib\\\\site-packages'] ## 모듈 경로 추가하기 # 추가하기 위해 모듈 경로의 데이터 타입을 확인한다.  print(type(sys.path))  # 경로를 추가하기 전에 밑에 경로로 동일한 명칭의 폴더를 만들어놔야 한다. # 끝에 경로가 추가된 걸 확인할 수 있다.  sys.path.append('C:/math')  print(sys.path) ['c:\\\\Users\\\\rudtl\\\\Desktop\\\\Dev\\\\Python 강의\\\\Inflearn Original\\\\Level 1 입문_프로그래밍 시작하기', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python39.zip', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\DLLs', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\lib', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\lib\\\\site-packages', 'C:/math'] # 폴더를 만들었으면 module 파일을 이 폴더에 넣어놔야 한다. # 'module_test` 란 이름으로 파이썬 파일을 만든다. # module 파일의 내용은 다음과 같다.   def add(x, y):  return x + y  def subtract(x, y):  return x - y  def multiply(x, y):  return x * y  def divide(x , y):  return x / y  def power(x, y):  return x ** y  print('-' * 15)  print('called! inner!')  print(add(5,5))  print(subtract(15,5))  print(multiply(5,5))  print(divide(10,2))  print(power(5,3))  print('-' * 15)  ## import를 실행할 파일로 돌아온 후, import 를 실행한다.  import module_test ## import가 되자마다 바로 명령어들이 실행된다. --------------- called! inner! 10 10 25 5.0 125 --------------- ## import된 module 내의 함수를 사용해보기  import module_test  print(test_module.power(10, 3)) --------------- called! inner! 10 10 25 5.0 125 --------------- 1000  위와 같은 방식은 module을 외부에서 가져오는 사람들에게 편의성이 좋지 않다.    called! innter! 출력을 방지하기 위해서 print 문을 삭제하거나 주석처리를 하는 방법을 사용할 수도 있다.\n  하지만, python에서는 이에 대해 다른 방법을 만들어놨다. 예약어를 사용하여 아래 2가지로 나눠서 실행할 수 있다.\n 다른 곳에서 외부적으로 import를 할 경우 자기 자신을 스스로 실행할 경우    if __name__ == \"__main__\": 을 추가한다.\n 이 명령어는 해당 모듈이 import 된 경우가 아니라, 인터프리터에서 직접 실행된 경우에만 if 문 이하의 코드를 돌리라를 명령이다.    module 파일에 아래 코드를 추가한다.\n  ## __name__ 사용  if __name__ == \"__main__\":  print('-' * 15)  print('called! __main__')  print(add(5,5))  print(subtract(15,5))  print(multiply(5,5))  print(divide(10,2))  print(power(5,3))  print('-' * 15)  main은 실행되는 대상을 의미한다. import를 하면 바로 실행되지 않는다. 왜냐면 실행되는 대상이 아니기 때문이다. 하지만, module 파일에서 인터프리터로 직접 실행하면, 실행대상이기 때문에 출력된다. import 한 파일에서는 명령어를 입력하면 실행된다.   import module_test  print(module_test.power(10,3)) 1000  그래서 바로 실행되지 않도록 if __name__ == \"__main__\"놔둔다.   ","wordCount":"507","inLanguage":"en","datePublished":"2022-03-02T00:51:30+09:00","dateModified":"2022-03-02T00:51:30+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_15/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 15: module","name":"[TIL] Python basic 15: module","description":"Module이란 무엇인지, Module을 어떻게 사용하는지, Module 관련 함수에 대해 알아본다.","keywords":["TIL","python"],"articleBody":"Module이란?? 그리고 Module 관련 함수  Module이란 하나의 파일 안에 함수, 변수, 클래스 등 파이썬 구성 요소 등을 모아놓아 공용적으로 쓸 수 있도록 만든 파일 타인으로부터 웹으로부터 가져다 사용한다. 이 Module 파일이 모여지면 Package가 된다. 외부 module을 사용하기 위해서는 import 를 사용한다. module 을 사용하기 위해서, 사용하기 전에 모듈파일이 있는 경로를 추가해야한다. sys.path는 영구적으로 경로를 등록하는 것이 아닌 일시적으로 등록하는 방법이다. 영구적으로 등록하고 싶으면 환경 변수에 있는 python path에 추가하기   import math  print(math.pi) 3.1415926535 # random은 0부터 1 사이의 난수를 출력한다.  import random  random.random()) 0.71924824 ## import 된 module 파일의 module 타입을 알 수 있다.  import sys  print(sys) # built-in은 내장 파일을 말한다. # sys는 파이썬의 내장 모듈 파일임을 알 수 있다. ## Python 파일이 설치된 경로들이 출력된다. ## 이 경로들에 있는 파일을 파이썬이 가져다가 사용하는 것이 파이썬의 원리다. # 파이썬 모듈 파일들의 경로들이다. # 파이썬 내부에 있기 때문에 import로 가져다가 사용할 수 있다.  print(sys.path) ['c:\\\\Users\\\\rudtl\\\\Desktop\\\\Dev\\\\Python 강의\\\\Inflearn Original\\\\Level 1 입문_프로그래밍 시작하기', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python39.zip', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\DLLs', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\lib', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\lib\\\\site-packages'] ## 모듈 경로 추가하기 # 추가하기 위해 모듈 경로의 데이터 타입을 확인한다.  print(type(sys.path)) # 경로를 추가하기 전에 밑에 경로로 동일한 명칭의 폴더를 만들어놔야 한다. # 끝에 경로가 추가된 걸 확인할 수 있다.  sys.path.append('C:/math')  print(sys.path) ['c:\\\\Users\\\\rudtl\\\\Desktop\\\\Dev\\\\Python 강의\\\\Inflearn Original\\\\Level 1 입문_프로그래밍 시작하기', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python39.zip', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\DLLs', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\lib', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39', 'C:\\\\Users\\\\rudtl\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\lib\\\\site-packages', 'C:/math'] # 폴더를 만들었으면 module 파일을 이 폴더에 넣어놔야 한다. # 'module_test` 란 이름으로 파이썬 파일을 만든다. # module 파일의 내용은 다음과 같다.   def add(x, y):  return x + y  def subtract(x, y):  return x - y  def multiply(x, y):  return x * y  def divide(x , y):  return x / y  def power(x, y):  return x ** y  print('-' * 15)  print('called! inner!')  print(add(5,5))  print(subtract(15,5))  print(multiply(5,5))  print(divide(10,2))  print(power(5,3))  print('-' * 15)  ## import를 실행할 파일로 돌아온 후, import 를 실행한다.  import module_test ## import가 되자마다 바로 명령어들이 실행된다. --------------- called! inner! 10 10 25 5.0 125 --------------- ## import된 module 내의 함수를 사용해보기  import module_test  print(test_module.power(10, 3)) --------------- called! inner! 10 10 25 5.0 125 --------------- 1000  위와 같은 방식은 module을 외부에서 가져오는 사람들에게 편의성이 좋지 않다.    called! innter! 출력을 방지하기 위해서 print 문을 삭제하거나 주석처리를 하는 방법을 사용할 수도 있다.\n  하지만, python에서는 이에 대해 다른 방법을 만들어놨다. 예약어를 사용하여 아래 2가지로 나눠서 실행할 수 있다.\n 다른 곳에서 외부적으로 import를 할 경우 자기 자신을 스스로 실행할 경우    if __name__ == \"__main__\": 을 추가한다.\n 이 명령어는 해당 모듈이 import 된 경우가 아니라, 인터프리터에서 직접 실행된 경우에만 if 문 이하의 코드를 돌리라를 명령이다.    module 파일에 아래 코드를 추가한다.\n  ## __name__ 사용  if __name__ == \"__main__\":  print('-' * 15)  print('called! __main__')  print(add(5,5))  print(subtract(15,5))  print(multiply(5,5))  print(divide(10,2))  print(power(5,3))  print('-' * 15)  main은 실행되는 대상을 의미한다. import를 하면 바로 실행되지 않는다. 왜냐면 실행되는 대상이 아니기 때문이다. 하지만, module 파일에서 인터프리터로 직접 실행하면, 실행대상이기 때문에 출력된다. import 한 파일에서는 명령어를 입력하면 실행된다.   import module_test  print(module_test.power(10,3)) 1000  그래서 바로 실행되지 않도록 if __name__ == \"__main__\"놔둔다.   ","wordCount":"507","inLanguage":"en","datePublished":"2022-03-02T00:51:30+09:00","dateModified":"2022-03-02T00:51:30+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_15/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -104,110 +104,110 @@
 <li><code>sys.path</code>는 영구적으로 경로를 등록하는 것이 아닌 <code>일시적으로</code> 등록하는 방법이다.</li>
 <li>영구적으로 등록하고 싶으면 <code>환경 변수</code>에 있는 python path에 추가하기</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import math</span>
-<span style=color:#ae81ff>&gt; print(math.pi)</span>
-<span style=color:#ae81ff>3.1415926535</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; import math
+&gt; print(math.pi)
+<span style=color:#bd93f9>3.1415926535</span>
 
-<span style=color:#75715e># random은 0부터  1 사이의 난수를 출력한다.</span>
-<span style=color:#ae81ff>&gt; import random</span>
-<span style=color:#ae81ff>&gt; random.random())</span>
-<span style=color:#ae81ff>0.71924824</span>
+<span style=color:#6272a4># random은 0부터  1 사이의 난수를 출력한다.</span>
+&gt; import random
+&gt; random.random())
+<span style=color:#bd93f9>0.71924824</span>
 
-<span style=color:#75715e>## import 된 module 파일의 module 타입을 알 수 있다.</span>
-<span style=color:#ae81ff>&gt; import sys</span>
-<span style=color:#ae81ff>&gt; print(sys)</span>
-<span style=color:#ae81ff>&lt;module &#39;sys&#39; (built-in)&gt;</span>
-<span style=color:#75715e># built-in은 내장 파일을 말한다.</span>
-<span style=color:#75715e># sys는 파이썬의 내장 모듈 파일임을 알 수 있다.</span>
-
-
-<span style=color:#75715e>## Python 파일이 설치된 경로들이 출력된다.</span>
-<span style=color:#75715e>## 이 경로들에 있는 파일을 파이썬이 가져다가 사용하는 것이 파이썬의 원리다.</span>
-<span style=color:#75715e># 파이썬 모듈 파일들의 경로들이다.</span>
-<span style=color:#75715e># 파이썬 내부에 있기 때문에 import로 가져다가 사용할 수 있다.</span>
-<span style=color:#ae81ff>&gt; print(sys.path)</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;c:\\Users\\rudtl\\Desktop\\Dev\\Python 강의\\Inflearn Original\\Level 1 입문_프로그래밍 시작하기&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\python39.zip&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\DLLs&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages&#39;</span><span style=color:#111>]</span>
+<span style=color:#6272a4>## import 된 module 파일의 module 타입을 알 수 있다.</span>
+&gt; import sys
+&gt; print(sys)
+&lt;module &#39;sys&#39; (built-in)&gt;
+<span style=color:#6272a4># built-in은 내장 파일을 말한다.</span>
+<span style=color:#6272a4># sys는 파이썬의 내장 모듈 파일임을 알 수 있다.</span>
 
 
-<span style=color:#75715e>## 모듈 경로 추가하기</span>
-<span style=color:#75715e># 추가하기 위해 모듈 경로의 데이터 타입을 확인한다.</span>
-<span style=color:#ae81ff>&gt; print(type(sys.path))</span>
-<span style=color:#ae81ff>&lt;class &#39;list&#39;&gt;</span>
-
-<span style=color:#75715e># 경로를 추가하기 전에 밑에 경로로 동일한 명칭의 폴더를 만들어놔야 한다.</span>
-<span style=color:#75715e># 끝에 경로가 추가된 걸 확인할 수 있다.</span>
-<span style=color:#ae81ff>&gt; sys.path.append(&#39;C:/math&#39;)</span>
-<span style=color:#ae81ff>&gt; print(sys.path)</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;c:\\Users\\rudtl\\Desktop\\Dev\\Python 강의\\Inflearn Original\\Level 1 입문_프로그래밍 시작하기&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\python39.zip&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\DLLs&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages&#39;</span><span style=color:#111>,</span>
-<span style=color:#d88200>&#39;C:/math&#39;</span><span style=color:#111>]</span>
-
-<span style=color:#75715e># 폴더를 만들었으면 module 파일을 이 폴더에 넣어놔야 한다.</span>
-<span style=color:#75715e># &#39;module_test` 란 이름으로 파이썬 파일을 만든다.</span>
-<span style=color:#75715e># module 파일의 내용은 다음과 같다.</span>
-
-<span style=color:#ae81ff>&gt;&gt;&gt;&gt;&gt;</span>
-<span style=color:#f92672>&gt; def add(x, y)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    return x + y</span>
-
-<span style=color:#f92672>&gt; def subtract(x, y)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     return x - y</span>
-
-<span style=color:#f92672>&gt; def multiply(x, y)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    return x * y</span>
-
-<span style=color:#f92672>&gt; def divide(x , y)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    return x / y</span>
-
-<span style=color:#f92672>&gt; def power(x, y)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    return x ** y</span>
+<span style=color:#6272a4>## Python 파일이 설치된 경로들이 출력된다.</span>
+<span style=color:#6272a4>## 이 경로들에 있는 파일을 파이썬이 가져다가 사용하는 것이 파이썬의 원리다.</span>
+<span style=color:#6272a4># 파이썬 모듈 파일들의 경로들이다.</span>
+<span style=color:#6272a4># 파이썬 내부에 있기 때문에 import로 가져다가 사용할 수 있다.</span>
+&gt; print(sys.path)
+[<span style=color:#f1fa8c>&#39;c:\\Users\\rudtl\\Desktop\\Dev\\Python 강의\\Inflearn Original\\Level 1 입문_프로그래밍 시작하기&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\python39.zip&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\DLLs&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages&#39;</span>]
 
 
-<span style=color:#ae81ff>&gt; print(&#39;-&#39; * 15)</span>
-<span style=color:#ae81ff>&gt; print(&#39;called! inner!&#39;)</span>
-<span style=color:#ae81ff>&gt; print(add(5,5))</span>
-<span style=color:#ae81ff>&gt; print(subtract(15,5))</span>
-<span style=color:#ae81ff>&gt; print(multiply(5,5))</span>
-<span style=color:#ae81ff>&gt; print(divide(10,2))</span>
-<span style=color:#ae81ff>&gt; print(power(5,3))</span>
-<span style=color:#ae81ff>&gt; print(&#39;-&#39; * 15)</span>
-<span style=color:#ae81ff>&gt;&gt;&gt;&gt;&gt;</span>
+<span style=color:#6272a4>## 모듈 경로 추가하기</span>
+<span style=color:#6272a4># 추가하기 위해 모듈 경로의 데이터 타입을 확인한다.</span>
+&gt; print(type(sys.path))
+&lt;class &#39;list&#39;&gt;
+
+<span style=color:#6272a4># 경로를 추가하기 전에 밑에 경로로 동일한 명칭의 폴더를 만들어놔야 한다.</span>
+<span style=color:#6272a4># 끝에 경로가 추가된 걸 확인할 수 있다.</span>
+&gt; sys.path.append(&#39;C:/math&#39;)
+&gt; print(sys.path)
+[<span style=color:#f1fa8c>&#39;c:\\Users\\rudtl\\Desktop\\Dev\\Python 강의\\Inflearn Original\\Level 1 입문_프로그래밍 시작하기&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\python39.zip&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\DLLs&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:\\Users\\rudtl\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages&#39;</span>,
+<span style=color:#f1fa8c>&#39;C:/math&#39;</span>]
+
+<span style=color:#6272a4># 폴더를 만들었으면 module 파일을 이 폴더에 넣어놔야 한다.</span>
+<span style=color:#6272a4># &#39;module_test` 란 이름으로 파이썬 파일을 만든다.</span>
+<span style=color:#6272a4># module 파일의 내용은 다음과 같다.</span>
+
+&gt;&gt;&gt;&gt;&gt;
+<span style=color:#ff79c6>&gt; def add(x, y)</span>:
+&gt;    return x + y
+
+<span style=color:#ff79c6>&gt; def subtract(x, y)</span>:
+&gt;     return x - y
+
+<span style=color:#ff79c6>&gt; def multiply(x, y)</span>:
+&gt;    return x * y
+
+<span style=color:#ff79c6>&gt; def divide(x , y)</span>:
+&gt;    return x / y
+
+<span style=color:#ff79c6>&gt; def power(x, y)</span>:
+&gt;    return x ** y
 
 
-<span style=color:#75715e>## import를 실행할 파일로 돌아온 후, import 를 실행한다.</span>
-<span style=color:#ae81ff>&gt; import module_test</span>
+&gt; print(&#39;-&#39; * 15)
+&gt; print(&#39;called! inner!&#39;)
+&gt; print(add(5,5))
+&gt; print(subtract(15,5))
+&gt; print(multiply(5,5))
+&gt; print(divide(10,2))
+&gt; print(power(5,3))
+&gt; print(&#39;-&#39; * 15)
+&gt;&gt;&gt;&gt;&gt;
 
-<span style=color:#75715e>## import가 되자마다 바로 명령어들이 실행된다.</span>
-<span style=color:#111>---</span>------------
-<span style=color:#ae81ff>called! inner!</span>
-<span style=color:#ae81ff>10</span>
-<span style=color:#ae81ff>10</span>
-<span style=color:#ae81ff>25</span>
-<span style=color:#ae81ff>5.0</span>
-<span style=color:#ae81ff>125</span>
-<span style=color:#111>---</span>------------
 
-<span style=color:#75715e>## import된 module 내의 함수를 사용해보기</span>
-<span style=color:#ae81ff>&gt; import module_test</span>
-<span style=color:#ae81ff>&gt; print(test_module.power(10, 3))</span>
-<span style=color:#111>---</span>------------
-<span style=color:#ae81ff>called! inner!</span>
-<span style=color:#ae81ff>10</span>
-<span style=color:#ae81ff>10</span>
-<span style=color:#ae81ff>25</span>
-<span style=color:#ae81ff>5.0</span>
-<span style=color:#ae81ff>125</span>
-<span style=color:#111>---</span>------------
-<span style=color:#ae81ff>1000</span>
+<span style=color:#6272a4>## import를 실행할 파일로 돌아온 후, import 를 실행한다.</span>
+&gt; import module_test
+
+<span style=color:#6272a4>## import가 되자마다 바로 명령어들이 실행된다.</span>
+---------------
+called! inner!
+<span style=color:#bd93f9>10</span>
+<span style=color:#bd93f9>10</span>
+<span style=color:#bd93f9>25</span>
+<span style=color:#bd93f9>5.0</span>
+<span style=color:#bd93f9>125</span>
+---------------
+
+<span style=color:#6272a4>## import된 module 내의 함수를 사용해보기</span>
+&gt; import module_test
+&gt; print(test_module.power(10, 3))
+---------------
+called! inner!
+<span style=color:#bd93f9>10</span>
+<span style=color:#bd93f9>10</span>
+<span style=color:#bd93f9>25</span>
+<span style=color:#bd93f9>5.0</span>
+<span style=color:#bd93f9>125</span>
+---------------
+<span style=color:#bd93f9>1000</span>
 </code></pre></div><ul>
 <li>위와 같은 방식은 module을 외부에서 가져오는 사람들에게 편의성이 좋지 않다.</li>
 </ul>
@@ -232,25 +232,25 @@
 <p>module 파일에 아래 코드를 추가한다.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## __name__ 사용</span>
-<span style=color:#ae81ff>&gt; if __name__ == &#34;__main__&#34;:</span>
-<span style=color:#ae81ff>&gt;     print(&#39;-&#39; * 15)</span>
-<span style=color:#ae81ff>&gt;     print(&#39;called! __main__&#39;)</span>
-<span style=color:#ae81ff>&gt;     print(add(5,5))</span>
-<span style=color:#ae81ff>&gt;     print(subtract(15,5))</span>
-<span style=color:#ae81ff>&gt;     print(multiply(5,5))</span>
-<span style=color:#ae81ff>&gt;     print(divide(10,2))</span>
-<span style=color:#ae81ff>&gt;     print(power(5,3))</span>
-<span style=color:#ae81ff>&gt;     print(&#39;-&#39; * 15)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4>## __name__ 사용</span>
+&gt; if __name__ == &#34;__main__&#34;:
+&gt;     print(&#39;-&#39; * 15)
+&gt;     print(&#39;called! __main__&#39;)
+&gt;     print(add(5,5))
+&gt;     print(subtract(15,5))
+&gt;     print(multiply(5,5))
+&gt;     print(divide(10,2))
+&gt;     print(power(5,3))
+&gt;     print(&#39;-&#39; * 15)
 </code></pre></div><ul>
 <li><code>main</code>은 실행되는 대상을 의미한다.</li>
 <li>import를 하면 바로 실행되지 않는다. 왜냐면 실행되는 대상이 아니기 때문이다.</li>
 <li>하지만, module 파일에서 인터프리터로 직접 실행하면, 실행대상이기 때문에 출력된다.</li>
 <li>import 한 파일에서는 <code>명령어</code>를 입력하면 실행된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import module_test</span>
-<span style=color:#ae81ff>&gt; print(module_test.power(10,3))</span>
-<span style=color:#ae81ff>1000</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; import module_test
+&gt; print(module_test.power(10,3))
+<span style=color:#bd93f9>1000</span>
 </code></pre></div><ul>
 <li>그래서 바로 실행되지 않도록 <code>if __name__ == "__main__"</code>놔둔다.</li>
 </ul>

@@ -144,42 +144,42 @@
 <ul>
 <li>namedtuple 없이 구해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
-<span style=color:#75715e># namedtuple 를 import 해서 시작한다.</span>
-<span style=color:#ae81ff>&gt; from collections import namedtuple</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<span style=color:#6272a4># namedtuple 를 import 해서 시작한다.</span>
+&gt; from collections import namedtuple
 
-<span style=color:#75715e># 두 점을 정의한다.</span>
-<span style=color:#ae81ff>&gt; pt1 = (2.0, 4.0, 5,0)</span>
-<span style=color:#ae81ff>&gt; pt2 = (4.0, 10.0, 25.0)</span>
+<span style=color:#6272a4># 두 점을 정의한다.</span>
+&gt; pt1 = (2.0, 4.0, 5,0)
+&gt; pt2 = (4.0, 10.0, 25.0)
 
-<span style=color:#75715e># sqrt를 import 한다. root를 의미한다.</span>
-<span style=color:#ae81ff>&gt; from math import sqrt</span>
+<span style=color:#6272a4># sqrt를 import 한다. root를 의미한다.</span>
+&gt; from math import sqrt
 
-<span style=color:#75715e># index를 통해서 직접 value에 접근해야 한다.</span>
-<span style=color:#ae81ff>&gt; leng1 = sqrt((pt2[0] - pt1[0]) ** 2 + (pt2[1] - pt1[1]) ** 2 + (pt2[2] - pt1[2]) ** 2 )</span>
+<span style=color:#6272a4># index를 통해서 직접 value에 접근해야 한다.</span>
+&gt; leng1 = sqrt((pt2[0] - pt1[0]) ** 2 + (pt2[1] - pt1[1]) ** 2 + (pt2[2] - pt1[2]) ** 2 )
 
-<span style=color:#ae81ff>&gt; print(round(leng1))</span>
-<span style=color:#ae81ff>21</span>
+&gt; print(round(leng1))
+<span style=color:#bd93f9>21</span>
 </code></pre></div>
 <h3 id=22-namedtuple로-구해보기>2.2 namedtuple로 구해보기<a hidden class=anchor aria-hidden=true href=#22-namedtuple로-구해보기>#</a></h3>
 <ul>
 <li>namedtuple을 사용하여 거리를 구해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; from collections import namedtuple</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; from collections import namedtuple
 
-<span style=color:#75715e># namedtuple 선언</span>
-<span style=color:#ae81ff>&gt; Point = namedtuple(&#39;Point&#39;, &#39;x y z&#39;)</span>
+<span style=color:#6272a4># namedtuple 선언</span>
+&gt; Point = namedtuple(&#39;Point&#39;, &#39;x y z&#39;)
 
-<span style=color:#75715e># 두 점을 정의한다.</span>
-<span style=color:#ae81ff>&gt; pt1 = (2.0, 4.0, 5.0)</span>
-<span style=color:#ae81ff>&gt; pt2 = (4.0, 10.0, 25.0)</span>
+<span style=color:#6272a4># 두 점을 정의한다.</span>
+&gt; pt1 = (2.0, 4.0, 5.0)
+&gt; pt2 = (4.0, 10.0, 25.0)
 
-<span style=color:#75715e># index로도 접근이 가능하지만</span>
-<span style=color:#75715e># value에 직접 접근하지 않고, key 값을 통해서 접근한다.</span>
-<span style=color:#ae81ff>&gt; leng2 = sqrt((pt4.x - pt3.x) ** 2 + (pt4.y - pt3.y) ** 2 + (pt4.z - pt3.z) ** 2)</span>
+<span style=color:#6272a4># index로도 접근이 가능하지만</span>
+<span style=color:#6272a4># value에 직접 접근하지 않고, key 값을 통해서 접근한다.</span>
+&gt; leng2 = sqrt((pt4.x - pt3.x) ** 2 + (pt4.y - pt3.y) ** 2 + (pt4.z - pt3.z) ** 2)
 
-<span style=color:#ae81ff>&gt; print(leng1 == leng2)</span>
-<span style=color:#00a8c8>True</span>
+&gt; print(leng1 == leng2)
+<span style=color:#ff79c6>True</span>
 </code></pre></div><ul>
 <li>이처럼 namedtuple을 사용하면 dictionary처럼 key 값이 생기기 때문에, index로 직접 접근하지 않아 오류를 낼 가능성이 낮다.</li>
 </ul>
@@ -187,18 +187,18 @@
 <ul>
 <li>다음으로 namedtuple의 다양한 선언법에 대해 알아보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># list 안에 string 성분으로 입력하는 방법</span>
-<span style=color:#ae81ff>&gt; Point = namedtuple(&#39;Point&#39;, [&#39;x&#39;, &#39;y&#39;, &#39;z&#39;])</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># list 안에 string 성분으로 입력하는 방법</span>
+&gt; Point = namedtuple(&#39;Point&#39;, [&#39;x&#39;, &#39;y&#39;, &#39;z&#39;])
 
-<span style=color:#75715e># 하나 하나 string으로 입력하는 방법</span>
-<span style=color:#ae81ff>&gt; Point = namedtuple(&#39;Point&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;)</span>
+<span style=color:#6272a4># 하나 하나 string으로 입력하는 방법</span>
+&gt; Point = namedtuple(&#39;Point&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;)
 
-<span style=color:#75715e># string 묶음으로 입력하는 방법</span>
-<span style=color:#ae81ff>&gt; Point = namedtuple(&#39;Point&#39;, &#39;x y z&#39;)</span>
+<span style=color:#6272a4># string 묶음으로 입력하는 방법</span>
+&gt; Point = namedtuple(&#39;Point&#39;, &#39;x y z&#39;)
 
-<span style=color:#75715e>## field_name으로 예약어를 사용하고 싶을 때</span>
-<span style=color:#75715e># 일반적으로 예약어를 name에 사용하면 안된다. 하지만, 사용하고 싶다면??</span>
-<span style=color:#ae81ff>&gt; Point = namedtuple(&#39;Point&#39;, &#39;x y z class&#39;, rename = True)</span>
+<span style=color:#6272a4>## field_name으로 예약어를 사용하고 싶을 때</span>
+<span style=color:#6272a4># 일반적으로 예약어를 name에 사용하면 안된다. 하지만, 사용하고 싶다면??</span>
+&gt; Point = namedtuple(&#39;Point&#39;, &#39;x y z class&#39;, rename = True)
 </code></pre></div><ul>
 <li>rename을 입력하지 않으면 <code>rename = False</code> 가 default다.</li>
 </ul>
@@ -207,26 +207,26 @@
 <li>객체 생성 방법도 다양하다.</li>
 <li>이에 대해서도 알아보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># field name을 직접 입력하여 할당하기</span>
-<span style=color:#ae81ff>&gt; p1 = Point(x=10, y=35)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># field name을 직접 입력하여 할당하기</span>
+&gt; p1 = Point(x=10, y=35)
 
-<span style=color:#75715e># 값만 입력</span>
-<span style=color:#ae81ff>&gt; p2 = Point(20, 40)</span>
+<span style=color:#6272a4># 값만 입력</span>
+&gt; p2 = Point(20, 40)
 
-<span style=color:#75715e># field name 부분 입력</span>
-<span style=color:#ae81ff>&gt; p3 = Point(45, y=20)</span>
+<span style=color:#6272a4># field name 부분 입력</span>
+&gt; p3 = Point(45, y=20)
 
-<span style=color:#75715e># 여러 개로도 가능하지만, p4[2] 와 p4[3]에는 지정된 field-name 값이 없으므로 _2 = 30, _3 = 40 으로 저장된다.</span>
-<span style=color:#ae81ff>&gt; p4 = Point(10, 20, 30, 40)</span>
+<span style=color:#6272a4># 여러 개로도 가능하지만, p4[2] 와 p4[3]에는 지정된 field-name 값이 없으므로 _2 = 30, _3 = 40 으로 저장된다.</span>
+&gt; p4 = Point(10, 20, 30, 40)
 
-<span style=color:#75715e>## unpacking을 통해 만들기</span>
-<span style=color:#ae81ff>&gt; temp_dict = {&#39;x&#39;:75, &#39;y&#39;:55}</span>
+<span style=color:#6272a4>## unpacking을 통해 만들기</span>
+&gt; temp_dict = {&#39;x&#39;:75, &#39;y&#39;:55}
 
-<span style=color:#ae81ff>&gt; p5 = Point(**temp_dict)</span>
+&gt; p5 = Point(**temp_dict)
 
-<span style=color:#75715e>## 출력해보기</span>
-<span style=color:#ae81ff>&gt; print(p1, p2, p3, p4, p5)</span>
-<span style=color:#ae81ff>Point(x=10, y=35) Point(x=20, y=40) Point(x=45, y=20) Point(x=10, y=20, _2=30, _3=40) Point(x=75, y=55)</span>
+<span style=color:#6272a4>## 출력해보기</span>
+&gt; print(p1, p2, p3, p4, p5)
+Point(x=10, y=35) Point(x=20, y=40) Point(x=45, y=20) Point(x=10, y=20, _2=30, _3=40) Point(x=75, y=55)
 </code></pre></div>
 <h3 id=25-namedtuple-메소드>2.5 namedtuple 메소드<a hidden class=anchor aria-hidden=true href=#25-namedtuple-메소드>#</a></h3>
 <ul>
@@ -239,15 +239,15 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; temp = [52, 38]</span>
-<span style=color:#ae81ff>&gt; p4 = Point._make(temp)</span>
-<span style=color:#ae81ff>Point(x=52, y=38)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; temp = [52, 38]
+&gt; p4 = Point._make(temp)
+Point(x=52, y=38)
 
-<span style=color:#ae81ff>&gt; print(p1._fields, p2._fields, p3._fields)</span>
-<span style=color:#ae81ff>(&#39;x&#39;, &#39;y&#39;) (&#39;x&#39;, &#39;y&#39;) (&#39;x&#39;, &#39;y&#39;)</span>
+&gt; print(p1._fields, p2._fields, p3._fields)
+(&#39;x&#39;, &#39;y&#39;) (&#39;x&#39;, &#39;y&#39;) (&#39;x&#39;, &#39;y&#39;)
 
-<span style=color:#ae81ff>&gt; print(p1._asdict(), p4._asdict())</span>
-{<span style=color:#f92672>&#39;x&#39;: 10, &#39;y&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>35</span>} {<span style=color:#f92672>&#39;x&#39;: 52, &#39;y&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>38</span>}
+&gt; print(p1._asdict(), p4._asdict())
+{<span style=color:#ff79c6>&#39;x&#39;: 10, &#39;y&#39;</span>: <span style=color:#bd93f9>35</span>} {<span style=color:#ff79c6>&#39;x&#39;: 52, &#39;y&#39;</span>: <span style=color:#bd93f9>38</span>}
 </code></pre></div>
 <hr>
 <h1 id=reference>Reference<a hidden class=anchor aria-hidden=true href=#reference>#</a></h1>

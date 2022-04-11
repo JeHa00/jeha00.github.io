@@ -108,21 +108,21 @@
 <ul>
 <li>에러가 발생한 코드는 다음과 같다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; import csv</span>
-<span style=color:#ae81ff>&gt; import random</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; import csv
+&gt; import random
 
-<span style=color:#ae81ff>&gt; words = []</span>
+&gt; words = []
 
-<span style=color:#f92672>&gt; with open(&#39;./resource/word_list.csv&#39;, &#39;r&#39;, encoding = &#39;utf-8&#39;) as f</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   reader = csv.reader(f)</span>
-<span style=color:#ae81ff>&gt;   next(reader)</span>
-<span style=color:#f92672>&gt;   for v in reader</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     words.append(v)</span>
+<span style=color:#ff79c6>&gt; with open(&#39;./resource/word_list.csv&#39;, &#39;r&#39;, encoding = &#39;utf-8&#39;) as f</span>:
+&gt;   reader = csv.reader(f)
+&gt;   next(reader)
+<span style=color:#ff79c6>&gt;   for v in reader</span>:
+&gt;     words.append(v)
 
-<span style=color:#ae81ff>&gt; q = random.shuffle(words)</span>
+&gt; q = random.shuffle(words)
 
-<span style=color:#75715e># 이 line에서 에러가 발생했다.</span>
-<span style=color:#ae81ff>&gt; print(q[0])</span>
+<span style=color:#6272a4># 이 line에서 에러가 발생했다.</span>
+&gt; print(q[0])
 </code></pre></div>
 <h2 id=2-error-해결과정>2. Error 해결과정<a hidden class=anchor aria-hidden=true href=#2-error-해결과정>#</a></h2>
 <p>위 코드를 작성한 이유는 words 의 성분들을 섞은 상태로 다른 변수에 할당하고 나서, Hangman game의 답을 random으로 q에서 뽑아내고자 했다. 지금 보면 터무니 없는 코드로 당연히 오류날만한 부분이었고, 너무 어렵게 생각했다. 왜 이렇게 작성한 것인지 원인을 생각해보았고, 어떻게 접근해야할지 생각해 보았다.</p>
@@ -132,9 +132,9 @@
 <li>각 함수의 기능을 영문으로 찾아보자.</li>
 </ul>
 <p>그래서 결과부터 말하자면 위 코드는 다음과 같이 수정했다.</p>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; random.shuffle(words)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; random.shuffle(words)
 
-<span style=color:#ae81ff>&gt; q = random.choice(words)</span>
+&gt; q = random.choice(words)
 
 </code></pre></div><p>그러면 하나 하나 파악해보자.</p>
 <p>제일 먼저 <code>.shuffle()</code>의 의미를 확인해보았다.</p>

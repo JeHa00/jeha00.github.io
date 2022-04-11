@@ -111,31 +111,31 @@
 <li>python 공식 사이트에서 <code>while</code> 의 구조는 다음과 같다.</li>
 <li><code>[expr]</code>은 expression을 의미한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; while [expr]</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt; [statement(s)]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; while [expr]</span>:
+&gt; [statement(s)]
 </code></pre></div>
 <h2 id=1-while-기본-사용법>1. While 기본 사용법<a hidden class=anchor aria-hidden=true href=#1-while-기본-사용법>#</a></h2>
 <ul>
 <li>whlie 문은 <code>무한 반복문</code>이 되지 않도록, <code>조건의 변화</code>를 일으키는 코드를 넣어야 한다.</li>
 <li>그래서 <code>while</code>문의 경우, 눈으로 중간 결과를 디버깅해서 <code>무한 반복문</code>인지 확인한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 예제 1</span>
-<span style=color:#ae81ff>&gt; m = 3</span>
-<span style=color:#f92672>&gt; while m &gt; 0</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   print(m)</span>
-<span style=color:#75715e># 여기까지 쓰면 계속해서 m &gt; 0 이므로 `무한 반복문`이 된다.</span>
-<span style=color:#ae81ff>&gt;   m -= 1</span>
-<span style=color:#ae81ff>3</span>
-<span style=color:#ae81ff>2</span>
-<span style=color:#ae81ff>1</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># 예제 1</span>
+&gt; m = 3
+<span style=color:#ff79c6>&gt; while m &gt; 0</span>:
+&gt;   print(m)
+<span style=color:#6272a4># 여기까지 쓰면 계속해서 m &gt; 0 이므로 `무한 반복문`이 된다.</span>
+&gt;   m -= 1
+<span style=color:#bd93f9>3</span>
+<span style=color:#bd93f9>2</span>
+<span style=color:#bd93f9>1</span>
 
-<span style=color:#75715e># 예제 2</span>
-<span style=color:#ae81ff>&gt; z = [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]</span>
-<span style=color:#f92672>&gt; whlie z</span><span style=color:#111>:</span>
-<span style=color:#75715e># z 변수 안에 데이터가 존재하므로 True 상태이기 때문에 무한 반복문이다.</span>
-<span style=color:#75715e># 위험한 코드이므로, 조건의 변화를 일으켜 무한 반복문을 방지한다.</span>
-<span style=color:#ae81ff>&gt;   print(a.pop())</span>
-<span style=color:#75715e># pop으로 성분의 갯수가 0이 되면 False가 되므로 중단된다.</span>
+<span style=color:#6272a4># 예제 2</span>
+&gt; z = [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]
+<span style=color:#ff79c6>&gt; whlie z</span>:
+<span style=color:#6272a4># z 변수 안에 데이터가 존재하므로 True 상태이기 때문에 무한 반복문이다.</span>
+<span style=color:#6272a4># 위험한 코드이므로, 조건의 변화를 일으켜 무한 반복문을 방지한다.</span>
+&gt;   print(a.pop())
+<span style=color:#6272a4># pop으로 성분의 갯수가 0이 되면 False가 되므로 중단된다.</span>
 
 </code></pre></div><hr>
 <h2 id=2-break-continue>2. Break, continue<a hidden class=anchor aria-hidden=true href=#2-break-continue>#</a></h2>
@@ -144,73 +144,73 @@
 <li><code>break</code> 문과 <code>continue</code>문은 <code>while</code>문과 자주 사용된다.</li>
 <li>중간에 <code>if</code>조건문이 껴져 있는 방식이 많다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 예제 3</span>
-<span style=color:#ae81ff>&gt; m = 5</span>
-<span style=color:#f92672>&gt; while m &gt; 0</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     m -= 1</span>
-<span style=color:#f92672>&gt;    if m == 2</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;         break</span>
-<span style=color:#ae81ff>&gt;     print(m)</span>
-<span style=color:#ae81ff>&gt; print(&#39;Loop Ended&#39;)</span>
-<span style=color:#ae81ff>4</span>
-<span style=color:#ae81ff>3</span>
-<span style=color:#ae81ff>Loop Ended</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># 예제 3</span>
+&gt; m = 5
+<span style=color:#ff79c6>&gt; while m &gt; 0</span>:
+&gt;     m -= 1
+<span style=color:#ff79c6>&gt;    if m == 2</span>:
+&gt;         break
+&gt;     print(m)
+&gt; print(&#39;Loop Ended&#39;)
+<span style=color:#bd93f9>4</span>
+<span style=color:#bd93f9>3</span>
+Loop Ended
 
-<span style=color:#75715e># 예제 4</span>
-<span style=color:#ae81ff>&gt; m = 5</span>
-<span style=color:#f92672>&gt; while m &gt; 0</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     m -= 1</span>
-<span style=color:#f92672>&gt;    if m == 2</span><span style=color:#111>:</span>
-<span style=color:#75715e># 위에서 break를 continue로 바꿨다.</span>
-<span style=color:#ae81ff>&gt;         continue</span>
-<span style=color:#ae81ff>&gt;     print(m)</span>
-<span style=color:#ae81ff>&gt; print(&#39;Loop Ended&#39;)</span>
-<span style=color:#ae81ff>4</span>
-<span style=color:#ae81ff>3</span>
-<span style=color:#ae81ff>1</span>
-<span style=color:#ae81ff>0</span>
-<span style=color:#ae81ff>Loop Ended</span>
+<span style=color:#6272a4># 예제 4</span>
+&gt; m = 5
+<span style=color:#ff79c6>&gt; while m &gt; 0</span>:
+&gt;     m -= 1
+<span style=color:#ff79c6>&gt;    if m == 2</span>:
+<span style=color:#6272a4># 위에서 break를 continue로 바꿨다.</span>
+&gt;         continue
+&gt;     print(m)
+&gt; print(&#39;Loop Ended&#39;)
+<span style=color:#bd93f9>4</span>
+<span style=color:#bd93f9>3</span>
+<span style=color:#bd93f9>1</span>
+<span style=color:#bd93f9>0</span>
+Loop Ended
 
-<span style=color:#75715e># 예제 5</span>
-<span style=color:#ae81ff>&gt; i = 1</span>
-<span style=color:#f92672>&gt; while i &lt;= 10</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;     print(&#39;i </span><span style=color:#111>:</span> <span style=color:#ae81ff>&#39;, i)</span>
-<span style=color:#f92672>&gt;     if i ==6</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;         break</span>
-<span style=color:#ae81ff>&gt;     i += 1</span>
-<span style=color:#f92672>i </span><span style=color:#111>:</span> <span style=color:#ae81ff>1</span>
-<span style=color:#f92672>i </span><span style=color:#111>:</span> <span style=color:#ae81ff>2</span>
-<span style=color:#f92672>i </span><span style=color:#111>:</span> <span style=color:#ae81ff>3</span>
-<span style=color:#f92672>i </span><span style=color:#111>:</span> <span style=color:#ae81ff>4</span>
-<span style=color:#f92672>i </span><span style=color:#111>:</span> <span style=color:#ae81ff>5</span>
-<span style=color:#f92672>i </span><span style=color:#111>:</span> <span style=color:#ae81ff>6</span>
+<span style=color:#6272a4># 예제 5</span>
+&gt; i = 1
+<span style=color:#ff79c6>&gt; while i &lt;= 10</span>:
+<span style=color:#ff79c6>&gt;     print(&#39;i </span>: &#39;, i)
+<span style=color:#ff79c6>&gt;     if i ==6</span>:
+&gt;         break
+&gt;     i += 1
+<span style=color:#ff79c6>i </span>: <span style=color:#bd93f9>1</span>
+<span style=color:#ff79c6>i </span>: <span style=color:#bd93f9>2</span>
+<span style=color:#ff79c6>i </span>: <span style=color:#bd93f9>3</span>
+<span style=color:#ff79c6>i </span>: <span style=color:#bd93f9>4</span>
+<span style=color:#ff79c6>i </span>: <span style=color:#bd93f9>5</span>
+<span style=color:#ff79c6>i </span>: <span style=color:#bd93f9>6</span>
 </code></pre></div><hr>
 <h2 id=3-while--else-구문>3. While ~ else 구문<a hidden class=anchor aria-hidden=true href=#3-while--else-구문>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 예제 6</span>
-<span style=color:#ae81ff>&gt; n = 5</span>
-<span style=color:#f92672>&gt; while n &gt; 0</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    print(n)</span>
-<span style=color:#ae81ff>&gt;     n -= 1</span>
-<span style=color:#f92672>&gt;     if n == 3</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       break</span>
-<span style=color:#f92672>&gt; else</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    print(&#39;else out.&#39;)</span>
-<span style=color:#ae81ff>5</span>
-<span style=color:#ae81ff>4</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># 예제 6</span>
+&gt; n = 5
+<span style=color:#ff79c6>&gt; while n &gt; 0</span>:
+&gt;    print(n)
+&gt;     n -= 1
+<span style=color:#ff79c6>&gt;     if n == 3</span>:
+&gt;       break
+<span style=color:#ff79c6>&gt; else</span>:
+&gt;    print(&#39;else out.&#39;)
+<span style=color:#bd93f9>5</span>
+<span style=color:#bd93f9>4</span>
 
-<span style=color:#75715e># 예제 7</span>
-<span style=color:#ae81ff>&gt; g = [&#39;red&#39;, &#39;blue&#39;, &#39;white&#39;, &#39;black&#39;]</span>
-<span style=color:#ae81ff>&gt; c = &#39;black&#39;</span>
-<span style=color:#ae81ff>&gt; i = 0</span>
+<span style=color:#6272a4># 예제 7</span>
+&gt; g = [&#39;red&#39;, &#39;blue&#39;, &#39;white&#39;, &#39;black&#39;]
+&gt; c = &#39;black&#39;
+&gt; i = 0
 
-<span style=color:#f92672>&gt; while i &lt; len(g)</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;     if g[i] == c</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;         print(&#39;find {}&#39;.format(c))</span>
-<span style=color:#ae81ff>&gt;         break</span>
-<span style=color:#ae81ff>&gt;     i += 1</span>
-<span style=color:#f92672>&gt; else</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     print(&#39;not found in lise.&#39;)</span>
-<span style=color:#ae81ff>find black</span>
+<span style=color:#ff79c6>&gt; while i &lt; len(g)</span>:
+<span style=color:#ff79c6>&gt;     if g[i] == c</span>:
+&gt;         print(&#39;find {}&#39;.format(c))
+&gt;         break
+&gt;     i += 1
+<span style=color:#ff79c6>&gt; else</span>:
+&gt;     print(&#39;not found in lise.&#39;)
+find black
 
 </code></pre></div><hr>
 <h2 id=4-무한-반복-구문>4. 무한 반복 구문<a hidden class=anchor aria-hidden=true href=#4-무한-반복-구문>#</a></h2>
@@ -219,19 +219,19 @@
 <li>이 구문이 실행되면 다운되므로, <code>break</code>와 <code>continue</code>로 방지한다.</li>
 <li>무한 반복문의 한 예가 다음과 같다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; while True</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   print(&#39;Foo&#39;)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; while True</span>:
+&gt;   print(&#39;Foo&#39;)
 </code></pre></div><ul>
 <li>무한 반복문을 방지하기 위해 다음과 같이 수정한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; a = [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]</span>
-<span style=color:#f92672>&gt; while True</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   if not a</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       break</span>
-<span style=color:#ae81ff>&gt;   print(a.pop())</span>
-<span style=color:#ae81ff>baz</span>
-<span style=color:#ae81ff>bar</span>
-<span style=color:#ae81ff>foo</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; a = [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]
+<span style=color:#ff79c6>&gt; while True</span>:
+<span style=color:#ff79c6>&gt;   if not a</span>:
+&gt;       break
+&gt;   print(a.pop())
+baz
+bar
+foo
 </code></pre></div><ul>
 <li>a의 원소가 존재하지 않으므로 <code>if not a</code>가 참이 되어 <code>break</code>가 실행된다.</li>
 </ul>

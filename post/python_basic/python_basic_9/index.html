@@ -35,7 +35,7 @@
 <meta name=twitter:title content="[TIL] Python basic 9: 흐름 제어문 (if 조건문)">
 <meta name=twitter:description content="조건문의 기본 형식, 연산자를 통해서 제어하는 방법, 참거짓을 의미하는 값들, 다중 및 중첩 조건문, in & not in 으로 제어하는 방법을 알아본다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 9: 흐름 제어문 (if 조건문)","item":"http://jeha00.github.io/post/python_basic/python_basic_9/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 9: 흐름 제어문 (if 조건문)","name":"[TIL] Python basic 9: 흐름 제어문 (if 조건문)","description":"조건문의 기본 형식, 연산자를 통해서 제어하는 방법, 참거짓을 의미하는 값들, 다중 및 중첩 조건문, in \u0026amp; not in 으로 제어하는 방법을 알아본다.","keywords":["TIL","python"],"articleBody":"1. 조건문 기본 형식  콜론(:)으로 끝나는 부분을 헤더(Header)라고 한다. 헤더의 마지막 콜론은 바로 뒤에 스위트가 이어진다. 스위트는 헤더와 한 세트로 따라다니는 실행문을 의미한다. if - elif - else  if 식: 스위트 = if 문으로, 반드시 1개 필요하다.\nelif 식: 스위트 = elif 문으로, 없어도 되며 있으면 n개 가능 (여러개 가능)\nelse 식: 스위트 = else 문으로, 없어도 되며 있으면 1개만 가능\n    반드시 True 여야 제어문이 실행된다.   print(type(True))  print(type(False))   if True:  print(\"Good\") Good  if False:  print(\"Bad\") 실행 X  2. 연산자  연산자에는 지난 번에 봤던 산술 연산자 그리고, 관계 연산자, 논리 연산자가 있다. 관계 연산자에는 , =, , , ==, != 가 있다.   x = 15  y = 10 # == 양 변이 같을 때 참  print(x == y) False # != 양변이 다를 때 참  print(x != y) True #  왼쪽이 클 때 참  print(x  y) True # = 왼쪽이 크거나 같을 때 참  print(x = y) True #  print(x False #  print(x False  논리 연산자에는 and, or, not이 있다.   a = 75  b = 40  c = 10  print('and : ', a  b and b  c) and : True  print('or : ', a  b or b  c) or : True  print('not : ', not a  b) not : False  print('not : ', not b  c) not : False  산술, 관계, 논리 우선순위  산술  관계  논리 순서로 적용한다.     print('e1 : ', 3 + 12  7 + 3) e1 : True  print('e2 : ', 5 + 10 * 3  7 + 3 * 20) e2 : False  print('e3 : ', 5 + 10  3 and 7 + 3 == 10) e3 : True  print('e4 : ', 5 + 10  0 and not 7 + 3 == 10) e4 : False  3. 참거짓 판별 종류  참 : “values”, [values], (values), {values}, 1 거짓 : “”, [], (), {}, 0, None  # city가 공란이므로 False를 의미한다. # 그래서 else 문을 출력한다.  city = \"\"   if city:  print(\"You are in:\", city)  else:  print(\"Please enter your city\") Please enter your city # city에 값이 value가 있으므로 True를 의미한다. # 그래서 if 문을 출력한다.  city = \"Seoul\"   if city:  print(\"You are in:\", city)  else:  print(\"Please enter your city\") You are in: Seoul  4. 다중 조건문, 중첩 조건문, in \u0026 not in 4.1 다중 조건문  동일한 syntax의 조건문이 여러 개일 조건문을 다중 조건문이라 한다.   nume = 90  if num = 90:  print('Grade : A')  elif num = 80:  print('Grade : B')  elif num = 70:  print('Grade : C')  else:  print('과락') Grade : A 4.2 중첩 조건문  한 syntax 조건문 하에 여러 개의 조건문을 중첩 조건문이라 한다.   grade = 'A'  total = 80  if grade == 'A':  if total = 90:  print(\"장학금 100%\")  elif total = 80:  print(\"장학금 80%\")  else:  print(\"장학금 70%\")  else:  print(\"장학금 50%\") 장학금 80% 4.3 in \u0026 not in  A in B : B 안에 A가 있으면 참 A not in B : B 안에 A가 없으면 참  # list  q = [10, 20, 30] # sets  w = {70, 80, 90, 90} # dictionary  e = {\"name\": 'Lee', \"city\": \"Seoul\", \"grade\": \"A\"} # tuple  r = (10, 12, 14)  print(15 in q) False  print(90 in w) True  print(12 not in r) False # key 검색. dictionary를 in 사용하여 검색할 때 default는 keys 다.  print(\"name\" in e) True # value 검색  print(\"seoul\" in e.values()) False  ","wordCount":"636","inLanguage":"en","datePublished":"2022-03-01T11:52:55+09:00","dateModified":"2022-03-01T11:52:55+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_9/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 9: 흐름 제어문 (if 조건문)","name":"[TIL] Python basic 9: 흐름 제어문 (if 조건문)","description":"조건문의 기본 형식, 연산자를 통해서 제어하는 방법, 참거짓을 의미하는 값들, 다중 및 중첩 조건문, in \u0026amp; not in 으로 제어하는 방법을 알아본다.","keywords":["TIL","python"],"articleBody":"1. 조건문 기본 형식  콜론(:)으로 끝나는 부분을 헤더(Header)라고 한다. 헤더의 마지막 콜론은 바로 뒤에 스위트가 이어진다. 스위트는 헤더와 한 세트로 따라다니는 실행문을 의미한다. if - elif - else  if 식: 스위트 = if 문으로, 반드시 1개 필요하다.\nelif 식: 스위트 = elif 문으로, 없어도 되며 있으면 n개 가능 (여러개 가능)\nelse 식: 스위트 = else 문으로, 없어도 되며 있으면 1개만 가능\n    반드시 True 여야 제어문이 실행된다.   print(type(True))  print(type(False))  if True:  print(\"Good\") Good  if False:  print(\"Bad\") 실행 X  2. 연산자  연산자에는 지난 번에 봤던 산술 연산자 그리고, 관계 연산자, 논리 연산자가 있다. 관계 연산자에는 , =, , , ==, != 가 있다.   x = 15  y = 10 # == 양 변이 같을 때 참  print(x == y) False # != 양변이 다를 때 참  print(x != y) True #  왼쪽이 클 때 참  print(x  y) True # = 왼쪽이 크거나 같을 때 참  print(x = y) True #  print(x False #  print(x False  논리 연산자에는 and, or, not이 있다.   a = 75  b = 40  c = 10  print('and : ', a  b and b  c) and : True  print('or : ', a  b or b  c) or : True  print('not : ', not a  b) not : False  print('not : ', not b  c) not : False  산술, 관계, 논리 우선순위  산술  관계  논리 순서로 적용한다.     print('e1 : ', 3 + 12  7 + 3) e1 : True  print('e2 : ', 5 + 10 * 3  7 + 3 * 20) e2 : False  print('e3 : ', 5 + 10  3 and 7 + 3 == 10) e3 : True  print('e4 : ', 5 + 10  0 and not 7 + 3 == 10) e4 : False  3. 참거짓 판별 종류  참 : “values”, [values], (values), {values}, 1 거짓 : “”, [], (), {}, 0, None  # city가 공란이므로 False를 의미한다. # 그래서 else 문을 출력한다.  city = \"\"   if city:  print(\"You are in:\", city)  else:  print(\"Please enter your city\") Please enter your city # city에 값이 value가 있으므로 True를 의미한다. # 그래서 if 문을 출력한다.  city = \"Seoul\"   if city:  print(\"You are in:\", city)  else:  print(\"Please enter your city\") You are in: Seoul  4. 다중 조건문, 중첩 조건문, in \u0026 not in 4.1 다중 조건문  동일한 syntax의 조건문이 여러 개일 조건문을 다중 조건문이라 한다.   nume = 90  if num = 90:  print('Grade : A')  elif num = 80:  print('Grade : B')  elif num = 70:  print('Grade : C')  else:  print('과락') Grade : A 4.2 중첩 조건문  한 syntax 조건문 하에 여러 개의 조건문을 중첩 조건문이라 한다.   grade = 'A'  total = 80  if grade == 'A':  if total = 90:  print(\"장학금 100%\")  elif total = 80:  print(\"장학금 80%\")  else:  print(\"장학금 70%\")  else:  print(\"장학금 50%\") 장학금 80% 4.3 in \u0026 not in  A in B : B 안에 A가 있으면 참 A not in B : B 안에 A가 없으면 참  # list  q = [10, 20, 30] # sets  w = {70, 80, 90, 90} # dictionary  e = {\"name\": 'Lee', \"city\": \"Seoul\", \"grade\": \"A\"} # tuple  r = (10, 12, 14)  print(15 in q) False  print(90 in w) True  print(12 not in r) False # key 검색. dictionary를 in 사용하여 검색할 때 default는 keys 다.  print(\"name\" in e) True # value 검색  print(\"seoul\" in e.values()) False  ","wordCount":"636","inLanguage":"en","datePublished":"2022-03-01T11:52:55+09:00","dateModified":"2022-03-01T11:52:55+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_9/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -124,68 +124,68 @@
 <ul>
 <li>반드시 <code>True</code> 여야 제어문이 실행된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
-<span style=color:#ae81ff>&gt; print(type(True))</span>
-<span style=color:#ae81ff>&gt; print(type(False))</span>
-<span style=color:#ae81ff>&lt;class &#39;bool&#39;&gt;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+&gt; print(type(True))
+&gt; print(type(False))
+&lt;class &#39;bool&#39;&gt;
 
-<span style=color:#f92672>&gt; if True</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    print(&#34;Good&#34;)</span>
-<span style=color:#ae81ff>Good</span>
+<span style=color:#ff79c6>&gt; if True</span>:
+&gt;    print(&#34;Good&#34;)
+Good
 
-<span style=color:#f92672>&gt; if False</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   print(&#34;Bad&#34;)</span>
-<span style=color:#ae81ff>실행 X</span>
+<span style=color:#ff79c6>&gt; if False</span>:
+&gt;   print(&#34;Bad&#34;)
+실행 X
 </code></pre></div><hr>
 <h2 id=2-연산자>2. 연산자<a hidden class=anchor aria-hidden=true href=#2-연산자>#</a></h2>
 <ul>
 <li>연산자에는 지난 번에 봤던 산술 연산자 그리고, 관계 연산자, 논리 연산자가 있다.</li>
 <li>관계 연산자에는 <code>></code>, <code>>=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code> 가 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; x = 15</span>
-<span style=color:#ae81ff>&gt; y = 10</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; x = 15
+&gt; y = 10
 
-<span style=color:#75715e># ==  양 변이 같을 때 참</span>
-<span style=color:#ae81ff>&gt; print(x == y)</span>
-<span style=color:#00a8c8>False</span>
+<span style=color:#6272a4># ==  양 변이 같을 때 참</span>
+&gt; print(x == y)
+<span style=color:#ff79c6>False</span>
 
-<span style=color:#75715e># !=  양변이 다를 때 참</span>
-<span style=color:#ae81ff>&gt; print(x != y)</span>
-<span style=color:#00a8c8>True</span>
+<span style=color:#6272a4># !=  양변이 다를 때 참</span>
+&gt; print(x != y)
+<span style=color:#ff79c6>True</span>
 
-<span style=color:#75715e># &gt;  왼쪽이 클 때 참</span>
-<span style=color:#ae81ff>&gt; print(x &gt; y)</span>
-<span style=color:#00a8c8>True</span>
+<span style=color:#6272a4># &gt;  왼쪽이 클 때 참</span>
+&gt; print(x &gt; y)
+<span style=color:#ff79c6>True</span>
 
-<span style=color:#75715e># &gt;= 왼쪽이 크거나 같을 때 참</span>
-<span style=color:#ae81ff>&gt; print(x &gt;= y)</span>
-<span style=color:#00a8c8>True</span>
+<span style=color:#6272a4># &gt;= 왼쪽이 크거나 같을 때 참</span>
+&gt; print(x &gt;= y)
+<span style=color:#ff79c6>True</span>
 
-<span style=color:#75715e># &lt;  오른쪽이 클 때 참</span>
-<span style=color:#ae81ff>&gt; print(x &lt; y)</span>
-<span style=color:#00a8c8>False</span>
+<span style=color:#6272a4># &lt;  오른쪽이 클 때 참</span>
+&gt; print(x &lt; y)
+<span style=color:#ff79c6>False</span>
 
-<span style=color:#75715e># &lt;=  오른쪽이 크거나 같을 때 참</span>
-<span style=color:#ae81ff>&gt; print(x &lt;= y)</span>
-<span style=color:#00a8c8>False</span>
+<span style=color:#6272a4># &lt;=  오른쪽이 크거나 같을 때 참</span>
+&gt; print(x &lt;= y)
+<span style=color:#ff79c6>False</span>
 </code></pre></div><ul>
 <li>논리 연산자에는 <code>and</code>, <code>or</code>, <code>not</code>이 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; a = 75</span>
-<span style=color:#ae81ff>&gt; b = 40</span>
-<span style=color:#ae81ff>&gt; c = 10</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; a = 75
+&gt; b = 40
+&gt; c = 10
 
-<span style=color:#f92672>&gt; print(&#39;and </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;, a &gt; b and b &gt; c)
-</span><span style=color:#d88200>and : True
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>&gt; print(&#39;</span><span style=color:#f92672>or </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;, a &gt; b or b &gt; c)
-</span><span style=color:#d88200>or : True
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>&gt; print(&#39;</span><span style=color:#f92672>not </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;, not a &gt; b)
-</span><span style=color:#d88200>not : False
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>&gt; print(&#39;</span><span style=color:#f92672>not </span><span style=color:#111>:</span> <span style=color:#ae81ff>&#39;, not b &gt; c)</span>
-<span style=color:#f92672>not </span><span style=color:#111>:</span> <span style=color:#00a8c8>False</span>
+<span style=color:#ff79c6>&gt; print(&#39;and </span>: <span style=color:#f1fa8c>&#39;, a &gt; b and b &gt; c)
+</span><span style=color:#f1fa8c>and : True
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>&gt; print(&#39;</span><span style=color:#ff79c6>or </span>: <span style=color:#f1fa8c>&#39;, a &gt; b or b &gt; c)
+</span><span style=color:#f1fa8c>or : True
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>&gt; print(&#39;</span><span style=color:#ff79c6>not </span>: <span style=color:#f1fa8c>&#39;, not a &gt; b)
+</span><span style=color:#f1fa8c>not : False
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>&gt; print(&#39;</span><span style=color:#ff79c6>not </span>: &#39;, not b &gt; c)
+<span style=color:#ff79c6>not </span>: <span style=color:#ff79c6>False</span>
 </code></pre></div><ul>
 <li>산술, 관계, 논리 우선순위
 <ul>
@@ -193,17 +193,17 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; print(&#39;e1 </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;, 3 + 12 &gt; 7 + 3)
-</span><span style=color:#d88200>e1 :  True
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>&gt; print(&#39;</span><span style=color:#f92672>e2 </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;, 5 + 10 * 3 &gt; 7 + 3 * 20)
-</span><span style=color:#d88200>e2 :  False
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>&gt; print(&#39;</span><span style=color:#f92672>e3 </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;, 5 + 10 &gt; 3 and 7 + 3 == 10)
-</span><span style=color:#d88200>e3 :  True
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>&gt; print(&#39;</span><span style=color:#f92672>e4 </span><span style=color:#111>:</span> <span style=color:#ae81ff>&#39;, 5 + 10 &gt; 0 and not 7 + 3 == 10)</span>
-<span style=color:#f92672>e4 </span><span style=color:#111>:</span>  <span style=color:#00a8c8>False</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; print(&#39;e1 </span>: <span style=color:#f1fa8c>&#39;, 3 + 12 &gt; 7 + 3)
+</span><span style=color:#f1fa8c>e1 :  True
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>&gt; print(&#39;</span><span style=color:#ff79c6>e2 </span>: <span style=color:#f1fa8c>&#39;, 5 + 10 * 3 &gt; 7 + 3 * 20)
+</span><span style=color:#f1fa8c>e2 :  False
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>&gt; print(&#39;</span><span style=color:#ff79c6>e3 </span>: <span style=color:#f1fa8c>&#39;, 5 + 10 &gt; 3 and 7 + 3 == 10)
+</span><span style=color:#f1fa8c>e3 :  True
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>&gt; print(&#39;</span><span style=color:#ff79c6>e4 </span>: &#39;, 5 + 10 &gt; 0 and not 7 + 3 == 10)
+<span style=color:#ff79c6>e4 </span>:  <span style=color:#ff79c6>False</span>
 
 </code></pre></div><hr>
 <h2 id=3-참거짓-판별-종류>3. 참거짓 판별 종류<a hidden class=anchor aria-hidden=true href=#3-참거짓-판별-종류>#</a></h2>
@@ -211,25 +211,25 @@
 <li>참 : &ldquo;values&rdquo;, [values], (values), {values}, 1</li>
 <li>거짓 : &ldquo;&rdquo;, [], (), {}, 0, None</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># city가 공란이므로 False를 의미한다.</span>
-<span style=color:#75715e># 그래서 else 문을 출력한다.</span>
-<span style=color:#ae81ff>&gt; city = &#34;&#34;</span>
-<span style=color:#ae81ff>&gt;</span>
-<span style=color:#f92672>&gt; if city</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     print(&#34;You are in:&#34;, city)</span>
-<span style=color:#f92672>&gt; else</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     print(&#34;Please enter your city&#34;)</span>
-<span style=color:#ae81ff>Please enter your city</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># city가 공란이므로 False를 의미한다.</span>
+<span style=color:#6272a4># 그래서 else 문을 출력한다.</span>
+&gt; city = &#34;&#34;
+&gt;
+<span style=color:#ff79c6>&gt; if city</span>:
+&gt;     print(&#34;You are in:&#34;, city)
+<span style=color:#ff79c6>&gt; else</span>:
+&gt;     print(&#34;Please enter your city&#34;)
+Please enter your city
 
-<span style=color:#75715e># city에 값이 value가 있으므로 True를 의미한다.</span>
-<span style=color:#75715e># 그래서 if 문을 출력한다.</span>
-<span style=color:#ae81ff>&gt; city = &#34;Seoul&#34;</span>
-<span style=color:#ae81ff>&gt;</span>
-<span style=color:#f92672>&gt; if city</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     print(&#34;You are in:&#34;, city)</span>
-<span style=color:#f92672>&gt; else</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     print(&#34;Please enter your city&#34;)</span>
-<span style=color:#f92672>You are in</span><span style=color:#111>:</span> <span style=color:#ae81ff>Seoul</span>
+<span style=color:#6272a4># city에 값이 value가 있으므로 True를 의미한다.</span>
+<span style=color:#6272a4># 그래서 if 문을 출력한다.</span>
+&gt; city = &#34;Seoul&#34;
+&gt;
+<span style=color:#ff79c6>&gt; if city</span>:
+&gt;     print(&#34;You are in:&#34;, city)
+<span style=color:#ff79c6>&gt; else</span>:
+&gt;     print(&#34;Please enter your city&#34;)
+<span style=color:#ff79c6>You are in</span>: Seoul
 
 </code></pre></div><hr>
 <h2 id=4-다중-조건문-중첩-조건문-in--not-in>4. 다중 조건문, 중첩 조건문, in & not in<a hidden class=anchor aria-hidden=true href=#4-다중-조건문-중첩-조건문-in--not-in>#</a></h2>
@@ -237,36 +237,36 @@
 <ul>
 <li>동일한 syntax의 조건문이 여러 개일 조건문을 <code>다중 조건문</code>이라 한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; nume = 90</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; nume = 90
 
-<span style=color:#f92672>&gt; if num &gt;= 90</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   print(&#39;Grade </span><span style=color:#111>:</span> <span style=color:#ae81ff>A&#39;)</span>
-<span style=color:#f92672>&gt; elif num &gt;= 80</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   print(&#39;Grade </span><span style=color:#111>:</span> <span style=color:#ae81ff>B&#39;)</span>
-<span style=color:#f92672>&gt; elif num &gt;= 70</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   print(&#39;Grade </span><span style=color:#111>:</span> <span style=color:#ae81ff>C&#39;)</span>
-<span style=color:#f92672>&gt; else</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   print(&#39;과락&#39;)</span>
-<span style=color:#f92672>Grade </span><span style=color:#111>:</span> <span style=color:#ae81ff>A</span>
+<span style=color:#ff79c6>&gt; if num &gt;= 90</span>:
+<span style=color:#ff79c6>&gt;   print(&#39;Grade </span>: A&#39;)
+<span style=color:#ff79c6>&gt; elif num &gt;= 80</span>:
+<span style=color:#ff79c6>&gt;   print(&#39;Grade </span>: B&#39;)
+<span style=color:#ff79c6>&gt; elif num &gt;= 70</span>:
+<span style=color:#ff79c6>&gt;   print(&#39;Grade </span>: C&#39;)
+<span style=color:#ff79c6>&gt; else</span>:
+&gt;   print(&#39;과락&#39;)
+<span style=color:#ff79c6>Grade </span>: A
 
 </code></pre></div>
 <h3 id=42-중첩-조건문>4.2 중첩 조건문<a hidden class=anchor aria-hidden=true href=#42-중첩-조건문>#</a></h3>
 <ul>
 <li>한 syntax 조건문 하에 여러 개의 조건문을 <code>중첩 조건문</code>이라 한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; grade = &#39;A&#39;</span>
-<span style=color:#ae81ff>&gt; total = 80</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; grade = &#39;A&#39;
+&gt; total = 80
 
-<span style=color:#f92672>&gt; if grade == &#39;A&#39;</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   if total &gt;= 90</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;        print(&#34;장학금 100%&#34;)</span>
-<span style=color:#f92672>&gt;   elif total &gt;= 80</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       print(&#34;장학금 80%&#34;)</span>
-<span style=color:#f92672>&gt;   else</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       print(&#34;장학금 70%&#34;)</span>
-<span style=color:#f92672>&gt; else</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   print(&#34;장학금 50%&#34;)</span>
-<span style=color:#ae81ff>장학금 80%</span>
+<span style=color:#ff79c6>&gt; if grade == &#39;A&#39;</span>:
+<span style=color:#ff79c6>&gt;   if total &gt;= 90</span>:
+&gt;        print(&#34;장학금 100%&#34;)
+<span style=color:#ff79c6>&gt;   elif total &gt;= 80</span>:
+&gt;       print(&#34;장학금 80%&#34;)
+<span style=color:#ff79c6>&gt;   else</span>:
+&gt;       print(&#34;장학금 70%&#34;)
+<span style=color:#ff79c6>&gt; else</span>:
+&gt;   print(&#34;장학금 50%&#34;)
+장학금 80%
 
 </code></pre></div>
 <h3 id=43-in--not-in>4.3 in & not in<a hidden class=anchor aria-hidden=true href=#43-in--not-in>#</a></h3>
@@ -274,36 +274,36 @@
 <li><code>A in B</code> : B 안에 A가 있으면 참</li>
 <li><code>A not in B</code> : B 안에 A가 없으면 참</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># list</span>
-<span style=color:#ae81ff>&gt; q = [10, 20, 30]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># list</span>
+&gt; q = [10, 20, 30]
 
-<span style=color:#75715e># sets</span>
-<span style=color:#ae81ff>&gt; w = {70, 80, 90, 90}</span>
+<span style=color:#6272a4># sets</span>
+&gt; w = {70, 80, 90, 90}
 
-<span style=color:#75715e># dictionary</span>
-<span style=color:#ae81ff>&gt; e = {&#34;name&#34;: &#39;Lee&#39;, &#34;city&#34;: &#34;Seoul&#34;, &#34;grade&#34;: &#34;A&#34;}</span>
+<span style=color:#6272a4># dictionary</span>
+&gt; e = {&#34;name&#34;: &#39;Lee&#39;, &#34;city&#34;: &#34;Seoul&#34;, &#34;grade&#34;: &#34;A&#34;}
 
-<span style=color:#75715e># tuple</span>
-<span style=color:#ae81ff>&gt; r = (10, 12, 14)</span>
+<span style=color:#6272a4># tuple</span>
+&gt; r = (10, 12, 14)
 
-<span style=color:#ae81ff>&gt; print(15 in q)</span>
-<span style=color:#00a8c8>False</span>
+&gt; print(15 in q)
+<span style=color:#ff79c6>False</span>
 
-<span style=color:#ae81ff>&gt; print(90 in w)</span>
-<span style=color:#00a8c8>True</span>
-
-
-<span style=color:#ae81ff>&gt; print(12 not in r)</span>
-<span style=color:#00a8c8>False</span>
+&gt; print(90 in w)
+<span style=color:#ff79c6>True</span>
 
 
-<span style=color:#75715e># key 검색. dictionary를 in 사용하여 검색할 때 default는 keys 다.</span>
-<span style=color:#ae81ff>&gt; print(&#34;name&#34; in e)</span>
-<span style=color:#00a8c8>True</span>
+&gt; print(12 not in r)
+<span style=color:#ff79c6>False</span>
 
-<span style=color:#75715e># value 검색</span>
-<span style=color:#ae81ff>&gt; print(&#34;seoul&#34; in e.values())</span>
-<span style=color:#00a8c8>False</span>
+
+<span style=color:#6272a4># key 검색. dictionary를 in 사용하여 검색할 때 default는 keys 다.</span>
+&gt; print(&#34;name&#34; in e)
+<span style=color:#ff79c6>True</span>
+
+<span style=color:#6272a4># value 검색</span>
+&gt; print(&#34;seoul&#34; in e.values())
+<span style=color:#ff79c6>False</span>
 
 </code></pre></div><hr>
 </div>

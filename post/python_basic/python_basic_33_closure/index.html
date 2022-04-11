@@ -35,7 +35,7 @@
 <meta name=twitter:title content="[TIL] Python basic 33: Closure">
 <meta name=twitter:description content="Closure를 설명하기 위해서 global variable, local variable에 추가하여 free variable에 대해 설명하고, 왜 closure가 필요한지, closure의 잘못된 사용법을 알아본다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 33: Closure","item":"http://jeha00.github.io/post/python_basic/python_basic_33_closure/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 33: Closure","name":"[TIL] Python basic 33: Closure","description":"Closure를 설명하기 위해서 global variable, local variable에 추가하여 free variable에 대해 설명하고, 왜 closure가 필요한지, closure의 잘못된 사용법을 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  Closure가 필요한 이유 그리고, 잘못 사용된 사례에 대해 알아보자.   1. UnboundLocalError  전역 변수와 지역 변수에 대해 간단히 복습해보자.  # global (전역) 변수  c = 30  def func_v3(a):  print(a)   # local (지역) 변수  print(c)  c = 40  func_v3(10) UnboundLocalError: local variable 'c' referenced before assignmnet   func_v3를 정의하기 전에 c에 값을 할당했다.\n  그래서 func_v3 안에 값은 이름의 c 와 이어질거라 생각했지만, Error가 떴다.\n  Error의 의미:\n c 라는 변수에 값이 할당되지 않았는데, print(c)로 참조되었다. 함수 블럭에서 할당하는 건 지역 변수다. 하지만, name이 같아도 함수 밖에서 할당했기 때문에 전역 변수로 인식하여 다르다.    해결책\n function block 안에 global 선언을 하든가, nonlocal 선언을 한다. local scope에서 전역으로 쓸 수 있는 방법이다.     c = 30  def func_v3(a):  global c  print(a)  print(c)  c = 40 # 함수 실행 전 이므로 30이 출력된다.  print('',c) 30  func_v3(10) 10 30 # 함수 실행 후에는 40이 출력된다.  print('',c) 40   해결책의 문제점\n 함수 내에 global 또는 nonlocal을 쓰는 건 좋은 방법이 아니다. 왜냐하면 함수 내에 전역 변수와 연결되는 게 있다면 디버깅 할 때 쉽지 않다. 그래서 위의 statement로 local에서 수정하는 건 권하지 않는다.    그래서 또 다른 방법이 바로 closure(클로저) 다.\n  이 클로저에 대해 알아보자.\n   2. Closure 2.1 What is closure ??  [Reference에 따른 closure 정의]\n 외부에서 호출된 함수의 변수값, 상태(레퍼런스)를 복사 후 저장한다. 그 후에 접근(액세스)이 가능하도록 하는 도구     scope을 기준으로 설명하자면\n  Closure란 enclosing scope에 있는 자유변수(free variable)를 이 scope의 실행이 종료되도 보유하고 있는 내부 함수 또는 중첩함수를 말한다.\n  자유변수(free variable)란??\n 정의되지 않은 code block에 사용되는 변수 여러 번 호출이 일어나도 상태 정보를 보유하기 위해 closure가 사용하는 원리      closure는 outer function을 호출해서 innter function을 return 했지만, outer function의 enclosing scope 에 있던 자유변수(free variable)를 계속해서 기억한다.\n  그래서, 함수실행이 끝나도 그 시점의 변수를 이어서 작업할 수 있다.\n  2.2 Why does we need closure ??   함수 안에 선언된 것들이 함수의 실행이 끝나서 소멸되면 변수 값도 사라지지만, closure를 사용하면 기억된다.\n  서버 프로그래밍의 관점에서 closure를 바라보면\n 서버 프로그래밍에서 어려운 것이 동시성(Concurrency) 제어다. 한정된 메모리 공간에서 여러 자원이 접근하면 교착상태(Dead lock)에 부딪힌다. 이를 해결하는 게 동시성(Concurrency) 제어다. closure는 불변자료 (immutable, Read Only) 구조 및 atom, STM 이므로 multi-thread 프로그래밍에 강점을 가진다. multi-thread가 아닌 단일 thread인데도 동시성을 갖도록 하는 기반이 되는 게 바로 이 closure다.    또한, 이 클로저는 함수형 프로그래밍에도 연결된다.\n  위 관점에 대해서는 그렇구나 정도만 알고 넘어가자. 나중에 차차 알아보자.\n  그러면 class를 사용하여 closure가 무엇인지 구현해보자.\n  # global scope  class Avenager(): # enclosing scope  def __init__(self):  self._series = [] # local scope # special method __call__은 class를 function처럼 호출해서 사용하도록 한다.  def __call__(self, v):  self._series.append(v)  print('inner  {} / {}'.format(self._series, len(self, series)))  return sum(self._series) / len(self._series) # local scope # 인스턴스 생성  averager_cls = Averager() # 누적 # instance를 생성했는데, function처럼 사용하고 있다. # Avenger()를 사용하면 __call_ method의 return 값이 출력된다.  print(averager_cls(15))  print(averager_cls(35))  print(averager_cls(40)) inner  [15] / 1 15.0 inner  [15, 35] / 2 25.0 inner  [15, 35, 40] / 3 30.0  위의 예시처럼 class 실행이 끝나서, 변수가 소멸되야 하는데 유지되고 있다. 상태를 기억하고 있기 때문에 계속해서 누적된다. 그래서 중간부터 해도 이어서 할 수 있다.   3. Exercises for closure  closure는 pattern이 정해져 있다.  # global scope  def closure_ex1(): # closure_ex1의 local scope이면서 # averager(v)의 the enclosing scope 또는 자유영역 # 이 영역에 정의된 변수: series  series = []  def averager(v): # averager의 local scope  series.append(v)  print('inner  {} / {}'.format(series, len(series)))  return sum(series) / len(series) # 일급 함수의 특징: 함수를 반환할 수 있다.  return averager # make a instance # 반환값인 averager가 avg_closure1에 할당된다.  avg_closure1 = closure_ex1()  print(avg_closure1) .averager at 0x000001B59D11FC10 # 인자로 입력된 15는 averager function의 인자 v이다.  print(avg_closure1(15)) inner  [15] / 1 15.0  print(avg_closure1(35)) inner  [15, 35] / 2 25.0  print(avg_closure1(40)) inner  [15, 35, 40] / 3 30.0  series가 local scope에 있었다면 위 경우처럼 출력할 때 이전 값이 보존되지 않는다. 왜냐하면 averager가 실행이 끝나면 그 안에 local scope에 있던 변수는 소멸된다. 하지만, enclosing scope에 변수를 정의했기 때문에, 함수를 실행할 때마다 자유변수에 접근해서 값이 보존된다. 그래서 새로 추가해도 실행이 가능하다.   그러면 파이썬에서 이 closure를 어떻게 취급하는지 확인해보자.  # function inspection # __closure__ 로 취급된다. # __call__이 있으므로, 호출할 수 있다.  print(dir(avg_closure1)) ['__annotations__', '__call__', '__class__', '__closure__', '__dict__', '__dir__', '__doc__', '__init__', '__init_subclass__', '__kwdefaults__', '__le__', '__lt__', '__module__', '__name__'] # detail한 함수 목록이 나온다.  print(dir(avg_closure1.__code__))  print(avg_closure1.__code__.co_freevars) ('series',) # 자유 변수값을 출력할 수 있다.  print(avg_closure1.__closure__[0].cell_contents) [15, 35, 40]  __code__: 함수가 컴파일되서 바이트코드 상태의 정보를 출력해주는 역할   4. Incorrect use of closures  closure의 잘못된 사용법을 예제로 알아보자.   def closure_ex3():   # Free variable  cnt = 0  total = 0  def averager(v): # cnt와 total을 자유변수로 만든다.  nonlocal cnt, total  cnt += 1  total += v  return total / cnt  return averager  avg_closure3 = closure_ex3()  print(avg_closure3(15)) 15.0  print(avg_closure3(35)) 25.0  print(avg_closure3(40)) 30.0  바로 위의 예시처럼 nonlocal을 사용하는 방법 그리고, UnboundLocalError를 설명할 때 언급한 global 을 사용하는 법이 잘못된 closure 사용법이다. UnboundLocalError 를 설명한 경우와 달리, 변수를 전역이 아닌 자유 변수로 만들었다. 그래서, closure지만 좋은 방법이 아니다. 왜냐하면 함수 내에 전역 변수와 연결되는 게 있다면 디버깅 할 때 쉽지 않다.   Reference  인프런 파이썬 중급 Python Scope \u0026 the LEGB Rule: Resolving Names in Your Code  ","wordCount":"863","inLanguage":"en","datePublished":"2022-03-28T23:38:59+09:00","dateModified":"2022-03-28T23:38:59+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_33_closure/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 33: Closure","name":"[TIL] Python basic 33: Closure","description":"Closure를 설명하기 위해서 global variable, local variable에 추가하여 free variable에 대해 설명하고, 왜 closure가 필요한지, closure의 잘못된 사용법을 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  Closure가 필요한 이유 그리고, 잘못 사용된 사례에 대해 알아보자.   1. UnboundLocalError  전역 변수와 지역 변수에 대해 간단히 복습해보자.  # global (전역) 변수  c = 30  def func_v3(a):  print(a)  # local (지역) 변수  print(c)  c = 40  func_v3(10) UnboundLocalError: local variable 'c' referenced before assignmnet   func_v3를 정의하기 전에 c에 값을 할당했다.\n  그래서 func_v3 안에 값은 이름의 c 와 이어질거라 생각했지만, Error가 떴다.\n  Error의 의미:\n c 라는 변수에 값이 할당되지 않았는데, print(c)로 참조되었다. 함수 블럭에서 할당하는 건 지역 변수다. 하지만, name이 같아도 함수 밖에서 할당했기 때문에 전역 변수로 인식하여 다르다.    해결책\n function block 안에 global 선언을 하든가, nonlocal 선언을 한다. local scope에서 전역으로 쓸 수 있는 방법이다.     c = 30  def func_v3(a):  global c  print(a)  print(c)  c = 40 # 함수 실행 전 이므로 30이 출력된다.  print('',c) 30  func_v3(10) 10 30 # 함수 실행 후에는 40이 출력된다.  print('',c) 40   해결책의 문제점\n 함수 내에 global 또는 nonlocal을 쓰는 건 좋은 방법이 아니다. 왜냐하면 함수 내에 전역 변수와 연결되는 게 있다면 디버깅 할 때 쉽지 않다. 그래서 위의 statement로 local에서 수정하는 건 권하지 않는다.    그래서 또 다른 방법이 바로 closure(클로저) 다.\n  이 클로저에 대해 알아보자.\n   2. Closure 2.1 What is closure ??  [Reference에 따른 closure 정의]\n 외부에서 호출된 함수의 변수값, 상태(레퍼런스)를 복사 후 저장한다. 그 후에 접근(액세스)이 가능하도록 하는 도구     scope을 기준으로 설명하자면\n  Closure란 enclosing scope에 있는 자유변수(free variable)를 이 scope의 실행이 종료되도 보유하고 있는 내부 함수 또는 중첩함수를 말한다.\n  자유변수(free variable)란??\n 정의되지 않은 code block에 사용되는 변수 여러 번 호출이 일어나도 상태 정보를 보유하기 위해 closure가 사용하는 원리      closure는 outer function을 호출해서 innter function을 return 했지만, outer function의 enclosing scope 에 있던 자유변수(free variable)를 계속해서 기억한다.\n  그래서, 함수실행이 끝나도 그 시점의 변수를 이어서 작업할 수 있다.\n  2.2 Why does we need closure ??   함수 안에 선언된 것들이 함수의 실행이 끝나서 소멸되면 변수 값도 사라지지만, closure를 사용하면 기억된다.\n  서버 프로그래밍의 관점에서 closure를 바라보면\n 서버 프로그래밍에서 어려운 것이 동시성(Concurrency) 제어다. 한정된 메모리 공간에서 여러 자원이 접근하면 교착상태(Dead lock)에 부딪힌다. 이를 해결하는 게 동시성(Concurrency) 제어다. closure는 불변자료 (immutable, Read Only) 구조 및 atom, STM 이므로 multi-thread 프로그래밍에 강점을 가진다. multi-thread가 아닌 단일 thread인데도 동시성을 갖도록 하는 기반이 되는 게 바로 이 closure다.    또한, 이 클로저는 함수형 프로그래밍에도 연결된다.\n  위 관점에 대해서는 그렇구나 정도만 알고 넘어가자. 나중에 차차 알아보자.\n  그러면 class를 사용하여 closure가 무엇인지 구현해보자.\n  # global scope  class Avenager(): # enclosing scope  def __init__(self):  self._series = [] # local scope # special method __call__은 class를 function처럼 호출해서 사용하도록 한다.  def __call__(self, v):  self._series.append(v)  print('inner  {} / {}'.format(self._series, len(self, series)))  return sum(self._series) / len(self._series) # local scope # 인스턴스 생성  averager_cls = Averager() # 누적 # instance를 생성했는데, function처럼 사용하고 있다. # Avenger()를 사용하면 __call_ method의 return 값이 출력된다.  print(averager_cls(15))  print(averager_cls(35))  print(averager_cls(40)) inner  [15] / 1 15.0 inner  [15, 35] / 2 25.0 inner  [15, 35, 40] / 3 30.0  위의 예시처럼 class 실행이 끝나서, 변수가 소멸되야 하는데 유지되고 있다. 상태를 기억하고 있기 때문에 계속해서 누적된다. 그래서 중간부터 해도 이어서 할 수 있다.   3. Exercises for closure  closure는 pattern이 정해져 있다.  # global scope  def closure_ex1(): # closure_ex1의 local scope이면서 # averager(v)의 the enclosing scope 또는 자유영역 # 이 영역에 정의된 변수: series  series = []  def averager(v): # averager의 local scope  series.append(v)  print('inner  {} / {}'.format(series, len(series)))  return sum(series) / len(series) # 일급 함수의 특징: 함수를 반환할 수 있다.  return averager # make a instance # 반환값인 averager가 avg_closure1에 할당된다.  avg_closure1 = closure_ex1()  print(avg_closure1) .averager at 0x000001B59D11FC10 # 인자로 입력된 15는 averager function의 인자 v이다.  print(avg_closure1(15)) inner  [15] / 1 15.0  print(avg_closure1(35)) inner  [15, 35] / 2 25.0  print(avg_closure1(40)) inner  [15, 35, 40] / 3 30.0  series가 local scope에 있었다면 위 경우처럼 출력할 때 이전 값이 보존되지 않는다. 왜냐하면 averager가 실행이 끝나면 그 안에 local scope에 있던 변수는 소멸된다. 하지만, enclosing scope에 변수를 정의했기 때문에, 함수를 실행할 때마다 자유변수에 접근해서 값이 보존된다. 그래서 새로 추가해도 실행이 가능하다.   그러면 파이썬에서 이 closure를 어떻게 취급하는지 확인해보자.  # function inspection # __closure__ 로 취급된다. # __call__이 있으므로, 호출할 수 있다.  print(dir(avg_closure1)) ['__annotations__', '__call__', '__class__', '__closure__', '__dict__', '__dir__', '__doc__', '__init__', '__init_subclass__', '__kwdefaults__', '__le__', '__lt__', '__module__', '__name__'] # detail한 함수 목록이 나온다.  print(dir(avg_closure1.__code__))  print(avg_closure1.__code__.co_freevars) ('series',) # 자유 변수값을 출력할 수 있다.  print(avg_closure1.__closure__[0].cell_contents) [15, 35, 40]  __code__: 함수가 컴파일되서 바이트코드 상태의 정보를 출력해주는 역할   4. Incorrect use of closures  closure의 잘못된 사용법을 예제로 알아보자.   def closure_ex3():  # Free variable  cnt = 0  total = 0  def averager(v): # cnt와 total을 자유변수로 만든다.  nonlocal cnt, total  cnt += 1  total += v  return total / cnt  return averager  avg_closure3 = closure_ex3()  print(avg_closure3(15)) 15.0  print(avg_closure3(35)) 25.0  print(avg_closure3(40)) 30.0  바로 위의 예시처럼 nonlocal을 사용하는 방법 그리고, UnboundLocalError를 설명할 때 언급한 global 을 사용하는 법이 잘못된 closure 사용법이다. UnboundLocalError 를 설명한 경우와 달리, 변수를 전역이 아닌 자유 변수로 만들었다. 그래서, closure지만 좋은 방법이 아니다. 왜냐하면 함수 내에 전역 변수와 연결되는 게 있다면 디버깅 할 때 쉽지 않다.   Reference  인프런 파이썬 중급 Python Scope \u0026 the LEGB Rule: Resolving Names in Your Code  ","wordCount":"863","inLanguage":"en","datePublished":"2022-03-28T23:38:59+09:00","dateModified":"2022-03-28T23:38:59+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_33_closure/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -118,17 +118,17 @@
 <ul>
 <li>전역 변수와 지역 변수에 대해 간단히 복습해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># global (전역) 변수</span>
-<span style=color:#ae81ff>&gt; c = 30</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># global (전역) 변수</span>
+&gt; c = 30
 
-<span style=color:#f92672>&gt; def func_v3(a)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    print(a)</span>
-<span style=color:#ae81ff>&gt;   </span> <span style=color:#75715e># local (지역) 변수</span>
-<span style=color:#ae81ff>&gt;    print(c)</span>
-<span style=color:#ae81ff>&gt;    c = 40</span>
+<span style=color:#ff79c6>&gt; def func_v3(a)</span>:
+&gt;    print(a)
+&gt;    <span style=color:#6272a4># local (지역) 변수</span>
+&gt;    print(c)
+&gt;    c = 40
 
-<span style=color:#ae81ff>&gt; func_v3(10)</span>
-<span style=color:#f92672>UnboundLocalError</span><span style=color:#111>:</span> <span style=color:#ae81ff>local variable &#39;c&#39; referenced before assignmnet</span>
+&gt; func_v3(10)
+<span style=color:#ff79c6>UnboundLocalError</span>: local variable &#39;c&#39; referenced before assignmnet
 </code></pre></div><ul>
 <li>
 <p>func_v3를 정의하기 전에 c에 값을 할당했다.</p>
@@ -152,26 +152,26 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; c = 30</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; c = 30
 
-<span style=color:#f92672>&gt; def func_v3(a)</span><span style=color:#111>:</span>
+<span style=color:#ff79c6>&gt; def func_v3(a)</span>:
 
-<span style=color:#ae81ff>&gt;    global c</span>
-<span style=color:#ae81ff>&gt;    print(a)</span>
-<span style=color:#ae81ff>&gt;    print(c)</span>
-<span style=color:#ae81ff>&gt;    c = 40</span>
+&gt;    global c
+&gt;    print(a)
+&gt;    print(c)
+&gt;    c = 40
 
-<span style=color:#75715e># 함수 실행 전 이므로 30이 출력된다.</span>
-<span style=color:#ae81ff>&gt; print(&#39;&gt;&gt;&#39;,c)</span>
-<span style=color:#ae81ff>30</span>
+<span style=color:#6272a4># 함수 실행 전 이므로 30이 출력된다.</span>
+&gt; print(&#39;&gt;&gt;&#39;,c)
+<span style=color:#bd93f9>30</span>
 
-<span style=color:#ae81ff>&gt; func_v3(10)</span>
-<span style=color:#ae81ff>10</span>
-<span style=color:#ae81ff>30</span>
+&gt; func_v3(10)
+<span style=color:#bd93f9>10</span>
+<span style=color:#bd93f9>30</span>
 
-<span style=color:#75715e># 함수 실행 후에는 40이 출력된다.</span>
-<span style=color:#ae81ff>&gt; print(&#39;&gt;&gt;&gt;&#39;,c)</span>
-<span style=color:#ae81ff>40</span>
+<span style=color:#6272a4># 함수 실행 후에는 40이 출력된다.</span>
+&gt; print(&#39;&gt;&gt;&gt;&#39;,c)
+<span style=color:#bd93f9>40</span>
 </code></pre></div><ul>
 <li>
 <p>해결책의 문제점</p>
@@ -246,36 +246,36 @@
 <p>그러면 class를 사용하여 closure가 무엇인지 구현해보자.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># global scope</span>
-<span style=color:#f92672>&gt; class Avenager()</span><span style=color:#111>:</span>
-<span style=color:#75715e># enclosing scope</span>
-<span style=color:#f92672>&gt;   def __init__(self)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       self._series = []</span>
-<span style=color:#75715e># local scope</span>
-<span style=color:#75715e># special method __call__은 class를 function처럼 호출해서 사용하도록 한다.</span>
-<span style=color:#f92672>&gt;   def __call__(self, v)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       self._series.append(v)</span>
-<span style=color:#ae81ff>&gt;       print(&#39;inner &gt;&gt;&gt; {} / {}&#39;.format(self._series, len(self, series)))</span>
-<span style=color:#ae81ff>&gt;       return sum(self._series) / len(self._series)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># global scope</span>
+<span style=color:#ff79c6>&gt; class Avenager()</span>:
+<span style=color:#6272a4># enclosing scope</span>
+<span style=color:#ff79c6>&gt;   def __init__(self)</span>:
+&gt;       self._series = []
+<span style=color:#6272a4># local scope</span>
+<span style=color:#6272a4># special method __call__은 class를 function처럼 호출해서 사용하도록 한다.</span>
+<span style=color:#ff79c6>&gt;   def __call__(self, v)</span>:
+&gt;       self._series.append(v)
+&gt;       print(&#39;inner &gt;&gt;&gt; {} / {}&#39;.format(self._series, len(self, series)))
+&gt;       return sum(self._series) / len(self._series)
 
-<span style=color:#75715e># local scope</span>
+<span style=color:#6272a4># local scope</span>
 
-<span style=color:#75715e># 인스턴스 생성</span>
-<span style=color:#ae81ff>&gt; averager_cls = Averager()</span>
+<span style=color:#6272a4># 인스턴스 생성</span>
+&gt; averager_cls = Averager()
 
-<span style=color:#75715e># 누적</span>
-<span style=color:#75715e># instance를 생성했는데, function처럼 사용하고 있다.</span>
-<span style=color:#75715e># Avenger()를 사용하면 __call_ method의 return 값이 출력된다.</span>
+<span style=color:#6272a4># 누적</span>
+<span style=color:#6272a4># instance를 생성했는데, function처럼 사용하고 있다.</span>
+<span style=color:#6272a4># Avenger()를 사용하면 __call_ method의 return 값이 출력된다.</span>
 
-<span style=color:#ae81ff>&gt; print(averager_cls(15))</span>
-<span style=color:#ae81ff>&gt; print(averager_cls(35))</span>
-<span style=color:#ae81ff>&gt; print(averager_cls(40))</span>
-<span style=color:#ae81ff>inner &gt;&gt;&gt; [15] / 1</span>
-<span style=color:#ae81ff>15.0</span>
-<span style=color:#ae81ff>inner &gt;&gt;&gt; [15, 35] / 2</span>
-<span style=color:#ae81ff>25.0</span>
-<span style=color:#ae81ff>inner &gt;&gt;&gt; [15, 35, 40] / 3</span>
-<span style=color:#ae81ff>30.0</span>
+&gt; print(averager_cls(15))
+&gt; print(averager_cls(35))
+&gt; print(averager_cls(40))
+inner &gt;&gt;&gt; [15] / 1
+<span style=color:#bd93f9>15.0</span>
+inner &gt;&gt;&gt; [15, 35] / 2
+<span style=color:#bd93f9>25.0</span>
+inner &gt;&gt;&gt; [15, 35, 40] / 3
+<span style=color:#bd93f9>30.0</span>
 </code></pre></div><ul>
 <li>위의 예시처럼 class 실행이 끝나서, 변수가 소멸되야 하는데 유지되고 있다.</li>
 <li>상태를 기억하고 있기 때문에 계속해서 누적된다.</li>
@@ -286,40 +286,40 @@
 <ul>
 <li>closure는 pattern이 정해져 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># global scope</span>
-<span style=color:#f92672>&gt; def closure_ex1()</span><span style=color:#111>:</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># global scope</span>
+<span style=color:#ff79c6>&gt; def closure_ex1()</span>:
 
-<span style=color:#75715e># closure_ex1의 local scope이면서</span>
-<span style=color:#75715e># averager(v)의 the enclosing scope 또는 자유영역</span>
-<span style=color:#75715e># 이 영역에 정의된 변수: series</span>
-<span style=color:#ae81ff>&gt;   series = []</span>
+<span style=color:#6272a4># closure_ex1의 local scope이면서</span>
+<span style=color:#6272a4># averager(v)의 the enclosing scope 또는 자유영역</span>
+<span style=color:#6272a4># 이 영역에 정의된 변수: series</span>
+&gt;   series = []
 
-<span style=color:#f92672>&gt;   def averager(v)</span><span style=color:#111>:</span>
-<span style=color:#75715e># averager의 local scope</span>
-<span style=color:#ae81ff>&gt;      series.append(v)</span>
-<span style=color:#ae81ff>&gt;      print(&#39;inner &gt;&gt;&gt; {} / {}&#39;.format(series, len(series)))</span>
-<span style=color:#ae81ff>&gt;      return sum(series) / len(series)</span>
+<span style=color:#ff79c6>&gt;   def averager(v)</span>:
+<span style=color:#6272a4># averager의 local scope</span>
+&gt;      series.append(v)
+&gt;      print(&#39;inner &gt;&gt;&gt; {} / {}&#39;.format(series, len(series)))
+&gt;      return sum(series) / len(series)
 
-<span style=color:#75715e># 일급 함수의 특징: 함수를 반환할 수 있다.</span>
-<span style=color:#ae81ff>&gt;   return averager</span>
+<span style=color:#6272a4># 일급 함수의 특징: 함수를 반환할 수 있다.</span>
+&gt;   return averager
 
-<span style=color:#75715e># make a instance</span>
-<span style=color:#75715e># 반환값인 averager가 avg_closure1에 할당된다.</span>
-<span style=color:#ae81ff>&gt; avg_closure1 = closure_ex1()</span>
+<span style=color:#6272a4># make a instance</span>
+<span style=color:#6272a4># 반환값인 averager가 avg_closure1에 할당된다.</span>
+&gt; avg_closure1 = closure_ex1()
 
-<span style=color:#ae81ff>&gt; print(avg_closure1)</span>
-<span style=color:#ae81ff>&lt;function closure_ex1.&lt;locals&gt;.averager at 0x000001B59D11FC10&gt;</span>
+&gt; print(avg_closure1)
+&lt;function closure_ex1.&lt;locals&gt;.averager at 0x000001B59D11FC10&gt;
 
-<span style=color:#75715e># 인자로 입력된 15는 averager function의 인자 v이다.</span>
-<span style=color:#ae81ff>&gt; print(avg_closure1(15))</span>
-<span style=color:#ae81ff>inner &gt;&gt;&gt; [15] / 1</span>
-<span style=color:#ae81ff>15.0</span>
-<span style=color:#ae81ff>&gt; print(avg_closure1(35))</span>
-<span style=color:#ae81ff>inner &gt;&gt;&gt; [15, 35] / 2</span>
-<span style=color:#ae81ff>25.0</span>
-<span style=color:#ae81ff>&gt; print(avg_closure1(40))</span>
-<span style=color:#ae81ff>inner &gt;&gt;&gt; [15, 35, 40] / 3</span>
-<span style=color:#ae81ff>30.0</span>
+<span style=color:#6272a4># 인자로 입력된 15는 averager function의 인자 v이다.</span>
+&gt; print(avg_closure1(15))
+inner &gt;&gt;&gt; [15] / 1
+<span style=color:#bd93f9>15.0</span>
+&gt; print(avg_closure1(35))
+inner &gt;&gt;&gt; [15, 35] / 2
+<span style=color:#bd93f9>25.0</span>
+&gt; print(avg_closure1(40))
+inner &gt;&gt;&gt; [15, 35, 40] / 3
+<span style=color:#bd93f9>30.0</span>
 </code></pre></div><ul>
 <li>series가 local scope에 있었다면 위 경우처럼 출력할 때 이전 값이 보존되지 않는다.</li>
 <li>왜냐하면 averager가 실행이 끝나면 그 안에 local scope에 있던 변수는 소멸된다.</li>
@@ -329,21 +329,21 @@
 <ul>
 <li>그러면 파이썬에서 이 closure를 어떻게 취급하는지 확인해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># function inspection</span>
-<span style=color:#75715e># __closure__ 로 취급된다.</span>
-<span style=color:#75715e># __call__이 있으므로, 호출할 수 있다.</span>
-<span style=color:#ae81ff>&gt; print(dir(avg_closure1))</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;__annotations__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__call__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__class__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__closure__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dict__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__dir__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__doc__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__init_subclass__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__kwdefaults__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__le__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__lt__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__module__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__name__&#39;</span><span style=color:#111>]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># function inspection</span>
+<span style=color:#6272a4># __closure__ 로 취급된다.</span>
+<span style=color:#6272a4># __call__이 있으므로, 호출할 수 있다.</span>
+&gt; print(dir(avg_closure1))
+[<span style=color:#f1fa8c>&#39;__annotations__&#39;</span>, <span style=color:#f1fa8c>&#39;__call__&#39;</span>, <span style=color:#f1fa8c>&#39;__class__&#39;</span>, <span style=color:#f1fa8c>&#39;__closure__&#39;</span>, <span style=color:#f1fa8c>&#39;__dict__&#39;</span>, <span style=color:#f1fa8c>&#39;__dir__&#39;</span>, <span style=color:#f1fa8c>&#39;__doc__&#39;</span>, <span style=color:#f1fa8c>&#39;__init__&#39;</span>, <span style=color:#f1fa8c>&#39;__init_subclass__&#39;</span>, <span style=color:#f1fa8c>&#39;__kwdefaults__&#39;</span>, <span style=color:#f1fa8c>&#39;__le__&#39;</span>, <span style=color:#f1fa8c>&#39;__lt__&#39;</span>, <span style=color:#f1fa8c>&#39;__module__&#39;</span>, <span style=color:#f1fa8c>&#39;__name__&#39;</span>]
 
-<span style=color:#75715e># detail한 함수 목록이 나온다.</span>
-<span style=color:#ae81ff>&gt; print(dir(avg_closure1.__code__))</span>
+<span style=color:#6272a4># detail한 함수 목록이 나온다.</span>
+&gt; print(dir(avg_closure1.__code__))
 
-<span style=color:#ae81ff>&gt; print(avg_closure1.__code__.co_freevars)</span>
-<span style=color:#ae81ff>(&#39;series&#39;,)</span>
+&gt; print(avg_closure1.__code__.co_freevars)
+(&#39;series&#39;,)
 
-<span style=color:#75715e># 자유 변수값을 출력할 수 있다.</span>
-<span style=color:#ae81ff>&gt; print(avg_closure1.__closure__[0].cell_contents)</span>
-<span style=color:#111>[</span><span style=color:#ae81ff>15</span><span style=color:#111>,</span> <span style=color:#ae81ff>35</span><span style=color:#111>,</span> <span style=color:#ae81ff>40</span><span style=color:#111>]</span>
+<span style=color:#6272a4># 자유 변수값을 출력할 수 있다.</span>
+&gt; print(avg_closure1.__closure__[0].cell_contents)
+[<span style=color:#bd93f9>15</span>, <span style=color:#bd93f9>35</span>, <span style=color:#bd93f9>40</span>]
 </code></pre></div><ul>
 <li><code>__code__</code>: 함수가 컴파일되서 바이트코드 상태의 정보를 출력해주는 역할</li>
 </ul>
@@ -352,29 +352,29 @@
 <ul>
 <li>closure의 잘못된 사용법을 예제로 알아보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def closure_ex3()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    </span> <span style=color:#75715e># Free variable</span>
-<span style=color:#ae81ff>&gt;     cnt = 0</span>
-<span style=color:#ae81ff>&gt;     total = 0</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; def closure_ex3()</span>:
+&gt;     <span style=color:#6272a4># Free variable</span>
+&gt;     cnt = 0
+&gt;     total = 0
 
-<span style=color:#f92672>&gt;     def averager(v)</span><span style=color:#111>:</span>
+<span style=color:#ff79c6>&gt;     def averager(v)</span>:
 
-<span style=color:#75715e># cnt와 total을 자유변수로 만든다.</span>
-<span style=color:#ae81ff>&gt;         nonlocal cnt, total</span>
-<span style=color:#ae81ff>&gt;         cnt += 1</span>
-<span style=color:#ae81ff>&gt;         total += v</span>
-<span style=color:#ae81ff>&gt;         return total / cnt</span>
+<span style=color:#6272a4># cnt와 total을 자유변수로 만든다.</span>
+&gt;         nonlocal cnt, total
+&gt;         cnt += 1
+&gt;         total += v
+&gt;         return total / cnt
 
-<span style=color:#ae81ff>&gt;     return averager</span>
+&gt;     return averager
 
-<span style=color:#ae81ff>&gt; avg_closure3 = closure_ex3()</span>
+&gt; avg_closure3 = closure_ex3()
 
-<span style=color:#ae81ff>&gt; print(avg_closure3(15))</span>
-<span style=color:#ae81ff>15.0</span>
-<span style=color:#ae81ff>&gt; print(avg_closure3(35))</span>
-<span style=color:#ae81ff>25.0</span>
-<span style=color:#ae81ff>&gt; print(avg_closure3(40))</span>
-<span style=color:#ae81ff>30.0</span>
+&gt; print(avg_closure3(15))
+<span style=color:#bd93f9>15.0</span>
+&gt; print(avg_closure3(35))
+<span style=color:#bd93f9>25.0</span>
+&gt; print(avg_closure3(40))
+<span style=color:#bd93f9>30.0</span>
 </code></pre></div><ul>
 <li>바로 위의 예시처럼 <code>nonlocal</code>을 사용하는 방법 그리고, UnboundLocalError를 설명할 때 언급한 <code>global</code> 을 사용하는 법이 잘못된 closure 사용법이다.</li>
 <li>UnboundLocalError 를 설명한 경우와 달리, 변수를 전역이 아닌 자유 변수로 만들었다.</li>

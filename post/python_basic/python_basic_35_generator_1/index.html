@@ -35,7 +35,7 @@
 <meta name=twitter:title content="[TIL] Python basic 35: Generator 1">
 <meta name=twitter:description content="첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 35: Generator 1","item":"http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 35: Generator 1","name":"[TIL] Python basic 35: Generator 1","description":"첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  병행성을 위한 방법으로 generator와 coroutine을 알아보고자 한다. 이번 포스팅에서는 __iter__와 __next__ 을, 다음 포스팅에서는 generator를 알아본다. 그러면 첫 번째로 병행성이 무엇을 의미하는 건지, 이와 유사한 개념으로 병렬성은 무엇인지 학습한다. 두 번째로, Generator를 이해하기 위해서 __iter__와 __next__ 을 먼저 학습한다.   1. 병행성과 병렬성이란??   병행성(Concurrency): 한 컴퓨터가 여러 일을 동시에 수행하는 것 - 동시 수행 병렬성(parallelism): 여러 컴퓨터가 여러 작업을 동시에 수행하는 것 - 속도 향상    병행성 은 단일 프로그램 안에서 여러 일을 쉽게 해결하기 위해 사용된다.  thread는 하나지만, 마치 동시에 일을 하고 있는 것처럼 수행한다. 예) 공부하다가 강의 멈춰놓고, 밥 먹고 와서 강의를 중단한 부분부터 다시 시작하기   파이썬에서는 병행성 과 병렬성 을 모두 지원한다. 그리고, 파이썬 실력을 결정하는 중요한 내용이다.   2. __iter__와 __next__ 2.1 __iter__와 __next__ 용어 정리   __iter__  __iter__: iter() built-in function이 호출하는 메소드 iter(): 호출된 __iter__의 return 값을 반환한다. 즉, iterator는 __iter__ method가 만든다.   __next__  __next__: next() built-in function이 호출하는 메소드      iter 가 있는 용어들에 대해 정리하면서 알아보자.    iteration 이란??\n  The process of looping through the objects or items in a collection\n  그러면 파이썬에서 iteration 상황은 무엇이 있을까??\n  Definite iteration 상황: 미리 반복 횟수를 명백하게 정한 상황. ex) for 문\n  Indefinite iteration 상황: 몇 가지 조건이 만족될 때까지 code block을 실행하는 상황. ex) while 문\n      iterable의 의미는 2가지로 사용된다.\n An object(or the adjective used to describe an object) that can be iterated over __iter__을 가지고 있는 객체    이 iterable한 객체 또는 iterable을 iter()에 인자로서 전달하여 반환되는 것을 interator라 불린다.\n  그리고, iter()는 __iter__ method의 return 값(iterator)을 반환하는 함수다.\n The built-in function used to obtain an iterator from an iterable    즉, iterator의 의미는\n The object that produces successive items or values from its associated iterable  iterable object로부터 연속적인 값을 낳는(yield) 값 생성기   iter()로 만들어지는 객체 next() function의 기준으로 보자면, __next__을 가지고 있는 객체    2.2 Iterator 관련 data type  iterator를 반환하는 data type들:  for, collections, string, list, dict, set, tuple, unpacking, *args    # string  iter('foobar')  # list  iter(['foo', 'bar', 'baz'])  # tuple  iter(('foo', 'bar', 'baz'))  # set  iter({'foo', 'bar', 'baz'})  # dict  iter({'foo': 1, 'bar': 2, 'baz': 3})   iterator를 반환하지 않는 data type들  Integer, foat, built-in functions    # Integer  iter(42) Traceback (most recent call last): File \"\", line 1, in  iter(42) TypeError: 'int' object is not iterable # Float  iter(3.1) Traceback (most recent call last): File \"\", line 1, in  iter(3.1) TypeError: 'float' object is not iterable # Built-in functions  iter(len) Traceback (most recent call last): File \"\", line 1, in  iter(len) TypeError: 'builtin_function_or_method' object is not iterable 2.3 iter() 과 next() 예제  내장함수 next()는 값 생성기 iterator으로부터 다음 값을 얻기 위해 사용된다.  # a는 iterable list다.  a = ['foo', 'bar', 'baz'] # iter을 통해서 a의 iterator를 만든다.  itr = iter(a)  itr  # nest()를 통해서 itr 안의 다음 값을 얻는다.  next(itr) 'foo'  next(itr) 'bar'  next(itr) 'baz' # 값이 다 소진되면 다음과 같은 Error를 띄운다.  next(itr) StopIteration  만약 iterator로 전환하지 않고, 그냥 사용한다면??? iterator가 아니므로 next()를 사용할 수 없다. 즉 __iter__을 호출하여 전환해야 사용이 가능하다.   w = [1,2,3,4,5] # iter()로 iterator로 전환하지 않았기 때문에 __next__가 없다.  print(dir(w)) ['__add__', '__class__', '__iter__', ..... 'sort']  print(next(w)) TypeError: 'list' object is not an iterator 2.4 iter() 과 next() 토대로 for문 이해하기  그러면 __iter__ 과 __next__를 토대로 for 문을 이해해보자.   t = 'ABCDEF'  for c in t:  print(c) A B C D E F  어떻게 해서 하나씩 출력되는 것일까??? for문의 구조를 다시 확인해보자   for  in :     in 다음에는 iterable이 온다. 그러면 어떻게 하나씩 반환될까??\n __iter__ 과 __next__ 와 연결시켜보자. iteralbe을 입력하면 for문에서 iter()을 호출하여 iterable객체를 iterator로 바꾼 후, __next__ method를 통해 하나씩 출력된는 원리라는 걸 이해할 수 있다.    위에 for문을 while문으로 만들어서 구체적으로 이해해보자.\n   t = 'ABCDEF'  while True:  try:  print(next(t)) # iterator의 내부 성분이 다 출력되면 Error가 발생되고, 중단된다.  except Stopiteration  break 2.5 __iter__ 확인하는 방법  t = 'ABCDEF' # 첫 번째 방법 # 이 방법은 눈으로 찾아봐야하기 때문에, 추천하지 않는다.  print(dir(t)) ['__add__', '__iter__', '__le__', ....'] # 두 번째 방법 # hasattr = has attribution # t가 __iter__를 가지고 있는가??  print(hasattr(t, '__iter_')) True # 세 번째 방법  print(isinstance(t, abc.Iterable)) True 2.6 class로 __next__ 구현하기  class WordSplitter:  def __init__(self, text):  self._idx = 0  self._text = text.split('')  def __next__(self):  print('Called __next__')  try:  word = self._text[self._idx]  except IndexError:  raise StopIteration('Stopped Iteration')  self._idx += 1  return word  def __repr__(self):  return 'WordSplit(%s)' % (self._text)  wi = WordSplitter('Do today what you could do tomorrow')  print(wi) WordSplit(['Do', 'today', 'what', 'you', 'could', 'do', 'tomorrow'])  print(next(wi)) Do  print(next(wi)) today  print(next(wi)) what  print(next(wi)) you  print(next(wi)) could  print(next(wi)) do  print(next(wi)) tomorrow  구현했지만, 코드량이 많아진다. 그러면 제네레이터를 사용해서 구현해보자.   class WordSplitter:  def __init__(self, text): # 인덱스를 기억하지 않아도 된다.  self._text = text.split('')  def __next__(self):  for word in self._text: # 이것이 제네레이터이며, 이 제네레이터가 위치 정보를 기억한다. # 따로 예외처리를 하지 않아도 된다.  yield word  return  def __repr__(self):  return 'WordSplit(%s)' % (self._text)  wi = WordSplitter('Do today what you could do tomorrow')  wt = iter(wg) # 출력 코드는 동일.  Reference  인프런 파이썬 중급 04-3 제너레이터와 yield(feat. return 문) (널널한 교수의 고급 파이썬) ft. 파이썬 코딩  ","wordCount":"891","inLanguage":"en","datePublished":"2022-03-30T14:17:57+09:00","dateModified":"2022-03-30T14:17:57+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 35: Generator 1","name":"[TIL] Python basic 35: Generator 1","description":"첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  병행성을 위한 방법으로 generator와 coroutine을 알아보고자 한다. 이번 포스팅에서는 __iter__와 __next__ 을, 다음 포스팅에서는 generator를 알아본다. 그러면 첫 번째로 병행성이 무엇을 의미하는 건지, 이와 유사한 개념으로 병렬성은 무엇인지 학습한다. 두 번째로, Generator를 이해하기 위해서 __iter__와 __next__ 을 먼저 학습한다.   1. 병행성과 병렬성이란??   병행성(Concurrency): 한 컴퓨터가 여러 일을 동시에 수행하는 것 - 동시 수행 병렬성(parallelism): 여러 컴퓨터가 여러 작업을 동시에 수행하는 것 - 속도 향상    병행성 은 단일 프로그램 안에서 여러 일을 쉽게 해결하기 위해 사용된다.  thread는 하나지만, 마치 동시에 일을 하고 있는 것처럼 수행한다. 예) 공부하다가 강의 멈춰놓고, 밥 먹고 와서 강의를 중단한 부분부터 다시 시작하기   파이썬에서는 병행성 과 병렬성 을 모두 지원한다. 그리고, 파이썬 실력을 결정하는 중요한 내용이다.   2. __iter__와 __next__ 2.1 __iter__와 __next__ 용어 정리   __iter__  __iter__: iter() built-in function이 호출하는 메소드 iter(): 호출된 __iter__의 return 값을 반환한다. 즉, iterator는 __iter__ method가 만든다.   __next__  __next__: next() built-in function이 호출하는 메소드      iter 가 있는 용어들에 대해 정리하면서 알아보자.    iteration 이란??\n  The process of looping through the objects or items in a collection\n  그러면 파이썬에서 iteration 상황은 무엇이 있을까??\n  Definite iteration 상황: 미리 반복 횟수를 명백하게 정한 상황. ex) for 문\n  Indefinite iteration 상황: 몇 가지 조건이 만족될 때까지 code block을 실행하는 상황. ex) while 문\n      iterable의 의미는 2가지로 사용된다.\n An object(or the adjective used to describe an object) that can be iterated over __iter__을 가지고 있는 객체    이 iterable한 객체 또는 iterable을 iter()에 인자로서 전달하여 반환되는 것을 interator라 불린다.\n  그리고, iter()는 __iter__ method의 return 값(iterator)을 반환하는 함수다.\n The built-in function used to obtain an iterator from an iterable    즉, iterator의 의미는\n The object that produces successive items or values from its associated iterable  iterable object로부터 연속적인 값을 낳는(yield) 값 생성기   iter()로 만들어지는 객체 next() function의 기준으로 보자면, __next__을 가지고 있는 객체    2.2 Iterator 관련 data type  iterator를 반환하는 data type들:  for, collections, string, list, dict, set, tuple, unpacking, *args    # string  iter('foobar') # list  iter(['foo', 'bar', 'baz']) # tuple  iter(('foo', 'bar', 'baz')) # set  iter({'foo', 'bar', 'baz'}) # dict  iter({'foo': 1, 'bar': 2, 'baz': 3})  iterator를 반환하지 않는 data type들  Integer, foat, built-in functions    # Integer  iter(42) Traceback (most recent call last): File \"\", line 1, in  iter(42) TypeError: 'int' object is not iterable # Float  iter(3.1) Traceback (most recent call last): File \"\", line 1, in  iter(3.1) TypeError: 'float' object is not iterable # Built-in functions  iter(len) Traceback (most recent call last): File \"\", line 1, in  iter(len) TypeError: 'builtin_function_or_method' object is not iterable 2.3 iter() 과 next() 예제  내장함수 next()는 값 생성기 iterator으로부터 다음 값을 얻기 위해 사용된다.  # a는 iterable list다.  a = ['foo', 'bar', 'baz'] # iter을 통해서 a의 iterator를 만든다.  itr = iter(a)  itr # nest()를 통해서 itr 안의 다음 값을 얻는다.  next(itr) 'foo'  next(itr) 'bar'  next(itr) 'baz' # 값이 다 소진되면 다음과 같은 Error를 띄운다.  next(itr) StopIteration  만약 iterator로 전환하지 않고, 그냥 사용한다면??? iterator가 아니므로 next()를 사용할 수 없다. 즉 __iter__을 호출하여 전환해야 사용이 가능하다.   w = [1,2,3,4,5] # iter()로 iterator로 전환하지 않았기 때문에 __next__가 없다.  print(dir(w)) ['__add__', '__class__', '__iter__', ..... 'sort']  print(next(w)) TypeError: 'list' object is not an iterator 2.4 iter() 과 next() 토대로 for문 이해하기  그러면 __iter__ 과 __next__를 토대로 for 문을 이해해보자.   t = 'ABCDEF'  for c in t:  print(c) A B C D E F  어떻게 해서 하나씩 출력되는 것일까??? for문의 구조를 다시 확인해보자   for  in :     in 다음에는 iterable이 온다. 그러면 어떻게 하나씩 반환될까??\n __iter__ 과 __next__ 와 연결시켜보자. iteralbe을 입력하면 for문에서 iter()을 호출하여 iterable객체를 iterator로 바꾼 후, __next__ method를 통해 하나씩 출력된는 원리라는 걸 이해할 수 있다.    위에 for문을 while문으로 만들어서 구체적으로 이해해보자.\n   t = 'ABCDEF'  while True:  try:  print(next(t)) # iterator의 내부 성분이 다 출력되면 Error가 발생되고, 중단된다.  except Stopiteration  break 2.5 __iter__ 확인하는 방법  t = 'ABCDEF' # 첫 번째 방법 # 이 방법은 눈으로 찾아봐야하기 때문에, 추천하지 않는다.  print(dir(t)) ['__add__', '__iter__', '__le__', ....'] # 두 번째 방법 # hasattr = has attribution # t가 __iter__를 가지고 있는가??  print(hasattr(t, '__iter_')) True # 세 번째 방법  print(isinstance(t, abc.Iterable)) True 2.6 class로 __next__ 구현하기  class WordSplitter:  def __init__(self, text):  self._idx = 0  self._text = text.split('')  def __next__(self):  print('Called __next__')  try:  word = self._text[self._idx]  except IndexError:  raise StopIteration('Stopped Iteration')  self._idx += 1  return word  def __repr__(self):  return 'WordSplit(%s)' % (self._text)  wi = WordSplitter('Do today what you could do tomorrow')  print(wi) WordSplit(['Do', 'today', 'what', 'you', 'could', 'do', 'tomorrow'])  print(next(wi)) Do  print(next(wi)) today  print(next(wi)) what  print(next(wi)) you  print(next(wi)) could  print(next(wi)) do  print(next(wi)) tomorrow  구현했지만, 코드량이 많아진다. 그러면 제네레이터를 사용해서 구현해보자.   class WordSplitter:  def __init__(self, text): # 인덱스를 기억하지 않아도 된다.  self._text = text.split('')  def __next__(self):  for word in self._text: # 이것이 제네레이터이며, 이 제네레이터가 위치 정보를 기억한다. # 따로 예외처리를 하지 않아도 된다.  yield word  return  def __repr__(self):  return 'WordSplit(%s)' % (self._text)  wi = WordSplitter('Do today what you could do tomorrow')  wt = iter(wg) # 출력 코드는 동일.  Reference  인프런 파이썬 중급 04-3 제너레이터와 yield(feat. return 문) (널널한 교수의 고급 파이썬) ft. 파이썬 코딩  ","wordCount":"891","inLanguage":"en","datePublished":"2022-03-30T14:17:57+09:00","dateModified":"2022-03-30T14:17:57+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -217,25 +217,25 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># string</span>
-<span style=color:#ae81ff>&gt; iter(&#39;foobar&#39;)</span>
-<span style=color:#ae81ff>&lt;str_iterator object at 0x036E2750&gt;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># string</span>
+&gt; iter(&#39;foobar&#39;)
+&lt;str_iterator object at 0x036E2750&gt;
 
-<span style=color:#75715e># list</span>
-<span style=color:#ae81ff>&gt; iter([&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;])</span>
-<span style=color:#ae81ff>&lt;list_iterator object at 0x036E27D0&gt;</span>
+<span style=color:#6272a4># list</span>
+&gt; iter([&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;])
+&lt;list_iterator object at 0x036E27D0&gt;
 
-<span style=color:#75715e># tuple</span>
-<span style=color:#ae81ff>&gt; iter((&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;))</span>
-<span style=color:#ae81ff>&lt;tuple_iterator object at 0x036E27F0&gt;</span>
+<span style=color:#6272a4># tuple</span>
+&gt; iter((&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;))
+&lt;tuple_iterator object at 0x036E27F0&gt;
 
-<span style=color:#75715e># set</span>
-<span style=color:#ae81ff>&gt; iter({&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;})</span>
-<span style=color:#ae81ff>&lt;set_iterator object at 0x036DEA08&gt;</span>
+<span style=color:#6272a4># set</span>
+&gt; iter({&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;})
+&lt;set_iterator object at 0x036DEA08&gt;
 
-<span style=color:#75715e># dict</span>
-<span style=color:#ae81ff>&gt; iter({&#39;foo&#39;: 1, &#39;bar&#39;: 2, &#39;baz&#39;: 3})</span>
-<span style=color:#ae81ff>&lt;dict_keyiterator object at 0x036DD990&gt;</span>
+<span style=color:#6272a4># dict</span>
+&gt; iter({&#39;foo&#39;: 1, &#39;bar&#39;: 2, &#39;baz&#39;: 3})
+&lt;dict_keyiterator object at 0x036DD990&gt;
 </code></pre></div>
 <ul>
 <li>iterator를 반환하지 않는 data type들
@@ -244,83 +244,83 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># Integer</span>
-<span style=color:#ae81ff>&gt;&gt; iter(42)</span>
-<span style=color:#f92672>Traceback (most recent call last)</span><span style=color:#111>:</span>
-  <span style=color:#ae81ff>File &#34;&lt;pyshell#26&gt;&#34;, line 1, in &lt;module&gt;</span>
-    <span style=color:#ae81ff>iter(42)</span>
-<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;int&#39;</span> <span style=color:#ae81ff>object is not iterable</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># Integer</span>
+&gt;&gt; iter(42)
+<span style=color:#ff79c6>Traceback (most recent call last)</span>:
+  File &#34;&lt;pyshell#26&gt;&#34;, line 1, in &lt;module&gt;
+    iter(42)
+<span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;int&#39;</span> object is not iterable
 
-<span style=color:#75715e># Float</span>
-<span style=color:#ae81ff>&gt;&gt;&gt; iter(3.1)</span>
-<span style=color:#f92672>Traceback (most recent call last)</span><span style=color:#111>:</span>
-  <span style=color:#ae81ff>File &#34;&lt;pyshell#27&gt;&#34;, line 1, in &lt;module&gt;</span>
-    <span style=color:#ae81ff>iter(3.1)</span>
-<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;float&#39;</span> <span style=color:#ae81ff>object is not iterable</span>
+<span style=color:#6272a4># Float</span>
+&gt;&gt;&gt; iter(3.1)
+<span style=color:#ff79c6>Traceback (most recent call last)</span>:
+  File &#34;&lt;pyshell#27&gt;&#34;, line 1, in &lt;module&gt;
+    iter(3.1)
+<span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;float&#39;</span> object is not iterable
 
-<span style=color:#75715e># Built-in functions</span>
-<span style=color:#ae81ff>&gt;&gt;&gt; iter(len)</span>
-<span style=color:#f92672>Traceback (most recent call last)</span><span style=color:#111>:</span>
-  <span style=color:#ae81ff>File &#34;&lt;pyshell#28&gt;&#34;, line 1, in &lt;module&gt;</span>
-    <span style=color:#ae81ff>iter(len)</span>
-<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;builtin_function_or_method&#39;</span> <span style=color:#ae81ff>object is not iterable</span>
+<span style=color:#6272a4># Built-in functions</span>
+&gt;&gt;&gt; iter(len)
+<span style=color:#ff79c6>Traceback (most recent call last)</span>:
+  File &#34;&lt;pyshell#28&gt;&#34;, line 1, in &lt;module&gt;
+    iter(len)
+<span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;builtin_function_or_method&#39;</span> object is not iterable
 </code></pre></div>
 <h2 id=23-iter-과-next-예제>2.3 iter() 과 next() 예제<a hidden class=anchor aria-hidden=true href=#23-iter-과-next-예제>#</a></h2>
 <ul>
 <li>내장함수 <code>next()</code>는 값 생성기 iterator으로부터 다음 값을 얻기 위해 사용된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># a는 iterable list다.</span>
-<span style=color:#ae81ff>&gt; a = [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># a는 iterable list다.</span>
+&gt; a = [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]
 
-<span style=color:#75715e># iter을 통해서 a의 iterator를 만든다.</span>
-<span style=color:#ae81ff>&gt; itr = iter(a)</span>
-<span style=color:#ae81ff>&gt; itr</span>
-<span style=color:#ae81ff>&lt;list_iterator object at 0x031EFD10&gt;</span>
+<span style=color:#6272a4># iter을 통해서 a의 iterator를 만든다.</span>
+&gt; itr = iter(a)
+&gt; itr
+&lt;list_iterator object at 0x031EFD10&gt;
 
-<span style=color:#75715e># nest()를 통해서 itr 안의 다음 값을 얻는다.</span>
-<span style=color:#ae81ff>&gt; next(itr)</span>
-<span style=color:#d88200>&#39;foo&#39;</span>
-<span style=color:#ae81ff>&gt; next(itr)</span>
-<span style=color:#d88200>&#39;bar&#39;</span>
-<span style=color:#ae81ff>&gt; next(itr)</span>
-<span style=color:#d88200>&#39;baz&#39;</span>
+<span style=color:#6272a4># nest()를 통해서 itr 안의 다음 값을 얻는다.</span>
+&gt; next(itr)
+<span style=color:#f1fa8c>&#39;foo&#39;</span>
+&gt; next(itr)
+<span style=color:#f1fa8c>&#39;bar&#39;</span>
+&gt; next(itr)
+<span style=color:#f1fa8c>&#39;baz&#39;</span>
 
-<span style=color:#75715e># 값이 다 소진되면 다음과 같은 Error를 띄운다.</span>
-<span style=color:#ae81ff>&gt; next(itr)</span>
-<span style=color:#ae81ff>StopIteration</span>
+<span style=color:#6272a4># 값이 다 소진되면 다음과 같은 Error를 띄운다.</span>
+&gt; next(itr)
+StopIteration
 </code></pre></div><ul>
 <li>만약 iterator로 전환하지 않고, 그냥 사용한다면???</li>
 <li>iterator가 아니므로 <code>next()</code>를 사용할 수 없다.</li>
 <li>즉 <code>__iter__</code>을 호출하여 전환해야 사용이 가능하다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; w = [1,2,3,4,5]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; w = [1,2,3,4,5]
 
-<span style=color:#75715e># iter()로 iterator로 전환하지 않았기 때문에 __next__가 없다.</span>
-<span style=color:#ae81ff>&gt; print(dir(w))</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;__add__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__class__&#39;</span><span style=color:#111>,</span>  <span style=color:#d88200>&#39;__iter__&#39;</span><span style=color:#111>,</span> <span style=color:#ae81ff>..... &#39;sort&#39;]</span>
+<span style=color:#6272a4># iter()로 iterator로 전환하지 않았기 때문에 __next__가 없다.</span>
+&gt; print(dir(w))
+[<span style=color:#f1fa8c>&#39;__add__&#39;</span>, <span style=color:#f1fa8c>&#39;__class__&#39;</span>,  <span style=color:#f1fa8c>&#39;__iter__&#39;</span>, ..... &#39;sort&#39;]
 
-<span style=color:#ae81ff>&gt; print(next(w))</span>
-<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;list&#39;</span> <span style=color:#ae81ff>object is not an iterator</span>
+&gt; print(next(w))
+<span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;list&#39;</span> object is not an iterator
 </code></pre></div>
 <h2 id=24-iter-과-next-토대로-for문-이해하기>2.4 iter() 과 next() 토대로 for문 이해하기<a hidden class=anchor aria-hidden=true href=#24-iter-과-next-토대로-for문-이해하기>#</a></h2>
 <ul>
 <li>그러면 <code>__iter__</code> 과 <code>__next__</code>를 토대로 for 문을 이해해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; t = &#39;ABCDEF&#39;</span>
-<span style=color:#f92672>&gt; for c in t</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   print(c)</span>
-<span style=color:#ae81ff>A</span>
-<span style=color:#ae81ff>B</span>
-<span style=color:#ae81ff>C</span>
-<span style=color:#ae81ff>D</span>
-<span style=color:#ae81ff>E</span>
-<span style=color:#ae81ff>F</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; t = &#39;ABCDEF&#39;
+<span style=color:#ff79c6>&gt; for c in t</span>:
+&gt;   print(c)
+A
+B
+C
+D
+E
+F
 </code></pre></div><ul>
 <li>어떻게 해서 하나씩 출력되는 것일까???</li>
 <li>for문의 구조를 다시 확인해보자</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; for &lt;var&gt; in &lt;iterable&gt;</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     &lt;statement(s)&gt;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; for &lt;var&gt; in &lt;iterable&gt;</span>:
+&gt;     &lt;statement(s)&gt;
 </code></pre></div><ul>
 <li>
 <p>in 다음에는 iterable이 온다. 그러면 어떻게 하나씩 반환될까??</p>
@@ -333,97 +333,97 @@
 <p>위에 for문을 while문으로 만들어서 구체적으로 이해해보자.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; t = &#39;ABCDEF&#39;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; t = &#39;ABCDEF&#39;
 
-<span style=color:#f92672>&gt; while True</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   try</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       print(next(t))</span>
-<span style=color:#75715e># iterator의 내부 성분이 다 출력되면 Error가 발생되고, 중단된다.</span>
-<span style=color:#ae81ff>&gt;   except Stopiteration</span>
-<span style=color:#ae81ff>&gt;       break</span>
+<span style=color:#ff79c6>&gt; while True</span>:
+<span style=color:#ff79c6>&gt;   try</span>:
+&gt;       print(next(t))
+<span style=color:#6272a4># iterator의 내부 성분이 다 출력되면 Error가 발생되고, 중단된다.</span>
+&gt;   except Stopiteration
+&gt;       break
 </code></pre></div>
 <h2 id=25-__iter__-확인하는-방법>2.5 __iter__ 확인하는 방법<a hidden class=anchor aria-hidden=true href=#25-__iter__-확인하는-방법>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; t = &#39;ABCDEF&#39;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; t = &#39;ABCDEF&#39;
 
-<span style=color:#75715e># 첫 번째 방법</span>
-<span style=color:#75715e># 이 방법은 눈으로 찾아봐야하기 때문에, 추천하지 않는다.</span>
-<span style=color:#ae81ff>&gt; print(dir(t))</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;__add__&#39;</span><span style=color:#111>,</span>  <span style=color:#d88200>&#39;__iter__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__le__&#39;</span><span style=color:#111>,</span> <span style=color:#ae81ff>....&#39;]</span>
+<span style=color:#6272a4># 첫 번째 방법</span>
+<span style=color:#6272a4># 이 방법은 눈으로 찾아봐야하기 때문에, 추천하지 않는다.</span>
+&gt; print(dir(t))
+[<span style=color:#f1fa8c>&#39;__add__&#39;</span>,  <span style=color:#f1fa8c>&#39;__iter__&#39;</span>, <span style=color:#f1fa8c>&#39;__le__&#39;</span>, ....&#39;]
 
-<span style=color:#75715e># 두 번째 방법</span>
-<span style=color:#75715e># hasattr = has attribution</span>
-<span style=color:#75715e># t가 __iter__를 가지고 있는가??</span>
-<span style=color:#ae81ff>&gt; print(hasattr(t, &#39;__iter_&#39;))</span>
-<span style=color:#00a8c8>True</span>
+<span style=color:#6272a4># 두 번째 방법</span>
+<span style=color:#6272a4># hasattr = has attribution</span>
+<span style=color:#6272a4># t가 __iter__를 가지고 있는가??</span>
+&gt; print(hasattr(t, &#39;__iter_&#39;))
+<span style=color:#ff79c6>True</span>
 
-<span style=color:#75715e># 세 번째 방법</span>
-<span style=color:#ae81ff>&gt; print(isinstance(t, abc.Iterable))</span>
-<span style=color:#00a8c8>True</span>
+<span style=color:#6272a4># 세 번째 방법</span>
+&gt; print(isinstance(t, abc.Iterable))
+<span style=color:#ff79c6>True</span>
 </code></pre></div>
 <h2 id=26-class로-__next__-구현하기>2.6 class로 __next__ 구현하기<a hidden class=anchor aria-hidden=true href=#26-class로-__next__-구현하기>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class WordSplitter</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   def __init__(self, text)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       self._idx = 0</span>
-<span style=color:#ae81ff>&gt;       self._text = text.split(&#39;&#39;)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; class WordSplitter</span>:
+<span style=color:#ff79c6>&gt;   def __init__(self, text)</span>:
+&gt;       self._idx = 0
+&gt;       self._text = text.split(&#39;&#39;)
 
-<span style=color:#f92672>&gt;   def __next__(self)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       print(&#39;Called __next__&#39;)</span>
-<span style=color:#f92672>&gt;       try</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;           word = self._text[self._idx]</span>
-<span style=color:#f92672>&gt;       except IndexError</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;           raise StopIteration(&#39;Stopped Iteration&#39;)</span>
-<span style=color:#ae81ff>&gt;       self._idx += 1</span>
-<span style=color:#ae81ff>&gt;       return word</span>
+<span style=color:#ff79c6>&gt;   def __next__(self)</span>:
+&gt;       print(&#39;Called __next__&#39;)
+<span style=color:#ff79c6>&gt;       try</span>:
+&gt;           word = self._text[self._idx]
+<span style=color:#ff79c6>&gt;       except IndexError</span>:
+&gt;           raise StopIteration(&#39;Stopped Iteration&#39;)
+&gt;       self._idx += 1
+&gt;       return word
 
-<span style=color:#f92672>&gt;   def __repr__(self)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       return &#39;WordSplit(%s)&#39; % (self._text)</span>
+<span style=color:#ff79c6>&gt;   def __repr__(self)</span>:
+&gt;       return &#39;WordSplit(%s)&#39; % (self._text)
 
 
-<span style=color:#ae81ff>&gt; wi = WordSplitter(&#39;Do today what you could do tomorrow&#39;)</span>
+&gt; wi = WordSplitter(&#39;Do today what you could do tomorrow&#39;)
 
-<span style=color:#ae81ff>&gt; print(wi)</span>
-<span style=color:#ae81ff>WordSplit([&#39;Do&#39;, &#39;today&#39;, &#39;what&#39;, &#39;you&#39;, &#39;could&#39;, &#39;do&#39;, &#39;tomorrow&#39;])</span>
+&gt; print(wi)
+WordSplit([&#39;Do&#39;, &#39;today&#39;, &#39;what&#39;, &#39;you&#39;, &#39;could&#39;, &#39;do&#39;, &#39;tomorrow&#39;])
 
-<span style=color:#ae81ff>&gt; print(next(wi))</span>
-<span style=color:#ae81ff>Do</span>
-<span style=color:#ae81ff>&gt; print(next(wi))</span>
-<span style=color:#ae81ff>today</span>
-<span style=color:#ae81ff>&gt; print(next(wi))</span>
-<span style=color:#ae81ff>what</span>
-<span style=color:#ae81ff>&gt; print(next(wi))</span>
-<span style=color:#ae81ff>you</span>
-<span style=color:#ae81ff>&gt; print(next(wi))</span>
-<span style=color:#ae81ff>could</span>
-<span style=color:#ae81ff>&gt; print(next(wi))</span>
-<span style=color:#ae81ff>do</span>
-<span style=color:#ae81ff>&gt; print(next(wi))</span>
-<span style=color:#ae81ff>tomorrow</span>
+&gt; print(next(wi))
+Do
+&gt; print(next(wi))
+today
+&gt; print(next(wi))
+what
+&gt; print(next(wi))
+you
+&gt; print(next(wi))
+could
+&gt; print(next(wi))
+do
+&gt; print(next(wi))
+tomorrow
 </code></pre></div><ul>
 <li>구현했지만, 코드량이 많아진다. 그러면 제네레이터를 사용해서 구현해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class WordSplitter</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   def __init__(self, text)</span><span style=color:#111>:</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; class WordSplitter</span>:
+<span style=color:#ff79c6>&gt;   def __init__(self, text)</span>:
 
-<span style=color:#75715e># 인덱스를 기억하지 않아도 된다.</span>
-<span style=color:#ae81ff>&gt;       self._text = text.split(&#39;&#39;)</span>
+<span style=color:#6272a4># 인덱스를 기억하지 않아도 된다.</span>
+&gt;       self._text = text.split(&#39;&#39;)
 
-<span style=color:#f92672>&gt;   def __next__(self)</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;       for word in self._text</span><span style=color:#111>:</span>
+<span style=color:#ff79c6>&gt;   def __next__(self)</span>:
+<span style=color:#ff79c6>&gt;       for word in self._text</span>:
 
-<span style=color:#75715e># 이것이 제네레이터이며, 이 제네레이터가 위치 정보를 기억한다.</span>
-<span style=color:#75715e># 따로 예외처리를 하지 않아도 된다.</span>
-<span style=color:#ae81ff>&gt;           yield word</span>
-<span style=color:#ae81ff>&gt;       return</span>
+<span style=color:#6272a4># 이것이 제네레이터이며, 이 제네레이터가 위치 정보를 기억한다.</span>
+<span style=color:#6272a4># 따로 예외처리를 하지 않아도 된다.</span>
+&gt;           yield word
+&gt;       return
 
-<span style=color:#f92672>&gt;   def __repr__(self)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       return &#39;WordSplit(%s)&#39; % (self._text)</span>
+<span style=color:#ff79c6>&gt;   def __repr__(self)</span>:
+&gt;       return &#39;WordSplit(%s)&#39; % (self._text)
 
 
-<span style=color:#ae81ff>&gt; wi = WordSplitter(&#39;Do today what you could do tomorrow&#39;)</span>
+&gt; wi = WordSplitter(&#39;Do today what you could do tomorrow&#39;)
 
-<span style=color:#ae81ff>&gt; wt = iter(wg)</span>
+&gt; wt = iter(wg)
 
-<span style=color:#75715e># 출력 코드는 동일.</span>
+<span style=color:#6272a4># 출력 코드는 동일.</span>
 </code></pre></div>
 <hr>
 <h1 id=reference>Reference<a hidden class=anchor aria-hidden=true href=#reference>#</a></h1>

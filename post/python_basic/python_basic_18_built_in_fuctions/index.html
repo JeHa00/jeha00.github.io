@@ -35,7 +35,7 @@
 <meta name=twitter:title content="[TIL] Python basic 18: built-in functions">
 <meta name=twitter:description content="내장 함수란 무엇이고, 내장 함수에서 자주 사용된 것들로 실습을 해보겠다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 18: built-in functions","item":"http://jeha00.github.io/post/python_basic/python_basic_18_built_in_fuctions/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 18: built-in functions","name":"[TIL] Python basic 18: built-in functions","description":"내장 함수란 무엇이고, 내장 함수에서 자주 사용된 것들로 실습을 해보겠다.","keywords":["TIL","python"],"articleBody":" 내장 함수란 프로그래밍 언어의 라이브러리에(파이썬의 인터프리터에) 이미 등록되어 있는 함수를 말한다. 그래서 별도의 정의나 설치가 필요없다. 외장 내장 구분하는 건 중요하지 않고, 필요한 곳에 이미 파이썬에 내장된 함수를 찾아서 프로그램을 개발할 때, 적합한 어떤 위치에서 사용하는 게 중요하다. 예시를 사용하여 내장함수에 대해 알아보겠다. 아래에 예시로 사용하는 내장함수는 반드시 알고 있자.   abs(): 입력된 숫자형 데이터를 절대값으로 반환해주는 함수   print(abs(-3)) 3  all() , any: interable 요소를 검사하여 성분이 참인지 거짓인지 검사하는 함수 (True or False) all() 은 안에 있는 요소가 논리 연산자 and처럼 다 True여야 True를 반환한다. any() 는 논리 연산자 or처럼 안에 있는 요소들 중 하나라도 True가 있으면 True다.   print(all([1, 2, 3])) True  print(all([False, True])) False  print(any([False, True])) True  print(any([False, False])) False  chr(): 아스키 코드를 문자로 반환하는 함수 ord(): 문자를 아스키 코드로 반환하는 함수   print(chr(67)) C  print(ord('c')) 67  enumerate(): index + Iterable 객체(list, tuple, dictionary, set)을 생성한다.   for i, name in enumerate(['abc', 'bcd', 'eft']):  print(i, name) 0 abc 1 bcd 2 efg  filter(): Iterable 객체를 지정한 함수 조건에 맞는 값만 추출한다. filter(function or None, iterable) – filter object   def conv_positive(x):  return abs(x)  2 # 위에서 지정한 함수 조건은 'conv_posotive' 에 의해서 주어지고, interable 데이터가 입력된다.  print(filter(conv_positive, [1, -3, 2, 0, -5, 6]))   print(list(filter(conv_pos, [1, -3, 2, 0, -5, 6]))) [-3, -5, 6] ## 단 한 번 쓸 함수를 위해 위에처럼 정의하면 분량이 늘어난다. 이럴 때, lamda 함수를 사용한다.  print(list(filter(lambda x: abs(x)  2, [1, -3, 2, 0, -5, 6])))  id(): 객체의 주소값(reference)를 반환한다. id(): Return the identity of an object.   print(id(5)) 2144671066544  print(id(float(4))) 2144671700368  len: 요소의 길이를 반환한다. len: Return the number of items in a container.   print(len('123456789')) 9  print(len([1,2,3,4,5,6,7])) 7  max: 입력된 iterable 자료형 중에 가장 큰 값을 반환한다. max: With a single iterable argument, return its biggest item. With two or more arguments, return the largest argument. min: max와 반대로 가장 작은 값을 반환한다.   print(max([1,2,3])) 3 ## 오름차순 시, y가 제일 크다.  print(max('python study')) y  print(min([1,2,3])) 1 # blank가 제일 작은 값이라, 아무것도 없어보인다.  print(min('python study'))  map: iterable 객체 요소를 지정한 함수를 실행 후 추출 map: map(func, *iterables) – map object  Make an iterator that computes the function using arguments from each of the iterables.   데이터 전처리 과정에서 많이 사용한다.   def conv_abs(x):  return abs(x)  print(list(map(conv_abs,[1,-3,2,0,-5,6]))) [1, 3, 2, 0, 5, 6] ## 또는 위에 함수 정의를 하지 않고, 람다 함수를 사용한다.  print(list(map(lambda x:abs(x),[1,-3,2,0,-5,6]))) [1, 3, 2, 0, 5, 6]  pow : 제곱값 반환   print(pow(2,10)) 1024  range: 반복가능한 객체(Iterable) 반환   print(range(1,10,2)) range(1, 10, 2)  print(list(range(1,10,2))) [1, 3, 5, 7, 9]  print(list(range(0,-15,-1)) [0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14]  round: 반올림  ## 소수점 둘쨰자리에서 반올림한다.  print(round(6.5781, 2)) 6.58  print(round(5.6)) 6  sum: 반복가능한 객체(Iterable) 합 반환   print(sum([6, 7, 8, 9, 10])) 40  print(sum(range(1,101))) 5050  type: 자료형의 type을 확인   print(type(3))   print(type({}))   print(type(()))   print(type([]))   zip: Iterable 객체의 요소를 묶어서 tuple type으로 반환 zip: A zip object yielding tuples until an input is exhausted.   print(list(zip([10,20,30],[40,50,777]))) [(10, 40), (20, 50), (30, 777)] # 짝이 맞는 것만 반환한다. # list 안에 tuple type의 argument가 담겨져있다.  print(list(zip([10,20,],[40,50,777]))) [(10, 40), (20, 50)]  print(type(list(zip([10,20,30],[40,50,777]))[0]))  ","wordCount":"548","inLanguage":"en","datePublished":"2022-03-03T01:33:46+09:00","dateModified":"2022-03-03T01:33:46+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_18_built_in_fuctions/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 18: built-in functions","name":"[TIL] Python basic 18: built-in functions","description":"내장 함수란 무엇이고, 내장 함수에서 자주 사용된 것들로 실습을 해보겠다.","keywords":["TIL","python"],"articleBody":" 내장 함수란 프로그래밍 언어의 라이브러리에(파이썬의 인터프리터에) 이미 등록되어 있는 함수를 말한다. 그래서 별도의 정의나 설치가 필요없다. 외장 내장 구분하는 건 중요하지 않고, 필요한 곳에 이미 파이썬에 내장된 함수를 찾아서 프로그램을 개발할 때, 적합한 어떤 위치에서 사용하는 게 중요하다. 예시를 사용하여 내장함수에 대해 알아보겠다. 아래에 예시로 사용하는 내장함수는 반드시 알고 있자.   abs(): 입력된 숫자형 데이터를 절대값으로 반환해주는 함수   print(abs(-3)) 3  all() , any: interable 요소를 검사하여 성분이 참인지 거짓인지 검사하는 함수 (True or False) all() 은 안에 있는 요소가 논리 연산자 and처럼 다 True여야 True를 반환한다. any() 는 논리 연산자 or처럼 안에 있는 요소들 중 하나라도 True가 있으면 True다.   print(all([1, 2, 3])) True  print(all([False, True])) False  print(any([False, True])) True  print(any([False, False])) False  chr(): 아스키 코드를 문자로 반환하는 함수 ord(): 문자를 아스키 코드로 반환하는 함수   print(chr(67)) C  print(ord('c')) 67  enumerate(): index + Iterable 객체(list, tuple, dictionary, set)을 생성한다.   for i, name in enumerate(['abc', 'bcd', 'eft']):  print(i, name) 0 abc 1 bcd 2 efg  filter(): Iterable 객체를 지정한 함수 조건에 맞는 값만 추출한다. filter(function or None, iterable) – filter object   def conv_positive(x):  return abs(x)  2 # 위에서 지정한 함수 조건은 'conv_posotive' 에 의해서 주어지고, interable 데이터가 입력된다.  print(filter(conv_positive, [1, -3, 2, 0, -5, 6]))  print(list(filter(conv_pos, [1, -3, 2, 0, -5, 6]))) [-3, -5, 6] ## 단 한 번 쓸 함수를 위해 위에처럼 정의하면 분량이 늘어난다. 이럴 때, lamda 함수를 사용한다.  print(list(filter(lambda x: abs(x)  2, [1, -3, 2, 0, -5, 6])))  id(): 객체의 주소값(reference)를 반환한다. id(): Return the identity of an object.   print(id(5)) 2144671066544  print(id(float(4))) 2144671700368  len: 요소의 길이를 반환한다. len: Return the number of items in a container.   print(len('123456789')) 9  print(len([1,2,3,4,5,6,7])) 7  max: 입력된 iterable 자료형 중에 가장 큰 값을 반환한다. max: With a single iterable argument, return its biggest item. With two or more arguments, return the largest argument. min: max와 반대로 가장 작은 값을 반환한다.   print(max([1,2,3])) 3 ## 오름차순 시, y가 제일 크다.  print(max('python study')) y  print(min([1,2,3])) 1 # blank가 제일 작은 값이라, 아무것도 없어보인다.  print(min('python study'))  map: iterable 객체 요소를 지정한 함수를 실행 후 추출 map: map(func, *iterables) – map object  Make an iterator that computes the function using arguments from each of the iterables.   데이터 전처리 과정에서 많이 사용한다.   def conv_abs(x):  return abs(x)  print(list(map(conv_abs,[1,-3,2,0,-5,6]))) [1, 3, 2, 0, 5, 6] ## 또는 위에 함수 정의를 하지 않고, 람다 함수를 사용한다.  print(list(map(lambda x:abs(x),[1,-3,2,0,-5,6]))) [1, 3, 2, 0, 5, 6]  pow : 제곱값 반환   print(pow(2,10)) 1024  range: 반복가능한 객체(Iterable) 반환   print(range(1,10,2)) range(1, 10, 2)  print(list(range(1,10,2))) [1, 3, 5, 7, 9]  print(list(range(0,-15,-1)) [0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14]  round: 반올림  ## 소수점 둘쨰자리에서 반올림한다.  print(round(6.5781, 2)) 6.58  print(round(5.6)) 6  sum: 반복가능한 객체(Iterable) 합 반환   print(sum([6, 7, 8, 9, 10])) 40  print(sum(range(1,101))) 5050  type: 자료형의 type을 확인   print(type(3))  print(type({}))  print(type(()))  print(type([]))  zip: Iterable 객체의 요소를 묶어서 tuple type으로 반환 zip: A zip object yielding tuples until an input is exhausted.   print(list(zip([10,20,30],[40,50,777]))) [(10, 40), (20, 50), (30, 777)] # 짝이 맞는 것만 반환한다. # list 안에 tuple type의 argument가 담겨져있다.  print(list(zip([10,20,],[40,50,777]))) [(10, 40), (20, 50)]  print(type(list(zip([10,20,30],[40,50,777]))[0])) ","wordCount":"548","inLanguage":"en","datePublished":"2022-03-03T01:33:46+09:00","dateModified":"2022-03-03T01:33:46+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_18_built_in_fuctions/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -91,95 +91,95 @@
 <ul>
 <li><code>abs()</code>: 입력된 숫자형 데이터를 절대값으로 반환해주는 함수</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(abs(-3))</span>
-<span style=color:#ae81ff>3</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(abs(-3))
+<span style=color:#bd93f9>3</span>
 </code></pre></div>
 <ul>
 <li><code>all()</code> , <code>any</code>: interable 요소를 검사하여 성분이 참인지 거짓인지 검사하는 함수 (True or False)</li>
 <li><code>all()</code> 은 안에 있는 요소가 논리 연산자 <code>and</code>처럼 다 True여야 True를 반환한다.</li>
 <li><code>any()</code> 는 논리 연산자 <code>or</code>처럼 안에 있는 요소들 중 하나라도 True가 있으면 True다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(all([1, 2, 3]))</span>
-<span style=color:#00a8c8>True</span>
-<span style=color:#ae81ff>&gt; print(all([False, True]))</span>
-<span style=color:#00a8c8>False</span>
-<span style=color:#ae81ff>&gt; print(any([False, True]))</span>
-<span style=color:#00a8c8>True</span>
-<span style=color:#ae81ff>&gt; print(any([False, False]))</span>
-<span style=color:#00a8c8>False</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(all([1, 2, 3]))
+<span style=color:#ff79c6>True</span>
+&gt; print(all([False, True]))
+<span style=color:#ff79c6>False</span>
+&gt; print(any([False, True]))
+<span style=color:#ff79c6>True</span>
+&gt; print(any([False, False]))
+<span style=color:#ff79c6>False</span>
 </code></pre></div>
 <ul>
 <li><code>chr()</code>: 아스키 코드를 문자로 반환하는 함수</li>
 <li><code>ord()</code>: 문자를 아스키 코드로 반환하는 함수</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(chr(67))</span>
-<span style=color:#ae81ff>C</span>
-<span style=color:#ae81ff>&gt; print(ord(&#39;c&#39;))</span>
-<span style=color:#ae81ff>67</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(chr(67))
+C
+&gt; print(ord(&#39;c&#39;))
+<span style=color:#bd93f9>67</span>
 </code></pre></div>
 <ul>
 <li><strong><code>enumerate()</code>: index + Iterable 객체(list, tuple, dictionary, set)을 생성한다.</strong></li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; for i, name in enumerate([&#39;abc&#39;, &#39;bcd&#39;, &#39;eft&#39;])</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    print(i, name)</span>
-<span style=color:#ae81ff>0</span> <span style=color:#ae81ff>abc</span>
-<span style=color:#ae81ff>1</span> <span style=color:#ae81ff>bcd</span>
-<span style=color:#ae81ff>2</span> <span style=color:#ae81ff>efg</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; for i, name in enumerate([&#39;abc&#39;, &#39;bcd&#39;, &#39;eft&#39;])</span>:
+&gt;    print(i, name)
+<span style=color:#bd93f9>0</span> abc
+<span style=color:#bd93f9>1</span> bcd
+<span style=color:#bd93f9>2</span> efg
 </code></pre></div>
 <ul>
 <li><code>filter()</code>: Iterable 객체를 <code>지정한 함수 조건</code>에 맞는 값만 추출한다.</li>
 <li>filter(function or None, iterable) &ndash;> filter object</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def conv_positive(x)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    return abs(x) &gt; 2</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; def conv_positive(x)</span>:
+&gt;    return abs(x) &gt; 2
 
-<span style=color:#75715e># 위에서 지정한 함수 조건은 &#39;conv_posotive&#39; 에 의해서 주어지고, interable 데이터가 입력된다.</span>
-<span style=color:#ae81ff>&gt; print(filter(conv_positive, [1, -3, 2, 0, -5, 6]))</span>
-<span style=color:#ae81ff>&lt;filter object at 0x0000025A0B362FA0&gt;</span>
+<span style=color:#6272a4># 위에서 지정한 함수 조건은 &#39;conv_posotive&#39; 에 의해서 주어지고, interable 데이터가 입력된다.</span>
+&gt; print(filter(conv_positive, [1, -3, 2, 0, -5, 6]))
+&lt;filter object at 0x0000025A0B362FA0&gt;
 
-<span style=color:#ae81ff>&gt; print(list(filter(conv_pos, [1, -3, 2, 0, -5, 6])))</span>
-<span style=color:#111>[</span>-<span style=color:#ae81ff>3</span><span style=color:#111>,</span> -<span style=color:#ae81ff>5</span><span style=color:#111>,</span> <span style=color:#ae81ff>6</span><span style=color:#111>]</span>
+&gt; print(list(filter(conv_pos, [1, -3, 2, 0, -5, 6])))
+[-<span style=color:#bd93f9>3</span>, -<span style=color:#bd93f9>5</span>, <span style=color:#bd93f9>6</span>]
 
-<span style=color:#75715e>## 단 한 번 쓸 함수를 위해 위에처럼 정의하면 분량이 늘어난다. 이럴 때, lamda 함수를 사용한다.</span>
-<span style=color:#f92672>&gt; print(list(filter(lambda x</span><span style=color:#111>:</span> <span style=color:#ae81ff>abs(x) &gt; 2, [1, -3, 2, 0, -5, 6])))</span>
+<span style=color:#6272a4>## 단 한 번 쓸 함수를 위해 위에처럼 정의하면 분량이 늘어난다. 이럴 때, lamda 함수를 사용한다.</span>
+<span style=color:#ff79c6>&gt; print(list(filter(lambda x</span>: abs(x) &gt; 2, [1, -3, 2, 0, -5, 6])))
 </code></pre></div>
 <ul>
 <li><code>id()</code>: 객체의 주소값(reference)를 반환한다.</li>
 <li><code>id()</code>: Return the identity of an object.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(id(5))</span>
-<span style=color:#ae81ff>2144671066544</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(id(5))
+<span style=color:#bd93f9>2144671066544</span>
 
-<span style=color:#ae81ff>&gt; print(id(float(4)))</span>
-<span style=color:#ae81ff>2144671700368</span>
+&gt; print(id(float(4)))
+<span style=color:#bd93f9>2144671700368</span>
 </code></pre></div>
 <ul>
 <li><code>len</code>: 요소의 길이를 반환한다.</li>
 <li><code>len</code>: Return the number of items in a container.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(len(&#39;123456789&#39;))</span>
-<span style=color:#ae81ff>9</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(len(&#39;123456789&#39;))
+<span style=color:#bd93f9>9</span>
 
-<span style=color:#ae81ff>&gt; print(len([1,2,3,4,5,6,7]))</span>
-<span style=color:#ae81ff>7</span>
+&gt; print(len([1,2,3,4,5,6,7]))
+<span style=color:#bd93f9>7</span>
 </code></pre></div>
 <ul>
 <li><code>max</code>: 입력된 iterable 자료형 중에 가장 큰 값을 반환한다.</li>
 <li><code>max</code>: With a single iterable argument, return its biggest item. With two or more arguments, return the largest argument.</li>
 <li><code>min</code>: <code>max</code>와 반대로 가장 작은 값을 반환한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(max([1,2,3]))</span>
-<span style=color:#ae81ff>3</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(max([1,2,3]))
+<span style=color:#bd93f9>3</span>
 
-<span style=color:#75715e>## 오름차순 시, y가 제일 크다.</span>
-<span style=color:#ae81ff>&gt; print(max(&#39;python study&#39;))</span>
-<span style=color:#00a8c8>y</span>
+<span style=color:#6272a4>## 오름차순 시, y가 제일 크다.</span>
+&gt; print(max(&#39;python study&#39;))
+<span style=color:#ff79c6>y</span>
 
-<span style=color:#ae81ff>&gt; print(min([1,2,3]))</span>
-<span style=color:#ae81ff>1</span>
+&gt; print(min([1,2,3]))
+<span style=color:#bd93f9>1</span>
 
-<span style=color:#75715e># blank가 제일 작은 값이라, 아무것도 없어보인다.</span>
-<span style=color:#ae81ff>&gt; print(min(&#39;python study&#39;))</span>
+<span style=color:#6272a4># blank가 제일 작은 값이라, 아무것도 없어보인다.</span>
+&gt; print(min(&#39;python study&#39;))
 
 
 </code></pre></div>
@@ -192,84 +192,84 @@
 </li>
 <li>데이터 전처리 과정에서 많이 사용한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt;  def conv_abs(x)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;      return abs(x)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt;  def conv_abs(x)</span>:
+&gt;      return abs(x)
 
-<span style=color:#ae81ff>&gt;  print(list(map(conv_abs,[1,-3,2,0,-5,6])))</span>
-<span style=color:#111>[</span><span style=color:#ae81ff>1</span><span style=color:#111>,</span> <span style=color:#ae81ff>3</span><span style=color:#111>,</span> <span style=color:#ae81ff>2</span><span style=color:#111>,</span> <span style=color:#ae81ff>0</span><span style=color:#111>,</span> <span style=color:#ae81ff>5</span><span style=color:#111>,</span> <span style=color:#ae81ff>6</span><span style=color:#111>]</span>
+&gt;  print(list(map(conv_abs,[1,-3,2,0,-5,6])))
+[<span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>5</span>, <span style=color:#bd93f9>6</span>]
 
-<span style=color:#75715e>## 또는 위에 함수 정의를 하지 않고, 람다 함수를 사용한다.</span>
+<span style=color:#6272a4>## 또는 위에 함수 정의를 하지 않고, 람다 함수를 사용한다.</span>
 
 
-<span style=color:#ae81ff>&gt;  print(list(map(lambda x:abs(x),[1,-3,2,0,-5,6])))</span>
-<span style=color:#111>[</span><span style=color:#ae81ff>1</span><span style=color:#111>,</span> <span style=color:#ae81ff>3</span><span style=color:#111>,</span> <span style=color:#ae81ff>2</span><span style=color:#111>,</span> <span style=color:#ae81ff>0</span><span style=color:#111>,</span> <span style=color:#ae81ff>5</span><span style=color:#111>,</span> <span style=color:#ae81ff>6</span><span style=color:#111>]</span>
+&gt;  print(list(map(lambda x:abs(x),[1,-3,2,0,-5,6])))
+[<span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>0</span>, <span style=color:#bd93f9>5</span>, <span style=color:#bd93f9>6</span>]
 
 </code></pre></div>
 <ul>
 <li><code>pow</code> : 제곱값 반환</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(pow(2,10))</span>
-<span style=color:#ae81ff>1024</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(pow(2,10))
+<span style=color:#bd93f9>1024</span>
 </code></pre></div>
 <ul>
 <li><code>range</code>: 반복가능한 객체(Iterable) 반환</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(range(1,10,2))</span>
-<span style=color:#ae81ff>range(1, 10, 2)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(range(1,10,2))
+range(1, 10, 2)
 
-<span style=color:#ae81ff>&gt; print(list(range(1,10,2)))</span>
-<span style=color:#111>[</span><span style=color:#ae81ff>1</span><span style=color:#111>,</span> <span style=color:#ae81ff>3</span><span style=color:#111>,</span> <span style=color:#ae81ff>5</span><span style=color:#111>,</span> <span style=color:#ae81ff>7</span><span style=color:#111>,</span> <span style=color:#ae81ff>9</span><span style=color:#111>]</span>
+&gt; print(list(range(1,10,2)))
+[<span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>5</span>, <span style=color:#bd93f9>7</span>, <span style=color:#bd93f9>9</span>]
 
-<span style=color:#ae81ff>&gt; print(list(range(0,-15,-1))</span>
-<span style=color:#111>[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span> -<span style=color:#ae81ff>1</span><span style=color:#111>,</span> -<span style=color:#ae81ff>2</span><span style=color:#111>,</span> -<span style=color:#ae81ff>3</span><span style=color:#111>,</span> -<span style=color:#ae81ff>4</span><span style=color:#111>,</span> -<span style=color:#ae81ff>5</span><span style=color:#111>,</span> -<span style=color:#ae81ff>6</span><span style=color:#111>,</span> -<span style=color:#ae81ff>7</span><span style=color:#111>,</span> -<span style=color:#ae81ff>8</span><span style=color:#111>,</span> -<span style=color:#ae81ff>9</span><span style=color:#111>,</span> -<span style=color:#ae81ff>10</span><span style=color:#111>,</span> -<span style=color:#ae81ff>11</span><span style=color:#111>,</span> -<span style=color:#ae81ff>12</span><span style=color:#111>,</span> -<span style=color:#ae81ff>13</span><span style=color:#111>,</span> -<span style=color:#ae81ff>14</span><span style=color:#111>]</span>
+&gt; print(list(range(0,-15,-1))
+[<span style=color:#bd93f9>0</span>, -<span style=color:#bd93f9>1</span>, -<span style=color:#bd93f9>2</span>, -<span style=color:#bd93f9>3</span>, -<span style=color:#bd93f9>4</span>, -<span style=color:#bd93f9>5</span>, -<span style=color:#bd93f9>6</span>, -<span style=color:#bd93f9>7</span>, -<span style=color:#bd93f9>8</span>, -<span style=color:#bd93f9>9</span>, -<span style=color:#bd93f9>10</span>, -<span style=color:#bd93f9>11</span>, -<span style=color:#bd93f9>12</span>, -<span style=color:#bd93f9>13</span>, -<span style=color:#bd93f9>14</span>]
 
 </code></pre></div>
 <ul>
 <li><code>round</code>: 반올림</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## 소수점 둘쨰자리에서 반올림한다.</span>
-<span style=color:#ae81ff>&gt; print(round(6.5781, 2))</span>
-<span style=color:#ae81ff>6.58</span>
-<span style=color:#ae81ff>&gt; print(round(5.6))</span>
-<span style=color:#ae81ff>6</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4>## 소수점 둘쨰자리에서 반올림한다.</span>
+&gt; print(round(6.5781, 2))
+<span style=color:#bd93f9>6.58</span>
+&gt; print(round(5.6))
+<span style=color:#bd93f9>6</span>
 </code></pre></div>
 <ul>
 <li><code>sum</code>: 반복가능한 객체(Iterable) 합 반환</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(sum([6, 7, 8, 9, 10]))</span>
-<span style=color:#ae81ff>40</span>
-<span style=color:#ae81ff>&gt; print(sum(range(1,101)))</span>
-<span style=color:#ae81ff>5050</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(sum([6, 7, 8, 9, 10]))
+<span style=color:#bd93f9>40</span>
+&gt; print(sum(range(1,101)))
+<span style=color:#bd93f9>5050</span>
 </code></pre></div>
 <ul>
 <li><code>type</code>: 자료형의 type을 확인</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(type(3))</span>
-<span style=color:#ae81ff>&lt;class &#39;int&#39;&gt;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(type(3))
+&lt;class &#39;int&#39;&gt;
 
-<span style=color:#ae81ff>&gt; print(type({}))</span>
-<span style=color:#ae81ff>&lt;class &#39;dict&#39;&gt;</span>
+&gt; print(type({}))
+&lt;class &#39;dict&#39;&gt;
 
-<span style=color:#ae81ff>&gt; print(type(()))</span>
-<span style=color:#ae81ff>&lt;class &#39;tuple&#39;&gt;</span>
+&gt; print(type(()))
+&lt;class &#39;tuple&#39;&gt;
 
-<span style=color:#ae81ff>&gt; print(type([]))</span>
-<span style=color:#ae81ff>&lt;class &#39;list&#39;&gt;</span>
+&gt; print(type([]))
+&lt;class &#39;list&#39;&gt;
 </code></pre></div>
 <ul>
 <li><code>zip</code>: Iterable 객체의 요소를 묶어서 tuple type으로 반환</li>
 <li><code>zip</code>: A zip object yielding tuples until an input is exhausted.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(list(zip([10,20,30],[40,50,777])))</span>
-<span style=color:#111>[</span><span style=color:#ae81ff>(10, 40), (20, 50), (30, 777)]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(list(zip([10,20,30],[40,50,777])))
+[(10, 40), (20, 50), (30, 777)]
 
-<span style=color:#75715e># 짝이 맞는 것만 반환한다.</span>
-<span style=color:#75715e># list 안에 tuple type의 argument가 담겨져있다.</span>
-<span style=color:#ae81ff>&gt; print(list(zip([10,20,],[40,50,777])))</span>
-<span style=color:#111>[</span><span style=color:#ae81ff>(10, 40), (20, 50)]</span>
+<span style=color:#6272a4># 짝이 맞는 것만 반환한다.</span>
+<span style=color:#6272a4># list 안에 tuple type의 argument가 담겨져있다.</span>
+&gt; print(list(zip([10,20,],[40,50,777])))
+[(10, 40), (20, 50)]
 
-<span style=color:#ae81ff>&gt; print(type(list(zip([10,20,30],[40,50,777]))[0]))</span>
-<span style=color:#ae81ff>&lt;class &#39;tuple&#39;&gt;</span>
+&gt; print(type(list(zip([10,20,30],[40,50,777]))[0]))
+&lt;class &#39;tuple&#39;&gt;
 </code></pre></div>
 </div>
 <footer class=post-footer>

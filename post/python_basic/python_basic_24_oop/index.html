@@ -35,7 +35,7 @@
 <meta name=twitter:title content="[TIL] Python basic 24: Procedural Programming vs OOP">
 <meta name=twitter:description content="절차형 프로그래밍과 객체지향 프로그래밍 각 방식으로 작성하여 직접 차이를 느껴본다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 24: Procedural Programming vs OOP","item":"http://jeha00.github.io/post/python_basic/python_basic_24_oop/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 24: Procedural Programming vs OOP","name":"[TIL] Python basic 24: Procedural Programming vs OOP","description":"절차형 프로그래밍과 객체지향 프로그래밍 각 방식으로 작성하여 직접 차이를 느껴본다.","keywords":["TIL","python"],"articleBody":"Intro  basic 14 class 에서 언급한 절차지향 프로그래밍이 구체적으로 무엇인지 간단히 구현한다. 그 다음 클래스를 사용한 객체지향 프로그래밍에 대해 알아보겠다.   절차지향 프로그래밍은 일반적인 과거의 코딩방식으로, 함수 중심이기 때문에, 데이터가 방대하여 복잡하다는 단점이 있다.   이에 대한 해결책이 OOP(Object Oriented Programming) 으로 객체지향 프로그래밍이다. 장점을 다시 한번 언급하자면 클래스 중심으로 사용하기 때문에 객체로 관리한다. 그래서,  코드의 재사용성이 낮다. 코드 중복을 방지할 수 있다. 유지보수가 좋다. 대형 프로젝트에 적합하다.     1. 절차지향 프로그래밍 (Procedural Programming)  그럼 예시 코드로 절차지향 프로그래밍을 구현해보자. 절차지향으로 프로그래밍할 경우, 항공사의 종류 갯수대로 직접 다 입력해야 한다.  # 항공사 1  airline_company_1 = 'Koreaair'  airline_detail_1 = [  {'uniform_color': 'skyblue'},  {'kind':'FSC'},  {'price': 8000},  ] # 항공사 2  airline_company_2 = 'Asiana'  airline_detail_2 = [  {'color': 'gray'},  {'kind':'FSC'},  {'price': 6000},  ] # 항공사 3  airline_company_3 = 't-way'  airline_detail_3 = [  {'color': 'red'},  {'kind': 'LCC'},  {'price': 3000},  ]  리스트 구조로 또 입력해보자.   airline_company_list = ['Koreanair', 'Asiana', 't-way']  airline_detail_list = [  {'uniform_color': 'skyblue', 'kind':'FSC', 'price': 8000},  {'color': 'gray', 'kind':'FSC', 'price': 6000},  {'color': 'red', 'kind': 'LCC', 'price': 3000}  ]  del airline_company_list[1]  del airline_detail_list[1]  print(airline_company_list) ['Koreanair', 't-way']  print(airline_detail_list) [{'uniform_color': 'skyblue', 'kind': 'FSC', 'price': 8000}, {'color': 'red', 'kind': 'LCC', 'price': 3000}]  이런 방식으로 입력할 경우, 데이터를 삭제하기가 불편하다. index를 사용하여 삭제할 때, 데이터 양이 매우 많으면 index 번호를 알기가 어렵기 때문이다. 그리고, index로 접근 시, 실수할 가능성이 높다.   다음으로 딕셔너리 구조로 입력해보자.   airlines_dicts = [  {'airline_company': 'Koreanair', 'airline_detail': {'uniform_color': 'skyblue', 'kind':'FSC', 'price': 8000}},  {'airline_company': 'Asiana', 'airline_detail': {'uniform_color': 'gray', 'kind':'FSC', 'price': 6000}},  {'airline_company': 't-way', 'airline_detail': {'uniform_color': 'red', 'kind':'LCC', 'price': 3000}}  ]  airlines_dicts[1].pop('airline_company')  print(airlines_dicts) [{'airline_company': 'Koreanair', 'airline_detail': {'uniform_color': 'skyblue', 'kind': 'FSC', 'price': 8000}}, {'airline_detail': {'uniform_color': 'gray', 'kind': 'FSC', 'price': 6000}}, {'airline_company': 't-way', 'airline_detail': {'uniform_color': 'red', 'kind': 'LCC', 'price': 3000}}]  del airlines_dicts[1] [{'airline_company': 'Koreanair', 'airline_detail': {'uniform_color': 'skyblue', 'kind': 'FSC', 'price': 8000}}, {'airline_company': 't-way', 'airline_detail': {'uniform_color': 'red', 'kind': 'LCC', 'price': 3000}}]  딕셔너리 안에 딕셔너리가 있는 형식으로 작성했다. 여전히 코드의 반복은 지속되어, 개발자에게 피로도를 증가시킨다. 키 중첩 문제가 존재하며, 키 조회 시 예외 처리를 해야한다.   2. 객체지향 프로그래밍 (Object Oriented Programming)  class Airline():  def __init__(self, company, details):  self._company = company  self._details = details  Airline1 = Airline('Koreanair', {'uniform_color': 'skyblue', 'kind':'FSC', 'price': 8000})  Airline2 = Airline('Asiana', {'uniform_color': 'gray', 'kind':'FSC', 'price': 6000})  Airline3 = Airline('t-wau', {'uniform_color': 'red', 'kind':'LCC', 'price': 3000})  print(Airline1)  print(Airline2)  print(Airline3)     print(Airline1.__dict__)  print(Airline2.__dict__)  print(Airline3.__dict__) {'_company': 'Koreanair', '_details': {'uniform_color': 'skyblue', 'kind': 'FSC', 'price': 8000}} {'_company': 'Asiana', '_details': {'uniform_color': 'gray', 'kind': 'FSC', 'price': 6000}} {'_company': 't-wau', '_details': {'uniform_color': 'red', 'kind': 'LCC', 'price': 3000}}  class 로 틀을 만들어서 airline instance를 손쉽게 만들었다. instance에 담긴 구체적인 정보를 알고싶을 때는 __dict__ 를 사용하는 것도 알 수 있다.   이렇듯 절차지향과 객체지향 다 장단점이 있어 적절한 곳에 사용해야 한다. 하지만, 절차지향의 단점을 해결하는 객체지향을 잘 사용해서 코드의 재사용성과 유지보수까지 고려하자.   Reference  파이썬 중급  ","wordCount":"492","inLanguage":"en","datePublished":"2022-03-12T23:16:27+09:00","dateModified":"2022-03-12T23:16:27+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_24_oop/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 24: Procedural Programming vs OOP","name":"[TIL] Python basic 24: Procedural Programming vs OOP","description":"절차형 프로그래밍과 객체지향 프로그래밍 각 방식으로 작성하여 직접 차이를 느껴본다.","keywords":["TIL","python"],"articleBody":"Intro  basic 14 class 에서 언급한 절차지향 프로그래밍이 구체적으로 무엇인지 간단히 구현한다. 그 다음 클래스를 사용한 객체지향 프로그래밍에 대해 알아보겠다.   절차지향 프로그래밍은 일반적인 과거의 코딩방식으로, 함수 중심이기 때문에, 데이터가 방대하여 복잡하다는 단점이 있다.   이에 대한 해결책이 OOP(Object Oriented Programming) 으로 객체지향 프로그래밍이다. 장점을 다시 한번 언급하자면 클래스 중심으로 사용하기 때문에 객체로 관리한다. 그래서,  코드의 재사용성이 낮다. 코드 중복을 방지할 수 있다. 유지보수가 좋다. 대형 프로젝트에 적합하다.     1. 절차지향 프로그래밍 (Procedural Programming)  그럼 예시 코드로 절차지향 프로그래밍을 구현해보자. 절차지향으로 프로그래밍할 경우, 항공사의 종류 갯수대로 직접 다 입력해야 한다.  # 항공사 1  airline_company_1 = 'Koreaair'  airline_detail_1 = [  {'uniform_color': 'skyblue'},  {'kind':'FSC'},  {'price': 8000},  ] # 항공사 2  airline_company_2 = 'Asiana'  airline_detail_2 = [  {'color': 'gray'},  {'kind':'FSC'},  {'price': 6000},  ] # 항공사 3  airline_company_3 = 't-way'  airline_detail_3 = [  {'color': 'red'},  {'kind': 'LCC'},  {'price': 3000},  ]  리스트 구조로 또 입력해보자.   airline_company_list = ['Koreanair', 'Asiana', 't-way']  airline_detail_list = [  {'uniform_color': 'skyblue', 'kind':'FSC', 'price': 8000},  {'color': 'gray', 'kind':'FSC', 'price': 6000},  {'color': 'red', 'kind': 'LCC', 'price': 3000}  ]  del airline_company_list[1]  del airline_detail_list[1]  print(airline_company_list) ['Koreanair', 't-way']  print(airline_detail_list) [{'uniform_color': 'skyblue', 'kind': 'FSC', 'price': 8000}, {'color': 'red', 'kind': 'LCC', 'price': 3000}]  이런 방식으로 입력할 경우, 데이터를 삭제하기가 불편하다. index를 사용하여 삭제할 때, 데이터 양이 매우 많으면 index 번호를 알기가 어렵기 때문이다. 그리고, index로 접근 시, 실수할 가능성이 높다.   다음으로 딕셔너리 구조로 입력해보자.   airlines_dicts = [  {'airline_company': 'Koreanair', 'airline_detail': {'uniform_color': 'skyblue', 'kind':'FSC', 'price': 8000}},  {'airline_company': 'Asiana', 'airline_detail': {'uniform_color': 'gray', 'kind':'FSC', 'price': 6000}},  {'airline_company': 't-way', 'airline_detail': {'uniform_color': 'red', 'kind':'LCC', 'price': 3000}}  ]  airlines_dicts[1].pop('airline_company')  print(airlines_dicts) [{'airline_company': 'Koreanair', 'airline_detail': {'uniform_color': 'skyblue', 'kind': 'FSC', 'price': 8000}}, {'airline_detail': {'uniform_color': 'gray', 'kind': 'FSC', 'price': 6000}}, {'airline_company': 't-way', 'airline_detail': {'uniform_color': 'red', 'kind': 'LCC', 'price': 3000}}]  del airlines_dicts[1] [{'airline_company': 'Koreanair', 'airline_detail': {'uniform_color': 'skyblue', 'kind': 'FSC', 'price': 8000}}, {'airline_company': 't-way', 'airline_detail': {'uniform_color': 'red', 'kind': 'LCC', 'price': 3000}}]  딕셔너리 안에 딕셔너리가 있는 형식으로 작성했다. 여전히 코드의 반복은 지속되어, 개발자에게 피로도를 증가시킨다. 키 중첩 문제가 존재하며, 키 조회 시 예외 처리를 해야한다.   2. 객체지향 프로그래밍 (Object Oriented Programming)  class Airline():  def __init__(self, company, details):  self._company = company  self._details = details  Airline1 = Airline('Koreanair', {'uniform_color': 'skyblue', 'kind':'FSC', 'price': 8000})  Airline2 = Airline('Asiana', {'uniform_color': 'gray', 'kind':'FSC', 'price': 6000})  Airline3 = Airline('t-wau', {'uniform_color': 'red', 'kind':'LCC', 'price': 3000})  print(Airline1)  print(Airline2)  print(Airline3)  print(Airline1.__dict__)  print(Airline2.__dict__)  print(Airline3.__dict__) {'_company': 'Koreanair', '_details': {'uniform_color': 'skyblue', 'kind': 'FSC', 'price': 8000}} {'_company': 'Asiana', '_details': {'uniform_color': 'gray', 'kind': 'FSC', 'price': 6000}} {'_company': 't-wau', '_details': {'uniform_color': 'red', 'kind': 'LCC', 'price': 3000}}  class 로 틀을 만들어서 airline instance를 손쉽게 만들었다. instance에 담긴 구체적인 정보를 알고싶을 때는 __dict__ 를 사용하는 것도 알 수 있다.   이렇듯 절차지향과 객체지향 다 장단점이 있어 적절한 곳에 사용해야 한다. 하지만, 절차지향의 단점을 해결하는 객체지향을 잘 사용해서 코드의 재사용성과 유지보수까지 고려하자.   Reference  파이썬 중급  ","wordCount":"492","inLanguage":"en","datePublished":"2022-03-12T23:16:27+09:00","dateModified":"2022-03-12T23:16:27+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_24_oop/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -125,54 +125,54 @@
 <li>그럼 예시 코드로 절차지향 프로그래밍을 구현해보자.</li>
 <li>절차지향으로 프로그래밍할 경우, 항공사의 종류 갯수대로 직접 다 입력해야 한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
-<span style=color:#75715e># 항공사 1</span>
-<span style=color:#ae81ff>&gt; airline_company_1 = &#39;Koreaair&#39;</span>
-<span style=color:#ae81ff>&gt; airline_detail_1 = [</span>
-<span style=color:#ae81ff>&gt;     {&#39;uniform_color&#39;: &#39;skyblue&#39;},</span>
-<span style=color:#ae81ff>&gt;     {&#39;kind&#39;:&#39;FSC&#39;},</span>
-<span style=color:#ae81ff>&gt;     {&#39;price&#39;: 8000},</span>
-<span style=color:#ae81ff>&gt; ]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<span style=color:#6272a4># 항공사 1</span>
+&gt; airline_company_1 = &#39;Koreaair&#39;
+&gt; airline_detail_1 = [
+&gt;     {&#39;uniform_color&#39;: &#39;skyblue&#39;},
+&gt;     {&#39;kind&#39;:&#39;FSC&#39;},
+&gt;     {&#39;price&#39;: 8000},
+&gt; ]
 
-<span style=color:#75715e># 항공사 2</span>
-<span style=color:#ae81ff>&gt; airline_company_2 = &#39;Asiana&#39;</span>
-<span style=color:#ae81ff>&gt; airline_detail_2 = [</span>
-<span style=color:#ae81ff>&gt;     {&#39;color&#39;: &#39;gray&#39;},</span>
-<span style=color:#ae81ff>&gt;     {&#39;kind&#39;:&#39;FSC&#39;},</span>
-<span style=color:#ae81ff>&gt;     {&#39;price&#39;: 6000},</span>
-<span style=color:#ae81ff>&gt; ]</span>
+<span style=color:#6272a4># 항공사 2</span>
+&gt; airline_company_2 = &#39;Asiana&#39;
+&gt; airline_detail_2 = [
+&gt;     {&#39;color&#39;: &#39;gray&#39;},
+&gt;     {&#39;kind&#39;:&#39;FSC&#39;},
+&gt;     {&#39;price&#39;: 6000},
+&gt; ]
 
-<span style=color:#75715e># 항공사 3</span>
-<span style=color:#ae81ff>&gt; airline_company_3 = &#39;t-way&#39;</span>
-<span style=color:#ae81ff>&gt; airline_detail_3 = [</span>
-<span style=color:#ae81ff>&gt;     {&#39;color&#39;: &#39;red&#39;},</span>
-<span style=color:#ae81ff>&gt;     {&#39;kind&#39;: &#39;LCC&#39;},</span>
-<span style=color:#ae81ff>&gt;     {&#39;price&#39;: 3000},</span>
-<span style=color:#ae81ff>&gt; ]</span>
+<span style=color:#6272a4># 항공사 3</span>
+&gt; airline_company_3 = &#39;t-way&#39;
+&gt; airline_detail_3 = [
+&gt;     {&#39;color&#39;: &#39;red&#39;},
+&gt;     {&#39;kind&#39;: &#39;LCC&#39;},
+&gt;     {&#39;price&#39;: 3000},
+&gt; ]
 
 </code></pre></div><ul>
 <li>리스트 구조로 또 입력해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
-<span style=color:#ae81ff>&gt; airline_company_list = [&#39;Koreanair&#39;, &#39;Asiana&#39;, &#39;t-way&#39;]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+&gt; airline_company_list = [&#39;Koreanair&#39;, &#39;Asiana&#39;, &#39;t-way&#39;]
 
 
-<span style=color:#ae81ff>&gt; airline_detail_list = [</span>
-<span style=color:#ae81ff>&gt;     {&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 8000},</span>
-<span style=color:#ae81ff>&gt;     {&#39;color&#39;: &#39;gray&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 6000},</span>
-<span style=color:#ae81ff>&gt;     {&#39;color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}</span>
-<span style=color:#ae81ff>&gt; ]</span>
+&gt; airline_detail_list = [
+&gt;     {&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 8000},
+&gt;     {&#39;color&#39;: &#39;gray&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 6000},
+&gt;     {&#39;color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;: 3000}
+&gt; ]
 
 
-<span style=color:#ae81ff>&gt; del airline_company_list[1]</span>
-<span style=color:#ae81ff>&gt; del airline_detail_list[1]</span>
+&gt; del airline_company_list[1]
+&gt; del airline_detail_list[1]
 
-<span style=color:#ae81ff>&gt; print(airline_company_list)</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;Koreanair&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;t-way&#39;</span><span style=color:#111>]</span>
+&gt; print(airline_company_list)
+[<span style=color:#f1fa8c>&#39;Koreanair&#39;</span>, <span style=color:#f1fa8c>&#39;t-way&#39;</span>]
 
-<span style=color:#ae81ff>&gt; print(airline_detail_list)</span>
-<span style=color:#111>[</span>{<span style=color:#f92672>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>}<span style=color:#111>,</span>
- {<span style=color:#f92672>&#39;color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>3000</span>}<span style=color:#111>]</span>
+&gt; print(airline_detail_list)
+[{<span style=color:#ff79c6>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>8000</span>},
+ {<span style=color:#ff79c6>&#39;color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>3000</span>}]
 
 </code></pre></div><ul>
 <li>이런 방식으로 입력할 경우, 데이터를 삭제하기가 불편하다.</li>
@@ -182,23 +182,23 @@
 <ul>
 <li>다음으로 딕셔너리 구조로 입력해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; airlines_dicts = [</span>
-<span style=color:#ae81ff>&gt;     {&#39;airline_company&#39;: &#39;Koreanair&#39;, &#39;airline_detail&#39;: {&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 8000}},</span>
-<span style=color:#ae81ff>&gt;     {&#39;airline_company&#39;: &#39;Asiana&#39;, &#39;airline_detail&#39;: {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 6000}},</span>
-<span style=color:#ae81ff>&gt;     {&#39;airline_company&#39;: &#39;t-way&#39;, &#39;airline_detail&#39;: {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;:&#39;LCC&#39;, &#39;price&#39;: 3000}}</span>
-<span style=color:#ae81ff>&gt; ]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; airlines_dicts = [
+&gt;     {&#39;airline_company&#39;: &#39;Koreanair&#39;, &#39;airline_detail&#39;: {&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 8000}},
+&gt;     {&#39;airline_company&#39;: &#39;Asiana&#39;, &#39;airline_detail&#39;: {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 6000}},
+&gt;     {&#39;airline_company&#39;: &#39;t-way&#39;, &#39;airline_detail&#39;: {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;:&#39;LCC&#39;, &#39;price&#39;: 3000}}
+&gt; ]
 
 
-<span style=color:#ae81ff>&gt; airlines_dicts[1].pop(&#39;airline_company&#39;)</span>
+&gt; airlines_dicts[1].pop(&#39;airline_company&#39;)
 
-<span style=color:#ae81ff>&gt; print(airlines_dicts)</span>
-<span style=color:#111>[</span>{<span style=color:#f92672>&#39;airline_company&#39;: &#39;Koreanair&#39;, &#39;airline_detail&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>}}<span style=color:#111>,</span>
-  {<span style=color:#f92672>&#39;airline_detail&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>6000</span>}}<span style=color:#111>,</span>
-  {<span style=color:#f92672>&#39;airline_company&#39;: &#39;t-way&#39;, &#39;airline_detail&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>3000</span>}}<span style=color:#111>]</span>
+&gt; print(airlines_dicts)
+[{<span style=color:#ff79c6>&#39;airline_company&#39;: &#39;Koreanair&#39;, &#39;airline_detail&#39;</span>: {<span style=color:#ff79c6>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>8000</span>}},
+  {<span style=color:#ff79c6>&#39;airline_detail&#39;</span>: {<span style=color:#ff79c6>&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>6000</span>}},
+  {<span style=color:#ff79c6>&#39;airline_company&#39;: &#39;t-way&#39;, &#39;airline_detail&#39;</span>: {<span style=color:#ff79c6>&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>3000</span>}}]
 
-<span style=color:#ae81ff>&gt; del airlines_dicts[1]</span>
-<span style=color:#111>[</span>{<span style=color:#f92672>&#39;airline_company&#39;: &#39;Koreanair&#39;, &#39;airline_detail&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>}}<span style=color:#111>,</span>
-  {<span style=color:#f92672>&#39;airline_company&#39;: &#39;t-way&#39;, &#39;airline_detail&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>3000</span>}}<span style=color:#111>]</span>
+&gt; del airlines_dicts[1]
+[{<span style=color:#ff79c6>&#39;airline_company&#39;: &#39;Koreanair&#39;, &#39;airline_detail&#39;</span>: {<span style=color:#ff79c6>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>8000</span>}},
+  {<span style=color:#ff79c6>&#39;airline_company&#39;: &#39;t-way&#39;, &#39;airline_detail&#39;</span>: {<span style=color:#ff79c6>&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>3000</span>}}]
 
 
 </code></pre></div><ul>
@@ -208,30 +208,30 @@
 </ul>
 <hr>
 <h2 id=2-객체지향-프로그래밍-object-oriented-programming>2. 객체지향 프로그래밍 (Object Oriented Programming)<a hidden class=anchor aria-hidden=true href=#2-객체지향-프로그래밍-object-oriented-programming>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; class Airline()</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;     def __init__(self, company, details)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;         self._company = company</span>
-<span style=color:#ae81ff>&gt;         self._details = details</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; class Airline()</span>:
+<span style=color:#ff79c6>&gt;     def __init__(self, company, details)</span>:
+&gt;         self._company = company
+&gt;         self._details = details
 
 
-<span style=color:#ae81ff>&gt; Airline1 = Airline(&#39;Koreanair&#39;, {&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 8000})</span>
-<span style=color:#ae81ff>&gt; Airline2 = Airline(&#39;Asiana&#39;, {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 6000})</span>
-<span style=color:#ae81ff>&gt; Airline3 = Airline(&#39;t-wau&#39;, {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;:&#39;LCC&#39;, &#39;price&#39;: 3000})</span>
+&gt; Airline1 = Airline(&#39;Koreanair&#39;, {&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 8000})
+&gt; Airline2 = Airline(&#39;Asiana&#39;, {&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;:&#39;FSC&#39;, &#39;price&#39;: 6000})
+&gt; Airline3 = Airline(&#39;t-wau&#39;, {&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;:&#39;LCC&#39;, &#39;price&#39;: 3000})
 
-<span style=color:#ae81ff>&gt; print(Airline1)</span>
-<span style=color:#ae81ff>&gt; print(Airline2)</span>
-<span style=color:#ae81ff>&gt; print(Airline3)</span>
+&gt; print(Airline1)
+&gt; print(Airline2)
+&gt; print(Airline3)
 
-<span style=color:#ae81ff>&lt;__main__.Airline object at 0x000001AC6C87CFD0&gt;</span>
-<span style=color:#ae81ff>&lt;__main__.Airline object at 0x000001AC6C87CF70&gt;</span>
-<span style=color:#ae81ff>&lt;__main__.Airline object at 0x000001AC6C87CEE0&gt;</span>
+&lt;__main__.Airline object at 0x000001AC6C87CFD0&gt;
+&lt;__main__.Airline object at 0x000001AC6C87CF70&gt;
+&lt;__main__.Airline object at 0x000001AC6C87CEE0&gt;
 
-<span style=color:#ae81ff>&gt; print(Airline1.__dict__)</span>
-<span style=color:#ae81ff>&gt; print(Airline2.__dict__)</span>
-<span style=color:#ae81ff>&gt; print(Airline3.__dict__)</span>
-{<span style=color:#f92672>&#39;_company&#39;: &#39;Koreanair&#39;, &#39;_details&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8000</span>}}
-{<span style=color:#f92672>&#39;_company&#39;: &#39;Asiana&#39;, &#39;_details&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>6000</span>}}
-{<span style=color:#f92672>&#39;_company&#39;: &#39;t-wau&#39;, &#39;_details&#39;</span><span style=color:#111>:</span> {<span style=color:#f92672>&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>3000</span>}}
+&gt; print(Airline1.__dict__)
+&gt; print(Airline2.__dict__)
+&gt; print(Airline3.__dict__)
+{<span style=color:#ff79c6>&#39;_company&#39;: &#39;Koreanair&#39;, &#39;_details&#39;</span>: {<span style=color:#ff79c6>&#39;uniform_color&#39;: &#39;skyblue&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>8000</span>}}
+{<span style=color:#ff79c6>&#39;_company&#39;: &#39;Asiana&#39;, &#39;_details&#39;</span>: {<span style=color:#ff79c6>&#39;uniform_color&#39;: &#39;gray&#39;, &#39;kind&#39;: &#39;FSC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>6000</span>}}
+{<span style=color:#ff79c6>&#39;_company&#39;: &#39;t-wau&#39;, &#39;_details&#39;</span>: {<span style=color:#ff79c6>&#39;uniform_color&#39;: &#39;red&#39;, &#39;kind&#39;: &#39;LCC&#39;, &#39;price&#39;</span>: <span style=color:#bd93f9>3000</span>}}
 </code></pre></div><ul>
 <li>class 로 틀을 만들어서 airline instance를 손쉽게 만들었다.</li>
 <li>instance에 담긴 구체적인 정보를 알고싶을 때는 <code>__dict__</code> 를 사용하는 것도 알 수 있다.</li>

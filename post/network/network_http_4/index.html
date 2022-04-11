@@ -265,8 +265,8 @@
 </ul>
 <hr>
 <h2 id=21-http-method---get>2.1 HTTP method - GET<a hidden class=anchor aria-hidden=true href=#21-http-method---get>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>GET /search?q=hello&amp;hl=ko HTTP/1.1</span>
-<span style=color:#f92672>Host</span><span style=color:#111>:</span> <span style=color:#ae81ff>www.google.com</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>GET /search?q=hello&amp;hl=ko HTTP/1.1
+<span style=color:#ff79c6>Host</span>: www.google.com
 </code></pre></div><ol>
 <li><strong><em>리소스 조회</em></strong> (/search?q=hello&hl=ko에 있는 자원을 가져와라.)</li>
 <li>서버에 전달하고 싶은 데이터는 query (쿼리 파라미터, 쿼리 스트링)를 통해서 전달</li>
@@ -297,11 +297,11 @@
 <hr>
 <h2 id=22-http-method---post>2.2 HTTP method - POST<a hidden class=anchor aria-hidden=true href=#22-http-method---post>#</a></h2>
 <h3 id=221-post란>2.2.1 POST란?<a hidden class=anchor aria-hidden=true href=#221-post란>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>POST /members HTTP/1.1</span>
-<span style=color:#f92672>Content-Type</span><span style=color:#111>:</span> <span style=color:#ae81ff>application/json</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>POST /members HTTP/1.1
+<span style=color:#ff79c6>Content-Type</span>: application/json
 {
-<span style=color:#f92672>&#34;username&#34;: </span><span style=color:#d88200>&#34;hello&#34;</span><span style=color:#111>,</span>
-<span style=color:#f92672>&#34;age&#34;: </span><span style=color:#ae81ff>20</span>
+<span style=color:#ff79c6>&#34;username&#34;: </span><span style=color:#f1fa8c>&#34;hello&#34;</span>,
+<span style=color:#ff79c6>&#34;age&#34;: </span><span style=color:#bd93f9>20</span>
 }
 </code></pre></div><ol>
 <li>요청 데이터 처리하는 method</li>
@@ -407,11 +407,11 @@
 <hr>
 <h1 id=3-http-method---putpatchdelete>3. HTTP method - PUT,PATCH,DELETE<a hidden class=anchor aria-hidden=true href=#3-http-method---putpatchdelete>#</a></h1>
 <h2 id=31-http-method---put>3.1 HTTP method - PUT<a hidden class=anchor aria-hidden=true href=#31-http-method---put>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>PUT /members/100 HTTP/1.1</span>
-<span style=color:#f92672>Content-Type</span><span style=color:#111>:</span> <span style=color:#ae81ff>application/json</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>PUT /members/100 HTTP/1.1
+<span style=color:#ff79c6>Content-Type</span>: application/json
 {
-<span style=color:#f92672>&#34;username&#34;: </span><span style=color:#d88200>&#34;hello&#34;</span><span style=color:#111>,</span>
-<span style=color:#f92672>&#34;age&#34;: </span><span style=color:#ae81ff>20</span>
+<span style=color:#ff79c6>&#34;username&#34;: </span><span style=color:#f1fa8c>&#34;hello&#34;</span>,
+<span style=color:#ff79c6>&#34;age&#34;: </span><span style=color:#bd93f9>20</span>
 }
 </code></pre></div><ul>
 <li>
@@ -435,7 +435,7 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#f92672>&#34;username&#34;: &#34;hello&#34;, &#34;age&#34;: </span><span style=color:#ae81ff>20</span> }
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#ff79c6>&#34;username&#34;: &#34;hello&#34;, &#34;age&#34;: </span><span style=color:#bd93f9>20</span> }
 </code></pre></div><ul>
 <li>예) 리소스가 있는 경우
 <ul>
@@ -443,23 +443,23 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#f92672>&#34;username&#34;: &#34;young&#34;, &#34;age&#34;: </span><span style=color:#ae81ff>50</span> }
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#ff79c6>&#34;username&#34;: &#34;young&#34;, &#34;age&#34;: </span><span style=color:#bd93f9>50</span> }
 </code></pre></div><ul>
 <li>PUT method로 보내면 다음과 같이 대체된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#f92672>&#34;username&#34;: &#34;hello&#34;, &#34;age&#34;: </span><span style=color:#ae81ff>20</span> }
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#ff79c6>&#34;username&#34;: &#34;hello&#34;, &#34;age&#34;: </span><span style=color:#bd93f9>20</span> }
 </code></pre></div><ul>
 <li>하지만 아래 내용으로 리소스를 보낸다면 아래 내용으로 완전히 대체된다.</li>
 <li>username 필드가 삭제된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#f92672>&#34;age&#34;: </span><span style=color:#ae81ff>50</span> }
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#ff79c6>&#34;age&#34;: </span><span style=color:#bd93f9>50</span> }
 </code></pre></div>
 <hr>
 <h2 id=32-http-method---patch>3.2 HTTP method - PATCH<a hidden class=anchor aria-hidden=true href=#32-http-method---patch>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>PUT /members/100 HTTP/1.1</span>
-<span style=color:#f92672>Content-Type</span><span style=color:#111>:</span> <span style=color:#ae81ff>application/json</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>PUT /members/100 HTTP/1.1
+<span style=color:#ff79c6>Content-Type</span>: application/json
 {
-<span style=color:#f92672>&#34;age&#34;: </span><span style=color:#ae81ff>50</span>
+<span style=color:#ff79c6>&#34;age&#34;: </span><span style=color:#bd93f9>50</span>
 }
 </code></pre></div><ul>
 <li>그러면 기존 리소스를 갈아치우는 게 아니라, <strong><em>수정하고 싶으면</em></strong> 어떻게 해야할까??</li>
@@ -475,11 +475,11 @@
 <ul>
 <li>그 결과, PUT과는 다르게 회원 정보에서 age만 변경된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#f92672>&#34;age&#34;: </span><span style=color:#ae81ff>50</span> }
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>{ <span style=color:#ff79c6>&#34;age&#34;: </span><span style=color:#bd93f9>50</span> }
 </code></pre></div><hr>
 <h2 id=33-http-method---delete>3.3 HTTP method - DELETE<a hidden class=anchor aria-hidden=true href=#33-http-method---delete>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>DELETE /members/100 HTTP/1.1</span>
-<span style=color:#f92672>Host</span><span style=color:#111>:</span> <span style=color:#ae81ff>localhost:8080</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>DELETE /members/100 HTTP/1.1
+<span style=color:#ff79c6>Host</span>: localhost:8080
 </code></pre></div><ul>
 <li>클라이언트가 보내면 위 리소스 url에 해당되는 회원 정보를 서버에서 삭제한다.</li>
 </ul>

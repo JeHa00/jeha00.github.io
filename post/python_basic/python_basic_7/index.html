@@ -128,62 +128,62 @@
 <li>dictionary 선언에는 매우 다양한 방법이 있다.</li>
 <li>이 다양한 방법들의 공통점은 { }, key, value 로 기본적으로 구성된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># key와 value 모두 string</span>
-<span style=color:#ae81ff>&gt; a = {&#39;name&#39; : &#39;Kim&#39;, &#39;phone&#39;: &#39;01012345678&#39;, &#39;birth&#39;: &#39;870124&#39;}</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># key와 value 모두 string</span>
+&gt; a = {&#39;name&#39; : &#39;Kim&#39;, &#39;phone&#39;: &#39;01012345678&#39;, &#39;birth&#39;: &#39;870124&#39;}
 
-<span style=color:#75715e># key는 integer 자료형, value는 string</span>
-<span style=color:#ae81ff>&gt; b = {0 : &#39;Hello Python!&#39;}</span>
+<span style=color:#6272a4># key는 integer 자료형, value는 string</span>
+&gt; b = {0 : &#39;Hello Python!&#39;}
 
-<span style=color:#75715e># key는 string, value는 list</span>
-<span style=color:#ae81ff>&gt; c = {&#39;arr&#39;: [1, 2, 3, 4]}</span>
+<span style=color:#6272a4># key는 string, value는 list</span>
+&gt; c = {&#39;arr&#39;: [1, 2, 3, 4]}
 
-<span style=color:#ae81ff>&gt; d = {</span>
-    <span style=color:#f92672>&#39;Name&#39; </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;Niceman&#39;</span><span style=color:#111>,</span>
-    <span style=color:#f92672>&#39;City&#39; </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;Seoul&#39;</span><span style=color:#111>,</span>
-    <span style=color:#f92672>&#39;Age&#39; </span><span style=color:#111>:</span> <span style=color:#ae81ff>33</span><span style=color:#111>,</span>
-    <span style=color:#f92672>&#39;Grade&#39; </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;A&#39;</span><span style=color:#111>,</span>
-    <span style=color:#f92672>&#39;Status&#39; </span><span style=color:#111>:</span> <span style=color:#00a8c8>True</span>
+&gt; d = {
+    <span style=color:#ff79c6>&#39;Name&#39; </span>: <span style=color:#f1fa8c>&#39;Niceman&#39;</span>,
+    <span style=color:#ff79c6>&#39;City&#39; </span>: <span style=color:#f1fa8c>&#39;Seoul&#39;</span>,
+    <span style=color:#ff79c6>&#39;Age&#39; </span>: <span style=color:#bd93f9>33</span>,
+    <span style=color:#ff79c6>&#39;Grade&#39; </span>: <span style=color:#f1fa8c>&#39;A&#39;</span>,
+    <span style=color:#ff79c6>&#39;Status&#39; </span>: <span style=color:#ff79c6>True</span>
     }
 
-<span style=color:#75715e># 하나 하나 튜플 형식으로 입력한다. 가독성이 좋지 않은 단점이 있다.</span>
-<span style=color:#75715e># 그래서 개선된 방법이 f 다.</span>
-<span style=color:#ae81ff>&gt; e = dict([</span>
-    <span style=color:#ae81ff>( &#39;Name&#39;, &#39;Niceman&#39;),</span>
-    <span style=color:#ae81ff>(&#39;City&#39;, &#39;Seoul&#39;),</span>
-    <span style=color:#ae81ff>(&#39;Age&#39;, &#39;33&#39;),</span>
-    <span style=color:#ae81ff>(&#39;Grade&#39;, &#39;A&#39;),</span>
-    <span style=color:#ae81ff>(&#39;Status&#39;, True)</span>
-<span style=color:#ae81ff>&gt; ])</span>
+<span style=color:#6272a4># 하나 하나 튜플 형식으로 입력한다. 가독성이 좋지 않은 단점이 있다.</span>
+<span style=color:#6272a4># 그래서 개선된 방법이 f 다.</span>
+&gt; e = dict([
+    ( &#39;Name&#39;, &#39;Niceman&#39;),
+    (&#39;City&#39;, &#39;Seoul&#39;),
+    (&#39;Age&#39;, &#39;33&#39;),
+    (&#39;Grade&#39;, &#39;A&#39;),
+    (&#39;Status&#39;, True)
+&gt; ])
 
 
-<span style=color:#75715e># 이 형태로 DB에 저장하거나, 엑셀이 쓰거나, 웹 서비스 형태에 사용된다.</span>
-<span style=color:#75715e># java에서는 map 이라고 한다.</span>
-<span style=color:#75715e># JSON 형태도 이런 방식으로 되어 있다.</span>
-<span style=color:#ae81ff>&gt; f = dict(</span>
-    <span style=color:#ae81ff>Name = &#39;Niceman&#39;,</span>
-    <span style=color:#ae81ff>City = &#39;Seoul&#39;,</span>
-    <span style=color:#ae81ff>Age = &#39;33&#39;,</span>
-    <span style=color:#ae81ff>Grade = &#39;A&#39;,</span>
-    <span style=color:#ae81ff>Status = True</span>
-<span style=color:#ae81ff>&gt; )</span>
+<span style=color:#6272a4># 이 형태로 DB에 저장하거나, 엑셀이 쓰거나, 웹 서비스 형태에 사용된다.</span>
+<span style=color:#6272a4># java에서는 map 이라고 한다.</span>
+<span style=color:#6272a4># JSON 형태도 이런 방식으로 되어 있다.</span>
+&gt; f = dict(
+    Name = &#39;Niceman&#39;,
+    City = &#39;Seoul&#39;,
+    Age = &#39;33&#39;,
+    Grade = &#39;A&#39;,
+    Status = True
+&gt; )
 
-<span style=color:#ae81ff>&gt; print(&#39;a - &#39;, type(a),a)</span>
-<span style=color:#ae81ff>a -  &lt;class &#39;dict&#39;&gt; {&#39;name&#39;: &#39;Kim&#39;, &#39;phone&#39;: &#39;01012345678&#39;, &#39;birth&#39;: &#39;870124&#39;}</span>
+&gt; print(&#39;a - &#39;, type(a),a)
+a -  &lt;class &#39;dict&#39;&gt; {&#39;name&#39;: &#39;Kim&#39;, &#39;phone&#39;: &#39;01012345678&#39;, &#39;birth&#39;: &#39;870124&#39;}
 
-<span style=color:#ae81ff>&gt; print(&#39;b - &#39;, type(b),b)</span>
-<span style=color:#ae81ff>b - &lt;class &#39;dict&#39;&gt; {0: &#39;Hello Python!&#39;}</span>
+&gt; print(&#39;b - &#39;, type(b),b)
+b - &lt;class &#39;dict&#39;&gt; {0: &#39;Hello Python!&#39;}
 
-<span style=color:#ae81ff>&gt; print(&#39;c - &#39;, type(c),c)</span>
-<span style=color:#ae81ff>c -  &lt;class &#39;dict&#39;&gt; {&#39;arr&#39;: [1, 2, 3, 4]}</span>
+&gt; print(&#39;c - &#39;, type(c),c)
+c -  &lt;class &#39;dict&#39;&gt; {&#39;arr&#39;: [1, 2, 3, 4]}
 
-<span style=color:#ae81ff>&gt; print(&#39;d - &#39;, type(d),d)</span>
-<span style=color:#ae81ff>d -  &lt;class &#39;dict&#39;&gt; {&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Age&#39;: 33, &#39;Grade&#39;: &#39;A&#39;, &#39;Status&#39;: True}</span>
+&gt; print(&#39;d - &#39;, type(d),d)
+d -  &lt;class &#39;dict&#39;&gt; {&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Age&#39;: 33, &#39;Grade&#39;: &#39;A&#39;, &#39;Status&#39;: True}
 
-<span style=color:#ae81ff>&gt; print(&#39;e - &#39;, type(e),e)</span>
-<span style=color:#ae81ff>e -  &lt;class &#39;dict&#39;&gt; {&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Age&#39;: &#39;33&#39;, &#39;Grade&#39;: &#39;A&#39;, &#39;Status&#39;: True}</span>
+&gt; print(&#39;e - &#39;, type(e),e)
+e -  &lt;class &#39;dict&#39;&gt; {&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Age&#39;: &#39;33&#39;, &#39;Grade&#39;: &#39;A&#39;, &#39;Status&#39;: True}
 
-<span style=color:#ae81ff>&gt; print(&#39;f - &#39;, type(f),f)</span>
-<span style=color:#ae81ff>f -  &lt;class &#39;dict&#39;&gt; {&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Age&#39;: &#39;33&#39;, &#39;Grade&#39;: &#39;A&#39;, &#39;Status&#39;: True}</span>
+&gt; print(&#39;f - &#39;, type(f),f)
+f -  &lt;class &#39;dict&#39;&gt; {&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Age&#39;: &#39;33&#39;, &#39;Grade&#39;: &#39;A&#39;, &#39;Status&#39;: True}
 </code></pre></div><hr>
 <h1 id=2-dictionary-value-출력과-수정>2. dictionary value 출력과 수정<a hidden class=anchor aria-hidden=true href=#2-dictionary-value-출력과-수정>#</a></h1>
 <h2 id=21-dictionary-value-출력>2.1 dictionary value 출력<a hidden class=anchor aria-hidden=true href=#21-dictionary-value-출력>#</a></h2>
@@ -201,50 +201,50 @@
 <li><code>error</code>가 발생하면 중단되기 때문에, 실무에서는 두 번째 방법을 많이 사용한다.<br>
 <strong>결론: Key에 해당하는 값을 사용할 때는 함수 <code>.get(key)</code> 를 사용하자.</strong></li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;a - &#39;, a.get(&#39;name1&#39;))</span>
-<span style=color:#ae81ff>None</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(&#39;a - &#39;, a.get(&#39;name1&#39;))
+None
 
-<span style=color:#ae81ff>&gt; print(&#39;a - &#39;, a[&#39;name1&#39;])</span>
-<span style=color:#75715e># error 발생으로 중단</span>
+&gt; print(&#39;a - &#39;, a[&#39;name1&#39;])
+<span style=color:#6272a4># error 발생으로 중단</span>
 
-<span style=color:#ae81ff>&gt; print(&#39;b - &#39;, b[0])</span>
-<span style=color:#ae81ff>&gt; print(&#39;b - &#39;, b.get(0))</span>
-<span style=color:#ae81ff>Hello Python!</span>
+&gt; print(&#39;b - &#39;, b[0])
+&gt; print(&#39;b - &#39;, b.get(0))
+Hello Python!
 
-<span style=color:#ae81ff>&gt; print(&#39;c - &#39;, c[&#39;arr&#39;])</span>
-<span style=color:#ae81ff>&gt; print(&#39;c - &#39;, c.get(&#39;arr&#39;))</span>
-<span style=color:#111>[</span><span style=color:#ae81ff>1</span><span style=color:#111>,</span> <span style=color:#ae81ff>2</span><span style=color:#111>,</span> <span style=color:#ae81ff>3</span><span style=color:#111>,</span> <span style=color:#ae81ff>4</span><span style=color:#111>]</span>
+&gt; print(&#39;c - &#39;, c[&#39;arr&#39;])
+&gt; print(&#39;c - &#39;, c.get(&#39;arr&#39;))
+[<span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>3</span>, <span style=color:#bd93f9>4</span>]
 
-<span style=color:#75715e># value 값이 여러 원소를 가지고 있을 경우, index를 사용하여 출력할 수 있다.</span>
-<span style=color:#ae81ff>&gt; print(&#39;c - &#39;, c[&#39;arr&#39;][3])</span>
-<span style=color:#ae81ff>&gt; print(&#39;c - &#39;, c.get(&#39;arr&#39;)[3])</span>
-<span style=color:#ae81ff>4</span>
+<span style=color:#6272a4># value 값이 여러 원소를 가지고 있을 경우, index를 사용하여 출력할 수 있다.</span>
+&gt; print(&#39;c - &#39;, c[&#39;arr&#39;][3])
+&gt; print(&#39;c - &#39;, c.get(&#39;arr&#39;)[3])
+<span style=color:#bd93f9>4</span>
 
-<span style=color:#ae81ff>&gt; print(&#39;d - &#39;, d.get(&#39;Age&#39;))</span>
-<span style=color:#ae81ff>33</span>
+&gt; print(&#39;d - &#39;, d.get(&#39;Age&#39;))
+<span style=color:#bd93f9>33</span>
 
-<span style=color:#ae81ff>&gt; print(&#39;e - &#39;, e.get(&#39;Status&#39;))</span>
-<span style=color:#00a8c8>True</span>
+&gt; print(&#39;e - &#39;, e.get(&#39;Status&#39;))
+<span style=color:#ff79c6>True</span>
 
-<span style=color:#ae81ff>&gt; print(&#39;f - &#39;, f.get(&#39;City&#39;))</span>
-<span style=color:#ae81ff>Seoul</span>
+&gt; print(&#39;f - &#39;, f.get(&#39;City&#39;))
+Seoul
 
 </code></pre></div>
 <h2 id=22-dictionary-수정>2.2 dictionary 수정<a hidden class=anchor aria-hidden=true href=#22-dictionary-수정>#</a></h2>
 <ul>
 <li>index에 key 값을 입력했을 때, 기존에 있던 key 면 수정이 되고, 없는 key면 추가된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
-<span style=color:#75715e># 수정</span>
-<span style=color:#ae81ff>&gt; b = {0 : &#39;Hello Python!&#39;}</span>
-<span style=color:#ae81ff>&gt; b[0] = &#39;Good backend developer&#39;</span>
-<span style=color:#ae81ff>&gt; print(b)</span>
-{<span style=color:#f92672>0</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;Good backend developer&#39;</span>}
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
+<span style=color:#6272a4># 수정</span>
+&gt; b = {0 : &#39;Hello Python!&#39;}
+&gt; b[0] = &#39;Good backend developer&#39;
+&gt; print(b)
+{<span style=color:#ff79c6>0</span>: <span style=color:#f1fa8c>&#39;Good backend developer&#39;</span>}
 
-<span style=color:#75715e># 추가</span>
-<span style=color:#ae81ff>&gt; b[2] = &#39;Python Python&#39;</span>
-<span style=color:#ae81ff>&gt; print(b)</span>
-{<span style=color:#f92672>0: &#39;Good backend developer&#39;, 2</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;Python Python&#39;</span>}
+<span style=color:#6272a4># 추가</span>
+&gt; b[2] = &#39;Python Python&#39;
+&gt; print(b)
+{<span style=color:#ff79c6>0: &#39;Good backend developer&#39;, 2</span>: <span style=color:#f1fa8c>&#39;Python Python&#39;</span>}
 
 </code></pre></div><hr>
 <h1 id=3-dictionary-함수>3. dictionary 함수<a hidden class=anchor aria-hidden=true href=#3-dictionary-함수>#</a></h1>
@@ -258,93 +258,93 @@
 <li><code>.update()</code>: 다른 리스트를 넣어서, 키가 똑같은 것을 수정할 수 있다.</li>
 <li><code>in</code> 연산자를 사용해서 해당하는 키 값이 있는지 알 수 있다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; a = {&#39;name&#39; : &#39;Kim&#39;, &#39;phone&#39;: &#39;01012345678&#39;, &#39;birth&#39;: &#39;870124&#39;}</span>
-<span style=color:#ae81ff>&gt; d = {</span>
-    <span style=color:#f92672>&#39;Name&#39; </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;Niceman&#39;</span><span style=color:#111>,</span>
-    <span style=color:#f92672>&#39;City&#39; </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;Seoul&#39;</span><span style=color:#111>,</span>
-    <span style=color:#f92672>&#39;Age&#39; </span><span style=color:#111>:</span> <span style=color:#ae81ff>33</span><span style=color:#111>,</span>
-    <span style=color:#f92672>&#39;Grade&#39; </span><span style=color:#111>:</span> <span style=color:#d88200>&#39;A&#39;</span><span style=color:#111>,</span>
-    <span style=color:#f92672>&#39;Status&#39; </span><span style=color:#111>:</span> <span style=color:#00a8c8>True</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; a = {&#39;name&#39; : &#39;Kim&#39;, &#39;phone&#39;: &#39;01012345678&#39;, &#39;birth&#39;: &#39;870124&#39;}
+&gt; d = {
+    <span style=color:#ff79c6>&#39;Name&#39; </span>: <span style=color:#f1fa8c>&#39;Niceman&#39;</span>,
+    <span style=color:#ff79c6>&#39;City&#39; </span>: <span style=color:#f1fa8c>&#39;Seoul&#39;</span>,
+    <span style=color:#ff79c6>&#39;Age&#39; </span>: <span style=color:#bd93f9>33</span>,
+    <span style=color:#ff79c6>&#39;Grade&#39; </span>: <span style=color:#f1fa8c>&#39;A&#39;</span>,
+    <span style=color:#ff79c6>&#39;Status&#39; </span>: <span style=color:#ff79c6>True</span>
     }
 
 
-<span style=color:#75715e># len</span>
-<span style=color:#ae81ff>&gt; print(len(a))</span>
-<span style=color:#ae81ff>3</span>
+<span style=color:#6272a4># len</span>
+&gt; print(len(a))
+<span style=color:#bd93f9>3</span>
 
-<span style=color:#ae81ff>&gt; print(len(d))</span>
-<span style=color:#ae81ff>5</span>
+&gt; print(len(d))
+<span style=color:#bd93f9>5</span>
 
-<span style=color:#75715e># .keys()</span>
-<span style=color:#ae81ff>&gt; print(a.keys())</span>
-<span style=color:#ae81ff>dict_keys([&#39;name&#39;, &#39;phone&#39;, &#39;birth&#39;])</span>
+<span style=color:#6272a4># .keys()</span>
+&gt; print(a.keys())
+dict_keys([&#39;name&#39;, &#39;phone&#39;, &#39;birth&#39;])
 
-<span style=color:#ae81ff>&gt; print(d.keys())</span>
-<span style=color:#ae81ff>dict_keys([&#39;Name&#39;, &#39;City&#39;, &#39;Age&#39;, &#39;Grade&#39;, &#39;Status&#39;])</span>
-
-
-<span style=color:#75715e># .values()</span>
-<span style=color:#ae81ff>&gt; print(a.values())</span>
-<span style=color:#ae81ff>dict_values([&#39;Kim&#39;, &#39;01012345678&#39;, &#39;870124&#39;])</span>
-
-<span style=color:#ae81ff>&gt; print(d.values())</span>
-<span style=color:#ae81ff>dict_values([&#39;Niceman&#39;, &#39;Seoul&#39;, 33, &#39;A&#39;, True])</span>
+&gt; print(d.keys())
+dict_keys([&#39;Name&#39;, &#39;City&#39;, &#39;Age&#39;, &#39;Grade&#39;, &#39;Status&#39;])
 
 
-<span style=color:#75715e># .items()</span>
-<span style=color:#ae81ff>&gt; print(a.items())</span>
-<span style=color:#ae81ff>dict_items([(&#39;name&#39;, &#39;Kim&#39;), (&#39;phone&#39;, &#39;01012345678&#39;), (&#39;birth&#39;, &#39;870124&#39;)])</span>
+<span style=color:#6272a4># .values()</span>
+&gt; print(a.values())
+dict_values([&#39;Kim&#39;, &#39;01012345678&#39;, &#39;870124&#39;])
 
-<span style=color:#ae81ff>&gt; print(d.items())</span>
-<span style=color:#ae81ff>dict_items([(&#39;Name&#39;, &#39;Niceman&#39;), (&#39;City&#39;, &#39;Seoul&#39;), (&#39;Age&#39;, 33), (&#39;Grade&#39;, &#39;A&#39;), (&#39;Status&#39;, True)])</span>
+&gt; print(d.values())
+dict_values([&#39;Niceman&#39;, &#39;Seoul&#39;, 33, &#39;A&#39;, True])
 
 
-<span style=color:#75715e># list 안에 넣으면 key 값들만, value 값들만, item 값들만으로 list를 만든다.</span>
-<span style=color:#ae81ff>&gt; print(list(a.keys())</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;name&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;phone&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;birth&#39;</span><span style=color:#111>]</span>
+<span style=color:#6272a4># .items()</span>
+&gt; print(a.items())
+dict_items([(&#39;name&#39;, &#39;Kim&#39;), (&#39;phone&#39;, &#39;01012345678&#39;), (&#39;birth&#39;, &#39;870124&#39;)])
 
-<span style=color:#ae81ff>&gt; print(list(a.values())</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;Kim&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;01012345678&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;870124&#39;</span><span style=color:#111>]</span>
+&gt; print(d.items())
+dict_items([(&#39;Name&#39;, &#39;Niceman&#39;), (&#39;City&#39;, &#39;Seoul&#39;), (&#39;Age&#39;, 33), (&#39;Grade&#39;, &#39;A&#39;), (&#39;Status&#39;, True)])
 
-<span style=color:#ae81ff>&gt; print(list(a.items())</span>
-<span style=color:#111>[</span><span style=color:#ae81ff>(&#39;name&#39;, &#39;Kim&#39;), (&#39;phone&#39;, &#39;01012345678&#39;), (&#39;birth&#39;, &#39;870124&#39;)]</span>
 
-<span style=color:#75715e># .pop()</span>
-<span style=color:#ae81ff>&gt; print(a.pop(&#39;birth&#39;))</span>
-<span style=color:#ae81ff>870124</span>
+<span style=color:#6272a4># list 안에 넣으면 key 값들만, value 값들만, item 값들만으로 list를 만든다.</span>
+&gt; print(list(a.keys())
+[<span style=color:#f1fa8c>&#39;name&#39;</span>, <span style=color:#f1fa8c>&#39;phone&#39;</span>, <span style=color:#f1fa8c>&#39;birth&#39;</span>]
 
-<span style=color:#ae81ff>&gt; print(a)</span>
-{<span style=color:#f92672>&#39;name&#39;: &#39;Kim&#39;, &#39;phone&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;01012345678&#39;</span>}
+&gt; print(list(a.values())
+[<span style=color:#f1fa8c>&#39;Kim&#39;</span>, <span style=color:#f1fa8c>&#39;01012345678&#39;</span>, <span style=color:#f1fa8c>&#39;870124&#39;</span>]
 
-<span style=color:#ae81ff>&gt; print(d.pop(&#39;Age&#39;))</span>
-<span style=color:#ae81ff>33</span>
+&gt; print(list(a.items())
+[(&#39;name&#39;, &#39;Kim&#39;), (&#39;phone&#39;, &#39;01012345678&#39;), (&#39;birth&#39;, &#39;870124&#39;)]
 
-<span style=color:#ae81ff>&gt; print(d)</span>
-{<span style=color:#f92672>&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Grade&#39;: &#39;A&#39;, &#39;Status&#39;</span><span style=color:#111>:</span> <span style=color:#00a8c8>True</span>}
+<span style=color:#6272a4># .pop()</span>
+&gt; print(a.pop(&#39;birth&#39;))
+<span style=color:#bd93f9>870124</span>
 
-<span style=color:#75715e># .popitem(): 추첨기에 사용할 수 있다.</span>
-<span style=color:#ae81ff>&gt; print(d.popitem())</span>
-<span style=color:#ae81ff>(&#39;Status&#39;, True)</span>
+&gt; print(a)
+{<span style=color:#ff79c6>&#39;name&#39;: &#39;Kim&#39;, &#39;phone&#39;</span>: <span style=color:#f1fa8c>&#39;01012345678&#39;</span>}
 
-<span style=color:#ae81ff>&gt; print(d)</span>
-{<span style=color:#f92672>&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Grade&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;A&#39;</span>}
+&gt; print(d.pop(&#39;Age&#39;))
+<span style=color:#bd93f9>33</span>
 
-<span style=color:#ae81ff>&gt; print(d.popitem())</span>
-<span style=color:#ae81ff>(&#39;Grade&#39;, &#39;A&#39;)</span>
+&gt; print(d)
+{<span style=color:#ff79c6>&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Grade&#39;: &#39;A&#39;, &#39;Status&#39;</span>: <span style=color:#ff79c6>True</span>}
 
-<span style=color:#ae81ff>&gt; print(d)</span>
-{<span style=color:#f92672>&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Grade&#39;</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;A&#39;</span>}
+<span style=color:#6272a4># .popitem(): 추첨기에 사용할 수 있다.</span>
+&gt; print(d.popitem())
+(&#39;Status&#39;, True)
+
+&gt; print(d)
+{<span style=color:#ff79c6>&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Grade&#39;</span>: <span style=color:#f1fa8c>&#39;A&#39;</span>}
+
+&gt; print(d.popitem())
+(&#39;Grade&#39;, &#39;A&#39;)
+
+&gt; print(d)
+{<span style=color:#ff79c6>&#39;Name&#39;: &#39;Niceman&#39;, &#39;City&#39;: &#39;Seoul&#39;, &#39;Grade&#39;</span>: <span style=color:#f1fa8c>&#39;A&#39;</span>}
 
 </code></pre></div>
 <ul>
 <li><code>in</code> 연산자 사용하여 key 값 존재유무 확인</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; a = {&#39;name&#39; : &#39;Kim&#39;, &#39;phone&#39;: &#39;01012345678&#39;, &#39;birth&#39;: &#39;870124&#39;}</span>
-<span style=color:#ae81ff>&gt; print(&#39;name&#39; in a)</span>
-<span style=color:#00a8c8>True</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; a = {&#39;name&#39; : &#39;Kim&#39;, &#39;phone&#39;: &#39;01012345678&#39;, &#39;birth&#39;: &#39;870124&#39;}
+&gt; print(&#39;name&#39; in a)
+<span style=color:#ff79c6>True</span>
 
-<span style=color:#ae81ff>&gt; print(&#39;addr&#39; in a)</span>
-<span style=color:#00a8c8>False</span>
+&gt; print(&#39;addr&#39; in a)
+<span style=color:#ff79c6>False</span>
 
 </code></pre></div>
 </div>

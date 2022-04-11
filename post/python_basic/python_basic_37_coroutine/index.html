@@ -231,29 +231,29 @@
 <p>for문에서는 예외가 잡히기 때문에, <code>StopIterator</code>가 발생되지 않는다.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e>## Generator</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4>## Generator</span>
 
-<span style=color:#75715e>## sub routine</span>
-<span style=color:#f92672>&gt; def corountine1()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   print(&#39;&gt;&gt;&gt; coroutine started&#39;)</span>
+<span style=color:#6272a4>## sub routine</span>
+<span style=color:#ff79c6>&gt; def corountine1()</span>:
+&gt;   print(&#39;&gt;&gt;&gt; coroutine started&#39;)
 
-<span style=color:#75715e># yield는 외부 main routine에서 주는 값을 받아오고, 이 yield가 i로 할당된다.</span>
-<span style=color:#ae81ff>&gt;   i = yield</span>
-<span style=color:#f92672>&gt;   print(&#39;&gt;&gt;&gt; coroutine received</span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(i))
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>## main routine: 함수를 호출하기 때문에
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>&gt; cr1 = coroutine1()
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>&gt; print(cr1, type(cr1))
-</span><span style=color:#d88200>&lt;generator object coroutine1 at 0x00000158B4A1EB30&gt; &lt;class &#39;</span><span style=color:#ae81ff>generator&#39;&gt;</span>
+<span style=color:#6272a4># yield는 외부 main routine에서 주는 값을 받아오고, 이 yield가 i로 할당된다.</span>
+&gt;   i = yield
+<span style=color:#ff79c6>&gt;   print(&#39;&gt;&gt;&gt; coroutine received</span>: {}<span style=color:#f1fa8c>&#39;.format(i))
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>## main routine: 함수를 호출하기 때문에
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>&gt; cr1 = coroutine1()
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>&gt; print(cr1, type(cr1))
+</span><span style=color:#f1fa8c>&lt;generator object coroutine1 at 0x00000158B4A1EB30&gt; &lt;class &#39;</span>generator&#39;&gt;
 
-<span style=color:#ae81ff>&gt; next(cr1)</span>
- <span style=color:#ae81ff>&gt;&gt;&gt; coroutine started.</span>
+&gt; next(cr1)
+ &gt;&gt;&gt; coroutine started.
 
-<span style=color:#ae81ff>&gt; next(cr1)</span>
- <span style=color:#f92672>&gt;&gt;&gt; coroutine received </span><span style=color:#111>:</span> <span style=color:#ae81ff>None</span>
- <span style=color:#ae81ff>StopIteration</span>
+&gt; next(cr1)
+ <span style=color:#ff79c6>&gt;&gt;&gt; coroutine received </span>: None
+ StopIteration
 </code></pre></div><ul>
 <li>
 <p>위 코드에서는 sub routine이 main routine에 주는 것 밖에 하지 못 했다.</p>
@@ -274,16 +274,16 @@
 </blockquote>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; cr1 = coroutine1()</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; cr1 = coroutine1()
 
-<span style=color:#75715e># yield 지점까지 sub routine 실행</span>
-<span style=color:#ae81ff>&gt; next(cr1)</span>
- <span style=color:#ae81ff>&gt;&gt;&gt; coroutine started.</span>
+<span style=color:#6272a4># yield 지점까지 sub routine 실행</span>
+&gt; next(cr1)
+ &gt;&gt;&gt; coroutine started.
 
-<span style=color:#75715e>## 값 전송</span>
-<span style=color:#ae81ff>&gt; cr1.send(100)</span>
- <span style=color:#f92672>&gt;&gt;&gt; coroutine received </span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
- <span style=color:#ae81ff>StopIteration</span>
+<span style=color:#6272a4>## 값 전송</span>
+&gt; cr1.send(100)
+ <span style=color:#ff79c6>&gt;&gt;&gt; coroutine received </span>: <span style=color:#bd93f9>100</span>
+ StopIteration
 </code></pre></div>
 <ul>
 <li><strong>send와 next 비교</strong>
@@ -298,15 +298,15 @@
 <ul>
 <li>그러면 <code>send</code>를 잘못 사용한 경우를 알아보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; cr1 = coroutine1()</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; cr1 = coroutine1()
 
-<span style=color:#75715e># next(cr1)을 생략하고, 바로 send한다.</span>
+<span style=color:#6272a4># next(cr1)을 생략하고, 바로 send한다.</span>
 
-<span style=color:#75715e># 시작되지 않고 보내는 상황이다.</span>
+<span style=color:#6272a4># 시작되지 않고 보내는 상황이다.</span>
 
-<span style=color:#75715e>## 값 전송</span>
-<span style=color:#ae81ff>&gt; cr1.send(100)</span>
-<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#ae81ff>can&#39;t send non-None value to a just-started generator</span>
+<span style=color:#6272a4>## 값 전송</span>
+&gt; cr1.send(100)
+<span style=color:#ff79c6>TypeError</span>: can&#39;t send non-None value to a just-started generator
 </code></pre></div>
 <ul>
 <li>Error를 통해 알 수 있는 건 sub-routine의 yield 지점에서 context가 멈춰야, send로 보냈을 때 받을 수 있다는 걸 알 수 있다.</li>
@@ -322,122 +322,122 @@
 <li>GEN_CLOSED: 실행 완료 상태를 의미</li>
 </ul>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># 이번에는 매개변수가 존재</span>
-<span style=color:#f92672>&gt; def coroutine2(x)</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   print(&#39;coroutine started </span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(x))
-</span><span style=color:#d88200>
-</span><span style=color:#d88200># main과 sub routine의 양방향 통신 -&gt; 동시성 개발
-</span><span style=color:#d88200># 좌변 = 우변
-</span><span style=color:#d88200># 좌변은 main routine에서 sub routine으로 입력을 받는 것
-</span><span style=color:#d88200># 우변은 sub routine에서 나한테 준 것
-</span><span style=color:#d88200>
-</span><span style=color:#d88200>&gt;   y = yield x
-</span><span style=color:#d88200>&gt;   print(&#39;</span><span style=color:#f92672>coroutine y received </span><span style=color:#111>:</span> {}<span style=color:#d88200>&#39;.format(y))
-</span><span style=color:#d88200>&gt;   z = yield x + y
-</span><span style=color:#d88200>&gt;   print(&#39;</span><span style=color:#f92672>coroutine z received </span><span style=color:#111>:</span> {}<span style=color:#ae81ff>&#39;.format(z))</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># 이번에는 매개변수가 존재</span>
+<span style=color:#ff79c6>&gt; def coroutine2(x)</span>:
+<span style=color:#ff79c6>&gt;   print(&#39;coroutine started </span>: {}<span style=color:#f1fa8c>&#39;.format(x))
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c># main과 sub routine의 양방향 통신 -&gt; 동시성 개발
+</span><span style=color:#f1fa8c># 좌변 = 우변
+</span><span style=color:#f1fa8c># 좌변은 main routine에서 sub routine으로 입력을 받는 것
+</span><span style=color:#f1fa8c># 우변은 sub routine에서 나한테 준 것
+</span><span style=color:#f1fa8c>
+</span><span style=color:#f1fa8c>&gt;   y = yield x
+</span><span style=color:#f1fa8c>&gt;   print(&#39;</span><span style=color:#ff79c6>coroutine y received </span>: {}<span style=color:#f1fa8c>&#39;.format(y))
+</span><span style=color:#f1fa8c>&gt;   z = yield x + y
+</span><span style=color:#f1fa8c>&gt;   print(&#39;</span><span style=color:#ff79c6>coroutine z received </span>: {}&#39;.format(z))
 
-<span style=color:#ae81ff>&gt; cr3 = coroutine2(10)</span>
+&gt; cr3 = coroutine2(10)
 
-<span style=color:#ae81ff>&gt; print(next(cr3))</span>
-<span style=color:#f92672>coroutine started </span><span style=color:#111>:</span> <span style=color:#ae81ff>10</span>
-<span style=color:#ae81ff>10</span>
+&gt; print(next(cr3))
+<span style=color:#ff79c6>coroutine started </span>: <span style=color:#bd93f9>10</span>
+<span style=color:#bd93f9>10</span>
 
-<span style=color:#ae81ff>&gt; print(cr3.send(100))</span>
-<span style=color:#f92672>coroutine y received </span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
-<span style=color:#ae81ff>110</span>
+&gt; print(cr3.send(100))
+<span style=color:#ff79c6>coroutine y received </span>: <span style=color:#bd93f9>100</span>
+<span style=color:#bd93f9>110</span>
 
-<span style=color:#ae81ff>&gt; print(cr3.send(100))</span>
-<span style=color:#f92672>coroutine z received </span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
-<span style=color:#ae81ff>Stop Iteration</span>
+&gt; print(cr3.send(100))
+<span style=color:#ff79c6>coroutine z received </span>: <span style=color:#bd93f9>100</span>
+Stop Iteration
 </code></pre></div>
 <ul>
 <li>상태값 확인을 해보겠다.</li>
 <li>상태값 확인은 <code>getgeneratestate</code>를 import하는 것부터 시작한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; from inspect import getgeneratorstate</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; from inspect import getgeneratorstate
 
-<span style=color:#ae81ff>&gt; cr3 = coroutine2(10)</span>
+&gt; cr3 = coroutine2(10)
 
-<span style=color:#ae81ff>&gt; print(getgeneratorstate(cr3))</span>
-<span style=color:#ae81ff>GEN_CREATED</span>
+&gt; print(getgeneratorstate(cr3))
+GEN_CREATED
 
-<span style=color:#ae81ff>&gt; next(cr3)</span>
-<span style=color:#f92672>coroutine started </span><span style=color:#111>:</span> <span style=color:#ae81ff>10</span>
+&gt; next(cr3)
+<span style=color:#ff79c6>coroutine started </span>: <span style=color:#bd93f9>10</span>
 
-<span style=color:#ae81ff>&gt; print(getgeneratorstate(cr3))</span>
-<span style=color:#ae81ff>GEN_SUSPENDED</span>
+&gt; print(getgeneratorstate(cr3))
+GEN_SUSPENDED
 
-<span style=color:#ae81ff>&gt; cr3.send(100)</span>
-<span style=color:#f92672>coroutine y received </span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
+&gt; cr3.send(100)
+<span style=color:#ff79c6>coroutine y received </span>: <span style=color:#bd93f9>100</span>
 
-<span style=color:#ae81ff>&gt; print(getgeneratorstate(cr3))</span>
-<span style=color:#ae81ff>GEN_SUSPENDED</span>
+&gt; print(getgeneratorstate(cr3))
+GEN_SUSPENDED
 
-<span style=color:#ae81ff>&gt; cr3.send(20)</span>
-<span style=color:#f92672>coroutine z received </span><span style=color:#111>:</span> <span style=color:#ae81ff>20</span>
-<span style=color:#ae81ff>StopIteration</span>
+&gt; cr3.send(20)
+<span style=color:#ff79c6>coroutine z received </span>: <span style=color:#bd93f9>20</span>
+StopIteration
 </code></pre></div>
 <hr>
 <h1 id=5-코루틴-기본예제-3-중첩-코루틴-처리>5. 코루틴 기본예제 3: 중첩 코루틴 처리<a hidden class=anchor aria-hidden=true href=#5-코루틴-기본예제-3-중첩-코루틴-처리>#</a></h1>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def generator1()</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   for x in &#39;AB&#39;</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       yield x</span>
-<span style=color:#f92672>&gt;   for y in range(1,4)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       yield y</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; def generator1()</span>:
+<span style=color:#ff79c6>&gt;   for x in &#39;AB&#39;</span>:
+&gt;       yield x
+<span style=color:#ff79c6>&gt;   for y in range(1,4)</span>:
+&gt;       yield y
 
-<span style=color:#ae81ff>&gt; t1 = generator1()</span>
+&gt; t1 = generator1()
 
-<span style=color:#ae81ff>&gt; print(next(t1))</span>
-<span style=color:#ae81ff>A</span>
+&gt; print(next(t1))
+A
 
-<span style=color:#ae81ff>&gt; print(next(t1))</span>
-<span style=color:#ae81ff>B</span>
+&gt; print(next(t1))
+B
 
-<span style=color:#75715e># 이어서 출력되는 걸 알 수 있다.</span>
-<span style=color:#ae81ff>&gt; print(next(t1))</span>
-<span style=color:#ae81ff>1</span>
+<span style=color:#6272a4># 이어서 출력되는 걸 알 수 있다.</span>
+&gt; print(next(t1))
+<span style=color:#bd93f9>1</span>
 
-<span style=color:#ae81ff>&gt; print(next(t1))</span>
-<span style=color:#ae81ff>2</span>
+&gt; print(next(t1))
+<span style=color:#bd93f9>2</span>
 
-<span style=color:#ae81ff>&gt; print(next(t1))</span>
-<span style=color:#ae81ff>3</span>
+&gt; print(next(t1))
+<span style=color:#bd93f9>3</span>
 
-<span style=color:#ae81ff>&gt; print(next(t1))</span>
-<span style=color:#ae81ff>StopIteration</span>
+&gt; print(next(t1))
+StopIteration
 
-<span style=color:#ae81ff>&gt; t2 = generator1()</span>
+&gt; t2 = generator1()
 
-<span style=color:#ae81ff>&gt; print(list(t2))</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;A&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;B&#39;</span><span style=color:#111>,</span> <span style=color:#ae81ff>1</span><span style=color:#111>,</span> <span style=color:#ae81ff>2</span><span style=color:#111>,</span> <span style=color:#ae81ff>3</span><span style=color:#111>]</span>
+&gt; print(list(t2))
+[<span style=color:#f1fa8c>&#39;A&#39;</span>, <span style=color:#f1fa8c>&#39;B&#39;</span>, <span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>3</span>]
 </code></pre></div>
 <ul>
 <li><code>yield from</code>을 사용해서 위 code를 구현해보자.</li>
 <li>그냥 <code>yield</code>보다 더 직관적으로 이해가 가능하다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def generator2()</span><span style=color:#111>:</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; def generator2()</span>:
 
-<span style=color:#75715e># from 뒤에 iterator가 다 소진될 때까지 반환하겠다.</span>
-<span style=color:#ae81ff>&gt;     yield from &#39;AB&#39;</span>
-<span style=color:#ae81ff>&gt;     yield from range(1,4)</span>
+<span style=color:#6272a4># from 뒤에 iterator가 다 소진될 때까지 반환하겠다.</span>
+&gt;     yield from &#39;AB&#39;
+&gt;     yield from range(1,4)
 
 
-<span style=color:#ae81ff>&gt; t3 = generator2()</span>
+&gt; t3 = generator2()
 
-<span style=color:#ae81ff>&gt; print(next(t3))</span>
-<span style=color:#ae81ff>A</span>
+&gt; print(next(t3))
+A
 
-<span style=color:#ae81ff>&gt; print(next(t3))</span>
-<span style=color:#ae81ff>B</span>
+&gt; print(next(t3))
+B
 
-<span style=color:#ae81ff>&gt; print(next(t3))</span>
-<span style=color:#ae81ff>1</span>
+&gt; print(next(t3))
+<span style=color:#bd93f9>1</span>
 
-<span style=color:#ae81ff>&gt; print(next(t3))</span>
-<span style=color:#ae81ff>2</span>
+&gt; print(next(t3))
+<span style=color:#bd93f9>2</span>
 
-<span style=color:#ae81ff>&gt; print(next(t3))</span>
-<span style=color:#ae81ff>3</span>
+&gt; print(next(t3))
+<span style=color:#bd93f9>3</span>
 </code></pre></div>
 <hr>
 <h1 id=6-summary>6. Summary<a hidden class=anchor aria-hidden=true href=#6-summary>#</a></h1>

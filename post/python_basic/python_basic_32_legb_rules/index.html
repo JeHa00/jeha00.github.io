@@ -35,7 +35,7 @@
 <meta name=twitter:title content="[TIL] Python basic 32: LEGB rules and Memory structures">
 <meta name=twitter:description content="LEGB rules 즉 Local, Enclosing, global(or module), built-in varialbe의 scope에 대해 알아본다. 그리고, Python Memory structure가 어떤지 개괄적으로 알아본다.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 32: LEGB rules and Memory structures","item":"http://jeha00.github.io/post/python_basic/python_basic_32_legb_rules/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 32: LEGB rules and Memory structures","name":"[TIL] Python basic 32: LEGB rules and Memory structures","description":"LEGB rules 즉 Local, Enclosing, global(or module), built-in varialbe의 scope에 대해 알아본다. 그리고, Python Memory structure가 어떤지 개괄적으로 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  coroutin을 공부하면서 global variable과 local variable에 대해서 기본적인 의미만 알았지만, 이것이 Scoping Rule과 연관이 되어있다는 것과,stack과 heap이라는 데이터 임시 저장 자료 구조와 연관된 걸 몰랐다. 그래서 Scoping Rule, Stack 그리고, Heap에 대해 알아보겠다.   1.LEGB rules(Scoping rules)  변수(variable)의 생존 범위(lifetime)에 관련된 규칙\n  Python scope 개념을 알아야 하는 이유:  신뢰성 있고, 유지보수성이 좋은 프로그램을 작성할 수 있다. name 충돌을 방지할 수 있고, 버그를 줄일 수 있다. 이와 관련된 tool인 Closure에 대해 알 수 있다.    1.1 Scope의 일반적인 종류 : 2가지  global scope  이 scope에서 정의한 name은 모든 코드에서 사용할 수 있다.   local scope  이 scope에서 정의한 name은 범위 내의 코드에서만 사용할 수 있거나 볼 수 있다.      name: 변수, 상수, 함수, 클래스 등등의 식별자(identifier)를 참조하는 것으로, 구분하기 위해 존재한다.   1.2 초기 Scope의 부재로 인한 문제  초기 프로그래밍은 global만 있었기 때문에, 변수를 수정해야할 때 모든 코드를 동시에 염두에 둬야했다. 그래서 이런 문제를 피하기 위해 scope을 사용했다. scope을 사용한 후, 프로그램의 어디에서든지 그 scope에 있는 변수들에 함부로 접근할 수 없다. (out of scope) name들의 scope은 이 name들을 정의한 코드의 block scope과 동일하다. (in scope)  1.3 파이썬의 이름(name)과 범위(scope)들  파이썬에서의 변수들에 값이 할당될 때, 즉 파이썬 names을 다음과 같은 방법들로 만들 때 변수들은 존재하게 된다.  변수(variable): 변수에 값을 할당하면, 변수는 만들어진다. function , classes: 예약어 def, classes를 사용하여 정의하면 이용할 수 있다. modules: import하여 사용할 수 있다.    1.4 assignment operations와 reference operations의 차이  reference operations  name을 ‘참조’ 한다는 건, name에 담겨진 content or value를 ‘단지 가져온다’   assignment operations  name을 ‘할당’ 한다는 건, name을 ‘새롭게’ 만들거나, ‘수정’ 한다   할당한다는 건 특정 scope이 결정된다는 걸 말한다.  1.5 Python scope와 namespace의 관계  Namespace : python의 name이 dictionary data type으로 구현된 것\n   dictionary가 Python이 name을 저장하는 구체적인 원리다.\n  Namespace는 또한 __dir__ 명령어에 저장되어 있다.\n  namespace는 각각 다른 수명 시간(life time)을 가지고 있다.\n  왜냐하면 각각 다른 지점에서 만들어지기 때문이다.\n  from Python-course.eu: Namespaces\n    즉, __dir__은 Namespace를 확인할 수 있는 명령어이고, 할당된 name이 가지는 scope을 보여준다.\n  .__dict__.keys() 로 key value로 indexing하여 확인할 수 있다.\n  python은 name의 존재유무를 확인하기 위해서, 여러 scope levels(or namespace)를 찾아본다.\n  찾는 순서는 다음과 같다.\n local namespace - global namespace - global or module namespace - built-in namespace      1.6 Python이 name을 찾는 규칙: LEGB rules   local namespace - enclosing namespace - global(or module) namespace- built-in scope namespace 순서로 주어진 name을 파이썬이 찾는다.\n  Local(or function) scope: Python function의 body 또는 code block 부분이 local scope\n   지역 함수 내에 로직을 해결하는 값을 사용한다.\n   fuction 내에서 정의한 name들만 포함한다.\n  이 function의 코드에서만 local scope에 있는 name을 확인할 수 있다.\n  lifetime of a local namespace: 할당된 function이 종료되면 끝난다.\n  Enclosing(or nonlocal) scope: 중첩함수(nested functions)를 위해서만 존재하는 scope\n enclosing function 안에서 정의된 names만 포함한다. 이 enclosing function의 코드에서만 enclosing scope에 있는 name을 확인할 수 있다.    Global(or module) scope: Python program, script, module 안에서 Top level의 scope\n   이 scope에는 주로 변하지 않는 고정값을 사용한다.\n   프로그램 또는 모듈에서 최고 수준으로(Top level) 정의한 이름들을 포함한다.\n  어느 코드에서든지 Global scope에 있는 name을 확인할 수 있다.\n Top level이란??    lifetime of a module namespace: 일반적으로 script가 끝날 때까지만 지속된다.\n  Built-in scope: script를 run할 때마다 만들어지는 특별한 scope\n Python 안에 내장된 예약어들, functions들 등등의 name을 포함한다. 이 scope 또한 Global scope처럼 어느 코드에서든지 name을 확인한다. Built-in namespace는 interpreter가 시작되면 만들어지고, 절대로 삭제되지 않는다.    1.7 LEGB rules: The Local Scope  그러면 code를 보면 이해해보자.   def square(base):  result = base ** 2  print(f'The square of {base} is : {result}')  square(10) The square of 10 is : 100  result NameError: name 'result' is not defined  base NameError: name 'base' is not defined   위 코드에 대해 알아보자.\n square fuction을 호출할 때, 파이썬은 base와 result를 포함하는 local scope을 만든다. square(10)으로 호출할 때, base에는 10을 result에는 100을 취한다. 또 다시 호출할 때는 첫 번째 호출 시 취한 값들은 기억하지 않는다. result와 base는 square() 호출에 의해 만들어진 local scope에만 존재한다. 그래서 square fuction 호출 후, 접근한다면 NameError을 얻는 것이다.    그러면 추가로 local scope에 동일한 변수 이름을 가진 fuction을 정의해보자.\n   def cube(base):  result = base ** 3  print(f'The cube of {base} is : {result}')  cube(30) The cube of 30 is : 27000  local scope에 동일한 변수이름을 사용했지만, 프로그램 충돌이 일어나지 않았다. 왜냐하면 local scope을 사용했기 때문이다. local scope에만 살아있는 변수를 local variable이라 한다. 함수 실행이 끝나면 local scope에서 벗어나기 때문에 local variable의 생명력은 끝난다. 이러한 장점 때문에, 디버깅과 수정이 쉽고 가독성이 좋아진다.  1.8 LEGB rules: The Enclosing Scope (Nested Functions)  def outer_func():   # 이 block은 외부 함수(outer_func)의 local scope이면서   # 내부 함수(inner_func)의 enclosing scope이기도 하다.  var = 100  def inner_func():  print(f'Printing var from inner_func() : {var}')  inner_func()  print(f'Printing var from outer_func() : {var}')  outer_func() Printing var from inner_func(): 100 Printing var from outer_func(): 100  inner_func() NameError: name 'inner_func' is not defined  outer_func()을 호출할 때, outer_func()의 local scope이 만들어진다. 이 scope은 동시에 inner_func()의 enclosing scope이라고도 한다.  global scope과 local scope 둘 다 아니고, 이 사이에 놓여있는 특별한 scope을 의미.   또한, inner_func()은 enclosing function인 outer_func이 실행되는 동안에만 유지되는 일시적인 함수다. 즉, outer_func()의 code에서만 inner_func()을 찾을 수 있다.  1.9 LEGB rules: Modules - The Global Scope    프로그램을 실행한 순간부터 global scope에 있는 것이다.    이 global scope은 module file과 깊은 연관이 있기 때문에, module scope이라 한다.    그리고 현재 실행되는 script 또는 module이 entry point 역할을 한다면, 이 시점부터 scope of __main__이 된다.    namespace를 확인하기 위해서 dir()을 사용할 때, 아무런 인자 없이 사용하면 main global Python scope에서 이용가능한 name list를 얻는다.    프로그램 실행할 때 단 하나의 global Python scope만이 존재한다. 그리고, 프로그램 실행이 끝나야 scope이 종료된다.    local scope에 있는 global 변수를 참조하거나 접근할 수 있다.   하지만, local scope에서 global variable에 값을 할당할려고 하면 Error가 발생된다.    # a global variable  var = 100  def increment():  var += 1 # global variable 업데이트 시도하기  increment() UnboundLocalError: local variable 'var' referenced before assignment   global variable을 업데이트하려고 시도했지만, local scope 내에서는 global variable을 선언할 수 없기 때문에, 파이썬에서는 var 이라는 동일한 이름으로 local variable을 새롭게 만들었다.\n  그리고, 이 과정에서 첫 번째 할당 var + 1 전에 local var을 사용하려고 시도한 걸 알았기 때문에 Error가 발생된다.\n  그러면 이렇게 코드를 다시 짜보자.\n  # a gloabl variable  var = 100  def func(): # the global varaible 참조한다.  print(var) 'var' # 동일한 이름으로 새로운 local variable을 정의한다.  var = 200  func() UnboundLocalError: local variable 'var' referenced before assignment   global variable을 출력한 후에 var을 업데이트 할 수 있다고 생각했겠지만, 다시 동일한 Error가 발생된다.\n  global variable을 업데이트한 것이 아닌 function의 body 부분에 있기 때문에 local variable를 새로 만든 것이다.\n   Python은 global variable과 동일한 이름으로 function body에 선언해도, local variable로 인식한다.\n 1.10 LEGB rules: summary # This area is the global or module scope  number = 100  def outer_func():   # This block is the local scope of outer_func()   # It's also the enclosing scope of inner_func()  def inner_func():   # This block is the local scope of inner_func()  print(number)   inner_func()  outer_func() 100  Inside inner_func(): local scope 이지만, number variable는 존재하지 않는다. Inside outer_func(): the enclosing scope 이다. number variable이 정의되지 않았다. In the module scope: the global scope 이다. number variable을 찾을 수 있어서 출력할 수 있다. 만약 number variable이 the global scope에서 정의되지 않는다면, 파이썬은 built-in scope에서 찾을 것이다.  1.11 Local variable 또는 global variable 찾아보기  locals() method를 통해서, globals() method를 통해서 지역 변수만, 또는 전역 변수만 출력할 수 있다. 먼저 locals()에 대해 알아보자.   def func(var):  x = 10  def printer():  print('Ex  5', \"Printer Func Inner\")  print('Func Inner', locals())  func('Hi') Func Inner {'var': 'Hi', 'x': 10, 'printer': .printer at 0x000001D53343FDC0}  func() 함수를 호출하기 위해 인자로 넘겼던 ‘Hi’ 또한 지역변수임을 알 수 있다. enclosing scope에 있는 것 또한 local variable로 확인할 수 있다. outer function의 local scope에 정의했기 때문에 printer 또한 지역 변수로 확인할 수 있다.   그러면 다음으로 globals()에 대해 알아보자. globals는 이 코드를 실행할 때 입력한 모든 전역 변수가 입력되기 때문에, 다음과 같이 하여 알아본다. globals()는 global 영역에 변수를 입력할 때 호출된다.   print('Ex ', globals()) Ex7  {.....}  globals()['text_variable'] = 100  print('Ex ', globals()) Ex7  {'test_variable': 100}  globals()를 사용한 변수 자동화 생성: 지역 - 전역 변수로 작성한다.   for i in range(1, 6):  for k in range(1, 6):  globals()['plus_{}_{}'.format(i, k)] = i + k  print(globals()) {'plus_1_1': 2, 'plus_1_2': 3, 'plus_1_3': 4, 'plus_1_4': 5, 'plus_1_5': 6, 'plus_2_1': 3, 'plus_2_2': 4, 'plus_2_3': 5, 'plus_2_4': 6, 'plus_2_5': 7, 'plus_3_1': 4, 'plus_3_2': 5, 'plus_3_3': 6, 'plus_3_4': 7, 'plus_3_5': 8, 'plus_4_1': 5, 'plus_4_2': 6, 'plus_4_3': 7, 'plus_4_4': 8, 'plus_4_5': 9, 'plus_5_1': 6, 'plus_5_2': 7, 'plus_5_3': 8, 'plus_5_4': 9, 'plus_5_5': 10}  rint(plus_3_5) 8  print(plus_5_5) 10 1.12 LEGB rules: Built-in scope  Built-in scope은 builtins 라 불리는 표준 라이브러리 모듈로서 실행되는 특별한 파이썬 scope이다. 파이썬은 LEGB 에서 마지막으로 built-in을 찾는다. 이 scope에서는 어느 모듈이든지 import할 필요 없이 names을 사용할 수 있다. builtins 안에 있는 name들은 언제나 Python의 global scope에, __builtins__로 담겨진다. 밑에 예제를 보자.   dir() ['__annotations__', '__builtins__',..., '__package__', '__spec__']  dir(__builtins__) ['ArithmeticError', 'AssertionError',..., 'tuple', 'type', 'vars', 'zip']  dir()의 첫 호출에서 __builtins__을 확인할 수 있다. 그리고 __builtins__를 dir로 내부를 들여다보면, 파이썬의 built-in names의 전체 목록을 얻을 수 있다.   또 한 가지 특징은 global scope에서 어떠한 built-in names이든 오버라이드할 수 있다. 하지만 우연히 또는 부주의하게 이렇게 오버라이드가 된다면 위험하며, bugs를 찾기 어렵다. 그래서 이런 종류의 실행은 최대한 피하는 게 낫다.  # a built-in fuction의 표준 사용  abs(-15) 15 # global scope에서 built-in name을 재정의한다.  abs = 20  abs(-15) TypeError: 'int' object is not callable  del abs  abs(-15) 15 1.13 LEGB rules: final summary  From: Python Scope \u0026 the LEGB rule: Resolving Names in Your code   2. Python memory structure 2.1 코드 영역  실행할 프로그램의 코드가 저장되는 영역 (text 영역이라고도 한다)\n  lifetime: 프로그램이 시작하고, 끝날 때까지 메모리에 계속 남아 있는다.  2.2 데이터 영역  프로그램의 global variable과 정적(static) variable가 저장되는 영역\n  프로그램이 시작하고, 끝날 때까지 메모리에 계속 남아 있는다.  2.3 Stack   데이터를 임시 저장할 때 사용하는 자료구조로, 데이터의 입력과 출력 순서는 후입선출(Last In First Out, LIFO) 방식 loca var. 와 parameter var.가 저장된다.    push(푸쉬): stack에 데이터를 넣는 작업 pop(팝):stack에서 데이터를 꺼내는 작업 데이터를 넣고 꺼내는 작업에서 윗 부분을 top, 아랫 부분을 bottom 이라 한다.   stack 영역은 함수의 호출과 함께 생성되고, 함수의 호출이 완료되면 소멸한다. 스택 프레임(stack frame): 스택 영역에 저장되는 함수의 호출 정보 메모리의 높은 주소에서 낮은 주소의 방향으로 할당된다. 한계가 있어서, 한계를 초과하도록 삽입할 수 없다. Stack overflow: 함수는 변수를 저장하기 위해 stack을 만드는데, 만들어진 stack이 메모리 용량을 넘어서면 Stack overflow가 발생한다.  2.2 Heap  사용자가 직접 관리할수 잇는 영역으로, 객체가 생성된다.\n  사용자에 의해 메모리 공간이 동적으로 할당되고, 해제된다. heap 영역은 런타임 시에 크기가 결정된다 (메모리가 할당된다) 메모리의 낮은 주소에서 높은 주소로 할당된다.   Reference  파이썬 프로그래밍 기초 - 지역 변수와 전역 변수 Python-course.eu: Namespaces 스코핑 룰(Scoping rule) 자료구조와 함께 배우는 알고리즘 입문 파이썬편 Python Scope \u0026 the LEGB rule: Resolving Names in Your code  ","wordCount":"1749","inLanguage":"en","datePublished":"2022-03-27T23:53:06+09:00","dateModified":"2022-03-27T23:53:06+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_32_legb_rules/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 32: LEGB rules and Memory structures","name":"[TIL] Python basic 32: LEGB rules and Memory structures","description":"LEGB rules 즉 Local, Enclosing, global(or module), built-in varialbe의 scope에 대해 알아본다. 그리고, Python Memory structure가 어떤지 개괄적으로 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  coroutin을 공부하면서 global variable과 local variable에 대해서 기본적인 의미만 알았지만, 이것이 Scoping Rule과 연관이 되어있다는 것과,stack과 heap이라는 데이터 임시 저장 자료 구조와 연관된 걸 몰랐다. 그래서 Scoping Rule, Stack 그리고, Heap에 대해 알아보겠다.   1.LEGB rules(Scoping rules)  변수(variable)의 생존 범위(lifetime)에 관련된 규칙\n  Python scope 개념을 알아야 하는 이유:  신뢰성 있고, 유지보수성이 좋은 프로그램을 작성할 수 있다. name 충돌을 방지할 수 있고, 버그를 줄일 수 있다. 이와 관련된 tool인 Closure에 대해 알 수 있다.    1.1 Scope의 일반적인 종류 : 2가지  global scope  이 scope에서 정의한 name은 모든 코드에서 사용할 수 있다.   local scope  이 scope에서 정의한 name은 범위 내의 코드에서만 사용할 수 있거나 볼 수 있다.      name: 변수, 상수, 함수, 클래스 등등의 식별자(identifier)를 참조하는 것으로, 구분하기 위해 존재한다.   1.2 초기 Scope의 부재로 인한 문제  초기 프로그래밍은 global만 있었기 때문에, 변수를 수정해야할 때 모든 코드를 동시에 염두에 둬야했다. 그래서 이런 문제를 피하기 위해 scope을 사용했다. scope을 사용한 후, 프로그램의 어디에서든지 그 scope에 있는 변수들에 함부로 접근할 수 없다. (out of scope) name들의 scope은 이 name들을 정의한 코드의 block scope과 동일하다. (in scope)  1.3 파이썬의 이름(name)과 범위(scope)들  파이썬에서의 변수들에 값이 할당될 때, 즉 파이썬 names을 다음과 같은 방법들로 만들 때 변수들은 존재하게 된다.  변수(variable): 변수에 값을 할당하면, 변수는 만들어진다. function , classes: 예약어 def, classes를 사용하여 정의하면 이용할 수 있다. modules: import하여 사용할 수 있다.    1.4 assignment operations와 reference operations의 차이  reference operations  name을 ‘참조’ 한다는 건, name에 담겨진 content or value를 ‘단지 가져온다’   assignment operations  name을 ‘할당’ 한다는 건, name을 ‘새롭게’ 만들거나, ‘수정’ 한다   할당한다는 건 특정 scope이 결정된다는 걸 말한다.  1.5 Python scope와 namespace의 관계  Namespace : python의 name이 dictionary data type으로 구현된 것\n   dictionary가 Python이 name을 저장하는 구체적인 원리다.\n  Namespace는 또한 __dir__ 명령어에 저장되어 있다.\n  namespace는 각각 다른 수명 시간(life time)을 가지고 있다.\n  왜냐하면 각각 다른 지점에서 만들어지기 때문이다.\n  from Python-course.eu: Namespaces\n    즉, __dir__은 Namespace를 확인할 수 있는 명령어이고, 할당된 name이 가지는 scope을 보여준다.\n  .__dict__.keys() 로 key value로 indexing하여 확인할 수 있다.\n  python은 name의 존재유무를 확인하기 위해서, 여러 scope levels(or namespace)를 찾아본다.\n  찾는 순서는 다음과 같다.\n local namespace - global namespace - global or module namespace - built-in namespace      1.6 Python이 name을 찾는 규칙: LEGB rules   local namespace - enclosing namespace - global(or module) namespace- built-in scope namespace 순서로 주어진 name을 파이썬이 찾는다.\n  Local(or function) scope: Python function의 body 또는 code block 부분이 local scope\n   지역 함수 내에 로직을 해결하는 값을 사용한다.\n   fuction 내에서 정의한 name들만 포함한다.\n  이 function의 코드에서만 local scope에 있는 name을 확인할 수 있다.\n  lifetime of a local namespace: 할당된 function이 종료되면 끝난다.\n  Enclosing(or nonlocal) scope: 중첩함수(nested functions)를 위해서만 존재하는 scope\n enclosing function 안에서 정의된 names만 포함한다. 이 enclosing function의 코드에서만 enclosing scope에 있는 name을 확인할 수 있다.    Global(or module) scope: Python program, script, module 안에서 Top level의 scope\n   이 scope에는 주로 변하지 않는 고정값을 사용한다.\n   프로그램 또는 모듈에서 최고 수준으로(Top level) 정의한 이름들을 포함한다.\n  어느 코드에서든지 Global scope에 있는 name을 확인할 수 있다.\n Top level이란??    lifetime of a module namespace: 일반적으로 script가 끝날 때까지만 지속된다.\n  Built-in scope: script를 run할 때마다 만들어지는 특별한 scope\n Python 안에 내장된 예약어들, functions들 등등의 name을 포함한다. 이 scope 또한 Global scope처럼 어느 코드에서든지 name을 확인한다. Built-in namespace는 interpreter가 시작되면 만들어지고, 절대로 삭제되지 않는다.    1.7 LEGB rules: The Local Scope  그러면 code를 보면 이해해보자.   def square(base):  result = base ** 2  print(f'The square of {base} is : {result}')  square(10) The square of 10 is : 100  result NameError: name 'result' is not defined  base NameError: name 'base' is not defined   위 코드에 대해 알아보자.\n square fuction을 호출할 때, 파이썬은 base와 result를 포함하는 local scope을 만든다. square(10)으로 호출할 때, base에는 10을 result에는 100을 취한다. 또 다시 호출할 때는 첫 번째 호출 시 취한 값들은 기억하지 않는다. result와 base는 square() 호출에 의해 만들어진 local scope에만 존재한다. 그래서 square fuction 호출 후, 접근한다면 NameError을 얻는 것이다.    그러면 추가로 local scope에 동일한 변수 이름을 가진 fuction을 정의해보자.\n   def cube(base):  result = base ** 3  print(f'The cube of {base} is : {result}')  cube(30) The cube of 30 is : 27000  local scope에 동일한 변수이름을 사용했지만, 프로그램 충돌이 일어나지 않았다. 왜냐하면 local scope을 사용했기 때문이다. local scope에만 살아있는 변수를 local variable이라 한다. 함수 실행이 끝나면 local scope에서 벗어나기 때문에 local variable의 생명력은 끝난다. 이러한 장점 때문에, 디버깅과 수정이 쉽고 가독성이 좋아진다.  1.8 LEGB rules: The Enclosing Scope (Nested Functions)  def outer_func():  # 이 block은 외부 함수(outer_func)의 local scope이면서  # 내부 함수(inner_func)의 enclosing scope이기도 하다.  var = 100  def inner_func():  print(f'Printing var from inner_func() : {var}')  inner_func()  print(f'Printing var from outer_func() : {var}')  outer_func() Printing var from inner_func(): 100 Printing var from outer_func(): 100  inner_func() NameError: name 'inner_func' is not defined  outer_func()을 호출할 때, outer_func()의 local scope이 만들어진다. 이 scope은 동시에 inner_func()의 enclosing scope이라고도 한다.  global scope과 local scope 둘 다 아니고, 이 사이에 놓여있는 특별한 scope을 의미.   또한, inner_func()은 enclosing function인 outer_func이 실행되는 동안에만 유지되는 일시적인 함수다. 즉, outer_func()의 code에서만 inner_func()을 찾을 수 있다.  1.9 LEGB rules: Modules - The Global Scope    프로그램을 실행한 순간부터 global scope에 있는 것이다.    이 global scope은 module file과 깊은 연관이 있기 때문에, module scope이라 한다.    그리고 현재 실행되는 script 또는 module이 entry point 역할을 한다면, 이 시점부터 scope of __main__이 된다.    namespace를 확인하기 위해서 dir()을 사용할 때, 아무런 인자 없이 사용하면 main global Python scope에서 이용가능한 name list를 얻는다.    프로그램 실행할 때 단 하나의 global Python scope만이 존재한다. 그리고, 프로그램 실행이 끝나야 scope이 종료된다.    local scope에 있는 global 변수를 참조하거나 접근할 수 있다.   하지만, local scope에서 global variable에 값을 할당할려고 하면 Error가 발생된다.    # a global variable  var = 100  def increment():  var += 1 # global variable 업데이트 시도하기  increment() UnboundLocalError: local variable 'var' referenced before assignment   global variable을 업데이트하려고 시도했지만, local scope 내에서는 global variable을 선언할 수 없기 때문에, 파이썬에서는 var 이라는 동일한 이름으로 local variable을 새롭게 만들었다.\n  그리고, 이 과정에서 첫 번째 할당 var + 1 전에 local var을 사용하려고 시도한 걸 알았기 때문에 Error가 발생된다.\n  그러면 이렇게 코드를 다시 짜보자.\n  # a gloabl variable  var = 100  def func(): # the global varaible 참조한다.  print(var) 'var' # 동일한 이름으로 새로운 local variable을 정의한다.  var = 200  func() UnboundLocalError: local variable 'var' referenced before assignment   global variable을 출력한 후에 var을 업데이트 할 수 있다고 생각했겠지만, 다시 동일한 Error가 발생된다.\n  global variable을 업데이트한 것이 아닌 function의 body 부분에 있기 때문에 local variable를 새로 만든 것이다.\n   Python은 global variable과 동일한 이름으로 function body에 선언해도, local variable로 인식한다.\n 1.10 LEGB rules: summary # This area is the global or module scope  number = 100  def outer_func():  # This block is the local scope of outer_func()  # It's also the enclosing scope of inner_func()  def inner_func():  # This block is the local scope of inner_func()  print(number)   inner_func()  outer_func() 100  Inside inner_func(): local scope 이지만, number variable는 존재하지 않는다. Inside outer_func(): the enclosing scope 이다. number variable이 정의되지 않았다. In the module scope: the global scope 이다. number variable을 찾을 수 있어서 출력할 수 있다. 만약 number variable이 the global scope에서 정의되지 않는다면, 파이썬은 built-in scope에서 찾을 것이다.  1.11 Local variable 또는 global variable 찾아보기  locals() method를 통해서, globals() method를 통해서 지역 변수만, 또는 전역 변수만 출력할 수 있다. 먼저 locals()에 대해 알아보자.   def func(var):  x = 10  def printer():  print('Ex  5', \"Printer Func Inner\")  print('Func Inner', locals())  func('Hi') Func Inner {'var': 'Hi', 'x': 10, 'printer': .printer at 0x000001D53343FDC0}  func() 함수를 호출하기 위해 인자로 넘겼던 ‘Hi’ 또한 지역변수임을 알 수 있다. enclosing scope에 있는 것 또한 local variable로 확인할 수 있다. outer function의 local scope에 정의했기 때문에 printer 또한 지역 변수로 확인할 수 있다.   그러면 다음으로 globals()에 대해 알아보자. globals는 이 코드를 실행할 때 입력한 모든 전역 변수가 입력되기 때문에, 다음과 같이 하여 알아본다. globals()는 global 영역에 변수를 입력할 때 호출된다.   print('Ex ', globals()) Ex7  {.....}  globals()['text_variable'] = 100  print('Ex ', globals()) Ex7  {'test_variable': 100}  globals()를 사용한 변수 자동화 생성: 지역 - 전역 변수로 작성한다.   for i in range(1, 6):  for k in range(1, 6):  globals()['plus_{}_{}'.format(i, k)] = i + k  print(globals()) {'plus_1_1': 2, 'plus_1_2': 3, 'plus_1_3': 4, 'plus_1_4': 5, 'plus_1_5': 6, 'plus_2_1': 3, 'plus_2_2': 4, 'plus_2_3': 5, 'plus_2_4': 6, 'plus_2_5': 7, 'plus_3_1': 4, 'plus_3_2': 5, 'plus_3_3': 6, 'plus_3_4': 7, 'plus_3_5': 8, 'plus_4_1': 5, 'plus_4_2': 6, 'plus_4_3': 7, 'plus_4_4': 8, 'plus_4_5': 9, 'plus_5_1': 6, 'plus_5_2': 7, 'plus_5_3': 8, 'plus_5_4': 9, 'plus_5_5': 10}  rint(plus_3_5) 8  print(plus_5_5) 10 1.12 LEGB rules: Built-in scope  Built-in scope은 builtins 라 불리는 표준 라이브러리 모듈로서 실행되는 특별한 파이썬 scope이다. 파이썬은 LEGB 에서 마지막으로 built-in을 찾는다. 이 scope에서는 어느 모듈이든지 import할 필요 없이 names을 사용할 수 있다. builtins 안에 있는 name들은 언제나 Python의 global scope에, __builtins__로 담겨진다. 밑에 예제를 보자.   dir() ['__annotations__', '__builtins__',..., '__package__', '__spec__']  dir(__builtins__) ['ArithmeticError', 'AssertionError',..., 'tuple', 'type', 'vars', 'zip']  dir()의 첫 호출에서 __builtins__을 확인할 수 있다. 그리고 __builtins__를 dir로 내부를 들여다보면, 파이썬의 built-in names의 전체 목록을 얻을 수 있다.   또 한 가지 특징은 global scope에서 어떠한 built-in names이든 오버라이드할 수 있다. 하지만 우연히 또는 부주의하게 이렇게 오버라이드가 된다면 위험하며, bugs를 찾기 어렵다. 그래서 이런 종류의 실행은 최대한 피하는 게 낫다.  # a built-in fuction의 표준 사용  abs(-15) 15 # global scope에서 built-in name을 재정의한다.  abs = 20  abs(-15) TypeError: 'int' object is not callable  del abs  abs(-15) 15 1.13 LEGB rules: final summary  From: Python Scope \u0026 the LEGB rule: Resolving Names in Your code   2. Python memory structure 2.1 코드 영역  실행할 프로그램의 코드가 저장되는 영역 (text 영역이라고도 한다)\n  lifetime: 프로그램이 시작하고, 끝날 때까지 메모리에 계속 남아 있는다.  2.2 데이터 영역  프로그램의 global variable과 정적(static) variable가 저장되는 영역\n  프로그램이 시작하고, 끝날 때까지 메모리에 계속 남아 있는다.  2.3 Stack   데이터를 임시 저장할 때 사용하는 자료구조로, 데이터의 입력과 출력 순서는 후입선출(Last In First Out, LIFO) 방식 loca var. 와 parameter var.가 저장된다.    push(푸쉬): stack에 데이터를 넣는 작업 pop(팝):stack에서 데이터를 꺼내는 작업 데이터를 넣고 꺼내는 작업에서 윗 부분을 top, 아랫 부분을 bottom 이라 한다.   stack 영역은 함수의 호출과 함께 생성되고, 함수의 호출이 완료되면 소멸한다. 스택 프레임(stack frame): 스택 영역에 저장되는 함수의 호출 정보 메모리의 높은 주소에서 낮은 주소의 방향으로 할당된다. 한계가 있어서, 한계를 초과하도록 삽입할 수 없다. Stack overflow: 함수는 변수를 저장하기 위해 stack을 만드는데, 만들어진 stack이 메모리 용량을 넘어서면 Stack overflow가 발생한다.  2.2 Heap  사용자가 직접 관리할수 잇는 영역으로, 객체가 생성된다.\n  사용자에 의해 메모리 공간이 동적으로 할당되고, 해제된다. heap 영역은 런타임 시에 크기가 결정된다 (메모리가 할당된다) 메모리의 낮은 주소에서 높은 주소로 할당된다.   Reference  파이썬 프로그래밍 기초 - 지역 변수와 전역 변수 Python-course.eu: Namespaces 스코핑 룰(Scoping rule) 자료구조와 함께 배우는 알고리즘 입문 파이썬편 Python Scope \u0026 the LEGB rule: Resolving Names in Your code  ","wordCount":"1749","inLanguage":"en","datePublished":"2022-03-27T23:53:06+09:00","dateModified":"2022-03-27T23:53:06+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_32_legb_rules/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -308,18 +308,18 @@
 <ul>
 <li>그러면 code를 보면 이해해보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def square(base)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   result = base ** 2</span>
-<span style=color:#ae81ff>&gt;   print(f&#39;The square of {base} is : {result}&#39;)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; def square(base)</span>:
+&gt;   result = base ** 2
+&gt;   print(f&#39;The square of {base} is : {result}&#39;)
 
-<span style=color:#ae81ff>&gt; square(10)</span>
-<span style=color:#f92672>The square of 10 is </span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
+&gt; square(10)
+<span style=color:#ff79c6>The square of 10 is </span>: <span style=color:#bd93f9>100</span>
 
-<span style=color:#ae81ff>&gt; result</span>
-<span style=color:#f92672>NameError</span><span style=color:#111>:</span> <span style=color:#ae81ff>name &#39;result&#39; is not defined</span>
+&gt; result
+<span style=color:#ff79c6>NameError</span>: name &#39;result&#39; is not defined
 
-<span style=color:#ae81ff>&gt; base</span>
-<span style=color:#f92672>NameError</span><span style=color:#111>:</span> <span style=color:#ae81ff>name &#39;base&#39; is not defined</span>
+&gt; base
+<span style=color:#ff79c6>NameError</span>: name &#39;base&#39; is not defined
 </code></pre></div><ul>
 <li>
 <p>위 코드에 대해 알아보자.</p>
@@ -335,12 +335,12 @@
 <p>그러면 추가로 local scope에 동일한 변수 이름을 가진 fuction을 정의해보자.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def cube(base)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;        result = base ** 3</span>
-<span style=color:#ae81ff>&gt;        print(f&#39;The cube of {base} is : {result}&#39;)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; def cube(base)</span>:
+&gt;        result = base ** 3
+&gt;        print(f&#39;The cube of {base} is : {result}&#39;)
 
-<span style=color:#ae81ff>&gt; cube(30)</span>
-<span style=color:#f92672>The cube of 30 is </span><span style=color:#111>:</span> <span style=color:#ae81ff>27000</span>
+&gt; cube(30)
+<span style=color:#ff79c6>The cube of 30 is </span>: <span style=color:#bd93f9>27000</span>
 </code></pre></div><ul>
 <li>local scope에 동일한 변수이름을 사용했지만, 프로그램 충돌이 일어나지 않았다.</li>
 <li>왜냐하면 <code>local scope</code>을 사용했기 때문이다.</li>
@@ -349,21 +349,21 @@
 <li>이러한 장점 때문에, 디버깅과 수정이 쉽고 가독성이 좋아진다.</li>
 </ul>
 <h2 id=18-legb-rules-the-enclosing-scope-nested-functions>1.8 LEGB rules: The Enclosing Scope (Nested Functions)<a hidden class=anchor aria-hidden=true href=#18-legb-rules-the-enclosing-scope-nested-functions>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt;  def outer_func()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;    </span> <span style=color:#75715e># 이 block은 외부 함수(outer_func)의 local scope이면서</span>
-<span style=color:#ae81ff>&gt;    </span> <span style=color:#75715e># 내부 함수(inner_func)의 enclosing scope이기도 하다.</span>
-<span style=color:#ae81ff>&gt;     var = 100</span>
-<span style=color:#f92672>&gt;     def inner_func()</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;         print(f&#39;Printing var from inner_func() </span><span style=color:#111>:</span> {<span style=color:#ae81ff>var}&#39;)</span>
-<span style=color:#ae81ff>&gt;     inner_func()</span>
-<span style=color:#f92672>&gt;     print(f&#39;Printing var from outer_func() </span><span style=color:#111>:</span> {<span style=color:#ae81ff>var}&#39;)</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt;  def outer_func()</span>:
+&gt;     <span style=color:#6272a4># 이 block은 외부 함수(outer_func)의 local scope이면서</span>
+&gt;     <span style=color:#6272a4># 내부 함수(inner_func)의 enclosing scope이기도 하다.</span>
+&gt;     var = 100
+<span style=color:#ff79c6>&gt;     def inner_func()</span>:
+<span style=color:#ff79c6>&gt;         print(f&#39;Printing var from inner_func() </span>: {var}&#39;)
+&gt;     inner_func()
+<span style=color:#ff79c6>&gt;     print(f&#39;Printing var from outer_func() </span>: {var}&#39;)
 
-<span style=color:#ae81ff>&gt; outer_func()</span>
-<span style=color:#f92672>Printing var from inner_func()</span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
-<span style=color:#f92672>Printing var from outer_func()</span><span style=color:#111>:</span> <span style=color:#ae81ff>100</span>
+&gt; outer_func()
+<span style=color:#ff79c6>Printing var from inner_func()</span>: <span style=color:#bd93f9>100</span>
+<span style=color:#ff79c6>Printing var from outer_func()</span>: <span style=color:#bd93f9>100</span>
 
-<span style=color:#ae81ff>&gt; inner_func()</span>
-<span style=color:#f92672>NameError</span><span style=color:#111>:</span> <span style=color:#ae81ff>name &#39;inner_func&#39; is not defined</span>
+&gt; inner_func()
+<span style=color:#ff79c6>NameError</span>: name &#39;inner_func&#39; is not defined
 </code></pre></div><ul>
 <li><code>outer_func()</code>을 호출할 때, <code>outer_func()</code>의 local scope이 만들어진다.</li>
 <li>이 scope은 동시에 <code>inner_func()</code>의 <code>enclosing scope</code>이라고도 한다.
@@ -409,14 +409,14 @@
 </ul>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># a global variable</span>
-<span style=color:#ae81ff>&gt; var = 100</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># a global variable</span>
+&gt; var = 100
 
-<span style=color:#f92672>&gt; def increment()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   var += 1</span> <span style=color:#75715e># global variable 업데이트 시도하기</span>
+<span style=color:#ff79c6>&gt; def increment()</span>:
+&gt;   var += 1 <span style=color:#6272a4># global variable 업데이트 시도하기</span>
 
-<span style=color:#ae81ff>&gt; increment()</span>
-<span style=color:#f92672>UnboundLocalError</span><span style=color:#111>:</span> <span style=color:#ae81ff>local variable &#39;var&#39; referenced before assignment</span>
+&gt; increment()
+<span style=color:#ff79c6>UnboundLocalError</span>: local variable &#39;var&#39; referenced before assignment
 </code></pre></div><ul>
 <li>
 <p>global variable을 업데이트하려고 시도했지만, local scope 내에서는 global variable을 선언할 수 없기 때문에, 파이썬에서는 <code>var</code> 이라는 동일한 이름으로 local variable을 새롭게 만들었다.</p>
@@ -428,19 +428,19 @@
 <p>그러면 이렇게 코드를 다시 짜보자.</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># a gloabl variable</span>
-<span style=color:#ae81ff>&gt; var = 100</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># a gloabl variable</span>
+&gt; var = 100
 
-<span style=color:#f92672>&gt; def func()</span><span style=color:#111>:</span>
+<span style=color:#ff79c6>&gt; def func()</span>:
 
-<span style=color:#75715e># the global varaible 참조한다.</span>
-<span style=color:#ae81ff>&gt;   print(var) &#39;var&#39;</span>
+<span style=color:#6272a4># the global varaible 참조한다.</span>
+&gt;   print(var) &#39;var&#39;
 
-<span style=color:#75715e># 동일한 이름으로 새로운 local variable을 정의한다.</span>
-<span style=color:#ae81ff>&gt;   var = 200</span>
+<span style=color:#6272a4># 동일한 이름으로 새로운 local variable을 정의한다.</span>
+&gt;   var = 200
 
-<span style=color:#ae81ff>&gt;&gt; func()</span>
-<span style=color:#f92672>UnboundLocalError</span><span style=color:#111>:</span> <span style=color:#ae81ff>local variable &#39;var&#39; referenced before assignment</span>
+&gt;&gt; func()
+<span style=color:#ff79c6>UnboundLocalError</span>: local variable &#39;var&#39; referenced before assignment
 </code></pre></div><ul>
 <li>
 <p>global variable을 출력한 후에 <code>var</code>을 업데이트 할 수 있다고 생각했겠지만, 다시 동일한 Error가 발생된다.</p>
@@ -453,19 +453,19 @@
 <p>Python은 global variable과 동일한 이름으로 function body에 선언해도, local variable로 인식한다.</p>
 </blockquote>
 <h2 id=110-legb-rules-summary>1.10 LEGB rules: summary<a hidden class=anchor aria-hidden=true href=#110-legb-rules-summary>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># This area is the global or module scope</span>
-<span style=color:#ae81ff>&gt; number = 100</span>
-<span style=color:#f92672>&gt; def outer_func()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;     </span> <span style=color:#75715e># This block is the local scope of outer_func()</span>
-<span style=color:#ae81ff>&gt;     </span> <span style=color:#75715e># It&#39;s also the enclosing scope of inner_func()</span>
-<span style=color:#f92672>&gt;     def inner_func()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;        </span> <span style=color:#75715e># This block is the local scope of inner_func()</span>
-<span style=color:#ae81ff>&gt;         print(number)</span>
-<span style=color:#ae81ff>&gt;</span>
-<span style=color:#ae81ff>&gt;     inner_func()</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># This area is the global or module scope</span>
+&gt; number = 100
+<span style=color:#ff79c6>&gt; def outer_func()</span>:
+&gt;      <span style=color:#6272a4># This block is the local scope of outer_func()</span>
+&gt;      <span style=color:#6272a4># It&#39;s also the enclosing scope of inner_func()</span>
+<span style=color:#ff79c6>&gt;     def inner_func()</span>:
+&gt;         <span style=color:#6272a4># This block is the local scope of inner_func()</span>
+&gt;         print(number)
+&gt;
+&gt;     inner_func()
 
-<span style=color:#ae81ff>&gt; outer_func()</span>
-<span style=color:#ae81ff>100</span>
+&gt; outer_func()
+<span style=color:#bd93f9>100</span>
 </code></pre></div><ul>
 <li>Inside inner_func(): local scope 이지만, number variable는 존재하지 않는다.</li>
 <li>Inside outer_func(): the enclosing scope 이다. number variable이 정의되지 않았다.</li>
@@ -477,14 +477,14 @@
 <li><code>locals()</code> method를 통해서, <code>globals()</code> method를 통해서 지역 변수만, 또는 전역 변수만 출력할 수 있다.</li>
 <li>먼저 <code>locals()</code>에 대해 알아보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; def func(var)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;   x = 10</span>
-<span style=color:#f92672>&gt;   def printer()</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       print(&#39;Ex &gt; 5&#39;, &#34;Printer Func Inner&#34;)</span>
-<span style=color:#ae81ff>&gt;   print(&#39;Func Inner&#39;, locals())</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; def func(var)</span>:
+&gt;   x = 10
+<span style=color:#ff79c6>&gt;   def printer()</span>:
+&gt;       print(&#39;Ex &gt; 5&#39;, &#34;Printer Func Inner&#34;)
+&gt;   print(&#39;Func Inner&#39;, locals())
 
-<span style=color:#ae81ff>&gt; func(&#39;Hi&#39;)</span>
-<span style=color:#ae81ff>Func Inner {&#39;var&#39;: &#39;Hi&#39;, &#39;x&#39;: 10, &#39;printer&#39;: &lt;function func.&lt;locals&gt;.printer at 0x000001D53343FDC0&gt;}</span>
+&gt; func(&#39;Hi&#39;)
+Func Inner {&#39;var&#39;: &#39;Hi&#39;, &#39;x&#39;: 10, &#39;printer&#39;: &lt;function func.&lt;locals&gt;.printer at 0x000001D53343FDC0&gt;}
 </code></pre></div><ul>
 <li><code>func()</code> 함수를 호출하기 위해 인자로 넘겼던 &lsquo;Hi&rsquo; 또한 지역변수임을 알 수 있다.</li>
 <li>enclosing scope에 있는 것 또한 local variable로 확인할 수 있다.</li>
@@ -495,31 +495,31 @@
 <li>globals는 이 코드를 실행할 때 입력한 모든 전역 변수가 입력되기 때문에, 다음과 같이 하여 알아본다.</li>
 <li><code>globals()</code>는 global 영역에 변수를 입력할 때 호출된다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; print(&#39;Ex &gt;&#39;, globals())</span>
-<span style=color:#ae81ff>Ex7 &gt; {.....}</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(&#39;Ex &gt;&#39;, globals())
+Ex7 &gt; {.....}
 
-<span style=color:#ae81ff>&gt; globals()[&#39;text_variable&#39;] = 100</span>
-<span style=color:#ae81ff>&gt; print(&#39;Ex &gt;&#39;, globals())</span>
-<span style=color:#ae81ff>Ex7 &gt; {&#39;test_variable&#39;: 100}</span>
+&gt; globals()[&#39;text_variable&#39;] = 100
+&gt; print(&#39;Ex &gt;&#39;, globals())
+Ex7 &gt; {&#39;test_variable&#39;: 100}
 </code></pre></div>
 <ul>
 <li><code>globals()</code>를 사용한 변수 자동화 생성: 지역 -> 전역 변수로 작성한다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#f92672>&gt; for i in range(1, 6)</span><span style=color:#111>:</span>
-<span style=color:#f92672>&gt;   for k in range(1, 6)</span><span style=color:#111>:</span>
-<span style=color:#ae81ff>&gt;       globals()[&#39;plus_{}_{}&#39;.format(i, k)] = i + k</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; for i in range(1, 6)</span>:
+<span style=color:#ff79c6>&gt;   for k in range(1, 6)</span>:
+&gt;       globals()[&#39;plus_{}_{}&#39;.format(i, k)] = i + k
 
-<span style=color:#ae81ff>&gt; print(globals())</span>
-{<span style=color:#f92672>&#39;plus_1_1&#39;: 2, &#39;plus_1_2&#39;: 3, &#39;plus_1_3&#39;: 4, &#39;plus_1_4&#39;: 5, &#39;plus_1_5&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>6</span><span style=color:#111>,</span>
-<span style=color:#f92672>&#39;plus_2_1&#39;: 3, &#39;plus_2_2&#39;: 4, &#39;plus_2_3&#39;: 5, &#39;plus_2_4&#39;: 6, &#39;plus_2_5&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>7</span><span style=color:#111>,</span>
-<span style=color:#f92672>&#39;plus_3_1&#39;: 4, &#39;plus_3_2&#39;: 5, &#39;plus_3_3&#39;: 6, &#39;plus_3_4&#39;: 7, &#39;plus_3_5&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>8</span><span style=color:#111>,</span>
-<span style=color:#f92672>&#39;plus_4_1&#39;: 5, &#39;plus_4_2&#39;: 6, &#39;plus_4_3&#39;: 7, &#39;plus_4_4&#39;: 8, &#39;plus_4_5&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>9</span><span style=color:#111>,</span>
-<span style=color:#f92672>&#39;plus_5_1&#39;: 6, &#39;plus_5_2&#39;: 7, &#39;plus_5_3&#39;: 8, &#39;plus_5_4&#39;: 9, &#39;plus_5_5&#39;</span><span style=color:#111>:</span> <span style=color:#ae81ff>10</span>}
+&gt; print(globals())
+{<span style=color:#ff79c6>&#39;plus_1_1&#39;: 2, &#39;plus_1_2&#39;: 3, &#39;plus_1_3&#39;: 4, &#39;plus_1_4&#39;: 5, &#39;plus_1_5&#39;</span>: <span style=color:#bd93f9>6</span>,
+<span style=color:#ff79c6>&#39;plus_2_1&#39;: 3, &#39;plus_2_2&#39;: 4, &#39;plus_2_3&#39;: 5, &#39;plus_2_4&#39;: 6, &#39;plus_2_5&#39;</span>: <span style=color:#bd93f9>7</span>,
+<span style=color:#ff79c6>&#39;plus_3_1&#39;: 4, &#39;plus_3_2&#39;: 5, &#39;plus_3_3&#39;: 6, &#39;plus_3_4&#39;: 7, &#39;plus_3_5&#39;</span>: <span style=color:#bd93f9>8</span>,
+<span style=color:#ff79c6>&#39;plus_4_1&#39;: 5, &#39;plus_4_2&#39;: 6, &#39;plus_4_3&#39;: 7, &#39;plus_4_4&#39;: 8, &#39;plus_4_5&#39;</span>: <span style=color:#bd93f9>9</span>,
+<span style=color:#ff79c6>&#39;plus_5_1&#39;: 6, &#39;plus_5_2&#39;: 7, &#39;plus_5_3&#39;: 8, &#39;plus_5_4&#39;: 9, &#39;plus_5_5&#39;</span>: <span style=color:#bd93f9>10</span>}
 
-<span style=color:#ae81ff>&gt; rint(plus_3_5)</span>
-<span style=color:#ae81ff>8</span>
-<span style=color:#ae81ff>&gt; print(plus_5_5)</span>
-<span style=color:#ae81ff>10</span>
+&gt; rint(plus_3_5)
+<span style=color:#bd93f9>8</span>
+&gt; print(plus_5_5)
+<span style=color:#bd93f9>10</span>
 </code></pre></div><h2 id=112-legb-rules-built-in-scope>1.12 LEGB rules: Built-in scope<a hidden class=anchor aria-hidden=true href=#112-legb-rules-built-in-scope>#</a></h2>
 <ul>
 <li>Built-in scope은 <code>builtins</code> 라 불리는 표준 라이브러리 모듈로서 실행되는 특별한 파이썬 scope이다.</li>
@@ -527,11 +527,11 @@
 <li>이 scope에서는 어느 모듈이든지 import할 필요 없이 names을 사용할 수 있다.</li>
 <li><code>builtins</code> 안에 있는 name들은 언제나 Python의 global scope에, <code>__builtins__</code>로 담겨진다. 밑에 예제를 보자.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ae81ff>&gt; dir()</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;__annotations__&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__builtins__&#39;</span><span style=color:#111>,</span><span style=color:#ae81ff>..., &#39;__package__&#39;, &#39;__spec__&#39;]</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; dir()
+[<span style=color:#f1fa8c>&#39;__annotations__&#39;</span>, <span style=color:#f1fa8c>&#39;__builtins__&#39;</span>,..., &#39;__package__&#39;, &#39;__spec__&#39;]
 
-<span style=color:#ae81ff>&gt; dir(__builtins__)</span>
-<span style=color:#111>[</span><span style=color:#d88200>&#39;ArithmeticError&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;AssertionError&#39;</span><span style=color:#111>,</span><span style=color:#ae81ff>..., &#39;tuple&#39;, &#39;type&#39;, &#39;vars&#39;, &#39;zip&#39;]</span>
+&gt; dir(__builtins__)
+[<span style=color:#f1fa8c>&#39;ArithmeticError&#39;</span>, <span style=color:#f1fa8c>&#39;AssertionError&#39;</span>,..., &#39;tuple&#39;, &#39;type&#39;, &#39;vars&#39;, &#39;zip&#39;]
 </code></pre></div><ul>
 <li><code>dir()</code>의 첫 호출에서 <code>__builtins__</code>을 확인할 수 있다.</li>
 <li>그리고 <code>__builtins__</code>를 dir로 내부를 들여다보면, 파이썬의 built-in names의 전체 목록을 얻을 수 있다.</li>
@@ -540,19 +540,19 @@
 <li>또 한 가지 특징은 global scope에서 어떠한 built-in names이든 오버라이드할 수 있다.</li>
 <li>하지만 우연히 또는 부주의하게 이렇게 오버라이드가 된다면 위험하며, bugs를 찾기 어렵다. 그래서 이런 종류의 실행은 최대한 피하는 게 낫다.</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#75715e># a built-in fuction의 표준 사용</span>
-<span style=color:#ae81ff>&gt; abs(-15)</span>
-<span style=color:#ae81ff>15</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># a built-in fuction의 표준 사용</span>
+&gt; abs(-15)
+<span style=color:#bd93f9>15</span>
 
-<span style=color:#75715e># global scope에서 built-in name을 재정의한다.</span>
-<span style=color:#ae81ff>&gt; abs = 20</span>
+<span style=color:#6272a4># global scope에서 built-in name을 재정의한다.</span>
+&gt; abs = 20
 
-<span style=color:#ae81ff>&gt; abs(-15)</span>
-<span style=color:#f92672>TypeError</span><span style=color:#111>:</span> <span style=color:#d88200>&#39;int&#39;</span> <span style=color:#ae81ff>object is not callable</span>
+&gt; abs(-15)
+<span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;int&#39;</span> object is not callable
 
-<span style=color:#ae81ff>&gt; del abs</span>
-<span style=color:#ae81ff>&gt; abs(-15)</span>
-<span style=color:#ae81ff>15</span>
+&gt; del abs
+&gt; abs(-15)
+<span style=color:#bd93f9>15</span>
 </code></pre></div>
 <h2 id=113-legb-rules-final-summary>1.13 LEGB rules: final summary<a hidden class=anchor aria-hidden=true href=#113-legb-rules-final-summary>#</a></h2>
 <ul>
