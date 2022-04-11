@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 10 Apr 2022 15:54:18 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Apr 2022 20:18:00 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 41: Shallow copy &amp; Deep copy</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_41_shallowdeep/</link>
+      <pubDate>Mon, 11 Apr 2022 20:18:00 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_41_shallowdeep/</guid>
+      <description>Shallow copy 와 Deep copy가 각각 무엇이고, 무슨 차이인지 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 40: Call by object reference</title>
       <link>http://jeha00.github.io/post/python_basic/python_basic_40_callbyobjectreference/</link>
