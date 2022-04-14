@@ -9,13 +9,22 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 13 Apr 2022 13:55:26 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Apr 2022 14:54:58 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Operating System Chapter 03: System Structure &amp; Program Execution 2</title>
+      <link>http://jeha00.github.io/post/os/os_chapter_03_%EC%BB%B4%ED%93%A8%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC_2/</link>
+      <pubDate>Thu, 14 Apr 2022 14:54:58 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/os/os_chapter_03_%EC%BB%B4%ED%93%A8%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC_2/</guid>
+      <description>입출력 구조, DMA, 저장장치의 구조 와 하드웨어, 메모리, CPU의 각 보안 방법에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Operating System Chapter 03: System Structure &amp; Program Execution 1</title>
-      <link>http://jeha00.github.io/post/os/os_chapter_03_%EC%BB%B4%ED%93%A8%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/</link>
+      <link>http://jeha00.github.io/post/os/os_chapter_03_%EC%BB%B4%ED%93%A8%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC_1/</link>
       <pubDate>Wed, 13 Apr 2022 13:55:26 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/os/os_chapter_03_%EC%BB%B4%ED%93%A8%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/</guid>
+      <guid>http://jeha00.github.io/post/os/os_chapter_03_%EC%BB%B4%ED%93%A8%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC_1/</guid>
       <description>System Structure &amp;amp; Program Execution의 상편으로 한글 제목은 컴퓨터 시스템의 구조다. I/O 연산이 무엇이고, controller와 local buffer가 무엇이고, 입출력 연산이 Interrupt를 중심으로 어떻게 진행되는지를 알아본다.</description>
     </item>
     
@@ -65,7 +74,7 @@
     </item>
     
     <item>
-      <title>[TIL] Operating System Chapter 02: 운영체제 개요</title>
+      <title>[TIL] Operating System Chapter 02: Introduction to Operating System</title>
       <link>http://jeha00.github.io/post/os/os_chapter_02_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94/</link>
       <pubDate>Tue, 05 Apr 2022 17:43:59 +0900</pubDate>
       
