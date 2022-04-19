@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 15 Apr 2022 00:27:39 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Apr 2022 23:25:25 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] OS Chapter 05: 프로세스 관리</title>
+      <link>http://jeha00.github.io/post/os/os_chapter_05_process/</link>
+      <pubDate>Mon, 18 Apr 2022 23:25:25 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/os/os_chapter_05_process/</guid>
+      <description>프로세스란 무엇인지, 프로세스의 상태는 어떻게 흘러가는지, 문맥 교환이란 무엇인지, 프로세스가 어떻게 생성되고 종료되는지, 프로세스끼리 협력은 어떻게 하는지, thread는 무엇인지 알아보겠다.</description>
+    </item>
+    
     <item>
       <title>[TIL] OS Chapter 04: 프로그램의 구조와 실행</title>
       <link>http://jeha00.github.io/post/os/os_chapter_04_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%9D%98%EA%B5%AC%EC%A1%B0%EC%99%80%EC%8B%A4%ED%96%89/</link>
