@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Apr 2022 18:50:51 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Apr 2022 16:13:46 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] OS Chapter 07: 메모리 관리 1</title>
+      <link>http://jeha00.github.io/post/os/os_chapter_07_%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC_1/</link>
+      <pubDate>Thu, 28 Apr 2022 16:13:46 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/os/os_chapter_07_%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC_1/</guid>
+      <description>logical address와 physical address를 어떻게 mapping하는지, 메모리 관리와 관련된 용어 4가지에 대해 알아보고, 물리적 메모리의 할당 방식 연속할당과 불연속할당 방식 중 연속할당에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] OS Chapter 06: CPU scheduling</title>
       <link>http://jeha00.github.io/post/os/os_chapter_06_cpu_scheduling/</link>
