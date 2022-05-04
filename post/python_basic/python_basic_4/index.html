@@ -1,449 +1,210 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>[TIL] Python basic 4: string | Jeha00 DevLog</title>
-<meta name=keywords content="TIL,python">
-<meta name=description content="string type의 생성부터 연산, len 함수 사용, type conversion, 문자형 함수 그리고 slicing을 알아보겠다.">
-<meta name=author content="Jeha00">
-<link rel=canonical href=http://jeha00.github.io/post/python_basic/python_basic_4/>
-<meta name=google-site-verification content="XYZabc">
-<meta name=yandex-verification content="XYZabc">
-<meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
-<link rel=icon href=http://jeha00.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=http://jeha00.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=http://jeha00.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="[TIL] Python basic 4: string">
-<meta property="og:description" content="string type의 생성부터 연산, len 함수 사용, type conversion, 문자형 함수 그리고 slicing을 알아보겠다.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://jeha00.github.io/post/python_basic/python_basic_4/"><meta property="og:image" content="http://jeha00.github.io/47"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2022-02-28T19:45:30+09:00">
-<meta property="article:modified_time" content="2022-02-28T19:45:30+09:00"><meta property="og:site_name" content="JeHa00 DevLog">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="http://jeha00.github.io/47">
-<meta name=twitter:title content="[TIL] Python basic 4: string">
-<meta name=twitter:description content="string type의 생성부터 연산, len 함수 사용, type conversion, 문자형 함수 그리고 slicing을 알아보겠다.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 4: string","item":"http://jeha00.github.io/post/python_basic/python_basic_4/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 4: string","name":"[TIL] Python basic 4: string","description":"string type의 생성부터 연산, len 함수 사용, type conversion, 문자형 함수 그리고 slicing을 알아보겠다.","keywords":["TIL","python"],"articleBody":"1. 문자열 생성, 출력 그리고, 길이  문자열 생성하기(선언하기) 및 출력하기  # 문자열 생성  str1 = \"I am Python\"  str2 = 'Python' # 빈 문자열 생성  str_t1 = ''  str_t2 = str() # 문자열 출력  print(str1, type(str1)) I am Python  print(str2, type(str2)) Pyton  print(str_t1, type(str_t1))  print(str_t2, type(str_t2))  문자열 길이 측정: **len()**을 많이 사용한다. 길이에는 공백을 포함한다.   print(len(str1)) 11  print(len(str2)) 6 결론\n 문자열 선언에는 “”, ‘’, “\"\"\"\"”, '''''' 을 사용한다. 문자열 출력에는 다른 출력과 동일하게 print를 사용한다. 문자열 길이 측정에는 len() 함수를 사용한다. 길이에는 공백을 포함한다.\n  2. Escape, raw string and multi line 2.1 Escape code \\n: 개행(줄바꿈) \\t: 탭키를 누른 만큼 벌어짐 \\\\: 문자 삽입 \\': 문자 삽입 \\\": 문자 삽입  위에 escape code 예시를 작성해보자.  ## 문자 삽입 escape code  escape_str1 = \"do you have a \\\"retro games\\\"?\"  print(escape_str1) do you have a \"retro games?\" # 홀따옴표 사용  escape_str2 = 'What\\'s on TV??' # 쌍따옴표 사용  escape_Str3 = \"what's one TV??\"  print(escape_str2)  print(escape_str3) What's on TV?? ## 개행, 탭 # tab 누른 만큼 떨어져서 출력  t_s1 = \"Click \\t Start!\"  print(t_s1) Click Start! # 줄 바껴서 출력  t_s2 = \"New Line\\n Check!\"  print(t_s2) New Line Check! 2.2 Raw String  소문자 r을 붙이면 Escape 표현을 무시하고 그대로 다 출력한다. Escape 표현을 사용하지 않기 위해 선언! 이런 게 있다는 정도만 알고 있기  # raw string 미포함  raw_s1 = \"\\\\x\\y\\z\\q\"  print(raw_s1) \\x\\y\\z\\q # raw string 포함  raw_s1 = r\"\\\\x\\y\\z\\q\"  print(raw_s1) \\\\x\\y\\z\\q 2.3 Multi Line  여러 줄 출력하는 방법으로 \\(역슬러쉬) 를 사용한다. 역슬러쉬를 사용하여 파이썬에게 어떤 변수를 binding 한다는 걸 의미한다. 그래서 다음 줄에 변수를 선언한다는 걸 의미한다. 콤마는 ```,\"\"\" 처럼 3개 이상을 사용한다.   multi_str1 \\ \"\"\" 문자열 멀티라인 입력 테스트 \"\"\"  print(multi_str1) 문자열 멀티라인 입력 테스트 결말\n  이스케이프 코드를 사용하여 개행, 탭만큼 띄우기, 따옴표 문자 삽입이 가능하다. 이스케이프 코드를 사용하고 싶지 않을 때는 string code를 사용한다. 한 줄로는 너무 길어서 여러 줄로 표현하고 싶을 때, 백슬러쉬와 따옴표 3개를 사용하여 멀티라인으로 출력한다.    3. 문자형 연산  str_o1 = \"python\"  str_o2 = \"Apple\"  str_o3 = \"How are you doing\"  str_o4 = \"Korea Japan America\"  print(3 * str_o1) pythonpythonpython  print(str_o1 + str_o2) pythonApple  print('y' in str_o1) True  print('n' in str_o1) True  print('P' not in str_o1) False  4. 문자형 형 변환(Type conversion), 문자형 함수 4.1 Type Conversion  파이썬에서 type conversion은 자유롭게 가능하다고 생각하자.  # 정수 - 문자열  print(str(66)) # 실수 - 문자열  print(str(10.1)) # boolean - string  print(str(True), type(str)) True # complex - string  print(str(complex(12))) 12 + 0j 4.2 문자열 함수  print(dir()) 함수에 변수를 입력하면 그 변수가 사용할 수 있는 함수를 보여준다. string type의 data를 넣으면 string이 사용할 수 있는 함수를 보여준다. list면 list가 사용할 수 있는 함수를 보여준다.\n  im_str = \"Good Boy\"  print(dir(im_str)) ['capitalize', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill'.....]  위 함수들에서 일부만 출력해보겠다.   str_o1 = \"python\"  str_o2 = \"Apple\"  str_o3 = \"How are you doing\"  str_o4 = \"Korea Japan America\" # 첫 글자를 대문자로 바꿔주는 함수  print(\"Capitalize : \", str_o1.capitalize()) Capitalize : Python # 모든 문자를 대문자로 바꿔주는 함수  print(\"upper : \", str_o1.upper()) upper : PYTHON # 모든 문자를 소문자로 바꿔주는 함수  print(\"lower : \", str_o2.lower()) lower : apple # 마지막 글자가 s로 끝나는가?  print(\"endswith? : \", str_o1.endswith('s')) endswith : False # 해당 문자열 앞 뒤로 join하는 함수  print(\"join str : \", str_o1.join([\"I'm\", \"!\"])) join str : I'm python! # 해당 문자열을 입력한 다른 문자열로 바꿔주는 함수  print(\"replace : \", str_o1.replace('thon', 'Good')) replace : pyGood # 해당 문자열을 입력한 문자열을 기준으로 쪼개어 list로 만드는 함수  print(\"split : \", str_o4.split(' ')) split : Korea Japan America # 최소 단위까지 쪼개어 알파벳 순으로 list로 만드는 함수  print('sorted : ', sorted(str_o3)) sorted : [' ', ' ', ' ', '?', 'H', 'a', 'd', 'e', 'g', 'i', 'n', 'o', 'o', 'o', 'r', 'u', 'w', 'y']  print('reversed1: ', reversed(str_o2)) reversed1: # reversed는 return 값이 존재하기에 list로 출력이 가능하다.  print('reversed2: ', list(reversed(str_o2)) reversed2: ['e', 'l', 'p', 'p', 'A']  reverse 와 reversed 의 차이\n reverse 는 list 함수를 단순히 뒤집어서 저장해주는 역할로, 리턴값이 없어서 for문 같은 조건문 반복문에 사용하지 못 한다. reversed는 id 값으로 나온다. 그래서 reverse 값을 원하면 형 변환을 해야 한다. 또한, 기존 리스트의 값을 변경하지 않으면서 return 값만을 원할 때 reversed 함수를 사용한다.    5. Slicing  문자열의 일부분을 원하는 대로 잘라오는 것을 말한다.\n  sl = 'Nice Python'  print(sl[0:3]) Nic # index[0] 부터 [3]까지가 아닌, [2]까지이기 때문이다.  print(sl[5:]) Python # 아무런 값이 없으면 끝까지 또는 처음부터라는 의미다.  print(sl[:len(sl)]) Nice Python # 끝부분의 index를 모를 때, len 함수를 사용한다. 끝까지 출력된다. # 위에 [0:3] 처럼 끝에가 -1 이 되지 않는다.  print(sl[:len(sl)-1]) Nice Pytho # 처음과 끝을 의미한다.  print(sl[:]) Nice Python # index[1]부터 시작하여 2씩 증가하며, index[4] 미만까지 한다.  print(sl[1:4:2]) ie # index[-4]부터 시작하여 [-3] 미만까지 한다.  print(sl[-4:-2]) th # index를 역으로 해도 가능하다.  print(sl[-5:]) Python # index를 역으로 하는 것과 정방향으로 하는 것을 같이 해도 가능하다.  print(sl[1:-2]) ice Pyth # 역으로 출력된다.  print(sl[::-1]) nohtyP eciN 결론: slicing을 사용하여 원하는 정보를 추출해야한다. 그렇기 떄문에 slicing은 중요하다.\n","wordCount":"883","inLanguage":"en","datePublished":"2022-02-28T19:45:30+09:00","dateModified":"2022-02-28T19:45:30+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_4/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=http://jeha00.github.io/ accesskey=h title="Jeha00 (Alt + H)">Jeha00</a>
-<span class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</span>
-</div>
-<ul id=menu>
-<li>
-<a href=http://jeha00.github.io/archives/ title=Archive>
-<span>Archive</span>
-</a>
-</li>
-<li>
-<a href=http://jeha00.github.io/categories/ title=Categories>
-<span>Categories</span>
-</a>
-</li>
-<li>
-<a href=http://jeha00.github.io/tags/ title=Tags>
-<span>Tags</span>
-</a>
-</li>
-<li>
-<a href=http://jeha00.github.io/search/ title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=http://jeha00.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://jeha00.github.io/post/>Posts</a></div>
-<h1 class=post-title>
-[TIL] Python basic 4: string
-</h1>
-<div class=post-meta><span title="2022-02-28 19:45:30 +0900 KST">February 28, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Jeha00&nbsp;|&nbsp;<a href=https://github.com/JeHa00/blog/content/post/Python_basic/Python_basic_4.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#1-%eb%ac%b8%ec%9e%90%ec%97%b4-%ec%83%9d%ec%84%b1-%ec%b6%9c%eb%a0%a5-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b8%b8%ec%9d%b4 aria-label="1. 문자열 생성, 출력 그리고, 길이">1. 문자열 생성, 출력 그리고, 길이</a></li>
-<li>
-<a href=#2-escape-raw-string-and-multi-line aria-label="2. Escape, raw string and multi line">2. Escape, raw string and multi line</a><ul>
-<li>
-<a href=#21-escape-code aria-label="2.1 Escape code">2.1 Escape code</a></li>
-<li>
-<a href=#22-raw-string aria-label="2.2 Raw String">2.2 Raw String</a></li>
-<li>
-<a href=#23-multi-line aria-label="2.3 Multi Line">2.3 Multi Line</a></li></ul>
-</li>
-<li>
-<a href=#3-%eb%ac%b8%ec%9e%90%ed%98%95-%ec%97%b0%ec%82%b0 aria-label="3. 문자형 연산">3. 문자형 연산</a></li>
-<li>
-<a href=#4-%eb%ac%b8%ec%9e%90%ed%98%95-%ed%98%95-%eb%b3%80%ed%99%98type-conversion-%eb%ac%b8%ec%9e%90%ed%98%95-%ed%95%a8%ec%88%98 aria-label="4. 문자형 형 변환(Type conversion), 문자형 함수">4. 문자형 형 변환(Type conversion), 문자형 함수</a><ul>
-<li>
-<a href=#41-type-conversion aria-label="4.1 Type Conversion">4.1 Type Conversion</a></li>
-<li>
-<a href=#42-%eb%ac%b8%ec%9e%90%ec%97%b4-%ed%95%a8%ec%88%98 aria-label="4.2 문자열 함수">4.2 문자열 함수</a></li></ul>
-</li>
-<li>
-<a href=#5-slicing aria-label="5. Slicing">5. Slicing</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content>
-<h2 id=1-문자열-생성-출력-그리고-길이>1. 문자열 생성, 출력 그리고, 길이<a hidden class=anchor aria-hidden=true href=#1-문자열-생성-출력-그리고-길이>#</a></h2>
-<ul>
-<li>문자열 생성하기(선언하기) 및 출력하기</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># 문자열 생성</span>
-&gt; str1 = &#34;I am Python&#34;
-&gt; str2 = &#39;Python&#39;
-
-<span style=color:#6272a4># 빈 문자열 생성</span>
-&gt; str_t1 = &#39;&#39;
-&gt; str_t2 = str()
-
-<span style=color:#6272a4># 문자열 출력</span>
-&gt; print(str1, type(str1))
-I am Python &lt;class &#39;str&#39;&gt;
-
-
-&gt; print(str2, type(str2))
-Pyton &lt;class &#39;str&#39;&gt;
-
-&gt; print(str_t1, type(str_t1))
-  &lt;class &#39;str&#39;&gt;
-
-&gt; print(str_t2, type(str_t2))
-  &lt;class &#39;str&#39;&gt;
-
-</code></pre></div><ul>
-<li>문자열 길이 측정: **len()**을 많이 사용한다. 길이에는 공백을 포함한다.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(len(str1))
-<span style=color:#bd93f9>11</span>
-
-&gt; print(len(str2))
-<span style=color:#bd93f9>6</span>
-</code></pre></div><p><strong>결론</strong></p>
-<blockquote>
-<p>문자열 선언에는 &ldquo;&rdquo;, &lsquo;&rsquo;, &ldquo;""""&rdquo;, '''''' 을 사용한다.
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>[TIL] Python basic 4: string | Jeha00 DevLog</title><meta name=keywords content="TIL,python"><meta name=description content="string type의 생성부터 연산, len 함수 사용, type conversion, 문자형 함수 그리고 slicing을 알아보겠다."><meta name=author content="Jeha00"><link rel=canonical href=http://jeha00.github.io/post/python_basic/python_basic_4/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style><link rel=icon href=http://jeha00.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png><link rel=apple-touch-icon href=http://jeha00.github.io/apple-touch-icon.png><link rel=mask-icon href=http://jeha00.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.98.0"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="[TIL] Python basic 4: string"><meta property="og:description" content="string type의 생성부터 연산, len 함수 사용, type conversion, 문자형 함수 그리고 slicing을 알아보겠다."><meta property="og:type" content="article"><meta property="og:url" content="http://jeha00.github.io/post/python_basic/python_basic_4/"><meta property="og:image" content="http://jeha00.github.io/47"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-02-28T19:45:30+09:00"><meta property="article:modified_time" content="2022-02-28T19:45:30+09:00"><meta property="og:site_name" content="JeHa00 DevLog"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://jeha00.github.io/47"><meta name=twitter:title content="[TIL] Python basic 4: string"><meta name=twitter:description content="string type의 생성부터 연산, len 함수 사용, type conversion, 문자형 함수 그리고 slicing을 알아보겠다."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 4: string","item":"http://jeha00.github.io/post/python_basic/python_basic_4/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 4: string","name":"[TIL] Python basic 4: string","description":"string type의 생성부터 연산, len 함수 사용, type conversion, 문자형 함수 그리고 slicing을 알아보겠다.","keywords":["TIL","python"],"articleBody":"1. 문자열 생성, 출력 그리고, 길이  문자열 생성하기(선언하기) 및 출력하기  # 문자열 생성  str1 = \"I am Python\"  str2 = 'Python'  # 빈 문자열 생성  str_t1 = ''  str_t2 = str()  # 문자열 출력  print(str1, type(str1)) I am Python    print(str2, type(str2)) Pyton   print(str_t1, type(str_t1))    print(str_t2, type(str_t2))   문자열 길이 측정: **len()**을 많이 사용한다. 길이에는 공백을 포함한다.   print(len(str1)) 11   print(len(str2)) 6 결론\n 문자열 선언에는 “”, ‘’, “”\"\"\"\", ’’’’’’ 을 사용한다. 문자열 출력에는 다른 출력과 동일하게 print를 사용한다. 문자열 길이 측정에는 len() 함수를 사용한다. 길이에는 공백을 포함한다.\n  2. Escape, raw string and multi line 2.1 Escape code \\n: 개행(줄바꿈) \\t: 탭키를 누른 만큼 벌어짐 \\\\: 문자 삽입 \\': 문자 삽입 \\\": 문자 삽입  위에 escape code 예시를 작성해보자.  ## 문자 삽입 escape code   escape_str1 = \"do you have a \\\"retro games\\\"?\"  print(escape_str1) do you have a \"retro games?\"  # 홀따옴표 사용  escape_str2 = 'What\\'s on TV??' # 쌍따옴표 사용  escape_Str3 = \"what's one TV??\"  print(escape_str2)  print(escape_str3) What's on TV??  ## 개행, 탭 # tab 누른 만큼 떨어져서 출력  t_s1 = \"Click \\t Start!\"  print(t_s1) Click Start!  # 줄 바껴서 출력  t_s2 = \"New Line\\n Check!\"  print(t_s2) New Line Check! 2.2 Raw String  소문자 r을 붙이면 Escape 표현을 무시하고 그대로 다 출력한다. Escape 표현을 사용하지 않기 위해 선언! 이런 게 있다는 정도만 알고 있기  # raw string 미포함  raw_s1 = \"\\\\x\\y\\z\\q\"  print(raw_s1) \\x\\y\\z\\q  # raw string 포함  raw_s1 = r\"\\\\x\\y\\z\\q\"  print(raw_s1) \\\\x\\y\\z\\q 2.3 Multi Line  여러 줄 출력하는 방법으로 \\(역슬러쉬) 를 사용한다. 역슬러쉬를 사용하여 파이썬에게 어떤 변수를 binding 한다는 걸 의미한다. 그래서 다음 줄에 변수를 선언한다는 걸 의미한다. 콤마는 ```,\"\"\" 처럼 3개 이상을 사용한다.     multi_str1 \\  \"\"\" 문자열 멀티라인 입력 테스트 \"\"\"   print(multi_str1) 문자열 멀티라인 입력 테스트 결말\n  이스케이프 코드를 사용하여 개행, 탭만큼 띄우기, 따옴표 문자 삽입이 가능하다. 이스케이프 코드를 사용하고 싶지 않을 때는 string code를 사용한다. 한 줄로는 너무 길어서 여러 줄로 표현하고 싶을 때, 백슬러쉬와 따옴표 3개를 사용하여 멀티라인으로 출력한다.    3. 문자형 연산  str_o1 = \"python\"  str_o2 = \"Apple\"  str_o3 = \"How are you doing\"  str_o4 = \"Korea Japan America\"   print(3 * str_o1) pythonpythonpython   print(str_o1 + str_o2) pythonApple   print('y' in str_o1) True   print('n' in str_o1) True   print('P' not in str_o1) False  4. 문자형 형 변환(Type conversion), 문자형 함수 4.1 Type Conversion  파이썬에서 type conversion은 자유롭게 가능하다고 생각하자.  # 정수 - 문자열  print(str(66))   # 실수 - 문자열  print(str(10.1))  # boolean - string  print(str(True), type(str)) True  # complex - string  print(str(complex(12))) 12 + 0j 4.2 문자열 함수  print(dir()) 함수에 변수를 입력하면 그 변수가 사용할 수 있는 함수를 보여준다. string type의 data를 넣으면 string이 사용할 수 있는 함수를 보여준다. list면 list가 사용할 수 있는 함수를 보여준다.\n   im_str = \"Good Boy\"  print(dir(im_str)) ['capitalize', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill'.....]  위 함수들에서 일부만 출력해보겠다.   str_o1 = \"python\"  str_o2 = \"Apple\"  str_o3 = \"How are you doing\"  str_o4 = \"Korea Japan America\"  # 첫 글자를 대문자로 바꿔주는 함수  print(\"Capitalize : \", str_o1.capitalize()) Capitalize : Python  # 모든 문자를 대문자로 바꿔주는 함수  print(\"upper : \", str_o1.upper()) upper : PYTHON  # 모든 문자를 소문자로 바꿔주는 함수  print(\"lower : \", str_o2.lower()) lower : apple  # 마지막 글자가 s로 끝나는가?  print(\"endswith? : \", str_o1.endswith('s')) endswith : False  # 해당 문자열 앞 뒤로 join하는 함수  print(\"join str : \", str_o1.join([\"I'm\", \"!\"])) join str : I'm python!  # 해당 문자열을 입력한 다른 문자열로 바꿔주는 함수  print(\"replace : \", str_o1.replace('thon', 'Good')) replace : pyGood  # 해당 문자열을 입력한 문자열을 기준으로 쪼개어 list로 만드는 함수  print(\"split : \", str_o4.split(' ')) split : Korea Japan America  # 최소 단위까지 쪼개어 알파벳 순으로 list로 만드는 함수  print('sorted : ', sorted(str_o3)) sorted : [' ', ' ', ' ', '?', 'H', 'a', 'd', 'e', 'g', 'i', 'n', 'o', 'o', 'o', 'r', 'u', 'w', 'y']   print('reversed1: ', reversed(str_o2)) reversed1: # reversed는 return 값이 존재하기에 list로 출력이 가능하다.  print('reversed2: ', list(reversed(str_o2)) reversed2: ['e', 'l', 'p', 'p', 'A']  reverse 와 reversed 의 차이\n reverse 는 list 함수를 단순히 뒤집어서 저장해주는 역할로, 리턴값이 없어서 for문 같은 조건문 반복문에 사용하지 못 한다. reversed는 id 값으로 나온다. 그래서 reverse 값을 원하면 형 변환을 해야 한다. 또한, 기존 리스트의 값을 변경하지 않으면서 return 값만을 원할 때 reversed 함수를 사용한다.    5. Slicing  문자열의 일부분을 원하는 대로 잘라오는 것을 말한다.\n   sl = 'Nice Python'  print(sl[0:3]) Nic # index[0] 부터 [3]까지가 아닌, [2]까지이기 때문이다.   print(sl[5:]) Python # 아무런 값이 없으면 끝까지 또는 처음부터라는 의미다.   print(sl[:len(sl)]) Nice Python # 끝부분의 index를 모를 때, len 함수를 사용한다. 끝까지 출력된다. # 위에 [0:3] 처럼 끝에가 -1 이 되지 않는다.   print(sl[:len(sl)-1]) Nice Pytho  # 처음과 끝을 의미한다.  print(sl[:]) Nice Python  # index[1]부터 시작하여 2씩 증가하며, index[4] 미만까지 한다.  print(sl[1:4:2]) ie  # index[-4]부터 시작하여 [-3] 미만까지 한다.  print(sl[-4:-2]) th  # index를 역으로 해도 가능하다.  print(sl[-5:]) Python  # index를 역으로 하는 것과 정방향으로 하는 것을 같이 해도 가능하다.  print(sl[1:-2]) ice Pyth  # 역으로 출력된다.  print(sl[::-1]) nohtyP eciN 결론: slicing을 사용하여 원하는 정보를 추출해야한다. 그렇기 떄문에 slicing은 중요하다.\n","wordCount":"883","inLanguage":"en","datePublished":"2022-02-28T19:45:30+09:00","dateModified":"2022-02-28T19:45:30+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_4/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=http://jeha00.github.io/ accesskey=h title="Jeha00 (Alt + H)">Jeha00</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu><li><a href=http://jeha00.github.io/archives/ title=Archive><span>Archive</span></a></li><li><a href=http://jeha00.github.io/categories/ title=Categories><span>Categories</span></a></li><li><a href=http://jeha00.github.io/tags/ title=Tags><span>Tags</span></a></li><li><a href=http://jeha00.github.io/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://jeha00.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://jeha00.github.io/post/>Posts</a></div><h1 class=post-title>[TIL] Python basic 4: string</h1><div class=post-meta><span title="2022-02-28 19:45:30 +0900 KST">February 28, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Jeha00&nbsp;|&nbsp;<a href=https://github.com/JeHa00/blog/content/post/Python_basic/Python_basic_4.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#1-%eb%ac%b8%ec%9e%90%ec%97%b4-%ec%83%9d%ec%84%b1-%ec%b6%9c%eb%a0%a5-%ea%b7%b8%eb%a6%ac%ea%b3%a0-%ea%b8%b8%ec%9d%b4 aria-label="1. 문자열 생성, 출력 그리고, 길이">1. 문자열 생성, 출력 그리고, 길이</a></li><li><a href=#2-escape-raw-string-and-multi-line aria-label="2. Escape, raw string and multi line">2. Escape, raw string and multi line</a><ul><li><a href=#21-escape-code aria-label="2.1 Escape code">2.1 Escape code</a></li><li><a href=#22-raw-string aria-label="2.2 Raw String">2.2 Raw String</a></li><li><a href=#23-multi-line aria-label="2.3 Multi Line">2.3 Multi Line</a></li></ul></li><li><a href=#3-%eb%ac%b8%ec%9e%90%ed%98%95-%ec%97%b0%ec%82%b0 aria-label="3. 문자형 연산">3. 문자형 연산</a></li><li><a href=#4-%eb%ac%b8%ec%9e%90%ed%98%95-%ed%98%95-%eb%b3%80%ed%99%98type-conversion-%eb%ac%b8%ec%9e%90%ed%98%95-%ed%95%a8%ec%88%98 aria-label="4. 문자형 형 변환(Type conversion), 문자형 함수">4. 문자형 형 변환(Type conversion), 문자형 함수</a><ul><li><a href=#41-type-conversion aria-label="4.1 Type Conversion">4.1 Type Conversion</a></li><li><a href=#42-%eb%ac%b8%ec%9e%90%ec%97%b4-%ed%95%a8%ec%88%98 aria-label="4.2 문자열 함수">4.2 문자열 함수</a></li></ul></li><li><a href=#5-slicing aria-label="5. Slicing">5. Slicing</a></li></ul></div></details></div><div class=post-content><h2 id=1-문자열-생성-출력-그리고-길이>1. 문자열 생성, 출력 그리고, 길이<a hidden class=anchor aria-hidden=true href=#1-문자열-생성-출력-그리고-길이>#</a></h2><ul><li>문자열 생성하기(선언하기) 및 출력하기</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#6272a4># 문자열 생성</span>
+</span></span><span style=display:flex><span>&gt; str1 = &#34;I am Python&#34;
+</span></span><span style=display:flex><span>&gt; str2 = &#39;Python&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 빈 문자열 생성</span>
+</span></span><span style=display:flex><span>&gt; str_t1 = &#39;&#39;
+</span></span><span style=display:flex><span>&gt; str_t2 = str()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 문자열 출력</span>
+</span></span><span style=display:flex><span>&gt; print(str1, type(str1))
+</span></span><span style=display:flex><span>I am Python &lt;class &#39;str&#39;&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(str2, type(str2))
+</span></span><span style=display:flex><span>Pyton &lt;class &#39;str&#39;&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(str_t1, type(str_t1))
+</span></span><span style=display:flex><span>  &lt;class &#39;str&#39;&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(str_t2, type(str_t2))
+</span></span><span style=display:flex><span>  &lt;class &#39;str&#39;&gt;
+</span></span></code></pre></div><ul><li>문자열 길이 측정: **len()**을 많이 사용한다. 길이에는 공백을 포함한다.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>&gt; print(len(str1))
+</span></span><span style=display:flex><span><span style=color:#bd93f9>11</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(len(str2))
+</span></span><span style=display:flex><span><span style=color:#bd93f9>6</span>
+</span></span></code></pre></div><p><strong>결론</strong></p><blockquote><p>문자열 선언에는 &ldquo;&rdquo;, &lsquo;&rsquo;, &ldquo;&rdquo;"""", &rsquo;&rsquo;&rsquo;&rsquo;&rsquo;&rsquo; 을 사용한다.
 문자열 출력에는 다른 출력과 동일하게 print를 사용한다.
-문자열 길이 측정에는 len() 함수를 사용한다. 길이에는 공백을 포함한다.</p>
-</blockquote>
-<hr>
-<h2 id=2-escape-raw-string-and-multi-line>2. Escape, raw string and multi line<a hidden class=anchor aria-hidden=true href=#2-escape-raw-string-and-multi-line>#</a></h2>
-<h3 id=21-escape-code>2.1 Escape code<a hidden class=anchor aria-hidden=true href=#21-escape-code>#</a></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>\n</span>: 개행(줄바꿈)
-<span style=color:#ff79c6>\t</span>: 탭키를 누른 만큼 벌어짐
-<span style=color:#ff79c6>\\</span>: 문자 삽입
-<span style=color:#ff79c6>\&#39;</span>: 문자 삽입
-\&#34;: 문자 삽입
-</code></pre></div><ul>
-<li>위에 escape code 예시를 작성해보자.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4>## 문자 삽입 escape code</span>
-
-&gt; escape_str1 = &#34;do you have a \&#34;retro games\&#34;?&#34;
-&gt; print(escape_str1)
-do you have a &#34;retro games?&#34;
-
-<span style=color:#6272a4># 홀따옴표 사용</span>
-&gt; escape_str2 = &#39;What\&#39;s on TV??&#39;
-<span style=color:#6272a4># 쌍따옴표 사용</span>
-&gt; escape_Str3 = &#34;what&#39;s one TV??&#34;
-&gt; print(escape_str2)
-&gt; print(escape_str3)
-What&#39;s on TV??
-
-<span style=color:#6272a4>## 개행, 탭</span>
-<span style=color:#6272a4># tab 누른 만큼 떨어져서 출력</span>
-&gt; t_s1 = &#34;Click \t Start!&#34;
-&gt; print(t_s1)
-Click   Start!
-
-<span style=color:#6272a4># 줄 바껴서 출력</span>
-&gt; t_s2 = &#34;New Line\n Check!&#34;
-&gt; print(t_s2)
-New Line
-Check!
-
-</code></pre></div><h3 id=22-raw-string>2.2 Raw String<a hidden class=anchor aria-hidden=true href=#22-raw-string>#</a></h3>
-<ul>
-<li>소문자 r을 붙이면 Escape 표현을 무시하고 그대로 다 출력한다.</li>
-<li>Escape 표현을 사용하지 않기 위해 선언!</li>
-<li>이런 게 있다는 정도만 알고 있기</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># raw string 미포함</span>
-&gt; raw_s1 = &#34;\\x\y\z\q&#34;
-&gt; print(raw_s1)
-\x\y\z\q
-
-<span style=color:#6272a4># raw string 포함</span>
-&gt; raw_s1 = r&#34;\\x\y\z\q&#34;
-&gt; print(raw_s1)
-\\x\y\z\q
-
-</code></pre></div><h3 id=23-multi-line>2.3 Multi Line<a hidden class=anchor aria-hidden=true href=#23-multi-line>#</a></h3>
-<ul>
-<li>여러 줄 출력하는 방법으로 <code>\(역슬러쉬)</code> 를 사용한다.</li>
-<li>역슬러쉬를 사용하여 파이썬에게 어떤 변수를 binding 한다는 걸 의미한다. 그래서 다음 줄에 변수를 선언한다는 걸 의미한다.</li>
-<li>콤마는 ```,""" 처럼 3개 이상을 사용한다.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
-
-&gt;  multi_str1 \
-    <span style=color:#f1fa8c>&#34;&#34;&#34;
-</span><span style=color:#f1fa8c>    문자열
-</span><span style=color:#f1fa8c>    멀티라인 입력
-</span><span style=color:#f1fa8c>    테스트
-</span><span style=color:#f1fa8c>
-</span><span style=color:#f1fa8c>    &#34;&#34;&#34;</span>
-
-&gt; print(multi_str1)
-문자열
-멀티라인 입력
-테스트
-
-</code></pre></div><p><strong>결말</strong></p>
-<blockquote>
-<ul>
-<li>이스케이프 코드를 사용하여 개행, 탭만큼 띄우기, 따옴표 문자 삽입이 가능하다.</li>
-<li>이스케이프 코드를 사용하고 싶지 않을 때는 string code를 사용한다.</li>
-<li>한 줄로는 너무 길어서 여러 줄로 표현하고 싶을 때, 백슬러쉬와 따옴표 3개를 사용하여 멀티라인으로 출력한다.</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id=3-문자형-연산>3. 문자형 연산<a hidden class=anchor aria-hidden=true href=#3-문자형-연산>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; str_o1 = &#34;python&#34;
-&gt; str_o2 = &#34;Apple&#34;
-&gt; str_o3 = &#34;How are you doing&#34;
-&gt; str_o4 = &#34;Korea Japan America&#34;
-
-&gt; print(3 * str_o1)
-pythonpythonpython
-
-&gt; print(str_o1 + str_o2)
-pythonApple
-
-&gt; print(&#39;y&#39; in str_o1)
-<span style=color:#ff79c6>True</span>
-
-&gt; print(&#39;n&#39; in str_o1)
-<span style=color:#ff79c6>True</span>
-
-&gt; print(&#39;P&#39; not in str_o1)
-<span style=color:#ff79c6>False</span>
-
-
-
-</code></pre></div><hr>
-<h2 id=4-문자형-형-변환type-conversion-문자형-함수>4. 문자형 형 변환(Type conversion), 문자형 함수<a hidden class=anchor aria-hidden=true href=#4-문자형-형-변환type-conversion-문자형-함수>#</a></h2>
-<h3 id=41-type-conversion>4.1 Type Conversion<a hidden class=anchor aria-hidden=true href=#41-type-conversion>#</a></h3>
-<ul>
-<li>파이썬에서 type conversion은 자유롭게 가능하다고 생각하자.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># 정수 -&gt; 문자열</span>
-&gt; print(str(66))
-
-
-<span style=color:#6272a4># 실수 -&gt; 문자열</span>
-&gt; print(str(10.1))
-
-<span style=color:#6272a4># boolean  -&gt; string</span>
-&gt; print(str(True), type(str))
-<span style=color:#ff79c6>True</span> &lt;class &#39;str&#39;&gt;
-
-<span style=color:#6272a4># complex -&gt; string</span>
-&gt; print(str(complex(12)))
-<span style=color:#bd93f9>12</span> + 0j
-
-
-</code></pre></div><h3 id=42-문자열-함수>4.2 문자열 함수<a hidden class=anchor aria-hidden=true href=#42-문자열-함수>#</a></h3>
-<blockquote>
-<p><code>print(dir())</code> 함수에 변수를 입력하면 그 변수가 사용할 수 있는 함수를 보여준다.
+문자열 길이 측정에는 len() 함수를 사용한다. 길이에는 공백을 포함한다.</p></blockquote><hr><h2 id=2-escape-raw-string-and-multi-line>2. Escape, raw string and multi line<a hidden class=anchor aria-hidden=true href=#2-escape-raw-string-and-multi-line>#</a></h2><h3 id=21-escape-code>2.1 Escape code<a hidden class=anchor aria-hidden=true href=#21-escape-code>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#ff79c6>\n</span>: 개행(줄바꿈)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>\t</span>: 탭키를 누른 만큼 벌어짐
+</span></span><span style=display:flex><span><span style=color:#ff79c6>\\</span>: 문자 삽입
+</span></span><span style=display:flex><span><span style=color:#ff79c6>\&#39;</span>: 문자 삽입
+</span></span><span style=display:flex><span>\&#34;: 문자 삽입
+</span></span></code></pre></div><ul><li>위에 escape code 예시를 작성해보자.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#6272a4>## 문자 삽입 escape code</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; escape_str1 = &#34;do you have a \&#34;retro games\&#34;?&#34;
+</span></span><span style=display:flex><span>&gt; print(escape_str1)
+</span></span><span style=display:flex><span>do you have a &#34;retro games?&#34;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 홀따옴표 사용</span>
+</span></span><span style=display:flex><span>&gt; escape_str2 = &#39;What\&#39;s on TV??&#39;
+</span></span><span style=display:flex><span><span style=color:#6272a4># 쌍따옴표 사용</span>
+</span></span><span style=display:flex><span>&gt; escape_Str3 = &#34;what&#39;s one TV??&#34;
+</span></span><span style=display:flex><span>&gt; print(escape_str2)
+</span></span><span style=display:flex><span>&gt; print(escape_str3)
+</span></span><span style=display:flex><span>What&#39;s on TV??
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>## 개행, 탭</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># tab 누른 만큼 떨어져서 출력</span>
+</span></span><span style=display:flex><span>&gt; t_s1 = &#34;Click \t Start!&#34;
+</span></span><span style=display:flex><span>&gt; print(t_s1)
+</span></span><span style=display:flex><span>Click   Start!
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 줄 바껴서 출력</span>
+</span></span><span style=display:flex><span>&gt; t_s2 = &#34;New Line\n Check!&#34;
+</span></span><span style=display:flex><span>&gt; print(t_s2)
+</span></span><span style=display:flex><span>New Line
+</span></span><span style=display:flex><span>Check!
+</span></span></code></pre></div><h3 id=22-raw-string>2.2 Raw String<a hidden class=anchor aria-hidden=true href=#22-raw-string>#</a></h3><ul><li>소문자 r을 붙이면 Escape 표현을 무시하고 그대로 다 출력한다.</li><li>Escape 표현을 사용하지 않기 위해 선언!</li><li>이런 게 있다는 정도만 알고 있기</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#6272a4># raw string 미포함</span>
+</span></span><span style=display:flex><span>&gt; raw_s1 = &#34;\\x\y\z\q&#34;
+</span></span><span style=display:flex><span>&gt; print(raw_s1)
+</span></span><span style=display:flex><span>\x\y\z\q
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># raw string 포함</span>
+</span></span><span style=display:flex><span>&gt; raw_s1 = r&#34;\\x\y\z\q&#34;
+</span></span><span style=display:flex><span>&gt; print(raw_s1)
+</span></span><span style=display:flex><span>\\x\y\z\q
+</span></span></code></pre></div><h3 id=23-multi-line>2.3 Multi Line<a hidden class=anchor aria-hidden=true href=#23-multi-line>#</a></h3><ul><li>여러 줄 출력하는 방법으로 <code>\(역슬러쉬)</code> 를 사용한다.</li><li>역슬러쉬를 사용하여 파이썬에게 어떤 변수를 binding 한다는 걸 의미한다. 그래서 다음 줄에 변수를 선언한다는 걸 의미한다.</li><li>콤마는 ```,""" 처럼 3개 이상을 사용한다.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt;  multi_str1 \
+</span></span><span style=display:flex><span>    <span style=color:#f1fa8c>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>    문자열
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>    멀티라인 입력
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>    테스트
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(multi_str1)
+</span></span><span style=display:flex><span>문자열
+</span></span><span style=display:flex><span>멀티라인 입력
+</span></span><span style=display:flex><span>테스트
+</span></span></code></pre></div><p><strong>결말</strong></p><blockquote><ul><li>이스케이프 코드를 사용하여 개행, 탭만큼 띄우기, 따옴표 문자 삽입이 가능하다.</li><li>이스케이프 코드를 사용하고 싶지 않을 때는 string code를 사용한다.</li><li>한 줄로는 너무 길어서 여러 줄로 표현하고 싶을 때, 백슬러쉬와 따옴표 3개를 사용하여 멀티라인으로 출력한다.</li></ul></blockquote><hr><h2 id=3-문자형-연산>3. 문자형 연산<a hidden class=anchor aria-hidden=true href=#3-문자형-연산>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>&gt; str_o1 = &#34;python&#34;
+</span></span><span style=display:flex><span>&gt; str_o2 = &#34;Apple&#34;
+</span></span><span style=display:flex><span>&gt; str_o3 = &#34;How are you doing&#34;
+</span></span><span style=display:flex><span>&gt; str_o4 = &#34;Korea Japan America&#34;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(3 * str_o1)
+</span></span><span style=display:flex><span>pythonpythonpython
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(str_o1 + str_o2)
+</span></span><span style=display:flex><span>pythonApple
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(&#39;y&#39; in str_o1)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>True</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(&#39;n&#39; in str_o1)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>True</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(&#39;P&#39; not in str_o1)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>False</span>
+</span></span></code></pre></div><hr><h2 id=4-문자형-형-변환type-conversion-문자형-함수>4. 문자형 형 변환(Type conversion), 문자형 함수<a hidden class=anchor aria-hidden=true href=#4-문자형-형-변환type-conversion-문자형-함수>#</a></h2><h3 id=41-type-conversion>4.1 Type Conversion<a hidden class=anchor aria-hidden=true href=#41-type-conversion>#</a></h3><ul><li>파이썬에서 type conversion은 자유롭게 가능하다고 생각하자.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#6272a4># 정수 -&gt; 문자열</span>
+</span></span><span style=display:flex><span>&gt; print(str(66))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 실수 -&gt; 문자열</span>
+</span></span><span style=display:flex><span>&gt; print(str(10.1))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># boolean  -&gt; string</span>
+</span></span><span style=display:flex><span>&gt; print(str(True), type(str))
+</span></span><span style=display:flex><span><span style=color:#ff79c6>True</span> &lt;class &#39;str&#39;&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># complex -&gt; string</span>
+</span></span><span style=display:flex><span>&gt; print(str(complex(12)))
+</span></span><span style=display:flex><span><span style=color:#bd93f9>12</span> + 0j
+</span></span></code></pre></div><h3 id=42-문자열-함수>4.2 문자열 함수<a hidden class=anchor aria-hidden=true href=#42-문자열-함수>#</a></h3><blockquote><p><code>print(dir())</code> 함수에 변수를 입력하면 그 변수가 사용할 수 있는 함수를 보여준다.
 string type의 data를 넣으면 string이 사용할 수 있는 함수를 보여준다.
-list면 list가 사용할 수 있는 함수를 보여준다.</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
-&gt; im_str = &#34;Good Boy&#34;
-&gt; print(dir(im_str))
-[<span style=color:#f1fa8c>&#39;capitalize&#39;</span>, <span style=color:#f1fa8c>&#39;encode&#39;</span>, <span style=color:#f1fa8c>&#39;endswith&#39;</span>, <span style=color:#f1fa8c>&#39;expandtabs&#39;</span>, <span style=color:#f1fa8c>&#39;find&#39;</span>, <span style=color:#f1fa8c>&#39;format&#39;</span>,  <span style=color:#f1fa8c>&#39;lower&#39;</span>, <span style=color:#f1fa8c>&#39;lstrip&#39;</span>, <span style=color:#f1fa8c>&#39;maketrans&#39;</span>, <span style=color:#f1fa8c>&#39;partition&#39;</span>, <span style=color:#f1fa8c>&#39;removeprefix&#39;</span>, <span style=color:#f1fa8c>&#39;removesuffix&#39;</span>, <span style=color:#f1fa8c>&#39;replace&#39;</span>, <span style=color:#f1fa8c>&#39;rfind&#39;</span>, <span style=color:#f1fa8c>&#39;rindex&#39;</span>, <span style=color:#f1fa8c>&#39;rjust&#39;</span>, <span style=color:#f1fa8c>&#39;rpartition&#39;</span>, <span style=color:#f1fa8c>&#39;rsplit&#39;</span>, <span style=color:#f1fa8c>&#39;rstrip&#39;</span>, <span style=color:#f1fa8c>&#39;split&#39;</span>, <span style=color:#f1fa8c>&#39;splitlines&#39;</span>, <span style=color:#f1fa8c>&#39;startswith&#39;</span>, <span style=color:#f1fa8c>&#39;strip&#39;</span>, <span style=color:#f1fa8c>&#39;swapcase&#39;</span>, <span style=color:#f1fa8c>&#39;title&#39;</span>, <span style=color:#f1fa8c>&#39;translate&#39;</span>, <span style=color:#f1fa8c>&#39;upper&#39;</span>, <span style=color:#f1fa8c>&#39;zfill&#39;</span>.....]
-
-</code></pre></div><ul>
-<li>위 함수들에서 일부만 출력해보겠다.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; str_o1 = &#34;python&#34;
-&gt; str_o2 = &#34;Apple&#34;
-&gt; str_o3 = &#34;How are you doing&#34;
-&gt; str_o4 = &#34;Korea Japan America&#34;
-
-<span style=color:#6272a4># 첫 글자를 대문자로 바꿔주는 함수</span>
-&gt; print(&#34;Capitalize : &#34;, str_o1.capitalize())
-<span style=color:#ff79c6>Capitalize </span>: Python
-
-<span style=color:#6272a4># 모든 문자를 대문자로 바꿔주는 함수</span>
-&gt; print(&#34;upper : &#34;, str_o1.upper())
-<span style=color:#ff79c6>upper </span>: PYTHON
-
-<span style=color:#6272a4># 모든 문자를 소문자로 바꿔주는 함수</span>
-&gt; print(&#34;lower : &#34;, str_o2.lower())
-<span style=color:#ff79c6>lower </span>: apple
-
-<span style=color:#6272a4># 마지막 글자가 s로 끝나는가?</span>
-&gt; print(&#34;endswith? : &#34;, str_o1.endswith(&#39;s&#39;))
-<span style=color:#ff79c6>endswith </span>: <span style=color:#ff79c6>False</span>
-
-<span style=color:#6272a4># 해당 문자열 앞 뒤로 join하는 함수</span>
-&gt; print(&#34;join str : &#34;, str_o1.join([&#34;I&#39;m&#34;, &#34;!&#34;]))
-<span style=color:#ff79c6>join str </span>: I&#39;m python!
-
-<span style=color:#6272a4># 해당 문자열을 입력한 다른 문자열로 바꿔주는 함수</span>
-&gt; print(&#34;replace : &#34;, str_o1.replace(&#39;thon&#39;, &#39;Good&#39;))
-<span style=color:#ff79c6>replace </span>:  pyGood
-
-<span style=color:#6272a4># 해당 문자열을 입력한 문자열을 기준으로 쪼개어 list로 만드는 함수</span>
-&gt; print(&#34;split : &#34;, str_o4.split(&#39; &#39;))
-<span style=color:#ff79c6>split </span>: Korea Japan America
-
-<span style=color:#6272a4># 최소 단위까지 쪼개어 알파벳 순으로 list로 만드는 함수</span>
-<span style=color:#ff79c6>&gt; print(&#39;sorted </span>: <span style=color:#f1fa8c>&#39;, sorted(str_o3))
-</span><span style=color:#f1fa8c>sorted :  [&#39;</span> <span style=color:#f1fa8c>&#39;, &#39;</span> <span style=color:#f1fa8c>&#39;, &#39;</span> <span style=color:#f1fa8c>&#39;, &#39;</span>?<span style=color:#f1fa8c>&#39;, &#39;</span>H&#39;, &#39;a&#39;, &#39;d&#39;, &#39;e&#39;, &#39;g&#39;, &#39;i&#39;, &#39;n&#39;, &#39;o&#39;, &#39;o&#39;, &#39;o&#39;, &#39;r&#39;, &#39;u&#39;, &#39;w&#39;, &#39;y&#39;]
-
-<span style=color:#ff79c6>&gt; print(&#39;reversed1</span>: <span style=color:#f1fa8c>&#39;, reversed(str_o2))
-</span><span style=color:#f1fa8c>reversed1:  &lt;reversed object at 0x000001ECEA15CFD0&gt;
-</span><span style=color:#f1fa8c>
-</span><span style=color:#f1fa8c># reversed는 return 값이 존재하기에 list로 출력이 가능하다.
-</span><span style=color:#f1fa8c>&gt; print(&#39;</span><span style=color:#ff79c6>reversed2</span>: <span style=color:#f1fa8c>&#39;, list(reversed(str_o2))
-</span><span style=color:#f1fa8c>reversed2:  [&#39;</span>e&#39;, &#39;l&#39;, &#39;p&#39;, &#39;p&#39;, &#39;A&#39;]
-
-
-</code></pre></div><blockquote>
-<p>reverse 와 reversed 의 차이</p>
-<ul>
-<li>reverse 는 list 함수를 단순히 뒤집어서 저장해주는 역할로, 리턴값이 없어서 for문 같은 조건문 반복문에 사용하지 못 한다.</li>
-<li>reversed는 <code>id</code> 값으로 나온다. 그래서 reverse 값을 원하면 형 변환을 해야 한다. 또한, 기존 리스트의 값을 변경하지 않으면서 return 값만을 원할 때 reversed 함수를 사용한다.</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id=5-slicing>5. Slicing<a hidden class=anchor aria-hidden=true href=#5-slicing>#</a></h2>
-<blockquote>
-<p>문자열의 일부분을 원하는 대로 잘라오는 것을 말한다.</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>
-&gt; sl = &#39;Nice Python&#39;
-&gt; print(sl[0:3])
-Nic
-<span style=color:#6272a4># index[0] 부터 [3]까지가 아닌, [2]까지이기 때문이다.</span>
-
-&gt; print(sl[5:])
-Python
-<span style=color:#6272a4># 아무런 값이 없으면 끝까지 또는 처음부터라는 의미다.</span>
-
-&gt; print(sl[:len(sl)])
-Nice Python
-<span style=color:#6272a4># 끝부분의 index를 모를 때, len 함수를 사용한다. 끝까지 출력된다.</span>
-<span style=color:#6272a4># 위에 [0:3] 처럼 끝에가 -1 이 되지 않는다.</span>
-
-&gt; print(sl[:len(sl)-1])
-Nice Pytho
-
-<span style=color:#6272a4># 처음과 끝을 의미한다.</span>
-&gt; print(sl[:])
-Nice Python
-
-<span style=color:#6272a4># index[1]부터 시작하여 2씩 증가하며, index[4] 미만까지 한다.</span>
-&gt; print(sl[1:4:2])
-ie
-
-<span style=color:#6272a4># index[-4]부터 시작하여 [-3] 미만까지 한다.</span>
-&gt; print(sl[-4:-2])
-th
-
-<span style=color:#6272a4># index를 역으로 해도 가능하다.</span>
-&gt; print(sl[-5:])
-Python
-
-<span style=color:#6272a4># index를 역으로 하는 것과 정방향으로 하는 것을 같이 해도 가능하다.</span>
-&gt; print(sl[1:-2])
-ice Pyth
-
-<span style=color:#6272a4># 역으로 출력된다.</span>
-&gt; print(sl[::-1])
-nohtyP eciN
-
-</code></pre></div><p><strong>결론: slicing을 사용하여 원하는 정보를 추출해야한다. 그렇기 떄문에 slicing은 중요하다.</strong></p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=http://jeha00.github.io/tags/til/>TIL</a></li>
-<li><a href=http://jeha00.github.io/tags/python/>python</a></li>
-</ul>
-<nav class=paginav>
-<a class=prev href=http://jeha00.github.io/post/python_basic/python_basic_5/>
-<span class=title>« Prev Page</span>
-<br>
-<span>[TIL] Python basic 5: list</span>
-</a>
-<a class=next href=http://jeha00.github.io/post/python_basic/python_basic_3/>
-<span class=title>Next Page »</span>
-<br>
-<span>[TIL] Python basic 3: numeric data</span>
-</a>
-</nav>
-<div class=share-buttons>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on twitter" href="https://twitter.com/intent/tweet/?text=%5bTIL%5d%20Python%20basic%204%3a%20string&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f&hashtags=TIL%2cpython"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f&title=%5bTIL%5d%20Python%20basic%204%3a%20string&summary=%5bTIL%5d%20Python%20basic%204%3a%20string&source=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on reddit" href="https://reddit.com/submit?url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f&title=%5bTIL%5d%20Python%20basic%204%3a%20string"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on facebook" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on whatsapp" href="https://api.whatsapp.com/send?text=%5bTIL%5d%20Python%20basic%204%3a%20string%20-%20http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on telegram" href="https://telegram.me/share/url?text=%5bTIL%5d%20Python%20basic%204%3a%20string&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
-</a>
-</div>
-</footer><script src=https://utteranc.es/client.js repo=JeHa00/blog-comments issue-term=pathname theme=github-dark crossorigin=anonymous async></script>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=http://jeha00.github.io/>Jeha00 DevLog</a></span>
-<span>
-Powered by
+list면 list가 사용할 수 있는 함수를 보여준다.</p></blockquote><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; im_str = &#34;Good Boy&#34;
+</span></span><span style=display:flex><span>&gt; print(dir(im_str))
+</span></span><span style=display:flex><span>[<span style=color:#f1fa8c>&#39;capitalize&#39;</span>, <span style=color:#f1fa8c>&#39;encode&#39;</span>, <span style=color:#f1fa8c>&#39;endswith&#39;</span>, <span style=color:#f1fa8c>&#39;expandtabs&#39;</span>, <span style=color:#f1fa8c>&#39;find&#39;</span>, <span style=color:#f1fa8c>&#39;format&#39;</span>,  <span style=color:#f1fa8c>&#39;lower&#39;</span>, <span style=color:#f1fa8c>&#39;lstrip&#39;</span>, <span style=color:#f1fa8c>&#39;maketrans&#39;</span>, <span style=color:#f1fa8c>&#39;partition&#39;</span>, <span style=color:#f1fa8c>&#39;removeprefix&#39;</span>, <span style=color:#f1fa8c>&#39;removesuffix&#39;</span>, <span style=color:#f1fa8c>&#39;replace&#39;</span>, <span style=color:#f1fa8c>&#39;rfind&#39;</span>, <span style=color:#f1fa8c>&#39;rindex&#39;</span>, <span style=color:#f1fa8c>&#39;rjust&#39;</span>, <span style=color:#f1fa8c>&#39;rpartition&#39;</span>, <span style=color:#f1fa8c>&#39;rsplit&#39;</span>, <span style=color:#f1fa8c>&#39;rstrip&#39;</span>, <span style=color:#f1fa8c>&#39;split&#39;</span>, <span style=color:#f1fa8c>&#39;splitlines&#39;</span>, <span style=color:#f1fa8c>&#39;startswith&#39;</span>, <span style=color:#f1fa8c>&#39;strip&#39;</span>, <span style=color:#f1fa8c>&#39;swapcase&#39;</span>, <span style=color:#f1fa8c>&#39;title&#39;</span>, <span style=color:#f1fa8c>&#39;translate&#39;</span>, <span style=color:#f1fa8c>&#39;upper&#39;</span>, <span style=color:#f1fa8c>&#39;zfill&#39;</span>.....]
+</span></span></code></pre></div><ul><li>위 함수들에서 일부만 출력해보겠다.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>&gt; str_o1 = &#34;python&#34;
+</span></span><span style=display:flex><span>&gt; str_o2 = &#34;Apple&#34;
+</span></span><span style=display:flex><span>&gt; str_o3 = &#34;How are you doing&#34;
+</span></span><span style=display:flex><span>&gt; str_o4 = &#34;Korea Japan America&#34;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 첫 글자를 대문자로 바꿔주는 함수</span>
+</span></span><span style=display:flex><span>&gt; print(&#34;Capitalize : &#34;, str_o1.capitalize())
+</span></span><span style=display:flex><span><span style=color:#ff79c6>Capitalize </span>: Python
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 모든 문자를 대문자로 바꿔주는 함수</span>
+</span></span><span style=display:flex><span>&gt; print(&#34;upper : &#34;, str_o1.upper())
+</span></span><span style=display:flex><span><span style=color:#ff79c6>upper </span>: PYTHON
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 모든 문자를 소문자로 바꿔주는 함수</span>
+</span></span><span style=display:flex><span>&gt; print(&#34;lower : &#34;, str_o2.lower())
+</span></span><span style=display:flex><span><span style=color:#ff79c6>lower </span>: apple
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 마지막 글자가 s로 끝나는가?</span>
+</span></span><span style=display:flex><span>&gt; print(&#34;endswith? : &#34;, str_o1.endswith(&#39;s&#39;))
+</span></span><span style=display:flex><span><span style=color:#ff79c6>endswith </span>: <span style=color:#ff79c6>False</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 해당 문자열 앞 뒤로 join하는 함수</span>
+</span></span><span style=display:flex><span>&gt; print(&#34;join str : &#34;, str_o1.join([&#34;I&#39;m&#34;, &#34;!&#34;]))
+</span></span><span style=display:flex><span><span style=color:#ff79c6>join str </span>: I&#39;m python!
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 해당 문자열을 입력한 다른 문자열로 바꿔주는 함수</span>
+</span></span><span style=display:flex><span>&gt; print(&#34;replace : &#34;, str_o1.replace(&#39;thon&#39;, &#39;Good&#39;))
+</span></span><span style=display:flex><span><span style=color:#ff79c6>replace </span>:  pyGood
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 해당 문자열을 입력한 문자열을 기준으로 쪼개어 list로 만드는 함수</span>
+</span></span><span style=display:flex><span>&gt; print(&#34;split : &#34;, str_o4.split(&#39; &#39;))
+</span></span><span style=display:flex><span><span style=color:#ff79c6>split </span>: Korea Japan America
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 최소 단위까지 쪼개어 알파벳 순으로 list로 만드는 함수</span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt; print(&#39;sorted </span>: <span style=color:#f1fa8c>&#39;, sorted(str_o3))
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>sorted :  [&#39;</span> <span style=color:#f1fa8c>&#39;, &#39;</span> <span style=color:#f1fa8c>&#39;, &#39;</span> <span style=color:#f1fa8c>&#39;, &#39;</span>?<span style=color:#f1fa8c>&#39;, &#39;</span>H&#39;, &#39;a&#39;, &#39;d&#39;, &#39;e&#39;, &#39;g&#39;, &#39;i&#39;, &#39;n&#39;, &#39;o&#39;, &#39;o&#39;, &#39;o&#39;, &#39;r&#39;, &#39;u&#39;, &#39;w&#39;, &#39;y&#39;]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt; print(&#39;reversed1</span>: <span style=color:#f1fa8c>&#39;, reversed(str_o2))
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>reversed1:  &lt;reversed object at 0x000001ECEA15CFD0&gt;
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c># reversed는 return 값이 존재하기에 list로 출력이 가능하다.
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>&gt; print(&#39;</span><span style=color:#ff79c6>reversed2</span>: <span style=color:#f1fa8c>&#39;, list(reversed(str_o2))
+</span></span></span><span style=display:flex><span><span style=color:#f1fa8c>reversed2:  [&#39;</span>e&#39;, &#39;l&#39;, &#39;p&#39;, &#39;p&#39;, &#39;A&#39;]
+</span></span></code></pre></div><blockquote><p>reverse 와 reversed 의 차이</p><ul><li>reverse 는 list 함수를 단순히 뒤집어서 저장해주는 역할로, 리턴값이 없어서 for문 같은 조건문 반복문에 사용하지 못 한다.</li><li>reversed는 <code>id</code> 값으로 나온다. 그래서 reverse 값을 원하면 형 변환을 해야 한다. 또한, 기존 리스트의 값을 변경하지 않으면서 return 값만을 원할 때 reversed 함수를 사용한다.</li></ul></blockquote><hr><h2 id=5-slicing>5. Slicing<a hidden class=anchor aria-hidden=true href=#5-slicing>#</a></h2><blockquote><p>문자열의 일부분을 원하는 대로 잘라오는 것을 말한다.</p></blockquote><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; sl = &#39;Nice Python&#39;
+</span></span><span style=display:flex><span>&gt; print(sl[0:3])
+</span></span><span style=display:flex><span>Nic
+</span></span><span style=display:flex><span><span style=color:#6272a4># index[0] 부터 [3]까지가 아닌, [2]까지이기 때문이다.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(sl[5:])
+</span></span><span style=display:flex><span>Python
+</span></span><span style=display:flex><span><span style=color:#6272a4># 아무런 값이 없으면 끝까지 또는 처음부터라는 의미다.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(sl[:len(sl)])
+</span></span><span style=display:flex><span>Nice Python
+</span></span><span style=display:flex><span><span style=color:#6272a4># 끝부분의 index를 모를 때, len 함수를 사용한다. 끝까지 출력된다.</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 위에 [0:3] 처럼 끝에가 -1 이 되지 않는다.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(sl[:len(sl)-1])
+</span></span><span style=display:flex><span>Nice Pytho
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 처음과 끝을 의미한다.</span>
+</span></span><span style=display:flex><span>&gt; print(sl[:])
+</span></span><span style=display:flex><span>Nice Python
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># index[1]부터 시작하여 2씩 증가하며, index[4] 미만까지 한다.</span>
+</span></span><span style=display:flex><span>&gt; print(sl[1:4:2])
+</span></span><span style=display:flex><span>ie
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># index[-4]부터 시작하여 [-3] 미만까지 한다.</span>
+</span></span><span style=display:flex><span>&gt; print(sl[-4:-2])
+</span></span><span style=display:flex><span>th
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># index를 역으로 해도 가능하다.</span>
+</span></span><span style=display:flex><span>&gt; print(sl[-5:])
+</span></span><span style=display:flex><span>Python
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># index를 역으로 하는 것과 정방향으로 하는 것을 같이 해도 가능하다.</span>
+</span></span><span style=display:flex><span>&gt; print(sl[1:-2])
+</span></span><span style=display:flex><span>ice Pyth
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 역으로 출력된다.</span>
+</span></span><span style=display:flex><span>&gt; print(sl[::-1])
+</span></span><span style=display:flex><span>nohtyP eciN
+</span></span></code></pre></div><p><strong>결론: slicing을 사용하여 원하는 정보를 추출해야한다. 그렇기 떄문에 slicing은 중요하다.</strong></p></div><footer class=post-footer><ul class=post-tags><li><a href=http://jeha00.github.io/tags/til/>TIL</a></li><li><a href=http://jeha00.github.io/tags/python/>python</a></li></ul><nav class=paginav><a class=prev href=http://jeha00.github.io/post/python_basic/python_basic_5/><span class=title>« Prev Page</span><br><span>[TIL] Python basic 5: list</span></a>
+<a class=next href=http://jeha00.github.io/post/python_basic/python_basic_3/><span class=title>Next Page »</span><br><span>[TIL] Python basic 3: numeric data</span></a></nav><div class=share-buttons><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on twitter" href="https://twitter.com/intent/tweet/?text=%5bTIL%5d%20Python%20basic%204%3a%20string&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f&hashtags=TIL%2cpython"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f&title=%5bTIL%5d%20Python%20basic%204%3a%20string&summary=%5bTIL%5d%20Python%20basic%204%3a%20string&source=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on reddit" href="https://reddit.com/submit?url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f&title=%5bTIL%5d%20Python%20basic%204%3a%20string"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on facebook" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on whatsapp" href="https://api.whatsapp.com/send?text=%5bTIL%5d%20Python%20basic%204%3a%20string%20-%20http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 4: string on telegram" href="https://telegram.me/share/url?text=%5bTIL%5d%20Python%20basic%204%3a%20string&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_4%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg></a></div></footer><script src=https://utteranc.es/client.js repo=JeHa00/blog-comments issue-term=pathname theme=github-dark crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2022 <a href=http://jeha00.github.io/>Jeha00 DevLog</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

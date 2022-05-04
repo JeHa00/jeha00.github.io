@@ -1,483 +1,167 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>[TIL] Python basic 35: Generator 1 | Jeha00 DevLog</title>
-<meta name=keywords content="TIL,python">
-<meta name=description content="첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다.">
-<meta name=author content="Jeha00">
-<link rel=canonical href=http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/>
-<meta name=google-site-verification content="XYZabc">
-<meta name=yandex-verification content="XYZabc">
-<meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
-<link rel=icon href=http://jeha00.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=http://jeha00.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=http://jeha00.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="[TIL] Python basic 35: Generator 1">
-<meta property="og:description" content="첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/"><meta property="og:image" content="http://jeha00.github.io/47"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2022-03-30T14:17:57+09:00">
-<meta property="article:modified_time" content="2022-03-30T14:17:57+09:00"><meta property="og:site_name" content="JeHa00 DevLog">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="http://jeha00.github.io/47">
-<meta name=twitter:title content="[TIL] Python basic 35: Generator 1">
-<meta name=twitter:description content="첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 35: Generator 1","item":"http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 35: Generator 1","name":"[TIL] Python basic 35: Generator 1","description":"첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  병행성을 위한 방법으로 generator와 coroutine을 알아보고자 한다. 이번 포스팅에서는 __iter__와 __next__ 을, 다음 포스팅에서는 generator를 알아본다. 그러면 첫 번째로 병행성이 무엇을 의미하는 건지, 이와 유사한 개념으로 병렬성은 무엇인지 학습한다. 두 번째로, Generator를 이해하기 위해서 __iter__와 __next__ 을 먼저 학습한다.   1. 병행성과 병렬성이란??   병행성(Concurrency): 한 컴퓨터가 여러 일을 동시에 수행하는 것 - 동시 수행 병렬성(parallelism): 여러 컴퓨터가 여러 작업을 동시에 수행하는 것 - 속도 향상    병행성 은 단일 프로그램 안에서 여러 일을 쉽게 해결하기 위해 사용된다.  thread는 하나지만, 마치 동시에 일을 하고 있는 것처럼 수행한다. 예) 공부하다가 강의 멈춰놓고, 밥 먹고 와서 강의를 중단한 부분부터 다시 시작하기   파이썬에서는 병행성 과 병렬성 을 모두 지원한다. 그리고, 파이썬 실력을 결정하는 중요한 내용이다.   2. __iter__와 __next__ 2.1 __iter__와 __next__ 용어 정리   __iter__  __iter__: iter() built-in function이 호출하는 메소드 iter(): 호출된 __iter__의 return 값을 반환한다. 즉, iterator는 __iter__ method가 만든다.   __next__  __next__: next() built-in function이 호출하는 메소드      iter 가 있는 용어들에 대해 정리하면서 알아보자.    iteration 이란??\n  The process of looping through the objects or items in a collection\n  그러면 파이썬에서 iteration 상황은 무엇이 있을까??\n  Definite iteration 상황: 미리 반복 횟수를 명백하게 정한 상황. ex) for 문\n  Indefinite iteration 상황: 몇 가지 조건이 만족될 때까지 code block을 실행하는 상황. ex) while 문\n      iterable의 의미는 2가지로 사용된다.\n An object(or the adjective used to describe an object) that can be iterated over __iter__을 가지고 있는 객체    이 iterable한 객체 또는 iterable을 iter()에 인자로서 전달하여 반환되는 것을 interator라 불린다.\n  그리고, iter()는 __iter__ method의 return 값(iterator)을 반환하는 함수다.\n The built-in function used to obtain an iterator from an iterable    즉, iterator의 의미는\n The object that produces successive items or values from its associated iterable  iterable object로부터 연속적인 값을 낳는(yield) 값 생성기   iter()로 만들어지는 객체 next() function의 기준으로 보자면, __next__을 가지고 있는 객체    2.2 Iterator 관련 data type  iterator를 반환하는 data type들:  for, collections, string, list, dict, set, tuple, unpacking, *args    # string  iter('foobar') # list  iter(['foo', 'bar', 'baz']) # tuple  iter(('foo', 'bar', 'baz')) # set  iter({'foo', 'bar', 'baz'}) # dict  iter({'foo': 1, 'bar': 2, 'baz': 3})  iterator를 반환하지 않는 data type들  Integer, foat, built-in functions    # Integer  iter(42) Traceback (most recent call last): File \"\", line 1, in  iter(42) TypeError: 'int' object is not iterable # Float  iter(3.1) Traceback (most recent call last): File \"\", line 1, in  iter(3.1) TypeError: 'float' object is not iterable # Built-in functions  iter(len) Traceback (most recent call last): File \"\", line 1, in  iter(len) TypeError: 'builtin_function_or_method' object is not iterable 2.3 iter() 과 next() 예제  내장함수 next()는 값 생성기 iterator으로부터 다음 값을 얻기 위해 사용된다.  # a는 iterable list다.  a = ['foo', 'bar', 'baz'] # iter을 통해서 a의 iterator를 만든다.  itr = iter(a)  itr # nest()를 통해서 itr 안의 다음 값을 얻는다.  next(itr) 'foo'  next(itr) 'bar'  next(itr) 'baz' # 값이 다 소진되면 다음과 같은 Error를 띄운다.  next(itr) StopIteration  만약 iterator로 전환하지 않고, 그냥 사용한다면??? iterator가 아니므로 next()를 사용할 수 없다. 즉 __iter__을 호출하여 전환해야 사용이 가능하다.   w = [1,2,3,4,5] # iter()로 iterator로 전환하지 않았기 때문에 __next__가 없다.  print(dir(w)) ['__add__', '__class__', '__iter__', ..... 'sort']  print(next(w)) TypeError: 'list' object is not an iterator 2.4 iter() 과 next() 토대로 for문 이해하기  그러면 __iter__ 과 __next__를 토대로 for 문을 이해해보자.   t = 'ABCDEF'  for c in t:  print(c) A B C D E F  어떻게 해서 하나씩 출력되는 것일까??? for문의 구조를 다시 확인해보자   for  in :     in 다음에는 iterable이 온다. 그러면 어떻게 하나씩 반환될까??\n __iter__ 과 __next__ 와 연결시켜보자. iteralbe을 입력하면 for문에서 iter()을 호출하여 iterable객체를 iterator로 바꾼 후, __next__ method를 통해 하나씩 출력된는 원리라는 걸 이해할 수 있다.    위에 for문을 while문으로 만들어서 구체적으로 이해해보자.\n   t = 'ABCDEF'  while True:  try:  print(next(t)) # iterator의 내부 성분이 다 출력되면 Error가 발생되고, 중단된다.  except Stopiteration  break 2.5 __iter__ 확인하는 방법  t = 'ABCDEF' # 첫 번째 방법 # 이 방법은 눈으로 찾아봐야하기 때문에, 추천하지 않는다.  print(dir(t)) ['__add__', '__iter__', '__le__', ....'] # 두 번째 방법 # hasattr = has attribution # t가 __iter__를 가지고 있는가??  print(hasattr(t, '__iter_')) True # 세 번째 방법  print(isinstance(t, abc.Iterable)) True 2.6 class로 __next__ 구현하기  class WordSplitter:  def __init__(self, text):  self._idx = 0  self._text = text.split('')  def __next__(self):  print('Called __next__')  try:  word = self._text[self._idx]  except IndexError:  raise StopIteration('Stopped Iteration')  self._idx += 1  return word  def __repr__(self):  return 'WordSplit(%s)' % (self._text)  wi = WordSplitter('Do today what you could do tomorrow')  print(wi) WordSplit(['Do', 'today', 'what', 'you', 'could', 'do', 'tomorrow'])  print(next(wi)) Do  print(next(wi)) today  print(next(wi)) what  print(next(wi)) you  print(next(wi)) could  print(next(wi)) do  print(next(wi)) tomorrow  구현했지만, 코드량이 많아진다. 그러면 제네레이터를 사용해서 구현해보자.   class WordSplitter:  def __init__(self, text): # 인덱스를 기억하지 않아도 된다.  self._text = text.split('')  def __next__(self):  for word in self._text: # 이것이 제네레이터이며, 이 제네레이터가 위치 정보를 기억한다. # 따로 예외처리를 하지 않아도 된다.  yield word  return  def __repr__(self):  return 'WordSplit(%s)' % (self._text)  wi = WordSplitter('Do today what you could do tomorrow')  wt = iter(wg) # 출력 코드는 동일.  Reference  인프런 파이썬 중급 04-3 제너레이터와 yield(feat. return 문) (널널한 교수의 고급 파이썬) ft. 파이썬 코딩  ","wordCount":"891","inLanguage":"en","datePublished":"2022-03-30T14:17:57+09:00","dateModified":"2022-03-30T14:17:57+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=http://jeha00.github.io/ accesskey=h title="Jeha00 (Alt + H)">Jeha00</a>
-<span class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</span>
-</div>
-<ul id=menu>
-<li>
-<a href=http://jeha00.github.io/archives/ title=Archive>
-<span>Archive</span>
-</a>
-</li>
-<li>
-<a href=http://jeha00.github.io/categories/ title=Categories>
-<span>Categories</span>
-</a>
-</li>
-<li>
-<a href=http://jeha00.github.io/tags/ title=Tags>
-<span>Tags</span>
-</a>
-</li>
-<li>
-<a href=http://jeha00.github.io/search/ title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=http://jeha00.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://jeha00.github.io/post/>Posts</a></div>
-<h1 class=post-title>
-[TIL] Python basic 35: Generator 1
-</h1>
-<div class=post-meta><span title="2022-03-30 14:17:57 +0900 KST">March 30, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Jeha00&nbsp;|&nbsp;<a href=https://github.com/JeHa00/blog/content/post/Python_basic/Python_basic_35_Generator_1.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#intro aria-label=Intro>Intro</a></li>
-<li>
-<a href=#1-%eb%b3%91%ed%96%89%ec%84%b1%ea%b3%bc-%eb%b3%91%eb%a0%ac%ec%84%b1%ec%9d%b4%eb%9e%80 aria-label="1. 병행성과 병렬성이란??">1. 병행성과 병렬성이란??</a></li>
-<li>
-<a href=#2-__iter__%ec%99%80-__next__ aria-label="2. __iter__와 __next__">2. __iter__와 __next__</a><ul>
-<li>
-<a href=#21-__iter__%ec%99%80-__next__-%ec%9a%a9%ec%96%b4-%ec%a0%95%eb%a6%ac aria-label="2.1 __iter__와 __next__ 용어 정리">2.1 __iter__와 __next__ 용어 정리</a></li>
-<li>
-<a href=#22-iterator-%ea%b4%80%eb%a0%a8-data-type aria-label="2.2 Iterator 관련 data type">2.2 Iterator 관련 data type</a></li>
-<li>
-<a href=#23-iter-%ea%b3%bc-next-%ec%98%88%ec%a0%9c aria-label="2.3 iter() 과 next() 예제">2.3 iter() 과 next() 예제</a></li>
-<li>
-<a href=#24-iter-%ea%b3%bc-next-%ed%86%a0%eb%8c%80%eb%a1%9c-for%eb%ac%b8-%ec%9d%b4%ed%95%b4%ed%95%98%ea%b8%b0 aria-label="2.4 iter() 과 next() 토대로 for문 이해하기">2.4 iter() 과 next() 토대로 for문 이해하기</a></li>
-<li>
-<a href=#25-__iter__-%ed%99%95%ec%9d%b8%ed%95%98%eb%8a%94-%eb%b0%a9%eb%b2%95 aria-label="2.5 __iter__ 확인하는 방법">2.5 __iter__ 확인하는 방법</a></li>
-<li>
-<a href=#26-class%eb%a1%9c-__next__-%ea%b5%ac%ed%98%84%ed%95%98%ea%b8%b0 aria-label="2.6 class로 __next__ 구현하기">2.6 class로 __next__ 구현하기</a></li></ul>
-</li>
-<li>
-<a href=#reference aria-label=Reference>Reference</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h1 id=intro>Intro<a hidden class=anchor aria-hidden=true href=#intro>#</a></h1>
-<ul>
-<li>병행성을 위한 방법으로 generator와 coroutine을 알아보고자 한다.</li>
-<li>이번 포스팅에서는 __iter__와 __next__ 을, 다음 포스팅에서는 <code>generator</code>를 알아본다.</li>
-<li>그러면 첫 번째로 병행성이 무엇을 의미하는 건지, 이와 유사한 개념으로 병렬성은 무엇인지 학습한다.</li>
-<li>두 번째로, Generator를 이해하기 위해서 __iter__와 __next__ 을 먼저 학습한다.</li>
-</ul>
-<hr>
-<h1 id=1-병행성과-병렬성이란>1. 병행성과 병렬성이란??<a hidden class=anchor aria-hidden=true href=#1-병행성과-병렬성이란>#</a></h1>
-<blockquote>
-<ul>
-<li>병행성(Concurrency): 한 컴퓨터가 여러 일을 동시에 수행하는 것 -> 동시 수행</li>
-<li>병렬성(parallelism): 여러 컴퓨터가 여러 작업을 동시에 수행하는 것 -> 속도 향상</li>
-</ul>
-</blockquote>
-<ul>
-<li><strong><em>병행성</em></strong> 은 단일 프로그램 안에서 여러 일을 쉽게 해결하기 위해 사용된다.
-<ul>
-<li>thread는 하나지만, 마치 동시에 일을 하고 있는 것처럼 수행한다.</li>
-<li>예) 공부하다가 강의 멈춰놓고, 밥 먹고 와서 강의를 중단한 부분부터 다시 시작하기</li>
-</ul>
-</li>
-<li>파이썬에서는 <strong><em>병행성</em></strong> 과 <strong><em>병렬성</em></strong> 을 모두 지원한다.</li>
-<li>그리고, 파이썬 실력을 결정하는 중요한 내용이다.</li>
-</ul>
-<hr>
-<h1 id=2-__iter__와-__next__>2. __iter__와 __next__<a hidden class=anchor aria-hidden=true href=#2-__iter__와-__next__>#</a></h1>
-<h2 id=21-__iter__와-__next__-용어-정리>2.1 __iter__와 __next__ 용어 정리<a hidden class=anchor aria-hidden=true href=#21-__iter__와-__next__-용어-정리>#</a></h2>
-<blockquote>
-<ul>
-<li><strong>__iter__</strong>
-<ul>
-<li>__iter__: iter() built-in function이 호출하는 메소드</li>
-<li>iter(): 호출된 __iter__의 return 값을 반환한다.</li>
-<li>즉, iterator는 __iter__ method가 만든다.</li>
-</ul>
-</li>
-<li><strong>__next__</strong>
-<ul>
-<li>__next__: next() built-in function이 호출하는 메소드</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>iter</strong> 가 있는 용어들에 대해 정리하면서 알아보자.</li>
-</ul>
-<ul>
-<li>
-<p><strong>iteration</strong> 이란??</p>
-<ul>
-<li>
-<p>The process of looping through the objects or items in a collection</p>
-<ul>
-<li>
-<p>그러면 파이썬에서 <strong>iteration</strong> 상황은 무엇이 있을까??</p>
-</li>
-<li>
-<p><strong>Definite</strong> iteration 상황: 미리 반복 횟수를 명백하게 정한 상황. ex) for 문</p>
-</li>
-<li>
-<p><strong>Indefinite</strong> iteration 상황: 몇 가지 조건이 만족될 때까지 code block을 실행하는 상황. ex) while 문</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>iterable</strong>의 의미는 2가지로 사용된다.</p>
-<ul>
-<li>An object(or the adjective used to describe an object) that can be iterated over</li>
-<li><code>__iter__</code>을 가지고 있는 객체</li>
-</ul>
-</li>
-<li>
-<p>이 iterable한 객체 또는 iterable을 <code>iter()</code>에 인자로서 전달하여 반환되는 것을 <code>interator</code>라 불린다.</p>
-</li>
-<li>
-<p>그리고, <code>iter()</code>는 <code>__iter__</code> method의 return 값(iterator)을 반환하는 함수다.</p>
-<ul>
-<li>The built-in function used to obtain an iterator from an iterable</li>
-</ul>
-</li>
-<li>
-<p>즉, <strong>iterator</strong>의 의미는</p>
-<ul>
-<li>The object that produces successive items or values from its associated iterable
-<ul>
-<li>iterable object로부터 연속적인 값을 낳는(yield) 값 생성기</li>
-</ul>
-</li>
-<li><code>iter()</code>로 만들어지는 객체</li>
-<li><code>next()</code> function의 기준으로 보자면, <code>__next__</code>을 가지고 있는 객체</li>
-</ul>
-</li>
-</ul>
-<h2 id=22-iterator-관련-data-type>2.2 Iterator 관련 data type<a hidden class=anchor aria-hidden=true href=#22-iterator-관련-data-type>#</a></h2>
-<ul>
-<li>iterator를 반환하는 data type들:
-<ul>
-<li>for, collections, string, list, dict, set, tuple, unpacking, *args</li>
-</ul>
-</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># string</span>
-&gt; iter(&#39;foobar&#39;)
-&lt;str_iterator object at 0x036E2750&gt;
-
-<span style=color:#6272a4># list</span>
-&gt; iter([&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;])
-&lt;list_iterator object at 0x036E27D0&gt;
-
-<span style=color:#6272a4># tuple</span>
-&gt; iter((&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;))
-&lt;tuple_iterator object at 0x036E27F0&gt;
-
-<span style=color:#6272a4># set</span>
-&gt; iter({&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;})
-&lt;set_iterator object at 0x036DEA08&gt;
-
-<span style=color:#6272a4># dict</span>
-&gt; iter({&#39;foo&#39;: 1, &#39;bar&#39;: 2, &#39;baz&#39;: 3})
-&lt;dict_keyiterator object at 0x036DD990&gt;
-</code></pre></div>
-<ul>
-<li>iterator를 반환하지 않는 data type들
-<ul>
-<li>Integer, foat, built-in functions</li>
-</ul>
-</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># Integer</span>
-&gt;&gt; iter(42)
-<span style=color:#ff79c6>Traceback (most recent call last)</span>:
-  File &#34;&lt;pyshell#26&gt;&#34;, line 1, in &lt;module&gt;
-    iter(42)
-<span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;int&#39;</span> object is not iterable
-
-<span style=color:#6272a4># Float</span>
-&gt;&gt;&gt; iter(3.1)
-<span style=color:#ff79c6>Traceback (most recent call last)</span>:
-  File &#34;&lt;pyshell#27&gt;&#34;, line 1, in &lt;module&gt;
-    iter(3.1)
-<span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;float&#39;</span> object is not iterable
-
-<span style=color:#6272a4># Built-in functions</span>
-&gt;&gt;&gt; iter(len)
-<span style=color:#ff79c6>Traceback (most recent call last)</span>:
-  File &#34;&lt;pyshell#28&gt;&#34;, line 1, in &lt;module&gt;
-    iter(len)
-<span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;builtin_function_or_method&#39;</span> object is not iterable
-</code></pre></div>
-<h2 id=23-iter-과-next-예제>2.3 iter() 과 next() 예제<a hidden class=anchor aria-hidden=true href=#23-iter-과-next-예제>#</a></h2>
-<ul>
-<li>내장함수 <code>next()</code>는 값 생성기 iterator으로부터 다음 값을 얻기 위해 사용된다.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># a는 iterable list다.</span>
-&gt; a = [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]
-
-<span style=color:#6272a4># iter을 통해서 a의 iterator를 만든다.</span>
-&gt; itr = iter(a)
-&gt; itr
-&lt;list_iterator object at 0x031EFD10&gt;
-
-<span style=color:#6272a4># nest()를 통해서 itr 안의 다음 값을 얻는다.</span>
-&gt; next(itr)
-<span style=color:#f1fa8c>&#39;foo&#39;</span>
-&gt; next(itr)
-<span style=color:#f1fa8c>&#39;bar&#39;</span>
-&gt; next(itr)
-<span style=color:#f1fa8c>&#39;baz&#39;</span>
-
-<span style=color:#6272a4># 값이 다 소진되면 다음과 같은 Error를 띄운다.</span>
-&gt; next(itr)
-StopIteration
-</code></pre></div><ul>
-<li>만약 iterator로 전환하지 않고, 그냥 사용한다면???</li>
-<li>iterator가 아니므로 <code>next()</code>를 사용할 수 없다.</li>
-<li>즉 <code>__iter__</code>을 호출하여 전환해야 사용이 가능하다.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; w = [1,2,3,4,5]
-
-<span style=color:#6272a4># iter()로 iterator로 전환하지 않았기 때문에 __next__가 없다.</span>
-&gt; print(dir(w))
-[<span style=color:#f1fa8c>&#39;__add__&#39;</span>, <span style=color:#f1fa8c>&#39;__class__&#39;</span>,  <span style=color:#f1fa8c>&#39;__iter__&#39;</span>, ..... &#39;sort&#39;]
-
-&gt; print(next(w))
-<span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;list&#39;</span> object is not an iterator
-</code></pre></div>
-<h2 id=24-iter-과-next-토대로-for문-이해하기>2.4 iter() 과 next() 토대로 for문 이해하기<a hidden class=anchor aria-hidden=true href=#24-iter-과-next-토대로-for문-이해하기>#</a></h2>
-<ul>
-<li>그러면 <code>__iter__</code> 과 <code>__next__</code>를 토대로 for 문을 이해해보자.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; t = &#39;ABCDEF&#39;
-<span style=color:#ff79c6>&gt; for c in t</span>:
-&gt;   print(c)
-A
-B
-C
-D
-E
-F
-</code></pre></div><ul>
-<li>어떻게 해서 하나씩 출력되는 것일까???</li>
-<li>for문의 구조를 다시 확인해보자</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; for &lt;var&gt; in &lt;iterable&gt;</span>:
-&gt;     &lt;statement(s)&gt;
-</code></pre></div><ul>
-<li>
-<p>in 다음에는 iterable이 온다. 그러면 어떻게 하나씩 반환될까??</p>
-<ul>
-<li><code>__iter__</code> 과 <code>__next__</code> 와 연결시켜보자.</li>
-<li>iteralbe을 입력하면 for문에서 <code>iter()</code>을 호출하여 iterable객체를 <code>iterator</code>로 바꾼 후, <code>__next__</code> method를 통해 하나씩 출력된는 원리라는 걸 이해할 수 있다.</li>
-</ul>
-</li>
-<li>
-<p>위에 for문을 while문으로 만들어서 구체적으로 이해해보자.</p>
-</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; t = &#39;ABCDEF&#39;
-
-<span style=color:#ff79c6>&gt; while True</span>:
-<span style=color:#ff79c6>&gt;   try</span>:
-&gt;       print(next(t))
-<span style=color:#6272a4># iterator의 내부 성분이 다 출력되면 Error가 발생되고, 중단된다.</span>
-&gt;   except Stopiteration
-&gt;       break
-</code></pre></div>
-<h2 id=25-__iter__-확인하는-방법>2.5 __iter__ 확인하는 방법<a hidden class=anchor aria-hidden=true href=#25-__iter__-확인하는-방법>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; t = &#39;ABCDEF&#39;
-
-<span style=color:#6272a4># 첫 번째 방법</span>
-<span style=color:#6272a4># 이 방법은 눈으로 찾아봐야하기 때문에, 추천하지 않는다.</span>
-&gt; print(dir(t))
-[<span style=color:#f1fa8c>&#39;__add__&#39;</span>,  <span style=color:#f1fa8c>&#39;__iter__&#39;</span>, <span style=color:#f1fa8c>&#39;__le__&#39;</span>, ....&#39;]
-
-<span style=color:#6272a4># 두 번째 방법</span>
-<span style=color:#6272a4># hasattr = has attribution</span>
-<span style=color:#6272a4># t가 __iter__를 가지고 있는가??</span>
-&gt; print(hasattr(t, &#39;__iter_&#39;))
-<span style=color:#ff79c6>True</span>
-
-<span style=color:#6272a4># 세 번째 방법</span>
-&gt; print(isinstance(t, abc.Iterable))
-<span style=color:#ff79c6>True</span>
-</code></pre></div>
-<h2 id=26-class로-__next__-구현하기>2.6 class로 __next__ 구현하기<a hidden class=anchor aria-hidden=true href=#26-class로-__next__-구현하기>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; class WordSplitter</span>:
-<span style=color:#ff79c6>&gt;   def __init__(self, text)</span>:
-&gt;       self._idx = 0
-&gt;       self._text = text.split(&#39;&#39;)
-
-<span style=color:#ff79c6>&gt;   def __next__(self)</span>:
-&gt;       print(&#39;Called __next__&#39;)
-<span style=color:#ff79c6>&gt;       try</span>:
-&gt;           word = self._text[self._idx]
-<span style=color:#ff79c6>&gt;       except IndexError</span>:
-&gt;           raise StopIteration(&#39;Stopped Iteration&#39;)
-&gt;       self._idx += 1
-&gt;       return word
-
-<span style=color:#ff79c6>&gt;   def __repr__(self)</span>:
-&gt;       return &#39;WordSplit(%s)&#39; % (self._text)
-
-
-&gt; wi = WordSplitter(&#39;Do today what you could do tomorrow&#39;)
-
-&gt; print(wi)
-WordSplit([&#39;Do&#39;, &#39;today&#39;, &#39;what&#39;, &#39;you&#39;, &#39;could&#39;, &#39;do&#39;, &#39;tomorrow&#39;])
-
-&gt; print(next(wi))
-Do
-&gt; print(next(wi))
-today
-&gt; print(next(wi))
-what
-&gt; print(next(wi))
-you
-&gt; print(next(wi))
-could
-&gt; print(next(wi))
-do
-&gt; print(next(wi))
-tomorrow
-</code></pre></div><ul>
-<li>구현했지만, 코드량이 많아진다. 그러면 제네레이터를 사용해서 구현해보자.</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#ff79c6>&gt; class WordSplitter</span>:
-<span style=color:#ff79c6>&gt;   def __init__(self, text)</span>:
-
-<span style=color:#6272a4># 인덱스를 기억하지 않아도 된다.</span>
-&gt;       self._text = text.split(&#39;&#39;)
-
-<span style=color:#ff79c6>&gt;   def __next__(self)</span>:
-<span style=color:#ff79c6>&gt;       for word in self._text</span>:
-
-<span style=color:#6272a4># 이것이 제네레이터이며, 이 제네레이터가 위치 정보를 기억한다.</span>
-<span style=color:#6272a4># 따로 예외처리를 하지 않아도 된다.</span>
-&gt;           yield word
-&gt;       return
-
-<span style=color:#ff79c6>&gt;   def __repr__(self)</span>:
-&gt;       return &#39;WordSplit(%s)&#39; % (self._text)
-
-
-&gt; wi = WordSplitter(&#39;Do today what you could do tomorrow&#39;)
-
-&gt; wt = iter(wg)
-
-<span style=color:#6272a4># 출력 코드는 동일.</span>
-</code></pre></div>
-<hr>
-<h1 id=reference>Reference<a hidden class=anchor aria-hidden=true href=#reference>#</a></h1>
-<ul>
-<li><a href=https://www.inflearn.com/course/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A4%91%EA%B8%89-%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%98%A4%EB%A6%AC%EC%A7%80%EB%84%90>인프런 파이썬 중급</a></li>
-<li><a href="https://www.youtube.com/watch?v=NjKqcQ_eIpA">04-3 제너레이터와 yield(feat. return 문) (널널한 교수의 고급 파이썬) ft. 파이썬 코딩</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=http://jeha00.github.io/tags/til/>TIL</a></li>
-<li><a href=http://jeha00.github.io/tags/python/>python</a></li>
-</ul>
-<nav class=paginav>
-<a class=prev href=http://jeha00.github.io/post/dev-contents/>
-<span class=title>« Prev Page</span>
-<br>
-<span>Dev-Contents</span>
-</a>
-<a class=next href=http://jeha00.github.io/post/python_basic/python_basic_34_decorator/>
-<span class=title>Next Page »</span>
-<br>
-<span>[TIL] Python basic 34: Decorator</span>
-</a>
-</nav>
-<div class=share-buttons>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on twitter" href="https://twitter.com/intent/tweet/?text=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f&hashtags=TIL%2cpython"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f&title=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201&summary=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201&source=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on reddit" href="https://reddit.com/submit?url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f&title=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on facebook" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on whatsapp" href="https://api.whatsapp.com/send?text=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201%20-%20http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on telegram" href="https://telegram.me/share/url?text=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
-</a>
-</div>
-</footer><script src=https://utteranc.es/client.js repo=JeHa00/blog-comments issue-term=pathname theme=github-dark crossorigin=anonymous async></script>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=http://jeha00.github.io/>Jeha00 DevLog</a></span>
-<span>
-Powered by
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>[TIL] Python basic 35: Generator 1 | Jeha00 DevLog</title><meta name=keywords content="TIL,python"><meta name=description content="첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다."><meta name=author content="Jeha00"><link rel=canonical href=http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style><link rel=icon href=http://jeha00.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png><link rel=apple-touch-icon href=http://jeha00.github.io/apple-touch-icon.png><link rel=mask-icon href=http://jeha00.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.98.0"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-123-45","auto"),ga("send","pageview"))</script><meta property="og:title" content="[TIL] Python basic 35: Generator 1"><meta property="og:description" content="첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다."><meta property="og:type" content="article"><meta property="og:url" content="http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/"><meta property="og:image" content="http://jeha00.github.io/47"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-03-30T14:17:57+09:00"><meta property="article:modified_time" content="2022-03-30T14:17:57+09:00"><meta property="og:site_name" content="JeHa00 DevLog"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://jeha00.github.io/47"><meta name=twitter:title content="[TIL] Python basic 35: Generator 1"><meta name=twitter:description content="첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 35: Generator 1","item":"http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 35: Generator 1","name":"[TIL] Python basic 35: Generator 1","description":"첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  병행성을 위한 방법으로 generator와 coroutine을 알아보고자 한다. 이번 포스팅에서는 __iter__와 __next__ 을, 다음 포스팅에서는 generator를 알아본다. 그러면 첫 번째로 병행성이 무엇을 의미하는 건지, 이와 유사한 개념으로 병렬성은 무엇인지 학습한다. 두 번째로, Generator를 이해하기 위해서 __iter__와 __next__ 을 먼저 학습한다.   1. 병행성과 병렬성이란??   병행성(Concurrency): 한 컴퓨터가 여러 일을 동시에 수행하는 것 - 동시 수행 병렬성(parallelism): 여러 컴퓨터가 여러 작업을 동시에 수행하는 것 - 속도 향상    병행성 은 단일 프로그램 안에서 여러 일을 쉽게 해결하기 위해 사용된다.  thread는 하나지만, 마치 동시에 일을 하고 있는 것처럼 수행한다. 예) 공부하다가 강의 멈춰놓고, 밥 먹고 와서 강의를 중단한 부분부터 다시 시작하기   파이썬에서는 병행성 과 병렬성 을 모두 지원한다. 그리고, 파이썬 실력을 결정하는 중요한 내용이다.   2. __iter__와 __next__ 2.1 __iter__와 __next__ 용어 정리   __iter__  __iter__: iter() built-in function이 호출하는 메소드 iter(): 호출된 __iter__의 return 값을 반환한다. 즉, iterator는 __iter__ method가 만든다.   __next__  __next__: next() built-in function이 호출하는 메소드      iter 가 있는 용어들에 대해 정리하면서 알아보자.    iteration 이란??\n  The process of looping through the objects or items in a collection\n  그러면 파이썬에서 iteration 상황은 무엇이 있을까??\n  Definite iteration 상황: 미리 반복 횟수를 명백하게 정한 상황. ex) for 문\n  Indefinite iteration 상황: 몇 가지 조건이 만족될 때까지 code block을 실행하는 상황. ex) while 문\n      iterable의 의미는 2가지로 사용된다.\n An object(or the adjective used to describe an object) that can be iterated over __iter__을 가지고 있는 객체    이 iterable한 객체 또는 iterable을 iter()에 인자로서 전달하여 반환되는 것을 interator라 불린다.\n  그리고, iter()는 __iter__ method의 return 값(iterator)을 반환하는 함수다.\n The built-in function used to obtain an iterator from an iterable    즉, iterator의 의미는\n The object that produces successive items or values from its associated iterable  iterable object로부터 연속적인 값을 낳는(yield) 값 생성기   iter()로 만들어지는 객체 next() function의 기준으로 보자면, __next__을 가지고 있는 객체    2.2 Iterator 관련 data type  iterator를 반환하는 data type들:  for, collections, string, list, dict, set, tuple, unpacking, *args    # string  iter('foobar')  # list  iter(['foo', 'bar', 'baz'])  # tuple  iter(('foo', 'bar', 'baz'))  # set  iter({'foo', 'bar', 'baz'})  # dict  iter({'foo': 1, 'bar': 2, 'baz': 3})  iterator를 반환하지 않는 data type들  Integer, foat, built-in functions    # Integer  iter(42) Traceback (most recent call last):  File \"\", line 1, in   iter(42) TypeError: 'int' object is not iterable  # Float  iter(3.1) Traceback (most recent call last):  File \"\", line 1, in   iter(3.1) TypeError: 'float' object is not iterable  # Built-in functions  iter(len) Traceback (most recent call last):  File \"\", line 1, in   iter(len) TypeError: 'builtin_function_or_method' object is not iterable 2.3 iter() 과 next() 예제  내장함수 next()는 값 생성기 iterator으로부터 다음 값을 얻기 위해 사용된다.  # a는 iterable list다.  a = ['foo', 'bar', 'baz']  # iter을 통해서 a의 iterator를 만든다.  itr = iter(a)  itr  # nest()를 통해서 itr 안의 다음 값을 얻는다.  next(itr) 'foo'  next(itr) 'bar'  next(itr) 'baz'  # 값이 다 소진되면 다음과 같은 Error를 띄운다.  next(itr) StopIteration  만약 iterator로 전환하지 않고, 그냥 사용한다면??? iterator가 아니므로 next()를 사용할 수 없다. 즉 __iter__을 호출하여 전환해야 사용이 가능하다.   w = [1,2,3,4,5]  # iter()로 iterator로 전환하지 않았기 때문에 __next__가 없다.  print(dir(w)) ['__add__', '__class__', '__iter__', ..... 'sort']   print(next(w)) TypeError: 'list' object is not an iterator 2.4 iter() 과 next() 토대로 for문 이해하기  그러면 __iter__ 과 __next__를 토대로 for 문을 이해해보자.   t = 'ABCDEF'  for c in t:  print(c) A B C D E F  어떻게 해서 하나씩 출력되는 것일까??? for문의 구조를 다시 확인해보자   for  in :     in 다음에는 iterable이 온다. 그러면 어떻게 하나씩 반환될까??\n __iter__ 과 __next__ 와 연결시켜보자. iteralbe을 입력하면 for문에서 iter()을 호출하여 iterable객체를 iterator로 바꾼 후, __next__ method를 통해 하나씩 출력된는 원리라는 걸 이해할 수 있다.    위에 for문을 while문으로 만들어서 구체적으로 이해해보자.\n   t = 'ABCDEF'   while True:  try:  print(next(t)) # iterator의 내부 성분이 다 출력되면 Error가 발생되고, 중단된다.  except Stopiteration  break 2.5 __iter__ 확인하는 방법  t = 'ABCDEF'  # 첫 번째 방법 # 이 방법은 눈으로 찾아봐야하기 때문에, 추천하지 않는다.  print(dir(t)) ['__add__', '__iter__', '__le__', ....']  # 두 번째 방법 # hasattr = has attribution # t가 __iter__를 가지고 있는가??  print(hasattr(t, '__iter_')) True  # 세 번째 방법  print(isinstance(t, abc.Iterable)) True 2.6 class로 __next__ 구현하기  class WordSplitter:  def __init__(self, text):  self._idx = 0  self._text = text.split('')   def __next__(self):  print('Called __next__')  try:  word = self._text[self._idx]  except IndexError:  raise StopIteration('Stopped Iteration')  self._idx += 1  return word   def __repr__(self):  return 'WordSplit(%s)' % (self._text)    wi = WordSplitter('Do today what you could do tomorrow')   print(wi) WordSplit(['Do', 'today', 'what', 'you', 'could', 'do', 'tomorrow'])   print(next(wi)) Do  print(next(wi)) today  print(next(wi)) what  print(next(wi)) you  print(next(wi)) could  print(next(wi)) do  print(next(wi)) tomorrow  구현했지만, 코드량이 많아진다. 그러면 제네레이터를 사용해서 구현해보자.   class WordSplitter:  def __init__(self, text):  # 인덱스를 기억하지 않아도 된다.  self._text = text.split('')   def __next__(self):  for word in self._text:  # 이것이 제네레이터이며, 이 제네레이터가 위치 정보를 기억한다. # 따로 예외처리를 하지 않아도 된다.  yield word  return   def __repr__(self):  return 'WordSplit(%s)' % (self._text)    wi = WordSplitter('Do today what you could do tomorrow')   wt = iter(wg)  # 출력 코드는 동일.  Reference  인프런 파이썬 중급 04-3 제너레이터와 yield(feat. return 문) (널널한 교수의 고급 파이썬) ft. 파이썬 코딩  ","wordCount":"891","inLanguage":"en","datePublished":"2022-03-30T14:17:57+09:00","dateModified":"2022-03-30T14:17:57+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=http://jeha00.github.io/ accesskey=h title="Jeha00 (Alt + H)">Jeha00</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu><li><a href=http://jeha00.github.io/archives/ title=Archive><span>Archive</span></a></li><li><a href=http://jeha00.github.io/categories/ title=Categories><span>Categories</span></a></li><li><a href=http://jeha00.github.io/tags/ title=Tags><span>Tags</span></a></li><li><a href=http://jeha00.github.io/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://jeha00.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://jeha00.github.io/post/>Posts</a></div><h1 class=post-title>[TIL] Python basic 35: Generator 1</h1><div class=post-meta><span title="2022-03-30 14:17:57 +0900 KST">March 30, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Jeha00&nbsp;|&nbsp;<a href=https://github.com/JeHa00/blog/content/post/Python_basic/Python_basic_35_Generator_1.md rel="noopener noreferrer" target=_blank>Suggest Changes</a></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#intro aria-label=Intro>Intro</a></li><li><a href=#1-%eb%b3%91%ed%96%89%ec%84%b1%ea%b3%bc-%eb%b3%91%eb%a0%ac%ec%84%b1%ec%9d%b4%eb%9e%80 aria-label="1. 병행성과 병렬성이란??">1. 병행성과 병렬성이란??</a></li><li><a href=#2-__iter__%ec%99%80-__next__ aria-label="2. __iter__와 __next__">2. __iter__와 __next__</a><ul><li><a href=#21-__iter__%ec%99%80-__next__-%ec%9a%a9%ec%96%b4-%ec%a0%95%eb%a6%ac aria-label="2.1 __iter__와 __next__ 용어 정리">2.1 __iter__와 __next__ 용어 정리</a></li><li><a href=#22-iterator-%ea%b4%80%eb%a0%a8-data-type aria-label="2.2 Iterator 관련 data type">2.2 Iterator 관련 data type</a></li><li><a href=#23-iter-%ea%b3%bc-next-%ec%98%88%ec%a0%9c aria-label="2.3 iter() 과 next() 예제">2.3 iter() 과 next() 예제</a></li><li><a href=#24-iter-%ea%b3%bc-next-%ed%86%a0%eb%8c%80%eb%a1%9c-for%eb%ac%b8-%ec%9d%b4%ed%95%b4%ed%95%98%ea%b8%b0 aria-label="2.4 iter() 과 next() 토대로 for문 이해하기">2.4 iter() 과 next() 토대로 for문 이해하기</a></li><li><a href=#25-__iter__-%ed%99%95%ec%9d%b8%ed%95%98%eb%8a%94-%eb%b0%a9%eb%b2%95 aria-label="2.5 __iter__ 확인하는 방법">2.5 __iter__ 확인하는 방법</a></li><li><a href=#26-class%eb%a1%9c-__next__-%ea%b5%ac%ed%98%84%ed%95%98%ea%b8%b0 aria-label="2.6 class로 __next__ 구현하기">2.6 class로 __next__ 구현하기</a></li></ul></li><li><a href=#reference aria-label=Reference>Reference</a></li></ul></div></details></div><div class=post-content><h1 id=intro>Intro<a hidden class=anchor aria-hidden=true href=#intro>#</a></h1><ul><li>병행성을 위한 방법으로 generator와 coroutine을 알아보고자 한다.</li><li>이번 포스팅에서는 __iter__와 __next__ 을, 다음 포스팅에서는 <code>generator</code>를 알아본다.</li><li>그러면 첫 번째로 병행성이 무엇을 의미하는 건지, 이와 유사한 개념으로 병렬성은 무엇인지 학습한다.</li><li>두 번째로, Generator를 이해하기 위해서 __iter__와 __next__ 을 먼저 학습한다.</li></ul><hr><h1 id=1-병행성과-병렬성이란>1. 병행성과 병렬성이란??<a hidden class=anchor aria-hidden=true href=#1-병행성과-병렬성이란>#</a></h1><blockquote><ul><li>병행성(Concurrency): 한 컴퓨터가 여러 일을 동시에 수행하는 것 -> 동시 수행</li><li>병렬성(parallelism): 여러 컴퓨터가 여러 작업을 동시에 수행하는 것 -> 속도 향상</li></ul></blockquote><ul><li><strong><em>병행성</em></strong> 은 단일 프로그램 안에서 여러 일을 쉽게 해결하기 위해 사용된다.<ul><li>thread는 하나지만, 마치 동시에 일을 하고 있는 것처럼 수행한다.</li><li>예) 공부하다가 강의 멈춰놓고, 밥 먹고 와서 강의를 중단한 부분부터 다시 시작하기</li></ul></li><li>파이썬에서는 <strong><em>병행성</em></strong> 과 <strong><em>병렬성</em></strong> 을 모두 지원한다.</li><li>그리고, 파이썬 실력을 결정하는 중요한 내용이다.</li></ul><hr><h1 id=2-__iter__와-__next__>2. __iter__와 __next__<a hidden class=anchor aria-hidden=true href=#2-__iter__와-__next__>#</a></h1><h2 id=21-__iter__와-__next__-용어-정리>2.1 __iter__와 __next__ 용어 정리<a hidden class=anchor aria-hidden=true href=#21-__iter__와-__next__-용어-정리>#</a></h2><blockquote><ul><li><strong>__iter__</strong><ul><li>__iter__: iter() built-in function이 호출하는 메소드</li><li>iter(): 호출된 __iter__의 return 값을 반환한다.</li><li>즉, iterator는 __iter__ method가 만든다.</li></ul></li><li><strong>__next__</strong><ul><li>__next__: next() built-in function이 호출하는 메소드</li></ul></li></ul></blockquote><ul><li><strong>iter</strong> 가 있는 용어들에 대해 정리하면서 알아보자.</li></ul><ul><li><p><strong>iteration</strong> 이란??</p><ul><li><p>The process of looping through the objects or items in a collection</p><ul><li><p>그러면 파이썬에서 <strong>iteration</strong> 상황은 무엇이 있을까??</p></li><li><p><strong>Definite</strong> iteration 상황: 미리 반복 횟수를 명백하게 정한 상황. ex) for 문</p></li><li><p><strong>Indefinite</strong> iteration 상황: 몇 가지 조건이 만족될 때까지 code block을 실행하는 상황. ex) while 문</p></li></ul></li></ul></li><li><p><strong>iterable</strong>의 의미는 2가지로 사용된다.</p><ul><li>An object(or the adjective used to describe an object) that can be iterated over</li><li><code>__iter__</code>을 가지고 있는 객체</li></ul></li><li><p>이 iterable한 객체 또는 iterable을 <code>iter()</code>에 인자로서 전달하여 반환되는 것을 <code>interator</code>라 불린다.</p></li><li><p>그리고, <code>iter()</code>는 <code>__iter__</code> method의 return 값(iterator)을 반환하는 함수다.</p><ul><li>The built-in function used to obtain an iterator from an iterable</li></ul></li><li><p>즉, <strong>iterator</strong>의 의미는</p><ul><li>The object that produces successive items or values from its associated iterable<ul><li>iterable object로부터 연속적인 값을 낳는(yield) 값 생성기</li></ul></li><li><code>iter()</code>로 만들어지는 객체</li><li><code>next()</code> function의 기준으로 보자면, <code>__next__</code>을 가지고 있는 객체</li></ul></li></ul><h2 id=22-iterator-관련-data-type>2.2 Iterator 관련 data type<a hidden class=anchor aria-hidden=true href=#22-iterator-관련-data-type>#</a></h2><ul><li>iterator를 반환하는 data type들:<ul><li>for, collections, string, list, dict, set, tuple, unpacking, *args</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#6272a4># string</span>
+</span></span><span style=display:flex><span>&gt; iter(&#39;foobar&#39;)
+</span></span><span style=display:flex><span>&lt;str_iterator object at 0x036E2750&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># list</span>
+</span></span><span style=display:flex><span>&gt; iter([&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;])
+</span></span><span style=display:flex><span>&lt;list_iterator object at 0x036E27D0&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># tuple</span>
+</span></span><span style=display:flex><span>&gt; iter((&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;))
+</span></span><span style=display:flex><span>&lt;tuple_iterator object at 0x036E27F0&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># set</span>
+</span></span><span style=display:flex><span>&gt; iter({&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;})
+</span></span><span style=display:flex><span>&lt;set_iterator object at 0x036DEA08&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># dict</span>
+</span></span><span style=display:flex><span>&gt; iter({&#39;foo&#39;: 1, &#39;bar&#39;: 2, &#39;baz&#39;: 3})
+</span></span><span style=display:flex><span>&lt;dict_keyiterator object at 0x036DD990&gt;
+</span></span></code></pre></div><ul><li>iterator를 반환하지 않는 data type들<ul><li>Integer, foat, built-in functions</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#6272a4># Integer</span>
+</span></span><span style=display:flex><span>&gt;&gt; iter(42)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>Traceback (most recent call last)</span>:
+</span></span><span style=display:flex><span>  File &#34;&lt;pyshell#26&gt;&#34;, line 1, in &lt;module&gt;
+</span></span><span style=display:flex><span>    iter(42)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;int&#39;</span> object is not iterable
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># Float</span>
+</span></span><span style=display:flex><span>&gt;&gt;&gt; iter(3.1)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>Traceback (most recent call last)</span>:
+</span></span><span style=display:flex><span>  File &#34;&lt;pyshell#27&gt;&#34;, line 1, in &lt;module&gt;
+</span></span><span style=display:flex><span>    iter(3.1)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;float&#39;</span> object is not iterable
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># Built-in functions</span>
+</span></span><span style=display:flex><span>&gt;&gt;&gt; iter(len)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>Traceback (most recent call last)</span>:
+</span></span><span style=display:flex><span>  File &#34;&lt;pyshell#28&gt;&#34;, line 1, in &lt;module&gt;
+</span></span><span style=display:flex><span>    iter(len)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;builtin_function_or_method&#39;</span> object is not iterable
+</span></span></code></pre></div><h2 id=23-iter-과-next-예제>2.3 iter() 과 next() 예제<a hidden class=anchor aria-hidden=true href=#23-iter-과-next-예제>#</a></h2><ul><li>내장함수 <code>next()</code>는 값 생성기 iterator으로부터 다음 값을 얻기 위해 사용된다.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#6272a4># a는 iterable list다.</span>
+</span></span><span style=display:flex><span>&gt; a = [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># iter을 통해서 a의 iterator를 만든다.</span>
+</span></span><span style=display:flex><span>&gt; itr = iter(a)
+</span></span><span style=display:flex><span>&gt; itr
+</span></span><span style=display:flex><span>&lt;list_iterator object at 0x031EFD10&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># nest()를 통해서 itr 안의 다음 값을 얻는다.</span>
+</span></span><span style=display:flex><span>&gt; next(itr)
+</span></span><span style=display:flex><span><span style=color:#f1fa8c>&#39;foo&#39;</span>
+</span></span><span style=display:flex><span>&gt; next(itr)
+</span></span><span style=display:flex><span><span style=color:#f1fa8c>&#39;bar&#39;</span>
+</span></span><span style=display:flex><span>&gt; next(itr)
+</span></span><span style=display:flex><span><span style=color:#f1fa8c>&#39;baz&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 값이 다 소진되면 다음과 같은 Error를 띄운다.</span>
+</span></span><span style=display:flex><span>&gt; next(itr)
+</span></span><span style=display:flex><span>StopIteration
+</span></span></code></pre></div><ul><li>만약 iterator로 전환하지 않고, 그냥 사용한다면???</li><li>iterator가 아니므로 <code>next()</code>를 사용할 수 없다.</li><li>즉 <code>__iter__</code>을 호출하여 전환해야 사용이 가능하다.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>&gt; w = [1,2,3,4,5]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># iter()로 iterator로 전환하지 않았기 때문에 __next__가 없다.</span>
+</span></span><span style=display:flex><span>&gt; print(dir(w))
+</span></span><span style=display:flex><span>[<span style=color:#f1fa8c>&#39;__add__&#39;</span>, <span style=color:#f1fa8c>&#39;__class__&#39;</span>,  <span style=color:#f1fa8c>&#39;__iter__&#39;</span>, ..... &#39;sort&#39;]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(next(w))
+</span></span><span style=display:flex><span><span style=color:#ff79c6>TypeError</span>: <span style=color:#f1fa8c>&#39;list&#39;</span> object is not an iterator
+</span></span></code></pre></div><h2 id=24-iter-과-next-토대로-for문-이해하기>2.4 iter() 과 next() 토대로 for문 이해하기<a hidden class=anchor aria-hidden=true href=#24-iter-과-next-토대로-for문-이해하기>#</a></h2><ul><li>그러면 <code>__iter__</code> 과 <code>__next__</code>를 토대로 for 문을 이해해보자.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>&gt; t = &#39;ABCDEF&#39;
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt; for c in t</span>:
+</span></span><span style=display:flex><span>&gt;   print(c)
+</span></span><span style=display:flex><span>A
+</span></span><span style=display:flex><span>B
+</span></span><span style=display:flex><span>C
+</span></span><span style=display:flex><span>D
+</span></span><span style=display:flex><span>E
+</span></span><span style=display:flex><span>F
+</span></span></code></pre></div><ul><li>어떻게 해서 하나씩 출력되는 것일까???</li><li>for문의 구조를 다시 확인해보자</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#ff79c6>&gt; for &lt;var&gt; in &lt;iterable&gt;</span>:
+</span></span><span style=display:flex><span>&gt;     &lt;statement(s)&gt;
+</span></span></code></pre></div><ul><li><p>in 다음에는 iterable이 온다. 그러면 어떻게 하나씩 반환될까??</p><ul><li><code>__iter__</code> 과 <code>__next__</code> 와 연결시켜보자.</li><li>iteralbe을 입력하면 for문에서 <code>iter()</code>을 호출하여 iterable객체를 <code>iterator</code>로 바꾼 후, <code>__next__</code> method를 통해 하나씩 출력된는 원리라는 걸 이해할 수 있다.</li></ul></li><li><p>위에 for문을 while문으로 만들어서 구체적으로 이해해보자.</p></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>&gt; t = &#39;ABCDEF&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt; while True</span>:
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;   try</span>:
+</span></span><span style=display:flex><span>&gt;       print(next(t))
+</span></span><span style=display:flex><span><span style=color:#6272a4># iterator의 내부 성분이 다 출력되면 Error가 발생되고, 중단된다.</span>
+</span></span><span style=display:flex><span>&gt;   except Stopiteration
+</span></span><span style=display:flex><span>&gt;       break
+</span></span></code></pre></div><h2 id=25-__iter__-확인하는-방법>2.5 __iter__ 확인하는 방법<a hidden class=anchor aria-hidden=true href=#25-__iter__-확인하는-방법>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>&gt; t = &#39;ABCDEF&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 첫 번째 방법</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 이 방법은 눈으로 찾아봐야하기 때문에, 추천하지 않는다.</span>
+</span></span><span style=display:flex><span>&gt; print(dir(t))
+</span></span><span style=display:flex><span>[<span style=color:#f1fa8c>&#39;__add__&#39;</span>,  <span style=color:#f1fa8c>&#39;__iter__&#39;</span>, <span style=color:#f1fa8c>&#39;__le__&#39;</span>, ....&#39;]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 두 번째 방법</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># hasattr = has attribution</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># t가 __iter__를 가지고 있는가??</span>
+</span></span><span style=display:flex><span>&gt; print(hasattr(t, &#39;__iter_&#39;))
+</span></span><span style=display:flex><span><span style=color:#ff79c6>True</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 세 번째 방법</span>
+</span></span><span style=display:flex><span>&gt; print(isinstance(t, abc.Iterable))
+</span></span><span style=display:flex><span><span style=color:#ff79c6>True</span>
+</span></span></code></pre></div><h2 id=26-class로-__next__-구현하기>2.6 class로 __next__ 구현하기<a hidden class=anchor aria-hidden=true href=#26-class로-__next__-구현하기>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#ff79c6>&gt; class WordSplitter</span>:
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;   def __init__(self, text)</span>:
+</span></span><span style=display:flex><span>&gt;       self._idx = 0
+</span></span><span style=display:flex><span>&gt;       self._text = text.split(&#39;&#39;)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;   def __next__(self)</span>:
+</span></span><span style=display:flex><span>&gt;       print(&#39;Called __next__&#39;)
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;       try</span>:
+</span></span><span style=display:flex><span>&gt;           word = self._text[self._idx]
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;       except IndexError</span>:
+</span></span><span style=display:flex><span>&gt;           raise StopIteration(&#39;Stopped Iteration&#39;)
+</span></span><span style=display:flex><span>&gt;       self._idx += 1
+</span></span><span style=display:flex><span>&gt;       return word
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;   def __repr__(self)</span>:
+</span></span><span style=display:flex><span>&gt;       return &#39;WordSplit(%s)&#39; % (self._text)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; wi = WordSplitter(&#39;Do today what you could do tomorrow&#39;)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(wi)
+</span></span><span style=display:flex><span>WordSplit([&#39;Do&#39;, &#39;today&#39;, &#39;what&#39;, &#39;you&#39;, &#39;could&#39;, &#39;do&#39;, &#39;tomorrow&#39;])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; print(next(wi))
+</span></span><span style=display:flex><span>Do
+</span></span><span style=display:flex><span>&gt; print(next(wi))
+</span></span><span style=display:flex><span>today
+</span></span><span style=display:flex><span>&gt; print(next(wi))
+</span></span><span style=display:flex><span>what
+</span></span><span style=display:flex><span>&gt; print(next(wi))
+</span></span><span style=display:flex><span>you
+</span></span><span style=display:flex><span>&gt; print(next(wi))
+</span></span><span style=display:flex><span>could
+</span></span><span style=display:flex><span>&gt; print(next(wi))
+</span></span><span style=display:flex><span>do
+</span></span><span style=display:flex><span>&gt; print(next(wi))
+</span></span><span style=display:flex><span>tomorrow
+</span></span></code></pre></div><ul><li>구현했지만, 코드량이 많아진다. 그러면 제네레이터를 사용해서 구현해보자.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#ff79c6>&gt; class WordSplitter</span>:
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;   def __init__(self, text)</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 인덱스를 기억하지 않아도 된다.</span>
+</span></span><span style=display:flex><span>&gt;       self._text = text.split(&#39;&#39;)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;   def __next__(self)</span>:
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;       for word in self._text</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 이것이 제네레이터이며, 이 제네레이터가 위치 정보를 기억한다.</span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 따로 예외처리를 하지 않아도 된다.</span>
+</span></span><span style=display:flex><span>&gt;           yield word
+</span></span><span style=display:flex><span>&gt;       return
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>&gt;   def __repr__(self)</span>:
+</span></span><span style=display:flex><span>&gt;       return &#39;WordSplit(%s)&#39; % (self._text)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; wi = WordSplitter(&#39;Do today what you could do tomorrow&#39;)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&gt; wt = iter(wg)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># 출력 코드는 동일.</span>
+</span></span></code></pre></div><hr><h1 id=reference>Reference<a hidden class=anchor aria-hidden=true href=#reference>#</a></h1><ul><li><a href=https://www.inflearn.com/course/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A4%91%EA%B8%89-%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%98%A4%EB%A6%AC%EC%A7%80%EB%84%90>인프런 파이썬 중급</a></li><li><a href="https://www.youtube.com/watch?v=NjKqcQ_eIpA">04-3 제너레이터와 yield(feat. return 문) (널널한 교수의 고급 파이썬) ft. 파이썬 코딩</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=http://jeha00.github.io/tags/til/>TIL</a></li><li><a href=http://jeha00.github.io/tags/python/>python</a></li></ul><nav class=paginav><a class=prev href=http://jeha00.github.io/post/dev-contents/><span class=title>« Prev Page</span><br><span>Dev-Contents</span></a>
+<a class=next href=http://jeha00.github.io/post/python_basic/python_basic_34_decorator/><span class=title>Next Page »</span><br><span>[TIL] Python basic 34: Decorator</span></a></nav><div class=share-buttons><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on twitter" href="https://twitter.com/intent/tweet/?text=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f&hashtags=TIL%2cpython"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f&title=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201&summary=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201&source=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on reddit" href="https://reddit.com/submit?url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f&title=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on facebook" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on whatsapp" href="https://api.whatsapp.com/send?text=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201%20-%20http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 35: Generator 1 on telegram" href="https://telegram.me/share/url?text=%5bTIL%5d%20Python%20basic%2035%3a%20Generator%201&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_35_generator_1%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg></a></div></footer><script src=https://utteranc.es/client.js repo=JeHa00/blog-comments issue-term=pathname theme=github-dark crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2022 <a href=http://jeha00.github.io/>Jeha00 DevLog</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

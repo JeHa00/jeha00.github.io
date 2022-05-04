@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 28 Apr 2022 16:13:57 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 May 2022 20:53:38 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] OS Chapter 08: 프로세스 동기화 1</title>
+      <link>http://jeha00.github.io/post/os/os_chapter_08_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EB%8F%99%EA%B8%B0%ED%99%94_1/</link>
+      <pubDate>Wed, 04 May 2022 20:53:38 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/os/os_chapter_08_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EB%8F%99%EA%B8%B0%ED%99%94_1/</guid>
+      <description>Race condition이란 무엇이고, 이 race condition은 OS에서 언제 발생되며, 이를 해결하기 위한 방법으로 SW 방법과 SW 방법에는 무엇이 있는지를 배운다. 또한, Semaphore가 무엇인지 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] OS Chapter 07: 메모리 관리 2</title>
       <link>http://jeha00.github.io/post/os/os_chapter_07_%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC_2/</link>
@@ -315,11 +324,11 @@ _&#39;</title>
 _
 _name
 _
-_&#39; 과 &#39;
+_&amp;rsquo; 과 &#39;
 _
 _main
 _
-_&#39; 를 이해한 걸 바탕으로, if
+_&amp;rsquo; 를 이해한 걸 바탕으로, if
 _
 _name
 _
@@ -327,7 +336,7 @@ _ == &#39;
 _
 _main
 _
-_&#39; 에 대해 알아본다.</description>
+_&amp;rsquo; 에 대해 알아본다.</description>
     </item>
     
     <item>
