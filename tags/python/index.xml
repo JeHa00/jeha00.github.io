@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 12 Apr 2022 13:09:09 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 May 2022 13:27:50 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 43: Underscore</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_43_underscore/</link>
+      <pubDate>Wed, 11 May 2022 13:27:50 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_43_underscore/</guid>
+      <description>Python에서 underscore(_)가 어떻게 쓰이는지 알아보고, 그 중에서 Access modifier 접근 지정자 Public, Protected, private 각각에 대해 알아본다. 그리고, Private의 경우, naming mangling와 연결하여 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 42: Context manager</title>
       <link>http://jeha00.github.io/post/python_basic/python_basic_42_contextmanager/</link>

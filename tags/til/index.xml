@@ -9,7 +9,34 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 04 May 2022 20:53:38 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 May 2022 13:27:50 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 43: Underscore</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_43_underscore/</link>
+      <pubDate>Wed, 11 May 2022 13:27:50 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_43_underscore/</guid>
+      <description>Python에서 underscore(_)가 어떻게 쓰이는지 알아보고, 그 중에서 Access modifier 접근 지정자 Public, Protected, private 각각에 대해 알아본다. 그리고, Private의 경우, naming mangling와 연결하여 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] OS Chapter 09: 교착 상태</title>
+      <link>http://jeha00.github.io/post/os/os_chapter_09_%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C/</link>
+      <pubDate>Tue, 10 May 2022 20:38:17 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/os/os_chapter_09_%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C/</guid>
+      <description>교착 상태(deadlock)이란 무엇이고, deadlock 발생 조건 4가지는 무엇이며, 이에 따라 deadlock 처리 방법에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] OS Chapter 08: 프로세스 동기화 2</title>
+      <link>http://jeha00.github.io/post/os/os_chapter_08_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EB%8F%99%EA%B8%B0%ED%99%94_2/</link>
+      <pubDate>Tue, 10 May 2022 20:38:04 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/os/os_chapter_08_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EB%8F%99%EA%B8%B0%ED%99%94_2/</guid>
+      <description>0. Introduction  해당 내용은 운영체제와 정보기술의 원리 -반효경 지음- 책에는 있지 않고, kocw 이화여자대학교 운영체제 - 반효경 교수 - 강의만 보고 정리한 내용입니다. 정확하지 않은 내용이 있다면 말씀해주시면 감사하겠습니다.    Reference  kocw 이화여자대학교 운영체제 - 반효경 교수 -  </description>
+    </item>
+    
     <item>
       <title>[TIL] OS Chapter 08: 프로세스 동기화 1</title>
       <link>http://jeha00.github.io/post/os/os_chapter_08_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EB%8F%99%EA%B8%B0%ED%99%94_1/</link>
