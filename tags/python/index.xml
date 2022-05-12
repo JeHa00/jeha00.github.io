@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 11 May 2022 13:27:50 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 May 2022 15:37:54 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 44: Property</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_44_property/</link>
+      <pubDate>Thu, 12 May 2022 15:37:54 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_44_property/</guid>
+      <description>첫 번째, method를 사용하여 getter와 setter를 구현한다. 두 번째, 첫 번째보다 pythonic way인 property를 사용하여 구현해보는데, property 방법 2가지 중 decorator를 사용하여 getter, setter, deleter를 구현해본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 43: Underscore</title>
       <link>http://jeha00.github.io/post/python_basic/python_basic_43_underscore/</link>
