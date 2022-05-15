@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 12 May 2022 15:37:54 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 May 2022 20:26:29 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python basic 45: Overriding vs Overloading</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_45_overriding_overloading/</link>
+      <pubDate>Sun, 15 May 2022 20:26:29 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_45_overriding_overloading/</guid>
+      <description>OOP에서 사용하는 overriding과 overloading에 대해 알아본다. 그리고, multipledispatch module을 사용하여 overloading을 구현한다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python basic 44: Property</title>
       <link>http://jeha00.github.io/post/python_basic/python_basic_44_property/</link>
