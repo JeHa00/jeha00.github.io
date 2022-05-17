@@ -25,7 +25,7 @@
       <pubDate>Tue, 10 May 2022 20:38:04 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/os/os_chapter_08_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EB%8F%99%EA%B8%B0%ED%99%94_2/</guid>
-      <description>0. Introduction  해당 내용은 운영체제와 정보기술의 원리 -반효경 지음- 책에는 있지 않고, kocw 이화여자대학교 운영체제 - 반효경 교수 - 강의만 보고 정리한 내용입니다. 정확하지 않은 내용이 있다면 말씀해주시면 감사하겠습니다.    Reference  kocw 이화여자대학교 운영체제 - 반효경 교수 -  </description>
+      <description>프로세스 동기화의 전통적인 문제 3가지와 semaphore를 개선한 방법인 monitor에 대해 알아본다.</description>
     </item>
     
     <item>
