@@ -2,28 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/post/os/os_chapter_10_%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/</loc>
-    <lastmod>2022-05-23T21:50:30+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/os/os_chapter_11_%EB%94%94%EC%8A%A4%ED%81%AC%EA%B4%80%EB%A6%AC/</loc>
+    <lastmod>2022-05-25T13:37:20+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-05-23T21:50:30+09:00</lastmod>
+    <lastmod>2022-05-25T13:37:20+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-05-23T21:50:30+09:00</lastmod>
+    <lastmod>2022-05-25T13:37:20+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/os/</loc>
-    <lastmod>2022-05-23T21:50:30+09:00</lastmod>
+    <lastmod>2022-05-25T13:37:20+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-05-23T21:50:30+09:00</lastmod>
+    <lastmod>2022-05-25T13:37:20+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-05-23T21:50:30+09:00</lastmod>
+    <lastmod>2022-05-25T13:37:20+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
-    <lastmod>2022-05-23T21:50:30+09:00</lastmod>
+    <lastmod>2022-05-25T13:37:20+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-os/</loc>
+    <lastmod>2022-05-25T13:37:20+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/os/os_chapter_10_%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/</loc>
     <lastmod>2022-05-23T21:50:30+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/python_basic/python_basic_47_descriptor/</loc>
