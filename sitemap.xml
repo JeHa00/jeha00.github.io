@@ -29,6 +29,15 @@
     <loc>http://jeha00.github.io/post/os/os_chapter_10_%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/</loc>
     <lastmod>2022-05-23T21:50:30+09:00</lastmod>
   </url><url>
+    <loc>http://jeha00.github.io/post/db/mysql_introduction/</loc>
+    <lastmod>2022-05-20T23:55:09+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/db/</loc>
+    <lastmod>2022-05-20T23:55:09+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-db/</loc>
+    <lastmod>2022-05-20T23:55:09+09:00</lastmod>
+  </url><url>
     <loc>http://jeha00.github.io/post/python_basic/python_basic_47_descriptor/</loc>
     <lastmod>2022-05-19T19:12:47+09:00</lastmod>
   </url><url>
@@ -221,49 +230,49 @@
     <loc>http://jeha00.github.io/post/python_basic/python_basic_17_try_exception/</loc>
     <lastmod>2022-03-03T01:33:28+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_16/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_16_package/</loc>
     <lastmod>2022-03-03T01:32:28+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_15/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_15_module/</loc>
     <lastmod>2022-03-02T00:51:30+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_14/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_14_class/</loc>
     <lastmod>2022-03-02T00:51:20+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_13/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_13_input/</loc>
     <lastmod>2022-03-02T00:51:00+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_12/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_12_method/</loc>
     <lastmod>2022-03-02T00:50:00+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_11/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_11_while/</loc>
     <lastmod>2022-03-02T00:49:59+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_10/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_10_for/</loc>
     <lastmod>2022-03-01T11:53:00+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_9/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_9_if/</loc>
     <lastmod>2022-03-01T11:52:55+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_8/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_8_set/</loc>
     <lastmod>2022-03-01T11:52:52+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_7/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_7_dictionary/</loc>
     <lastmod>2022-03-01T11:52:48+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_6/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_6_tuple/</loc>
     <lastmod>2022-03-01T11:52:41+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_5/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_5_list/</loc>
     <lastmod>2022-02-28T19:49:04+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_4/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_4_string/</loc>
     <lastmod>2022-02-28T19:45:30+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_3/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_3_numericdata/</loc>
     <lastmod>2022-02-28T18:51:39+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python_basic/python_basic_2/</loc>
+    <loc>http://jeha00.github.io/post/python_basic/python_basic_2_print/</loc>
     <lastmod>2022-02-28T18:50:13+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/python_basic/python_basic_1/</loc>
