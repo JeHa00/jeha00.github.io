@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 25 May 2022 13:37:20 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[TIL] OS Chapter 10: 가상 메모리</title>
+      <title>[TIL] OS Chapter 11: 디스크 관리</title>
       <link>http://jeha00.github.io/post/os/os_chapter_11_%EB%94%94%EC%8A%A4%ED%81%AC%EA%B4%80%EB%A6%AC/</link>
       <pubDate>Wed, 25 May 2022 13:37:20 +0900</pubDate>
       
@@ -26,15 +26,6 @@
       
       <guid>http://jeha00.github.io/post/os/os_chapter_10_%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/</guid>
       <description>가상 메모리를 관리하기 위한 방법으로 demanding paging에 대해 알아본다. 그리고, 페이지 교체는 어떠한 순서로 이뤄지는지, 프로세스에 프레임은 어떤 알고리즘을 통해서 할당되는지, 전역 교체와 지역교체는 무엇인지 마지막으로 thrashing 상황과 MPD 개념에 대해 알아본다.</description>
-    </item>
-    
-    <item>
-      <title>[TIL] MySQL: Introduction</title>
-      <link>http://jeha00.github.io/post/db/mysql_introduction/</link>
-      <pubDate>Fri, 20 May 2022 23:55:09 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/db/mysql_introduction/</guid>
-      <description></description>
     </item>
     
     <item>
