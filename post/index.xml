@@ -11,11 +11,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 29 May 2022 18:08:02 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[TIL] OS Chapter 12: 파일 시스템</title>
-      <link>http://jeha00.github.io/post/os/os_chapter_12_%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C/</link>
+      <title>[TIL] OS Chapter 12: 파일 시스템 1</title>
+      <link>http://jeha00.github.io/post/os/os_chapter_12_%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C_1/</link>
       <pubDate>Sun, 29 May 2022 18:08:02 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/os/os_chapter_12_%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C/</guid>
+      <guid>http://jeha00.github.io/post/os/os_chapter_12_%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C_1/</guid>
       <description>file이란 무엇이고, 이 file 관리하는 system은 무엇인지, operation은 memory와 disk 사이에서 어떤 순서로 이뤄지는지,  file protection은 어떻게 이뤄지는지, 순차 접근과 직접 접근이 무엇인지 알아본다.</description>
     </item>
     
