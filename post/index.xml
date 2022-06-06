@@ -254,11 +254,11 @@
     </item>
     
     <item>
-      <title>[TIL] Python basic 36: Generator 2</title>
-      <link>http://jeha00.github.io/post/python_basic/python_basic_36_generator_2/</link>
+      <title>[TIL] Python basic 36: Generator</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_36_generator/</link>
       <pubDate>Fri, 01 Apr 2022 19:57:38 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic/python_basic_36_generator_2/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_36_generator/</guid>
       <description>Generator 1에 이어서 본격적으로 Generator에 대해 알아본다. 그리고, Generator와 관련된 중요 함수들도 알아본다.</description>
     </item>
     
@@ -272,11 +272,19 @@
     </item>
     
     <item>
-      <title>[TIL] Python basic 35: Generator 1</title>
-      <link>http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/</link>
+      <title>[TIL] Python basic 35: 
+_
+_iter
+_
+_과 
+_
+_next
+_
+_</title>
+      <link>http://jeha00.github.io/post/python_basic/python_basic_35_iter_next/</link>
       <pubDate>Wed, 30 Mar 2022 14:17:57 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python_basic/python_basic_35_generator_1/</guid>
+      <guid>http://jeha00.github.io/post/python_basic/python_basic_35_iter_next/</guid>
       <description>첫 번째, 병행성과 병렬성이란 무엇인지 각 개념에 대해 알아본다.  두 번째, Generator를 이해하기 위해 __iter__와 __next__에 대해 알아본다.</description>
     </item>
     
