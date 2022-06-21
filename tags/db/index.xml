@@ -9,14 +9,14 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 May 2022 23:55:09 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/db/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Jun 2022 23:56:43 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/db/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[TIL] MySQL: Introduction</title>
-      <link>http://jeha00.github.io/post/db/mysql_introduction/</link>
-      <pubDate>Fri, 20 May 2022 23:55:09 +0900</pubDate>
+      <title>[TIL] DB Introduction</title>
+      <link>http://jeha00.github.io/post/db/db_introduction/</link>
+      <pubDate>Tue, 21 Jun 2022 23:56:43 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/db/mysql_introduction/</guid>
-      <description></description>
+      <guid>http://jeha00.github.io/post/db/db_introduction/</guid>
+      <description>DB, SQL, RDBMS, NoSQL 그리고, 앞으로 DB를 무엇부터 학습할지에 대한 이유를 서술했다.</description>
     </item>
     
   </channel>

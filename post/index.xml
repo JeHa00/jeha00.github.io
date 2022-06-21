@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Jun 2022 20:47:42 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Jun 2022 23:56:43 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] DB Introduction</title>
+      <link>http://jeha00.github.io/post/db/db_introduction/</link>
+      <pubDate>Tue, 21 Jun 2022 23:56:43 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/db/db_introduction/</guid>
+      <description>DB, SQL, RDBMS, NoSQL 그리고, 앞으로 DB를 무엇부터 학습할지에 대한 이유를 서술했다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Alogorithum Chapter 05: Recursive algorithum</title>
       <link>http://jeha00.github.io/post/algorithum/chapter05_%EC%9E%AC%EA%B7%80%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</link>
