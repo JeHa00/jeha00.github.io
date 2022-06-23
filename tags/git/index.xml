@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>git on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/tags/git/</link>
+    <description>Recent content in git on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 23 Jun 2022 11:33:57 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 02</title>
+      <link>http://jeha00.github.io/post/git-github/git_lecture_chapter02/</link>
+      <pubDate>Thu, 23 Jun 2022 11:33:57 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git-github/git_lecture_chapter02/</guid>
+      <description>git add /  git commit / git reset &amp;ndash;hard / git revert 그리고,  vim에서 몇 가지 명령어를 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 01</title>
+      <link>http://jeha00.github.io/post/git-github/git_lecture_chapter01/</link>
+      <pubDate>Wed, 22 Jun 2022 11:33:54 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git-github/git_lecture_chapter01/</guid>
+      <description>Git을 배워야하는 이유와 Git의 관리에서 벗어나도록 하는 .gitigonre에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[Pro git 2/E study] Git basics</title>
+      <link>http://jeha00.github.io/post/git-github/1_gitbasics/</link>
+      <pubDate>Wed, 22 Jun 2022 11:31:54 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git-github/1_gitbasics/</guid>
+      <description>첫 번째, git 저장소 만들기. 두 번째, git add 와 git status 명령어를 통해서 Git introduction에서 알아본 git의 3가지 상태와 3가지 단계를 이해해본다.</description>
+    </item>
+    
+    <item>
+      <title>[Pro git 2/E study] What is Git ?</title>
+      <link>http://jeha00.github.io/post/git-github/0_whatisgit/</link>
+      <pubDate>Tue, 21 Jun 2022 11:31:23 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git-github/0_whatisgit/</guid>
+      <description>Git이란 무엇이고, Git이 탄생하기까지의 VCS의 histroy에 대해 간략히 알아본다. 또한, Git의 3가지 상태와 3가지 단계를 학습한다. 마지막으로 Git의 사용자 등록 방법과 화인 방법을 알아본다.</description>
+    </item>
+    
+  </channel>
+</rss>
