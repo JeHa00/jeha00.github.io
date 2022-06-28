@@ -12,55 +12,55 @@
     <lastBuildDate>Mon, 27 Jun 2022 11:29:38 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TIL] Git study: Lecture Chapter 04 - 원격 사용하기</title>
-      <link>http://jeha00.github.io/post/git-github/git_lecture_chapter04/</link>
+      <link>http://jeha00.github.io/post/git/git_lecture_chapter04/</link>
       <pubDate>Mon, 27 Jun 2022 11:29:38 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/git-github/git_lecture_chapter04/</guid>
+      <guid>http://jeha00.github.io/post/git/git_lecture_chapter04/</guid>
       <description>GitHub에 원격 저장소를 만들고, 원격과 로컬에서 branch를 새롭게 만들어보면서 원격 저장소로부터 pull, push를 사용하여 프로젝트를 동기화 해본다. 마지막으로 이 과정을 소스트리로 실행해본다.</description>
     </item>
     
     <item>
       <title>[TIL] Git study: Lecture Chapter 03 - branch</title>
-      <link>http://jeha00.github.io/post/git-github/git_lecture_chapter03/</link>
-      <pubDate>Thu, 23 Jun 2022 14:25:18 +0900</pubDate>
+      <link>http://jeha00.github.io/post/git/git_lecture_chapter03/</link>
+      <pubDate>Fri, 24 Jun 2022 14:25:18 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/git-github/git_lecture_chapter03/</guid>
+      <guid>http://jeha00.github.io/post/git/git_lecture_chapter03/</guid>
       <description>branch를 만든 후, 다른 branch로 이동해본다. 또한, 각 branch끼리 합치는 git merge와 git rebase를 실행하면서 CLI 와 Source tree로 branch 변화를 시각적으로 확인해본다. 마지막으로 병합 시 충돌을 해결해본다.</description>
     </item>
     
     <item>
       <title>[TIL] Git study: Lecture Chapter 02 - resest vs revert</title>
-      <link>http://jeha00.github.io/post/git-github/git_lecture_chapter02/</link>
+      <link>http://jeha00.github.io/post/git/git_lecture_chapter02/</link>
       <pubDate>Thu, 23 Jun 2022 11:33:57 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/git-github/git_lecture_chapter02/</guid>
+      <guid>http://jeha00.github.io/post/git/git_lecture_chapter02/</guid>
       <description>git add 와  git commit 으로 변경사항을 stage에 올리고, 저장해본다. 이 과정에서 vim의 몇 가지 명령어를 알아본다. 핵시으로 git reset &amp;ndash;hard / git revert 를 학습하여 과거 시점으로 돌아가는 걸 학습한다.</description>
     </item>
     
     <item>
       <title>[TIL] Git study: Lecture Chapter 01</title>
-      <link>http://jeha00.github.io/post/git-github/git_lecture_chapter01/</link>
+      <link>http://jeha00.github.io/post/git/git_lecture_chapter01/</link>
       <pubDate>Wed, 22 Jun 2022 11:33:54 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/git-github/git_lecture_chapter01/</guid>
+      <guid>http://jeha00.github.io/post/git/git_lecture_chapter01/</guid>
       <description>Git을 배워야하는 이유와 Git의 관리에서 벗어나도록 하는 .gitigonre에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[Pro git 2/E study] Git basics</title>
-      <link>http://jeha00.github.io/post/git-github/1_gitbasics/</link>
+      <link>http://jeha00.github.io/post/git/1_gitbasics/</link>
       <pubDate>Wed, 22 Jun 2022 11:31:54 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/git-github/1_gitbasics/</guid>
+      <guid>http://jeha00.github.io/post/git/1_gitbasics/</guid>
       <description>첫 번째, git 저장소 만들기. 두 번째, git add 와 git status 명령어를 통해서 Git introduction에서 알아본 git의 3가지 상태와 3가지 단계를 이해해본다.</description>
     </item>
     
     <item>
       <title>[Pro git 2/E study] What is Git ?</title>
-      <link>http://jeha00.github.io/post/git-github/0_whatisgit/</link>
+      <link>http://jeha00.github.io/post/git/0_whatisgit/</link>
       <pubDate>Tue, 21 Jun 2022 11:31:23 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/git-github/0_whatisgit/</guid>
+      <guid>http://jeha00.github.io/post/git/0_whatisgit/</guid>
       <description>Git이란 무엇이고, Git이 탄생하기까지의 VCS의 histroy에 대해 간략히 알아본다. 또한, Git의 3가지 상태와 3가지 단계를 학습한다. 마지막으로 Git의 사용자 등록 방법과 화인 방법을 알아본다.</description>
     </item>
     
