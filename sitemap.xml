@@ -2,28 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/post/git/git_lecture_chapter04/</loc>
-    <lastmod>2022-06-27T11:29:38+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/git/git_lecture_chapter07-02/</loc>
+    <lastmod>2022-06-28T17:44:10+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-06-27T11:29:38+09:00</lastmod>
+    <lastmod>2022-06-28T17:44:10+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/git/</loc>
-    <lastmod>2022-06-27T11:29:38+09:00</lastmod>
+    <lastmod>2022-06-28T17:44:10+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-06-27T11:29:38+09:00</lastmod>
+    <lastmod>2022-06-28T17:44:10+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-06-27T11:29:38+09:00</lastmod>
+    <lastmod>2022-06-28T17:44:10+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-06-27T11:29:38+09:00</lastmod>
+    <lastmod>2022-06-28T17:44:10+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
-    <lastmod>2022-06-27T11:29:38+09:00</lastmod>
+    <lastmod>2022-06-28T17:44:10+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-git/</loc>
+    <lastmod>2022-06-28T17:44:10+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/git/git_lecture_chapter07-01/</loc>
+    <lastmod>2022-06-28T17:44:03+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/git/git_lecture_chapter06/</loc>
+    <lastmod>2022-06-28T17:37:08+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/git/git_lecture_chapter05/</loc>
+    <lastmod>2022-06-27T21:39:43+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/git/git_lecture_chapter04/</loc>
     <lastmod>2022-06-27T11:29:38+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/git/git_lecture_chapter03/</loc>
