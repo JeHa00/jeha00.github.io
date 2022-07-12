@@ -9,7 +9,52 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 01 Jul 2022 20:59:54 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jul 2022 23:31:37 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 08 - git reflog</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter08-03/</link>
+      <pubDate>Mon, 11 Jul 2022 23:31:37 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter08-03/</guid>
+      <description>git reset 으로 사라진 커밋을 복구하기 위해서 git reflog 명령어를 통해 더 자세한 commit 번호를 확인 후, git reset &amp;ndash;hard 명령어를 통해서 사라진 커밋을 복구해본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 08 - git restore</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter08-02/</link>
+      <pubDate>Thu, 07 Jul 2022 23:31:33 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter08-02/</guid>
+      <description>git restore 명령어를 통해서 첫 번째, 특정 파일을 지정된 상태로 복구해보는 것과 두 번째, 변경 상태를 stage area에서 working directory로 돌려보는 것을 해본다.</description>
+    </item>
+    
+    <item>
+      <title>Django study: Document tutorial Part 2 따라해보기</title>
+      <link>http://jeha00.github.io/post/django/doc_tutorial_02/</link>
+      <pubDate>Tue, 05 Jul 2022 23:45:49 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/doc_tutorial_02/</guid>
+      <description>class를 사용하여 model을 만들면서 Field를 적용해본다. application을 활성화하기 위해 settings.py에 INSTALLED_APPS 에 등록한다. 그리고, migration file을 만든 후, DB에 적용해본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 08 - git clean</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter08-01/</link>
+      <pubDate>Mon, 04 Jul 2022 23:31:28 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter08-01/</guid>
+      <description>이번 단원에서는 git에 추적되지 않는 즉, 관리되지 않은 파일들을 삭제하는 &amp;lsquo;git clean&amp;rsquo;에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>Django study: Document tutorial Part 1 따라해보기</title>
+      <link>http://jeha00.github.io/post/django/doc_tutorial_01/</link>
+      <pubDate>Sun, 03 Jul 2022 23:45:43 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/doc_tutorial_01/</guid>
+      <description>django를 설치한 후, project와 application을 명령어를 통해 만들어보고, view와 URLconf에 대해 학습해본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Git study: Lecture Chapter 09 - git tag</title>
       <link>http://jeha00.github.io/post/git/lec_chpater09/</link>
