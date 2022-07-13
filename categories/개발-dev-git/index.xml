@@ -9,11 +9,47 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 11 Jul 2022 23:31:37 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jul 2022 13:00:47 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 10 - git merge --squash</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter10-04/</link>
+      <pubDate>Wed, 13 Jul 2022 13:00:47 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter10-04/</guid>
+      <description>git merge &amp;ndash;squash 명령어를 사용해서 다른 브랜치의 여러 커밋들을 rebase와 달리 하나의 커밋으로 묶어서 가져와본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 10 - git rebase --onto</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter10-03/</link>
+      <pubDate>Tue, 12 Jul 2022 23:31:47 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter10-03/</guid>
+      <description>git rebase &amp;ndash;onto 명령어를 사용하여 다른 브랜치에서 파생된 브랜치를 현재 브랜치로 옮겨서 붙여본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 10 - git cherry-pick</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter10-02/</link>
+      <pubDate>Mon, 11 Jul 2022 23:31:47 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter10-02/</guid>
+      <description>git cherry-pick 명령어를 사용하여 다른 브랜치에 있는 원하는 commit만 따오는 실습을 해본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 10 - Fast forwad vs 3-way merge</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter10-01/</link>
+      <pubDate>Fri, 08 Jul 2022 23:31:47 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter10-01/</guid>
+      <description>git의 merge 원리인 Fast-forward와 3-way merge에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Git study: Lecture Chapter 08 - git reflog</title>
       <link>http://jeha00.github.io/post/git/lec_chapter08-03/</link>
-      <pubDate>Mon, 11 Jul 2022 23:31:37 +0900</pubDate>
+      <pubDate>Thu, 07 Jul 2022 23:31:37 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter08-03/</guid>
       <description>git reset 으로 사라진 커밋을 복구하기 위해서 git reflog 명령어를 통해 더 자세한 commit 번호를 확인 후, git reset &amp;ndash;hard 명령어를 통해서 사라진 커밋을 복구해본다.</description>
@@ -22,7 +58,7 @@
     <item>
       <title>[TIL] Git study: Lecture Chapter 08 - git restore</title>
       <link>http://jeha00.github.io/post/git/lec_chapter08-02/</link>
-      <pubDate>Thu, 07 Jul 2022 23:31:33 +0900</pubDate>
+      <pubDate>Wed, 06 Jul 2022 23:31:33 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter08-02/</guid>
       <description>git restore 명령어를 통해서 첫 번째, 특정 파일을 지정된 상태로 복구해보는 것과 두 번째, 변경 상태를 stage area에서 working directory로 돌려보는 것을 해본다.</description>
@@ -88,7 +124,7 @@
       <pubDate>Mon, 27 Jun 2022 21:39:43 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter05/</guid>
-      <description>첫 번째, Git의 장점. 두 번째, Git의 3가지 공간. 세 번째, git rm과 git mv 명령어. 네 ㅔ번째, reset의 3가지 옵션. 다섯 번째, Git의 HEAD를 이동하기 위해서 git checkout 명령어. 마지막으로 fetch와 pull의 차이를 학습한다.</description>
+      <description>첫 번째, Git의 장점. 두 번째, Git의 3가지 공간. 세 번째, git rm과 git mv 명령어. 네 번째, reset의 3가지 옵션. 다섯 번째, Git의 HEAD를 이동하기 위해서 git checkout 명령어. 마지막으로 fetch와 pull의 차이를 학습한다.</description>
     </item>
     
     <item>
