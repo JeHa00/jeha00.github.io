@@ -2,28 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/post/git/lec_chapter10-04/</loc>
-    <lastmod>2022-07-13T13:00:47+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/git/lec_chapter11-01/</loc>
+    <lastmod>2022-07-15T15:07:17+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-07-13T13:00:47+09:00</lastmod>
+    <lastmod>2022-07-15T15:07:17+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/git/</loc>
-    <lastmod>2022-07-13T13:00:47+09:00</lastmod>
+    <lastmod>2022-07-15T15:07:17+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-07-13T13:00:47+09:00</lastmod>
+    <lastmod>2022-07-15T15:07:17+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-07-13T13:00:47+09:00</lastmod>
+    <lastmod>2022-07-15T15:07:17+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-07-13T13:00:47+09:00</lastmod>
+    <lastmod>2022-07-15T15:07:17+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
-    <lastmod>2022-07-13T13:00:47+09:00</lastmod>
+    <lastmod>2022-07-15T15:07:17+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-git/</loc>
+    <lastmod>2022-07-15T15:07:17+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/git/lec_chapter10-05/</loc>
+    <lastmod>2022-07-14T13:00:47+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/git/lec_chapter10-04/</loc>
     <lastmod>2022-07-13T13:00:47+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/git/lec_chapter10-03/</loc>
@@ -31,6 +37,15 @@
   </url><url>
     <loc>http://jeha00.github.io/post/git/lec_chapter10-02/</loc>
     <lastmod>2022-07-11T23:31:47+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/django/</loc>
+    <lastmod>2022-07-08T23:46:04+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/django/doc_tutorial_04/</loc>
+    <lastmod>2022-07-08T23:46:04+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-django/</loc>
+    <lastmod>2022-07-08T23:46:04+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/git/lec_chapter10-01/</loc>
     <lastmod>2022-07-08T23:31:47+09:00</lastmod>
@@ -41,13 +56,7 @@
     <loc>http://jeha00.github.io/post/git/lec_chapter08-02/</loc>
     <lastmod>2022-07-06T23:31:33+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/tags/django/</loc>
-    <lastmod>2022-07-05T23:45:49+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/post/django/doc_tutorial_02/</loc>
-    <lastmod>2022-07-05T23:45:49+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-django/</loc>
     <lastmod>2022-07-05T23:45:49+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/git/lec_chapter08-01/</loc>
@@ -293,22 +302,7 @@
     <loc>http://jeha00.github.io/post/network/network_http_2/</loc>
     <lastmod>2022-03-08T11:50:46+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/tags/uri/</loc>
-    <lastmod>2022-03-08T11:50:46+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/post/network/network_http_1/</loc>
-    <lastmod>2022-03-07T21:16:44+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/dns/</loc>
-    <lastmod>2022-03-07T21:16:44+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/ip/</loc>
-    <lastmod>2022-03-07T21:16:44+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/port/</loc>
-    <lastmod>2022-03-07T21:16:44+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/tcp/</loc>
     <lastmod>2022-03-07T21:16:44+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/python_basic/python_basic_22_nonetypeerror/</loc>

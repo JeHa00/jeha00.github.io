@@ -9,7 +9,25 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 13 Jul 2022 13:00:47 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jul 2022 15:07:17 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 11 - Git log 자세히 알아보기</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter11-01/</link>
+      <pubDate>Fri, 15 Jul 2022 15:07:17 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter11-01/</guid>
+      <description>git log에 달려있는 여러 옵션들을 사용하여 log를 더 자세히 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 10 - Gitflow</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter10-05/</link>
+      <pubDate>Thu, 14 Jul 2022 13:00:47 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter10-05/</guid>
+      <description>협업 시 여러 branch를 생성하여 어떻게 활용하는지, 각 branch의 이름은 현업에서 주로 사용되는 이름이 있는지 Gitflow를 사용한 브랜치 활용법에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Git study: Lecture Chapter 10 - git merge --squash</title>
       <link>http://jeha00.github.io/post/git/lec_chapter10-04/</link>
@@ -35,6 +53,17 @@
       
       <guid>http://jeha00.github.io/post/git/lec_chapter10-02/</guid>
       <description>git cherry-pick 명령어를 사용하여 다른 브랜치에 있는 원하는 commit만 따오는 실습을 해본다.</description>
+    </item>
+    
+    <item>
+      <title>Django study: Document tutorial Part 4 따라해보기</title>
+      <link>http://jeha00.github.io/post/django/doc_tutorial_04/</link>
+      <pubDate>Fri, 08 Jul 2022 23:46:04 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/doc_tutorial_04/</guid>
+      <description>0. Introduction   Write a minimal form use generic views: Less code is better     django 공식 문서를 번역하는 작업을 통해 튜토리얼을 진행하여 이해해본다.
+  이번 tutorial을 통해서 기본적인 설문조사 애플리케이션을 만들 수 있다.
+ 이 애플리케이션은 다음 2가지로 구성된다.  사람들이 설문조사를 보고 투표할 수 있는 &amp;lsquo;public site&amp;rsquo; 설문조사를 더하고, 수정하고, 삭제하는 &amp;lsquo;admin site&amp;rsquo;       1. Write a minimal form  Par03에서 만들었던 detail template을 업데이트해보자.</description>
     </item>
     
     <item>
