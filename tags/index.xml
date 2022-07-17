@@ -9,11 +9,11 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 15 Jul 2022 15:07:17 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 19:14:40 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>git</title>
       <link>http://jeha00.github.io/tags/git/</link>
-      <pubDate>Fri, 15 Jul 2022 15:07:17 +0900</pubDate>
+      <pubDate>Sun, 17 Jul 2022 19:14:40 +0900</pubDate>
       
       <guid>http://jeha00.github.io/tags/git/</guid>
       <description></description>
@@ -22,7 +22,7 @@
     <item>
       <title>TIL</title>
       <link>http://jeha00.github.io/tags/til/</link>
-      <pubDate>Fri, 15 Jul 2022 15:07:17 +0900</pubDate>
+      <pubDate>Sun, 17 Jul 2022 19:14:40 +0900</pubDate>
       
       <guid>http://jeha00.github.io/tags/til/</guid>
       <description></description>
@@ -110,47 +110,11 @@
     </item>
     
     <item>
-      <title>github</title>
-      <link>http://jeha00.github.io/tags/github/</link>
-      <pubDate>Thu, 17 Feb 2022 21:49:13 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>hugo</title>
       <link>http://jeha00.github.io/tags/hugo/</link>
       <pubDate>Thu, 17 Feb 2022 21:49:13 +0900</pubDate>
       
       <guid>http://jeha00.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>page</title>
-      <link>http://jeha00.github.io/tags/page/</link>
-      <pubDate>Thu, 17 Feb 2022 21:49:13 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/tags/page/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>submodule</title>
-      <link>http://jeha00.github.io/tags/submodule/</link>
-      <pubDate>Thu, 17 Feb 2022 21:49:13 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/tags/submodule/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>window</title>
-      <link>http://jeha00.github.io/tags/window/</link>
-      <pubDate>Thu, 17 Feb 2022 21:49:13 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/tags/window/</guid>
       <description></description>
     </item>
     
