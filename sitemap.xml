@@ -2,28 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/post/git/lec_chapter11-02/</loc>
-    <lastmod>2022-07-17T19:14:40+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/git/lec_chapter11-03/</loc>
+    <lastmod>2022-07-18T15:16:52+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-07-17T19:14:40+09:00</lastmod>
+    <lastmod>2022-07-18T15:16:52+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/git/</loc>
-    <lastmod>2022-07-17T19:14:40+09:00</lastmod>
+    <lastmod>2022-07-18T15:16:52+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-07-17T19:14:40+09:00</lastmod>
+    <lastmod>2022-07-18T15:16:52+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-07-17T19:14:40+09:00</lastmod>
+    <lastmod>2022-07-18T15:16:52+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-07-17T19:14:40+09:00</lastmod>
+    <lastmod>2022-07-18T15:16:52+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
-    <lastmod>2022-07-17T19:14:40+09:00</lastmod>
+    <lastmod>2022-07-18T15:16:52+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-git/</loc>
+    <lastmod>2022-07-18T15:16:52+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/git/lec_chapter11-02/</loc>
     <lastmod>2022-07-17T19:14:40+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/git/lec_chapter11-01/</loc>
@@ -290,9 +293,6 @@
     <loc>http://jeha00.github.io/post/python_basic/python_basic_24_oop/</loc>
     <lastmod>2022-03-12T23:16:27+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/tags/__name__/</loc>
-    <lastmod>2022-03-11T20:33:01+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/post/python_basic/python_basic_23_ifnamemain/</loc>
     <lastmod>2022-03-11T20:33:01+09:00</lastmod>
   </url><url>
@@ -377,7 +377,7 @@
     <loc>http://jeha00.github.io/tags/hugo/</loc>
     <lastmod>2022-02-17T21:49:13+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/git/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/</loc>
+    <loc>http://jeha00.github.io/post/hugo%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B3%A0-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/</loc>
     <lastmod>2022-02-17T21:49:13+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/archives/</loc>

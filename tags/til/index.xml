@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 17 Jul 2022 19:14:40 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jul 2022 15:16:52 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 11 - Git blame &amp; GitLens</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter11-03/</link>
+      <pubDate>Mon, 18 Jul 2022 15:16:52 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter11-03/</guid>
+      <description>git blame 명령어와 VSC의 extension program인 GitLens를 통해 각 라인의 작성자를 확인하는 법을 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Git study: Lecture Chapter 11 - Git diff</title>
       <link>http://jeha00.github.io/post/git/lec_chapter11-02/</link>
