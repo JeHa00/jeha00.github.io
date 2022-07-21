@@ -1,6 +1,6 @@
 # 0. Introduction
 
-- window 10 환경에서 Hugo 라는 SSG의 한 종류를 사용해서 총 5단계를 거쳐서 `<user-id>.github.io` 주소의 github page를 만들고 배포한 후, contents를 업로드하는 것까지 내용을 다룬다. 
+- window 10 환경에서 Hugo 라는 SSG의 한 종류를 사용해서 총 6단계를 거쳐서 `<user-id>.github.io` 주소의 github page를 만들고 배포한 후, contents를 업로드하는 것까지 내용을 다룬다. 
 
 > 1. [Static Site Generator 로 Hugo를 선택한 이유](#1-static-site-generator-로-hugo를-선택한-이유)
 > 2. [Github blog 만들기 위한 local 환경 조성](#2-github-page-만들기-위한-local-환경-조성)
