@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>개발-dev Python on Jeha00 DevLog</title>
-    <link>http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-python/</link>
-    <description>Recent content in 개발-dev Python on Jeha00 DevLog</description>
+    <title>Python on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/categories/python/</link>
+    <description>Recent content in Python on Jeha00 DevLog</description>
     <image>
       <url>http://jeha00.github.io/47</url>
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 19 May 2022 19:12:47 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/%EA%B0%9C%EB%B0%9C-dev-python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 May 2022 19:12:47 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TIL] Python basic 47: Descriptor</title>
       <link>http://jeha00.github.io/post/python_basic/python_basic_47_descriptor/</link>
