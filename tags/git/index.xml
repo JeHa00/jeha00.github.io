@@ -9,7 +9,29 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Jul 2022 15:16:52 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jul 2022 21:21:59 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 12 - Gitmoji &amp; git submodules</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter12/</link>
+      <pubDate>Wed, 20 Jul 2022 21:21:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter12/</guid>
+      <description>0. Introduction   해당 내용은 제대로 파는 Git &amp;amp; GitHub - by 얄코 을 통해서 공부한 내용입니다.
+  Chapter 12로 Git 자체에 대한 마지막 강의로 gitmoji 와 git submodules를 학습한다.
+   1. git hooks  git 상의 이벤트마다 자동적으로 실행될 스크립트를 지정하는 것으로 &amp;lsquo;자동화&amp;rsquo; 라고 생각하자.
+   git hooks와 함께 Gitmoji에 대해 알아보자.
+  커밋을 하면 자동적으로 푸쉬가 실행되게 하던가, 커밋 전 코드가 약속된 형식대로 되어있는지 확인하는 것 등등 &amp;lsquo;자동화&amp;rsquo;가 이뤄지게 한다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 11 - Git bisect</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter11-04/</link>
+      <pubDate>Tue, 19 Jul 2022 21:12:20 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter11-04/</guid>
+      <description>git bisect 명령어를 통해서 이진 탐색과 commit hash number를 이용하여 오류 지점을 찾아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Git study: Lecture Chapter 11 - Git blame &amp; GitLens</title>
       <link>http://jeha00.github.io/post/git/lec_chapter11-03/</link>
