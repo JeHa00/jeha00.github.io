@@ -252,7 +252,7 @@
       <pubDate>Thu, 23 Jun 2022 11:33:57 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter02/</guid>
-      <description>git add 와  git commit 으로 변경사항을 stage에 올리고, 저장해본다. 이 과정에서 vim의 몇 가지 명령어를 알아본다. 핵시으로 git reset &amp;ndash;hard / git revert 를 학습하여 과거 시점으로 돌아가는 걸 학습한다.</description>
+      <description>git add 와  git commit 으로 변경사항을 stage에 올리고, 저장해본다. 이 과정에서 vim의 몇 가지 명령어를 알아본다.  git reset &amp;ndash;hard / git revert 를 학습하여 과거 시점으로 돌아가는 걸 학습한다.</description>
     </item>
     
     <item>
