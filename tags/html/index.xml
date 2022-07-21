@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>HTML on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/tags/html/</link>
+    <description>Recent content in HTML on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Jul 2022 18:24:51 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] HTML &amp; CSS study - HTML이란?</title>
+      <link>http://jeha00.github.io/post/html_css/study01/</link>
+      <pubDate>Mon, 18 Jul 2022 18:24:51 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/html_css/study01/</guid>
+      <description>HTML, CSS가 무엇이고, 브라우저에서 무슨 역할을 하는지, html의 tag란 무엇인지, semantic tag과 non-semantic tag란 무엇인지 학습한다. 그리고, tag의 다양한 속성 중 몇 가지를 학습해본다.</description>
+    </item>
+    
+  </channel>
+</rss>

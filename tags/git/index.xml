@@ -16,11 +16,7 @@
       <pubDate>Wed, 20 Jul 2022 21:21:59 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter12/</guid>
-      <description>0. Introduction   해당 내용은 제대로 파는 Git &amp;amp; GitHub - by 얄코 을 통해서 공부한 내용입니다.
-  Chapter 12로 Git 자체에 대한 마지막 강의로 gitmoji 와 git submodules를 학습한다.
-   1. git hooks  git 상의 이벤트마다 자동적으로 실행될 스크립트를 지정하는 것으로 &amp;lsquo;자동화&amp;rsquo; 라고 생각하자.
-   git hooks와 함께 Gitmoji에 대해 알아보자.
-  커밋을 하면 자동적으로 푸쉬가 실행되게 하던가, 커밋 전 코드가 약속된 형식대로 되어있는지 확인하는 것 등등 &amp;lsquo;자동화&amp;rsquo;가 이뤄지게 한다.</description>
+      <description>hook을 사용하여 gitmoji 를 사용하는 방법을 학습하나 후, submodule이란 무엇이고 어떠한 장점이 있는지를 학습한다. 그리고, git submodule 명령어를 통해 submodule 연결을 해본다.</description>
     </item>
     
     <item>

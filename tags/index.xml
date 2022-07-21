@@ -9,7 +9,25 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 20 Jul 2022 21:21:59 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jul 2022 18:24:57 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS</title>
+      <link>http://jeha00.github.io/tags/css/</link>
+      <pubDate>Thu, 21 Jul 2022 18:24:57 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TIL</title>
+      <link>http://jeha00.github.io/tags/til/</link>
+      <pubDate>Thu, 21 Jul 2022 18:24:57 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/til/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>git</title>
       <link>http://jeha00.github.io/tags/git/</link>
@@ -20,11 +38,11 @@
     </item>
     
     <item>
-      <title>TIL</title>
-      <link>http://jeha00.github.io/tags/til/</link>
-      <pubDate>Wed, 20 Jul 2022 21:21:59 +0900</pubDate>
+      <title>HTML</title>
+      <link>http://jeha00.github.io/tags/html/</link>
+      <pubDate>Mon, 18 Jul 2022 18:24:51 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/tags/til/</guid>
+      <guid>http://jeha00.github.io/tags/html/</guid>
       <description></description>
     </item>
     
