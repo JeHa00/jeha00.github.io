@@ -1,4 +1,4 @@
-# Intro
+# Introduction
 
 window 10 환경에서 Hugo 라는 SSG의 한 종류를 사용해서 `<user-id>.github.io` 주소의 github page를 만들고 배포한 후, contents를 업로드하는 것까지 내용을 다룬다. 이를 위해 총 5단계를 거쳐서 진행한다.
 
