@@ -173,27 +173,6 @@
     <loc>http://jeha00.github.io/post/os/os_chapter_10_%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/</loc>
     <lastmod>2022-05-23T21:50:30+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_47_descriptor/</loc>
-    <lastmod>2022-05-19T19:12:47+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/python/</loc>
-    <lastmod>2022-05-19T19:12:47+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/python/</loc>
-    <lastmod>2022-05-19T19:12:47+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_46_metaclass/</loc>
-    <lastmod>2022-05-17T17:53:25+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_45_overriding_overloading/</loc>
-    <lastmod>2022-05-15T20:26:29+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_44_property/</loc>
-    <lastmod>2022-05-12T15:37:54+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_43_underscore/</loc>
-    <lastmod>2022-05-11T13:27:50+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/post/os/os_chapter_09_%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C/</loc>
     <lastmod>2022-05-10T20:38:17+09:00</lastmod>
   </url><url>
@@ -224,29 +203,8 @@
     <loc>http://jeha00.github.io/post/os/os_chapter_03_%EC%BB%B4%ED%93%A8%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC_1/</loc>
     <lastmod>2022-04-13T13:55:26+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_42_contextmanager/</loc>
-    <lastmod>2022-04-12T13:09:09+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_41_shallowdeepcopy/</loc>
-    <lastmod>2022-04-11T20:18:00+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_40_callbyobjectreference/</loc>
-    <lastmod>2022-04-10T15:54:18+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_39_mapfilterreduce/</loc>
-    <lastmod>2022-04-09T14:45:39+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_38.futures/</loc>
-    <lastmod>2022-04-06T21:34:38+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/post/os/os_chapter_02_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94/</loc>
     <lastmod>2022-04-05T17:43:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_37_coroutine/</loc>
-    <lastmod>2022-04-02T21:15:33+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_36_generator/</loc>
-    <lastmod>2022-04-01T19:57:38+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/dev-contents/</loc>
     <lastmod>2022-03-31T22:09:06+09:00</lastmod>
@@ -256,33 +214,6 @@
   </url><url>
     <loc>http://jeha00.github.io/post/dev-contents/dev-contents/</loc>
     <lastmod>2022-03-31T22:09:06+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_35_iter_next/</loc>
-    <lastmod>2022-03-30T14:17:57+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_34_decorator/</loc>
-    <lastmod>2022-03-29T23:34:52+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_33_closure/</loc>
-    <lastmod>2022-03-28T23:38:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_32_legb_rules/</loc>
-    <lastmod>2022-03-27T23:53:06+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_31_firstclass/</loc>
-    <lastmod>2022-03-25T20:42:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_30_sortvssorted_array/</loc>
-    <lastmod>2022-03-24T23:01:10+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_29_datamodel/</loc>
-    <lastmod>2022-03-23T23:24:24+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_28_namedtuple/</loc>
-    <lastmod>2022-03-22T09:00:37+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_27_specialmethod/</loc>
-    <lastmod>2022-03-21T17:14:36+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/network/network_http_8/</loc>
     <lastmod>2022-03-18T21:51:01+09:00</lastmod>
@@ -299,23 +230,11 @@
     <loc>http://jeha00.github.io/post/network/network_http_7/</loc>
     <lastmod>2022-03-17T20:17:50+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_26_class2/</loc>
-    <lastmod>2022-03-16T14:28:39+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/post/network/network_http_6/</loc>
     <lastmod>2022-03-15T10:14:50+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/network/network_http_5/</loc>
     <lastmod>2022-03-14T21:41:29+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_25_str_repr/</loc>
-    <lastmod>2022-03-13T16:33:19+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_24_oop/</loc>
-    <lastmod>2022-03-12T23:16:27+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_23_ifnamemain/</loc>
-    <lastmod>2022-03-11T20:33:01+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/network/network_http_4/</loc>
     <lastmod>2022-03-10T20:32:24+09:00</lastmod>
@@ -328,72 +247,6 @@
   </url><url>
     <loc>http://jeha00.github.io/post/network/network_http_1/</loc>
     <lastmod>2022-03-07T21:16:44+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_22_nonetypeerror/</loc>
-    <lastmod>2022-03-05T23:47:54+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_21_filereadwrite_2/</loc>
-    <lastmod>2022-03-04T14:31:38+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_20_filewriteread_1/</loc>
-    <lastmod>2022-03-04T14:30:38+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_19_external_functions/</loc>
-    <lastmod>2022-03-03T01:34:00+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_18_built_in_fuctions/</loc>
-    <lastmod>2022-03-03T01:33:46+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_17_try_exception/</loc>
-    <lastmod>2022-03-03T01:33:28+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_16_package/</loc>
-    <lastmod>2022-03-03T01:32:28+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_15_module/</loc>
-    <lastmod>2022-03-02T00:51:30+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_14_class/</loc>
-    <lastmod>2022-03-02T00:51:20+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_13_input/</loc>
-    <lastmod>2022-03-02T00:51:00+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_12_method/</loc>
-    <lastmod>2022-03-02T00:50:00+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_11_while/</loc>
-    <lastmod>2022-03-02T00:49:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_10_for/</loc>
-    <lastmod>2022-03-01T11:53:00+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_9_if/</loc>
-    <lastmod>2022-03-01T11:52:55+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_8_set/</loc>
-    <lastmod>2022-03-01T11:52:52+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_7_dictionary/</loc>
-    <lastmod>2022-03-01T11:52:48+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_6_tuple/</loc>
-    <lastmod>2022-03-01T11:52:41+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_5_list/</loc>
-    <lastmod>2022-02-28T19:49:04+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_4_string/</loc>
-    <lastmod>2022-02-28T19:45:30+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_3_numericdata/</loc>
-    <lastmod>2022-02-28T18:51:39+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_2_print/</loc>
-    <lastmod>2022-02-28T18:50:13+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/python/python_basic_1/</loc>
-    <lastmod>2022-02-28T18:47:51+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/hugo/</loc>
     <lastmod>2022-02-17T21:49:13+09:00</lastmod>
