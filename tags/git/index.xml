@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 24 Jul 2022 00:12:33 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jul 2022 00:28:58 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 14 - SSH &amp; GPG</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter14-01/</link>
+      <pubDate>Tue, 26 Jul 2022 00:28:58 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter14-01/</guid>
+      <description>SSH key를 생성하고, 계정에 등록하여 remote 추가 시 HTTP가 아닌 SSH를 사용하는 방법과 GPG key를 생성하고 계정에 등록하여 local에서 작업해도 &amp;lsquo;Verified&amp;rsquo;가 뜨는 것 실습해본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Git study: Lecture Chapter 13 - pull request &amp; issue</title>
       <link>http://jeha00.github.io/post/git/lec_chapter13/</link>
