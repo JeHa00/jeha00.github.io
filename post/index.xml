@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 26 Jul 2022 00:28:58 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Jul 2022 00:29:03 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 14 - GitHub Actions 체험, Octotree, GitHub CLI</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter14-02/</link>
+      <pubDate>Fri, 29 Jul 2022 00:29:03 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter14-02/</guid>
+      <description>GitHub Action이 무엇인지 체험해보고, Github repository를 살펴보는데 좋은 확장 프로그램인 &amp;lsquo;Octotree&amp;rsquo;를 사용해본다. 마지막으로 GitHub CLI를 학습해본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Git study: Lecture Chapter 14 - SSH &amp; GPG</title>
       <link>http://jeha00.github.io/post/git/lec_chapter14-01/</link>
@@ -238,12 +247,21 @@
     </item>
     
     <item>
-      <title>[TIL] Git study: Lecture Chapter 05 - deep dive</title>
-      <link>http://jeha00.github.io/post/git/lec_chapter05/</link>
+      <title>[TIL] Git study: Lecture Chapter 05 - git checkout &amp; fetch와 pull의 차이</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter05-02/</link>
       <pubDate>Mon, 27 Jun 2022 21:39:43 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/git/lec_chapter05/</guid>
-      <description>첫 번째, Git의 장점. 두 번째, Git의 3가지 공간. 세 번째, git rm과 git mv 명령어. 네 번째, reset의 3가지 옵션. 다섯 번째, Git의 HEAD를 이동하기 위해서 git checkout 명령어. 마지막으로 fetch와 pull의 차이를 학습한다.</description>
+      <guid>http://jeha00.github.io/post/git/lec_chapter05-02/</guid>
+      <description>다섯 번째, Git의 HEAD를 이동하기 위해서 git checkout 명령어. 마지막으로 fetch와 pull의 차이를 학습한다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Git study: Lecture Chapter 05 - git rm, git mv 그리고, git reset의 3가지 옵션 등등</title>
+      <link>http://jeha00.github.io/post/git/lec_chapter05-01/</link>
+      <pubDate>Mon, 27 Jun 2022 21:39:43 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/git/lec_chapter05-01/</guid>
+      <description>첫 번째 CVCS에 비해서 Git의 장점이 무엇인지, 두 번째 Git의 3가지 공간(Working directory, Staging area, Directory)이 무엇인지, 세 번째 git rm과 git mv 명령어로 파일이 어떤 영역으로 이동되는지, 네 번째 reset의 3가지 옵션에 대해 학습한다.</description>
     </item>
     
     <item>
@@ -279,7 +297,7 @@
       <pubDate>Wed, 22 Jun 2022 11:33:54 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter01/</guid>
-      <description>Git을 배워야하는 이유와 Git의 관리에서 벗어나도록 하는 .gitigonre에 대해 알아본다.</description>
+      <description>Git을 배워야하는 이유, Git 최초 설정 방법 그리고, Git의 관리에서 벗어나도록 하는 .gitigonre에 대해 알아본다.</description>
     </item>
     
     <item>
