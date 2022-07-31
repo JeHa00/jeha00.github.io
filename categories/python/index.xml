@@ -25,7 +25,7 @@
       <pubDate>Fri, 29 Jul 2022 23:38:50 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/python/a_s_o/1_asyncio-runtimeerror/</guid>
-      <description>Serialization이 무엇을 의미하고, 이에 따라 flat data, nested data가 무슨 형태의 data인지 알아본다. 그리고, flat data의 한 종류인 json과 관련된 module을 사용해본다.</description>
+      <description>비동기 모듈을 사용하면서 겪은 Asyncio RuntimeError의 원인과 해결방법에 대해 알아본다.</description>
     </item>
     
     <item>
