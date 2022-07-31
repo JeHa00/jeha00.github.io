@@ -9,7 +9,25 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Jul 2022 00:29:03 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jul 2022 23:38:50 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Python study: Serialization 과 json.loads, dumps()  </title>
+      <link>http://jeha00.github.io/post/python/a_s_o/2_jsonmodule/</link>
+      <pubDate>Sun, 31 Jul 2022 23:38:50 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python/a_s_o/2_jsonmodule/</guid>
+      <description>Serialization이 무엇을 의미하고, 이에 따라 flat data, nested data가 무슨 형태의 data인지 알아본다. 그리고, flat data의 한 종류인 json과 관련된 module을 사용해본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python study: Window에서 Asyncio RuntimeError</title>
+      <link>http://jeha00.github.io/post/python/a_s_o/1_asyncio-runtimeerror/</link>
+      <pubDate>Fri, 29 Jul 2022 23:38:50 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python/a_s_o/1_asyncio-runtimeerror/</guid>
+      <description>Serialization이 무엇을 의미하고, 이에 따라 flat data, nested data가 무슨 형태의 data인지 알아본다. 그리고, flat data의 한 종류인 json과 관련된 module을 사용해본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Git study: Lecture Chapter 14 - GitHub Actions 체험, Octotree, GitHub CLI</title>
       <link>http://jeha00.github.io/post/git/lec_chapter14-02/</link>
