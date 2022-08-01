@@ -214,7 +214,7 @@
       <pubDate>Tue, 28 Jun 2022 17:44:10 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter07-02/</guid>
-      <description>변경사항을 보다 쪼갠 hunk 크기로 나눠 staging area에 올리는 명령어인 git add -p 와 커밋하는 명령어인 git commit -v 에 대해 학습해본다.</description>
+      <description>변경사항을 보다 쪼갠 hunk 크기로 나눠 staging area에 올리는 명령어인 git add -p 와 변경사항을 확인하고 커밋하는 git commit -v 에 대해 학습해본다.</description>
     </item>
     
     <item>
