@@ -178,7 +178,7 @@
       <pubDate>Wed, 06 Jul 2022 23:31:33 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter08-02/</guid>
-      <description>git restore 명령어를 통해서 첫 번째, 특정 파일을 지정된 상태로 복구해보는 것과 두 번째, 변경 상태를 stage area에서 working directory로 돌려보는 것을 해본다.</description>
+      <description>git restore 명령어를 통해서 첫 번째, 변경 상태를 stage area에서 working directory로 돌려보는 것과 두 번째, 특정 파일을 HEAD나 커밋 해쉬번호를 사용하여 지정된 상태로 복구해보는 것을 해본다.</description>
     </item>
     
     <item>
@@ -187,7 +187,7 @@
       <pubDate>Mon, 04 Jul 2022 23:31:28 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter08-01/</guid>
-      <description>이번 단원에서는 git에 추적되지 않는 즉, 관리되지 않은 파일들을 삭제하는 &amp;lsquo;git clean&amp;rsquo;에 대해 알아본다.</description>
+      <description>이번 단원에서는 git에 추적되지 않는 즉, 관리되지 않은 파일들(Untracked file)을 삭제하는 &amp;lsquo;git clean&amp;rsquo;에 대해 알아본다.</description>
     </item>
     
     <item>
