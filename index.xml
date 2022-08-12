@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 31 Jul 2022 23:38:50 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Aug 2022 22:35:43 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] HTML &amp; CSS study - CSS 02</title>
+      <link>http://jeha00.github.io/post/html_css/study03/</link>
+      <pubDate>Fri, 12 Aug 2022 22:35:43 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/html_css/study03/</guid>
+      <description>Block와 Inline의 차이는 무엇이고, box의 속성 3가지인 border, padding, margin에 대해 학습한다.</description>
+    </item>
+    
     <item>
       <title>[TIL] Python study: Serialization 과 json.loads, dumps()  </title>
       <link>http://jeha00.github.io/post/python/a_s_o/2_jsonmodule/</link>
