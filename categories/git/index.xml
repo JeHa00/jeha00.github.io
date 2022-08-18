@@ -43,7 +43,7 @@
       <pubDate>Wed, 20 Jul 2022 21:21:59 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter12/</guid>
-      <description>hook을 사용하여 gitmoji 를 사용하는 방법을 학습하나 후, submodule이란 무엇이고 어떠한 장점이 있는지를 학습한다. 그리고, git submodule 명령어를 통해 submodule 연결을 해본다.</description>
+      <description>hook을 사용하여 gitmoji 를 사용하는 방법을 학습한 후, submodule이란 무엇이고 어떠한 장점이 있는지를 학습한다. 그리고, git submodule 명령어를 통해 submodule 연결을 해본다.</description>
     </item>
     
     <item>
