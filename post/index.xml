@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 12 Aug 2022 22:35:43 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Aug 2022 23:46:43 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] DB MySQL study: Query문 학습 1</title>
+      <link>http://jeha00.github.io/post/db/mysql_01/</link>
+      <pubDate>Fri, 26 Aug 2022 23:46:43 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/db/mysql_01/</guid>
+      <description>MySQL의 SQL에 대해 학습을 시작한다. SELECT, FROM, WHERE 와 비교연산자, 논리연산자, 산술연산자에 대해 학습해본다. 또한, 산술연산자에는 MySQL만의 오류가 있어서 날짜 계산 시, 어떻게 해야할지도 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] HTML &amp; CSS study - CSS 02</title>
       <link>http://jeha00.github.io/post/html_css/study03/</link>
@@ -169,9 +178,9 @@
       <pubDate>Fri, 08 Jul 2022 23:46:04 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/django/doc_tutorial_04/</guid>
-      <description>0. Introduction   Write a minimal form use generic views: Less code is better     django 공식 문서를 번역하는 작업을 통해 튜토리얼을 진행하여 이해해본다.
-  이번 tutorial을 통해서 기본적인 설문조사 애플리케이션을 만들 수 있다.
- 이 애플리케이션은 다음 2가지로 구성된다.  사람들이 설문조사를 보고 투표할 수 있는 &amp;lsquo;public site&amp;rsquo; 설문조사를 더하고, 수정하고, 삭제하는 &amp;lsquo;admin site&amp;rsquo;       1. Write a minimal form  Par03에서 만들었던 detail template을 업데이트해보자.</description>
+      <description>0. Introduction Write a minimal form use generic views: Less code is better django 공식 문서를 번역하는 작업을 통해 튜토리얼을 진행하여 이해해본다.
+이번 tutorial을 통해서 기본적인 설문조사 애플리케이션을 만들 수 있다.
+이 애플리케이션은 다음 2가지로 구성된다. 사람들이 설문조사를 보고 투표할 수 있는 &amp;lsquo;public site&amp;rsquo; 설문조사를 더하고, 수정하고, 삭제하는 &amp;lsquo;admin site&amp;rsquo; 1. Write a minimal form Par03에서 만들었던 detail template을 업데이트해보자. 업데이트할 detail template에는 HTML form 요소가 포함된다. &amp;gt; &amp;lt;form action=&amp;#34;{% url &amp;#39;polls:vote&amp;#39; question.</description>
     </item>
     
     <item>

@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Jun 2022 23:56:43 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/db/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Aug 2022 23:46:43 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/db/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] DB MySQL study: Query문 학습 1</title>
+      <link>http://jeha00.github.io/post/db/mysql_01/</link>
+      <pubDate>Fri, 26 Aug 2022 23:46:43 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/db/mysql_01/</guid>
+      <description>MySQL의 SQL에 대해 학습을 시작한다. SELECT, FROM, WHERE 와 비교연산자, 논리연산자, 산술연산자에 대해 학습해본다. 또한, 산술연산자에는 MySQL만의 오류가 있어서 날짜 계산 시, 어떻게 해야할지도 알아본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] DB Introduction</title>
       <link>http://jeha00.github.io/post/db/db_introduction/</link>
