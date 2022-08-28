@@ -2,28 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/post/db/mysql_01/</loc>
-    <lastmod>2022-08-26T23:46:43+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/dev-contents/bookstudy/1-5day/</loc>
+    <lastmod>2022-08-28T23:10:39+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
+    <lastmod>2022-08-28T23:10:39+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/dev-contents/</loc>
+    <lastmod>2022-08-28T23:10:39+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/dev-contents/</loc>
+    <lastmod>2022-08-28T23:10:39+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/</loc>
+    <lastmod>2022-08-28T23:10:39+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/</loc>
+    <lastmod>2022-08-28T23:10:39+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/</loc>
+    <lastmod>2022-08-28T23:10:39+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/til/</loc>
+    <lastmod>2022-08-28T23:10:39+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/db/mysql_01/</loc>
     <lastmod>2022-08-26T23:46:43+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/db/</loc>
     <lastmod>2022-08-26T23:46:43+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/db/</loc>
-    <lastmod>2022-08-26T23:46:43+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-08-26T23:46:43+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-08-26T23:46:43+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-08-26T23:46:43+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/til/</loc>
     <lastmod>2022-08-26T23:46:43+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/html_css/study03/</loc>
@@ -271,12 +280,6 @@
   </url><url>
     <loc>http://jeha00.github.io/post/python/python_basic_36_generator/</loc>
     <lastmod>2022-04-01T19:57:38+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/dev-contents/</loc>
-    <lastmod>2022-03-31T22:09:06+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/dev-contents/</loc>
-    <lastmod>2022-03-31T22:09:06+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/dev-contents/dev-contents/</loc>
     <lastmod>2022-03-31T22:09:06+09:00</lastmod>
