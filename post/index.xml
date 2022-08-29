@@ -11,12 +11,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 29 Aug 2022 17:14:46 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[TIL]Web Application Basic study 01</title>
+      <title>[TIL]Web Application Basic study: client와 server / web server structure</title>
       <link>http://jeha00.github.io/post/network/webapplicationbasic01/</link>
       <pubDate>Mon, 29 Aug 2022 17:14:46 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/network/webapplicationbasic01/</guid>
-      <description>클라이언트와 서버 구조와 웹 서버 구조에 대해 학습해본다.</description>
+      <description>클라이언트와 서버란 무엇인지, 서버의 종류에는 무엇이 있고, 웹서버 - WSGI - 웹 애플리케이션 - DB라는 서버 구조에서 각각에 대해 알아본다.</description>
     </item>
     
     <item>
