@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Netwok on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/tags/netwok/</link>
+    <description>Recent content in Netwok on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 29 Aug 2022 17:14:46 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/netwok/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL]Web Application Basic study 01</title>
+      <link>http://jeha00.github.io/post/network/webapplicationbasic01/</link>
+      <pubDate>Mon, 29 Aug 2022 17:14:46 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/webapplicationbasic01/</guid>
+      <description>클라이언트와 서버 구조와 웹 서버 구조에 대해 학습해본다.</description>
+    </item>
+    
+  </channel>
+</rss>

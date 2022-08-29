@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 28 Aug 2022 23:10:39 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Aug 2022 17:14:46 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL]Web Application Basic study 01</title>
+      <link>http://jeha00.github.io/post/network/webapplicationbasic01/</link>
+      <pubDate>Mon, 29 Aug 2022 17:14:46 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/webapplicationbasic01/</guid>
+      <description>클라이언트와 서버 구조와 웹 서버 구조에 대해 학습해본다.</description>
+    </item>
+    
     <item>
       <title>[TIL] book study - 1일 1로그 100일 완성 IT 지식: 1 - 5 days</title>
       <link>http://jeha00.github.io/post/dev-contents/bookstudy/1-5day/</link>
