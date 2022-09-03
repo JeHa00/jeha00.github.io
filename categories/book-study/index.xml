@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Book Study on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/categories/book-study/</link>
+    <description>Recent content in Book Study on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 28 Aug 2022 23:10:39 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/book-study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study  - 1일 1로그 100일 완성 IT 지식: 1 - 6 days</title>
+      <link>http://jeha00.github.io/post/bookstudy/1-1-100/1-6day/</link>
+      <pubDate>Sun, 28 Aug 2022 23:10:39 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/1-1-100/1-6day/</guid>
+      <description>IT 분야의 문해력을 기르기 위해서 꾸준히 매일 작은 지식들을 학습하고자 1일 1로그 100일 완성 IT 지식을 학습한다.</description>
+    </item>
+    
+  </channel>
+</rss>

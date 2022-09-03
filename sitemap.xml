@@ -32,13 +32,13 @@
     <loc>http://jeha00.github.io/post/network/webapplicationbasic01/</loc>
     <lastmod>2022-08-29T17:14:46+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/dev-contents/bookstudy/1-5day/</loc>
+    <loc>http://jeha00.github.io/tags/book-study/</loc>
     <lastmod>2022-08-28T23:10:39+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/tags/dev-contents/</loc>
+    <loc>http://jeha00.github.io/categories/book-study/</loc>
     <lastmod>2022-08-28T23:10:39+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/categories/dev-contents/</loc>
+    <loc>http://jeha00.github.io/post/bookstudy/1-1-100/1-6day/</loc>
     <lastmod>2022-08-28T23:10:39+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/db/mysql_01/</loc>
@@ -295,6 +295,12 @@
   </url><url>
     <loc>http://jeha00.github.io/post/python/python_basic_36_generator/</loc>
     <lastmod>2022-04-01T19:57:38+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/dev-contents/</loc>
+    <lastmod>2022-03-31T22:09:06+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/dev-contents/</loc>
+    <lastmod>2022-03-31T22:09:06+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/dev-contents/dev-contents/</loc>
     <lastmod>2022-03-31T22:09:06+09:00</lastmod>
