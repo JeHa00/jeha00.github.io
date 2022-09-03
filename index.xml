@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 31 Aug 2022 14:23:03 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Sep 2022 10:55:05 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study - 1일 1로그 100일 완성 IT 지식: 7 - 11 days</title>
+      <link>http://jeha00.github.io/post/bookstudy/1-1-100/7-11day/</link>
+      <pubDate>Sat, 03 Sep 2022 10:55:05 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/1-1-100/7-11day/</guid>
+      <description>IT 분야의 문해력을 기르기 위해서 꾸준히 매일 작은 지식들을 학습하고자 1일 1로그 100일 완성 IT 지식을 학습한다.</description>
+    </item>
+    
     <item>
       <title>[TIL]Web Application Basic study: 4, 5, 6, 7 계층</title>
       <link>http://jeha00.github.io/post/network/webapplicationbasic03/</link>
