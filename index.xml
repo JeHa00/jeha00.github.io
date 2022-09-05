@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 03 Sep 2022 10:55:05 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Sep 2022 21:43:21 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL]Linux: terminal에서 AWS ec2 sinstance 접속 환경 조성하기</title>
+      <link>http://jeha00.github.io/post/linux/lecturenote-01/</link>
+      <pubDate>Mon, 05 Sep 2022 21:43:21 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/linux/lecturenote-01/</guid>
+      <description>aws 사이트가 아닌 terminal에서 손쉽게 aws ec2 인스턴스에 접속할 수 있는 환경을 조성해보고, 그 과정에서 error 상황과 대처법을 기록했다.</description>
+    </item>
+    
     <item>
       <title>Book Study - 1일 1로그 100일 완성 IT 지식: 7 - 11 days</title>
       <link>http://jeha00.github.io/post/bookstudy/1-1-100/7-11day/</link>

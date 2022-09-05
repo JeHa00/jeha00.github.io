@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/categories/linux/</link>
+    <description>Recent content in Linux on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 05 Sep 2022 21:43:21 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL]Linux: terminal에서 AWS ec2 sinstance 접속 환경 조성하기</title>
+      <link>http://jeha00.github.io/post/linux/lecturenote-01/</link>
+      <pubDate>Mon, 05 Sep 2022 21:43:21 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/linux/lecturenote-01/</guid>
+      <description>aws 사이트가 아닌 terminal에서 손쉽게 aws ec2 인스턴스에 접속할 수 있는 환경을 조성해보고, 그 과정에서 error 상황과 대처법을 기록했다.</description>
+    </item>
+    
+  </channel>
+</rss>

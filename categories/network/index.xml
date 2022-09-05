@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Network on Jeha00 DevLog</title>
-    <link>http://jeha00.github.io/tags/network/</link>
+    <link>http://jeha00.github.io/categories/network/</link>
     <description>Recent content in Network on Jeha00 DevLog</description>
     <image>
       <url>http://jeha00.github.io/47</url>
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 31 Aug 2022 14:23:03 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Aug 2022 14:23:03 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TIL]Web Application Basic study: 4, 5, 6, 7 계층</title>
       <link>http://jeha00.github.io/post/network/webapplicationbasic03/</link>
@@ -53,6 +53,15 @@
       
       <guid>http://jeha00.github.io/post/network/network_http_7/</guid>
       <description>representation, 콘텐츠 협상, 전송 방식, 일반 정보, 특별 정보, 인증 그리고 쿠키에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Network HTTP status</title>
+      <link>http://jeha00.github.io/post/network/network_http_6/</link>
+      <pubDate>Tue, 15 Mar 2022 10:14:50 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/network_http_6/</guid>
+      <description>HTTP status 2xx, 3xx, 4xx, 5xx에 대해 각각 알아본다.</description>
     </item>
     
     <item>
