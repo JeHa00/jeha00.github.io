@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://jeha00.github.io/categories/</loc>
+    <lastmod>2022-09-07T14:37:03+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/django/</loc>
+    <lastmod>2022-09-07T14:37:03+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/django/</loc>
+    <lastmod>2022-09-07T14:37:03+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/django/virtualenv_path/</loc>
+    <lastmod>2022-09-07T14:37:03+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/</loc>
+    <lastmod>2022-09-07T14:37:03+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/</loc>
+    <lastmod>2022-09-07T14:37:03+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/</loc>
+    <lastmod>2022-09-07T14:37:03+09:00</lastmod>
+  </url><url>
     <loc>http://jeha00.github.io/post/linux/lecturenote-01/</loc>
     <lastmod>2022-09-05T21:43:21+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-09-05T21:43:21+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-09-05T21:43:21+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/categories/linux/</loc>
-    <lastmod>2022-09-05T21:43:21+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-09-05T21:43:21+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/</loc>
     <lastmod>2022-09-05T21:43:21+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
@@ -130,12 +139,6 @@
   </url><url>
     <loc>http://jeha00.github.io/post/git/lec_chapter10-02/</loc>
     <lastmod>2022-07-11T23:31:47+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/django/</loc>
-    <lastmod>2022-07-08T23:46:04+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/django/</loc>
-    <lastmod>2022-07-08T23:46:04+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/django/doc_tutorial_04/</loc>
     <lastmod>2022-07-08T23:46:04+09:00</lastmod>

@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Jul 2022 23:46:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Sep 2022 14:37:03 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/django/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django study: 가상환경 자동 활성화를 위한 directory 구조 및 설치 경로</title>
+      <link>http://jeha00.github.io/post/django/virtualenv_path/</link>
+      <pubDate>Wed, 07 Sep 2022 14:37:03 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/virtualenv_path/</guid>
+      <description>경로에 들어오면 자동적으로 가상환경이 활성화되는 directory 구조에 대해 이전 방식과 비교하여 정리해놓는다.</description>
+    </item>
+    
     <item>
       <title>Django study: Document tutorial Part 4 따라하기</title>
       <link>http://jeha00.github.io/post/django/doc_tutorial_04/</link>
