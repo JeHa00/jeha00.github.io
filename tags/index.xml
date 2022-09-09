@@ -9,31 +9,31 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 07 Sep 2022 14:37:03 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Sep 2022 11:55:36 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Django</title>
-      <link>http://jeha00.github.io/tags/django/</link>
-      <pubDate>Wed, 07 Sep 2022 14:37:03 +0900</pubDate>
+      <title>Book study</title>
+      <link>http://jeha00.github.io/tags/book-study/</link>
+      <pubDate>Fri, 09 Sep 2022 11:55:36 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/tags/django/</guid>
+      <guid>http://jeha00.github.io/tags/book-study/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TIL</title>
       <link>http://jeha00.github.io/tags/til/</link>
-      <pubDate>Mon, 05 Sep 2022 21:43:21 +0900</pubDate>
+      <pubDate>Fri, 09 Sep 2022 11:55:36 +0900</pubDate>
       
       <guid>http://jeha00.github.io/tags/til/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Book study</title>
-      <link>http://jeha00.github.io/tags/book-study/</link>
-      <pubDate>Sat, 03 Sep 2022 10:55:05 +0900</pubDate>
+      <title>Django</title>
+      <link>http://jeha00.github.io/tags/django/</link>
+      <pubDate>Wed, 07 Sep 2022 14:37:03 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/tags/book-study/</guid>
+      <guid>http://jeha00.github.io/tags/django/</guid>
       <description></description>
     </item>
     
