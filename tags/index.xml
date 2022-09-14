@@ -9,22 +9,31 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 09 Sep 2022 11:55:36 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 15:00:46 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Book study</title>
-      <link>http://jeha00.github.io/tags/book-study/</link>
-      <pubDate>Fri, 09 Sep 2022 11:55:36 +0900</pubDate>
+      <title>Linux</title>
+      <link>http://jeha00.github.io/tags/linux/</link>
+      <pubDate>Mon, 12 Sep 2022 15:00:46 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/tags/book-study/</guid>
+      <guid>http://jeha00.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TIL</title>
       <link>http://jeha00.github.io/tags/til/</link>
-      <pubDate>Fri, 09 Sep 2022 11:55:36 +0900</pubDate>
+      <pubDate>Mon, 12 Sep 2022 15:00:46 +0900</pubDate>
       
       <guid>http://jeha00.github.io/tags/til/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book study</title>
+      <link>http://jeha00.github.io/tags/book-study/</link>
+      <pubDate>Fri, 09 Sep 2022 11:55:36 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/book-study/</guid>
       <description></description>
     </item>
     

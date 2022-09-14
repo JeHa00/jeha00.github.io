@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Jeha00 DevLog</title>
-    <link>http://jeha00.github.io/categories/linux/</link>
+    <link>http://jeha00.github.io/tags/linux/</link>
     <description>Recent content in Linux on Jeha00 DevLog</description>
     <image>
       <url>http://jeha00.github.io/47</url>
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 12 Sep 2022 15:00:46 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 15:00:46 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TIL]Linux: 기본 명령어 익히기 - shutdown과 그 과정</title>
       <link>http://jeha00.github.io/post/linux/lecturenote06/</link>
