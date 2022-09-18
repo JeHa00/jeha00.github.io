@@ -2,13 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/post/linux/lecturenote06/</loc>
-    <lastmod>2022-09-12T15:00:46+09:00</lastmod>
+    <loc>http://jeha00.github.io/tags/book-study/</loc>
+    <lastmod>2022-09-18T23:04:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/book-study/</loc>
+    <lastmod>2022-09-18T23:04:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/bookstudy/agile/review01/</loc>
+    <lastmod>2022-09-18T23:04:19+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-09-12T15:00:46+09:00</lastmod>
+    <lastmod>2022-09-18T23:04:19+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/</loc>
+    <lastmod>2022-09-18T23:04:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/</loc>
+    <lastmod>2022-09-18T23:04:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/</loc>
+    <lastmod>2022-09-18T23:04:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/til/</loc>
+    <lastmod>2022-09-18T23:04:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/bookstudy/1-1-100/18-23day/</loc>
+    <lastmod>2022-09-18T23:03:12+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/linux/lecturenote06/</loc>
     <lastmod>2022-09-12T15:00:46+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/linux/</loc>
@@ -17,25 +38,10 @@
     <loc>http://jeha00.github.io/categories/linux/</loc>
     <lastmod>2022-09-12T15:00:46+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-09-12T15:00:46+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-09-12T15:00:46+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/til/</loc>
-    <lastmod>2022-09-12T15:00:46+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/post/linux/lecturenote05/</loc>
     <lastmod>2022-09-11T14:50:32+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/tags/book-study/</loc>
-    <lastmod>2022-09-09T11:55:36+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/book-study/</loc>
-    <lastmod>2022-09-09T11:55:36+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/bookstudy/1-1-100/12-17dy/</loc>
+    <loc>http://jeha00.github.io/post/bookstudy/1-1-100/12-17day/</loc>
     <lastmod>2022-09-09T11:55:36+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/linux/lecturenote04/</loc>
