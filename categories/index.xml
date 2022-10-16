@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 Oct 2022 21:15:08 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Oct 2022 03:28:59 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django</title>
+      <link>http://jeha00.github.io/categories/django/</link>
+      <pubDate>Mon, 17 Oct 2022 03:28:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/categories/django/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Book Study</title>
       <link>http://jeha00.github.io/categories/book-study/</link>
@@ -25,15 +34,6 @@
       <pubDate>Mon, 12 Sep 2022 15:00:46 +0900</pubDate>
       
       <guid>http://jeha00.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Django</title>
-      <link>http://jeha00.github.io/categories/django/</link>
-      <pubDate>Wed, 07 Sep 2022 14:37:03 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/categories/django/</guid>
       <description></description>
     </item>
     

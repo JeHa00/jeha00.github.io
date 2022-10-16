@@ -9,7 +9,25 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 07 Sep 2022 14:37:03 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Oct 2022 03:28:59 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/django/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django study: nginx와 uwsgi를 사용한 django application deployment - 502 Bad Gateway Error</title>
+      <link>http://jeha00.github.io/post/django/deployment-with-ec2-s3-rds_2/</link>
+      <pubDate>Mon, 17 Oct 2022 03:28:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/deployment-with-ec2-s3-rds_2/</guid>
+      <description>nginx와 uwsgi를 사용한 배포과정에서 발생한 502 Bad Gateway Error에 대한 해결과정과 해결책을 정리해본다.</description>
+    </item>
+    
+    <item>
+      <title>Django study: nginx와 uwsgi를 사용한 django application deployment</title>
+      <link>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_1/</link>
+      <pubDate>Sat, 15 Oct 2022 03:16:12 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_1/</guid>
+      <description>django appliation을 nginx와 uwsgi를 사용하여 배포하는 과정을 학습한다.</description>
+    </item>
+    
     <item>
       <title>Django study: 가상환경 자동 활성화를 위한 directory 구조 및 설치 경로</title>
       <link>http://jeha00.github.io/post/django/virtualenv_path/</link>
