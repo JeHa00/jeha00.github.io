@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 Oct 2022 21:15:08 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/book-study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Oct 2022 16:52:19 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/book-study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: Chapter 01 에러와 질문</title>
+      <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter01_errorandasking/</link>
+      <pubDate>Mon, 17 Oct 2022 16:52:19 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter01_errorandasking/</guid>
+      <description>알 스웨이가트가 지었고, 박재호님이 번역하신  &amp;lsquo;클린코드, 이제는 파이썬이다&amp;rsquo;를 읽고 학습한 내용이다. 파이썬 에러 메세지가 어떤 내용들로 구성되어 있는지, 그리고 온라인 상에 질문을 할 때 어떻게 질문해야하는지 질문의 올바른 방법을 배운다.</description>
+    </item>
+    
     <item>
       <title>Book Study - Clean Code: Chapter 02 변수</title>
       <link>http://jeha00.github.io/post/bookstudy/cleancode/chatper02_name/</link>

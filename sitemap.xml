@@ -2,40 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-10-17T03:28:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/django/</loc>
-    <lastmod>2022-10-17T03:28:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/django/</loc>
-    <lastmod>2022-10-17T03:28:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/django/deployment-with-ec2-s3-rds_2/</loc>
-    <lastmod>2022-10-17T03:28:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-10-17T03:28:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-10-17T03:28:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-10-17T03:28:59+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_1/</loc>
-    <lastmod>2022-10-15T03:16:12+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/tags/book-study/</loc>
-    <lastmod>2022-10-08T21:15:08+09:00</lastmod>
+    <lastmod>2022-10-17T16:52:19+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/book-study/</loc>
-    <lastmod>2022-10-08T21:15:08+09:00</lastmod>
+    <lastmod>2022-10-17T16:52:19+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/bookstudy/cleancode/chatper02_name/</loc>
-    <lastmod>2022-10-08T21:15:08+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter01_errorandasking/</loc>
+    <lastmod>2022-10-17T16:52:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/</loc>
+    <lastmod>2022-10-17T16:52:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/</loc>
+    <lastmod>2022-10-17T16:52:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/</loc>
+    <lastmod>2022-10-17T16:52:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/</loc>
+    <lastmod>2022-10-17T16:52:19+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
+    <lastmod>2022-10-17T16:52:19+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/django/</loc>
+    <lastmod>2022-10-16T03:31:58+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/django/</loc>
+    <lastmod>2022-10-16T03:31:58+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_3/</loc>
+    <lastmod>2022-10-16T03:31:58+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_2/</loc>
+    <lastmod>2022-10-15T03:28:59+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_1/</loc>
+    <lastmod>2022-10-14T03:16:12+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/bookstudy/cleancode/chatper02_name/</loc>
     <lastmod>2022-10-08T21:15:08+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/cleancode/chatper01_cleancode/</loc>
