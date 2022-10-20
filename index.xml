@@ -9,7 +9,25 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 17 Oct 2022 16:52:19 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Oct 2022 18:45:16 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django study: nginx와 uwsgi를 사용한 django application deployment 04 - DB 나누기</title>
+      <link>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_4/</link>
+      <pubDate>Thu, 20 Oct 2022 18:45:16 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_4/</guid>
+      <description>uwsgi, nginx 를 연결한 후, R3에 연결하여 static file을 적용했다. 그 다음으로 DB를 develop 단계와 product 단계로 나눠서 적용하기 위해 DB를 나누는 작업을 해본다.</description>
+    </item>
+    
+    <item>
+      <title>Django study: nginx와 uwsgi를 사용한 django application deployment 03 - static file 적용하기</title>
+      <link>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_3/</link>
+      <pubDate>Wed, 19 Oct 2022 03:31:58 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_3/</guid>
+      <description>uwsgi, nginx 를 연결했으니, R3에 연결하여 static file을 적용해본다.</description>
+    </item>
+    
     <item>
       <title>Book Study - 클린 코드, 이제는 파이썬이다: Chapter 01 에러와 질문</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter01_errorandasking/</link>
@@ -20,16 +38,7 @@
     </item>
     
     <item>
-      <title>Django study: nginx와 uwsgi를 사용한 django application deployment - CSS 적용하기</title>
-      <link>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_3/</link>
-      <pubDate>Sun, 16 Oct 2022 03:31:58 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Django study: nginx와 uwsgi를 사용한 django application deployment - 502 Bad Gateway Error</title>
+      <title>Django study: nginx와 uwsgi를 사용한 django application deployment 02 - 502 Bad Gateway Error</title>
       <link>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_2/</link>
       <pubDate>Sat, 15 Oct 2022 03:28:59 +0900</pubDate>
       
@@ -38,7 +47,7 @@
     </item>
     
     <item>
-      <title>Django study: nginx와 uwsgi를 사용한 django application deployment</title>
+      <title>Django study: nginx와 uwsgi를 사용한 django application deployment 01 - nginx와 uwsgi 연결하기</title>
       <link>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_1/</link>
       <pubDate>Fri, 14 Oct 2022 03:16:12 +0900</pubDate>
       
