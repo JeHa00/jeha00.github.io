@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>docker on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/tags/docker/</link>
+    <description>Recent content in docker on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 31 Oct 2022 01:00:56 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker study: Docker 학습을 위한 OS background knowledge</title>
+      <link>http://jeha00.github.io/post/docker/os-for-docker/</link>
+      <pubDate>Mon, 31 Oct 2022 01:00:56 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/docker/os-for-docker/</guid>
+      <description>Docker 학습을 시작하기에 앞서 Docker가 왜 필요한지, 컴퓨터 시스템의 핵심은 무엇이고, 운영체제는 무슨 역할을 하는지, process와 thread란 무엇인지, 메모리 구조는 어떻게 구성되어 있는지, 마지막으로 컨테이너에 대해 체험해본다.</description>
+    </item>
+    
+  </channel>
+</rss>
