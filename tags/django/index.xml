@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 28 Oct 2022 13:29:58 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 13:36:56 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django study: API url 만드는 방법 3가지 - APIView, @api_view([]), ModelViewSet</title>
+      <link>http://jeha00.github.io/post/django/drf_study02/</link>
+      <pubDate>Sat, 05 Nov 2022 13:36:56 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/drf_study02/</guid>
+      <description>API url을 만드는 방법으로 APIView, @api_view() 그리고 ModelViewSet을 사용한다. 이 방법들 중에서 자주 사용하는 방식은 APIView다. ModelViewSet은 중복을 방지하여 여러 url들을 만들어주지만, 최적화가 어렵기 때문이다.</description>
+    </item>
+    
     <item>
       <title>Django study: DRF의 직렬화(serialization)와 역직렬화(deserialization)</title>
       <link>http://jeha00.github.io/post/django/drf_study01/</link>

@@ -23,6 +23,15 @@
     <loc>http://jeha00.github.io/tags/</loc>
     <lastmod>2022-11-08T23:19:07+09:00</lastmod>
   </url><url>
+    <loc>http://jeha00.github.io/tags/django/</loc>
+    <lastmod>2022-11-05T13:36:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/django/</loc>
+    <lastmod>2022-11-05T13:36:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/django/drf_study02/</loc>
+    <lastmod>2022-11-05T13:36:56+09:00</lastmod>
+  </url><url>
     <loc>http://jeha00.github.io/tags/docker/</loc>
     <lastmod>2022-10-31T01:00:56+09:00</lastmod>
   </url><url>
@@ -31,12 +40,6 @@
   </url><url>
     <loc>http://jeha00.github.io/post/docker/os-for-docker/</loc>
     <lastmod>2022-10-31T01:00:56+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/django/</loc>
-    <lastmod>2022-10-28T13:29:58+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/django/</loc>
-    <lastmod>2022-10-28T13:29:58+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/django/drf_study01/</loc>
     <lastmod>2022-10-28T13:29:58+09:00</lastmod>
