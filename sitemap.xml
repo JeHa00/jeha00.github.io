@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://jeha00.github.io/categories/</loc>
+    <lastmod>2022-11-09T04:31:43+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/django/</loc>
+    <lastmod>2022-11-09T04:31:43+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/django/</loc>
+    <lastmod>2022-11-09T04:31:43+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/django/drf_study03/</loc>
+    <lastmod>2022-11-09T04:31:43+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/</loc>
+    <lastmod>2022-11-09T04:31:43+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/</loc>
+    <lastmod>2022-11-09T04:31:43+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/</loc>
+    <lastmod>2022-11-09T04:31:43+09:00</lastmod>
+  </url><url>
     <loc>http://jeha00.github.io/tags/aws/</loc>
     <lastmod>2022-11-08T23:19:07+09:00</lastmod>
   </url><url>
@@ -10,24 +31,6 @@
   </url><url>
     <loc>http://jeha00.github.io/post/aws/lecturenote01/</loc>
     <lastmod>2022-11-08T23:19:07+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2022-11-08T23:19:07+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/</loc>
-    <lastmod>2022-11-08T23:19:07+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2022-11-08T23:19:07+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2022-11-08T23:19:07+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/django/</loc>
-    <lastmod>2022-11-05T13:36:56+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/django/</loc>
-    <lastmod>2022-11-05T13:36:56+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/django/drf_study02/</loc>
     <lastmod>2022-11-05T13:36:56+09:00</lastmod>
