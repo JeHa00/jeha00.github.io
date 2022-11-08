@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AWS on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/categories/aws/</link>
+    <description>Recent content in AWS on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 08 Nov 2022 23:19:07 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS study: DevOps란 무엇인가? &amp; AWS를 배워야하는 이유</title>
+      <link>http://jeha00.github.io/post/aws/lecturenote01/</link>
+      <pubDate>Tue, 08 Nov 2022 23:19:07 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/aws/lecturenote01/</guid>
+      <description>백엔드 개발자의 업무 범위가 과거와 달리 변하면서 DevOps로 어떻게 이어지고, DevOps와 MSA가 어떻게 연결되어 있는지, 그래서 왜 AWS를 배워야하는지 알아본다.</description>
+    </item>
+    
+  </channel>
+</rss>

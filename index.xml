@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 31 Oct 2022 01:00:56 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Nov 2022 23:19:07 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS study: DevOps란 무엇인가? &amp; AWS를 배워야하는 이유</title>
+      <link>http://jeha00.github.io/post/aws/lecturenote01/</link>
+      <pubDate>Tue, 08 Nov 2022 23:19:07 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/aws/lecturenote01/</guid>
+      <description>백엔드 개발자의 업무 범위가 과거와 달리 변하면서 DevOps로 어떻게 이어지고, DevOps와 MSA가 어떻게 연결되어 있는지, 그래서 왜 AWS를 배워야하는지 알아본다.</description>
+    </item>
+    
     <item>
       <title>Docker study: Docker 학습을 위한 OS background knowledge</title>
       <link>http://jeha00.github.io/post/docker/os-for-docker/</link>
