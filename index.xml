@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Django study: DRF의 직렬화(serialization)와 역직렬화(deserialization)</title>
+      <link>http://jeha00.github.io/post/django/drf_study01/</link>
+      <pubDate>Fri, 28 Oct 2022 13:29:58 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/django/drf_study01/</guid>
+      <description>Django의 library인 Django-RestFramework의 직렬화와 역직렬화에 대해 알아본다.</description>
+    </item>
+    
+    <item>
       <title>Django study: nginx와 uwsgi를 사용한 django application deployment 04 - DB 나누기</title>
       <link>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_4/</link>
       <pubDate>Thu, 20 Oct 2022 18:45:16 +0900</pubDate>
