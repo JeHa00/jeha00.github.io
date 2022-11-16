@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 10 Nov 2022 19:45:41 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 12:52:40 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study - 1일 1로그 100일 완성 IT 지식: 53 - 62 days</title>
+      <link>http://jeha00.github.io/post/bookstudy/1-1-100/53-62day/</link>
+      <pubDate>Wed, 16 Nov 2022 12:52:40 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/1-1-100/53-62day/</guid>
+      <description>IT 분야의 문해력을 기르기 위해서 꾸준히 매일 작은 지식들을 학습하고자 1일 1로그 100일 완성 IT 지식을 학습한다.</description>
+    </item>
+    
     <item>
       <title>Docker study: Docker 설치하기 및 image 파일 설치, 실행</title>
       <link>http://jeha00.github.io/post/docker/docker-installation/</link>
@@ -98,6 +107,15 @@
       
       <guid>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_2/</guid>
       <description>nginx와 uwsgi를 사용한 배포과정에서 발생한 502 Bad Gateway Error에 대한 해결과정과 해결책을 정리해본다.</description>
+    </item>
+    
+    <item>
+      <title>Book Study - 1일 1로그 100일 완성 IT 지식: 41 - 52 days</title>
+      <link>http://jeha00.github.io/post/bookstudy/1-1-100/41-52day/</link>
+      <pubDate>Sat, 15 Oct 2022 00:36:22 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/1-1-100/41-52day/</guid>
+      <description>IT 분야의 문해력을 기르기 위해서 꾸준히 매일 작은 지식들을 학습하고자 1일 1로그 100일 완성 IT 지식을 학습한다.</description>
     </item>
     
     <item>
