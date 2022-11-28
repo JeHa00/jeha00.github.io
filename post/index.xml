@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 28 Nov 2022 16:19:28 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Nov 2022 18:22:05 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: naming</title>
+      <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter04_naming/</link>
+      <pubDate>Mon, 28 Nov 2022 18:22:05 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter04_naming/</guid>
+      <description>알 스웨이가트가 지었고, 박재호님이 번역하신  &amp;lsquo;클린코드, 이제는 파이썬이다&amp;rsquo;를 읽고 학습한 내용이다. 이번에는 naming에 대한 가이드 라인에 대해 학습해보자.</description>
+    </item>
+    
     <item>
       <title>Book Study - 클린 코드, 이제는 파이썬이다: code formatting</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter03_formatting./</link>
@@ -110,7 +119,7 @@
     </item>
     
     <item>
-      <title>Book Study - 클린 코드, 이제는 파이썬이다: Chapter 01 에러와 질문</title>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: error and question</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter01_errorandasking/</link>
       <pubDate>Mon, 17 Oct 2022 16:52:19 +0900</pubDate>
       
