@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 16 Nov 2022 12:52:40 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Nov 2022 16:19:28 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: code formatting</title>
+      <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter03_formatting./</link>
+      <pubDate>Mon, 28 Nov 2022 16:19:28 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter03_formatting./</guid>
+      <description>알 스웨이가트가 지었고, 박재호님이 번역하신  &amp;lsquo;클린코드, 이제는 파이썬이다&amp;rsquo;를 읽고 학습한 내용이다. 이번에는 PEP8에서는 python code formatting을 어떤 방식으로 의무적으로 또는 권고하는지 알아보자.</description>
+    </item>
+    
     <item>
       <title>Book Study - 1일 1로그 100일 완성 IT 지식: 53 - 62 days</title>
       <link>http://jeha00.github.io/post/bookstudy/1-1-100/53-62day/</link>
