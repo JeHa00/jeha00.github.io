@@ -9,22 +9,49 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 10 Nov 2022 19:45:41 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2022 18:13:58 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docker study: Docker 설치하기 및 image 파일 설치, 실행</title>
-      <link>http://jeha00.github.io/post/docker/docker-installation/</link>
-      <pubDate>Thu, 10 Nov 2022 19:45:41 +0900</pubDate>
+      <title>Docker study: Docker command list 02</title>
+      <link>http://jeha00.github.io/post/docker/01_docker-commands-02/</link>
+      <pubDate>Sat, 03 Dec 2022 18:13:58 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/docker/docker-installation/</guid>
-      <description>ec2를 활용한 server에 docker를 설치하고, docker image 파일 설치 및 실행해본다.</description>
+      <guid>http://jeha00.github.io/post/docker/01_docker-commands-02/</guid>
+      <description>2개의 터미널을 띄어넣고, 다른 터미널에서 실행 중인 컨테이너에 접속하거나, 종료시키기. 그리고, host와 container 간에 파일을 전송하는 명령어에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>Docker study: Docker command list 01</title>
+      <link>http://jeha00.github.io/post/docker/00_docker-commands-01/</link>
+      <pubDate>Sat, 03 Dec 2022 16:49:32 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/docker/00_docker-commands-01/</guid>
+      <description>ec2를 활용한 server에 docker를 설치하고, docker image 파일 설치 및 실행 명령어부터 docker의 여러 명렁어를 정리해본다.</description>
+    </item>
+    
+    <item>
+      <title>Docker study: Make custom image</title>
+      <link>http://jeha00.github.io/post/docker/03_make-custom-image/</link>
+      <pubDate>Sat, 03 Dec 2022 16:49:19 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/docker/03_make-custom-image/</guid>
+      <description>docker run -it 으로 docker의 기본 image를 실행한 후, 이를 바탕으로 apt-get install로 여러 layer를 쌓는다. 마지막으로 docker commit으로 나만의 image를 만든다.</description>
+    </item>
+    
+    <item>
+      <title>Docker study: What is a docker?</title>
+      <link>http://jeha00.github.io/post/docker/04_what-is-docker/</link>
+      <pubDate>Fri, 02 Dec 2022 21:52:35 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/docker/04_what-is-docker/</guid>
+      <description>첫 번째, PaaS란 무엇인지, 컨테이너 가상화란 무엇인지를 통해서 docker가 무엇인지 알아본다. 두 번째, docker의 build, pull, run은 무엇을 하는 건지 알아본다.</description>
     </item>
     
     <item>
       <title>Docker study: Docker 학습을 위한 OS background knowledge</title>
-      <link>http://jeha00.github.io/post/docker/os-for-docker/</link>
+      <link>http://jeha00.github.io/post/docker/02_os-for-docker/</link>
       <pubDate>Mon, 31 Oct 2022 01:00:56 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/docker/os-for-docker/</guid>
+      <guid>http://jeha00.github.io/post/docker/02_os-for-docker/</guid>
       <description>Docker 학습을 시작하기에 앞서 Docker가 왜 필요한지, 컴퓨터 시스템의 핵심은 무엇이고, 운영체제는 무슨 역할을 하는지, process와 thread란 무엇인지, 메모리 구조는 어떻게 구성되어 있는지, 마지막으로 컨테이너에 대해 체험해본다.</description>
     </item>
     
