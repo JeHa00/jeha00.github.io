@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Project on Jeha00 DevLog</title>
-    <link>http://jeha00.github.io/categories/project/</link>
-    <description>Recent content in Project on Jeha00 DevLog</description>
+    <title>iamport on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/tags/iamport/</link>
+    <description>Recent content in iamport on Jeha00 DevLog</description>
     <image>
       <url>http://jeha00.github.io/47</url>
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 23 Nov 2022 14:56:16 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Nov 2022 14:56:16 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/iamport/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project: Iamport를 선택한 이유와 사용하여 얻는 결제 과정과 장점</title>
       <link>http://jeha00.github.io/post/project/08_payment_overall_flow/</link>
@@ -17,15 +17,6 @@
       
       <guid>http://jeha00.github.io/post/project/08_payment_overall_flow/</guid>
       <description>기존 결제 과정과 iamport를 사용 시 변한 결제 과정을 정리하고, iamport 사용 시 얻는 장점들에 대해 정리해본다.</description>
-    </item>
-    
-    <item>
-      <title>Project: Pull Request templates를 도입한 이유</title>
-      <link>http://jeha00.github.io/post/project/01_why-pr-template/</link>
-      <pubDate>Thu, 03 Nov 2022 13:37:52 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/project/01_why-pr-template/</guid>
-      <description>프로젝트 진행에 Pull Request templates를 사용하는 이유와 적절한 PR size는 얼만큼 정했는지에 대해 공유해본다.</description>
     </item>
     
   </channel>
