@@ -9,13 +9,22 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 03 Dec 2022 18:13:58 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 13:42:28 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker study: Docker-compose로 nginx, django, postgreSQL을 연결하고 배포하기</title>
+      <link>http://jeha00.github.io/post/docker/04_deployment-by-docker/</link>
+      <pubDate>Thu, 08 Dec 2022 13:42:28 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/docker/04_deployment-by-docker/</guid>
+      <description>docker만을 사용하여 django를 배포한 후, Dockerfile을 nginx와 djang application 에 대해 각각 만들어서 docker compose로 여러 컨테이너를 연결하여 배포하는 것을 학습해본다.</description>
+    </item>
+    
     <item>
       <title>Docker study: Docker command list 02</title>
-      <link>http://jeha00.github.io/post/docker/01_docker-commands-02/</link>
+      <link>http://jeha00.github.io/post/docker/00_docker-commands-02/</link>
       <pubDate>Sat, 03 Dec 2022 18:13:58 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/docker/01_docker-commands-02/</guid>
+      <guid>http://jeha00.github.io/post/docker/00_docker-commands-02/</guid>
       <description>2개의 터미널을 띄어넣고, 다른 터미널에서 실행 중인 컨테이너에 접속하거나, 종료시키기. 그리고, host와 container 간에 파일을 전송하는 명령어에 대해 알아본다.</description>
     </item>
     
@@ -29,7 +38,7 @@
     </item>
     
     <item>
-      <title>Docker study: Make custom image</title>
+      <title>Docker study: 기본 image 활용하여 나만의 custom image 만들기</title>
       <link>http://jeha00.github.io/post/docker/03_make-custom-image/</link>
       <pubDate>Sat, 03 Dec 2022 16:49:19 +0900</pubDate>
       
@@ -39,10 +48,10 @@
     
     <item>
       <title>Docker study: What is a docker?</title>
-      <link>http://jeha00.github.io/post/docker/04_what-is-docker/</link>
+      <link>http://jeha00.github.io/post/docker/02_what-is-docker/</link>
       <pubDate>Fri, 02 Dec 2022 21:52:35 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/docker/04_what-is-docker/</guid>
+      <guid>http://jeha00.github.io/post/docker/02_what-is-docker/</guid>
       <description>첫 번째, PaaS란 무엇인지, 컨테이너 가상화란 무엇인지를 통해서 docker가 무엇인지 알아본다. 두 번째, docker의 build, pull, run은 무엇을 하는 건지 알아본다.</description>
     </item>
     
@@ -120,10 +129,10 @@
     
     <item>
       <title>Docker study: Docker 학습을 위한 OS background knowledge</title>
-      <link>http://jeha00.github.io/post/docker/02_os-for-docker/</link>
+      <link>http://jeha00.github.io/post/docker/01_os-for-docker/</link>
       <pubDate>Mon, 31 Oct 2022 01:00:56 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/docker/02_os-for-docker/</guid>
+      <guid>http://jeha00.github.io/post/docker/01_os-for-docker/</guid>
       <description>Docker 학습을 시작하기에 앞서 Docker가 왜 필요한지, 컴퓨터 시스템의 핵심은 무엇이고, 운영체제는 무슨 역할을 하는지, process와 thread란 무엇인지, 메모리 구조는 어떻게 구성되어 있는지, 마지막으로 컨테이너에 대해 체험해본다.</description>
     </item>
     
