@@ -90,7 +90,7 @@
       <guid>http://jeha00.github.io/post/django/doc_tutorial_04/</guid>
       <description>0. Introduction Write a minimal form use generic views: Less code is better django 공식 문서를 번역하는 작업을 통해 튜토리얼을 진행하여 이해해본다.
 이번 tutorial을 통해서 기본적인 설문조사 애플리케이션을 만들 수 있다.
-이 애플리케이션은 다음 2가지로 구성된다. 사람들이 설문조사를 보고 투표할 수 있는 &amp;lsquo;public site&amp;rsquo; 설문조사를 더하고, 수정하고, 삭제하는 &amp;lsquo;admin site&amp;rsquo; 1. Write a minimal form Par03에서 만들었던 detail template을 업데이트해보자. 업데이트할 detail template에는 HTML form 요소가 포함된다. &amp;gt; &amp;lt;form action=&amp;#34;{% url &amp;#39;polls:vote&amp;#39; question.</description>
+이 애플리케이션은 다음 2가지로 구성된다. 사람들이 설문조사를 보고 투표할 수 있는 &amp;lsquo;public site&amp;rsquo; 설문조사를 더하고, 수정하고, 삭제하는 &amp;lsquo;admin site&amp;rsquo; 1. Write a minimal form Par03에서 만들었던 detail template을 업데이트해보자. 업데이트할 detail template에는 HTML form 요소가 포함된다. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 &amp;gt; &amp;lt;form action=&amp;#34;{% url &amp;#39;polls:vote&amp;#39; question.</description>
     </item>
     
     <item>
