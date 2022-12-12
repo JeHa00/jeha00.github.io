@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 08 Dec 2022 14:43:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/deployment/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Dec 2022 19:33:59 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/deployment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project: deployment issue - S3 CORS</title>
+      <link>http://jeha00.github.io/post/project/16_deployment_cors/</link>
+      <pubDate>Mon, 12 Dec 2022 19:33:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/project/16_deployment_cors/</guid>
+      <description>배포 후 발생한 S3 CORS issue에 대해 알아본다. 이 과정에서 CORS란 무엇이고 이를 헤결하기 위해서 어떤 header를 어떻게 추가하는지 알아본다.</description>
+    </item>
+    
     <item>
       <title>Project: Docker를 사용하여 django app 배포하기</title>
       <link>http://jeha00.github.io/post/project/15_deployment/</link>
