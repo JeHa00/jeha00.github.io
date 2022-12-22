@@ -245,15 +245,6 @@
     </item>
     
     <item>
-      <title>[TIL] Python study: Window에서 Asyncio RuntimeError</title>
-      <link>http://jeha00.github.io/post/python/a_s_o/1_asyncio-runtimeerror/</link>
-      <pubDate>Fri, 29 Jul 2022 23:38:50 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/python/a_s_o/1_asyncio-runtimeerror/</guid>
-      <description>비동기 모듈을 사용하면서 겪은 Asyncio RuntimeError의 원인과 해결방법에 대해 알아본다.</description>
-    </item>
-    
-    <item>
       <title>[TIL] Git study: Lecture Chapter 14 - GitHub Actions 체험, Octotree, GitHub CLI</title>
       <link>http://jeha00.github.io/post/git/lec_chapter14-02/</link>
       <pubDate>Fri, 29 Jul 2022 00:29:03 +0900</pubDate>
@@ -614,39 +605,12 @@
     </item>
     
     <item>
-      <title>[TIL] Python basic 47: Descriptor</title>
-      <link>http://jeha00.github.io/post/python/python_basic_47_descriptor/</link>
-      <pubDate>Thu, 19 May 2022 19:12:47 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/python/python_basic_47_descriptor/</guid>
-      <description>Descriptor가 무엇이고, 어떤 점들이 유용한지, 어떻게 사용하는지를 알아본다. 개념적으로 알아보므로, 나중에 더 깊이 학습한다.</description>
-    </item>
-    
-    <item>
-      <title>[TIL] Python basic 46: Metaclass</title>
-      <link>http://jeha00.github.io/post/python/python_basic_46_metaclass/</link>
-      <pubDate>Tue, 17 May 2022 17:53:25 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/python/python_basic_46_metaclass/</guid>
-      <description>첫 번째,Type fuction을 통해서 Metaclass가 무엇인지, 그리고 class를 동적으로 만들어본다. 두 번째, Metaclass의 장점은 무엇이고, metaclass를 통해서 custom metaclass를 만들어본다.</description>
-    </item>
-    
-    <item>
       <title>[TIL] Python basic 45: Overriding vs Overloading</title>
       <link>http://jeha00.github.io/post/python/python_basic_45_overriding_overloading/</link>
       <pubDate>Sun, 15 May 2022 20:26:29 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/python/python_basic_45_overriding_overloading/</guid>
       <description>OOP에서 사용하는 overriding과 overloading에 대해 알아본다. 그리고, multipledispatch module을 사용하여 overloading을 구현한다.</description>
-    </item>
-    
-    <item>
-      <title>[TIL] Python basic 44: Property</title>
-      <link>http://jeha00.github.io/post/python/python_basic_44_property/</link>
-      <pubDate>Thu, 12 May 2022 15:37:54 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/python/python_basic_44_property/</guid>
-      <description>첫 번째, method를 사용하여 getter와 setter를 구현한다. 두 번째, 첫 번째보다 pythonic way인 property를 사용하여 구현해보는데, property 방법 2가지 중 decorator를 사용하여 getter, setter, deleter를 구현해본다.</description>
     </item>
     
     <item>
@@ -785,39 +749,12 @@
     </item>
     
     <item>
-      <title>[TIL] Python basic 38: Futures</title>
-      <link>http://jeha00.github.io/post/python/python_basic_38.futures/</link>
-      <pubDate>Wed, 06 Apr 2022 21:34:38 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/python/python_basic_38.futures/</guid>
-      <description>인프런 파이썬 level 4 과정의 기반으로 대략적으로 학습하는 내용이다. 구체적으로 Synchro와 Asynchro가 각각 무엇을 의미하는지, threadpool이란 무엇인지, concurrent.futures package에서 wait과 as_completed module에 대해 학습해본다.</description>
-    </item>
-    
-    <item>
       <title>[TIL] OS Chapter 02: Introduction to Operating System</title>
       <link>http://jeha00.github.io/post/os/os_chapter_02_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94/</link>
       <pubDate>Tue, 05 Apr 2022 17:43:59 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/os/os_chapter_02_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94/</guid>
       <description>운영체제란 무엇이고, 무슨 역할을 하는지, 어떻게 분류되는지, 그리고 CPU, 메모리, 입출력 장치의 대략적인 관리 mechanism에 대해 알아본다.</description>
-    </item>
-    
-    <item>
-      <title>[TIL] Python basic 37: Coroutine</title>
-      <link>http://jeha00.github.io/post/python/python_basic_37_coroutine/</link>
-      <pubDate>Sat, 02 Apr 2022 21:15:33 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/python/python_basic_37_coroutine/</guid>
-      <description>첫 번째, Thread, Multi-thread 그리고 Coroutine이 무엇인지 알아보면서, coroutine이 왜 중요한지를 이해한다. 두 번째, Coroutine을 구현해보면서 Generator와의 차이를 통해 Coroutine을 이해한다.</description>
-    </item>
-    
-    <item>
-      <title>[TIL] Python basic 36: Generator</title>
-      <link>http://jeha00.github.io/post/python/python_basic_36_generator/</link>
-      <pubDate>Fri, 01 Apr 2022 19:57:38 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/python/python_basic_36_generator/</guid>
-      <description>Generator 1에 이어서 본격적으로 Generator에 대해 알아본다. 그리고, Generator와 관련된 중요 함수들도 알아본다.</description>
     </item>
     
     <item>
