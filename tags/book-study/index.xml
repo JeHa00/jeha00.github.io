@@ -9,7 +9,25 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 28 Nov 2022 18:22:05 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/book-study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Dec 2022 14:09:38 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/book-study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: Write pythonic code</title>
+      <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter06_writingpythoniccode/</link>
+      <pubDate>Sun, 25 Dec 2022 14:09:38 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter06_writingpythoniccode/</guid>
+      <description>파이썬을 파이썬스럽게 쓰지 못하는 부분들에 대해 알아보고, 이를 어떻게 파이썬스럽게 작성할지 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: Find code smell</title>
+      <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter05_findingcodesmell/</link>
+      <pubDate>Sat, 24 Dec 2022 14:09:21 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter05_findingcodesmell/</guid>
+      <description>code smell(코드 악취)이 나는 부분들에는 무엇이 있고, 이를 어떻게 해결해야하는지에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>Book Study - 클린 코드, 이제는 파이썬이다: naming</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter04_naming/</link>
