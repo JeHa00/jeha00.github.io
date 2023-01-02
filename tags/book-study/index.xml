@@ -9,7 +9,25 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 25 Dec 2022 14:09:38 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/book-study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jan 2023 20:17:13 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/book-study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: OOP and Class</title>
+      <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter15_oop_and_classes/</link>
+      <pubDate>Mon, 02 Jan 2023 20:17:13 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter15_oop_and_classes/</guid>
+      <description>클래스란 무엇이고, class에서 attribute란 무엇을 말하는 것이고, self란 무엇인지, 파이썬에서 언더바는 무엇을 의미하는지, type()은 어디에 사용되는지, 현실 세계의 객체를 클래스화할 때 문제점은 무엇인지 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: Program Jargon</title>
+      <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter07_programjargon/</link>
+      <pubDate>Tue, 27 Dec 2022 17:07:28 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter07_programjargon/</guid>
+      <description>파이썬 세상의 프로그래밍 용어에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>Book Study - 클린 코드, 이제는 파이썬이다: Write pythonic code</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter06_writingpythoniccode/</link>
