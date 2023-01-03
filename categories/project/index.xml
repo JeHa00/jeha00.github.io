@@ -12,37 +12,37 @@
     <lastBuildDate>Mon, 12 Dec 2022 19:33:59 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project: deployment issue - S3 CORS</title>
-      <link>http://jeha00.github.io/post/project/16_deployment_cors/</link>
+      <link>http://jeha00.github.io/post/project/deployment/16_deployment_cors/</link>
       <pubDate>Mon, 12 Dec 2022 19:33:59 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/16_deployment_cors/</guid>
+      <guid>http://jeha00.github.io/post/project/deployment/16_deployment_cors/</guid>
       <description>배포 후 발생한 S3 CORS issue에 대해 알아본다. 이 과정에서 CORS란 무엇이고 이를 헤결하기 위해서 어떤 header를 어떻게 추가하는지 알아본다.</description>
     </item>
     
     <item>
       <title>Project: Docker를 사용하여 django app 배포하기</title>
-      <link>http://jeha00.github.io/post/project/15_deployment/</link>
+      <link>http://jeha00.github.io/post/project/deployment/15_deployment/</link>
       <pubDate>Thu, 08 Dec 2022 14:43:44 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/15_deployment/</guid>
+      <guid>http://jeha00.github.io/post/project/deployment/15_deployment/</guid>
       <description>docker compose를 사용하여 nginx, gunicorn, AWS S3, AWS RDS와 연결된 django application을 배포한다. 이때, AWS S3에 접근하기 위해서 AWS IAM을 사용한다. static files에 연결하는 방식으로 3가지를 사용했다.</description>
     </item>
     
     <item>
       <title>Project: Iamport를 선택한 이유, 사용 시 결제 과정, 그리고 얻는 장점</title>
-      <link>http://jeha00.github.io/post/project/08_payment_overall_flow/</link>
+      <link>http://jeha00.github.io/post/project/django/08_payment_overall_flow/</link>
       <pubDate>Wed, 23 Nov 2022 14:56:16 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/08_payment_overall_flow/</guid>
+      <guid>http://jeha00.github.io/post/project/django/08_payment_overall_flow/</guid>
       <description>기존 결제 과정과 iamport를 사용 시 변한 결제 과정을 정리하고, iamport 사용 시 얻는 장점들에 대해 정리해본다.</description>
     </item>
     
     <item>
       <title>Project: Pull Request templates를 도입한 이유</title>
-      <link>http://jeha00.github.io/post/project/01_why-pr-template/</link>
+      <link>http://jeha00.github.io/post/project/docs/01_why-pr-template/</link>
       <pubDate>Thu, 03 Nov 2022 13:37:52 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/01_why-pr-template/</guid>
+      <guid>http://jeha00.github.io/post/project/docs/01_why-pr-template/</guid>
       <description>프로젝트 진행에 Pull Request templates를 사용하는 이유와 적절한 PR size는 얼만큼 정했는지에 대해 공유해본다.</description>
     </item>
     

@@ -12,10 +12,10 @@
     <lastBuildDate>Thu, 03 Nov 2022 13:37:52 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project: Pull Request templates를 도입한 이유</title>
-      <link>http://jeha00.github.io/post/project/01_why-pr-template/</link>
+      <link>http://jeha00.github.io/post/project/docs/01_why-pr-template/</link>
       <pubDate>Thu, 03 Nov 2022 13:37:52 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/01_why-pr-template/</guid>
+      <guid>http://jeha00.github.io/post/project/docs/01_why-pr-template/</guid>
       <description>프로젝트 진행에 Pull Request templates를 사용하는 이유와 적절한 PR size는 얼만큼 정했는지에 대해 공유해본다.</description>
     </item>
     
