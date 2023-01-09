@@ -29,12 +29,21 @@
     </item>
     
     <item>
-      <title>Project: Iamport를 선택한 이유, 사용 시 결제 과정, 그리고 얻는 장점</title>
+      <title>DOM 생성과 fetch 사용을 위한 Javascript 학습 후기 및 각 과정에 일어난 개발 이슈</title>
+      <link>http://jeha00.github.io/post/project/js/02_dom_fetch/</link>
+      <pubDate>Wed, 30 Nov 2022 18:25:52 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/project/js/02_dom_fetch/</guid>
+      <description>첫 번째, DOM 생성과 fetch 사용을 위한 Javascript 학습 후기와 각 과정에서 일어난 개발 이슈에 대해 정리해본다.</description>
+    </item>
+    
+    <item>
+      <title>Project: Iamport를 선택한 이유, 사용 시 결제 과정, 그리고 얻는 장점, JS SDK를 사용한 결제 흐름</title>
       <link>http://jeha00.github.io/post/project/django/08_payment_overall_flow/</link>
       <pubDate>Wed, 23 Nov 2022 14:56:16 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/project/django/08_payment_overall_flow/</guid>
-      <description>기존 결제 과정과 iamport를 사용 시 변한 결제 과정을 정리하고, iamport 사용 시 얻는 장점들에 대해 정리해본다.</description>
+      <description>기존 결제 과정과 iamport를 사용 시 변한 결제 과정을 정리하고, iamport 사용 시 얻는 장점들에 대해 정리해본다. 마지막으로 프로젝트에서 아임포트 javascript SDK를 사용한 결제 흐름을 정리해본다.</description>
     </item>
     
     <item>

@@ -71,6 +71,12 @@
     <loc>http://jeha00.github.io/post/docker/02_what-is-docker/</loc>
     <lastmod>2022-12-02T21:52:35+09:00</lastmod>
   </url><url>
+    <loc>http://jeha00.github.io/tags/dom/</loc>
+    <lastmod>2022-11-30T18:25:52+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/project/js/02_dom_fetch/</loc>
+    <lastmod>2022-11-30T18:25:52+09:00</lastmod>
+  </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter04_naming/</loc>
     <lastmod>2022-11-28T18:22:05+09:00</lastmod>
   </url><url>
@@ -92,7 +98,7 @@
     <loc>http://jeha00.github.io/categories/django/</loc>
     <lastmod>2022-11-09T04:31:43+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/drf_study03/</loc>
+    <loc>http://jeha00.github.io/post/django/drf/drf_study03/</loc>
     <lastmod>2022-11-09T04:31:43+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/aws/</loc>
@@ -104,7 +110,7 @@
     <loc>http://jeha00.github.io/post/aws/lecturenote01/</loc>
     <lastmod>2022-11-08T23:19:07+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/drf_study02/</loc>
+    <loc>http://jeha00.github.io/post/django/drf/drf_study02/</loc>
     <lastmod>2022-11-05T13:36:56+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/github/</loc>
@@ -116,25 +122,25 @@
     <loc>http://jeha00.github.io/post/docker/01_os-for-docker/</loc>
     <lastmod>2022-10-31T01:00:56+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/drf_study01/</loc>
+    <loc>http://jeha00.github.io/post/django/drf/drf_study01/</loc>
     <lastmod>2022-10-28T13:29:58+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_4/</loc>
+    <loc>http://jeha00.github.io/post/django/deployment/deployment-with-nginx-uwsgi-ec2_4/</loc>
     <lastmod>2022-10-20T18:45:16+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_3/</loc>
+    <loc>http://jeha00.github.io/post/django/deployment/deployment-with-nginx-uwsgi-ec2_3/</loc>
     <lastmod>2022-10-19T03:31:58+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter01_errorandasking/</loc>
     <lastmod>2022-10-17T16:52:19+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_2/</loc>
+    <loc>http://jeha00.github.io/post/django/deployment/deployment-with-nginx-uwsgi-ec2_2/</loc>
     <lastmod>2022-10-15T03:28:59+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/1-1-100/41-52day/</loc>
     <lastmod>2022-10-15T00:36:22+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/deployment-with-nginx-uwsgi-ec2_1/</loc>
+    <loc>http://jeha00.github.io/post/django/deployment/deployment-with-nginx-uwsgi-ec2_1/</loc>
     <lastmod>2022-10-14T03:16:12+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/cleancode/chatper02_name/</loc>
@@ -284,7 +290,7 @@
     <loc>http://jeha00.github.io/post/git/lec_chapter10-02/</loc>
     <lastmod>2022-07-11T23:31:47+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/doc_tutorial_04/</loc>
+    <loc>http://jeha00.github.io/post/django/django_tutorial/doc_tutorial_04/</loc>
     <lastmod>2022-07-08T23:46:04+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/git/lec_chapter10-01/</loc>
@@ -296,13 +302,13 @@
     <loc>http://jeha00.github.io/post/git/lec_chapter08-02/</loc>
     <lastmod>2022-07-06T23:31:33+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/doc_tutorial_02/</loc>
+    <loc>http://jeha00.github.io/post/django/django_tutorial/doc_tutorial_02/</loc>
     <lastmod>2022-07-05T23:45:49+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/git/lec_chapter08-01/</loc>
     <lastmod>2022-07-04T23:31:28+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/django/doc_tutorial_01/</loc>
+    <loc>http://jeha00.github.io/post/django/django_tutorial/doc_tutorial_01/</loc>
     <lastmod>2022-07-03T23:45:43+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/git/lec_chpater09/</loc>
@@ -584,6 +590,10 @@
     <loc>http://jeha00.github.io/post/project/django/db_modeling_question/</loc>
   </url><url>
     <loc>http://jeha00.github.io/post/project/django/%EC%95%84%EC%9E%84%ED%8F%AC%ED%8A%B8-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80/</loc>
+  </url><url>
+    <loc>http://jeha00.github.io/post/project/js/memo/</loc>
+  </url><url>
+    <loc>http://jeha00.github.io/post/project/js/question/</loc>
   </url><url>
     <loc>http://jeha00.github.io/post/project/jwt-study/settings/</loc>
   </url><url>
