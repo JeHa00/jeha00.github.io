@@ -3,27 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://jeha00.github.io/tags/book-study/</loc>
-    <lastmod>2023-01-02T20:17:13+09:00</lastmod>
+    <lastmod>2023-01-06T19:14:21+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/book-study/</loc>
-    <lastmod>2023-01-02T20:17:13+09:00</lastmod>
+    <lastmod>2023-01-06T19:14:21+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter15_oop_and_classes/</loc>
-    <lastmod>2023-01-02T20:17:13+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter08_commonpythongotchas/</loc>
+    <lastmod>2023-01-06T19:14:21+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2023-01-02T20:17:13+09:00</lastmod>
+    <lastmod>2023-01-06T19:14:21+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/</loc>
-    <lastmod>2023-01-02T20:17:13+09:00</lastmod>
+    <lastmod>2023-01-06T19:14:21+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2023-01-02T20:17:13+09:00</lastmod>
+    <lastmod>2023-01-06T19:14:21+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2023-01-02T20:17:13+09:00</lastmod>
+    <lastmod>2023-01-06T19:14:21+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
+    <lastmod>2023-01-06T19:14:21+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter15_oop_and_classes/</loc>
     <lastmod>2023-01-02T20:17:13+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter07_programjargon/</loc>
@@ -44,10 +47,10 @@
     <loc>http://jeha00.github.io/categories/project/</loc>
     <lastmod>2022-12-12T19:33:59+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/project/deployment/16_deployment_cors/</loc>
+    <loc>http://jeha00.github.io/post/project/deployment/02_deployment_cors/</loc>
     <lastmod>2022-12-12T19:33:59+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/project/deployment/15_deployment/</loc>
+    <loc>http://jeha00.github.io/post/project/deployment/01_deployment/</loc>
     <lastmod>2022-12-08T14:43:44+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/docker/</loc>
@@ -58,6 +61,12 @@
   </url><url>
     <loc>http://jeha00.github.io/post/docker/04_deployment-by-docker/</loc>
     <lastmod>2022-12-08T13:42:28+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/iamport/</loc>
+    <lastmod>2022-12-04T14:56:16+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/project/django/01_payment_overall_flow/</loc>
+    <lastmod>2022-12-04T14:56:16+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/docker/00_docker-commands-02/</loc>
     <lastmod>2022-12-03T18:13:58+09:00</lastmod>
@@ -71,26 +80,20 @@
     <loc>http://jeha00.github.io/post/docker/02_what-is-docker/</loc>
     <lastmod>2022-12-02T21:52:35+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/tags/dom/</loc>
-    <lastmod>2022-11-30T18:25:52+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/project/js/02_dom_fetch/</loc>
-    <lastmod>2022-11-30T18:25:52+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter04_naming/</loc>
     <lastmod>2022-11-28T18:22:05+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter03_formatting./</loc>
     <lastmod>2022-11-28T16:19:28+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/tags/iamport/</loc>
-    <lastmod>2022-11-23T14:56:16+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/project/django/08_payment_overall_flow/</loc>
-    <lastmod>2022-11-23T14:56:16+09:00</lastmod>
-  </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/1-1-100/53-62day/</loc>
     <lastmod>2022-11-16T12:52:40+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/dom/</loc>
+    <lastmod>2022-11-15T18:25:52+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/project/js/01_dom_fetch/</loc>
+    <lastmod>2022-11-15T18:25:52+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/django/</loc>
     <lastmod>2022-11-09T04:31:43+09:00</lastmod>
@@ -589,11 +592,7 @@
   </url><url>
     <loc>http://jeha00.github.io/post/project/django/db_modeling_question/</loc>
   </url><url>
-    <loc>http://jeha00.github.io/post/project/django/%EC%95%84%EC%9E%84%ED%8F%AC%ED%8A%B8-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80/</loc>
-  </url><url>
     <loc>http://jeha00.github.io/post/project/js/memo/</loc>
-  </url><url>
-    <loc>http://jeha00.github.io/post/project/js/question/</loc>
   </url><url>
     <loc>http://jeha00.github.io/post/project/jwt-study/settings/</loc>
   </url><url>

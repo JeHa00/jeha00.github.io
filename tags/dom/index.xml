@@ -9,13 +9,13 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 30 Nov 2022 18:25:52 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/dom/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Nov 2022 18:25:52 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/dom/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>DOM 생성과 fetch 사용을 위한 Javascript 학습 후기 및 각 과정에 일어난 개발 이슈</title>
-      <link>http://jeha00.github.io/post/project/js/02_dom_fetch/</link>
-      <pubDate>Wed, 30 Nov 2022 18:25:52 +0900</pubDate>
+      <title>Project: DOM 생성과 fetch 사용을 위한 Javascript 학습 후기 및 각 과정에 일어난 개발 이슈</title>
+      <link>http://jeha00.github.io/post/project/js/01_dom_fetch/</link>
+      <pubDate>Tue, 15 Nov 2022 18:25:52 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/js/02_dom_fetch/</guid>
+      <guid>http://jeha00.github.io/post/project/js/01_dom_fetch/</guid>
       <description>첫 번째, DOM 생성과 fetch 사용을 위한 Javascript 학습 후기와 각 과정에서 일어난 개발 이슈에 대해 정리해본다.</description>
     </item>
     

@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 02 Jan 2023 20:17:13 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 19:14:21 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: 파이썬에서 빠지기 쉬운 함정들(Common Python Gotchas)</title>
+      <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter08_commonpythongotchas/</link>
+      <pubDate>Fri, 06 Jan 2023 19:14:21 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter08_commonpythongotchas/</guid>
+      <description>파이썬 코드를 작성하면서 빠지기 쉬운 함정들과 이에 대한 해결책을 파이썬스러운 코드를 통해 해결해본다.</description>
+    </item>
+    
     <item>
       <title>Book Study - 클린 코드, 이제는 파이썬이다: OOP and Class</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter15_oop_and_classes/</link>

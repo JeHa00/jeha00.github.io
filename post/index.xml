@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 02 Jan 2023 20:17:13 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 19:14:21 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book Study - 클린 코드, 이제는 파이썬이다: 파이썬에서 빠지기 쉬운 함정들(Common Python Gotchas)</title>
+      <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter08_commonpythongotchas/</link>
+      <pubDate>Fri, 06 Jan 2023 19:14:21 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter08_commonpythongotchas/</guid>
+      <description>파이썬 코드를 작성하면서 빠지기 쉬운 함정들과 이에 대한 해결책을 파이썬스러운 코드를 통해 해결해본다.</description>
+    </item>
+    
     <item>
       <title>Book Study - 클린 코드, 이제는 파이썬이다: OOP and Class</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter15_oop_and_classes/</link>
@@ -48,19 +57,19 @@
     
     <item>
       <title>Project: deployment issue - S3 CORS</title>
-      <link>http://jeha00.github.io/post/project/deployment/16_deployment_cors/</link>
+      <link>http://jeha00.github.io/post/project/deployment/02_deployment_cors/</link>
       <pubDate>Mon, 12 Dec 2022 19:33:59 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/deployment/16_deployment_cors/</guid>
+      <guid>http://jeha00.github.io/post/project/deployment/02_deployment_cors/</guid>
       <description>배포 후 발생한 S3 CORS issue에 대해 알아본다. 이 과정에서 CORS란 무엇이고 이를 헤결하기 위해서 어떤 header를 어떻게 추가하는지 알아본다.</description>
     </item>
     
     <item>
       <title>Project: Docker를 사용하여 django app 배포하기</title>
-      <link>http://jeha00.github.io/post/project/deployment/15_deployment/</link>
+      <link>http://jeha00.github.io/post/project/deployment/01_deployment/</link>
       <pubDate>Thu, 08 Dec 2022 14:43:44 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/deployment/15_deployment/</guid>
+      <guid>http://jeha00.github.io/post/project/deployment/01_deployment/</guid>
       <description>docker compose를 사용하여 nginx, gunicorn, AWS S3, AWS RDS와 연결된 django application을 배포한다. 이때, AWS S3에 접근하기 위해서 AWS IAM을 사용한다. static files에 연결하는 방식으로 3가지를 사용했다.</description>
     </item>
     
@@ -71,6 +80,15 @@
       
       <guid>http://jeha00.github.io/post/docker/04_deployment-by-docker/</guid>
       <description>docker만을 사용하여 django를 배포한 후, Dockerfile을 nginx와 djang application 에 대해 각각 만들어서 docker compose로 여러 컨테이너를 연결하여 배포하는 것을 학습해본다.</description>
+    </item>
+    
+    <item>
+      <title>Project: Iamport를 선택한 이유, 사용 시 결제 과정과 장점, 그리고 아임포트 javascript SDK를 사용한 결제 흐름</title>
+      <link>http://jeha00.github.io/post/project/django/01_payment_overall_flow/</link>
+      <pubDate>Sun, 04 Dec 2022 14:56:16 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/project/django/01_payment_overall_flow/</guid>
+      <description>기존 결제 과정과 iamport를 사용 시 변한 결제 과정을 정리하고, iamport 사용 시 얻는 장점들에 대해 정리해본다. 마지막으로 프로젝트에서 아임포트 javascript SDK를 사용한 결제 흐름을 정리해본다.</description>
     </item>
     
     <item>
@@ -110,15 +128,6 @@
     </item>
     
     <item>
-      <title>DOM 생성과 fetch 사용을 위한 Javascript 학습 후기 및 각 과정에 일어난 개발 이슈</title>
-      <link>http://jeha00.github.io/post/project/js/02_dom_fetch/</link>
-      <pubDate>Wed, 30 Nov 2022 18:25:52 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/project/js/02_dom_fetch/</guid>
-      <description>첫 번째, DOM 생성과 fetch 사용을 위한 Javascript 학습 후기와 각 과정에서 일어난 개발 이슈에 대해 정리해본다.</description>
-    </item>
-    
-    <item>
       <title>Book Study - 클린 코드, 이제는 파이썬이다: naming</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter04_naming/</link>
       <pubDate>Mon, 28 Nov 2022 18:22:05 +0900</pubDate>
@@ -137,21 +146,21 @@
     </item>
     
     <item>
-      <title>Project: Iamport를 선택한 이유, 사용 시 결제 과정, 그리고 얻는 장점, JS SDK를 사용한 결제 흐름</title>
-      <link>http://jeha00.github.io/post/project/django/08_payment_overall_flow/</link>
-      <pubDate>Wed, 23 Nov 2022 14:56:16 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/project/django/08_payment_overall_flow/</guid>
-      <description>기존 결제 과정과 iamport를 사용 시 변한 결제 과정을 정리하고, iamport 사용 시 얻는 장점들에 대해 정리해본다. 마지막으로 프로젝트에서 아임포트 javascript SDK를 사용한 결제 흐름을 정리해본다.</description>
-    </item>
-    
-    <item>
       <title>Book Study - 1일 1로그 100일 완성 IT 지식: 53 - 62 days</title>
       <link>http://jeha00.github.io/post/bookstudy/1-1-100/53-62day/</link>
       <pubDate>Wed, 16 Nov 2022 12:52:40 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/bookstudy/1-1-100/53-62day/</guid>
       <description>IT 분야의 문해력을 기르기 위해서 꾸준히 매일 작은 지식들을 학습하고자 1일 1로그 100일 완성 IT 지식을 학습한다.</description>
+    </item>
+    
+    <item>
+      <title>Project: DOM 생성과 fetch 사용을 위한 Javascript 학습 후기 및 각 과정에 일어난 개발 이슈</title>
+      <link>http://jeha00.github.io/post/project/js/01_dom_fetch/</link>
+      <pubDate>Tue, 15 Nov 2022 18:25:52 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/project/js/01_dom_fetch/</guid>
+      <description>첫 번째, DOM 생성과 fetch 사용을 위한 Javascript 학습 후기와 각 과정에서 일어난 개발 이슈에 대해 정리해본다.</description>
     </item>
     
     <item>
@@ -1465,32 +1474,11 @@ Site model 관련 질문 thumbnail_url에서 max_length로 2000을 한 이유 ur
     
     <item>
       <title></title>
-      <link>http://jeha00.github.io/post/project/django/%EC%95%84%EC%9E%84%ED%8F%AC%ED%8A%B8-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://jeha00.github.io/post/project/django/%EC%95%84%EC%9E%84%ED%8F%AC%ED%8A%B8-%EA%B4%80%EB%A0%A8-%EA%B3%B5%EB%B6%80/</guid>
-      <description>결제 API에는 아임포트 외에도 토스 API가 있다.
-토스 API에서는 method까지 제공하지만, 정기 결제를 제공하지 않는다.
-그래서 아임포트 결제 API를 선택하여 추후 정기 결제까지 구현하고, 관련 메서드도 직접 작성해보고자 한다.
-아임포트 fetch를 사용하여 아임포트 javascript SDK에 결제 정보 전달: https://docs.iamport.kr/sdk/javascript-sdk </description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://jeha00.github.io/post/project/js/memo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://jeha00.github.io/post/project/js/memo/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 import {getElement ,setFetchData} from &amp;#39;./common.js&amp;#39;; window.onload = function () { const IMP = window.IMP; IMP.init(&amp;#39;imp62676076&amp;#39;); const paymentButton = getElement(&amp;#39;.order&amp;#39;) paymentButton.addEventListener(&amp;#39;click&amp;#39;, (e) =&amp;gt; { const amount = parseFloat(getElement(&amp;#34;.monthly .wrapper input[name=&amp;#39;amount&amp;#39;]&amp;#34;).value.replace(&amp;#39;,&amp;#39;, &amp;#39;&amp;#39;)); const type = &amp;#39;card&amp;#39;; const merchant_id = passMerchantId(e, amount, type); console.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://jeha00.github.io/post/project/js/question/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://jeha00.github.io/post/project/js/question/</guid>
-      <description></description>
     </item>
     
     <item>
