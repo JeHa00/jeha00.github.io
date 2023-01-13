@@ -9,7 +9,6 @@
 > 5. [Contents 생성과 업로드, utterances로 댓글 기능 추가, deploy.sh로 자동화](#5-contents-생성과-업로드)
 > 6. [Utterances로 댓글 기능 추가, deploy.sh로 자동화](utterances로-댓글-기능-추가-deploysh로-자동화)
 
-<br>
 
 - 마지막으로, 테마를 커스텀마이징하는 지름길과 후기를 남겼다. 
 
@@ -17,17 +16,16 @@
 
 - 위 과정들에서 필요한 개념들, 부딪혔던 error 및 해결책도 각 단계 마지막 부분에 작성했다.
 
-<br>
+
 
 🚩 동일한 주제로 다룬 블로그들을 보면 3단계와 4단계의 순서를 바꿔서 진행한다. 4단계 진행 후, 3단계를 진행해도 무방하다. 다만, 나는 그 과정에서 헷갈린 부분이 있어서 마지막에 theme 적용을 하기로 선택했다.
 
-<br>
+&nbsp;
 
 ---
 
 # 1. Static Site Generator 로 Hugo를 선택한 이유
 
-<br>
 
 ## 1.1 SSG란?
 
@@ -36,11 +34,11 @@
 - 그러면 SSG란 무엇인가?? 
 	- '정적 페이지(Static Site)'란 HTML, CSS, JS를 미리 올려서 서버가 바뀌지 않는 HTML page를 보여주는 것을 말하는데, 이 정적 페이지를 보다 간편하게 만들어주는 것이 `SSG(Static Site Generator)`다.   
 
-<br>
+
 
 > 이와 반대로 동적 페이지는 client에 반응하여 HTML page를 동적으로 만들어진 페이지를 말한다. 더 상세한 정보를 원하시는 분은 [정적 웹은 뭐고 동적 웹은 뭔가요?](https://bit.ly/3gVLiIi) 이 영상을 참고하시길 바란다.  
 
-<br>
+&nbsp;
 
 ## 1.2  SSG의 종류와 Hugo를 선택한 이유
 
@@ -76,7 +74,7 @@ Hugo
 	- 내가 원하는 디자인 대부분이 Hugo였다.
 	- 앞으로 계속해서 기술 블로그를 작성할 것이기 때문에, 빠른 빌드를 원했다.
 
-<br>
+&nbsp;
 
 ---
 
@@ -93,13 +91,13 @@ Hugo
 - 그러면 최종적으로 `https://github.com/user-name/` 을 가진다.    
 - github page의 url은 `[user-name].github.io` 로 가진다.  
 
-<br>
+
 
 ## 2.2 두 번째
 
 - 나는 visual studio code를 사용한다. [visual studio code](https://code.visualstudio.com/) 여기에 들어가 설치한다.
 
-<br>
+
 
 ## 2.3 세 번째
 
@@ -109,16 +107,14 @@ Hugo
     - cmd에 `echo %PATH%` 를 입력하여 추가한 경로가 있는지 확인한다.
     - 해제한 압축 파일에서 hugo 실행하여 설치 후, cmd에 `hugo version` 으로 동작 확인한다.
 
-<br>
+&nbsp;
 
 ---
 # 3. 새로운 2개 github repo 와 local 연결하기
 
 ## 3.1 Submodule 개념 이해하기
 
-❗ 이런 개념이 있구나 정도만 이해하고 3.1을 넘어가기. 이해하기 어렵다면 생략하고 바로 다음 3.2 chapter로 넘어가 따라해보자. 
-
-<br>
+이런 개념이 있구나 정도만 이해하고 3.1을 넘어가기. 이해하기 어렵다면 생략하고 바로 다음 3.2 chapter로 넘어가 따라해보자. 
 
 - 이 단계를 진행하기 전에 `submodule` 개념을 알아야 한다. 영어 독해가 가능하신 분들은 [How to Set Up a Hugo Site on Github Pages - with Git Submodules!](https://bit.ly/3sM7daw) 이 링크에 들어가 보시기 바란다. submodule에 대해 그림과 함께 잘 설명되어있다.
 아래 내용은 위 블로그에서 submodule에 대한 부분을 번역한 내용이다. 오역이 있다면 댓글로 알려주시면 감사하겠다.

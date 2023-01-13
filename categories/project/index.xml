@@ -38,12 +38,12 @@
     </item>
     
     <item>
-      <title>Project: DOM 생성과 fetch 사용을 위한 Javascript 학습 후기 및 각 과정에 일어난 개발 이슈</title>
-      <link>http://jeha00.github.io/post/project/js/01_dom_fetch/</link>
-      <pubDate>Tue, 15 Nov 2022 18:25:52 +0900</pubDate>
+      <title>Project: DOM 생성과 fetch 사용을 위한 Javascript 학습 후기 및 각 과정에 일어난 개발 issues</title>
+      <link>http://jeha00.github.io/post/project/js/dom_fetch_issue/</link>
+      <pubDate>Sun, 20 Nov 2022 18:25:52 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/js/01_dom_fetch/</guid>
-      <description>첫 번째, DOM 생성과 fetch 사용을 위한 Javascript 학습 후기와 각 과정에서 일어난 개발 이슈에 대해 정리해본다.</description>
+      <guid>http://jeha00.github.io/post/project/js/dom_fetch_issue/</guid>
+      <description>첫 번째, DOM 생성과 fetch 사용을 위한 Javascript 학습 후기를 남겨본다. 두 번째, DOM을 조작하여 개발한 과정과 fetch를 사용하여 개발한 각 과정에서 일어난 여러 개발 issue들에 대해 정리해본다.</description>
     </item>
     
     <item>
