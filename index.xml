@@ -859,6 +859,15 @@
     </item>
     
     <item>
+      <title>[TIL] Python basic 46: Metaclass</title>
+      <link>http://jeha00.github.io/post/python/python_basic_46_metaclass/</link>
+      <pubDate>Tue, 17 May 2022 17:53:25 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python/python_basic_46_metaclass/</guid>
+      <description>첫 번째,Type fuction을 통해서 Metaclass가 무엇인지, 그리고 class를 동적으로 만들어본다. 두 번째, Metaclass의 장점은 무엇이고, metaclass를 통해서 custom metaclass를 만들어본다.</description>
+    </item>
+    
+    <item>
       <title>[TIL] Python basic 45: Overriding vs Overloading</title>
       <link>http://jeha00.github.io/post/python/python_basic_45_overriding_overloading/</link>
       <pubDate>Sun, 15 May 2022 20:26:29 +0900</pubDate>
@@ -1097,7 +1106,7 @@ _</title>
       <pubDate>Tue, 22 Mar 2022 09:00:37 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/python/python_basic_28_namedtuple/</guid>
-      <description>Data Model의 한 종류인 namedtuple에 대해 알아보자.</description>
+      <description>Data Model의 한 종류인 namedtuple에 대해 알아보자. namedtuple을 사용하면 key 값이 생기면서 tuple의 특징이 유지되기 때문에 클래스보다도, 딕셔너리보다도 권장되는 데이터 타입이다.</description>
     </item>
     
     <item>
@@ -1106,7 +1115,7 @@ _</title>
       <pubDate>Mon, 21 Mar 2022 17:14:36 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/python/python_basic_27_specialmethod/</guid>
-      <description>지난 번 Python basic 26 Class advanced에 이어서 class 안에 정의되는 built-in method인 special method에 대해 알아보자.</description>
+      <description>지난 번 Python basic 26 Class advanced에 이어서 class 안에 정의되는 built-in method인 special method에 대해 알아보자. 또한 파이썬의 핵심 4가지에 대해 알아보자. 마지막으로 오버라이딩을 통해서 클래스끼리 연산해보자.</description>
     </item>
     
     <item>
