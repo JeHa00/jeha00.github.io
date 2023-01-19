@@ -29,6 +29,15 @@
     </item>
     
     <item>
+      <title>Project: Payment 개발 과정에서의 고려사항들과 개발 이슈들</title>
+      <link>http://jeha00.github.io/post/project/django/02_payment_issues/</link>
+      <pubDate>Tue, 06 Dec 2022 11:08:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/project/django/02_payment_issues/</guid>
+      <description>Payment 1차 기능을 개발하는 과정에서의 고려사항들과 개발 이슈들에 대해 정리해본다.</description>
+    </item>
+    
+    <item>
       <title>Project: Iamport를 선택한 이유, 사용 시 결제 과정과 장점, 그리고 아임포트 javascript SDK를 사용한 결제 흐름</title>
       <link>http://jeha00.github.io/post/project/django/01_payment_overall_flow/</link>
       <pubDate>Sun, 04 Dec 2022 14:56:16 +0900</pubDate>

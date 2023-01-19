@@ -83,6 +83,15 @@
     </item>
     
     <item>
+      <title>Project: Payment 개발 과정에서의 고려사항들과 개발 이슈들</title>
+      <link>http://jeha00.github.io/post/project/django/02_payment_issues/</link>
+      <pubDate>Tue, 06 Dec 2022 11:08:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/project/django/02_payment_issues/</guid>
+      <description>Payment 1차 기능을 개발하는 과정에서의 고려사항들과 개발 이슈들에 대해 정리해본다.</description>
+    </item>
+    
+    <item>
       <title>Project: Iamport를 선택한 이유, 사용 시 결제 과정과 장점, 그리고 아임포트 javascript SDK를 사용한 결제 흐름</title>
       <link>http://jeha00.github.io/post/project/django/01_payment_overall_flow/</link>
       <pubDate>Sun, 04 Dec 2022 14:56:16 +0900</pubDate>
@@ -214,7 +223,7 @@
       <pubDate>Fri, 28 Oct 2022 13:29:58 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/django/drf/drf_study01/</guid>
-      <description>Django의 library인 Django-RestFramework의 직렬화, 역직렬화 개념과 이를 사용하기 위한 Serializer를 작성해본다.</description>
+      <description>RESTful API가 무엇인지, 이를 간편하게 수행하는 Django의 library인 Django-RestFramework를 소개하고, 직렬화와 역직렬화 개념을 학습한다. 마지막으로 이를 사용하기 위한 Serializer를 작성해본다.</description>
     </item>
     
     <item>

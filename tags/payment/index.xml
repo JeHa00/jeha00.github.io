@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>payment on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/tags/payment/</link>
+    <description>Recent content in payment on Jeha00 DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 06 Dec 2022 11:08:59 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/payment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project: Payment 개발 과정에서의 고려사항들과 개발 이슈들</title>
+      <link>http://jeha00.github.io/post/project/django/02_payment_issues/</link>
+      <pubDate>Tue, 06 Dec 2022 11:08:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/project/django/02_payment_issues/</guid>
+      <description>Payment 1차 기능을 개발하는 과정에서의 고려사항들과 개발 이슈들에 대해 정리해본다.</description>
+    </item>
+    
+  </channel>
+</rss>

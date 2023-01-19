@@ -34,7 +34,7 @@
       <pubDate>Fri, 28 Oct 2022 13:29:58 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/django/drf/drf_study01/</guid>
-      <description>Django의 library인 Django-RestFramework의 직렬화, 역직렬화 개념과 이를 사용하기 위한 Serializer를 작성해본다.</description>
+      <description>RESTful API가 무엇인지, 이를 간편하게 수행하는 Django의 library인 Django-RestFramework를 소개하고, 직렬화와 역직렬화 개념을 학습한다. 마지막으로 이를 사용하기 위한 Serializer를 작성해본다.</description>
     </item>
     
     <item>
