@@ -83,6 +83,24 @@
     </item>
     
     <item>
+      <title>[TIL] Python basic 37: Coroutine</title>
+      <link>http://jeha00.github.io/post/python/python_basic_37_coroutine/</link>
+      <pubDate>Sat, 02 Apr 2022 21:15:33 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python/python_basic_37_coroutine/</guid>
+      <description>첫 번째, Thread, Multi-thread 그리고 Coroutine이 무엇인지 알아보면서, coroutine이 왜 중요한지를 이해한다. 두 번째, Coroutine을 구현해보면서 Generator와의 차이를 통해 Coroutine을 이해한다.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Python basic 36: Generator</title>
+      <link>http://jeha00.github.io/post/python/python_basic_36_generator/</link>
+      <pubDate>Fri, 01 Apr 2022 19:57:38 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python/python_basic_36_generator/</guid>
+      <description>Generator 1에 이어서 본격적으로 Generator에 대해 알아본다. 그리고, Generator와 관련된 중요 함수들도 알아본다.</description>
+    </item>
+    
+    <item>
       <title>[TIL] Python basic 35: 
 _
 _iter
