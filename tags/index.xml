@@ -9,7 +9,43 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 24 Jan 2023 16:24:41 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2023 21:54:56 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CAP Theorem</title>
+      <link>http://jeha00.github.io/tags/cap-theorem/</link>
+      <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/cap-theorem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DB</title>
+      <link>http://jeha00.github.io/tags/db/</link>
+      <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NoSQL</title>
+      <link>http://jeha00.github.io/tags/nosql/</link>
+      <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/nosql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RDBMS</title>
+      <link>http://jeha00.github.io/tags/rdbms/</link>
+      <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/tags/rdbms/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Book Study</title>
       <link>http://jeha00.github.io/tags/book-study/</link>
@@ -115,15 +151,6 @@
       <pubDate>Wed, 31 Aug 2022 14:23:03 +0900</pubDate>
       
       <guid>http://jeha00.github.io/tags/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DB</title>
-      <link>http://jeha00.github.io/tags/db/</link>
-      <pubDate>Fri, 26 Aug 2022 23:46:43 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/tags/db/</guid>
       <description></description>
     </item>
     

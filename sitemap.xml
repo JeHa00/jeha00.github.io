@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://jeha00.github.io/post/db/wanted/lecture_01/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/cap-theorem/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/db/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/categories/db/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/nosql/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/rdbms/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/tags/</loc>
+    <lastmod>2023-02-13T21:54:56+09:00</lastmod>
+  </url><url>
     <loc>http://jeha00.github.io/tags/book-study/</loc>
     <lastmod>2023-01-24T16:24:41+09:00</lastmod>
   </url><url>
@@ -9,18 +39,6 @@
     <lastmod>2023-01-24T16:24:41+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter10_writepythonicfunction/</loc>
-    <lastmod>2023-01-24T16:24:41+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2023-01-24T16:24:41+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/</loc>
-    <lastmod>2023-01-24T16:24:41+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2023-01-24T16:24:41+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/</loc>
     <lastmod>2023-01-24T16:24:41+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
@@ -217,15 +235,6 @@
   </url><url>
     <loc>http://jeha00.github.io/post/bookstudy/1-1-100/1-6day/</loc>
     <lastmod>2022-08-28T23:10:39+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/post/db/mysql_01/</loc>
-    <lastmod>2022-08-26T23:46:43+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/tags/db/</loc>
-    <lastmod>2022-08-26T23:46:43+09:00</lastmod>
-  </url><url>
-    <loc>http://jeha00.github.io/categories/db/</loc>
-    <lastmod>2022-08-26T23:46:43+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/html_css/study03/</loc>
     <lastmod>2022-08-12T22:35:43+09:00</lastmod>

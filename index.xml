@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 24 Jan 2023 16:24:41 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2023 21:54:56 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DB]원티드 프리온보딩 백엔드 챌린지 MySQL: DB 원칙과 종류 비교(RDBMS vs NoSQL, Row vs Column oriented) 그리고 CAP Theorem</title>
+      <link>http://jeha00.github.io/post/db/wanted/lecture_01/</link>
+      <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/db/wanted/lecture_01/</guid>
+      <description>데이터베이스의 3가지 원칙 / 데이터베이스의 종류 RDBMS와 NoSQL의 비교 / 또 다른 분류 기준인 row oriented db와 column oriented db의 차이 / DB 선정 시 고려할 CAP Theorem 에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>Book Study - 클린 코드, 이제는 파이썬이다: 파이썬다운 함수 만들기(Writing effective functions)</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter10_writepythonicfunction/</link>
@@ -449,15 +458,6 @@
       
       <guid>http://jeha00.github.io/post/bookstudy/1-1-100/1-6day/</guid>
       <description>IT 분야의 문해력을 기르기 위해서 꾸준히 매일 작은 지식들을 학습하고자 1일 1로그 100일 완성 IT 지식을 학습한다.</description>
-    </item>
-    
-    <item>
-      <title>[TIL] DB MySQL study: Query문 학습 1</title>
-      <link>http://jeha00.github.io/post/db/mysql_01/</link>
-      <pubDate>Fri, 26 Aug 2022 23:46:43 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/db/mysql_01/</guid>
-      <description>MySQL의 SQL에 대해 학습을 시작한다. SELECT, FROM, WHERE 와 비교연산자, 논리연산자, 산술연산자에 대해 학습해본다. 또한, 산술연산자에는 MySQL만의 오류가 있어서 날짜 계산 시, 어떻게 해야할지도 알아본다.</description>
     </item>
     
     <item>

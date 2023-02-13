@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>DB on Jeha00 DevLog</title>
-    <link>http://jeha00.github.io/categories/db/</link>
-    <description>Recent content in DB on Jeha00 DevLog</description>
+    <title>NoSQL on Jeha00 DevLog</title>
+    <link>http://jeha00.github.io/tags/nosql/</link>
+    <description>Recent content in NoSQL on Jeha00 DevLog</description>
     <image>
       <url>http://jeha00.github.io/47</url>
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 13 Feb 2023 21:54:56 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/db/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Feb 2023 21:54:56 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[DB]원티드 프리온보딩 백엔드 챌린지 MySQL: DB 원칙과 종류 비교(RDBMS vs NoSQL, Row vs Column oriented) 그리고 CAP Theorem</title>
       <link>http://jeha00.github.io/post/db/wanted/lecture_01/</link>
@@ -17,15 +17,6 @@
       
       <guid>http://jeha00.github.io/post/db/wanted/lecture_01/</guid>
       <description>데이터베이스의 3가지 원칙 / 데이터베이스의 종류 RDBMS와 NoSQL의 비교 / 또 다른 분류 기준인 row oriented db와 column oriented db의 차이 / DB 선정 시 고려할 CAP Theorem 에 대해 알아본다.</description>
-    </item>
-    
-    <item>
-      <title>[TIL] DB Introduction</title>
-      <link>http://jeha00.github.io/post/db/db_introduction/</link>
-      <pubDate>Mon, 20 Jun 2022 23:56:43 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/db/db_introduction/</guid>
-      <description>DB, SQL, RDBMS, NoSQL이란 각각 무엇이고, 앞으로 DB를 무엇부터 학습할지에 대한 이유를 서술했다.</description>
     </item>
     
   </channel>
