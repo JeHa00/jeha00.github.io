@@ -19,14 +19,5 @@
       <description>데이터베이스의 3가지 원칙 / 데이터베이스의 종류 RDBMS와 NoSQL의 비교 / 또 다른 분류 기준인 row oriented db와 column oriented db의 차이 / DB 선정 시 고려할 CAP Theorem 에 대해 알아본다.</description>
     </item>
     
-    <item>
-      <title>[TIL] DB Introduction</title>
-      <link>http://jeha00.github.io/post/db/db_introduction/</link>
-      <pubDate>Mon, 20 Jun 2022 23:56:43 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/db/db_introduction/</guid>
-      <description>DB, SQL, RDBMS, NoSQL이란 각각 무엇이고, 앞으로 DB를 무엇부터 학습할지에 대한 이유를 서술했다.</description>
-    </item>
-    
   </channel>
 </rss>
