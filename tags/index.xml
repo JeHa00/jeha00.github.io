@@ -9,40 +9,13 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 13 Feb 2023 21:54:56 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CAP Theorem</title>
-      <link>http://jeha00.github.io/tags/cap-theorem/</link>
-      <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/tags/cap-theorem/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Wed, 15 Feb 2023 01:12:29 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DB</title>
       <link>http://jeha00.github.io/tags/db/</link>
-      <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
+      <pubDate>Wed, 15 Feb 2023 01:12:29 +0900</pubDate>
       
       <guid>http://jeha00.github.io/tags/db/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NoSQL</title>
-      <link>http://jeha00.github.io/tags/nosql/</link>
-      <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/tags/nosql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RDBMS</title>
-      <link>http://jeha00.github.io/tags/rdbms/</link>
-      <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/tags/rdbms/</guid>
       <description></description>
     </item>
     
