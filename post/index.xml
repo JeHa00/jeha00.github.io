@@ -75,19 +75,19 @@
     
     <item>
       <title>Project: deployment issue - S3 CORS</title>
-      <link>http://jeha00.github.io/post/project/deployment/02_deployment_cors/</link>
+      <link>http://jeha00.github.io/post/project/devket/deployment/02_deployment_cors/</link>
       <pubDate>Mon, 12 Dec 2022 19:33:59 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/deployment/02_deployment_cors/</guid>
+      <guid>http://jeha00.github.io/post/project/devket/deployment/02_deployment_cors/</guid>
       <description>배포 후 발생한 S3 CORS issue에 대해 알아본다. 이 과정에서 CORS란 무엇이고 이를 헤결하기 위해서 어떤 header를 어떻게 추가하는지 알아본다.</description>
     </item>
     
     <item>
       <title>Project: Docker를 사용하여 django app 배포하기</title>
-      <link>http://jeha00.github.io/post/project/deployment/01_deployment/</link>
+      <link>http://jeha00.github.io/post/project/devket/deployment/01_deployment/</link>
       <pubDate>Thu, 08 Dec 2022 14:43:44 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/deployment/01_deployment/</guid>
+      <guid>http://jeha00.github.io/post/project/devket/deployment/01_deployment/</guid>
       <description>docker compose를 사용하여 nginx, gunicorn, AWS S3, AWS RDS와 연결된 django application을 배포한다. 이때, AWS S3에 접근하기 위해서 AWS IAM을 사용한다. static files에 연결하는 방식으로 3가지를 사용했다.</description>
     </item>
     
@@ -102,19 +102,19 @@
     
     <item>
       <title>Project: Payment 개발 과정에서의 고려사항들과 개발 이슈들</title>
-      <link>http://jeha00.github.io/post/project/django/02_payment_issues/</link>
+      <link>http://jeha00.github.io/post/project/devket/django/02_payment_issues/</link>
       <pubDate>Tue, 06 Dec 2022 11:08:59 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/django/02_payment_issues/</guid>
+      <guid>http://jeha00.github.io/post/project/devket/django/02_payment_issues/</guid>
       <description>Payment 1차 기능을 개발하는 과정에서의 고려사항들과 개발 이슈들에 대해 정리해본다.</description>
     </item>
     
     <item>
       <title>Project: Iamport를 선택한 이유, 사용 시 결제 과정과 장점, 그리고 아임포트 javascript SDK를 사용한 결제 흐름</title>
-      <link>http://jeha00.github.io/post/project/django/01_payment_overall_flow/</link>
+      <link>http://jeha00.github.io/post/project/devket/django/01_payment_overall_flow/</link>
       <pubDate>Sun, 04 Dec 2022 14:56:16 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/django/01_payment_overall_flow/</guid>
+      <guid>http://jeha00.github.io/post/project/devket/django/01_payment_overall_flow/</guid>
       <description>기존 결제 과정과 iamport를 사용 시 변한 결제 과정을 정리하고, iamport 사용 시 얻는 장점들에 대해 정리해본다. 마지막으로 프로젝트에서 아임포트 javascript SDK를 사용한 결제 흐름을 정리해본다.</description>
     </item>
     
@@ -174,10 +174,10 @@
     
     <item>
       <title>Project: DOM 생성과 fetch 사용을 위한 Javascript 학습 후기 및 각 과정에 일어난 개발 issues</title>
-      <link>http://jeha00.github.io/post/project/js/dom_fetch_issue/</link>
+      <link>http://jeha00.github.io/post/project/devket/js/dom_fetch_issue/</link>
       <pubDate>Sun, 20 Nov 2022 18:25:52 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/js/dom_fetch_issue/</guid>
+      <guid>http://jeha00.github.io/post/project/devket/js/dom_fetch_issue/</guid>
       <description>첫 번째, DOM 생성과 fetch 사용을 위한 Javascript 학습 후기를 남겨본다. 두 번째, DOM을 조작하여 개발한 과정과 fetch를 사용하여 개발한 각 과정에서 일어난 여러 개발 issue들에 대해 정리해본다.</description>
     </item>
     
@@ -210,10 +210,10 @@
     
     <item>
       <title>Project: Pull Request templates를 도입한 이유</title>
-      <link>http://jeha00.github.io/post/project/docs/01_why-pr-template/</link>
+      <link>http://jeha00.github.io/post/project/devket/docs/why-pr-template/</link>
       <pubDate>Thu, 03 Nov 2022 13:37:52 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/docs/01_why-pr-template/</guid>
+      <guid>http://jeha00.github.io/post/project/devket/docs/why-pr-template/</guid>
       <description>프로젝트 진행에 Pull Request templates를 사용하는 이유와 적절한 PR size는 얼만큼 정했는지에 대해 공유해본다.</description>
     </item>
     
@@ -299,11 +299,11 @@
     </item>
     
     <item>
-      <title>Book Study - 함께 자라기: 애자일로 가는 길 review 01</title>
-      <link>http://jeha00.github.io/post/bookstudy/agile/review01/</link>
+      <title>Book Study - 함께 자라기: 애자일로 가는 길 review</title>
+      <link>http://jeha00.github.io/post/bookstudy/agile/review/</link>
       <pubDate>Mon, 19 Sep 2022 23:04:19 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/bookstudy/agile/review01/</guid>
+      <guid>http://jeha00.github.io/post/bookstudy/agile/review/</guid>
       <description>김창준님이 작성하신 함께 자라기- 애자일로 가는 길에 대한 후기</description>
     </item>
     
@@ -1395,10 +1395,10 @@ _&amp;rsquo; 에 대해 알아본다.</description>
     
     <item>
       <title></title>
-      <link>http://jeha00.github.io/post/project/django/db_modeling_question/</link>
+      <link>http://jeha00.github.io/post/project/devket/django/db_modeling_question/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://jeha00.github.io/post/project/django/db_modeling_question/</guid>
+      <guid>http://jeha00.github.io/post/project/devket/django/db_modeling_question/</guid>
       <description>models.py에서 Field로 선언되는 것들은 각 인스턴스 간에 값이 공유되는 클래스 변수가 아니라, 클래스 공간에 선언되는
 디스크립터(Descriptor) 객체다.
 Email model 관련 질문 authentication_check 는 인증 여부에 대한 속성값인데, pocket에서 인증하는게 있는가?
@@ -1407,17 +1407,6 @@ User model 관련 질문 upload_to=f&amp;quot;profile/&amp;ldquo;에서 f-string
 password 속성에서 max_length = 15에서 128로 왜 수정했는지?
 USERNAME_FIELD 를 &amp;lsquo;password&amp;rsquo;로 수정한 이유
 Site model 관련 질문 thumbnail_url에서 max_length로 2000을 한 이유 url = models.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://jeha00.github.io/post/project/jwt-study/settings/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://jeha00.github.io/post/project/jwt-study/settings/</guid>
-      <description>settings.py 의 SIMPLE_JWT 상수 설정의 의미들
-https://django-rest-framework-simplejwt.readthedocs.io/en/latest/settings.html#access-token-lifetime
-1 2 3 4 5 6 7 8 9 from datetime import timedelta SIMPLE_JWT = { &amp;#39;ACCESS_TOKEN_LIFETIME&amp;#39;: timedelta(hours=2), &amp;#39;REFRESH_TOKEN_LIFETIME&amp;#39;: timedelta(days=1), &amp;#39;ROTATE_REFRESH_TOKENS&amp;#39;: False, &amp;#39;BLACKLIST_AFTER_ROTATION&amp;#39;: True, &amp;#39;TOKEN_USER_CLASS&amp;#39;: &amp;#39;pocket.User&amp;#39;, } </description>
     </item>
     
   </channel>
