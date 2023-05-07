@@ -39,64 +39,64 @@
     
     <item>
       <title>[TIL] Network HTTP Header 2</title>
-      <link>http://jeha00.github.io/post/network/network_http_8/</link>
+      <link>http://jeha00.github.io/post/network/http_8/</link>
       <pubDate>Fri, 18 Mar 2022 21:51:01 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/network_http_8/</guid>
+      <guid>http://jeha00.github.io/post/network/http_8/</guid>
       <description>검증 헤더와 조건부 요청 헤더의 종류, 그중 캐시 관련 헤더에 대해서 알아본다. 그리고, 프록시 서버와 원(Origin) 서버의 차이와 캐시를 어떻게 무효화하는지 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP Header 1</title>
-      <link>http://jeha00.github.io/post/network/network_http_7/</link>
+      <link>http://jeha00.github.io/post/network/http_7/</link>
       <pubDate>Thu, 17 Mar 2022 20:17:50 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/network_http_7/</guid>
+      <guid>http://jeha00.github.io/post/network/http_7/</guid>
       <description>representation, 콘텐츠 협상, 전송 방식, 일반 정보, 특별 정보, 인증 그리고 쿠키에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP method use</title>
-      <link>http://jeha00.github.io/post/network/network_http_5/</link>
+      <link>http://jeha00.github.io/post/network/http_5/</link>
       <pubDate>Mon, 14 Mar 2022 21:41:29 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/network_http_5/</guid>
+      <guid>http://jeha00.github.io/post/network/http_5/</guid>
       <description>HTTP method를 가지고 클라이언트가 서버에 어떻게 데이터를 전송하는지, 그리고 API 설계에는 무슨 종류가 있는지 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP method</title>
-      <link>http://jeha00.github.io/post/network/network_http_4/</link>
+      <link>http://jeha00.github.io/post/network/http_4/</link>
       <pubDate>Thu, 10 Mar 2022 20:32:24 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/network_http_4/</guid>
+      <guid>http://jeha00.github.io/post/network/http_4/</guid>
       <description>HTTP method인 GET, POST, PUT, PATCH, DELETE 그리고 속성에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP basic</title>
-      <link>http://jeha00.github.io/post/network/network_http_3/</link>
+      <link>http://jeha00.github.io/post/network/http_3/</link>
       <pubDate>Wed, 09 Mar 2022 17:56:30 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/network_http_3/</guid>
+      <guid>http://jeha00.github.io/post/network/http_3/</guid>
       <description>HTTP란 무엇이고, HTTP의 특징인 클라이언트 서버 구조, stateless, connectionless, HTTP mesage에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP intro. 2: URI 와 웹 브라우저 요청 흐름</title>
-      <link>http://jeha00.github.io/post/network/network_http_2/</link>
+      <link>http://jeha00.github.io/post/network/http_2/</link>
       <pubDate>Tue, 08 Mar 2022 11:50:46 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/network_http_2/</guid>
+      <guid>http://jeha00.github.io/post/network/http_2/</guid>
       <description>URI, URL, URN 에 대해 알아보고, 웹 브라우저의 요청 흐름에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP intro. 1: Internet network</title>
-      <link>http://jeha00.github.io/post/network/network_http_1/</link>
+      <link>http://jeha00.github.io/post/network/http_1/</link>
       <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/network_http_1/</guid>
+      <guid>http://jeha00.github.io/post/network/http_1/</guid>
       <description>HTTP를 학습하기 위해 사전지식으로 IP,TCP/UDP, PORT, DNS를 알아본다.</description>
     </item>
     
