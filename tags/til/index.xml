@@ -173,12 +173,12 @@
     </item>
     
     <item>
-      <title>[TIL]Web Application Basic study: 1,2,3 계층</title>
-      <link>http://jeha00.github.io/post/network/webapplicationbasic02/</link>
+      <title>[TIL]Web Application Basic study: OSI 7 layer outline</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/0_outline/</link>
       <pubDate>Tue, 30 Aug 2022 18:50:58 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/webapplicationbasic02/</guid>
-      <description>OSI 7 layer는 전체적으로 무슨 층으로 구성되어 있고, 1 계층인 물리계층, 2 계층인 데이터링크 계층, 3 계층인 네트워크 계층에 대해 알아본다.</description>
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/0_outline/</guid>
+      <description>OSI 7 layer는 전체적으로 무슨 층으로, 무슨 프로토콜로, 각 계층의 데이터 타입은 무엇이고, 각 주요 기기들은 무엇인지 통합적으로 알아본다.</description>
     </item>
     
     <item>
