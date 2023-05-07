@@ -9,16 +9,7 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 31 Aug 2022 14:23:03 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[TIL]Web Application Basic study: 4, 5, 6, 7 계층</title>
-      <link>http://jeha00.github.io/post/network/webapplicationbasic03/</link>
-      <pubDate>Wed, 31 Aug 2022 14:23:03 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/network/webapplicationbasic03/</guid>
-      <description>이번에는 4계층부터 7계층까지 각각 학습해본다.</description>
-    </item>
-    
+    <lastBuildDate>Tue, 30 Aug 2022 18:50:58 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[TIL]Web Application Basic study: OSI 7 layer outline</title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/0_outline/</link>
@@ -30,10 +21,10 @@
     
     <item>
       <title>[TIL]Web Application Basic study: client와 server / web server structure</title>
-      <link>http://jeha00.github.io/post/network/webapplicationbasic01/</link>
+      <link>http://jeha00.github.io/post/network/clientandserver_webserver/</link>
       <pubDate>Mon, 29 Aug 2022 17:14:46 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/webapplicationbasic01/</guid>
+      <guid>http://jeha00.github.io/post/network/clientandserver_webserver/</guid>
       <description>클라이언트와 서버란 무엇인지, 서버의 종류에는 무엇이 있고, 웹서버 - WSGI - 웹 애플리케이션 - DB라는 서버 구조에서 각각에 대해 알아본다.</description>
     </item>
     

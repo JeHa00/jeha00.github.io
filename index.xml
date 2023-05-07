@@ -371,15 +371,6 @@
     </item>
     
     <item>
-      <title>[TIL]Web Application Basic study: 4, 5, 6, 7 계층</title>
-      <link>http://jeha00.github.io/post/network/webapplicationbasic03/</link>
-      <pubDate>Wed, 31 Aug 2022 14:23:03 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/network/webapplicationbasic03/</guid>
-      <description>이번에는 4계층부터 7계층까지 각각 학습해본다.</description>
-    </item>
-    
-    <item>
       <title>[TIL]Web Application Basic study: OSI 7 layer outline</title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/0_outline/</link>
       <pubDate>Tue, 30 Aug 2022 18:50:58 +0900</pubDate>
@@ -390,10 +381,10 @@
     
     <item>
       <title>[TIL]Web Application Basic study: client와 server / web server structure</title>
-      <link>http://jeha00.github.io/post/network/webapplicationbasic01/</link>
+      <link>http://jeha00.github.io/post/network/clientandserver_webserver/</link>
       <pubDate>Mon, 29 Aug 2022 17:14:46 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/webapplicationbasic01/</guid>
+      <guid>http://jeha00.github.io/post/network/clientandserver_webserver/</guid>
       <description>클라이언트와 서버란 무엇인지, 서버의 종류에는 무엇이 있고, 웹서버 - WSGI - 웹 애플리케이션 - DB라는 서버 구조에서 각각에 대해 알아본다.</description>
     </item>
     
@@ -1395,10 +1386,28 @@ _&amp;rsquo; 에 대해 알아본다.</description>
     
     <item>
       <title></title>
-      <link>http://jeha00.github.io/post/network/webapplicationbasic02/</link>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/3_4_layer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/webapplicationbasic02/</guid>
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/3_4_layer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/5_6_7_layer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/5_6_7_layer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/webapplicationbasic02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/webapplicationbasic02/</guid>
       <description>1계층: 물리계층 데이터를 0과 1로 구성된 데이터로 바꾼 후, 이를 전기신호로 바꿔서 보낸다. 그리고, 수신할 때는 이 전기신호를 0과 1로 바꾸고, 이를 다시 데이터로 바꾸는 계층이다.
 물리계층에서는 물리 장치인 랜선과 랜카드가 필요하다.
 LAN card 0과 1로 구성된 데이터를 전기 신호로 바꾸는 역할 1계층 장비: 허브(Hub) 이 허브에 여러 개의 포트가 있고, 이 허브를 통해 다른 컴퓨터로 전송한다.
