@@ -9,7 +9,25 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 15 Feb 2023 01:12:29 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 May 2023 21:14:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL] Network OSI 7 layer: 2계층 데이터 링크 계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/2_layer/</link>
+      <pubDate>Sun, 14 May 2023 21:14:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/2_layer/</guid>
+      <description>OSI 7 layer에서 2계층에 대해 더 깊이 알아보자.</description>
+    </item>
+    
+    <item>
+      <title>[TIL] Network OSI 7 layer: 1계층 물리 계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/1_layer/</link>
+      <pubDate>Sun, 07 May 2023 21:14:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/1_layer/</guid>
+      <description>OSI 7 layer에서 데이터를 전기 신호로 변환하여 전송매체로 보내는 1계층에 대해 더 깊이 알아보자.</description>
+    </item>
+    
     <item>
       <title>[DB]원티드 프리온보딩 백엔드 챌린지 MySQL: MySQL storage engine의 종류들, Transaction, Database Lock, Isolation Level</title>
       <link>http://jeha00.github.io/post/db/wanted/lecture_02/</link>
@@ -1386,11 +1404,23 @@ _&amp;rsquo; 에 대해 알아본다.</description>
     
     <item>
       <title></title>
+      <link>http://jeha00.github.io/post/aws/wanted/intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://jeha00.github.io/post/aws/wanted/intro/</guid>
+      <description>왜 많은 회사들에서 AWS 인프라를 이용하는지
+AWS에서 제공하는 여러 가상 서버 서비스에 대해 논의
+AWS에서 제공하는 메세지 큐와 DB를 언제 어느 인프라에 사용해야하는데
+여태 배운 인프라로 간단한 서버 만들기</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/3_4_layer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://jeha00.github.io/post/network/osi_7_layer/3_4_layer/</guid>
-      <description></description>
+      <description>0. Introduction [TIL]Web Application Basic study: OSI 7 layer outline [TIL] Network OSI 7 layer: 1계층과 2계층 Reference 나노디그리 러닝스푼즈: Python &amp;amp; Django backend course 네트워크, 그림으로 이해해자 </description>
     </item>
     
     <item>
@@ -1399,7 +1429,7 @@ _&amp;rsquo; 에 대해 알아본다.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://jeha00.github.io/post/network/osi_7_layer/5_6_7_layer/</guid>
-      <description></description>
+      <description>0. Introduction [TIL]Web Application Basic study: OSI 7 layer outline [TIL] Network OSI 7 layer: 1계층과 2계층 [TIL] Network OSI 7 layer: 3계층과 4계층 Reference 나노디그리 러닝스푼즈: Python &amp;amp; Django backend course 네트워크, 그림으로 이해해자 </description>
     </item>
     
     <item>
@@ -1408,10 +1438,10 @@ _&amp;rsquo; 에 대해 알아본다.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://jeha00.github.io/post/network/osi_7_layer/webapplicationbasic02/</guid>
-      <description>1계층: 물리계층 데이터를 0과 1로 구성된 데이터로 바꾼 후, 이를 전기신호로 바꿔서 보낸다. 그리고, 수신할 때는 이 전기신호를 0과 1로 바꾸고, 이를 다시 데이터로 바꾸는 계층이다.
-물리계층에서는 물리 장치인 랜선과 랜카드가 필요하다.
-LAN card 0과 1로 구성된 데이터를 전기 신호로 바꾸는 역할 1계층 장비: 허브(Hub) 이 허브에 여러 개의 포트가 있고, 이 허브를 통해 다른 컴퓨터로 전송한다.
-❗️ 단점: 이 허브는 받는 상대를 지정할 수 없다. 허브의 포트에 연결된 모든 컴퓨터에게 보내진다.</description>
+      <description>2계층: 데이터링크 계층 Data Link Layer로, 네트워크 장비 사이의 신호를 주고 받는 &amp;lsquo;규칙을 정하는&amp;rsquo; 층으로서, 스위치라는 장비를 이용해 스위치에 연결되어 있는 컴퓨터들이 이더넷이라는 규칙하에 프레임을 주고 받는다.
+이더넷(ethernet) 랜(LAN, Local Area Network)에 적용되는 규칙으로, 랜선을 꽂을 때 여러 선들이 있는데 이 선들에 대한 규칙을 말한다.
+스위치와 같은 장비를 이용해 데이터를 주고 받을 때 사용하는 규칙 맥 주소(Mac Address) LAN 카드에는 맥 주소(48비트)가 할당되어 있다.
+맥 주소 = 랜카드 제조사 번호(앞 부분) + 랜카드 제조사가 랜카드에 할당한 번호(뒷 부분)</description>
     </item>
     
     <item>

@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 15 Feb 2023 01:12:29 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 May 2023 21:14:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Network</title>
+      <link>http://jeha00.github.io/categories/network/</link>
+      <pubDate>Sun, 14 May 2023 21:14:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/categories/network/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DB</title>
       <link>http://jeha00.github.io/categories/db/</link>
@@ -70,15 +79,6 @@
       <pubDate>Mon, 12 Sep 2022 15:00:46 +0900</pubDate>
       
       <guid>http://jeha00.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>http://jeha00.github.io/categories/network/</link>
-      <pubDate>Tue, 30 Aug 2022 18:50:58 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/categories/network/</guid>
       <description></description>
     </item>
     
