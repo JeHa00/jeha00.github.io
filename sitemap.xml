@@ -206,7 +206,7 @@
     <loc>http://jeha00.github.io/post/network/osi_7_layer/0_outline/</loc>
     <lastmod>2022-08-30T18:50:58+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/clientandserver_webserver/</loc>
+    <loc>http://jeha00.github.io/post/network/webserver/clientandserver_webserver/</loc>
     <lastmod>2022-08-29T17:14:46+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/html_css/study03/</loc>
@@ -455,22 +455,22 @@
     <loc>http://jeha00.github.io/post/python/python_basic_27_specialmethod/</loc>
     <lastmod>2022-03-21T17:14:36+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/http_8/</loc>
+    <loc>http://jeha00.github.io/post/network/http/http_8/</loc>
     <lastmod>2022-03-18T21:51:01+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/http/</loc>
     <lastmod>2022-03-18T21:51:01+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/http_7/</loc>
+    <loc>http://jeha00.github.io/post/network/http/http_7/</loc>
     <lastmod>2022-03-17T20:17:50+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/python/python_basic_26_class2/</loc>
     <lastmod>2022-03-16T14:28:39+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/http_6/</loc>
+    <loc>http://jeha00.github.io/post/network/http/http_6/</loc>
     <lastmod>2022-03-15T10:14:50+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/http_5/</loc>
+    <loc>http://jeha00.github.io/post/network/http/http_5/</loc>
     <lastmod>2022-03-14T21:41:29+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/python/python_basic_25_str_repr/</loc>
@@ -482,16 +482,16 @@
     <loc>http://jeha00.github.io/post/python/python_basic_23_ifnamemain/</loc>
     <lastmod>2022-03-11T20:33:01+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/http_4/</loc>
+    <loc>http://jeha00.github.io/post/network/http/http_4/</loc>
     <lastmod>2022-03-10T20:32:24+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/http_3/</loc>
+    <loc>http://jeha00.github.io/post/network/http/http_3/</loc>
     <lastmod>2022-03-09T17:56:30+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/http_2/</loc>
+    <loc>http://jeha00.github.io/post/network/http/http_2/</loc>
     <lastmod>2022-03-08T11:50:46+09:00</lastmod>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/http_1/</loc>
+    <loc>http://jeha00.github.io/post/network/http/http_1/</loc>
     <lastmod>2022-03-07T21:16:44+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/python/python_basic_22_nonetypeerror/</loc>
@@ -568,11 +568,9 @@
   </url><url>
     <loc>http://jeha00.github.io/post/aws/wanted/intro/</loc>
   </url><url>
-    <loc>http://jeha00.github.io/post/network/osi_7_layer/3_4_layer/</loc>
+    <loc>http://jeha00.github.io/post/network/osi_7_layer/3%EA%B3%84%EC%B8%B5/</loc>
   </url><url>
     <loc>http://jeha00.github.io/post/network/osi_7_layer/5_6_7_layer/</loc>
-  </url><url>
-    <loc>http://jeha00.github.io/post/network/osi_7_layer/webapplicationbasic02/</loc>
   </url><url>
     <loc>http://jeha00.github.io/post/project/devket/django/db_modeling_question/</loc>
   </url><url>

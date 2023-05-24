@@ -16,7 +16,7 @@
       <pubDate>Sun, 14 May 2023 21:14:44 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/network/osi_7_layer/2_layer/</guid>
-      <description>OSI 7 layer에서 2계층에 대해 더 깊이 알아보자.</description>
+      <description>OSI 7 layer에서 &amp;lsquo;네트워크 기기&amp;rsquo; 간의 데이터 전송과 물리 주소를 결정하는 계층인 2계층에 대해 더 알아보자.</description>
     </item>
     
     <item>
@@ -399,10 +399,10 @@
     
     <item>
       <title>[TIL]Web Application Basic study: client와 server / web server structure</title>
-      <link>http://jeha00.github.io/post/network/clientandserver_webserver/</link>
+      <link>http://jeha00.github.io/post/network/webserver/clientandserver_webserver/</link>
       <pubDate>Mon, 29 Aug 2022 17:14:46 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/clientandserver_webserver/</guid>
+      <guid>http://jeha00.github.io/post/network/webserver/clientandserver_webserver/</guid>
       <description>클라이언트와 서버란 무엇인지, 서버의 종류에는 무엇이 있고, 웹서버 - WSGI - 웹 애플리케이션 - DB라는 서버 구조에서 각각에 대해 알아본다.</description>
     </item>
     
@@ -1057,19 +1057,19 @@ _</title>
     
     <item>
       <title>[TIL] Network HTTP Header 2</title>
-      <link>http://jeha00.github.io/post/network/http_8/</link>
+      <link>http://jeha00.github.io/post/network/http/http_8/</link>
       <pubDate>Fri, 18 Mar 2022 21:51:01 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/http_8/</guid>
+      <guid>http://jeha00.github.io/post/network/http/http_8/</guid>
       <description>검증 헤더와 조건부 요청 헤더의 종류, 그중 캐시 관련 헤더에 대해서 알아본다. 그리고, 프록시 서버와 원(Origin) 서버의 차이와 캐시를 어떻게 무효화하는지 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP Header 1</title>
-      <link>http://jeha00.github.io/post/network/http_7/</link>
+      <link>http://jeha00.github.io/post/network/http/http_7/</link>
       <pubDate>Thu, 17 Mar 2022 20:17:50 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/http_7/</guid>
+      <guid>http://jeha00.github.io/post/network/http/http_7/</guid>
       <description>representation, 콘텐츠 협상, 전송 방식, 일반 정보, 특별 정보, 인증 그리고 쿠키에 대해 알아본다.</description>
     </item>
     
@@ -1084,19 +1084,19 @@ _</title>
     
     <item>
       <title>[TIL] Network HTTP status</title>
-      <link>http://jeha00.github.io/post/network/http_6/</link>
+      <link>http://jeha00.github.io/post/network/http/http_6/</link>
       <pubDate>Tue, 15 Mar 2022 10:14:50 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/http_6/</guid>
+      <guid>http://jeha00.github.io/post/network/http/http_6/</guid>
       <description>HTTP status 2xx, 3xx, 4xx, 5xx에 대해 각각 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP method use</title>
-      <link>http://jeha00.github.io/post/network/http_5/</link>
+      <link>http://jeha00.github.io/post/network/http/http_5/</link>
       <pubDate>Mon, 14 Mar 2022 21:41:29 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/http_5/</guid>
+      <guid>http://jeha00.github.io/post/network/http/http_5/</guid>
       <description>HTTP method를 가지고 클라이언트가 서버에 어떻게 데이터를 전송하는지, 그리고 API 설계에는 무슨 종류가 있는지 알아본다.</description>
     </item>
     
@@ -1161,37 +1161,37 @@ _&amp;rsquo; 에 대해 알아본다.</description>
     
     <item>
       <title>[TIL] Network HTTP method</title>
-      <link>http://jeha00.github.io/post/network/http_4/</link>
+      <link>http://jeha00.github.io/post/network/http/http_4/</link>
       <pubDate>Thu, 10 Mar 2022 20:32:24 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/http_4/</guid>
+      <guid>http://jeha00.github.io/post/network/http/http_4/</guid>
       <description>HTTP method인 GET, POST, PUT, PATCH, DELETE 그리고 속성에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP basic</title>
-      <link>http://jeha00.github.io/post/network/http_3/</link>
+      <link>http://jeha00.github.io/post/network/http/http_3/</link>
       <pubDate>Wed, 09 Mar 2022 17:56:30 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/http_3/</guid>
+      <guid>http://jeha00.github.io/post/network/http/http_3/</guid>
       <description>HTTP란 무엇이고, HTTP의 특징인 클라이언트 서버 구조, stateless, connectionless, HTTP mesage에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP intro. 2: URI 와 웹 브라우저 요청 흐름</title>
-      <link>http://jeha00.github.io/post/network/http_2/</link>
+      <link>http://jeha00.github.io/post/network/http/http_2/</link>
       <pubDate>Tue, 08 Mar 2022 11:50:46 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/http_2/</guid>
+      <guid>http://jeha00.github.io/post/network/http/http_2/</guid>
       <description>URI, URL, URN 에 대해 알아보고, 웹 브라우저의 요청 흐름에 대해 알아본다.</description>
     </item>
     
     <item>
       <title>[TIL] Network HTTP intro. 1: Internet network</title>
-      <link>http://jeha00.github.io/post/network/http_1/</link>
+      <link>http://jeha00.github.io/post/network/http/http_1/</link>
       <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/http_1/</guid>
+      <guid>http://jeha00.github.io/post/network/http/http_1/</guid>
       <description>HTTP를 학습하기 위해 사전지식으로 IP,TCP/UDP, PORT, DNS를 알아본다.</description>
     </item>
     
@@ -1416,11 +1416,15 @@ AWS에서 제공하는 메세지 큐와 DB를 언제 어느 인프라에 사용�
     
     <item>
       <title></title>
-      <link>http://jeha00.github.io/post/network/osi_7_layer/3_4_layer/</link>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/3%EA%B3%84%EC%B8%B5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://jeha00.github.io/post/network/osi_7_layer/3_4_layer/</guid>
-      <description>0. Introduction [TIL]Web Application Basic study: OSI 7 layer outline [TIL] Network OSI 7 layer: 1계층과 2계층 Reference 나노디그리 러닝스푼즈: Python &amp;amp; Django backend course 네트워크, 그림으로 이해해자 </description>
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/3%EA%B3%84%EC%B8%B5/</guid>
+      <description>3계층: 네트워크 계층 굉장히 중요한 계층으로, 3계층 장비인 라우터에 스위치에 연결되어 있어서 각 스위치로 전달한다.
+네트워크란? 하나의 스위치에 연결되어 있는 컴퓨터의 모음 인데, 그러면 서로 다른 네트워크에 있는 컴퓨터들은 어떻게 데이터를 주고 받을까???
+네트워크 계층에서는 라우터라는 장비를 사용한다.
+이 라우터라는 장비는 2계층의 스위치와 1계층의 허브 기능을 모두 포함한다. 요즘은 스위치와 라우터를 혼용해서 언급하기도 한다.
+각 계층에서의 장비, 주소, 비트 계층 사용 장비 주소 비트, 진수 1계층: 허브사용 2계층: 스위치 사용 MAC 주소를 사용 48비트, 16진수 3계층: 라우터 사용 IP 주소를 사용 32비트, 10진수 네트워크 계층에서도 header를 붙히는데 IP 헤더라고 부른다.</description>
     </item>
     
     <item>
@@ -1430,18 +1434,6 @@ AWS에서 제공하는 메세지 큐와 DB를 언제 어느 인프라에 사용�
       
       <guid>http://jeha00.github.io/post/network/osi_7_layer/5_6_7_layer/</guid>
       <description>0. Introduction [TIL]Web Application Basic study: OSI 7 layer outline [TIL] Network OSI 7 layer: 1계층과 2계층 [TIL] Network OSI 7 layer: 3계층과 4계층 Reference 나노디그리 러닝스푼즈: Python &amp;amp; Django backend course 네트워크, 그림으로 이해해자 </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://jeha00.github.io/post/network/osi_7_layer/webapplicationbasic02/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://jeha00.github.io/post/network/osi_7_layer/webapplicationbasic02/</guid>
-      <description>2계층: 데이터링크 계층 Data Link Layer로, 네트워크 장비 사이의 신호를 주고 받는 &amp;lsquo;규칙을 정하는&amp;rsquo; 층으로서, 스위치라는 장비를 이용해 스위치에 연결되어 있는 컴퓨터들이 이더넷이라는 규칙하에 프레임을 주고 받는다.
-이더넷(ethernet) 랜(LAN, Local Area Network)에 적용되는 규칙으로, 랜선을 꽂을 때 여러 선들이 있는데 이 선들에 대한 규칙을 말한다.
-스위치와 같은 장비를 이용해 데이터를 주고 받을 때 사용하는 규칙 맥 주소(Mac Address) LAN 카드에는 맥 주소(48비트)가 할당되어 있다.
-맥 주소 = 랜카드 제조사 번호(앞 부분) + 랜카드 제조사가 랜카드에 할당한 번호(뒷 부분)</description>
     </item>
     
     <item>
