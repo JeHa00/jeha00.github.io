@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>docker on Jeha DevLog</title>
+    <title>Docker on Jeha DevLog</title>
     <link>http://jeha00.github.io/categories/docker/</link>
-    <description>Recent content in docker on Jeha DevLog</description>
+    <description>Recent content in Docker on Jeha DevLog</description>
     <image>
       <url>http://jeha00.github.io/47</url>
       <link>http://jeha00.github.io/47</link>
@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 08 Dec 2022 13:42:28 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Docker study: Docker-compose로 nginx, django, postgreSQL을 연결하고 배포하기</title>
+      <title>Docker-compose로 nginx, django, postgreSQL을 연결하고 배포하기</title>
       <link>http://jeha00.github.io/post/docker/04_deployment-by-docker/</link>
       <pubDate>Thu, 08 Dec 2022 13:42:28 +0900</pubDate>
       
@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>Docker study: Docker command list 02</title>
+      <title>Docker command list 02</title>
       <link>http://jeha00.github.io/post/docker/00_docker-commands-02/</link>
       <pubDate>Sat, 03 Dec 2022 18:13:58 +0900</pubDate>
       
@@ -29,7 +29,7 @@
     </item>
     
     <item>
-      <title>Docker study: Docker command list 01</title>
+      <title>Docker command list 01</title>
       <link>http://jeha00.github.io/post/docker/00_docker-commands-01/</link>
       <pubDate>Sat, 03 Dec 2022 16:49:32 +0900</pubDate>
       
@@ -38,7 +38,7 @@
     </item>
     
     <item>
-      <title>Docker study: 기본 image 활용하여 나만의 custom image 만들기</title>
+      <title>기본 image 활용하여 나만의 custom image 만들기</title>
       <link>http://jeha00.github.io/post/docker/03_make-custom-image/</link>
       <pubDate>Sat, 03 Dec 2022 16:49:19 +0900</pubDate>
       
@@ -47,7 +47,7 @@
     </item>
     
     <item>
-      <title>Docker study: What is a docker?</title>
+      <title>What is a docker?</title>
       <link>http://jeha00.github.io/post/docker/02_what-is-docker/</link>
       <pubDate>Fri, 02 Dec 2022 21:52:35 +0900</pubDate>
       
@@ -56,7 +56,7 @@
     </item>
     
     <item>
-      <title>Docker study: Docker 학습을 위한 OS background knowledge</title>
+      <title>Docker 학습을 위한 OS background knowledge</title>
       <link>http://jeha00.github.io/post/docker/01_os-for-docker/</link>
       <pubDate>Mon, 31 Oct 2022 01:00:56 +0900</pubDate>
       

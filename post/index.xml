@@ -11,7 +11,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 14 May 2023 21:14:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[TIL] Network OSI 7 layer: 2계층 데이터 링크 계층</title>
+      <title>[TIL]OSI 7 layer: 2계층 데이터 링크 계층</title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/2_layer/</link>
       <pubDate>Sun, 14 May 2023 21:14:44 +0900</pubDate>
       
@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>[TIL] Network OSI 7 layer: 1계층 물리 계층</title>
+      <title>[TIL]OSI 7 layer: 1계층 물리 계층</title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/1_layer/</link>
       <pubDate>Sun, 07 May 2023 21:14:44 +0900</pubDate>
       
@@ -29,16 +29,7 @@
     </item>
     
     <item>
-      <title>[DB]원티드 프리온보딩 백엔드 챌린지 MySQL: MySQL storage engine의 종류들, Transaction, Database Lock, Isolation Level</title>
-      <link>http://jeha00.github.io/post/db/wanted/lecture_02/</link>
-      <pubDate>Wed, 15 Feb 2023 01:12:29 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/db/wanted/lecture_02/</guid>
-      <description>MySQL storage engine들의 종류들과 default engine인 InnoDB /  Transaction이란 무엇인지 / Database Lock의 종류에는 어떤 것들이 있고, 왜 필요한지 / Isolation level에 대해 알아본다.</description>
-    </item>
-    
-    <item>
-      <title>[DB]원티드 프리온보딩 백엔드 챌린지 MySQL: DB 원칙과 종류 비교(RDBMS vs NoSQL, Row vs Column oriented) 그리고 CAP Theorem</title>
+      <title>DB 원칙과 종류 비교(RDBMS vs NoSQL, Row vs Column oriented) 그리고 CAP Theorem</title>
       <link>http://jeha00.github.io/post/db/wanted/lecture_01/</link>
       <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
       
@@ -47,7 +38,7 @@
     </item>
     
     <item>
-      <title>Book Study - 클린 코드, 이제는 파이썬이다: 파이썬에서 빠지기 쉬운 함정들(Common Python Gotchas)</title>
+      <title>클린 코드, 이제는 파이썬이다: 파이썬에서 빠지기 쉬운 함정들(Common Python Gotchas)</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter08_commonpythongotchas/</link>
       <pubDate>Fri, 06 Jan 2023 19:14:21 +0900</pubDate>
       
@@ -56,7 +47,7 @@
     </item>
     
     <item>
-      <title>Book Study - 클린 코드, 이제는 파이썬이다: Program Jargon</title>
+      <title>클린 코드, 이제는 파이썬이다: Program Jargon</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter07_programjargon/</link>
       <pubDate>Tue, 27 Dec 2022 17:07:28 +0900</pubDate>
       
@@ -65,7 +56,7 @@
     </item>
     
     <item>
-      <title>Book Study - 클린 코드, 이제는 파이썬이다: Write pythonic code</title>
+      <title>클린 코드, 이제는 파이썬이다: Write pythonic code</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter06_writingpythoniccode/</link>
       <pubDate>Sun, 25 Dec 2022 14:09:38 +0900</pubDate>
       
@@ -101,7 +92,7 @@
     </item>
     
     <item>
-      <title>Docker study: Docker-compose로 nginx, django, postgreSQL을 연결하고 배포하기</title>
+      <title>Docker-compose로 nginx, django, postgreSQL을 연결하고 배포하기</title>
       <link>http://jeha00.github.io/post/docker/04_deployment-by-docker/</link>
       <pubDate>Thu, 08 Dec 2022 13:42:28 +0900</pubDate>
       
@@ -128,7 +119,7 @@
     </item>
     
     <item>
-      <title>Docker study: Docker command list 02</title>
+      <title>Docker command list 02</title>
       <link>http://jeha00.github.io/post/docker/00_docker-commands-02/</link>
       <pubDate>Sat, 03 Dec 2022 18:13:58 +0900</pubDate>
       
@@ -137,7 +128,7 @@
     </item>
     
     <item>
-      <title>Docker study: Docker command list 01</title>
+      <title>Docker command list 01</title>
       <link>http://jeha00.github.io/post/docker/00_docker-commands-01/</link>
       <pubDate>Sat, 03 Dec 2022 16:49:32 +0900</pubDate>
       
@@ -146,7 +137,7 @@
     </item>
     
     <item>
-      <title>Docker study: 기본 image 활용하여 나만의 custom image 만들기</title>
+      <title>기본 image 활용하여 나만의 custom image 만들기</title>
       <link>http://jeha00.github.io/post/docker/03_make-custom-image/</link>
       <pubDate>Sat, 03 Dec 2022 16:49:19 +0900</pubDate>
       
@@ -155,7 +146,7 @@
     </item>
     
     <item>
-      <title>Docker study: What is a docker?</title>
+      <title>What is a docker?</title>
       <link>http://jeha00.github.io/post/docker/02_what-is-docker/</link>
       <pubDate>Fri, 02 Dec 2022 21:52:35 +0900</pubDate>
       
@@ -164,7 +155,7 @@
     </item>
     
     <item>
-      <title>Book Study - 클린 코드, 이제는 파이썬이다: naming</title>
+      <title>클린 코드, 이제는 파이썬이다: naming</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter04_naming/</link>
       <pubDate>Mon, 28 Nov 2022 18:22:05 +0900</pubDate>
       
@@ -173,7 +164,7 @@
     </item>
     
     <item>
-      <title>Book Study - 클린 코드, 이제는 파이썬이다: code formatting and black</title>
+      <title>클린 코드, 이제는 파이썬이다: code formatting and black</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter03_formatting./</link>
       <pubDate>Mon, 28 Nov 2022 16:19:28 +0900</pubDate>
       
@@ -227,7 +218,7 @@
     </item>
     
     <item>
-      <title>Docker study: Docker 학습을 위한 OS background knowledge</title>
+      <title>Docker 학습을 위한 OS background knowledge</title>
       <link>http://jeha00.github.io/post/docker/01_os-for-docker/</link>
       <pubDate>Mon, 31 Oct 2022 01:00:56 +0900</pubDate>
       
@@ -263,7 +254,7 @@
     </item>
     
     <item>
-      <title>Book Study - 클린 코드, 이제는 파이썬이다: error and question</title>
+      <title>클린 코드, 이제는 파이썬이다: error and question</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter01_errorandasking/</link>
       <pubDate>Mon, 17 Oct 2022 16:52:19 +0900</pubDate>
       
@@ -290,7 +281,7 @@
     </item>
     
     <item>
-      <title>Book Study - Clean Code: Chapter 02 변수</title>
+      <title>Clean Code: Chapter 02 변수</title>
       <link>http://jeha00.github.io/post/bookstudy/cleancode/chatper02_name/</link>
       <pubDate>Sat, 08 Oct 2022 21:15:08 +0900</pubDate>
       
@@ -299,7 +290,7 @@
     </item>
     
     <item>
-      <title>Book Study - Clean Code: Chapter 01 클린 코드</title>
+      <title>Clean Code: Chapter 01 클린 코드</title>
       <link>http://jeha00.github.io/post/bookstudy/cleancode/chatper01_cleancode/</link>
       <pubDate>Thu, 06 Oct 2022 21:14:50 +0900</pubDate>
       
@@ -308,7 +299,7 @@
     </item>
     
     <item>
-      <title>Book Study - 함께 자라기: 애자일로 가는 길 review</title>
+      <title>함께 자라기: 애자일로 가는 길 review</title>
       <link>http://jeha00.github.io/post/bookstudy/agile/review/</link>
       <pubDate>Mon, 19 Sep 2022 23:04:19 +0900</pubDate>
       
@@ -542,17 +533,6 @@
     </item>
     
     <item>
-      <title>Django study: Document tutorial Part 4 따라하기</title>
-      <link>http://jeha00.github.io/post/django/django_tutorial/doc_tutorial_04/</link>
-      <pubDate>Fri, 08 Jul 2022 23:46:04 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/django/django_tutorial/doc_tutorial_04/</guid>
-      <description>0. Introduction Write a minimal form use generic views: Less code is better django 공식 문서를 번역하는 작업을 통해 튜토리얼을 진행하여 이해해본다.
-이번 tutorial을 통해서 기본적인 설문조사 애플리케이션을 만들 수 있다.
-이 애플리케이션은 다음 2가지로 구성된다. 사람들이 설문조사를 보고 투표할 수 있는 &amp;lsquo;public site&amp;rsquo; 설문조사를 더하고, 수정하고, 삭제하는 &amp;lsquo;admin site&amp;rsquo; 1. Write a minimal form Par03에서 만들었던 detail template을 업데이트해보자. 업데이트할 detail template에는 HTML form 요소가 포함된다. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 &amp;gt; &amp;lt;form action=&amp;#34;{% url &amp;#39;polls:vote&amp;#39; question.</description>
-    </item>
-    
-    <item>
       <title>[TIL] Git study: Lecture Chapter 10 - Fast forwad vs 3-way merge</title>
       <link>http://jeha00.github.io/post/git/lec_chapter10-01/</link>
       <pubDate>Fri, 08 Jul 2022 23:31:47 +0900</pubDate>
@@ -580,30 +560,12 @@
     </item>
     
     <item>
-      <title>Django study: Document tutorial Part 2 따라하기</title>
-      <link>http://jeha00.github.io/post/django/django_tutorial/doc_tutorial_02/</link>
-      <pubDate>Tue, 05 Jul 2022 23:45:49 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/django/django_tutorial/doc_tutorial_02/</guid>
-      <description>class를 사용하여 model을 만들면서 Field를 적용해본다. application을 활성화하기 위해 settings.py에 INSTALLED_APPS 에 등록한다. 그리고, migration file을 만든 후, DB에 적용해본다.</description>
-    </item>
-    
-    <item>
       <title>[TIL] Git study: Lecture Chapter 08 - git clean</title>
       <link>http://jeha00.github.io/post/git/lec_chapter08-01/</link>
       <pubDate>Mon, 04 Jul 2022 23:31:28 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/git/lec_chapter08-01/</guid>
       <description>이번 단원에서는 git에 추적되지 않는 즉, 관리되지 않은 파일들(Untracked file)을 삭제하는 &amp;lsquo;git clean&amp;rsquo;에 대해 알아본다.</description>
-    </item>
-    
-    <item>
-      <title>Django study: Document tutorial Part 1 따라하기</title>
-      <link>http://jeha00.github.io/post/django/django_tutorial/doc_tutorial_01/</link>
-      <pubDate>Sun, 03 Jul 2022 23:45:43 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/django/django_tutorial/doc_tutorial_01/</guid>
-      <description>django를 설치한 후, project와 application을 명령어를 통해 만들어보고, view와 URLconf에 대해 학습해본다.</description>
     </item>
     
     <item>
@@ -724,7 +686,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 13: 웹캐싱 기법</title>
+      <title>[TIL] Chapter 13: 웹캐싱 기법</title>
       <link>http://jeha00.github.io/post/os/os_chapter_13_%EC%9B%B9%EC%BA%90%EC%8B%B1/</link>
       <pubDate>Tue, 31 May 2022 20:20:17 +0900</pubDate>
       
@@ -733,7 +695,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 12: 파일 시스템 2</title>
+      <title>[TIL] Chapter 12: 파일 시스템 2</title>
       <link>http://jeha00.github.io/post/os/os_chapter_12_%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C_2/</link>
       <pubDate>Sun, 29 May 2022 18:16:18 +0900</pubDate>
       
@@ -742,7 +704,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 12: 파일 시스템 1</title>
+      <title>[TIL] Chapter 12: 파일 시스템 1</title>
       <link>http://jeha00.github.io/post/os/os_chapter_12_%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C_1/</link>
       <pubDate>Sun, 29 May 2022 18:08:02 +0900</pubDate>
       
@@ -751,7 +713,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 11: 디스크 관리</title>
+      <title>[TIL] Chapter 11: 디스크 관리</title>
       <link>http://jeha00.github.io/post/os/os_chapter_11_%EB%94%94%EC%8A%A4%ED%81%AC%EA%B4%80%EB%A6%AC/</link>
       <pubDate>Wed, 25 May 2022 13:37:20 +0900</pubDate>
       
@@ -760,7 +722,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 10: 가상 메모리</title>
+      <title>[TIL] Chapter 10: 가상 메모리</title>
       <link>http://jeha00.github.io/post/os/os_chapter_10_%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/</link>
       <pubDate>Mon, 23 May 2022 21:50:30 +0900</pubDate>
       
@@ -796,7 +758,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 09: 교착 상태</title>
+      <title>[TIL] Chapter 09: 교착 상태</title>
       <link>http://jeha00.github.io/post/os/os_chapter_09_%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C/</link>
       <pubDate>Tue, 10 May 2022 20:38:17 +0900</pubDate>
       
@@ -805,7 +767,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 08: 프로세스 동기화 2</title>
+      <title>[TIL] Chapter 08: 프로세스 동기화 2</title>
       <link>http://jeha00.github.io/post/os/os_chapter_08_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EB%8F%99%EA%B8%B0%ED%99%94_2/</link>
       <pubDate>Tue, 10 May 2022 20:38:04 +0900</pubDate>
       
@@ -814,7 +776,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 08: 프로세스 동기화 1</title>
+      <title>[TIL] Chapter 08: 프로세스 동기화 1</title>
       <link>http://jeha00.github.io/post/os/os_chapter_08_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EB%8F%99%EA%B8%B0%ED%99%94_1/</link>
       <pubDate>Wed, 04 May 2022 20:53:38 +0900</pubDate>
       
@@ -823,7 +785,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 07: 메모리 관리 2</title>
+      <title>[TIL] Chapter 07: 메모리 관리 2</title>
       <link>http://jeha00.github.io/post/os/os_chapter_07_%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC_2/</link>
       <pubDate>Thu, 28 Apr 2022 16:13:57 +0900</pubDate>
       
@@ -832,7 +794,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 07: 메모리 관리 1</title>
+      <title>[TIL] Chapter 07: 메모리 관리 1</title>
       <link>http://jeha00.github.io/post/os/os_chapter_07_%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC_1/</link>
       <pubDate>Thu, 28 Apr 2022 16:13:46 +0900</pubDate>
       
@@ -841,7 +803,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 06: CPU scheduling</title>
+      <title>[TIL] Chapter 06: CPU scheduling</title>
       <link>http://jeha00.github.io/post/os/os_chapter_06_cpu_scheduling/</link>
       <pubDate>Fri, 22 Apr 2022 18:50:51 +0900</pubDate>
       
@@ -850,7 +812,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 05: 프로세스 관리</title>
+      <title>[TIL] Chapter 05: 프로세스 관리</title>
       <link>http://jeha00.github.io/post/os/os_chapter_05_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EA%B4%80%EB%A6%AC/</link>
       <pubDate>Mon, 18 Apr 2022 23:25:25 +0900</pubDate>
       
@@ -859,7 +821,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 04: 프로그램의 구조와 실행</title>
+      <title>[TIL] Chapter 04: 프로그램의 구조와 실행</title>
       <link>http://jeha00.github.io/post/os/os_chapter_04_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%9D%98%EA%B5%AC%EC%A1%B0%EC%99%80%EC%8B%A4%ED%96%89/</link>
       <pubDate>Fri, 15 Apr 2022 00:27:39 +0900</pubDate>
       
@@ -868,7 +830,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 03: 컴퓨터 시스템의 동작원리 2</title>
+      <title>[TIL] Chapter 03: 컴퓨터 시스템의 동작원리 2</title>
       <link>http://jeha00.github.io/post/os/os_chapter_03_%EC%BB%B4%ED%93%A8%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC_2/</link>
       <pubDate>Thu, 14 Apr 2022 14:54:58 +0900</pubDate>
       
@@ -877,7 +839,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 03: 컴퓨터 시스템의 동작원리 1</title>
+      <title>[TIL] Chapter 03: 컴퓨터 시스템의 동작원리 1</title>
       <link>http://jeha00.github.io/post/os/os_chapter_03_%EC%BB%B4%ED%93%A8%ED%84%B0%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC_1/</link>
       <pubDate>Wed, 13 Apr 2022 13:55:26 +0900</pubDate>
       
@@ -922,7 +884,7 @@
     </item>
     
     <item>
-      <title>[TIL] OS Chapter 02: Introduction to Operating System</title>
+      <title>[TIL] Introduction to Operating System</title>
       <link>http://jeha00.github.io/post/os/os_chapter_02_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94/</link>
       <pubDate>Tue, 05 Apr 2022 17:43:59 +0900</pubDate>
       
@@ -1047,7 +1009,7 @@ _</title>
     </item>
     
     <item>
-      <title>[TIL] Network HTTP Header 2</title>
+      <title>[TIL] HTTP Header 2</title>
       <link>http://jeha00.github.io/post/network/http/http_8/</link>
       <pubDate>Fri, 18 Mar 2022 21:51:01 +0900</pubDate>
       
@@ -1056,7 +1018,7 @@ _</title>
     </item>
     
     <item>
-      <title>[TIL] Network HTTP Header 1</title>
+      <title>[TIL] HTTP Header 1</title>
       <link>http://jeha00.github.io/post/network/http/http_7/</link>
       <pubDate>Thu, 17 Mar 2022 20:17:50 +0900</pubDate>
       
@@ -1074,7 +1036,7 @@ _</title>
     </item>
     
     <item>
-      <title>[TIL] Network HTTP status</title>
+      <title>[TIL] HTTP status</title>
       <link>http://jeha00.github.io/post/network/http/http_6/</link>
       <pubDate>Tue, 15 Mar 2022 10:14:50 +0900</pubDate>
       
@@ -1083,7 +1045,7 @@ _</title>
     </item>
     
     <item>
-      <title>[TIL] Network HTTP method use</title>
+      <title>[TIL] HTTP method use</title>
       <link>http://jeha00.github.io/post/network/http/http_5/</link>
       <pubDate>Mon, 14 Mar 2022 21:41:29 +0900</pubDate>
       
@@ -1151,7 +1113,7 @@ _&amp;rsquo; 에 대해 알아본다.</description>
     </item>
     
     <item>
-      <title>[TIL] Network HTTP method</title>
+      <title>[TIL] HTTP method</title>
       <link>http://jeha00.github.io/post/network/http/http_4/</link>
       <pubDate>Thu, 10 Mar 2022 20:32:24 +0900</pubDate>
       
@@ -1160,7 +1122,7 @@ _&amp;rsquo; 에 대해 알아본다.</description>
     </item>
     
     <item>
-      <title>[TIL] Network HTTP basic</title>
+      <title>[TIL] HTTP basic</title>
       <link>http://jeha00.github.io/post/network/http/http_3/</link>
       <pubDate>Wed, 09 Mar 2022 17:56:30 +0900</pubDate>
       
@@ -1169,7 +1131,7 @@ _&amp;rsquo; 에 대해 알아본다.</description>
     </item>
     
     <item>
-      <title>[TIL] Network HTTP intro. 2: URI 와 웹 브라우저 요청 흐름</title>
+      <title>[TIL] HTTP intro. 2: URI 와 웹 브라우저 요청 흐름</title>
       <link>http://jeha00.github.io/post/network/http/http_2/</link>
       <pubDate>Tue, 08 Mar 2022 11:50:46 +0900</pubDate>
       
@@ -1178,7 +1140,7 @@ _&amp;rsquo; 에 대해 알아본다.</description>
     </item>
     
     <item>
-      <title>[TIL] Network HTTP intro. 1: Internet network</title>
+      <title>[TIL] HTTP intro. 1: Internet network</title>
       <link>http://jeha00.github.io/post/network/http/http_1/</link>
       <pubDate>Mon, 07 Mar 2022 21:16:44 +0900</pubDate>
       
