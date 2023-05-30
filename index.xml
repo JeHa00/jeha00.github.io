@@ -1369,6 +1369,17 @@ AWS에서 제공하는 메세지 큐와 DB를 언제 어느 인프라에 사용�
     
     <item>
       <title></title>
+      <link>http://jeha00.github.io/post/fastapi/%EC%82%AC%EC%9A%A9%EC%9E%90%EB%AA%A8%EC%9E%84%EB%A9%94%EB%AA%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://jeha00.github.io/post/fastapi/%EC%82%AC%EC%9A%A9%EC%9E%90%EB%AA%A8%EC%9E%84%EB%A9%94%EB%AA%A8/</guid>
+      <description>Question 1 라우팅에 들어가는 함수를 async def 로 비동기로 만들어 사용하는 것과 그냥 def 라고 만들어서 쓰는것의 차이가 궁금힙니다. 이렇게 쓴다는건 db도 asyncSession으로 되있는걸로 사용할텐데 이걸로 하면 장점이 무엇인가요? 속도차이가 많이 나나요?
+Answer 1 def 을 쓰면, 요청마다 쓰레드를 만드니, 멀티 쓰레딩에 대한 오버헤드가 나고 async def을 쓰면, 이벤트 루프 하나에 코루틴으로 핸들러를 등록하니, 멀티 쓰레딩에서 일어나는 오버헤드가 없습니다. https://fastapi.tiangolo.com/async/#asynchronous-code
+속도 차이가 많이 나느냐 -&amp;gt; 요거는 실제로 async, sync로 만들고 프로덕션 서비스에서 테스트 해보신 분들이 답변해주실텐데, 보통 그렇다고들 합니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/3%EA%B3%84%EC%B8%B5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
