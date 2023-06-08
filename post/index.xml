@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 14 May 2023 21:14:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 May 2023 15:14:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL]OSI 7 layer: 3계층 네트워크 계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/3_layer/</link>
+      <pubDate>Wed, 24 May 2023 15:14:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/3_layer/</guid>
+      <description>OSI 7 layer에서 한 네트워크에서 다른 네트워크와 통신하기 위한 IP 주소를 결정하는 3계층에 대해 더 알아보자.</description>
+    </item>
+    
     <item>
       <title>[TIL]OSI 7 layer: 2계층 데이터 링크 계층</title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/2_layer/</link>
