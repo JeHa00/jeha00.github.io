@@ -38,6 +38,15 @@
     </item>
     
     <item>
+      <title>Poetry 와 Pyenv의 자주 사용하는 명령어 정리</title>
+      <link>http://jeha00.github.io/post/python/a_s_o/poetry_pyenv/</link>
+      <pubDate>Fri, 31 Mar 2023 23:38:50 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python/a_s_o/poetry_pyenv/</guid>
+      <description>Poetry와 Pyenv의 자주 사용되는 명령어를 정리한다.</description>
+    </item>
+    
+    <item>
       <title>클린 코드, 이제는 파이썬이다: 파이썬에서 빠지기 쉬운 함정들(Common Python Gotchas)</title>
       <link>http://jeha00.github.io/post/bookstudy/pythoncleancode/chapter08_commonpythongotchas/</link>
       <pubDate>Fri, 06 Jan 2023 19:14:21 +0900</pubDate>
