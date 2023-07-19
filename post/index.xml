@@ -47,6 +47,15 @@
     </item>
     
     <item>
+      <title>DDD basic concept</title>
+      <link>http://jeha00.github.io/post/architecture/what_is_ddd/</link>
+      <pubDate>Wed, 01 Mar 2023 20:04:32 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/architecture/what_is_ddd/</guid>
+      <description>DDD란 무엇이고, layer 간 의존성은 어떻게 띄고 있고, 어떻게 구성하는지에 대해 정리해본다. 또한 이를 class를 사용하여 추상화하는 이유도 정리해본다.</description>
+    </item>
+    
+    <item>
       <title>DB 원칙과 종류 비교(RDBMS vs NoSQL, Row vs Column oriented) 그리고 CAP Theorem</title>
       <link>http://jeha00.github.io/post/db/wanted/lecture_01/</link>
       <pubDate>Mon, 13 Feb 2023 21:54:56 +0900</pubDate>
