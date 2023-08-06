@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ci/cd on Jeha DevLog</title>
+    <link>http://jeha00.github.io/tags/ci/cd/</link>
+    <description>Recent content in ci/cd on Jeha DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="http://jeha00.github.io/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CI/CD를 위한 github action basic study</title>
+      <link>http://jeha00.github.io/post/ci_cd/github_action/lecture_01/</link>
+      <pubDate>Thu, 03 Aug 2023 21:18:52 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/ci_cd/github_action/lecture_01/</guid>
+      <description>github actions의 core components인 workflow, jobs, steps에 대해 알아보고 실습을 진행하면서 github action의 내장 keyword도 알아본다.</description>
+    </item>
+    
+  </channel>
+</rss>
