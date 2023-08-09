@@ -10,7 +10,7 @@
     </image>
     <generator>Hugo -- gohugo.io</generator><atom:link href="http://jeha00.github.io/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CI/CD를 위한 github action basic study</title>
+      <title>CI/CD를 위한 github action basic study 01</title>
       <link>http://jeha00.github.io/post/ci_cd/github_action/lecture_01/</link>
       <pubDate>Thu, 03 Aug 2023 21:18:52 +0900</pubDate>
       
