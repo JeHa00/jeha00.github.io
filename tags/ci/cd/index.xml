@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator><atom:link href="http://jeha00.github.io/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CI/CD를 위한 github action basic study 01</title>
+      <title>CI/CD를 위한 github action study: Activity type, filters, caching, environment variables and secrets</title>
+      <link>http://jeha00.github.io/post/ci_cd/github_action/lecture_02/</link>
+      <pubDate>Thu, 10 Aug 2023 22:13:42 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/ci_cd/github_action/lecture_02/</guid>
+      <description>첫 번째, Activity type, filters가 뭔지 학습한다. 두 번째 Job artifacts, outputs 를 비교해보고 github actions caching을 어떻게 하면 적용할 수 있는지 알아본다. 세 번째, github action에서 환경 변수와 secrets 값을 어떻게 설정하는지 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>CI/CD를 위한 github action study basic</title>
       <link>http://jeha00.github.io/post/ci_cd/github_action/lecture_01/</link>
       <pubDate>Thu, 03 Aug 2023 21:18:52 +0900</pubDate>
       
