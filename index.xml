@@ -57,10 +57,10 @@
     
     <item>
       <title>Poetry 와 Pyenv의 자주 사용하는 명령어 정리</title>
-      <link>http://jeha00.github.io/post/python/a_s_o/poetry_pyenv/</link>
+      <link>http://jeha00.github.io/post/python/others/3_poetry_pyenv/</link>
       <pubDate>Fri, 31 Mar 2023 23:38:50 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python/a_s_o/poetry_pyenv/</guid>
+      <guid>http://jeha00.github.io/post/python/others/3_poetry_pyenv/</guid>
       <description>Poetry와 Pyenv의 자주 사용되는 명령어를 정리한다.</description>
     </item>
     
@@ -453,10 +453,10 @@
     
     <item>
       <title>[TIL] Python study: Serialization 과 json.loads, dumps()  </title>
-      <link>http://jeha00.github.io/post/python/a_s_o/2_jsonmodule/</link>
+      <link>http://jeha00.github.io/post/python/others/2_loads_dumps/</link>
       <pubDate>Sun, 31 Jul 2022 23:38:50 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/python/a_s_o/2_jsonmodule/</guid>
+      <guid>http://jeha00.github.io/post/python/others/2_loads_dumps/</guid>
       <description>Serialization이 무엇을 의미하고, 이에 따라 flat data, nested data가 무슨 형태의 data인지 알아본다. 그리고, flat data의 한 종류인 json과 관련된 module을 사용해본다.</description>
     </item>
     
