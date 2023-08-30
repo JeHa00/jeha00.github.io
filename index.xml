@@ -1470,15 +1470,15 @@ USERNAME_FIELD 를 &amp;lsquo;password&amp;rsquo;로 수정한 이유
 Site model 관련 질문 thumbnail_url에서 max_length로 2000을 한 이유 url = models.</description>
     </item>
     
+    
     <item>
-      <title>About Me. 🌳</title>
+      <title>Introduce Me. 🌳</title>
       <link>http://jeha00.github.io/me/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://jeha00.github.io/me/</guid>
       <description>about</description>
     </item>
-    
     
     
   </channel>
