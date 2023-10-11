@@ -1,126 +1,208 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>[TIL] Python basic 41: Shallow copy & Deep copy | Jeha00 DevLog</title>
-<meta name=keywords content="TIL,python">
-<meta name=description content="Shallow copy 와 Deep copy가 각각 무엇이고, 무슨 차이인지 알아본다.">
-<meta name=author content="Jeha00">
-<link rel=canonical href=http://jeha00.github.io/post/python_basic/python_basic_41_shallowdeep/>
-<meta name=google-site-verification content="XYZabc">
-<meta name=yandex-verification content="XYZabc">
-<meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
-<link rel=icon href=http://jeha00.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=http://jeha00.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=http://jeha00.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="[TIL] Python basic 41: Shallow copy & Deep copy">
-<meta property="og:description" content="Shallow copy 와 Deep copy가 각각 무엇이고, 무슨 차이인지 알아본다.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://jeha00.github.io/post/python_basic/python_basic_41_shallowdeep/"><meta property="og:image" content="http://jeha00.github.io/47"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2022-04-11T20:18:00+09:00">
-<meta property="article:modified_time" content="2022-04-11T20:18:00+09:00"><meta property="og:site_name" content="JeHa00 DevLog">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="http://jeha00.github.io/47">
-<meta name=twitter:title content="[TIL] Python basic 41: Shallow copy & Deep copy">
-<meta name=twitter:description content="Shallow copy 와 Deep copy가 각각 무엇이고, 무슨 차이인지 알아본다.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 41: Shallow copy \u0026 Deep copy","item":"http://jeha00.github.io/post/python_basic/python_basic_41_shallowdeep/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 41: Shallow copy \u0026 Deep copy","name":"[TIL] Python basic 41: Shallow copy \u0026 Deep copy","description":"Shallow copy 와 Deep copy가 각각 무엇이고, 무슨 차이인지 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  [TIL] Python basic 29: Data Model에서 간단히 다뤘던 shallow copy와 deep copy에 대해 깊이 알아보자.   shallow copy와 deep copy는 모든 분야에 통틀어 알고 있어야 하는 지식이다. Python은 모든 걸 객체취급하는데, 이 객체의 복사를 수행하는 명령어가 copy 명령어다.  어느 수준까지 복사가 되는 지에 따라 copy, shallow 그리고 deep copy로 나눠진다. 각 copy에 대해 정확히 이해한 후, 프로그램 개발에 사용해야 문제가 발생하지 않고, 디버깅의 방해 요소가 되지 않는다. 또한, 구현하려는 목적에 맞게 이 3가지 copy 방식을 구분해서 사용해야 한다.     1. Copy # mutable data type  a_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]] # call by reference  b_list = a_list # 동일한 id가 출력된다.  print(id(a_list), id(b_list)) 2230595359488 2230595359488  print(id(a_list) == id(b_list)) True # b_list를 수정해보자.  b_list[2] = 100 # b_list만 수정했지만, 어째서인지 a_list까지 수정되었다.  print(a_list) [1, 2, 100, [4, 5, 6], [7, 8, 9]]  print(b_list) [1, 2, 100, [4, 5, 6], [7, 8, 9]] # b_list를 다시 수정해보자.  b_list[3][2] = 100  print(a_list, b_list) [1, 2, 100, [4, 5, 100], [7, 8, 9]]  print(a_list, b_list) [1, 2, 100, [4, 5, 100], [7, 8, 9]]  일반적인 copy 방식으로 call by reference 방식이다. 동일한 reference를 참조하기 때문에, b_list의 성분만을 수정했지만 a_list 까지 수정되었다.   2. Shallow Copy  중첩 data는 수정된다.\n   shallow copy는 위에 일반 copy와 달리 copy module을 import 해야 한다.\n c_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]]  d_list = copy.copy(c_list) # 위에 call by reference로 복사한 것과 달리 id 값이 다른 걸 확인할 수 있다.  print(id(c_list), id(d_list)) 1892474493824 1892474493568 # d_list 수정  d_list[1] = 100 # c_list는 수정되지 않았다.  print('c_list  ', c_list) c_list  [1, 2, 3, [4, 5, 6], [7, 8, 9]] # d_list만 수정되었다.  print('d_list  ', d_list) d_list  [1, 100, 3, [4, 5, 6], [7, 8, 9]]   여기까지만 보면 왜 shallow copy인지 이해가 안갈 것이다.\n  왜냐하면 d_list를 수정해도 c_list가 수정되지 않기 때문이다.\n  그러면 list 안에 list 성분을 수정해보자.\n d_list[3].append(1000)  d_list[4][1] = 10000 # d_list만 시도했지만, c_list까지 중첩 data가 수정되었다.  print('c_list  ', c_list) [1, 2, 3, [4, 5, 6, 1000], [7, 10000, 9]]  print('d_list  ', d_list) [1, 100, 3, [4, 5, 6, 1000], [7, 10000, 9]]   mutable 안에 중첩 data는 동일한 reference를 참조한다는 걸 알 수 있다.\n  이를 id function으로 확인해보자.\n print('nested data - ',id(c_list[3]), id(d_list[3])) nested data - 2343545032000 2343545032000  print('c_list  ', id(c_list)) c_list  2636124593152  print('d_list  ', id(d_list)) d_list  2636124592896   중첩된 data 까지는 독립된 reference를 가지지 않는 걸 확인했다.\n   3. Deep Copy  중첩된 data까지 독립된 id를 가진다.\n   Deep copy도 copy module을 import 하는 것부터 시작한다.\n  shallow copy는 중첩 성분을 포함하는 객체만 복사하는 방식이면, deep copy는 중첩 성분까지 복사한다.\n  그래서 deep copy를 깊은 복사 말고, 전체 복사라고도 한다.\n c_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]]  d_list = copy.deepcopy(c_list) # 다른 id 값을 확인할 수 있다.  print('Ex3  ', id(c_list)) Ex3  2636124592960  print('Ex3  ', id(d_list)) Ex3  2636124593408 # 내장된 data도 독립된 id값을 가진 걸 확인할 수 있다.  print('nested data  ', id(c_list[3])) nested data  1329303493056  print('nested data  ', id(d_list[3])) nested data  1329303494272    4. Summary   다음 image로 shallow copy와 deep copy 복사 정도를 비교하면 쉽게 알 수 있다.\n  같은 색상의 block이 동일한 id를 가지고 있다.\n  shallow copy는 객체만을 복사하고, 객체의 성분은 복사하지 않는다.\n 객체는 call by value, 객체의 성분은 call by reference    하지만, deep copy는 객체와 객체의 성분까지 복사한다.\n 객체와 객체의 성분도 call by value    shallow copy   deep copy\n   Reference  모두를 위한 파이썬 : 필수 문법 배우기 Feat. 오픈소스 패키지 배포 (Inflearn Original) [TIL] Python basic 29: Data Model  ","wordCount":"599","inLanguage":"en","datePublished":"2022-04-11T20:18:00+09:00","dateModified":"2022-04-11T20:18:00+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python_basic/python_basic_41_shallowdeep/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
+<!doctype html>
+<html lang=en dir=auto>
+
+<head>
+        <meta charset=utf-8>
+        <meta http-equiv=x-ua-compatible content="IE=edge">
+        <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        <meta name=robots content="index, follow">
+        <title>[TIL] Python basic 41: Shallow copy & Deep copy | Jeha00 DevLog</title>
+        <meta name=keywords content="TIL,python">
+        <meta name=description content="Shallow copy 와 Deep copy가 각각 무엇이고, 무슨 차이인지 알아본다.">
+        <meta name=author content="Jeha00">
+        <link rel=canonical href=http://jeha00.github.io/post/python/python_basic_41_shallowdeep />
+        <meta name=google-site-verification content="XYZabc">
+        <meta name=yandex-verification content="XYZabc">
+        <meta name=msvalidate.01 content="XYZabc">
+        <link crossorigin=anonymous
+                href=/assets/css/stylesheet.min.1e44d58192cbf6d7a4eb649bc43dbc3d4cc432677e5d8adc69b08c34cbe461ac.css
+                integrity="sha256-HkTVgZLL9tek62SbxD28PUzEMmd+XYrcabCMNMvkYaw=" rel="preload stylesheet" as=style>
+        <link rel=icon href=http://jeha00.github.io/favicon.ico>
+        <link rel=icon type=image/png sizes=16x16 href=http://jeha00.github.io/favicon-16x16.png>
+        <link rel=icon type=image/png sizes=32x32 href=http://jeha00.github.io/favicon-32x32.png>
+        <link rel=apple-touch-icon href=http://jeha00.github.io/apple-touch-icon.png>
+        <link rel=mask-icon href=http://jeha00.github.io/safari-pinned-tab.svg>
+        <meta name=theme-color content="#2e2e33">
+        <meta name=msapplication-TileColor content="#2e2e33">
+        <meta name=generator content="Hugo 0.92.1">
+        <noscript>
+                <style>
+                        #theme-toggle,
+                        .top-link {
+                                display: none
+                        }
+                </style>
+                <style>
+                        @media(prefers-color-scheme:dark) {
+                                :root {
+                                        --theme: rgb(29, 30, 32);
+                                        --entry: rgb(46, 46, 51);
+                                        --primary: rgb(218, 218, 219);
+                                        --secondary: rgb(155, 156, 157);
+                                        --tertiary: rgb(65, 66, 68);
+                                        --content: rgb(196, 196, 197);
+                                        --hljs-bg: rgb(46, 46, 51);
+                                        --code-bg: rgb(55, 56, 62);
+                                        --border: rgb(51, 51, 51)
+                                }
+
+                                .list {
+                                        background: var(--theme)
+                                }
+
+                                .list:not(.dark)::-webkit-scrollbar-track {
+                                        background: 0 0
+                                }
+
+                                .list:not(.dark)::-webkit-scrollbar-thumb {
+                                        border-color: var(--theme)
+                                }
+                        }
+                </style>
+        </noscript>
+        <script
+                type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script>
+        <meta property="og:title" content="[TIL] Python basic 41: Shallow copy & Deep copy">
+        <meta property="og:description" content="Shallow copy 와 Deep copy가 각각 무엇이고, 무슨 차이인지 알아본다.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://jeha00.github.io/post/python/python_basic_41_shallowdeep/">
+        <meta property="og:image" content="http://jeha00.github.io/47">
+        <meta property="article:section" content="post">
+        <meta property="article:published_time" content="2022-04-11T20:18:00+09:00">
+        <meta property="article:modified_time" content="2022-04-11T20:18:00+09:00">
+        <meta property="og:site_name" content="JeHa00 DevLog">
+        <meta name=twitter:card content="summary_large_image">
+        <meta name=twitter:image content="http://jeha00.github.io/47">
+        <meta name=twitter:title content="[TIL] Python basic 41: Shallow copy & Deep copy">
+        <meta name=twitter:description content="Shallow copy 와 Deep copy가 각각 무엇이고, 무슨 차이인지 알아본다.">
+        <script
+                type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://jeha00.github.io/post/"},{"@type":"ListItem","position":2,"name":"[TIL] Python basic 41: Shallow copy \u0026 Deep copy","item":"http://jeha00.github.io/post/python/python_basic_41_shallowdeep/"}]}</script>
+        <script
+                type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[TIL] Python basic 41: Shallow copy \u0026 Deep copy","name":"[TIL] Python basic 41: Shallow copy \u0026 Deep copy","description":"Shallow copy 와 Deep copy가 각각 무엇이고, 무슨 차이인지 알아본다.","keywords":["TIL","python"],"articleBody":"Intro  [TIL] Python basic 29: Data Model에서 간단히 다뤘던 shallow copy와 deep copy에 대해 깊이 알아보자.   shallow copy와 deep copy는 모든 분야에 통틀어 알고 있어야 하는 지식이다. Python은 모든 걸 객체취급하는데, 이 객체의 복사를 수행하는 명령어가 copy 명령어다.  어느 수준까지 복사가 되는 지에 따라 copy, shallow 그리고 deep copy로 나눠진다. 각 copy에 대해 정확히 이해한 후, 프로그램 개발에 사용해야 문제가 발생하지 않고, 디버깅의 방해 요소가 되지 않는다. 또한, 구현하려는 목적에 맞게 이 3가지 copy 방식을 구분해서 사용해야 한다.     1. Copy # mutable data type  a_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]] # call by reference  b_list = a_list # 동일한 id가 출력된다.  print(id(a_list), id(b_list)) 2230595359488 2230595359488  print(id(a_list) == id(b_list)) True # b_list를 수정해보자.  b_list[2] = 100 # b_list만 수정했지만, 어째서인지 a_list까지 수정되었다.  print(a_list) [1, 2, 100, [4, 5, 6], [7, 8, 9]]  print(b_list) [1, 2, 100, [4, 5, 6], [7, 8, 9]] # b_list를 다시 수정해보자.  b_list[3][2] = 100  print(a_list, b_list) [1, 2, 100, [4, 5, 100], [7, 8, 9]]  print(a_list, b_list) [1, 2, 100, [4, 5, 100], [7, 8, 9]]  일반적인 copy 방식으로 call by reference 방식이다. 동일한 reference를 참조하기 때문에, b_list의 성분만을 수정했지만 a_list 까지 수정되었다.   2. Shallow Copy  중첩 data는 수정된다.\n   shallow copy는 위에 일반 copy와 달리 copy module을 import 해야 한다.\n c_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]]  d_list = copy.copy(c_list) # 위에 call by reference로 복사한 것과 달리 id 값이 다른 걸 확인할 수 있다.  print(id(c_list), id(d_list)) 1892474493824 1892474493568 # d_list 수정  d_list[1] = 100 # c_list는 수정되지 않았다.  print('c_list  ', c_list) c_list  [1, 2, 3, [4, 5, 6], [7, 8, 9]] # d_list만 수정되었다.  print('d_list  ', d_list) d_list  [1, 100, 3, [4, 5, 6], [7, 8, 9]]   여기까지만 보면 왜 shallow copy인지 이해가 안갈 것이다.\n  왜냐하면 d_list를 수정해도 c_list가 수정되지 않기 때문이다.\n  그러면 list 안에 list 성분을 수정해보자.\n d_list[3].append(1000)  d_list[4][1] = 10000 # d_list만 시도했지만, c_list까지 중첩 data가 수정되었다.  print('c_list  ', c_list) [1, 2, 3, [4, 5, 6, 1000], [7, 10000, 9]]  print('d_list  ', d_list) [1, 100, 3, [4, 5, 6, 1000], [7, 10000, 9]]   mutable 안에 중첩 data는 동일한 reference를 참조한다는 걸 알 수 있다.\n  이를 id function으로 확인해보자.\n print('nested data - ',id(c_list[3]), id(d_list[3])) nested data - 2343545032000 2343545032000  print('c_list  ', id(c_list)) c_list  2636124593152  print('d_list  ', id(d_list)) d_list  2636124592896   중첩된 data 까지는 독립된 reference를 가지지 않는 걸 확인했다.\n   3. Deep Copy  중첩된 data까지 독립된 id를 가진다.\n   Deep copy도 copy module을 import 하는 것부터 시작한다.\n  shallow copy는 중첩 성분을 포함하는 객체만 복사하는 방식이면, deep copy는 중첩 성분까지 복사한다.\n  그래서 deep copy를 깊은 복사 말고, 전체 복사라고도 한다.\n c_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]]  d_list = copy.deepcopy(c_list) # 다른 id 값을 확인할 수 있다.  print('Ex3  ', id(c_list)) Ex3  2636124592960  print('Ex3  ', id(d_list)) Ex3  2636124593408 # 내장된 data도 독립된 id값을 가진 걸 확인할 수 있다.  print('nested data  ', id(c_list[3])) nested data  1329303493056  print('nested data  ', id(d_list[3])) nested data  1329303494272    4. Summary   다음 image로 shallow copy와 deep copy 복사 정도를 비교하면 쉽게 알 수 있다.\n  같은 색상의 block이 동일한 id를 가지고 있다.\n  shallow copy는 객체만을 복사하고, 객체의 성분은 복사하지 않는다.\n 객체는 call by value, 객체의 성분은 call by reference    하지만, deep copy는 객체와 객체의 성분까지 복사한다.\n 객체와 객체의 성분도 call by value    shallow copy   deep copy\n   Reference  모두를 위한 파이썬 : 필수 문법 배우기 Feat. 오픈소스 패키지 배포 (Inflearn Original) [TIL] Python basic 29: Data Model  ","wordCount":"599","inLanguage":"en","datePublished":"2022-04-11T20:18:00+09:00","dateModified":"2022-04-11T20:18:00+09:00","author":{"@type":"Person","name":"Jeha00"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://jeha00.github.io/post/python/python_basic_41_shallowdeep/"},"publisher":{"@type":"Organization","name":"Jeha00 DevLog","logo":{"@type":"ImageObject","url":"http://jeha00.github.io/favicon.ico"}}}</script>
 </head>
+
 <body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=http://jeha00.github.io/ accesskey=h title="Jeha00 (Alt + H)">Jeha00</a>
-<span class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</span>
-</div>
-<ul id=menu>
-<li>
-<a href=http://jeha00.github.io/archives/ title=Archive>
-<span>Archive</span>
-</a>
-</li>
-<li>
-<a href=http://jeha00.github.io/categories/ title=Categories>
-<span>Categories</span>
-</a>
-</li>
-<li>
-<a href=http://jeha00.github.io/tags/ title=Tags>
-<span>Tags</span>
-</a>
-</li>
-<li>
-<a href=http://jeha00.github.io/search/ title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=http://jeha00.github.io/>Home</a>&nbsp;»&nbsp;<a href=http://jeha00.github.io/post/>Posts</a></div>
-<h1 class=post-title>
-[TIL] Python basic 41: Shallow copy & Deep copy
-</h1>
-<div class=post-meta><span title="2022-04-11 20:18:00 +0900 KST">April 11, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jeha00&nbsp;|&nbsp;<a href=https://github.com/JeHa00/blog/content/post/Python_basic/Python_basic_41_ShallowDeep.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#intro aria-label=Intro>Intro</a></li>
-<li>
-<a href=#1-copy aria-label="1. Copy">1. Copy</a></li>
-<li>
-<a href=#2-shallow-copy aria-label="2. Shallow Copy">2. Shallow Copy</a></li>
-<li>
-<a href=#3-deep-copy aria-label="3. Deep Copy">3. Deep Copy</a></li>
-<li>
-<a href=#4-summary aria-label="4. Summary">4. Summary</a></li>
-<li>
-<a href=#reference aria-label=Reference>Reference</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h1 id=intro>Intro<a hidden class=anchor aria-hidden=true href=#intro>#</a></h1>
-<ul>
-<li><a href=https://jeha00.github.io/post/python_basic/python_basic_29_datamodel/#32-list-comprehension%EC%9D%98-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD>[TIL] Python basic 29: Data Model</a>에서 간단히 다뤘던 shallow copy와 deep copy에 대해 깊이 알아보자.</li>
-</ul>
-<ul>
-<li>shallow copy와 deep copy는 모든 분야에 통틀어 알고 있어야 하는 지식이다.</li>
-<li>Python은 모든 걸 객체취급하는데, 이 객체의 복사를 수행하는 명령어가 copy 명령어다.
-<ul>
-<li>어느 수준까지 복사가 되는 지에 따라 copy, shallow 그리고 deep copy로 나눠진다.</li>
-<li>각 copy에 대해 정확히 이해한 후, 프로그램 개발에 사용해야 문제가 발생하지 않고, 디버깅의 방해 요소가 되지 않는다.</li>
-<li>또한, 구현하려는 목적에 맞게 이 3가지 copy 방식을 구분해서 사용해야 한다.</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id=1-copy>1. Copy<a hidden class=anchor aria-hidden=true href=#1-copy>#</a></h1>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># mutable data type</span>
+        <script>localStorage.getItem("pref-theme") === "dark" ? document.body.classList.add('dark') : localStorage.getItem("pref-theme") === "light" ? document.body.classList.remove('dark') : window.matchMedia('(prefers-color-scheme: dark)').matches && document.body.classList.add('dark')</script>
+        <header class=header>
+                <nav class=nav>
+                        <div class=logo>
+                                <a href=http://jeha00.github.io/ accesskey=h title="Jeha00 (Alt + H)">Jeha00</a>
+                                <span class=logo-switches>
+                                        <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentcolor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                                </svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentcolor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <circle cx="12" cy="12" r="5" />
+                                                        <line x1="12" y1="1" x2="12" y2="3" />
+                                                        <line x1="12" y1="21" x2="12" y2="23" />
+                                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                                        <line x1="1" y1="12" x2="3" y2="12" />
+                                                        <line x1="21" y1="12" x2="23" y2="12" />
+                                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                                                </svg>
+                                        </button>
+                                </span>
+                        </div>
+                        <ul id=menu>
+                                <li>
+                                        <a href=http://jeha00.github.io/archives/ title=Archive>
+                                                <span>Archive</span>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href=http://jeha00.github.io/categories/ title=Categories>
+                                                <span>Categories</span>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href=http://jeha00.github.io/tags/ title=Tags>
+                                                <span>Tags</span>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href=http://jeha00.github.io/search/ title="Search (Alt + /)" accesskey= />
+                                        <span>Search</span>
+                                        </a>
+                                </li>
+                        </ul>
+                </nav>
+        </header>
+        <main class=main>
+                <article class=post-single>
+                        <header class=post-header>
+                                <div class=breadcrumbs><a href=http://jeha00.github.io />Home</a>&nbsp;»&nbsp;<a
+                                                href=http://jeha00.github.io/post />Posts</a></div>
+                                <h1 class=post-title>
+                                        [TIL] Python basic 41: Shallow copy & Deep copy
+                                </h1>
+                                <div class=post-meta><span title="2022-04-11 20:18:00 +0900 KST">April 11,
+                                                2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jeha00&nbsp;|&nbsp;<a
+                                                href=https://github.com/JeHa00/blog/content/post/Python_basic/Python_basic_41_ShallowDeep.md
+                                                rel="noopener noreferrer" target=_blank>Suggest Changes</a>
+                                </div>
+                        </header>
+                        <div class=toc>
+                                <details>
+                                        <summary accesskey=c title="(Alt + C)">
+                                                <span class=details>Table of Contents</span>
+                                        </summary>
+                                        <div class=inner>
+                                                <ul>
+                                                        <li>
+                                                                <a href=#intro aria-label=Intro>Intro</a>
+                                                        </li>
+                                                        <li>
+                                                                <a href=#1-copy aria-label="1. Copy">1. Copy</a>
+                                                        </li>
+                                                        <li>
+                                                                <a href=#2-shallow-copy aria-label="2. Shallow Copy">2.
+                                                                        Shallow Copy</a>
+                                                        </li>
+                                                        <li>
+                                                                <a href=#3-deep-copy aria-label="3. Deep Copy">3. Deep
+                                                                        Copy</a>
+                                                        </li>
+                                                        <li>
+                                                                <a href=#4-summary aria-label="4. Summary">4.
+                                                                        Summary</a>
+                                                        </li>
+                                                        <li>
+                                                                <a href=#reference aria-label=Reference>Reference</a>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                </details>
+                        </div>
+                        <div class=post-content>
+                                <h1 id=intro>Intro<a hidden class=anchor aria-hidden=true href=#intro>#</a></h1>
+                                <ul>
+                                        <li><a href=https://jeha00.github.io/post/python/python_basic_29_datamodel/#32-list-comprehension%EC%9D%98-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD>[TIL]
+                                                        Python basic 29: Data Model</a>에서 간단히 다뤘던 shallow copy와 deep
+                                                copy에 대해 깊이 알아보자.</li>
+                                </ul>
+                                <ul>
+                                        <li>shallow copy와 deep copy는 모든 분야에 통틀어 알고 있어야 하는 지식이다.</li>
+                                        <li>Python은 모든 걸 객체취급하는데, 이 객체의 복사를 수행하는 명령어가 copy 명령어다.
+                                                <ul>
+                                                        <li>어느 수준까지 복사가 되는 지에 따라 copy, shallow 그리고 deep copy로 나눠진다.</li>
+                                                        <li>각 copy에 대해 정확히 이해한 후, 프로그램 개발에 사용해야 문제가 발생하지 않고, 디버깅의 방해 요소가
+                                                                되지 않는다.</li>
+                                                        <li>또한, 구현하려는 목적에 맞게 이 3가지 copy 방식을 구분해서 사용해야 한다.</li>
+                                                </ul>
+                                        </li>
+                                </ul>
+                                <hr>
+                                <h1 id=1-copy>1. Copy<a hidden class=anchor aria-hidden=true href=#1-copy>#</a></h1>
+                                <div class=highlight>
+                                        <pre tabindex=0
+                                                style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=color:#6272a4># mutable data type</span>
 &gt; a_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]]
 
 <span style=color:#6272a4># call by reference</span>
@@ -151,19 +233,26 @@
 
 &gt; print(a_list, b_list)
 [<span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>2</span>, <span style=color:#bd93f9>100</span>, [<span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>5</span>, <span style=color:#bd93f9>100</span>], [<span style=color:#bd93f9>7</span>, <span style=color:#bd93f9>8</span>, <span style=color:#bd93f9>9</span>]]
-</code></pre></div><ul>
-<li>일반적인 copy 방식으로 <code>call by reference</code> 방식이다.</li>
-<li>동일한 reference를 참조하기 때문에, <code>b_list</code>의 성분만을 수정했지만 <code>a_list</code> 까지 수정되었다.</li>
-</ul>
-<hr>
-<h1 id=2-shallow-copy>2. Shallow Copy<a hidden class=anchor aria-hidden=true href=#2-shallow-copy>#</a></h1>
-<blockquote>
-<p><strong><em>중첩 data는 수정된다.</em></strong></p>
-</blockquote>
-<ul>
-<li>
-<p>shallow copy는 위에 일반 copy와 달리 <code>copy</code> module을 import 해야 한다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; c_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]]
+</code></pre>
+                                </div>
+                                <ul>
+                                        <li>일반적인 copy 방식으로 <code>call by reference</code> 방식이다.</li>
+                                        <li>동일한 reference를 참조하기 때문에, <code>b_list</code>의 성분만을 수정했지만 <code>a_list</code>
+                                                까지 수정되었다.</li>
+                                </ul>
+                                <hr>
+                                <h1 id=2-shallow-copy>2. Shallow Copy<a hidden class=anchor aria-hidden=true
+                                                href=#2-shallow-copy>#</a></h1>
+                                <blockquote>
+                                        <p><strong><em>중첩 data는 수정된다.</em></strong></p>
+                                </blockquote>
+                                <ul>
+                                        <li>
+                                                <p>shallow copy는 위에 일반 copy와 달리 <code>copy</code> module을 import 해야 한다.
+                                                </p>
+                                                <div class=highlight>
+                                                        <pre tabindex=0
+                                                                style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; c_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]]
 &gt; d_list = copy.copy(c_list)
 
 <span style=color:#6272a4># 위에 call by reference로 복사한 것과 달리  id 값이 다른 걸 확인할 수 있다.</span>
@@ -180,16 +269,20 @@ c_list &gt; [1, 2, 3, [4, 5, 6], [7, 8, 9]]
 <span style=color:#6272a4># d_list만 수정되었다.</span>
 &gt; print(&#39;d_list &gt; &#39;, d_list)
 d_list &gt; [1, 100, 3, [4, 5, 6], [7, 8, 9]]
-</code></pre></div></li>
-<li>
-<p>여기까지만 보면 왜 shallow copy인지 이해가 안갈 것이다.</p>
-</li>
-<li>
-<p>왜냐하면 d_list를 수정해도 c_list가 수정되지 않기 때문이다.</p>
-</li>
-<li>
-<p>그러면 list 안에 list 성분을 수정해보자.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; d_list[3].append(1000)
+</code></pre>
+                                                </div>
+                                        </li>
+                                        <li>
+                                                <p>여기까지만 보면 왜 shallow copy인지 이해가 안갈 것이다.</p>
+                                        </li>
+                                        <li>
+                                                <p>왜냐하면 d_list를 수정해도 c_list가 수정되지 않기 때문이다.</p>
+                                        </li>
+                                        <li>
+                                                <p>그러면 list 안에 list 성분을 수정해보자.</p>
+                                                <div class=highlight>
+                                                        <pre tabindex=0
+                                                                style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; d_list[3].append(1000)
 &gt; d_list[4][1] = 10000
 
 <span style=color:#6272a4># d_list만 시도했지만, c_list까지 중첩 data가 수정되었다.</span>
@@ -198,39 +291,48 @@ d_list &gt; [1, 100, 3, [4, 5, 6], [7, 8, 9]]
 
 &gt; print(&#39;d_list &gt; &#39;, d_list)
 [<span style=color:#bd93f9>1</span>, <span style=color:#bd93f9>100</span>, <span style=color:#bd93f9>3</span>, [<span style=color:#bd93f9>4</span>, <span style=color:#bd93f9>5</span>, <span style=color:#bd93f9>6</span>, <span style=color:#bd93f9>1000</span>], [<span style=color:#bd93f9>7</span>, <span style=color:#bd93f9>10000</span>, <span style=color:#bd93f9>9</span>]]
-</code></pre></div></li>
-<li>
-<p>mutable 안에 중첩 data는 동일한 reference를 참조한다는 걸 알 수 있다.</p>
-</li>
-<li>
-<p>이를 id function으로 확인해보자.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(&#39;nested data - &#39;,id(c_list[3]), id(d_list[3]))
+</code></pre>
+                                                </div>
+                                        </li>
+                                        <li>
+                                                <p>mutable 안에 중첩 data는 동일한 reference를 참조한다는 걸 알 수 있다.</p>
+                                        </li>
+                                        <li>
+                                                <p>이를 id function으로 확인해보자.</p>
+                                                <div class=highlight>
+                                                        <pre tabindex=0
+                                                                style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; print(&#39;nested data - &#39;,id(c_list[3]), id(d_list[3]))
 nested data -  2343545032000 2343545032000
 
 &gt; print(&#39;c_list &gt; &#39;, id(c_list))
 c_list &gt;  2636124593152
 &gt; print(&#39;d_list &gt; &#39;, id(d_list))
 d_list &gt;  2636124592896
-</code></pre></div></li>
-<li>
-<p>중첩된 data 까지는 독립된 reference를 가지지 않는 걸 확인했다.</p>
-</li>
-</ul>
-<hr>
-<h1 id=3-deep-copy>3. Deep Copy<a hidden class=anchor aria-hidden=true href=#3-deep-copy>#</a></h1>
-<blockquote>
-<p><strong><em>중첩된 data까지 독립된 id를 가진다.</em></strong></p>
-</blockquote>
-<ul>
-<li>
-<p>Deep copy도 <code>copy</code> module을 import 하는 것부터 시작한다.</p>
-</li>
-<li>
-<p>shallow copy는 중첩 성분을 포함하는 객체만 복사하는 방식이면, deep copy는 중첩 성분까지 복사한다.</p>
-</li>
-<li>
-<p>그래서 deep copy를 <code>깊은 복사</code> 말고, <code>전체 복사</code>라고도 한다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; c_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]]
+</code></pre>
+                                                </div>
+                                        </li>
+                                        <li>
+                                                <p>중첩된 data 까지는 독립된 reference를 가지지 않는 걸 확인했다.</p>
+                                        </li>
+                                </ul>
+                                <hr>
+                                <h1 id=3-deep-copy>3. Deep Copy<a hidden class=anchor aria-hidden=true
+                                                href=#3-deep-copy>#</a></h1>
+                                <blockquote>
+                                        <p><strong><em>중첩된 data까지 독립된 id를 가진다.</em></strong></p>
+                                </blockquote>
+                                <ul>
+                                        <li>
+                                                <p>Deep copy도 <code>copy</code> module을 import 하는 것부터 시작한다.</p>
+                                        </li>
+                                        <li>
+                                                <p>shallow copy는 중첩 성분을 포함하는 객체만 복사하는 방식이면, deep copy는 중첩 성분까지 복사한다.</p>
+                                        </li>
+                                        <li>
+                                                <p>그래서 deep copy를 <code>깊은 복사</code> 말고, <code>전체 복사</code>라고도 한다.</p>
+                                                <div class=highlight>
+                                                        <pre tabindex=0
+                                                                style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>&gt; c_list = [1, 2, 3, [4, 5, 6], [7, 8, 9]]
 &gt; d_list = copy.deepcopy(c_list)
 
 <span style=color:#6272a4># 다른 id 값을 확인할 수 있다.</span>
@@ -244,88 +346,142 @@ Ex3 &gt;  2636124593408
 nested data &gt;  1329303493056
 &gt; print(&#39;nested data &gt; &#39;, id(d_list[3]))
 nested data &gt;  1329303494272
-</code></pre></div></li>
-</ul>
-<hr>
-<h1 id=4-summary>4. Summary<a hidden class=anchor aria-hidden=true href=#4-summary>#</a></h1>
-<ul>
-<li>
-<p>다음 image로 shallow copy와 deep copy 복사 정도를 비교하면 쉽게 알 수 있다.</p>
-</li>
-<li>
-<p>같은 색상의 block이 동일한 id를 가지고 있다.</p>
-</li>
-<li>
-<p>shallow copy는 객체만을 복사하고, 객체의 성분은 복사하지 않는다.</p>
-<ul>
-<li>객체는 call by value, 객체의 성분은 call by reference</li>
-</ul>
-</li>
-<li>
-<p>하지만, deep copy는 객체와 객체의 성분까지 복사한다.</p>
-<ul>
-<li>객체와 객체의 성분도 call by value</li>
-</ul>
-</li>
-<li>
-<p>shallow copy
-<img loading=lazy src=https://user-images.githubusercontent.com/78094972/162728048-5826d4e3-0857-43b4-b6bc-9b941e42901c.png alt=image>
-</p>
-</li>
-<li>
-<p>deep copy</p>
-<p><img loading=lazy src=https://user-images.githubusercontent.com/78094972/162728047-aec3b86b-989d-4107-9bde-f4193b3cc004.png alt=image>
-</p>
-</li>
-</ul>
-<hr>
-<h1 id=reference>Reference<a hidden class=anchor aria-hidden=true href=#reference>#</a></h1>
-<ul>
-<li><a href=https://www.inflearn.com/course/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A4%91%EA%B3%A0%EA%B8%89/dashboard>모두를 위한 파이썬 : 필수 문법 배우기 Feat. 오픈소스 패키지 배포 (Inflearn Original)</a></li>
-<li><a href=https://jeha00.github.io/post/python_basic/python_basic_29_datamodel/#32-list-comprehension%EC%9D%98-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD>[TIL] Python basic 29: Data Model</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=http://jeha00.github.io/tags/til/>TIL</a></li>
-<li><a href=http://jeha00.github.io/tags/python/>python</a></li>
-</ul>
-<nav class=paginav>
-<a class=next href=http://jeha00.github.io/post/python_basic/python_basic_40_callbyobjectreference/>
-<span class=title>Next Page »</span>
-<br>
-<span>[TIL] Python basic 40: Call by object reference</span>
-</a>
-</nav>
-<div class=share-buttons>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on twitter" href="https://twitter.com/intent/tweet/?text=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f&hashtags=TIL%2cpython"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f&title=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy&summary=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy&source=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on reddit" href="https://reddit.com/submit?url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f&title=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on facebook" href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on whatsapp" href="https://api.whatsapp.com/send?text=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy%20-%20http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg>
-</a>
-<a target=_blank rel="noopener noreferrer" aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on telegram" href="https://telegram.me/share/url?text=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f"><svg viewBox="2 2 28 28"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
-</a>
-</div>
-</footer><script src=https://utteranc.es/client.js repo=JeHa00/blog-comments issue-term=pathname theme=github-dark crossorigin=anonymous async></script>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=http://jeha00.github.io/>Jeha00 DevLog</a></span>
-<span>
-Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</code></pre>
+                                                </div>
+                                        </li>
+                                </ul>
+                                <hr>
+                                <h1 id=4-summary>4. Summary<a hidden class=anchor aria-hidden=true href=#4-summary>#</a>
+                                </h1>
+                                <ul>
+                                        <li>
+                                                <p>다음 image로 shallow copy와 deep copy 복사 정도를 비교하면 쉽게 알 수 있다.</p>
+                                        </li>
+                                        <li>
+                                                <p>같은 색상의 block이 동일한 id를 가지고 있다.</p>
+                                        </li>
+                                        <li>
+                                                <p>shallow copy는 객체만을 복사하고, 객체의 성분은 복사하지 않는다.</p>
+                                                <ul>
+                                                        <li>객체는 call by value, 객체의 성분은 call by reference</li>
+                                                </ul>
+                                        </li>
+                                        <li>
+                                                <p>하지만, deep copy는 객체와 객체의 성분까지 복사한다.</p>
+                                                <ul>
+                                                        <li>객체와 객체의 성분도 call by value</li>
+                                                </ul>
+                                        </li>
+                                        <li>
+                                                <p>shallow copy
+                                                        <img loading=lazy
+                                                                src=https://user-images.githubusercontent.com/78094972/162728048-5826d4e3-0857-43b4-b6bc-9b941e42901c.png
+                                                                alt=image>
+                                                </p>
+                                        </li>
+                                        <li>
+                                                <p>deep copy</p>
+                                                <p><img loading=lazy
+                                                                src=https://user-images.githubusercontent.com/78094972/162728047-aec3b86b-989d-4107-9bde-f4193b3cc004.png
+                                                                alt=image>
+                                                </p>
+                                        </li>
+                                </ul>
+                                <hr>
+                                <h1 id=reference>Reference<a hidden class=anchor aria-hidden=true href=#reference>#</a>
+                                </h1>
+                                <ul>
+                                        <li><a href=https://www.inflearn.com/course/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A4%91%EA%B3%A0%EA%B8%89/dashboard>모두를
+                                                        위한 파이썬 : 필수 문법 배우기 Feat. 오픈소스 패키지 배포 (Inflearn Original)</a>
+                                        </li>
+                                        <li><a href=https://jeha00.github.io/post/python/python_basic_29_datamodel/#32-list-comprehension%EC%9D%98-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD>[TIL]
+                                                        Python basic 29: Data Model</a></li>
+                                </ul>
+                        </div>
+                        <footer class=post-footer>
+                                <ul class=post-tags>
+                                        <li><a href=http://jeha00.github.io/tags/til />TIL</a></li>
+                                        <li><a href=http://jeha00.github.io/tags/python />python</a></li>
+                                </ul>
+                                <nav class=paginav>
+                                        <a class=next
+                                                href=http://jeha00.github.io/post/python/python_basic_40_callbyobjectreference />
+                                        <span class=title>Next Page »</span>
+                                        <br>
+                                        <span>[TIL] Python basic 40: Call by object reference</span>
+                                        </a>
+                                </nav>
+                                <div class=share-buttons>
+                                        <a target=_blank rel="noopener noreferrer"
+                                                aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on twitter"
+                                                href="https://twitter.com/intent/tweet/?text=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f&hashtags=TIL%2cpython"><svg
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                                d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z" />
+                                                </svg>
+                                        </a>
+                                        <a target=_blank rel="noopener noreferrer"
+                                                aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on linkedin"
+                                                href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f&title=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy&summary=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy&source=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f"><svg
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                                d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z" />
+                                                </svg>
+                                        </a>
+                                        <a target=_blank rel="noopener noreferrer"
+                                                aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on reddit"
+                                                href="https://reddit.com/submit?url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f&title=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy"><svg
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                                d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z" />
+                                                </svg>
+                                        </a>
+                                        <a target=_blank rel="noopener noreferrer"
+                                                aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on facebook"
+                                                href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f"><svg
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                                d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z" />
+                                                </svg>
+                                        </a>
+                                        <a target=_blank rel="noopener noreferrer"
+                                                aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on whatsapp"
+                                                href="https://api.whatsapp.com/send?text=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy%20-%20http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f"><svg
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                                d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z" />
+                                                </svg>
+                                        </a>
+                                        <a target=_blank rel="noopener noreferrer"
+                                                aria-label="share [TIL] Python basic 41: Shallow copy & Deep copy on telegram"
+                                                href="https://telegram.me/share/url?text=%5bTIL%5d%20Python%20basic%2041%3a%20Shallow%20copy%20%26%20Deep%20copy&url=http%3a%2f%2fjeha00.github.io%2fpost%2fpython_basic%2fpython_basic_41_shallowdeep%2f"><svg
+                                                        viewBox="2 2 28 28">
+                                                        <path
+                                                                d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z" />
+                                                </svg>
+                                        </a>
+                                </div>
+                        </footer>
+                        <script src=https://utteranc.es/client.js repo=JeHa00/blog-comments issue-term=pathname
+                                theme=github-dark crossorigin=anonymous async></script>
+                </article>
+        </main>
+        <footer class=footer>
+                <span>&copy; 2022 <a href=http://jeha00.github.io />Jeha00 DevLog</a></span>
+                <span>
+                        Powered by
+                        <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+                        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+                </span>
+        </footer>
+        <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor">
+                        <path d="M12 6H0l6-6z" />
+                </svg>
+        </a>
+        <script>let menu = document.getElementById('menu'); menu && (menu.scrollLeft = localStorage.getItem("menu-scroll-position"), menu.onscroll = function () { localStorage.setItem("menu-scroll-position", menu.scrollLeft) }), document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener("click", function (b) { b.preventDefault(); var a = this.getAttribute("href").substr(1); window.matchMedia('(prefers-reduced-motion: reduce)').matches ? document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView() : document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({ behavior: "smooth" }), a === "top" ? history.replaceState(null, null, " ") : history.pushState(null, null, `#${a}`) }) })</script>
+        <script>var mybutton = document.getElementById("top-link"); window.onscroll = function () { document.body.scrollTop > 800 || document.documentElement.scrollTop > 800 ? (mybutton.style.visibility = "visible", mybutton.style.opacity = "1") : (mybutton.style.visibility = "hidden", mybutton.style.opacity = "0") }</script>
+        <script>document.getElementById("theme-toggle").addEventListener("click", () => { document.body.className.includes("dark") ? (document.body.classList.remove('dark'), localStorage.setItem("pref-theme", 'light')) : (document.body.classList.add('dark'), localStorage.setItem("pref-theme", 'dark')) })</script>
 </body>
+
 </html>
