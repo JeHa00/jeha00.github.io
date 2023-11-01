@@ -569,6 +569,15 @@
     </item>
     
     <item>
+      <title>[TIL] Python basic 44: Property</title>
+      <link>http://jeha00.github.io/post/python/python_basic_44_property/</link>
+      <pubDate>Thu, 12 May 2022 15:37:54 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/python/python_basic_44_property/</guid>
+      <description>첫 번째, method를 사용하여 getter와 setter를 구현한다. 두 번째, 첫 번째보다 pythonic way인 property를 사용하여 구현해보는데, property 방법 2가지 중 decorator를 사용하여 getter, setter, deleter를 구현해본다.</description>
+    </item>
+    
+    <item>
       <title>[TIL] Python basic 43: Underscore</title>
       <link>http://jeha00.github.io/post/python/python_basic_43_underscore/</link>
       <pubDate>Wed, 11 May 2022 13:27:50 +0900</pubDate>
@@ -710,15 +719,6 @@
       
       <guid>http://jeha00.github.io/post/os/os_chapter_02_%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94/</guid>
       <description>운영체제란 무엇이고, 무슨 역할을 하는지, 어떻게 분류되는지, 그리고 CPU, 메모리, 입출력 장치의 대략적인 관리 mechanism에 대해 알아본다.</description>
-    </item>
-    
-    <item>
-      <title>[TIL] Python basic 37: Coroutine</title>
-      <link>http://jeha00.github.io/post/python/python_basic_37_coroutine/</link>
-      <pubDate>Sat, 02 Apr 2022 21:15:33 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/python/python_basic_37_coroutine/</guid>
-      <description>첫 번째, Thread, Multi-thread 그리고 Coroutine이 무엇인지 알아보면서, coroutine이 왜 중요한지를 이해한다. 두 번째, Coroutine을 구현해보면서 Generator와의 차이를 통해 Coroutine을 이해한다.</description>
     </item>
     
     <item>
