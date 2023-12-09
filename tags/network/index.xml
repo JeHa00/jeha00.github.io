@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 24 May 2023 15:14:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Dec 2023 15:50:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL]OSI 7 layer: 4계층 전송 계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/4_layer/</link>
+      <pubDate>Sat, 09 Dec 2023 15:50:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/4_layer/</guid>
+      <description>OSI 7 layer에서 신뢰성 있는 통신을 구현하는 4계층에 대해 더 알아보자.</description>
+    </item>
+    
     <item>
       <title>[TIL]OSI 7 layer: 3계층 네트워크 계층</title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/3_layer/</link>
