@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 09 Dec 2023 15:50:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Dec 2023 18:23:48 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL]OSI 7 layer: 5 ~ 7계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/5-7_layer/</link>
+      <pubDate>Thu, 28 Dec 2023 18:23:48 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/5-7_layer/</guid>
+      <description>TCP/IP 4계층을 기준으로 맨 위 계층인 Application 계층에 대해 알아보자.</description>
+    </item>
+    
     <item>
       <title>[TIL]OSI 7 layer: 4계층 전송 계층</title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/4_layer/</link>

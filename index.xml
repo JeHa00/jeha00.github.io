@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 09 Dec 2023 15:50:44 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Dec 2023 18:23:48 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL]OSI 7 layer: 5 ~ 7계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/5-7_layer/</link>
+      <pubDate>Thu, 28 Dec 2023 18:23:48 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/5-7_layer/</guid>
+      <description>TCP/IP 4계층을 기준으로 맨 위 계층인 Application 계층에 대해 알아보자.</description>
+    </item>
+    
     <item>
       <title>[TIL]OSI 7 layer: 4계층 전송 계층</title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/4_layer/</link>
@@ -1439,28 +1448,6 @@ AWS에서 제공하는 메세지 큐와 DB를 언제 어느 인프라에 사용�
       <description>Question 1 라우팅에 들어가는 함수를 async def 로 비동기로 만들어 사용하는 것과 그냥 def 라고 만들어서 쓰는것의 차이가 궁금힙니다. 이렇게 쓴다는건 db도 asyncSession으로 되있는걸로 사용할텐데 이걸로 하면 장점이 무엇인가요? 속도차이가 많이 나나요?
 Answer 1 def 을 쓰면, 요청마다 쓰레드를 만드니, 멀티 쓰레딩에 대한 오버헤드가 나고 async def을 쓰면, 이벤트 루프 하나에 코루틴으로 핸들러를 등록하니, 멀티 쓰레딩에서 일어나는 오버헤드가 없습니다. https://fastapi.tiangolo.com/async/#asynchronous-code
 속도 차이가 많이 나느냐 -&amp;gt; 요거는 실제로 async, sync로 만들고 프로덕션 서비스에서 테스트 해보신 분들이 답변해주실텐데, 보통 그렇다고들 합니다.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://jeha00.github.io/post/network/osi_7_layer/3%EA%B3%84%EC%B8%B5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://jeha00.github.io/post/network/osi_7_layer/3%EA%B3%84%EC%B8%B5/</guid>
-      <description>3계층: 네트워크 계층 굉장히 중요한 계층으로, 3계층 장비인 라우터에 스위치에 연결되어 있어서 각 스위치로 전달한다.
-네트워크란? 하나의 스위치에 연결되어 있는 컴퓨터의 모음 인데, 그러면 서로 다른 네트워크에 있는 컴퓨터들은 어떻게 데이터를 주고 받을까???
-네트워크 계층에서는 라우터라는 장비를 사용한다.
-이 라우터라는 장비는 2계층의 스위치와 1계층의 허브 기능을 모두 포함한다. 요즘은 스위치와 라우터를 혼용해서 언급하기도 한다.
-각 계층에서의 장비, 주소, 비트 계층 사용 장비 주소 비트, 진수 1계층: 허브사용 2계층: 스위치 사용 MAC 주소를 사용 48비트, 16진수 3계층: 라우터 사용 IP 주소를 사용 32비트, 10진수 네트워크 계층에서도 header를 붙히는데 IP 헤더라고 부른다.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://jeha00.github.io/post/network/osi_7_layer/5_6_7_layer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://jeha00.github.io/post/network/osi_7_layer/5_6_7_layer/</guid>
-      <description>0. Introduction [TIL]Web Application Basic study: OSI 7 layer outline [TIL] Network OSI 7 layer: 1계층과 2계층 [TIL] Network OSI 7 layer: 3계층과 4계층 Reference 나노디그리 러닝스푼즈: Python &amp;amp; Django backend course 네트워크, 그림으로 이해해자 </description>
     </item>
     
     <item>

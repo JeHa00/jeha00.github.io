@@ -2,28 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jeha00.github.io/post/network/osi_7_layer/4_layer/</loc>
-    <lastmod>2023-12-09T15:50:44+09:00</lastmod>
+    <loc>http://jeha00.github.io/post/network/osi_7_layer/5-7_layer/</loc>
+    <lastmod>2023-12-28T18:23:48+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/</loc>
-    <lastmod>2023-12-09T15:50:44+09:00</lastmod>
+    <lastmod>2023-12-28T18:23:48+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/</loc>
-    <lastmod>2023-12-09T15:50:44+09:00</lastmod>
+    <lastmod>2023-12-28T18:23:48+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/network/</loc>
-    <lastmod>2023-12-09T15:50:44+09:00</lastmod>
+    <lastmod>2023-12-28T18:23:48+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/categories/network/</loc>
-    <lastmod>2023-12-09T15:50:44+09:00</lastmod>
+    <lastmod>2023-12-28T18:23:48+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/</loc>
-    <lastmod>2023-12-09T15:50:44+09:00</lastmod>
+    <lastmod>2023-12-28T18:23:48+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/</loc>
-    <lastmod>2023-12-09T15:50:44+09:00</lastmod>
+    <lastmod>2023-12-28T18:23:48+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/tags/til/</loc>
+    <lastmod>2023-12-28T18:23:48+09:00</lastmod>
+  </url><url>
+    <loc>http://jeha00.github.io/post/network/osi_7_layer/4_layer/</loc>
     <lastmod>2023-12-09T15:50:44+09:00</lastmod>
   </url><url>
     <loc>http://jeha00.github.io/post/ci_cd/github_action/lecture_02/</loc>
@@ -578,10 +581,6 @@
     <loc>http://jeha00.github.io/post/aws/wanted/intro/</loc>
   </url><url>
     <loc>http://jeha00.github.io/post/fastapi/%EC%82%AC%EC%9A%A9%EC%9E%90%EB%AA%A8%EC%9E%84%EB%A9%94%EB%AA%A8/</loc>
-  </url><url>
-    <loc>http://jeha00.github.io/post/network/osi_7_layer/3%EA%B3%84%EC%B8%B5/</loc>
-  </url><url>
-    <loc>http://jeha00.github.io/post/network/osi_7_layer/5_6_7_layer/</loc>
   </url><url>
     <loc>http://jeha00.github.io/post/project/devket/django/db_modeling_question/</loc>
   </url><url>
