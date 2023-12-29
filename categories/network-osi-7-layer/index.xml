@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Network - OSI 7 layer on Jeha DevLog</title>
+    <link>http://jeha00.github.io/categories/network-osi-7-layer/</link>
+    <description>Recent content in Network - OSI 7 layer on Jeha DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 28 Dec 2023 18:23:48 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/network-osi-7-layer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[TIL]OSI 7 layer: 5 ~ 7계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/5-7_layer/</link>
+      <pubDate>Thu, 28 Dec 2023 18:23:48 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/5-7_layer/</guid>
+      <description>TCP/IP 4계층을 기준으로 맨 위 계층인 Application 계층에 대해 알아보자.</description>
+    </item>
+    
+    <item>
+      <title>[TIL]OSI 7 layer: 4계층 전송 계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/4_layer/</link>
+      <pubDate>Sat, 09 Dec 2023 15:50:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/4_layer/</guid>
+      <description>OSI 7 layer에서 신뢰성 있는 통신을 구현하는 4계층에 대해 더 알아보자.</description>
+    </item>
+    
+    <item>
+      <title>[TIL]OSI 7 layer: 3계층 네트워크 계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/3_layer/</link>
+      <pubDate>Wed, 24 May 2023 15:14:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/3_layer/</guid>
+      <description>OSI 7 layer에서 한 네트워크에서 다른 네트워크와 통신하기 위한 IP 주소를 결정하는 3계층에 대해 더 알아보자.</description>
+    </item>
+    
+    <item>
+      <title>[TIL]OSI 7 layer: 2계층 데이터 링크 계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/2_layer/</link>
+      <pubDate>Sun, 14 May 2023 21:14:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/2_layer/</guid>
+      <description>OSI 7 layer에서 &amp;lsquo;네트워크 기기&amp;rsquo; 간의 데이터 전송과 물리 주소를 결정하는 계층인 2계층에 대해 더 알아보자.</description>
+    </item>
+    
+    <item>
+      <title>[TIL]OSI 7 layer: 1계층 물리 계층</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/1_layer/</link>
+      <pubDate>Sun, 07 May 2023 21:14:44 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/1_layer/</guid>
+      <description>OSI 7 layer에서 데이터를 전기 신호로 변환하여 전송매체로 보내는 1계층에 대해 더 깊이 알아보자.</description>
+    </item>
+    
+    <item>
+      <title>[TIL]Web Application Basic study: OSI 7 layer outline</title>
+      <link>http://jeha00.github.io/post/network/osi_7_layer/0_outline/</link>
+      <pubDate>Tue, 30 Aug 2022 18:50:58 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/network/osi_7_layer/0_outline/</guid>
+      <description>OSI 7 layer는 전체적으로 무슨 층으로, 무슨 프로토콜로, 각 계층의 데이터 타입은 무엇이고, 각 주요 기기들은 무엇인지 통합적으로 알아본다.</description>
+    </item>
+    
+  </channel>
+</rss>
