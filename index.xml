@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 28 Dec 2023 18:23:48 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Jan 2024 04:25:14 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022 ~ 2023 회고: 도전, 실패 그리고 성장</title>
+      <link>http://jeha00.github.io/post/memorior/2023/</link>
+      <pubDate>Tue, 02 Jan 2024 04:25:14 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/memorior/2023/</guid>
+      <description>2022년부터 2023년까지의 일을 회고해보았다.</description>
+    </item>
+    
     <item>
       <title>[TIL]OSI 7 layer: 5 ~ 7계층</title>
       <link>http://jeha00.github.io/post/network/osi_7_layer/5-7_layer/</link>

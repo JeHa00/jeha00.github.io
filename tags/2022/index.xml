@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>2022 on Jeha DevLog</title>
+    <link>http://jeha00.github.io/tags/2022/</link>
+    <description>Recent content in 2022 on Jeha DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 02 Jan 2024 04:25:14 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022 ~ 2023 회고: 도전, 실패 그리고 성장</title>
+      <link>http://jeha00.github.io/post/memorior/2023/</link>
+      <pubDate>Tue, 02 Jan 2024 04:25:14 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/memorior/2023/</guid>
+      <description>2022년부터 2023년까지의 일을 회고해보았다.</description>
+    </item>
+    
+  </channel>
+</rss>
