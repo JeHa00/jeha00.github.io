@@ -19,14 +19,5 @@
       <description>DDD란 무엇이고, layer 간 의존성은 어떻게 띄고 있고, 어떻게 구성하는지에 대해 정리해본다. 또한 이를 class를 사용하여 추상화하는 이유도 정리해본다.</description>
     </item>
     
-    <item>
-      <title>[TIL]Web Application Basic study: client와 server / web server structure</title>
-      <link>http://jeha00.github.io/post/network/webserver/clientandserver_webserver/</link>
-      <pubDate>Mon, 29 Aug 2022 17:14:46 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/network/webserver/clientandserver_webserver/</guid>
-      <description>클라이언트와 서버란 무엇인지, 서버의 종류에는 무엇이 있고, 웹서버 - WSGI - 웹 애플리케이션 - DB라는 서버 구조에서 각각에 대해 알아본다.</description>
-    </item>
-    
   </channel>
 </rss>
