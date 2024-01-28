@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>java on Jeha DevLog</title>
+    <link>http://jeha00.github.io/tags/java/</link>
+    <description>Recent content in java on Jeha DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 28 Jan 2024 23:17:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>객체 지향 5원칙 중 단일 책임 원칙(SRP)을 예제 코드에 적용해보자.</title>
+      <link>http://jeha00.github.io/post/java/srp/</link>
+      <pubDate>Sun, 28 Jan 2024 23:17:04 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/java/srp/</guid>
+      <description>객체 지향 5원칙인 SOLID 중 단일 책임 원칙인 Single Responsibility principle을 자바 코드에 적용해보자.</description>
+    </item>
+    
+  </channel>
+</rss>
