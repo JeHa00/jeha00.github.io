@@ -9,22 +9,31 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 28 Jan 2024 23:17:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Feb 2024 01:28:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>객체 지향 5원칙 중 단일 책임 원칙(SRP)을 예제 코드에 적용해보자.</title>
-      <link>http://jeha00.github.io/post/java/srp/</link>
-      <pubDate>Sun, 28 Jan 2024 23:17:04 +0900</pubDate>
+      <title>객체 지향 5원칙 중 단일 책임 원칙(SRP)을 예제 코드에 적용해보자</title>
+      <link>http://jeha00.github.io/post/java/7_srp/</link>
+      <pubDate>Thu, 08 Feb 2024 01:28:04 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/java/srp/</guid>
+      <guid>http://jeha00.github.io/post/java/7_srp/</guid>
       <description>객체 지향 5원칙인 SOLID 중 단일 책임 원칙인 Single Responsibility principle을 자바 코드에 적용해보자.</description>
     </item>
     
     <item>
+      <title>자바의 클래스에 대해 알아보자</title>
+      <link>http://jeha00.github.io/post/java/2_class/</link>
+      <pubDate>Tue, 23 Jan 2024 00:32:07 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/java/2_class/</guid>
+      <description>클래스가 필요한 이유, 클래스의 멤버 변수 그리고 메서드, 절차 지향과 객체 지향의 차이점, 생성자, 접근 제어자, 상수 변환 예약어에 대해 알아본다.</description>
+    </item>
+    
+    <item>
       <title>자바에서의 변수는 어떨까?</title>
-      <link>http://jeha00.github.io/post/java/variable/</link>
+      <link>http://jeha00.github.io/post/java/1_variable/</link>
       <pubDate>Sat, 20 Jan 2024 17:06:13 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/java/variable/</guid>
+      <guid>http://jeha00.github.io/post/java/1_variable/</guid>
       <description>자바에서의 변수는 파이썬과 어떻게 다른지 알아보자.</description>
     </item>
     
