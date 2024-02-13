@@ -20,12 +20,21 @@
     </item>
     
     <item>
-      <title>자바의 클래스에 대해 알아보자</title>
-      <link>http://jeha00.github.io/post/java/2_class/</link>
+      <title>자바의 클래스에 대해 알아보자 - 2</title>
+      <link>http://jeha00.github.io/post/java/2_2_class/</link>
+      <pubDate>Tue, 23 Jan 2024 00:33:07 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/java/2_2_class/</guid>
+      <description>생성자, 접근 제어자, 상수 변환 예약어에 대해 알아본다.</description>
+    </item>
+    
+    <item>
+      <title>자바의 클래스에 대해 알아보자 - 1</title>
+      <link>http://jeha00.github.io/post/java/2_1_class/</link>
       <pubDate>Tue, 23 Jan 2024 00:32:07 +0900</pubDate>
       
-      <guid>http://jeha00.github.io/post/java/2_class/</guid>
-      <description>클래스가 필요한 이유, 클래스 멤버 변수 그리고 메서드, 절차 지향과 객체 지향의 차이점, 생성자, 접근 제어자, 상수 변환 예약어에 대해 알아본다.</description>
+      <guid>http://jeha00.github.io/post/java/2_1_class/</guid>
+      <description>클래스가 필요한 이유, 클래스 멤버 변수 그리고 메서드, 절차 지향과 객체 지향의 차이점에 대해 알아본다.</description>
     </item>
     
     <item>
