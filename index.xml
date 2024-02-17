@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>자바의 클래스는 메모리 영역에서는 어떻게 생성될까?</title>
+      <link>http://jeha00.github.io/post/java/3_memory/</link>
+      <pubDate>Fri, 26 Jan 2024 00:32:17 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/java/3_memory/</guid>
+      <description>메모리의 각 메서드 영역, 스택 영역, 힙 영역에 무엇이 생성되는지 알아보고,  NullPointerException이 왜 발생하는지 알아본다.</description>
+    </item>
+    
+    <item>
       <title>자바의 클래스에 대해 알아보자 - 2</title>
       <link>http://jeha00.github.io/post/java/2_2_class/</link>
       <pubDate>Tue, 23 Jan 2024 00:33:07 +0900</pubDate>
