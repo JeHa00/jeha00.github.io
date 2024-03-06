@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>상속과 오버라이딩이 메모리 영역에서 어떻게 이뤄지지?</title>
+      <link>http://jeha00.github.io/post/java/4_inheritance/</link>
+      <pubDate>Tue, 30 Jan 2024 00:35:20 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/java/4_inheritance/</guid>
+      <description>자바에서는 상속과 오버라이딩을 어떻게 만드는지와 메모리 영역에서 어떻게 작동되는지 알아본다.</description>
+    </item>
+    
+    <item>
       <title>자바의 클래스는 메모리 영역에서는 어떻게 생성될까?</title>
       <link>http://jeha00.github.io/post/java/3_memory/</link>
       <pubDate>Fri, 26 Jan 2024 00:32:17 +0900</pubDate>
