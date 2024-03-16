@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>data structure on Jeha DevLog</title>
+    <link>http://jeha00.github.io/categories/data-structure/</link>
+    <description>Recent content in data structure on Jeha DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 13 Feb 2024 22:20:21 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/data-structure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Array와 LinkedList의 차이, LinkedList의 여러 기능들을 Java로 구현하기</title>
+      <link>http://jeha00.github.io/post/datastructure/linkedlist/</link>
+      <pubDate>Tue, 13 Feb 2024 22:20:21 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/datastructure/linkedlist/</guid>
+      <description>Array와 Linked list의 차이, Linked list의 종류에 대해 알아본다.</description>
+    </item>
+    
+  </channel>
+</rss>
