@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Feb 2024 22:20:21 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Mar 2024 00:34:19 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>자바의 다형적 참조, 추상 클래스 그리고 인터페이스</title>
+      <link>http://jeha00.github.io/post/java/5_polymorphism/</link>
+      <pubDate>Fri, 15 Mar 2024 00:34:19 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/java/5_polymorphism/</guid>
+      <description>자바의 메모리 영역과 상속을 토대로 어떻게 다형성이 구현되는지, 다형성을 구현하는 방법 중 하나인 캐스팅, 그리고 효과적으로 다형성을 구현하기 위한 추상 클래스와 인터페이스에 대해 알아본다.</description>
+    </item>
+    
     <item>
       <title>Array와 LinkedList의 차이, LinkedList의 여러 기능들을 Java로 구현하기</title>
       <link>http://jeha00.github.io/post/datastructure/linkedlist/</link>
@@ -29,18 +38,9 @@
     </item>
     
     <item>
-      <title>상속과 오버라이딩이 메모리 영역에서 어떻게 이뤄지지?</title>
-      <link>http://jeha00.github.io/post/java/4_inheritance/</link>
-      <pubDate>Tue, 30 Jan 2024 00:35:20 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/java/4_inheritance/</guid>
-      <description>자바에서는 상속과 오버라이딩을 어떻게 만드는 지와 메모리 영역에서 어떻게 작동되는지 알아본다.</description>
-    </item>
-    
-    <item>
       <title>자바의 클래스는 메모리 영역에서는 어떻게 생성될까?</title>
       <link>http://jeha00.github.io/post/java/3_memory/</link>
-      <pubDate>Fri, 26 Jan 2024 00:32:17 +0900</pubDate>
+      <pubDate>Thu, 01 Feb 2024 00:32:17 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/java/3_memory/</guid>
       <description>메모리의 각 메서드 영역, 스택 영역, 힙 영역에 무엇이 생성되는지 알아보고,  NullPointerException이 왜 발생하는지 알아본다.</description>
@@ -1545,6 +1545,15 @@ User model 관련 질문 upload_to=f&amp;quot;profile/&amp;ldquo;에서 f-string
 password 속성에서 max_length = 15에서 128로 왜 수정했는지?
 USERNAME_FIELD 를 &amp;lsquo;password&amp;rsquo;로 수정한 이유
 Site model 관련 질문 thumbnail_url에서 max_length로 2000을 한 이유 url = models.</description>
+    </item>
+    
+    <item>
+      <title>상속과 오버라이딩이 메모리 영역에서 어떻게 이뤄지지?</title>
+      <link>http://jeha00.github.io/post/java/4_inheritance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://jeha00.github.io/post/java/4_inheritance/</guid>
+      <description>자바에서는 상속과 오버라이딩을 어떻게 만드는 지와 메모리 영역에서 어떻게 작동되는지 알아본다.</description>
     </item>
     
   </channel>
