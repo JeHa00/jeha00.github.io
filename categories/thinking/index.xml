@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>thinking on Jeha DevLog</title>
+    <link>http://jeha00.github.io/categories/thinking/</link>
+    <description>Recent content in thinking on Jeha DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 19 Feb 2024 22:44:12 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/thinking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>미움 받을 용기가 없었다</title>
+      <link>http://jeha00.github.io/post/thinking/courage/</link>
+      <pubDate>Mon, 19 Feb 2024 22:44:12 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/thinking/courage/</guid>
+      <description>미움 방을 용기가 없었다 / 강한 근성과 강한 인내심을 갖는 마법은 없다. / 과한 미움받을 용기는 잘못된 방향으로 이끈다. / 과한 미움받을 용기는 잘못된 방향으로 이끈다.</description>
+    </item>
+    
+  </channel>
+</rss>
