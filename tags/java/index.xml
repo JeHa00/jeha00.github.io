@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 10 Apr 2024 01:24:32 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Apr 2024 01:28:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>객체 지향 5원칙 중 단일 책임 원칙(SRP)을 예제 코드에 적용해보자</title>
+      <link>http://jeha00.github.io/post/java/7_srp/</link>
+      <pubDate>Mon, 15 Apr 2024 01:28:04 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/java/7_srp/</guid>
+      <description>객체 지향 5원칙인 SOLID 중 단일 책임 원칙인 Single Responsibility principle을 자바 코드에 적용해보자.</description>
+    </item>
+    
     <item>
       <title>배운 다형성이 왜 객체 지향의 중요한 특징인가?</title>
       <link>http://jeha00.github.io/post/java/6_oop/</link>
@@ -35,15 +44,6 @@
       
       <guid>http://jeha00.github.io/post/java/4_inheritance/</guid>
       <description>자바에서는 상속과 오버라이딩을 어떻게 만드는지와 메모리 영역에서 어떻게 작동되는지 알아본다.</description>
-    </item>
-    
-    <item>
-      <title>객체 지향 5원칙 중 단일 책임 원칙(SRP)을 예제 코드에 적용해보자</title>
-      <link>http://jeha00.github.io/post/java/7_srp/</link>
-      <pubDate>Thu, 08 Feb 2024 01:28:04 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/java/7_srp/</guid>
-      <description>객체 지향 5원칙인 SOLID 중 단일 책임 원칙인 Single Responsibility principle을 자바 코드에 적용해보자.</description>
     </item>
     
     <item>
