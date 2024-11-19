@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Apr 2024 01:28:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Jun 2024 22:50:08 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Object 클래스가 있어야 하는 이유</title>
+      <link>http://jeha00.github.io/post/java/7_object/</link>
+      <pubDate>Tue, 18 Jun 2024 22:50:08 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/java/7_object/</guid>
+      <description>Object 클래스가 왜 있어야 하는지를 정리해 보자.</description>
+    </item>
+    
     <item>
       <title>객체 지향 5원칙 중 단일 책임 원칙(SRP)을 예제 코드에 적용해보자</title>
       <link>http://jeha00.github.io/post/java/7_srp/</link>
