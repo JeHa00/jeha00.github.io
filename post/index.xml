@@ -25,9 +25,7 @@
       <pubDate>Wed, 14 Aug 2024 12:56:04 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/datastructure/arraylist/</guid>
-      <description>Introduction 프로그래밍을 하다 보면 데이터를 다루는 때가 많고, 이 데이터를 어떠한 구조로 저장해야하는지 고민하는 시간이 많다. 이 데이터를 저장하는 구조를 &amp;lsquo;자료 구조&amp;rsquo;라 한다.
-자바를 사용해 여러 자료 구조를 구현해 보며 해당 자료구조의 기능별 시간 복잡도가 어떻게 그렇게 나오는지 &amp;lsquo;설명해 줄게!&amp;rsquo; 시리즈를 연재한다.
-[Data structure] ArrayList를 설명해 줄게! [Data structure] LinkedList를 설명해 줄게! [Data structure] List를 설명해 줄게! [Data structure] Hash를 설명해 줄게! [Data structure] HashSet을 설명해 줄게! [Data structure] Set을 설명해 줄게!</description>
+      <description>배열과 리스트의 차이를 학습한 후 배열기반 리스트인 ArrayList를 학습한다.</description>
     </item>
     
     <item>
@@ -91,15 +89,6 @@
       
       <guid>http://jeha00.github.io/post/java/3_memory/</guid>
       <description>메모리의 각 메서드 영역, 스택 영역, 힙 영역에 무엇이 생성되는지 알아보고,  NullPointerException이 왜 발생하는지 알아본다.</description>
-    </item>
-    
-    <item>
-      <title>Array와 LinkedList의 차이, LinkedList의 여러 기능들을 Java로 구현하기</title>
-      <link>http://jeha00.github.io/post/datastructure/linkedlist/</link>
-      <pubDate>Tue, 13 Feb 2024 22:20:21 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/datastructure/linkedlist/</guid>
-      <description>Array와 Linked list의 차이, Linked list의 종류에 대해 알아본다.</description>
     </item>
     
     <item>
