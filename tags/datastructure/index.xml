@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>data structure on Jeha DevLog</title>
-    <link>http://jeha00.github.io/categories/data-structure/</link>
-    <description>Recent content in data structure on Jeha DevLog</description>
+    <title>datastructure on Jeha DevLog</title>
+    <link>http://jeha00.github.io/tags/datastructure/</link>
+    <description>Recent content in datastructure on Jeha DevLog</description>
     <image>
       <url>http://jeha00.github.io/47</url>
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 14 Aug 2024 12:56:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/data-structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Aug 2024 12:56:04 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/datastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Data structure] ArrayList를 설명해줄게!</title>
       <link>http://jeha00.github.io/post/datastructure/arraylist/</link>
@@ -19,15 +19,6 @@
       <description>Introduction 프로그래밍을 하다보면 데이터를 다루는 때가 많고, 이 데이터를 어떠한 구조로 저장해야하는지 고민하는 시간이 많다. 이 데이터를 저장하는 구조를 &amp;lsquo;자료 구조&amp;rsquo;라 한다.
 자바를 사용해 여러 자료 구조를 구현해보며 해당 자료구조의 기능별 시간 복잡도가 어떻게 그렇게 나오는지 &amp;lsquo;설명해줄게!&amp;rsquo; 시리즈를 연재한다.
 [Data structure] ArrayList를 설명해줄게! [Data structure] LinkedList를 설명해줄게! [Data structure] List를 설명해줄게! [Data structure] Hash를 설명해줄게! [Data structure] HashSet을 설명해줄게! [Data structure] Set을 설명해줄게! [Data structure] Map을 설명해줄게! [Data structure] Stack을 설명해줄게!</description>
-    </item>
-    
-    <item>
-      <title>Array와 LinkedList의 차이, LinkedList의 여러 기능들을 Java로 구현하기</title>
-      <link>http://jeha00.github.io/post/datastructure/linkedlist/</link>
-      <pubDate>Tue, 13 Feb 2024 22:20:21 +0900</pubDate>
-      
-      <guid>http://jeha00.github.io/post/datastructure/linkedlist/</guid>
-      <description>Array와 Linked list의 차이, Linked list의 종류에 대해 알아본다.</description>
     </item>
     
   </channel>
