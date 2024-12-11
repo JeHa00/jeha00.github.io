@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Sep 2024 23:31:24 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/datastructure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Sep 2024 08:24:59 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/datastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Data structure] List에 대해 설명해 줄게!</title>
+      <link>http://jeha00.github.io/post/datastructure/list/</link>
+      <pubDate>Mon, 30 Sep 2024 08:24:59 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/datastructure/list/</guid>
+      <description>ArrayList와 LinkedList를 비교해 성능 차이를 확인한다.</description>
+    </item>
+    
     <item>
       <title>[Data structure] Singly LinkedList 설명해 줄게!</title>
       <link>http://jeha00.github.io/post/datastructure/linkedlist/</link>
