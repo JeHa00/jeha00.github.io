@@ -9,11 +9,11 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Nov 2024 10:00:23 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Nov 2024 10:00:23 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>불변형 객체를 사용하지 않을 때 발생할 수 있는 사이드 이펙트</title>
       <link>http://jeha00.github.io/post/java/8_immutable/</link>
-      <pubDate>Fri, 22 Nov 2024 10:00:23 +0900</pubDate>
+      <pubDate>Fri, 01 Nov 2024 10:00:23 +0900</pubDate>
       
       <guid>http://jeha00.github.io/post/java/8_immutable/</guid>
       <description>불변형 객체를 사용하지 않을 때 어떠한 실수를 할 수 있는지 알아보자.</description>

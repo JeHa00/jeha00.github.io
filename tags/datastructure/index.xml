@@ -9,7 +9,16 @@
       <link>http://jeha00.github.io/47</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 11 Oct 2024 10:43:21 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/datastructure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Nov 2024 10:45:35 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/tags/datastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Data structure] HashSet에 대해 설명해 줄게!</title>
+      <link>http://jeha00.github.io/post/datastructure/hashset/</link>
+      <pubDate>Sun, 10 Nov 2024 10:45:35 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/datastructure/hashset/</guid>
+      <description>해시를 사용해 만든 자료구조 HashSet을 알아보자.</description>
+    </item>
+    
     <item>
       <title>[Data structure] Hash에 대해 설명해 줄게!</title>
       <link>http://jeha00.github.io/post/datastructure/hash/</link>
