@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Spring on Jeha DevLog</title>
+    <link>http://jeha00.github.io/categories/spring/</link>
+    <description>Recent content in Spring on Jeha DevLog</description>
+    <image>
+      <url>http://jeha00.github.io/47</url>
+      <link>http://jeha00.github.io/47</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 15 Dec 2024 04:28:22 +0900</lastBuildDate><atom:link href="http://jeha00.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>스프링 컨테이너, 스프링 빈, 싱글톤 레지스트리란?</title>
+      <link>http://jeha00.github.io/post/spring/study_1/</link>
+      <pubDate>Sun, 15 Dec 2024 04:28:22 +0900</pubDate>
+      
+      <guid>http://jeha00.github.io/post/spring/study_1/</guid>
+      <description>스프링 컨테이너와 스프링 빈이 무엇인지 / 빈 생성 및 등록 과정 / 스프링 컨테이너의 인터페이스의 코드 구조 / BeanDefinition / 싱글톤 설계 시 유의사항 / 스프링이 싱글톤 레지스트리가 가능한 이유 에 대해 알아본다.</description>
+    </item>
+    
+  </channel>
+</rss>
